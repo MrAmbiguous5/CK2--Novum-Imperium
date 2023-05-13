@@ -1,0 +1,65 @@
+#Tang
+762.1.1 = { holder = 1408951 liege = e_tang } #Xin Yunjing - made prefect
+768.10.14 = { holder = 0 }
+777.1.1 = { holder = 1405025 } #Bao Fang
+779.1.1 = { holder = 0 }
+822.1.1 = { holder = 1404974 } #Li Ting
+825.1.1 = { holder = 0 }
+826.10.12 = { holder = 1408268 } #Li Cheng
+830.3.28 = { holder = 0 }
+830.3.28 = { holder = 1402353 } #Lu Gongchuo
+832.3.6 = { holder = 1404161 } #Linghu Chu
+833.7.4 = { holder = 0 } #Li Daiyi
+843.11.11 = { holder = 1404100 } #Li Shi
+844.1.24 = { holder = 0 } #No Jiedushi
+844.2.25 = { holder = 1403449 } #Cui Yuanshi
+845.1.12 = { holder = 1403356 } #Wang Zai
+850.1.1 = { holder = 0 }
+859.10.30 = { holder = 1409452 } #Pei Xiu
+860.8.21 = { holder = 1409983 } #Lu Jianqiu
+863.1.23 = { holder = 1402899 } #Liu Tong
+866.3.21 = { holder = 1400533 } #Zheng Congdang
+869.11.24 = { holder = 1412805 } #Kang Chengxun
+870.4.1 = { holder = 1400582 } #Cui Yanzhao
+873.11.30 = { holder = 1402579 } #Xiao Ye
+874.3.22 = { holder = 1402301 } #Dou Wan
+878.6.26 = { holder = 1401460 } #Cao Xiang
+878.10.9 = { holder = 1401764 } #Cui Jikang
+879.3.10 = { holder = 1401786 } #Li Kan
+879.8.27 = { holder = 1402287 } #Li Wei
+879.11.20 = { holder = 1400429 } #Kang Chuangui
+880.4.20 = { holder = 1400533 } #Zheng Congdang
+883.8.9 = { holder = 1412310 } #Li Keyong
+#Later Tang
+908.2.24 = { holder = 1412318 liege = k_hedong } #Li Cunxu
+923.5.13 = { holder = 1400030 liege = e_later_tang } #Meng Zhixiang
+926.1.4 = { holder = 1400162 } #Zhang Xian
+926.2.1 = { holder = 1412319 } #Li Cunba
+926.5.20= { holder = 1400165 } #Fu Yanchao
+926.6.27 = { holder = 1412347 } #Li Congrong
+927.1.1 = { holder = 1400165 } #Fu Yanchao
+928.4.23 = { holder = 1412347 } #Li Congrong
+929.5.24 = { holder = 1412350 } #Li Conghou
+930.11.16 = { holder = 1400189 } #Feng Yun
+931.11.1 = { holder = 1412366 } #Li Congwen
+932.12.3 = { holder = 1412375 } #Shi Jingtang
+#Rebellion
+936.5.26 = { liege = k_hedong }
+#Later Jin
+936.11.28 = { liege = e_later_jin }
+937.1.11 = { holder = 1412389 } #Shi Chonggui - made Jiedushi in 936.12.27, but then Jingtang wouldn't have any provinces.
+937.9.8 = { holder = 1400190 } #An Yanwei
+940.3.25 = { holder = 1400193 } #Li Dechong
+941.8.6 = { holder = 1412397 } #Liu Zhiyuan
+#Liao
+947.1.11 = { liege = e_khitan }
+#Later Han
+947.3.9 = { liege = e_later_han }
+947.7.5 = { holder = 1412398 } #Liu Chong
+#Northern Han
+951.2.5 = { liege = 0 }
+951.2.24 = { liege = e_later_han }
+954.11.6 = { holder = 1412405 liege = k_hedong } #Liu Chengjun
+968.8.1 = { holder = 1412412 } #Liu Ji'en
+968.10.1 = { holder = 1412413 } #Liu Jiyuan
+979.6.3 = { holder = 0 liege = e_song }

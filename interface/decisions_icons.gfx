@@ -1,0 +1,51 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_form_knights_of_calatrava_RNC"
+		texturefile = "gfx\\interface\\decision_icon_vassalize_holy_order.dds"
+	}
+	spriteType = {
+		name = "GFX_form_knights_of_santiago_RNC"
+		texturefile = "gfx\\interface\\decision_icon_vassalize_holy_order.dds"
+	}
+	spriteType = {
+		name = "GFX_form_teutonic_order_RNC"
+		texturefile = "gfx\\interface\\decision_icon_vassalize_holy_order.dds"
+	}
+	spriteType = {
+		name = "GFX_form_holy_sepulchre_RNC"
+		texturefile = "gfx\\interface\\decision_icon_vassalize_holy_order.dds"
+	}
+	spriteType = {
+		name = "GFX_minor_holy_orders"
+		texturefile = "gfx\\events\\minor_holy_orders.dds"
+	}
+	spriteType = {
+		name = "GFX_end_minor_order"
+		texturefile = "gfx\\events\\end_minor_order.dds"
+	}
+	spriteType = {
+		name = "GFX_new_minor_holy_order"
+		texturefile = "gfx\\events\\new_minor_holy_order.dds"
+	}
+	spriteType = {
+		name = "GFX_restore_monothelite_patriarchate_in_Antioch"
+		texturefile = "gfx\\interface\\decision_icon_monothelite_patriarchate.dds"
+	}
+	spriteType = {
+		name = "GFX_restore_paulician_patriarchate_in_Constantinople"
+		texturefile = "gfx\\interface\\decision_icon_paulician_patriarchate.dds"
+	}
+	spriteType = {
+		name = "GFX_restore_monophysite_pope_in_Alexandria"
+		texturefile = "gfx\\interface\\decision_icon_monophysite_pope.dds"
+	}
+	spriteType = {
+		name = "GFX_restore_miaphysite_pope_in_Alexandria"
+		texturefile = "gfx\\interface\\decision_icon_miaphysite_pope.dds"
+	}
+	spriteType = {
+		name = "GFX_create_iconoclast_patriarchy_alternative"
+		texturefile = "gfx\\interface\\decision_icon_create_iconoclast_patriarchy.dds"
+	}
+}
+

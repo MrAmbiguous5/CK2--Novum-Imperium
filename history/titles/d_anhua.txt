@@ -1,0 +1,4 @@
+#Southern Tang
+943.3.30 = { holder = 1407160 liege = e_southern_tang name = "Yongping" effect = { set_coa = d_yongping } } #Daio Yanneng
+945.10.9 = { holder = 1406731 name = "Anhua" effect = { reset_coa = THIS } } #Wang Yanzheng
+951.1.1 = { holder = 0 }
