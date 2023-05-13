@@ -1,3 +1,0 @@
-release_ = {
-	opinion = 20
-}

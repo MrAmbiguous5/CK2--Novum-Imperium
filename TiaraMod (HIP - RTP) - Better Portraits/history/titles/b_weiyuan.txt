@@ -1,3 +1,0 @@
-#Tang
-690.1.1 = { holder = 1409278 liege = c_rongzhou } #Pei Siyue - magistrate at some point
-695.1.1 = { holder = 0 }
