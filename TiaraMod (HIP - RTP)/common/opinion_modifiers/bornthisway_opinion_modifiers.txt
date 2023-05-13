@@ -1,3 +1,0 @@
-opinion_btw_forbidden_desire = {
-	opinion = 40
-}

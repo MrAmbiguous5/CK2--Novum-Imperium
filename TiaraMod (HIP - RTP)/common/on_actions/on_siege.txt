@@ -1,5 +1,0 @@
-on_siege_over_winner = {
-    events = {
-        ckrpg_burn_holdings.0001
-    }
-}

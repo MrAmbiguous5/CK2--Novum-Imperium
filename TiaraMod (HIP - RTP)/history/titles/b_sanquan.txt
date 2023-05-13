@@ -1,3 +1,0 @@
-#Song
-965.2.23 = { holder = 1407198 liege = c_xingzhou } #Bian Xu - made magistrate
-968.1.1 = { holder = 0 }

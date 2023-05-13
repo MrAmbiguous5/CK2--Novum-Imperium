@@ -1,3 +1,0 @@
-friend_rejected = {
-	opinion = -10
-}

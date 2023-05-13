@@ -1,3 +1,0 @@
-#Northern Qi
-566.1.1 = { holder = 1409963 liege = c_quzhou_jiangnan } #Lu Shoutong - magistrate at some point in time.
-573.1.1 = { holder = 0 }
