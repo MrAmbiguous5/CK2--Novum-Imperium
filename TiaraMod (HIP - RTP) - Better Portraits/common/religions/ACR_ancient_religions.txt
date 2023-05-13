@@ -8,6 +8,7 @@ pagan_group = {
 
 	titan_pagan = {
 		graphical_culture = norsegfx
+		alternate_start = { always = no }
 
 		icon = 58
 		heresy_icon = 59
@@ -74,6 +75,7 @@ pagan_group = {
 	promethean_pagan = {
 		graphical_culture = hellenicgfx
 		interface_skin = { hellenic_interface }
+		alternate_start = { always = no }
 
 		ai_convert_other_group = 2 # always try to convert
 		ai_convert_same_group = 2 # always try to convert
@@ -142,6 +144,7 @@ pagan_group = {
 	celtic_pagan_reformed = { # Druidic
 		# Use norsegfx rather than celticgfx to have the northern pagan rounded CoA on the map
 		graphical_culture = norsegfx
+		alternate_start = { always = no }
 		
 		icon = 5
 		heresy_icon = 14
@@ -316,6 +319,7 @@ pagan_group = {
 		graphical_culture = africangfx
 		secondary_event_pictures = egyptian_pagan
 		interface_skin = { zoroastrian_interface hellenic_interface }
+		alternate_start = { always = no }
 		
 		icon = 67
 		heresy_icon = 67
@@ -418,6 +422,7 @@ pagan_group = {
 	aten_pagan = { # Atenism
 		graphical_culture = africangfx
 		interface_skin = { zoroastrian_interface muslim_interface }
+		alternate_start = { always = no }
 
 		#pre_reformed = yes
 

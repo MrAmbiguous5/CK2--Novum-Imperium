@@ -18,6 +18,8 @@ pagan_group = {
 	ainu_pagan_reformed = {
 		graphical_culture = mongolgfx
 		secondary_event_pictures = tengri_pagan
+		
+		alternate_start = { always = no }
 
 		icon = 57
 		heresy_icon = 56
@@ -157,6 +159,8 @@ pagan_group = {
 		graphical_culture = chinesegfx
 		secondary_event_pictures = sunni
 		interface_skin = { taoist_interface indian_interface muslim_interface }
+		
+		alternate_start = { always = no }
 
 		icon = 57
 		heresy_icon = 56
@@ -301,6 +305,8 @@ pagan_group = {
 		graphical_culture = chinesegfx
 		secondary_event_pictures = sunni
 		interface_skin = { taoist_interface indian_interface muslim_interface }
+		
+		alternate_start = { always = no }
 
 		icon = 57
 		heresy_icon = 56
@@ -445,6 +451,8 @@ pagan_group = {
 		graphical_culture = chinesegfx
 		secondary_event_pictures = sunni
 		interface_skin = { taoist_interface indian_interface muslim_interface }
+		
+		alternate_start = { always = no }
 
 		icon = 57
 		heresy_icon = 56

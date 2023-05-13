@@ -4,6 +4,8 @@ pagan_group = {
 		graphical_culture = pagangfx
 		secondary_event_pictures = finnish_pagan
 
+		alternate_start = { always = no }
+
 		icon = 26
 		heresy_icon = 27
 		

@@ -7,6 +7,8 @@ pagan_group = {
         graphical_culture = hellenicgfx
         alternate_start = { always = no }
         interface_skin = { pagan_interface }
+		
+		alternate_start = { always = no }
 
         icon = 5
         heresy_icon = 14

@@ -8,6 +8,8 @@ pagan_group = {
 		
 		secondary_event_pictures = mesoamerican
 		
+		alternate_start = { always = no }
+		
 		icon = 17
 		heresy_icon = 18
 		
