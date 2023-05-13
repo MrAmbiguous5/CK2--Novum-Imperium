@@ -1,0 +1,63 @@
+namespace = feu_imp_theo
+
+character_event = {
+	id = feu_imp_theo.1
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	ai = no
+	
+	trigger = {
+		ROOT = {
+			primary_title = {
+				title = FROM
+			}
+		}
+	}
+	
+	# ROOT is the character, FROM is the title
+	immediate = {
+		ROOT = {
+			if = {
+				limit = {
+					any_demesne_title = { has_title_flag = feudal_imperial_theocracy_2_law }
+				}
+				FROM = {
+					add_law = {
+						law = feudal_imperial_theocracy_2
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				break = yes
+			}
+			if = {
+				limit = {
+					any_demesne_title = { has_title_flag = feudal_imperial_theocracy_1_law }
+				}
+				FROM = {
+					add_law = {
+						law = feudal_imperial_theocracy_1
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				break = yes				
+			}
+			if = {
+				limit = {
+					any_demesne_title = { has_title_flag = feudal_imperial_theocracy_0_law }
+				}
+				FROM = {
+					add_law = {
+						law = feudal_imperial_theocracy_0
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				break = yes				
+			}
+		}
+	}
+}

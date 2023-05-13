@@ -1,0 +1,9 @@
+#Tang
+881.8.29 = { holder = 1404919 liege = e_tang } #Qin Zongquan
+883.6.9 = { liege = e_huang_qi }
+889.1.6 = { holder = 1408209 liege = e_tang } #Shen Cong
+889.2.23 = { holder = 1408210 } #Guo Fan
+896.1.1 = { holder = 1408212 } #Cui Hong
+#Pince of Dongping/Liang
+899.3.15 = { holder = 1400475 liege = k_jingxi } #Zhu Youyu
+903.3.22 = { holder = 0 } #No Jiedushi

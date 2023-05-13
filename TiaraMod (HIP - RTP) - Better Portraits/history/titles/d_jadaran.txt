@@ -1,0 +1,20 @@
+867.1.1 = { holder = 1417460  historical_nomad = yes liege = d_kiyad }
+890.1.1 = { holder = 1417461 }
+921.1.1 = { holder = 1417462 }
+941.1.1 = { holder = 1417463 }
+961.1.1 = { holder = 1417464 }
+987.1.1 = { holder = 1417465 }
+#Liao
+1000.1.1 = { liege = e_khitan }
+1011.1.1 = { holder = 1417466 }
+1050.1.1 = { holder = 1417467 }
+1085.1.1 = { holder = 1417468 }
+1101.1.1 = { holder = 1417469 }
+1105.1.1 = { holder = 1417470 }
+#Jin
+1125.3.26 = { liege = 0 }
+1135.1.1 = { holder = 1417471 }
+1189.1.1 = { holder = 1417472 }
+1190.1.1 = { holder = 1417473 } #Jamuqa
+#Mongols
+1205.1.1 = { holder = 0 } #Temujin

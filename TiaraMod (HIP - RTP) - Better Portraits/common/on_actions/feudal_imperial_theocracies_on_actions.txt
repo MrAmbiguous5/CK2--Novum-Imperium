@@ -1,0 +1,13 @@
+# ROOT is the creating character, FROM is the title
+on_create_title = {
+	events = {
+		feu_imp_theo.1
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder = {
+	events = {
+		feu_imp_theo.1
+	}
+}

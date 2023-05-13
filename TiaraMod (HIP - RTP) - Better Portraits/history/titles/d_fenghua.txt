@@ -1,0 +1,23 @@
+#Southern Wu
+921.11.15 = { holder = 1406215 liege = k_huainan } #Xu Zhigao
+927.11.29 = { liege = e_southern_wu }
+935.11.18 = { liege = k_jiangnan }
+#Southern Tang
+937.10.11 = { holder = 1407215 liege = e_southern_tang } #Xu Zhicheng
+940.5.10 = { holder = 1406249 } #Zhou Zong
+943.3.30 = { holder = 1408181 } #Du Changye
+946.12.18 = { holder = 1408180 } #Jia Chong
+949.1.1 = { holder = 1407655 } #Yan Xu
+952.1.1 = { holder = 1404771 } #Huangfu Hui
+956.3.19 = { holder = 0 } #No Jiedushi
+956.5.5 = { holder = 1408012 } #Chai Kehong
+957.1.1 = { holder = 0 }
+958.5.31 = { liege = k_jiangnan }
+958.6.16 = { holder = 1408022 } #Sun Hanwei
+962.8.3 = { holder = 1407639 } #Zhu Kuangye
+965.2.14 = { holder = 1408114 } #Chai Kezhen
+968.1.1 = { holder = 1406235 } #Li Congqian
+974.1.1 = { holder = 1408184 } #Xie Yanbin
+#Rebellion
+976.1.1 = { holder = 1408185 } #Hu Ze
+976.5.22 = { holder = 0 }

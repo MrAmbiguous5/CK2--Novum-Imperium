@@ -1,0 +1,74 @@
+#Sui
+590.1.1 = { holder = 1408336 } #Cui Biao - prefect at some point
+593.1.1 = { holder = 0 }
+#Tang
+648.1.1 = { holder = 1415195 } #Liu Xuanyu - prefect at some point
+650.1.1 = { holder = 0 }
+866.1.1 = { holder = 1401763 liege = d_yiwu } #Hou Gu
+873.1.1 = { holder = 1401764 } #Cui Jikang
+879.3.10 = { holder = 1401745 } #Wang Chucun
+895.11.10 = { holder = 1401747 } #Wang Gao
+900.11.24 = { holder = 1401746 } #Wang Chuzhi
+921.11.3 = { holder = 1401749 } #Wang Du
+#Later Tang
+924.1.1 = { holder = 1404750 } #Wu Zhen - prefect around this time
+926.1.1 = { holder = 1401749 } #Wang Du
+929.3.26 = { holder = 1401263 } #Pan Gui - made prefect after Du's rebellion
+931.1.1 = { holder = 1412442 } #An Shuqien - prefect until 935.1.10
+935.1.10 = { holder = 1412434 } #Yang Guangyuan
+#Later Jin
+937.1.1 = { holder = 1400285 } #Huangfu Yu
+939.7.23 = { holder = 1401793 } #Wang Tingyun
+942.1.1 = { holder = 1400287 } #Ma Quanjie
+944.1.1 = { holder = 1404844 } #Guo Lingu - prefect until 947.1.6.
+#Liao
+947.1.6 = { holder = 1401093 } #Sun Fangjian
+#Independent
+947.6.11 = { holder = 1401797 } #Sun Xingyou - made prefect
+#Liao
+952.1.1 = { holder = 1404917 liege = e_khitan } #Li Zaiqin - prefect until 959.6.12, unknown when the province fell back into Khitan hands
+#Later Zhou
+959.6.12 = { holder = 1401805 liege = d_yiwu } #Sun Xingyou
+#Song
+961.1.1 = { holder = 1401799 } #Zan Jurun
+964.1.1 = { holder = 1400915 } #Qi Tingxun
+977.1.1 = { holder = 1400040 } #Meng Yuanzhe
+#Liao
+977.8.1 = { holder = 1401692 de_jure_liege = d_nanjing liege = d_nanjing } #Han Derang
+980.1.7 = { holder = 1413047 } #Yelü Daoyin
+983.3.6 = { holder = 1413132 } #Yelü Xiuge
+983.3.4 = { holder = 194331 } #No Deputy
+998.12.22 = { holder = 1413062 } #Yelü Longqing
+1017.1.1 = { holder = 1800037 } #Yang Ji - made prefect
+1020.11.27 = { holder = 1401762 } #Han Zhixin
+1023.12.16 = { holder = 1413516 } #Xiao Xiaomu
+1030.11.30 = { holder = 1800035 } #Ma Baozhong
+1031.8.2 = { holder = 1413516 } #Xiao Xiaomu
+1037.3.24 = { holder = 1413530 } #Xiao Xiaoxian
+1043.9.29 = { holder = 1413905 } #Xiao Taliege
+1048.4.20 = { holder = 1413085 } #Yelü Wuge
+1055.8.28 = { holder = 1413082 } #Yelü Chongyuan
+1055.10.13 = { holder = 1413416 } #Yelü Chenliu
+1055.10.25 = { holder = 1413250 } #Yelü Renxian
+1056.8.10 = { holder = 1413136 } #Yelü Zongfan - deputy at some point
+1057.1.1 = { holder = 1413108 } #Yelü Heluwo
+1063.4.19 = { holder = 1413912 } #Xiao Huaixin
+1064.1.1 = { holder = 1413255 } #Yelü Qingsi - prefect before 1069
+1069.1. = { holder = 1413250 } #Yelü Renxian
+1072.1.1 = { holder = 1413230 } #Yelü Duoluwo
+1075.1.1 = { holder = 194333 } #No deputy
+1080.1.1 = { holder = 1413447 } #Yelü Pode
+1084.1.1 = { holder = 1413925 } #Yelü Naye
+1086.7.31 = { holder = 1413308 } #Yelü Dilie
+1087.12.13 = { holder = 1413927 } #Yelü Tan
+1093.10.31 = { holder = 1413928 } #Yelü Temo
+1094.11.1 = { holder = 194333 } #No Deputy
+1096.1.1 = { holder = 1413930 } #Xiao Dilidi
+1099.12.12 = { holder = 1413108 } #Yelü Heluwo	
+1101.1.1 = { holder = 1413935 } #Xiao Yang'a - made prefect
+1102.1.1 = { holder = 1413108 } #Yelü Heluwo	
+1110.10.11 = { holder = 1413109 } #Yelü Chun
+#Northern Liao
+1122.7.6 = { holder = 1413121 } #Yelü Ding
+#Jin
+1122.12.10 = { holder = 0 }

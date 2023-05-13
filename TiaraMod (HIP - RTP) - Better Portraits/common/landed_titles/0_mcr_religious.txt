@@ -1,0 +1,45 @@
+c_feher = {
+    holy_site = zamolxian
+    holy_site = zamolxian_reformed
+    zamolxian_reformed = 500
+}
+c_byzantion = {
+    holy_site = zamolxian
+    holy_site = zamolxian_reformed
+    zamolxian_reformed = 200
+}
+c_roma = {
+    holy_site = zamolxian
+    holy_site = zamolxian_reformed
+    zamolxian_reformed = 200
+}
+c_constantia = {
+    holy_site = zamolxian
+    holy_site = zamolxian_reformed
+    zamolxian_reformed = 200
+}
+c_adrianopolis = {
+    holy_site = zamolxian
+    holy_site = zamolxian_reformed
+    zamolxian_reformed = 200
+}
+
+d_zamolxian_reformed = {
+    color = { 115 75 40 }
+    color2 = { 105 65 30 }
+    capital = 519
+    creation_requires_capital = no
+	# Always exists
+	landless = yes
+	dignity = 100 # Counted as having this many more counties than it does
+	# Controls a religion
+	controls_religion = tuniit_pagan_reformed
+	religion = tuniit_pagan_reformed
+	allow = {
+		religion = tuniit_pagan_reformed
+		num_of_holy_sites = 3
+		piety = 500
+	}
+	title = THRACIAN_PRIEST
+    foa = THRACIAN_PRIEST_FOA
+}
