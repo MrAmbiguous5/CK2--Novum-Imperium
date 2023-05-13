@@ -1,0 +1,90 @@
+#The events for the provinces
+in_ruins = {                         #destruction
+	icon = 42
+	desc = in_ruins_desc
+	local_revolt_risk = 0.04
+	local_tax_modifier = -0.90
+	levy_size = -0.55
+	levy_reinforce_rate = -0.55
+	garrison_size = -0.88
+	fort_level = -2
+	local_build_cost_modifier = 0.90
+	local_build_time_modifier = 0.80
+}
+fully_looted = {                           #wealth
+	icon = 24
+	local_revolt_risk = 0.04
+	local_tax_modifier = -0.80
+	levy_size = -0.30
+	levy_reinforce_rate = -0.35
+	garrison_size = -0.25
+	local_build_cost_modifier = 0.70
+	local_build_time_modifier = 0.45
+}
+burned_churches = {                           #piety
+	icon = 35
+	local_revolt_risk = 0.02
+	local_tax_modifier = -0.35
+	levy_size = -0.27
+	levy_reinforce_rate = -0.35
+	garrison_size = -0.20
+	local_build_cost_modifier = 0.30
+	local_build_time_modifier = 0.20
+	monthly_character_piety = -0.20
+}
+destroyed_defenses = {                        #prestige
+	icon = 38
+	local_revolt_risk = 0.08
+	local_tax_modifier = -0.35
+	levy_size = -0.40
+	levy_reinforce_rate = -0.45
+	garrison_size = -0.75
+	fort_level = -1
+	local_build_cost_modifier = 0.20
+	local_build_time_modifier = 0.15
+	monthly_character_prestige = -0.10
+}
+#after siege modifiers
+raiders = {                                  #local tax
+	icon = 19
+	local_tax_modifier = -0.10
+	levy_size = -0.05
+	garrison_size = -0.10
+	local_build_time_modifier = 0.10
+}
+heretics = {                                  #piety
+	icon = 26
+	local_revolt_risk = 0.03
+	local_tax_modifier = -0.05
+	levy_size = -0.07
+	garrison_size = -0.08
+	local_build_cost_modifier = 0.10
+	monthly_character_piety = -0.05
+}
+rebels = {                                      #revolt risk
+	icon = 106
+	local_revolt_risk = 0.15
+	local_tax_modifier = -0.05
+	levy_size = -0.06
+	levy_reinforce_rate = -0.08
+	garrison_size = -0.08
+	monthly_character_prestige = -0.02
+}
+thieves = {                                       #character wealth
+	icon = 23
+	local_tax_modifier = -0.12
+	levy_size = -0.02
+	garrison_size = -0.06
+	local_build_cost_modifier = 0.10
+	monthly_character_wealth = -0.05
+}
+corruption = {	                               #build time
+	icon = 29
+	local_tax_modifier = -0.05
+	levy_size = -0.04
+	levy_reinforce_rate = -0.08
+	local_build_cost_modifier = 0.35
+	local_build_time_modifier = 0.25
+	monthly_character_wealth = -0.01
+	monthly_character_prestige = -0.01
+}

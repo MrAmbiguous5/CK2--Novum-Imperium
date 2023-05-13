@@ -1,0 +1,101 @@
+feudal_governments = {
+
+	feudal_theocratic_government = {
+		preferred_holdings = { TEMPLE }
+		allowed_holdings = { 
+			TEMPLE
+			CASTLE 
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			muslim_government
+			theocracy_government
+			feudal_government
+			chinese_imperial_government
+		}
+		vassal_government_opinion_penalties = no
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+			feudal_government
+			theocracy_government
+		}
+
+		frame_suffix = "_theocracy"
+		title_prefix = "temple_"
+		
+		potential = { can_use_feudal_theocracy_trigger = yes }
+		
+		color = { 225 25 125 }
+		
+		free_revoke_on_tiers = { baron }
+		free_retract_vassalage = yes
+		
+		barons_need_dynasty = yes
+		
+		can_grant_kingdoms_and_empires_to_other_government_group = yes
+		uses_piety_for_law_change = yes
+		dukes_called_kings = yes		
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 600
+	}
+	
+	imperial_theocratic_government = {
+		preferred_holdings = { TEMPLE }
+		allowed_holdings = {
+			TEMPLE
+			CASTLE
+			CITY
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			republic_government
+			merchant_republic_government
+		}
+		vassal_government_opinion_penalties = no
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+			feudal_government
+			theocracy_government
+		}
+
+		frame_suffix = "_order"
+		title_prefix = "order_"
+		
+		potential = { can_use_imperial_theocracy_trigger = yes }
+		
+		color = { 125 25 225 }
+		
+		free_revoke_on_tiers = { count baron }
+		free_retract_vassalage = yes
+
+		barons_need_dynasty = yes
+		
+		can_usurp_kingdoms_and_empires = yes
+		can_create_empires = yes
+		can_demand_religious_conversion = yes
+		free_retract_vassalage = yes
+		can_grant_kingdoms_and_empires_to_other_government_group = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 720
+	}
+	
+}

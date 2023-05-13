@@ -1,0 +1,17 @@
+#Later Tang
+929.11.20 = { holder = 1403311 liege = e_later_tang } #Li Renju
+930.10.14 = { holder = 0 } #No Jiedushi
+932.7.7 = { holder = 1400077 } #Zhao Tingyin
+#Later Shu
+933.3.15 = { liege = k_xichuan }
+934.3.16 = { liege = e_later_shu }
+935.1.1 = { holder = 1400116 } #Zhang Gongduo
+941.3.26 = { holder = 1400156 } #Liu Yingtu
+944.1.1 = { holder = 1400090 } #Wang Chuhui
+#947.1.1 = { holder = 1400154 } #An Siqian
+948.8.24 = { holder = 1410703 } #He Zhongjian
+951.1.1 = { holder = 1400118 } #Yi Shenzheng
+954.1.1 = { holder = 1400154 } #An Siqian
+954.3.19 = { holder = 1400144 } #Li Tinggui
+#Song
+965.2.23 = { holder = 0 liege = e_song }
