@@ -3663,7 +3663,7 @@ character_event = {
 	}
 	hidden_tooltip = {
 	add_piety 100
-	set_preferred_capital = c_esfahan
+	primary title = { set_preferred_capital = c_esfahan }
 	random_independent_ruler = {
 	limit = {
 	has_landed_title = e_indo_roman_empire
