@@ -1,0 +1,52 @@
+# FEUDAL THEOCRACY
+spriteTypes = {	
+	
+	#--------------------------------------------------
+	#------------------
+	#------ Feudal Theocratic frames
+	# TODO
+	
+	#--------------------------------------------------
+	#------------------
+	#------ Imperial Theocratic frames
+	# TODO
+	
+	#--------------------------------------------------
+	#------------------
+	#------ Government Icons
+	spriteType = {
+		name = "GFX_icon_feudal_theocratic_government"
+		noOfFrames = 1
+		texturefile = "gfx\\interface\\government_icon_feudal_theocratic.dds"
+	}
+	spriteType = {
+		name = "GFX_icon_imperial_theocratic_government"
+		noOfFrames = 1
+		texturefile = "gfx\\interface\\government_icon_imperial_theocratic.dds"
+	}
+	
+	#--------------------------------------------------
+	#------------------
+	#------ Decision icons
+	spriteType = {
+		name = "GFX_revert_to_feudal"
+		texturefile = "gfx\\interface\\government_icon_feudal.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_adopt_feudal_theocracy"
+		texturefile = "gfx\\interface\\government_icon_feudal_theocratic.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_adopt_imperial_theocracy"
+		texturefile = "gfx\\interface\\government_icon_imperial_theocratic.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}

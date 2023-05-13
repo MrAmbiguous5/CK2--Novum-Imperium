@@ -1,0 +1,31 @@
+#TAG;ENG_TEXT;;;;;;;;;;;;;x
+
+#--------------------------------------------------
+#------------------
+#------ Law and law descriptions
+feu_imp_theo_laws;Theocratic Administration;;;;;;;;;;;;;x
+feu_imp_theo_laws_desc;This set of laws will allow you to adopt theocratic versions of feudalism and imperialism.;;;;;;;;;;;;;x
+feudal_imperial_theocracy_0;Feudalism;;;;;;;;;;;;;x
+feudal_imperial_theocracy_0_desc;Plain old Feudalism.;;;;;;;;;;;;;x
+feudal_imperial_theocracy_1;Feudal Theocracy;;;;;;;;;;;;;x
+feudal_imperial_theocracy_1_desc;Feudalism with Temple holdings.;;;;;;;;;;;;;x
+feudal_imperial_theocracy_2;Imperial Theocracy;;;;;;;;;;;;;x
+feudal_imperial_theocracy_2_desc;Imperialism with Temple, and City holdings.;;;;;;;;;;;;;x
+
+#--------------------------------------------------
+#------------------
+#------ Decision names and descriptions
+revert_to_feudal;Revert to Feudalism;;;;;;;;;;;;;x
+revert_to_feudal_desc;This will allow you to return back to plain old Feudalism.;;;;;;;;;;;;;x
+adopt_feudal_theocracy;Adopt Feudal Theocracy;;;;;;;;;;;;;x
+adopt_feudal_theocracy_desc;This will change your government type to Feudal Theocratic.;;;;;;;;;;;;;x
+adopt_imperial_theocracy;Adopt Imperial Theocracy;;;;;;;;;;;;;x
+adopt_imperial_theocracy_desc;This will change your government type to Imperial Theocratic.;;;;;;;;;;;;;x
+
+#--------------------------------------------------
+#------------------
+#------ Government names and descriptions
+feudal_theocratic_government;Feudal Theocracy;;;;;;;;;;;;;x
+feudal_theocratic_government_desc;The Feudal Theocratic government, much like the ordinary Feudal government, revolves around the oath between liege and vassal, and Feudal Theocratic lords can only directly own so many Holdings before they must start to rely on vassals - whose loyalty may vary... The Feudal Theocratic government allows holding Temples in addition to Castles.;;;;;;;;;;;;;x
+imperial_theocratic_government;Imperial Theocracy;;;;;;;;;;;;;x
+imperial_theocratic_government_desc;Imperial Theocracy, much like the ordinary Feudal government, revolves around vassals owing fealty to their liege who in this case is considered to be a devout believer. The Imperial Theocratic government allows holding Temples, and Cities in addition to Castles.;;;;;;;;;;;;;x

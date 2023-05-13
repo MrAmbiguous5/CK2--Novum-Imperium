@@ -1,0 +1,40 @@
+castle = {
+	trigger = {
+	}
+}
+
+city = {
+	trigger = {
+	}
+}
+
+temple = {
+	trigger = {
+	}
+}
+
+family_palace = {
+	trigger = {
+	}
+}
+
+tribal = {
+	trigger = {
+	}
+}
+
+nomad = {
+	trigger = {
+	}
+}
+
+fort = {
+	trigger = {
+		always = no
+	}
+}
+
+hospital = {
+	trigger = {
+	}
+}

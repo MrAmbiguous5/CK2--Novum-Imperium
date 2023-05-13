@@ -1,0 +1,73 @@
+#Tang
+864.1.1 = { holder = 1401366 liege = e_tang } #Lu Jianfang
+864.7.1 = { holder = 0 }
+869.11.24 = { holder = 1412306 } #Li Guochang
+876.1.1 = { holder = 1401383 } #Zhi Mo
+876.1.30 = { holder = 1401415 } #Duan Wenchu
+878.3.14 = { holder = 1412310 } #Li Keyong
+#Rebellion
+878.6.13 = { liege = 0 }
+#Tang
+880.8.25 = { holder = 1410404 liege = e_tang } #Helian Duo
+882.1.1 = { name = "Yingmen" effect = { set_coa = d_yingmen } }
+883.1.1 = { name = "Daibei" effect = { set_coa = d_daibei } }
+885.1.1 = { name = "Yunzhong" effect = { set_coa = d_yunzhong } }
+890.1.1 = { name = "Datong" effect = { reset_coa = THIS } }
+891.1.1 = { holder = 1412477 } #Shi Shanyou
+891.7.1 = { holder = 1400206 } #Xue Zhiqin
+894.1.1 = { holder = 1412313} #Li Kening
+#Prince of Jin/Later Tang
+895.1.1 = { holder = 0 } #No Jiedushi
+896.1.1 = { liege = k_hedong }
+915.7.15 = { holder = 1401427 } #He Delun
+916.3.23 = { holder = 1404677 } #Zhang Chengye
+916.9.30 = { holder = 1412478 } #Li Cunzhang
+922.1.1 = { holder =  0 } #No Jiedushi
+923.5.13 = { liege = e_later_tang }
+924.9.11 = { holder = 1400253 } #An Yuanxin
+926.1.1 = { holder = 1400258 } #Gao Xingrui
+927.5.24 = { holder = 1401430 } #Zhang Jingxun
+928.10.19  = { holder = 1400449 } #Suo Zitong
+928.12.11 = { holder = 1400322 } #Zhang Wen
+929.7.13 = { holder = 1404371 } #Yang Hanzhang
+930.12.3 = { holder = 1400324 } #Zhang Jingda
+933.4.9 = { holder = 1400322 } #Zhang Wen
+935.3.7 = { holder = 1401223 } #An Chongba
+935.8.13 = { holder = 1401432 } #Sha Yanxun
+#Rebellion
+937.3.15 = { holder = 1401911 liege = 0 } #Wu Luan 
+#Liao
+937.7.30 = { holder = 1412505 liege = e_khitan } #Zhang Yanchao
+944.9.11 = { holder = 1413738 } #Yelü Konga
+946.1.1 = { holder = 1400907 } #Cui Tingxun
+951.1.1 = { holder = 1800034 } #Gao Xun
+958.1.1 = { holder = 1413739 } #Ala
+969.3.12 = { holder = 1413740 } #Yelü Shanpu
+982.1.1 = { holder = 1800050 } #Liu Yangou
+985.8.13 = { holder = 1800110 } #Liu Jing
+988.3.17 = { holder = 0 } #No deputy
+988.9.11 = { holder = 1413317 } #Yelü Mozhi
+1000.1.1 = { holder = 1413742 } #Yelü Guoyin
+1012.5.1 = { holder = 1800122 } #Xing Baozhi
+1013.12.30 = { holder = 1413247 } #Yelü Huage
+1020.1.1 = { holder = 1401695 } #Han Dening
+1026.1.1 = { holder = 1800128 } #Zhang Jian
+1026.3.22 = { holder = 0 } #No deputy
+1044.12.1 = { name = "Xijing" holder = 1413744 } #Yelü Maliu
+1046.7.10 = { holder = 1413137 } #Yelü Tiebu
+1050.12.18 = { holder = 1413798 } #Xiao Dilie
+1059.9.7 = { holder = 1413137 } #Yelü Tiebu
+1063.8.20 = { holder = 1413746 } #Yelü Heshu
+1067.1.5 = { holder = 1413110 } #Yelü Alian
+1073.1.1 = { holder = 1413917 } #Xiao Yanliu
+1076.1.13 = { holder = 0 } #No deputy
+1087.1.1 = { holder = 1413413 } #Yelü Yange
+1095.1.1 = { holder = 0 } #No deputy
+1103.1.1 = { holder = 1413759 } #Xiao Duola
+1108.1.1 = { holder = 0 } #No deputy
+1116.7.1 = {  holder = 1413760 } #Xiao Yixue
+1118.1.17 = { holder = 1413761 } #Xiao Chala
+1119.9.7 = { holder = 1413120 } #Yelü Xinielie
+1121.12.13 = { holder = 0 }
+#Jin
+1122.5.10 = { holder = 0 }

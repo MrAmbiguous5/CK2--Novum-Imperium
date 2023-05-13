@@ -1,0 +1,12 @@
+#Tang
+759.5.1 = { holder = 1405776 liege = e_tang } #Guo Ziyi
+760.2.17 = { holder = 0 }
+796.8.13 = { holder = 1407597 } #Wang Hong
+802.7.11 = { holder = 0 }
+818.4.21 = { holder = 1409162 } #Zheng Yin
+821.11.7 = { holder = 1407486 } #Li Jiang
+822.3.22 = { holder = 0 } #Pei Du
+#Huang Chao
+880.12.22 = { holder = 1403799 liege = 0 } #Huang Chao
+884.7.13 = { holder = 0 }
+#888.7.13 = { name = "Youguo" effect = { set_coa = d_yougou } }
