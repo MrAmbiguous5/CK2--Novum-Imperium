@@ -1,7 +1,0 @@
-wroth_maimed = {
-	opinion = -50
-}
-
-satcatholic_persecuted = {
-	opinion = -50
-}

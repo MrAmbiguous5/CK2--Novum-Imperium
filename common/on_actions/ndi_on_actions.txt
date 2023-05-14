@@ -1,5 +1,0 @@
-on_death = {
-	events = {
-		ndi.1
-	}
-}

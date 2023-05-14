@@ -1,4 +1,0 @@
-burned_churches_authority = {                  #decreases religious authority
-	authority = -1
-	years = 20
-}

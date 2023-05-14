@@ -1,5 +1,0 @@
-on_yearly_pulse	= {
-	events = {
-		hdarkages.099
-	}
-}
