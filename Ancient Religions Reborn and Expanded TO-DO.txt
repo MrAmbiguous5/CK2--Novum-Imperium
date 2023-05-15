@@ -1,5 +1,5 @@
 Might need to check for Ancient Religions Reborn and Expanded:
 
 common\landed_titles\landed_titles.txt
-
+common\retinue_subunits\00_retinue_subunits.txt # worked on a bit, didn't do culture groups.
 

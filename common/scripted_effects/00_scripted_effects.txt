@@ -4227,6 +4227,45 @@ add_crusade_trait_effect = {
 		}
 		add_trait = shaddai
 	}
+	
+	### ACR ###
+	if = {
+		limit = {
+			OR = {
+				religion = celtic_pagan
+				AND = {
+					religion = celtic_pagan_reformed
+					NOT = { has_religion_feature = religion_matriarchal }
+				}
+			}
+		}
+		add_trait = lughs_own
+	}
+	if = {
+		limit = {
+			OR = {
+				religion = britannic_pagan
+				AND = {
+					religion = celtic_pagan_reformed
+					has_religion_feature = religion_matriarchal
+				}
+			}
+		}
+
+		add_trait = morrigan
+	}
+	if = {
+		limit = {
+			religion_openly_egyptian_or_reformed_trigger = yes
+		}
+		add_trait = montu
+	}
+	if = {
+		limit = {
+			religion = aten_pagan
+		}
+		add_trait = atens_chosen
+	}
 }
 
 ###MONKS & MYSTICS###
@@ -5274,6 +5313,32 @@ join_from_devil_worshiper_society_effect = {
 				join_society = followers_of_ahuiateteo
 			}
 		}
+		
+		### ACR ###
+		if = {
+			limit = {
+				society_member_of = unseelie_petitioners
+			}
+			ROOT = {
+				join_society = unseelie_petitioners
+			}
+		}
+		if = {
+			limit = {
+				society_member_of = the_coven
+			}
+			ROOT = {
+				join_society = the_coven
+			}
+		}
+		if = {
+			limit = {
+				society_member_of = the_sand_snakes
+			}
+			ROOT = {
+				join_society = the_sand_snakes
+			}
+		}
 	}
 }
 
@@ -5382,6 +5447,21 @@ join_prev_devil_worshiper_society_effect = {
 		limit = { PREV = { society_member_of = followers_of_ahuiateteo } }
 		join_society = followers_of_ahuiateteo
 	}
+	
+	## ACR ###
+	if = {
+		limit = { PREV = { society_member_of = unseelie_petitioners } }
+		join_society = unseelie_petitioners
+	}
+	if = {
+		limit = { PREV = { society_member_of = the_coven } }
+		join_society = the_coven
+	}
+	if = {
+		limit = { PREV = { society_member_of = the_sand_snakes } }
+		join_society = the_sand_snakes
+	}
+}
 }
 
 join_prev_warrior_lodge_society_effect = {
@@ -5737,6 +5817,18 @@ join_prev_monastic_order_society = {
 	if = {
 		limit = { PREV = { society_member_of = monastic_order_stoics } }
 		join_society = monastic_order_stoics
+	}
+	if = {
+		limit = { PREV = { society_member_of = monastic_order_skeptics } }
+		join_society = monastic_order_skeptics
+	}
+	if = {
+		limit = { PREV = { society_member_of = monastic_order_epicureans } }
+		join_society = monastic_order_epicureans
+	}
+	if = {
+		limit = { PREV = { society_member_of = monastic_order_isis } }
+		join_society = monastic_order_isis
 	}
 }
 
@@ -26807,6 +26899,11 @@ clean_up_after_leaving_society_effect = {
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 
 		#Powers, Missions and Interactions: Secret Religious
 		clr_character_flag = sr_too_honest
@@ -34886,6 +34983,24 @@ add_warrior_lodge_leader_trait_effect = {
 		warrior_lodge_ws_jewish = {
 			add_trait = zun_leader
 		}
+		
+		### ACR ###
+		
+		warrior_lodge_celtic = {
+			add_trait = celtic_leader
+		}
+		warrior_lodge_britannic = {
+			add_trait = britannic_leader
+		}
+		warrior_lodge_titan = {
+			add_trait = titan_leader
+		}
+		warrior_lodge_taoist = {
+			add_trait = taoist_leader
+		}
+		warrior_lodge_egyptian = {
+			add_trait = egyptian_leader
+		}
 	}
 }
 fire_haruspicy_event_effect = {
@@ -35623,6 +35738,7 @@ add_random_tattoo_effect = { #Tied to religion, used only for special events.
 			OR = { 
 				religion = norse_pagan
 				religion = norse_pagan_reformed
+				religion_openly_in_celtic_subgroup_trigger = yes
 			}
 			NOR = { 
 				trait = african_tattoo_1
@@ -39903,6 +40019,141 @@ reformation_god_names_changes_effect = { #Reforming religion with certain Doctri
 			}
 		}
 		
+		### ACR ###
+			if = { #A ruler reforms Celtic Paganism
+				limit = {
+					has_dlc = "Holy Fury"
+					religion = celtic_pagan_reformed
+					OR = {
+						has_religion_feature = religion_matriarchal
+						has_religion_feature = religion_patriarchal
+						has_religion_feature = religion_dogmatic
+					}
+				}
+				remove_god_names = yes
+				remove_evil_god_names = yes
+				if = { # Just Dogmatic?
+					limit = {
+						has_religion_feature = religion_dogmatic
+						NOR = {
+							has_religion_feature = religion_matriarchal
+							has_religion_feature = religion_patriarchal
+						}
+					}
+					set_high_god_name = GOD_LUGH
+					add_god_name = GOD_LUGH
+					add_evil_god_name = THE_FOMORIANS
+					add_evil_god_name = EVIL_BALOR
+					add_evil_god_name = EVIL_BRES
+					add_evil_god_name = GOD_CAILLEACH
+				}
+				if = { # matriarchal
+					limit = {
+						has_religion_feature = religion_matriarchal
+					}
+					set_high_god_name = GOD_DANA
+					if = {
+						limit = {
+							NOT = { has_religion_feature = religion_dogmatic }
+						}
+						add_god_name = GOD_MACHA
+						add_god_name = GOD_RHIANNON
+						add_god_name = GOD_SEQUANA
+					}
+					add_evil_god_name = THE_FOMORIANS
+					add_evil_god_name = EVIL_BALOR
+					add_evil_god_name = EVIL_BRES
+					add_evil_god_name = GOD_CAILLEACH
+				}
+				if = {
+					limit = {
+						has_religion_feature = religion_patriarchal
+					}
+					set_high_god_name = GOD_LUGH
+					if = {
+						limit = {
+							NOT = { has_religion_feature = religion_dogmatic }
+						}
+						add_god_name = GOD_MANANNAN
+						add_god_name = GOD_DAGHDA
+						add_god_name = GOD_LUGH
+						add_god_name = GOD_NUADA
+						add_god_name = GOD_CERNNUNOS
+					}
+					add_evil_god_name = GOD_RHIANNON
+					add_evil_god_name = GOD_MACHA
+					add_evil_god_name = GOD_DANA
+					add_evil_god_name = GOD_SEQUANA
+				}
+			}
+			if = { #A ruler reforms Egyptian Paganism
+				limit = {
+					has_dlc = "Holy Fury"
+					religion = egyptian_pagan_reformed
+					OR = {
+						has_religion_feature = religion_matriarchal
+						has_religion_feature = religion_patriarchal
+						has_religion_feature = religion_dogmatic
+					}
+				}
+				remove_god_names = yes
+				remove_evil_god_names = yes
+				if = { # Just Dogmatic?
+					limit = {
+						has_religion_feature = religion_dogmatic
+						NOR = {
+							has_religion_feature = religion_matriarchal
+							has_religion_feature = religion_patriarchal
+						}
+					}
+					set_high_god_name = GOD_AMON
+					add_god_name = GOD_AMON
+					add_evil_god_name = GOD_APEP
+					add_evil_god_name = GOD_SET
+				}
+				if = { # matriarchal
+					limit = {
+						has_religion_feature = religion_matriarchal
+					}
+					set_high_god_name = GOD_AMAUNET
+					add_god_name = GOD_AMAUNET
+					if = {
+						limit = {
+							NOT = { has_religion_feature = religion_dogmatic }
+						}
+						add_god_name = GOD_HAUHET
+						add_god_name = GOD_KAUKET
+						add_god_name = GOD_NAUNET
+						add_god_name = GOD_ISIS
+					}
+					add_evil_god_name = GOD_AMON
+					add_evil_god_name = GOD_APEP
+					add_evil_god_name = GOD_SET
+				}
+				if = {
+					limit = {
+						has_religion_feature = religion_patriarchal
+					}
+					set_high_god_name = GOD_AMON
+					add_god_name = GOD_AMON
+					if = {
+						limit = {
+							NOT = { has_religion_feature = religion_dogmatic }
+						}
+						add_god_name = GOD_HEH
+						add_god_name = GOD_KEK
+						add_god_name = GOD_NUN
+						add_god_name = GOD_RA
+						add_god_name = GOD_OSIRIS
+						add_god_name = GOD_ANUBIS
+					}
+					add_evil_god_name = GOD_AMAUNET
+					add_evil_god_name = GOD_APEP
+					add_evil_god_name = GOD_SET
+				}
+			}
+		}
+		
 		if = {
 			limit = {
 				persistent_event_target:reformer = { has_character_flag = religious_reformer }
@@ -40498,6 +40749,17 @@ give_goldsmith_artifacts_flag_okay_effect = {
 	else = {
         add_artifact = ceremonial_axe
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = silver_torque
+		add_artifact = engraved_sword
+	}
+	else = {
+	    add_artifact = engraved_crown
+        add_artifact = ceremonial_axe
+	}
 }
 
 give_goldsmith_artifacts_flag_good_effect = {
@@ -40597,6 +40859,17 @@ give_goldsmith_artifacts_flag_good_effect = {
 	else = {
         add_artifact = obsidian_axe
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = golden_torque
+		add_artifact = golden_sword
+	}
+	else = {
+	    add_artifact = amber_crown
+        add_artifact = obsidian_axe
+	}
 }
 
 give_goldsmith_artifacts_flag_expensive_effect = {
@@ -40694,6 +40967,17 @@ give_goldsmith_artifacts_flag_expensive_effect = {
 	    add_artifact = axe_of_the_ancestors
 	}
 	else = {
+	    add_artifact = axe_of_the_ancestors
+	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = jeweled_torque
+		add_artifact = sword_of_heroes
+	}
+	else = {
+	    add_artifact = heros_crown
 	    add_artifact = axe_of_the_ancestors
 	}
 }
@@ -40797,6 +41081,17 @@ give_goldsmith_artifacts_flag_amazing_effect = {
 	else = {
 	    add_artifact = axe_of_the_ancestors_2
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = jeweled_torque_2
+		add_artifact = sword_of_heroes_2
+	}
+	else = {
+	    add_artifact = heros_crown_2
+	    add_artifact = axe_of_the_ancestors_2
+	}
 }
 
 
@@ -40895,6 +41190,17 @@ give_weaponsmith_artifacts_flag_okay_effect = {
         add_artifact = ceremonial_axe
 	}
 	else = {
+        add_artifact = ceremonial_axe
+	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = silver_torque
+		add_artifact = engraved_sword
+	}
+	else = {
+	    add_artifact = engraved_crown
         add_artifact = ceremonial_axe
 	}
 }
@@ -40999,6 +41305,17 @@ give_weaponsmith_artifacts_flag_good_effect = {
 	else = {
         add_artifact = obsidian_axe
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = golden_torque
+		add_artifact = golden_sword
+	}
+	else = {
+	    add_artifact = amber_crown
+        add_artifact = obsidian_axe
+	}
 }
 
 give_weaponsmith_artifacts_flag_expensive_effect = {
@@ -41098,6 +41415,17 @@ give_weaponsmith_artifacts_flag_expensive_effect = {
 	else = {
 	    add_artifact = axe_of_the_ancestors
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = jeweled_torque
+		add_artifact = sword_of_heroes
+	}
+	else = {
+	    add_artifact = heros_crown
+	    add_artifact = axe_of_the_ancestors
+	}
 }
 
 give_smith_artifacts_flag_okay_effect = {
@@ -41159,6 +41487,7 @@ give_smith_artifacts_flag_okay_effect = {
         limit = { FROM = { has_character_flag = armor_set } }
         add_artifact = armor_tier_1
     }
+	
 }
 
 give_smith_artifacts_flag_good_effect = {
@@ -42928,6 +43257,236 @@ abdicate_holy_order_if_religion_changes_effect = {
 				}
 				log = "[d_saint_blaise.owner.GetTitledFirstName] was found to be unfit to lead the [d_saint_blaise.GetName] and therefore removed by the abdicate holy order effect!"
 			}
+		}
+	}
+	
+	### ACR ###
+	d_fianna = {
+		if = {
+			limit = {
+				is_title_active = d_fianna
+				religion = celtic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan_reformed } 
+				}
+			}
+			log = "[d_fianna.owner.GetTitledFirstName] was found to be unfit to lead the [d_fianna.GetName] due to religious conflict! Title is celtic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_fianna
+				religion = celtic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan } 
+				}
+			}
+			log = "[d_fianna.owner.GetTitledFirstName] was found to be unfit to lead the [d_fianna.GetName] due to religious conflict! Title is celtic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_red_dragons = {
+		if = {
+			limit = {
+				is_title_active = d_red_dragons
+				religion = celtic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan_reformed } 
+				}
+			}
+			log = "[d_red_dragons.owner.GetTitledFirstName] was found to be unfit to lead the [d_red_dragons.GetName] due to religious conflict! Title is celtic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_red_dragons
+				religion = celtic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan } 
+				}
+			}
+			log = "[d_red_dragons.owner.GetTitledFirstName] was found to be unfit to lead the [d_red_dragons.GetName] due to religious conflict! Title is celtic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_saint_boudicca = {
+		if = {
+			limit = {
+				is_title_active = d_saint_boudicca
+				religion = britannic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = britannic_pagan } 
+				}
+			}
+			log = "[d_saint_boudicca.owner.GetTitledFirstName] was found to be unfit to lead the [d_saint_boudicca.GetName] due to religious conflict! Title is britannic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_legio_hellenica = {
+		if = {
+			limit = {
+				is_title_active = d_legio_hellenica
+				religion = hellenic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan_reformed } 
+				}
+			}
+			log = "[d_legio_hellenica.owner.GetTitledFirstName] was found to be unfit to lead the [d_legio_hellenica.GetName] due to religious conflict! Title is hellenic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_legio_hellenica
+				religion = hellenic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan } 
+				}
+			}
+			log = "[d_legio_hellenica.owner.GetTitledFirstName] was found to be unfit to lead the [d_legio_hellenica.GetName] due to religious conflict! Title is hellenic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_sacred_band = {
+		if = {
+			limit = {
+				is_title_active = d_sacred_band
+				religion = hellenic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan_reformed } 
+				}
+			}
+			log = "[d_sacred_band.owner.GetTitledFirstName] was found to be unfit to lead the [d_sacred_band.GetName] due to religious conflict! Title is hellenic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_sacred_band
+				religion = hellenic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan } 
+				}
+			}
+			log = "[d_sacred_band.owner.GetTitledFirstName] was found to be unfit to lead the [d_sacred_band.GetName] due to religious conflict! Title is hellenic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_sickles = {
+		if = {
+			limit = {
+				is_title_active = d_sickles
+				religion = titan_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = titan_pagan } 
+				}
+			}
+			log = "[d_sickles.owner.GetTitledFirstName] was found to be unfit to lead the [d_sickles.GetName] due to religious conflict! Title is titan_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_men_of_steel = {
+		if = {
+			limit = {
+				is_title_active = d_men_of_steel
+				religion = promethean_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = promethean_pagan } 
+				}
+			}
+			log = "[d_men_of_steel.owner.GetTitledFirstName] was found to be unfit to lead the [d_men_of_steel.GetName] due to religious conflict! Title is promethean_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_horus = {
+		if = {
+			limit = {
+				is_title_active = d_horus
+				religion = egyptian_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan_reformed } 
+				}
+			}
+			log = "[d_horus.owner.GetTitledFirstName] was found to be unfit to lead the [d_horus.GetName] due to religious conflict! Title is egyptian_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_horus
+				religion = egyptian_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan } 
+				}
+			}
+			log = "[d_horus.owner.GetTitledFirstName] was found to be unfit to lead the [d_horus.GetName] due to religious conflict! Title is egyptian_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_anubis = {
+		if = {
+			limit = {
+				is_title_active = d_anubis
+				religion = egyptian_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan_reformed } 
+				}
+			}
+			log = "[d_anubis.owner.GetTitledFirstName] was found to be unfit to lead the [d_anubis.GetName] due to religious conflict! Title is egyptian_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_anubis
+				religion = egyptian_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan } 
+				}
+			}
+			log = "[d_anubis.owner.GetTitledFirstName] was found to be unfit to lead the [d_anubis.GetName] due to religious conflict! Title is egyptian_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_burning_blades = {
+		if = {
+			limit = {
+				is_title_active = d_burning_blades
+				religion = aten_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = aten_pagan } 
+				}
+			}
+			log = "[d_burning_blades.owner.GetTitledFirstName] was found to be unfit to lead the [d_burning_blades.GetName] due to religious conflict! Title is aten_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
 		}
 	}
 }
