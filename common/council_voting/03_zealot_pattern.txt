@@ -584,6 +584,28 @@ zealot_pattern_for = {
 		emf_feminist_religion = yes
 	}
 	
+	enatic_succession = {
+		religion = britannic_pagan
+		is_female = yes
+	}
+
+	enatic_cognatic_succession = {
+		religion = britannic_pagan
+		OR = {
+			is_female = no
+			FROMFROM = {
+				NOT = { has_law = enatic_succession }
+			}
+		}
+	}
+
+	true_cognatic_succession = {
+		religion = britannic_pagan
+		NOT = {
+			FROMFROM = { has_law = enatic_cognatic_succession }
+		}
+	}
+	
 	administration_0 = { always = no }
 	administration_1 = { always = yes }
 	administration_2 = { always = no }
@@ -701,7 +723,7 @@ zealot_pattern_for = {
 	
 	tribal_organization_0 = {
 		OR = {
-			emf_unreformed_pagan = yes
+			is_organized_religion_trigger = no
 			is_tribal = yes
 		}
 	}
@@ -711,7 +733,7 @@ zealot_pattern_for = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
@@ -723,7 +745,7 @@ zealot_pattern_for = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
@@ -735,7 +757,7 @@ zealot_pattern_for = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
@@ -746,7 +768,7 @@ zealot_pattern_for = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
@@ -1334,6 +1356,31 @@ zealot_pattern_against = {
 		emf_feminist_religion = no
 	}
 	
+	enatic_succession = {
+		OR = {
+			is_female = no
+			NOT = {
+				religion = britannic_pagan
+			}
+		}
+	}
+
+	enatic_cognatic_succession = {
+		NOR = {
+			religion = britannic_pagan
+			FROMFROM = {
+				has_law = enatic_succession
+			}
+		}
+	}
+
+	true_cognatic_succession = {
+		NOR = {
+			religion = britannic_pagan
+			true_religion_celtic_or_reformed_trigger = yes
+		}
+	}
+	
 	administration_0 = { always = yes }
 	administration_1 = { always = no }
 	administration_2 = { always = yes }
@@ -1451,7 +1498,7 @@ zealot_pattern_against = {
 	
 	tribal_organization_0 = {
 		NOR = {
-			emf_unreformed_pagan = yes
+			is_organized_religion_trigger = no
 			is_tribal = yes
 		}
 	}
@@ -1461,7 +1508,7 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
@@ -1473,7 +1520,7 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
@@ -1485,7 +1532,7 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
@@ -1496,7 +1543,7 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 			is_tribal = no
