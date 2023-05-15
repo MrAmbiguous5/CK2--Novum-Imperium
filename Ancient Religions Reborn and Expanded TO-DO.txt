@@ -1,10 +1,5 @@
 Might need to check for Ancient Religions Reborn and Expanded:
 
 common\landed_titles\landed_titles.txt
-common\laws\crown_laws.txt
-common\laws\succession_laws.txt
-common\laws\ze_demesne_laws.txt
-common\objectives\00_factions.txt
-common\objectives\00_HF_ambitions.txt
-common\objectives\00_zeus_ambitions.txt
+
 
