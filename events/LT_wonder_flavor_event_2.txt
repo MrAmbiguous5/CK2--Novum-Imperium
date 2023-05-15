@@ -1,8 +1,6 @@
-# -*- ck2.events -*-
-
 ###########################################
 #                                         #
-# Wonder Flavor Events          	      #
+# Wonder Flavor Events          	      #             
 #                                         #
 # ID LT.60000-60999                       #
 #                                         #
@@ -21,7 +19,7 @@ character_event = {
 	desc = EVTDESC_LT_60001
 	picture = GFX_evt_construction_site
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
 
 	trigger = {
@@ -33,11 +31,13 @@ character_event = {
 			num_of_wonder_upgrades = 2
 		}
 		FROMFROMFROM = {
-			NOT = { has_province_flag = had_event_LT_60001 }
-			emf_can_add_holding_slot = yes
+			NOR = {
+				has_province_flag = had_event_LT_60001
+				num_of_max_settlements = 7
+			}
 		}
 	}
-
+	
 	immediate = {
 		FROMFROM = { save_event_target_as = target_wonder }
     	FROMFROMFROM = {
@@ -81,26 +81,36 @@ character_event = {
 	desc = EVTDESC_LT_60101
 	picture = GFX_evt_open_book_hf
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
 
 	trigger = {
 		has_character_flag = currently_working_on_a_book
-		any_realm_wonder_upgrade = {
-			has_wonder_upgrade_flag = upgrades_written_books
-			is_active = yes
+		# OR = {
+			# has_wonder = wonder_library
+			# has_wonder_upgrade = upgrade_cow_district_library
+			# has_wonder_upgrade = upgrade_cow_district_bibliothekai_byz
+			# has_wonder_upgrade = upgrade_cow_district_bibliotheca_ulpia
+			# has_wonder_upgrade = upgrade_cow_district_bibliothekai_alex
+			# has_wonder_upgrade = upgrade_cow_district_house_of_wisdom
+		# }
+		OR = { # TODO - WIP TEST IF EITHER WORKS!
+			has_wonder = wonder_library
+			any_realm_wonder = {
+				has_cow_library_district_trigger = yes
+			}
 		}
 		is_alive = yes
 		is_inaccessible_trigger = no
 		war = no
 	}
-
+	
 	immediate = {
 		random_realm_wonder = {
 			limit = {
-				any_upgrade_on_wonder = {
-					has_wonder_upgrade_flag = upgrades_written_books
-					is_active = yes
+				OR = {
+					has_wonder = wonder_library
+					has_cow_library_district_trigger = yes
 				}
 			}
 			save_event_target_as = target_wonder
@@ -134,15 +144,15 @@ character_event = {
     }
 	picture = GFX_evt_garden
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	immediate = {
 		random_realm_wonder = {
 			limit = {
-				any_upgrade_on_wonder = {
-					has_wonder_upgrade_flag = life_granting
-					is_active = yes
+				OR = { 
+					has_wonder = wonder_garden
+					has_wonder_upgrade = upgrade_cow_fountain_of_youth
 				}
 			}
 			save_event_target_as = target_wonder
@@ -175,27 +185,23 @@ character_event = {
 	picture = GFX_evt_feast
 	border = GFX_event_normal_frame_diplomacy
 	portrait = event_target:drinking_buddy
-
+	
 	is_triggered_only = yes
 
 	trigger = {
-		any_realm_wonder_upgrade = {
-			has_wonder_upgrade_flag = tavern
-			is_active = yes
+		any_realm_wonder = {
+			has_wonder_upgrade = upgrade_tavern
 		}
 		trait = stressed
 	}
-
+	
 	immediate = {
 		save_drinking_character_effect = yes
-		random_realm_wonder_upgrade = {
+		random_realm_wonder = {
 			limit = {
-				has_wonder_upgrade_flag = tavern
-				is_active = yes
+				has_wonder_upgrade = upgrade_tavern
 			}
-			wonder = {
-				save_event_target_as = target_wonder
-			}
+			save_event_target_as = target_wonder
 		}
 	}
 
@@ -216,10 +222,16 @@ character_event = {
 		}
 	}
 
-	option = { #Be a party-pooper
+	option = { #Be a party-pooper 
 		name = EVTOPTB_LT_60301
 		if = {
-			limit = { event_target:drinking_buddy = { NOT = { is_friend = ROOT } } }
+			limit = {
+				NOT = {
+					event_target:drinking_buddy = {
+						any_friend = { character = root }
+					}
+				}
+			}
 			event_target:drinking_buddy = {
 				opinion = {
 					who = ROOT
@@ -246,7 +258,7 @@ character_event = {
 	desc = EVTDESC_LT_60302
 	picture = GFX_evt_drunk
 	border = GFX_event_normal_frame_diplomacy
-
+	
 	is_triggered_only = yes
 
 	trigger = {
@@ -267,20 +279,14 @@ character_event = {
 	desc = EVTDESC_LT_60401
 	picture = GFX_evt_died_funeral
 	border = GFX_event_normal_frame_intrigue
-
+	
 	is_triggered_only = yes
 
 	trigger = {
 		FROM = {
-			any_upgrade_on_wonder = {
-				has_wonder_upgrade_flag = traps
-				is_active = yes
-			}
-			NOT = { any_previous_wonder_owner = { character = ROOT } }
-		}
-		FROMFROMFROM = { # Makes sure this only triggers on violent takeovers
-			capital_holding = {
-				has_holding_modifier = new_administration
+			OR = { 
+				has_wonder_upgrade = upgrade_traps
+				has_wonder_upgrade = upgrade_cow_traps
 			}
 		}
 		any_courtier = {
@@ -288,7 +294,7 @@ character_event = {
 			count = 2
 		}
 	}
-
+	
 	immediate = {
 		save_event_target_as = new_owner
 		FROMFROM = {
@@ -296,14 +302,14 @@ character_event = {
 		}
 		random_realm_wonder = {
 			limit = {
-				any_upgrade_on_wonder = {
-					has_wonder_upgrade_flag = traps
-					is_active = yes
+				OR = { 
+					has_wonder_upgrade = upgrade_traps
+					has_wonder_upgrade = upgrade_cow_traps
 				}
 			}
 			save_event_target_as = target_wonder
 		}
-		any_courtier = {
+		random_courtier = {
 			limit = {
 				prisoner = no
 			}
@@ -352,11 +358,11 @@ character_event = {
 	desc = EVTDESC_LT_60402
 	picture = GFX_evt_died_funeral
 	border = GFX_event_normal_frame_intrigue
-
+	
 	is_triggered_only = yes
-
+	
 	immediate = {
-
+	
 	}
 
 	option = { #Mohaha!
@@ -382,12 +388,15 @@ letter_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		independent = no
 		any_demesne_province = {
 			has_wonder = yes
+			liege = {
+				always = yes
+				NOT = { character = root }
+			}
 		}
 	}
-
+	
 	immediate = {
 		save_event_target_as = target_vassal
 		random_demesne_wonder = {
@@ -475,7 +484,7 @@ character_event = {
 			has_wonder_flag = is_destructible
 		}
 	}
-
+	
 	immediate = {
 		save_event_target_as = target_vassal
 		liege = {
@@ -524,13 +533,12 @@ character_event = {
 	desc = EVTDESC_LT_60701
 	picture = GFX_evt_mysterious_forest
 	border = GFX_event_normal_frame_diplomacy
-
+	
 	is_triggered_only = yes
 
 	trigger = {
-		any_realm_wonder_upgrade = {
+		any_realm_wonder = {
 			has_wonder_upgrade_flag = produces_herbs
-			is_active = yes
 		}
 		trigger_if = {
 			limit = {
@@ -547,17 +555,14 @@ character_event = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		save_event_target_as = new_owner
-		random_realm_wonder_upgrade = {
+		random_realm_wonder = {
 			limit = {
 				has_wonder_upgrade_flag = produces_herbs
-				is_active = yes
 			}
-			wonder = {
-				save_event_target_as = target_wonder
-			}
+			save_event_target_as = target_wonder
 			location = {
 				save_event_target_as = target_province
 			}
@@ -589,14 +594,19 @@ character_event = {
 	option = { #Herbs!
 		name = EVTOPTA_LT_60701
 		sound_effect = hermetic_society_acquire_seed
-		hermetic_add_herbal_ingredient_effect = yes
-		random = {
-			chance = 50
+		while = {
+			limit = {
+				check_variable = {
+					which = gath_res
+					value = 1
+				}
+			}
 			hermetic_add_herbal_ingredient_effect = yes
-		}
-		random = {
-			chance = 50
-			hermetic_add_herbal_ingredient_effect = yes
+			
+			subtract_variable = {
+				which = gath_res
+				value = 1
+			}
 		}
 		custom_tooltip = { text = EVTTOOLTIP_MNM_1812 }
 	}

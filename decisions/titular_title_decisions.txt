@@ -1,0 +1,163 @@
+# Title decisions are possible vs _all_ titles and are shown in the Title Diplomacy View, not the Intrigue View. The taker is in the FROM scope.
+#
+# filter = [capital/primary_title/owned/vassal_owned/sub_realm_owned/realm_owned/dynasty_owned/all]
+# ai_target_filter = [capital/primary_title/owned/vassal_owned/sub_realm_owned/realm_owned/dynasty_owned/all] (which titles for which the AI evaluates the decision.)
+#	owned: all titles owned by the AI
+#	vassal_owned: all titles owned by direct vassal rulers of the AI's employer
+#	sub_realm_owned: all titles below the AI's employer
+#	realm_owned: all titles in the same top realm as the AI
+#	dynasty_owned: all titles owned by members of the same dynasty
+#	all: all titles (Avoid if possible. VERY CPU-HEAVY!)
+#	
+
+title_decisions = {
+	make_extra_titular_duchy = {
+		from_potential = {
+			has_dlc = "Charlemagne"
+			is_playable = yes
+			#is_nomadic = no
+			OR = {
+				tier = DUKE
+				tier = KING
+				tier = EMPEROR
+			}
+			ai = no
+		}
+		potential = {
+			tier = COUNT
+			location = {
+				owner = {
+					same_realm = FROM
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				is_adult = yes
+				prisoner = no
+				NOT = { trait = incapable }
+				independent = yes
+				prestige = 100
+				wealth = 150
+			}
+		}
+		effect = {
+			FROM = {
+				wealth = -150
+			}
+				create_title = {
+					tier = DUKE
+					landless = no
+					temporary = no
+					custom_created = yes
+					culture = FROM
+					holder = FROM
+					base_title = THIS
+					copy_title_laws = primary_title
+				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	make_extra_titular_kingdom = {
+		from_potential = {
+			has_dlc = "Charlemagne"
+			is_playable = yes
+			#is_nomadic = no
+			OR = {
+				tier = KING
+				tier = EMPEROR
+			}
+			ai = no
+		}
+		potential = {
+			tier = DUKE
+			owner = {
+				same_realm = FROM
+			}
+		}
+		allow = {
+			FROM = {
+				is_adult = yes
+				prisoner = no
+				NOT = { trait = incapable }
+				independent = yes
+				prestige = 300
+				wealth = 300
+			}
+		}
+		effect = {
+			FROM = {
+				wealth = -300
+			}
+				create_title = {
+					tier = KING
+					landless = no
+					temporary = no
+					custom_created = yes
+					culture = FROM
+					holder = FROM
+					base_title = THIS
+					copy_title_laws = primary_title
+				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	make_extra_titular_empire = {
+		from_potential = {
+			has_dlc = "Charlemagne"
+			is_playable = yes
+			#is_nomadic = no
+			OR = {
+				tier = EMPEROR
+			}
+			ai = no
+		}
+		potential = {
+			tier = KING
+			owner = {
+				same_realm = FROM
+			}
+		}
+		allow = {
+			FROM = {
+				is_adult = yes
+				prisoner = no
+				NOT = { trait = incapable }
+				independent = yes
+				prestige = 1000
+				wealth = 750
+			}
+		}
+		effect = {
+			FROM = {
+				wealth = -750
+			}
+				create_title = {
+					tier = EMPEROR
+					landless = no
+					temporary = no
+					custom_created = yes
+					culture = FROM
+					holder = FROM
+					base_title = THIS
+					copy_title_laws = primary_title
+				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
