@@ -11,7 +11,10 @@ targetted_decisions = {
 		from_potential = {
 			show_only_failed_conditions = yes
 			is_playable = yes
-			has_religion_feature = religion_ritual_sacrifice
+            OR = {
+                has_religion_feature = religion_ritual_sacrifice
+                has_religion_feature = religion_feature_amazigh
+            }
 			NOR = { #Already have their special decision.
 				religion = aztec
 				religion = aztec_reformed
@@ -465,6 +468,7 @@ decisions = {
 				trait = sympathy_zoroastrianism
 				trait = sympathy_judaism
 				trait = sympathy_indian
+                trait = sympathy_african
 				has_character_flag = flag_picking_sympathy
 			}
 			OR = { 
@@ -882,6 +886,71 @@ decisions = {
 								}
 							}
 						}
+						100 = {
+							add_trait = sympathy_african
+							
+							modifier = {
+								factor = 0
+								religion_group = african_group
+							}
+							modifier = { # Prioritize getting a sympathy trait that is useful
+								factor = 100
+								OR = {
+									any_demesne_province = {
+										religion_group = african_group
+									}
+									any_vassal = {
+										religion_group = african_group
+									}
+								}
+							}
+							modifier = { # Otherwise try to emulate your liege
+								factor = 5
+								NOR = {
+									any_demesne_province = {
+										NOT = { religion_group = african_group }
+									}
+									any_vassal = {
+										NOT = { religion_group = african_group }
+									}
+								}
+								any_liege = {
+									OR = {
+										AND = {
+											trait = sympathy_african
+											religion = ROOT
+										}
+										religion_group = african_group
+									}
+								}	
+							}
+							modifier = {
+								factor = 0
+								NOR = {
+									any_liege = {
+										OR = {
+											AND = {
+												trait = sympathy_african
+												religion = ROOT
+											}
+											religion_group = african_group
+										}
+									}
+									spouse = {
+										religion_group = african_group
+									}
+									any_courtier_or_vassal = {
+										religion_group = african_group
+									}
+									any_neighbor_independent_ruler = {
+										religion_group = african_group
+									}
+									any_demesne_province = {
+										religion_group = african_group
+									}
+								}
+							}
+						}
 					}
 				}
 			}
@@ -952,7 +1021,7 @@ decisions = {
 			NOT = { trait = pagan_branch_4 }
 			NOT = { has_character_flag = flag_picking_branch }
 			has_religion_feature = religion_no_leader
-			NOT = { religion = trex_the_new_heresy }
+			NOT = { religion = a_tag_roog_reformed }
 		}
 		
 		allow = {
@@ -997,7 +1066,7 @@ decisions = {
 			NOT = { has_character_flag = flag_picking_branch }
 			NOT = { has_character_flag = flag_changed_branch }
 			has_religion_feature = religion_no_leader
-			NOT = { religion = trex_the_new_heresy }
+			NOT = { religion = a_tag_roog_reformed }
 		}
 		
 		allow = {
@@ -1103,7 +1172,7 @@ decisions = {
 				culture = italian
 				culture = roman
 				culture = sardinian
-			}
+                }
 			OR = { #Must be eccentric or crazy.
 				trait = lunatic 
 				trait = possessed
@@ -1685,6 +1754,7 @@ decisions = {
 				religion = aztec
 				religion = aztec_reformed
 				has_religion_feature = religion_ritual_sacrifice
+                has_religion_feature = religion_feature_amazigh
 			}
 		}
 		
@@ -1785,6 +1855,7 @@ decisions = {
 				religion = aztec
 				religion = aztec_reformed
 				has_religion_feature = religion_ritual_sacrifice
+                has_religion_feature = religion_feature_amazigh
 			}
 		}
 		

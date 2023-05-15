@@ -1,0 +1,121 @@
+slots = {
+	feet = 1
+}
+
+
+golden_fleece = {
+	short_reign_length = -5
+	monthly_character_prestige = 1
+	global_tax_modifier = 0.1
+	vassal_opinion = 10
+	diplomacy = 1
+	stewardship = 1
+	active = {
+		always = yes
+	}
+	allowed_gift = {
+		always = no
+	}
+	quality = 5
+	indestructible = yes
+	flags = { greek unique hellenic_pagan }
+	stacking = no
+	picture = "GFX_golden_fleece"
+	#slot = crown
+}
+
+aegis = {
+	monthly_character_prestige = 1
+	martial = 2
+	combat_rating = 2
+	command_modifier = {
+		morale_defence = 0.3
+	}
+	active = {
+		#OR = {
+		#	religion = hellenic_pagan_reformed
+		#	religion = hellenic_pagan
+		#	culture = greek
+		#	de_jure_liege_or_above = k_byzantium
+		#	capital_scope = {
+		#		de_jure_liege_or_above = k_byzantium
+		#	}
+		#}
+		always = no
+	}
+	allowed_gift = {
+		OR = {
+			religion = hellenic_pagan_reformed
+			religion = hellenic_pagan
+			culture = greek
+			de_jure_liege_or_above = k_byzantium
+			capital_scope = {
+				de_jure_liege_or_above = k_byzantium
+			}
+		}
+	}
+	quality = 5
+	indestructible = yes
+	flags = { greek unique combat hellenic_pagan }
+	stacking = no
+	picture = "GFX_aegis"
+	slot = weapon
+}
+
+winged_sandals = {
+	monthly_character_prestige = 0.5
+	diplomacy = 1
+	intrigue = 2
+	command_modifier = {
+		speed = 0.2
+		retreat = 0.2
+	}
+	active = {
+		OR = {
+			religion = hellenic_pagan_reformed
+			religion = hellenic_pagan
+		}
+	}
+	allowed_gift = {
+		OR = {
+			religion = hellenic_pagan_reformed
+			religion = hellenic_pagan
+		}
+	}
+	quality = 5
+	indestructible = yes
+	flags = { greek unique combat hellenic_pagan }
+	stacking = no
+	picture = "GFX_winged_sandals"
+	slot = feet
+}
+
+shamsir_zomorrodnegar = {
+	monthly_character_prestige = 0.5
+	combat_rating = 2
+	martial = 2
+	learning = 1
+	command_modifier = {
+		religious_enemy = 0.5
+	}
+	active = {
+		OR = {
+			religion_group = zoroastrian_group
+			religion_group = jewish_group
+			culture_group = iranian
+		}
+	}
+	allowed_gift = {
+		OR = {
+			religion_group = zoroastrian_group
+			religion_group = jewish_group
+			culture_group = iranian
+		}
+	}
+	quality = 5
+	indestructible = yes
+	flags = { iranian unique combat zoroastrian_group jewish_group }
+	stacking = no
+	picture = "GFX_shamsir_zomorrodnegar"
+	slot = ceremonial_weapon
+}

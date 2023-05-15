@@ -161,138 +161,138 @@ character_event = {
 #Religious Head receives event determining punishment.
 character_event = {
 	id = HFP.23003
-	hide_window = yes
+	hide_window = no #Why hide this?
 	is_triggered_only = yes
-	
+	desc = HFP.23003_desc
+	picture = GFX_evt_knight_kneeling
 	immediate = {
-		random_list = { 
+		random_list = {
 			# Possible impositions:
 
-			#Tiered Money
-			#Tiered Prestige
-			#Vow of Celibacy
-			#Son/Daughter must take vows.
-			#Abdication-> Become Monk/Nun
-			#Enforce Papal Succession (Kings/Emperors)
-			#Change succession to Gavelkind (unless Elective or worse) (King/Emperors)
-			#Give Italian lands back (Emperors)
-			#Give Independence to Papacy (Emperors)
-			#Request vassalization (Italian Dukes)
-			
-			30 = { 
-				#Pay tiered money.
+			#Tiered Money #liftExcommunicationTieredMoney
+			#Tiered Prestige #liftExcommunicationTieredPrestige
+			#Vow of Celibacy #liftExcommunicationCelibacy
+			#Son/Daughter must take vows. #liftExcommunicationSonToChurch
+			#Abdication-> Become Monk/Nun #liftExcommunicationAbdication
+			#Enforce Papal Succession (Kings/Emperors) #liftExcommunicationInvestiture
+			#Change succession to Gavelkind (unless Elective or worse) (King/Emperors) #liftExcommunicationGavelkind
+			#Give Italian lands back (Emperors) #liftExcommunicationItalianLand
+			#Give Independence to Papacy (Emperors) #liftExcommunicationIndependence
+			#Request vassalization (Italian Dukes) #liftExcommunicationVassalization
+
+			30 = { #Pay tiered money.
 				modifier = {
 					factor = 0.5
 					vassal_of = FROM
-				} 
+				}
 				modifier = { 	#Supported Pope more likely to ask for little
 					factor = 1.5
-					has_opinion_modifier = { 
-						who = FROM 
-						modifier = opinion_supported_pope 
+					has_opinion_modifier = {
+						who = FROM
+						modifier = opinion_supported_pope
 					}
 				}
 				modifier = {
 					factor = 0.25
 					higher_tier_than = DUKE
-					NOT = { 
+					NOT = {
 						wealth = 50
 					}
 				}
 				modifier = {
 					factor = 0.5
 					higher_tier_than = DUKE
-					NOT = { 
+					NOT = {
 						wealth = 250
 					}
 				}
 				modifier = {
 					factor = 0
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -100 
-						} 
+							value = -100
+						}
 					}
 				}
 				modifier = {
 					factor = 0.2
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -80 
-						} 
+							value = -80
+						}
 					}
 				}
 				modifier = {
 					factor = 0.3
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -60 
-						} 
+							value = -60
+						}
 					}
 				}
 				modifier = {
 					factor = 0.4
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -40 
-						} 
+							value = -40
+						}
 					}
 				}
 				modifier = {
 					factor = 0.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -20 
-						} 
+							value = -20
+						}
 					}
 				}
 				modifier = {
 					factor = 0.6
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = 0 
-						} 
+							value = 0
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 20 
+						value = 20
 					}
 				}
 				modifier = {
 					factor = 1.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 40 
+						value = 40
 					}
 				}
 				modifier = {
 					factor = 1.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 60 
+						value = 60
 					}
 				}
 				modifier = {
 					factor = 1.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 80 
+						value = 80
 					}
 				}
 				modifier = {
 					factor = 1.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 100 
+						value = 100
 					}
 				}
 				modifier = {
@@ -303,17 +303,21 @@ character_event = {
 					factor = 0.5
 					trait = zealous
 				}
-				FROM = { letter_event = { id = HFP.23004 } } #Asks for Gold.
-			} 
-			30 = { 
-				#Pay tiered Prestige.
+				###PDP
+				set_character_flag = liftExcommunicationTieredMoney
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23004 } } #Asks for Gold.
+				}
+			}
+			30 = { #Pay tiered Prestige.
 				trigger = {
 					FROM = { higher_tier_than = DUKE }
-				} 
+				}
 				modifier = {
 					factor = 0.5
 					vassal_of = FROM
-				} 
+				}
 				modifier = {
 					factor = 1.5
 					trait = proud
@@ -322,21 +326,25 @@ character_event = {
 					factor = 0.5
 					trait = cynical
 				}
-				FROM = { letter_event = { id = HFP.23006 } } #Asks for Prestige.
+				###PDP
+				set_character_flag = liftExcommunicationTieredPrestige
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23006 } } #Asks for Prestige.
+				}
 			}
-			
-			20 = { 
-				#Impose celibacy
+
+			20 = { #Impose celibacy
 				trigger = {
-					FROM = { 
-						NOR = { 
-							trait = celibate 
-							trait = eunuch 
+					FROM = {
+						NOR = {
+							trait = celibate
+							trait = eunuch
 							trait = chaste
-						} 
+						}
 					}
 					FROM = { num_of_children = 1 }
-				} 
+				}
 				modifier = {
 					factor = 0.5
 					vassal_of = FROM
@@ -379,125 +387,128 @@ character_event = {
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_celibacy
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23008 } } #Impose Celibacy.
+				###PDP
+				set_character_flag = liftExcommunicationCelibacy
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23008 } } #Impose Celibacy.
+				}
 			}
 			10 = { #Send Son/Daughter to monastery.
 				trigger = {
-					OR = { 
+					OR = {
 						religion_group = christian
 						has_religion_feature = religion_monastic
-						has_religion_feature = religion_feature_west_african
-						has_religion_feature = religion_syncretic_christian
-					} 
-					FROM = { 
-						any_child = { 
-							is_adult = yes
+					}
+					FROM = {
+						any_child = {
+							age = 16
 							is_married = no
 							is_ruler = no
 							prisoner = no
-							is_incapable = no
-							ROOT_FROM = {
-								NOT = { 
+							NOT = { trait = incapable }
+							FROM = {
+								NOT = {
 									current_heir = { character = PREVPREV }
 								}
 							}
-							NOR = { 
-								trait = monk 
+							NOR = {
+								trait = monk
 								trait = nun
-							} 
+							}
 						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { 
-						any_child = { 
+					FROM = {
+						any_child = {
 							count = 3
-							is_adult = yes
+							age = 16
 							is_married = no
 							is_ruler = no
 							prisoner = no
-							is_incapable = no
-							ROOT_FROM = {
-								NOT = { 
+							NOT = { trait = incapable }
+							FROM = {
+								NOT = {
 									current_heir = { character = PREVPREV }
 								}
 							}
-							NOR = { 
-								trait = monk 
+							NOR = {
+								trait = monk
 								trait = nun
-							} 
+							}
 						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { 
-						any_child = { 
+					FROM = {
+						any_child = {
 							count = 4
-							is_adult = yes
+							age = 16
 							is_married = no
 							is_ruler = no
 							prisoner = no
-							is_incapable = no
-							ROOT_FROM = {
-								NOT = { 
+							NOT = { trait = incapable }
+							FROM = {
+								NOT = {
 									current_heir = { character = PREVPREV }
 								}
 							}
-							NOR = { 
-								trait = monk 
+							NOR = {
+								trait = monk
 								trait = nun
-							} 
+							}
 						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { 
-						any_child = { 
+					FROM = {
+						any_child = {
 							count = 5
-							is_adult = yes
+							age = 16
 							is_married = no
 							is_ruler = no
 							prisoner = no
-							is_incapable = no
-							ROOT_FROM = {
-								NOT = { 
+							NOT = { trait = incapable }
+							FROM = {
+								NOT = {
 									current_heir = { character = PREVPREV }
 								}
 							}
-							NOR = { 
-								trait = monk 
+							NOR = {
+								trait = monk
 								trait = nun
-							} 
+							}
 						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { 
-						any_child = { 
+					FROM = {
+						any_child = {
 							count = 6
-							is_adult = yes
+							age = 16
 							is_married = no
 							is_ruler = no
 							prisoner = no
-							is_incapable = no
-							ROOT_FROM = {
-								NOT = { 
+							NOT = { trait = incapable }
+							FROM = {
+								NOT = {
 									current_heir = { character = PREVPREV }
 								}
 							}
-							NOR = { 
-								trait = monk 
+							NOR = {
+								trait = monk
 								trait = nun
-							} 
+							}
 						}
 					}
 				}
@@ -507,33 +518,36 @@ character_event = {
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_child
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23010 } } #Send child to monastery/nunnery.
+				###PDP
+				set_character_flag = liftExcommunicationSonToChurch
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23010 } } #Send child to monastery/nunnery.
+				}
 			}
 
-			3 = { 
+			3 = {
 				#Force abdication.
 				trigger = {
-					OR = { 
+					OR = {
 						religion_group = christian
 						has_religion_feature = religion_monastic
-						has_religion_feature = religion_feature_west_african
-						has_religion_feature = religion_syncretic_christian
-					} 
+					}
 					FROM = { higher_real_tier_than = DUKE player_heir = { dynasty = PREV } } #Do not impose a game over.
-				} 
+				}
 				modifier = {
 					factor = 0.15
 					vassal_of = FROM
 				}
 				modifier = {
 					factor = 10
-					FROM = {  
-						OR = { 
+					FROM = {
+						OR = {
 							trait = kinslayer
 							trait = familial_kinslayer
 							trait = dynastic_kinslayer
@@ -566,7 +580,7 @@ character_event = {
 				}
 				modifier = {
 					factor = 1.5
-					is_foe = FROM
+					is_rival = FROM
 				}
 				modifier = {
 					factor = 0.25
@@ -578,122 +592,127 @@ character_event = {
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -100 
-						} 
+							value = -100
+						}
 					}
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -80 
-						} 
+							value = -80
+						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -60 
-						} 
+							value = -60
+						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -40 
-						} 
+							value = -40
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -20 
-						} 
+							value = -20
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = -20 
-					} 
+						value = -20
+					}
 				}
 				modifier = {
 					factor = 0.85
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 20 
-					} 
+						value = 20
+					}
 				}
 				modifier = {
 					factor = 0.85
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 40 
-					} 
+						value = 40
+					}
 				}
 				modifier = {
 					factor = 0.75
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 60 
-					} 
+						value = 60
+					}
 				}
 				modifier = {
 					factor = 0.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 80 
-					} 
+						value = 80
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
-						trait = zealous 
-					} 
+						trait = zealous
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
-						trait = baptized_by_pope 
-					} 
+						trait = baptized_by_pope
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
 						piety = 100
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
 						piety = 150
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.8
 					FROM = {
 						piety = 250
-					} 
+					}
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_abdication
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23012 } } #Impose abdication.
+				###PDP
+				set_character_flag = liftExcommunicationAbdication
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23012 } } #Impose abdication.
+				}
 			}
 			30 = { #Impose Papal Investiture.
 				modifier = {
@@ -705,8 +724,8 @@ character_event = {
 					FROM = { tier = EMPEROR }
 				}
 				modifier = {
-					factor = 1.5
-					FROM = { emf_has_hre = yes }
+					factor = 1.75
+					FROM = { has_landed_title = e_hre }
 				}
 				modifier = {
 					factor = 1.5
@@ -722,31 +741,31 @@ character_event = {
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_investiture
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23014 } } #Impose Papal Investiture.
+				###PDP
+				set_character_flag = liftExcommunicationInvestiture
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23014 } } #Impose Papal Investiture.
+				}
 			}
 			5 = { #Impose Gavelkind
 				trigger = {
 					FROM = {
-						OR = {
-							is_feudal = yes
-							is_tribal = yes
-						}
 						realm_size = 100
-						higher_real_tier_than = DUKE 
-						primary_title = { 
-							NOR = { 
+						higher_real_tier_than = DUKE
+						primary_title = {
+							NOR = {
 								has_law = succ_gavelkind
 								has_law = succ_elective_gavelkind
 								has_law = succ_feudal_elective
 								has_law = succ_hre_elective
-								has_law = succ_byzantine_elective
-							} 
-						} 
+							}
+						}
 					}
 				}
 				modifier = {
@@ -759,23 +778,23 @@ character_event = {
 				}
 				modifier = {
 					factor = 0.5
-					FROM = { NOT = { num_of_children = 1 } } 
+					FROM = { NOT = { num_of_children = 1 } }
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { num_of_children = 3 } 
+					FROM = { num_of_children = 3 }
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { num_of_children = 5 } 
+					FROM = { num_of_children = 5 }
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { num_of_children = 7 } 
+					FROM = { num_of_children = 7 }
 				}
 				modifier = {
 					factor = 1.5
-					FROM = { num_of_children = 9 } 
+					FROM = { num_of_children = 9 }
 				}
 				modifier = {
 					factor = 1.5
@@ -791,15 +810,20 @@ character_event = {
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_gavelkind
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23016 } } #Impose Gavelkind.
+				###PDP
+				set_character_flag = liftExcommunicationGavelkind
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23016 } } #Impose Gavelkind.
+				}
 			}
 			20 = { #Request Italian Lands.
-				trigger = { 
+				trigger = {
 					religion_group = christian
 					is_alternate_start = no #Only matters for historical Papacy.
 					FROM = { #Check if you or your vassals hold lands within Italy
@@ -833,113 +857,113 @@ character_event = {
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -100 
-						} 
+							value = -100
+						}
 					}
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -80 
-						} 
+							value = -80
+						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -60 
-						} 
+							value = -60
+						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -40 
-						} 
+							value = -40
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -20 
-						} 
+							value = -20
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = -20 
-					} 
+						value = -20
+					}
 				}
 				modifier = {
 					factor = 0.85
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 20 
-					} 
+						value = 20
+					}
 				}
 				modifier = {
 					factor = 0.85
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 40 
-					} 
+						value = 40
+					}
 				}
 				modifier = {
 					factor = 0.75
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 60 
-					} 
+						value = 60
+					}
 				}
 				modifier = {
 					factor = 0.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 80 
-					} 
+						value = 80
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
-						trait = zealous 
-					} 
+						trait = zealous
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
-						trait = baptized_by_pope 
-					} 
+						trait = baptized_by_pope
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
 						piety = 100
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
 						piety = 150
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.8
 					FROM = {
 						piety = 250
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.7
@@ -954,95 +978,100 @@ character_event = {
 				modifier = {
 					factor = 1.5
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
-							has_landed_title = d_latium 
+					FROM = {
+						OR = {
+							has_landed_title = d_latium
 							any_vassal = { has_landed_title = d_latium }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.45
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_spoleto
 							any_vassal = { has_landed_title = d_spoleto }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.35
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_ancona
 							any_vassal = { has_landed_title = d_ancona }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_ferrara
 							any_vassal = { has_landed_title = d_ferrara }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.15
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_benevento
 							any_vassal = { has_landed_title = d_benevento }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
 					has_landed_title = k_papal_state
-					FROM = { emf_has_hre = yes }
+					FROM = { has_landed_title = e_hre }
 				}
 				modifier = { #If Papacy already controls historical provinces, it won't be interested in gaining even more land in Italy.
 					factor = 0
-					AND = { 
-						OR = { 
+					AND = {
+						OR = {
 							any_vassal = { has_landed_title = c_roma }
-							has_landed_title = c_roma 
+							has_landed_title = c_roma
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_latium }
-							has_landed_title = d_latium 
+							has_landed_title = d_latium
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_spoleto }
-							has_landed_title = d_spoleto 
+							has_landed_title = d_spoleto
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_ancona }
-							has_landed_title = d_ancona 
+							has_landed_title = d_ancona
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_ferrara }
-							has_landed_title = d_ferrara 
+							has_landed_title = d_ferrara
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_benevento }
-							has_landed_title = d_benevento 
+							has_landed_title = d_benevento
 						}
 					}
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_lands
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23018 } } #Request Italian lands.
+				###PDP
+				set_character_flag = liftExcommunicationItalianLand
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23018 } } #Request Italian lands.
+				}
 			}
 			60 = {
 				trigger = {
@@ -1051,8 +1080,8 @@ character_event = {
 				modifier = {
 					factor = 2
 					has_opinion_modifier = { #Opinion modifier keeps track of the Pope's previous decision, should the player deny his first request and then attempt to ask again immediately after for a different result.
-						who = FROM 
-						modifier = opinion_requested_independence 
+						who = FROM
+						modifier = opinion_requested_independence
 					}
 				}
 				modifier = {
@@ -1061,100 +1090,105 @@ character_event = {
 				}
 				modifier = {
 					factor = 2
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -100 
-						} 
+							value = -100
+						}
 					}
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -80 
-						} 
+							value = -80
+						}
 					}
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -60 
-						} 
+							value = -60
+						}
 					}
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -40 
-						} 
+							value = -40
+						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -20 
-						} 
+							value = -20
+						}
 					}
 				}
 				modifier = {
 					factor = 0.9
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 20 
-					} 
+						value = 20
+					}
 				}
 				modifier = {
 					factor = 0.8
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 40 
-					} 
+						value = 40
+					}
 				}
 				modifier = {
 					factor = 0.7
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 60 
-					} 
+						value = 60
+					}
 				}
 				modifier = {
 					factor = 0.6
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 80 
-					} 
+						value = 80
+					}
 				}
 				modifier = {
 					factor = 0.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 100 
-					} 
+						value = 100
+					}
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_independence
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23020 } } #I want to be independent.
+				###PDP
+				set_character_flag = liftExcommunicationIndependence
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23020 } } #I want to be independent.
+				}
 			}
 			10 = { #Requests Vassalization.
-				trigger = { 
+				trigger = {
 					religion_group = christian
 					is_alternate_start = no #Only matters for historical Papacy.
 					higher_real_tier_than = DUKE
 					FROM = { #Check if you or your vassals hold lands within Italy
-						OR = { 
+						OR = {
 							independent = yes
 							liege = { ROOT = { vassal_of = PREV } }
 						}
@@ -1188,113 +1222,113 @@ character_event = {
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -100 
-						} 
+							value = -100
+						}
 					}
 				}
 				modifier = {
 					factor = 1.75
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -80 
-						} 
+							value = -80
+						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -60 
-						} 
+							value = -60
+						}
 					}
 				}
 				modifier = {
 					factor = 1.5
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -40 
-						} 
+							value = -40
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
-					NOT = { 
-						opinion = { 
+					NOT = {
+						opinion = {
 							who = FROM
-							value = -20 
-						} 
+							value = -20
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = -20 
-					} 
+						value = -20
+					}
 				}
 				modifier = {
 					factor = 0.85
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 20 
-					} 
+						value = 20
+					}
 				}
 				modifier = {
 					factor = 0.85
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 40 
-					} 
+						value = 40
+					}
 				}
 				modifier = {
 					factor = 0.75
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 60 
-					} 
+						value = 60
+					}
 				}
 				modifier = {
 					factor = 0.5
-					opinion = { 
+					opinion = {
 						who = FROM
-						value = 80 
-					} 
+						value = 80
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
-						trait = zealous 
-					} 
+						trait = zealous
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
-						trait = baptized_by_pope 
-					} 
+						trait = baptized_by_pope
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
 						piety = 100
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.9
 					FROM = {
 						piety = 150
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.8
 					FROM = {
 						piety = 250
-					} 
+					}
 				}
 				modifier = {
 					factor = 0.7
@@ -1309,95 +1343,232 @@ character_event = {
 				modifier = {
 					factor = 1.5
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
-							has_landed_title = d_latium 
+					FROM = {
+						OR = {
+							has_landed_title = d_latium
 							any_vassal = { has_landed_title = d_latium }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.45
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_spoleto
 							any_vassal = { has_landed_title = d_spoleto }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.35
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_ancona
 							any_vassal = { has_landed_title = d_ancona }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.25
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_ferrara
 							any_vassal = { has_landed_title = d_ferrara }
-						} 
+						}
 					}
 				}
 				modifier = {
 					factor = 1.15
 					has_landed_title = k_papal_state
-					FROM = { 
-						OR = { 
+					FROM = {
+						OR = {
 							has_landed_title = d_benevento
 							any_vassal = { has_landed_title = d_benevento }
-						} 
+						}
 					}
 				}
 				modifier = { #If Papacy already controls historical provinces, it won't be interested in gaining even more land in Italy.
 					factor = 0
-					AND = { 
-						OR = { 
+					AND = {
+						OR = {
 							any_vassal = { has_landed_title = c_roma }
-							has_landed_title = c_roma 
+							has_landed_title = c_roma
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_latium }
-							has_landed_title = d_latium 
+							has_landed_title = d_latium
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_spoleto }
-							has_landed_title = d_spoleto 
+							has_landed_title = d_spoleto
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_ancona }
-							has_landed_title = d_ancona 
+							has_landed_title = d_ancona
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_ferrara }
-							has_landed_title = d_ferrara 
+							has_landed_title = d_ferrara
 						}
-						OR = { 
+						OR = {
 							any_vassal = { has_landed_title = d_benevento }
-							has_landed_title = d_benevento 
+							has_landed_title = d_benevento
 						}
 					}
 				}
 				modifier = {
 					factor = 10
-					has_opinion_modifier = { 
+					has_opinion_modifier = {
 						modifier = opinion_pope_ex_demands_vassalization
 						who = FROM
 					}
 				}
-				FROM = { letter_event = { id = HFP.23022 } } #Request Vassalization.
+				###PDP
+				set_character_flag = liftExcommunicationVassalization
+				if = {
+					limit = {ai = yes}
+					FROM = { letter_event = { id = HFP.23022 } } #Request Vassalization.
+				}
 			}
 		}
 	}
-}
+	###PDP
+	#do this for all non default options. Also make it so that it works for the ai again...
+	option = { #ai has no choice
+		name = PDP_lift_excommunication_opt_ai
+		trigger = {
+			ai = yes
+		}
+	}
+	option = {
+		name NO_AI
+		trigger = {
+			ai = no
+			always = no
+		}
+		character_event = {}
+	}
+	option = {
+		name = PDP_lift_excommunication_opt_gold
+		trigger = {
+			ai = no
+		}
+		FROM = { letter_event = { id = HFP.23004 } } #Asks for Gold.
+	}
+	option = {
+		name = PDP_lift_excommunication_opt_prestige
+		trigger = {
+			ai = no
+		}
+		FROM = { letter_event = { id = HFP.23006 } } #Asks for Prestige.
+	}
+	option = {
+		trigger = {
+			has_character_flag = liftExcommunicationIndependence
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_independence
+		FROM = { letter_event = { id = HFP.23020 } } #I want to be independent.
+	}
+	option = {
+		trigger = {
+			has_character_flag = liftExcommunicationInvestiture
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_investiture
+		FROM = { letter_event = { id = HFP.23014 } } #Impose Papal Investiture.
+	}
+	option = {
+		trigger = {
+			has_character_flag = liftExcommunicationItalianLand
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_italian_land
+		FROM = { letter_event = { id = HFP.23018 } } #Request Italian lands.
+	}
+	option = {
+		trigger = {
+			has_character_flag = liftExcommunicationVassalization
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_vassalization
+		FROM = { letter_event = { id = HFP.23022 } } #Request Vassalization.
+	}
+	option = {
+		trigger = {
+			has_character_flag = liftExcommunicationAbdication
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_abdication
+		piety = -200
+		prestige = 100
+		FROM = { letter_event = { id = HFP.23012 } } #Impose abdication.
+	}
+	option = {
+		trigger = {
+			has_character_flag = liftExcommunicationCelibacy
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_celibacy
+		FROM = { letter_event = { id = HFP.23008 } } #Impose Celibacy.
+	}
+	option = {
+		trigger = {
+			has_character_flag = liftExcommunicationGavelkind
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_gavelkind
+		FROM = { letter_event = { id = HFP.23016 } } #Impose Gavelkind.
+	}
+	option = {
+		trigger = {
+			OR = {
+				has_character_flag = liftExcommunicationSonToChurch
+				AND = {
+					FROM = {
+						any_child = {
+							count = 3
+							age = 16
+							is_married = no
+							is_ruler = no
+							prisoner = no
+							NOT = { trait = incapable }
+							FROM = {
+								NOT = {
+									current_heir = { character = PREVPREV }
+								}
+							}
+							NOR = {
+								trait = monk
+								trait = nun
+							}
+						}
+					}
+				}
+			}
+			ai = no
+		}
+		name = PDP_lift_excommunication_opt_son_to_church
+		FROM = { letter_event = { id = HFP.23010 } } #Send child to monastery/nunnery.
+	}
 
+
+	after = {
+		clr_character_flag = liftExcommunicationTieredMoney #done
+		clr_character_flag = liftExcommunicationTieredPrestige #done
+		clr_character_flag = liftExcommunicationCelibacy #done
+		clr_character_flag = liftExcommunicationSonToChurch #done
+		clr_character_flag = liftExcommunicationAbdication #done
+		clr_character_flag = liftExcommunicationInvestiture #done
+		clr_character_flag = liftExcommunicationGavelkind #done
+		clr_character_flag = liftExcommunicationItalianLand #done
+		clr_character_flag = liftExcommunicationIndependence #done
+		clr_character_flag = liftExcommunicationVassalization #done
+	}
+}
 # Possible impositions:
 
 #Tiered Money 
@@ -3112,7 +3283,7 @@ letter_event = {
 				is_ruler = no
 				prisoner = no
 				is_incapable = no
-				vassal_of = ROOT
+				liege = { character = ROOT }
 				ROOT = {
 					NOT = { 
 						current_heir = { character = PREVPREV }
@@ -4202,13 +4373,12 @@ character_event = {
 			}
 			modifier = { 
 				factor = 0.25
-				any_spouse = { 
+				spouse = { 
 					OR = { 
 						trait = sympathy_islam
 						trait = sympathy_judaism
 					}
 				}
-				NOT = { any_spouse = { trait = sympathy_christendom } }
 			}
 			modifier = { 
 				factor = 1.5
@@ -4272,13 +4442,12 @@ character_event = {
 			}
 			modifier = { 
 				factor = 0.25
-				any_spouse = { 
+				spouse = { 
 					OR = { 
 						trait = sympathy_christendom
 						trait = sympathy_judaism
 					}
 				}
-				NOT = { any_spouse = { trait = sympathy_islam } }
 			}
 			modifier = { 
 				factor = 1.5
@@ -4342,13 +4511,12 @@ character_event = {
 			}
 			modifier = { 
 				factor = 0.25
-				any_spouse = { 
+				spouse = { 
 					OR = { 
 						trait = sympathy_islam
 						trait = sympathy_christendom
 					}
 				}
-				NOT = { any_spouse = { trait = sympathy_judaism } }
 			}
 			modifier = { 
 				factor = 1.5

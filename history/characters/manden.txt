@@ -1,32 +1,19 @@
-# -*- ck2.history.characters -*-
-
-#161011 - 161039
-#161070 - 161093
-#161131 - 161150
-#161085 - 161093
-#183502 - 183505
-#1144620 - 1144624
-
+#161000 - 161999
 #1030000-1030999
-
+#251100-251129 (251121-251129 still free)
+ 
 
 161011 = {
 	name="Lahilatoul Kalabi"
 	dynasty=1030002
 	religion="sunni"
 	culture="manden"
-	father=1144673 #son of Damul Kalabi according to oral traditions
-	1022.1.1={
+	father = 251120
+	1045.1.1={
 		birth=yes
 	}
-	1040.1.1={
-		create_bloodline = {
-			type = mansa_musa
-			has_dlc = "Holy Fury"
-		}
-	}
-	1089.1.1={
-		death=yes
+	1100.1.1={
+		death="1100.1.1"
 	}
 }
 
@@ -36,11 +23,11 @@
 	religion="sunni"
 	culture="manden"
 	father=161011
-	1064.1.1={
-		birth=yes
+	1070.1.1={
+		birth="1070.1.1"
 	}
-	1118.1.1={
-		death=yes
+	1120.1.1={
+		death="1120.1.1"
 	}
 }
 
@@ -50,11 +37,11 @@
 	religion="sunni"
 	culture="manden"
 	father=161012
-	1085.1.1={
-		birth=yes
+	1090.1.1={
+		birth="1090.1.1"
 	}
 	1140.1.1={
-		death=yes
+		death="1140.1.1"
 	}
 }
 
@@ -156,7 +143,7 @@
 	dynasty=1030002
 	religion="sunni"
 	culture="manden"
-	add_trait="cruel"
+	trait="cruel"
 	father=161018
 	mother=161019
 	1177.1.1={
@@ -174,8 +161,8 @@
 	dynasty=1030004
 	religion="sunni"
 	culture="manden"
-	add_trait="hunchback"
-	add_trait="ugly"
+	trait="hunchback"
+	trait="ugly"
 	1190.1.1={
 		birth="1190.1.1"
 	}
@@ -185,36 +172,29 @@
 }
 
 161022 = {
-	name="Sunjata" #Mari-Djata
+	name="Mari-Djata"
 	dynasty=1030002
 	religion="sunni"
 	culture="manden"
-	add_trait="clubfooted"
-	add_trait="brave"
-	add_trait="skilled_tactician"
+	trait="clubfooted"
+	trait="brave"
+	trait="skilled_tactician"
 	father=161018
 	mother=161021
 	1217.1.1={
 		birth="1217.1.1"
 	}
+    1234.1.1={
+        create_bloodline = {
+            type = mari_djata
+            has_dlc = "Holy Fury"
+        }
+    }
 	1255.1.1={
 		death="1255.1.1"
 	}
 }
 
-161023 = {
-	name="Soumaba"
-	dynasty=1030000
-	religion="sunni"
-	culture="manden"
-	father=161008
-	1170.1.1={
-		birth="1170.1.1"
-	}
-	1240.1.1={
-		death="1240.1.1"
-	}
-}
 
 161024 = {
 	name="Namandjé"
@@ -265,7 +245,7 @@
 	dynasty=1030002
 	religion="sunni"
 	culture="manden"
-	add_trait="legit_bastard" #adopted son
+	trait="legit_bastard" #adopted son
 	father=161022
 	1240.1.1={
 		birth="1240.1.1"
@@ -280,7 +260,7 @@
 	dynasty=1030002
 	religion="sunni"
 	culture="manden"
-	add_trait="legit_bastard" #adopted son
+	trait="legit_bastard" #adopted son
 	father=161022
 	1241.1.1={
 		birth="1241.1.1"
@@ -386,12 +366,11 @@
 	1280.1.1={
 		birth="1280.1.1"
 	}
-	#1312.1.1 = {
-	#	create_bloodline = {
-	#		type = mansa_musa
-	#		has_dlc = "Holy Fury"
-	#	}
-	#}	
+	
+	1312.1.1 = {
+		give_nickname = nick_the_lion
+	}
+	
 	1337.1.1={
 		death="1337.1.1"
 	}
@@ -458,145 +437,18 @@
 	}
 }
 
+################## deleted songhai characters
 
-#161070-161075 in songhay.txt
-
-#161076 in SWMH_masmuda.txt
-
-161077 = {
-	name="Cisse"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161076
-	1080.1.1={
-		birth="1080.1.1"
-	}
-	
-	1140.1.1={
-		death="1140.1.1"
-	}
-}
-
-161078 = {
-	name="Demba"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161077
-	1110.1.1={
-		birth="1110.1.1"
-	}
-	
-	1170.1.1={
-		death="1170.1.1"
-	}
-}
-
-161079 = {
-	name="Daoud"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161078
-	1150.1.1={
-		birth="1150.1.1"
-	}
-	
-	1210.1.1={
-		death="1210.1.1"
-	}
-}
-
-161080 = {
-	name="Ishaq"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161079
-	1180.1.1={
-		birth="1180.1.1"
-	}
-	
-	1240.1.1={
-		death="1240.1.1"
-	}
-}
-
-161081 = {
-	name="Reidja"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161080
-	1210.1.1={
-		birth="1210.1.1"
-	}
-	
-	1270.1.1={
-		death="1270.1.1"
-	}
-}
-
-161082 = {
-	name="Sandaki"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161081
-	1240.1.1={
-		birth="1240.1.1"
-	}
-	
-	1300.1.1={
-		death="1300.1.1"
-	}
-}
-
-161083 = {
-	name="Bada"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161082
-	1270.1.1={
-		birth="1270.1.1"
-	}
-	
-	1320.1.1={
-		death="1320.1.1"
-	}
-}
-
-161084 = {
-	name="Birama"
-	#placeholder
-	dynasty=1030009
-	religion="sunni"
-	culture="manden"
-	father=161083
-	1300.1.1={
-		birth="1300.1.1"
-	}
-	
-	1350.1.1={
-		death="1350.1.1"
-	}
-}
+############ rulers of Western Sahara moved to berber_sanhaja.txt since they should be (Veiled) Sanhaja
 
 
 161131 = {
 	name="Bagauda"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	1000.1.1={
 		birth="1000.1.1"
 	}
@@ -609,9 +461,11 @@
 161132 = {
 	name="Warisi"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161131
+    trait = foro
+    trait = malinke
 	1040.1.1={
 		birth="1040.1.1"
 	}
@@ -624,9 +478,11 @@
 161133 = {
 	name="Gajemasu"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161132
+    trait = foro
+    trait = malinke
 	1070.1.1={
 		birth="1070.1.1"
 	}
@@ -639,9 +495,11 @@
 161134 = {
 	name="Nawata"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161133
+    trait = foro
+    trait = malinke
 	1090.1.1={
 		birth="1090.1.1"
 	}
@@ -654,9 +512,11 @@
 161135 = {
 	name="Yusa"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161134
+    trait = foro
+    trait = malinke
 	1120.1.1={
 		birth="1120.1.1"
 	}
@@ -669,9 +529,11 @@
 161136 = {
 	name="Naguji"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161135
+    trait = foro
+    trait = malinke
 	1170.1.1={
 		birth="1170.1.1"
 	}
@@ -684,9 +546,11 @@
 161137 = {
 	name="Gugwa"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161136
+    trait = foro
+    trait = malinke
 	1210.1.1={
 		birth="1210.1.1"
 	}
@@ -699,9 +563,11 @@
 161138 = {
 	name="Shekarau"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161137
+    trait = foro
+    trait = malinke
 	1240.1.1={
 		birth="1240.1.1"
 	}
@@ -714,9 +580,11 @@
 161139 = {
 	name="Tsamiya"
 	dynasty=1030017
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161138
+    trait = foro
+    trait = malinke
 	1280.1.1={
 		birth="1280.1.1"
 	}
@@ -732,6 +600,7 @@
 	religion="sunni"
 	culture="manden"
 	father=161139
+    trait = foro
 	1310.1.1={
 		birth="1310.1.1"
 	}
@@ -744,8 +613,10 @@
 161141 = {
 	name="Diaba Lompo"
 	dynasty=1030013
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	1185.1.1={
 		birth="1185.1.1"
 	}
@@ -758,9 +629,11 @@
 161142 = {
 	name="Tidarpo"
 	dynasty=1030013
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161141
+    trait = foro
+    trait = malinke
 	1230.1.1={
 		birth="1230.1.1"
 	}
@@ -773,9 +646,11 @@
 161143 = {
 	name="Untani"
 	dynasty=1030013
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161142
+    trait = foro
+    trait = malinke
 	1274.1.1={
 		birth="1274.1.1"
 	}
@@ -788,9 +663,11 @@
 161144 = {
 	name="Banydoba"
 	dynasty=1030013
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161143
+    trait = foro
+    trait = malinke
 	1310.1.1={
 		birth="1310.1.1"
 	}
@@ -804,10 +681,12 @@
 	name="Yendabri"
 	#placeholder
 	dynasty=1030014
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
-	1031.1.1={
-		birth=yes
+    trait = foro
+    trait = malinke
+	1040.1.1={
+		birth="1040.1.1"
 	}
 	
 	1096.1.1={
@@ -819,11 +698,13 @@
 	name="Yembirima"
 	#placeholder
 	dynasty=1030014
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161145
-	1074.1.1={
-		birth=yes
+    trait = foro
+    trait = malinke
+	1080.1.1={
+		birth="1080.1.1"
 	}
 	
 	1141.1.1={
@@ -835,11 +716,13 @@
 	name="Baghama"
 	#placeholder
 	dynasty=1030014
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161146
-	1116.1.1={
-		birth=yes
+    trait = foro
+    trait = malinke
+	1120.1.1={
+		birth="1120.1.1"
 	}
 	
 	1170.1.1={
@@ -851,11 +734,13 @@
 	name="Yenkirma"
 	#placeholder
 	dynasty=1030014
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161147
-	1148.1.1={
-		birth=yes
+    trait = foro
+    trait = malinke
+	1150.1.1={
+		birth="1150.1.1"
 	}
 	
 	1199.1.1={
@@ -868,9 +753,11 @@
 	name="Yentiabri"
 	#placeholder
 	dynasty=1030014
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161148
+    trait = foro
+    trait = malinke
 	1175.1.1={
 		birth="1175.1.1"
 	}
@@ -884,9 +771,11 @@
 	name="Yempabu"
 	#placeholder
 	dynasty=1030014
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
 	father=161149
+    trait = foro
+    trait = malinke
 	1195.1.1={
 		birth="1195.1.1"
 	}
@@ -896,158 +785,20 @@
 	}
 }
 
-#Traore rulers of Kiri
-161085 = {
-	name="Kayna"
-	#placeholder
-	dynasty=1030010
-	religion="west_african_pagan"
-	culture="manden"
-	1028.1.1={
-		birth=yes
-	}
-	
-	1096.1.1={
-		death=yes
-	}
-}
-161086 = {
-	name="Bonga"
-	#placeholder
-	dynasty=1030010
-	religion="west_african_pagan"
-	culture="manden"
-	father=161085
-	1073.1.1={
-		birth=yes
-	}
-	
-	1137.1.1={
-		death=yes
-	}
-}
-
-161087 = {
-	name="Majan"
-	#placeholder
-	dynasty=1030010
-	religion="west_african_pagan"
-	culture="manden"
-	father=161086
-	1109.1.1={
-		birth=yes
-	}
-	
-	1170.1.1={
-		death=yes
-	}
-}
-
-161088 = {
-	name="Mamadi"
-	#placeholder
-	dynasty=1030010
-	religion="west_african_pagan"
-	culture="manden"
-	father=161087
-	1150.1.1={
-		birth="1150.1.1"
-	}
-	
-	1210.1.1={
-		death="1210.1.1"
-	}
-}
-
-161089 = {
-	name="Musa"
-	#placeholder
-	dynasty=1030010
-	religion="west_african_pagan"
-	culture="manden"
-	father=161088
-	1180.1.1={
-		birth="1180.1.1"
-	}
-	
-	1240.1.1={
-		death="1240.1.1"
-	}
-}
-
-161090 = {
-	name="Diara"
-	#placeholder
-	dynasty=1030010
-	religion="sunni"
-	culture="manden"
-	father=161089
-	1210.1.1={
-		birth="1210.1.1"
-	}
-	
-	1270.1.1={
-		death="1270.1.1"
-	}
-}
-
-161091 = {
-	name="Sulayman"
-	#placeholder
-	dynasty=1030010
-	religion="sunni"
-	culture="manden"
-	father=161090
-	1240.1.1={
-		birth="1240.1.1"
-	}
-	
-	1300.1.1={
-		death="1300.1.1"
-	}
-}
-
-161092 = {
-	name="Alayaman"
-	#placeholder
-	dynasty=1030010
-	religion="sunni"
-	culture="manden"
-	father=161091
-	1270.1.1={
-		birth="1270.1.1"
-	}
-	
-	1320.1.1={
-		death="1320.1.1"
-	}
-}
-
-161093 = {
-	name="Biyu"
-	#placeholder
-	dynasty=1030010
-	religion="sunni"
-	culture="manden"
-	father=161092
-	1300.1.1={
-		birth="1300.1.1"
-	}
-	
-	1350.1.1={
-		death="1350.1.1"
-	}
-}
-
-#####TOG
+# here were soninke characters - moved to soninke
 
 183502 = {
 	name="Soumaoro"
 	dynasty=1042632
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	841.1.1={
 		birth="841.1.1"
+	}
+	860.1.1 = {
+		capital = c_kantor
 	}
 	890.1.1={
 		death="890.1.1"
@@ -1057,8 +808,10 @@
 183503 = {
 	name="Maÿroumfa"
 	dynasty=1042633
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	838.1.1={
 		birth="838.1.1"
 	}
@@ -1070,8 +823,10 @@
 183504 = {
 	name="Alayaman"
 	dynasty=1042634
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	829.1.1={
 		birth="829.1.1"
 	}
@@ -1083,8 +838,10 @@
 183505 = {
 	name="Missi-Izé"
 	dynasty=1042635
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	845.1.1={
 		birth="845.1.1"
 	}
@@ -1093,77 +850,576 @@
 	}
 }
 
-
-
+# characters for CM
 188750 = {
 	name="Missi-Izé" # fictitious holder of Zarma
 	dynasty=1042171
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	740.1.1={
-		birth = yes
+		birth=yes
 	}
 	800.1.1={
-		death = yes
+		death=yes
 	}
 }
+
 188751 = {
 	name="Malla" # fictitious holder of Gurma
 	dynasty=1042172
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	735.1.1={
-		birth = yes
+		birth=yes
 	}
 	795.1.1={
-		death = yes
+		death=yes
 	}
 }
-188752 = {
-	name="Dankaran" # fictitious holder of Djenne
-	dynasty=1042173
-	religion="west_african_pagan"
-	culture="manden"
-	730.1.1={
-		birth = yes
-	}
-	780.1.1={
-		death = yes
-	}
-}
+
 188753 = {
 	name="Kodama" # fictitious holder of Bambuk
 	dynasty=1042174
-	religion="west_african_pagan"
+	religion="a_tag_roog"
 	culture="manden"
+    trait = foro
+    trait = malinke
 	750.1.1={
-		birth = yes
+		birth=yes
 	}
 	800.1.1={
+		death=yes
+	}
+}
+
+################ Characters for reworked West Africa
+
+#Kone rulers of Bambuk
+251100 = {
+	name="Bunama"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+    trait = foro
+    trait = malinke
+	1049.1.1={
+		birth = yes
+	}
+	1101.1.1={
 		death = yes
 	}
 }
-188754 = {
-	name="Demba" # fictitious holder of Aoudaghost
-	dynasty=1042175
-	religion="west_african_pagan"
-	culture="manden"
-	745.1.1={
+251101 = {
+	name="Majan"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251100
+    trait = foro
+    trait = malinke
+	1066.1.1={
 		birth = yes
 	}
-	795.1.1={
+	1130.1.1={
 		death = yes
 	}
 }
-188755 = {
-	name="Kodama" # fictitious holder of Oualata
-	dynasty=1042176
-	religion="west_african_pagan"
-	culture="manden"
-	742.1.1={
+251102 = {
+	name="Bunama"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251101
+    trait = foro
+    trait = malinke
+	1093.1.1={
 		birth = yes
 	}
-	795.1.1={
+	1156.1.1={
+		death = yes
+	}
+}
+251103 = {
+	name="Kaya"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251102
+    trait = foro
+    trait = malinke
+	1123.1.1={
+		birth = yes
+	}
+	1180.1.1={
+		death = yes
+	}
+}
+251104 = {
+	name="Majan"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251103
+    trait = foro
+    trait = malinke
+	1150.1.1={
+		birth = yes
+	}
+	1209.1.1={
+		death = yes
+	}
+}
+251105 = {
+	name="Kaya"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251104
+    trait = foro
+    trait = malinke
+	1180.1.1={
+		birth = yes
+	}
+	1234.1.1={
+		death = yes
+	}
+}
+251106 = {
+	name="Bunama"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251105
+    trait = foro
+    trait = malinke
+	1210.1.1={
+		birth = yes
+	}
+	1260.1.1={
+		death = yes
+	}
+}
+251107 = {
+	name="Yama"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251106
+    trait = foro
+    trait = malinke
+	1240.1.1={
+		birth = yes
+	}
+	1289.1.1={
+		death = yes
+	}
+}
+251108 = {
+	name="Majan"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251107
+    trait = foro
+    trait = malinke
+	1270.1.1={
+		birth = yes
+	}
+	1315.1.1={
+		death = yes
+	}
+}
+251109 = {
+	name="Sakoura"
+	#placeholder
+	dynasty=1060018
+	religion="a_tag_roog"
+	culture = "manden"
+	father = 251108
+    trait = foro
+    trait = malinke
+	1300.1.1={
+		birth = yes
+	}
+	1366.1.1={
+		death = yes
+	}
+}
+
+#####TOG
+
+
+#ancestors of the Keita dynasty
+1060008 = {
+    name="Rabah"
+    dynasty=1030002
+    religion="shiite"
+    culture="bedouin_arabic"
+    550.1.1 = {
+        birth = yes
+    }
+    575.1.1 = {
+        add_spouse=1060009
+    }
+    610.1.1 = {
+        death = yes
+    }
+}
+
+1060009 = {
+    name="Hamamah"
+    dynasty=7246
+    female=yes
+    culture="ethiopian"
+    religion="shiite"
+    father=1060022
+    555.1.1 = {
+        birth = yes
+    }
+    575.1.1 = {
+        add_spouse=1060008
+    }
+    625.1.1 = {
+        death = yes
+    }
+}
+
+1060003 = {
+    name="Bilal"
+    dynasty=1030002
+    religion="shiite"
+    culture="ethiopian"
+    father=1060008
+    mother=1060009
+    580.1.1={
+        birth = yes
+        culture = "bedouin_arabic"
+    }
+    632.1.1={
+        create_bloodline = {
+            type = bilal_ibn_rabah
+            has_dlc = "Holy Fury"
+        }
+    }
+    640.1.1={
+        death = yes
+    }
+}
+
+1060004 = {
+    name="Lawalo"
+    dynasty=1030002
+    religion="shiite"
+    culture = "ethiopian"
+    father=1060003
+    602.1.1 = {
+        birth = yes
+        culture = "bedouin_arabic"
+    }
+    660.1.1 = {
+        death = yes
+    }
+}
+
+1060005 = {
+    name="Latal"
+    dynasty=1030002
+    religion="a_tag_roog"
+    culture="manden"
+    father=1060004
+    trait = foro
+    trait = malinke
+    645.1.1 = {
+        birth = yes
+    }
+    727.1.1 = {
+        death = yes
+    }
+}
+
+1060006 = {
+    name="Damul"
+    dynasty=1030002
+    religion="a_tag_roog"
+    culture="manden"
+    father=1060005
+    trait = foro
+    trait = malinke
+    700.1.1 = {
+        birth = yes
+    }
+    760.1.1 = {
+        death = yes
+    }
+}
+
+251110 = {
+	name="Lahilatoul"
+	#half-mythical placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture = "manden"
+    father=1060006
+    trait = foro
+    trait = malinke
+	748.1.1={
+		birth = yes
+	}
+	767.1.1={
+		add_spouse=251111
+	}
+	806.1.1={
+		death = yes
+	}
+}
+251111 = {
+	name="Fatoumata"
+	#placeholder
+	female=yes
+	religion="a_tag_roog"
+	culture="manden"
+    trait = foro
+    trait = malinke
+	749.1.1={
+		birth = yes
+	}
+	767.1.1={
+		add_spouse=251110
+	}
+	812.1.1={
+		death = yes
+	}
+}
+251112 = {
+	name="Tekhaye"
+	#placeholder
+	female=yes
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251110
+	mother = 251111
+    trait = foro
+    trait = malinke
+	768.1.1={
+		birth = yes
+	}
+	830.1.1={
+		death = yes
+	}
+}
+251113 = {
+	name="Demba"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251110
+	mother = 251111
+    trait = foro
+    trait = malinke
+	769.1.1={
+		birth = yes
+	}
+	815.1.1={
+		death = yes
+	}
+}
+251114 = {
+	name="Watara"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251113
+    trait = foro
+    trait = malinke
+	800.1.1={
+		birth = yes
+	}
+	860.1.1={
+		death = yes
+	}
+}
+251115 = {
+	name="Bamari"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251114
+    trait = foro
+    trait = malinke
+	835.1.1={
+		birth = yes
+	}
+	897.1.1={
+		death = yes
+	}
+}
+251116 = {
+	name="Mamadi"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251115
+    trait = foro
+    trait = malinke
+	863.1.1={
+		birth = yes
+	}
+	930.1.1={
+		death = yes
+	}
+}
+251117 = {
+	name="Watara"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251116
+    trait = foro
+    trait = malinke
+	899.1.1={
+		birth = yes
+	}
+	970.1.1={
+		death = yes
+	}
+}
+251118 = {
+	name="Mamadi"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251117
+    trait = foro
+    trait = malinke
+	933.1.1={
+		birth = yes
+	}
+	984.1.1={
+		death = yes
+	}
+}
+251119 = {
+	name="Mari-Djata"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251118
+    trait = foro
+    trait = malinke
+	976.1.1={
+		birth = yes
+	}
+	1032.1.1={
+		death = yes
+	}
+}
+251120 = {
+	name="Watara"
+	#placeholder
+	dynasty=1030002
+	religion="a_tag_roog"
+	culture="manden"
+	father = 251119
+    trait = foro
+    trait = malinke
+	1015.1.1={
+		birth = yes
+	}
+	1064.1.1={
+		death = yes
+	}
+}
+
+260871 = {
+	name = "Dankaran"
+	dynasty = 1062449
+	religion = a_tag_roog
+	culture = manden
+    trait = foro
+    trait = malinke
+	870.1.1 = {
+		birth = yes
+	}
+	925.1.1 = {
+		death = yes
+	}
+}
+260872 = {
+	name = "Ali"
+	dynasty = 1062449
+	religion = a_tag_roog
+	culture = manden
+	father = 260871
+    trait = foro
+    trait = malinke
+	895.1.1 = {
+		birth = yes
+	}
+	938.1.1 = {
+		death = yes
+	}
+}
+260873 = {
+	name = "Kassa"
+	dynasty = 1062449
+	religion = a_tag_roog
+	culture = manden
+	father = 260871
+    trait = foro
+    trait = malinke
+	899.1.1 = {
+		birth = yes
+	}
+	941.1.1 = {
+		death = yes
+	}
+}
+260874 = {
+	name = "Manding"
+	dynasty = 1062450
+	religion = a_tag_roog
+	culture = manden
+    trait = foro
+    trait = malinke
+	907.1.1 = {
+		birth = yes
+	}
+	965.1.1 = {
+		death = yes
+	}
+}
+260875 = {
+	name = "Salman"
+	dynasty = 1062451
+	religion = a_tag_roog
+	culture = manden
+    trait = foro
+    trait = malinke
+	894.1.1 = {
+		birth = yes
+	}
+	951.1.1 = {
 		death = yes
 	}
 }

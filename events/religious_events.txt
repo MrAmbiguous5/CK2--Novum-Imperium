@@ -769,8 +769,11 @@ character_event = {
 			is_ruler = no
 			is_theocracy = no
 		}
-		location = { is_heresy_of = ROOT }
-		emf_can_convert_religion = yes
+		location = {
+			is_heresy_of = ROOT
+		}
+
+		can_change_religion = yes
 		NOT = { is_inaccessible_trigger = yes }
 	}
 
@@ -837,8 +840,23 @@ character_event = {
 	option = {
 		name = "EVTOPTA39010"
 		ai_chance = { factor = 100 }
-		location = { save_event_target_as = target_religion }
-		emf_character_set_religion_to_target_religion = yes
+		if = {
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+		}
+		location = {
+			reverse_religion = ROOT
+		}
+		if = {
+			limit = { higher_tier_than = BARON }
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
 	}
 	option = {
 		name = "EVTOPTB39010"
@@ -984,13 +1002,24 @@ character_event = {
 				tier = EMPEROR
 			}
 		}
-		trigger = {
-			emf_can_convert_religion = yes
-		}
 		hidden_tooltip = {
 			FROM = { character_event = { id = 39022 days = 4 } }
 		}
-		emf_character_set_religion_to_FROM = yes
+		if = {
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+		}
+		religion = FROM
+		if = {
+			limit = { higher_tier_than = BARON }
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
 	}
 	option = {
 		name = "EVTOPTB39021" # Demand abandonment of heresy
@@ -1543,6 +1572,10 @@ character_event = {
 			factor = 0.5
 			wealth = 2000
 		}
+		modifier = {
+			factor = 8
+			ai = no
+		}
 	}
 
 	option = {
@@ -1692,11 +1725,6 @@ character_event = {
 				piety = -25
 				wealth = -12
 				remove_trait = dynastic_kinslayer
-			}
-			tribal_kinslayer = {
-				piety = -25
-				wealth = -12
-				remove_trait = tribal_kinslayer
 			}
 		}
 		FROM = { character_event = { id = 39212 days = 1 tooltip = EVTTOOLTIP39212 } }
@@ -2161,6 +2189,10 @@ character_event = {
 			factor = 0.25
 			trait = zealous
 		}
+		modifier = {
+			factor = 20
+			ai = no
+		}
 	}
 
 	option = {
@@ -2580,11 +2612,105 @@ character_event = {
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
-
+	trigger = {#always show this event if pope is ai controlled, otherwise ask for player preference
+		OR = {
+			ai = yes
+			FROM = {ai = no} #always show requests from other players
+			NOR = {
+				has_character_flag = PDP_indulgence_dukes
+				has_character_flag = PDP_indulgence_kings
+				has_character_flag = PDP_indulgence_emperors
+			}
+			AND = {
+				FROM = {
+					higher_tier_than = COUNT
+				}
+				has_character_flag = PDP_indulgence_dukes
+			}
+			AND = {
+				FROM = {
+					higher_tier_than = DUKE
+				}
+				has_character_flag = PDP_indulgence_kings
+			}
+			AND = {
+				FROM = {
+					higher_tier_than = KING
+				}
+				has_character_flag = PDP_indulgence_emperors
+			}
+		}
+	}
 	option = {
-		name = "EVTOPTA39250"
+		name = "EVTOPTA39250" #accept it
+		custom_tooltip = { text = PDP_accept_indulgence }
 		FROM = {
 			character_event = { id = 39251 days = 3 random = 7 tooltip = "EVTTOOLTIP39251" }
+		}
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				ai = no
+				NOT = {trait = arbitrary}
+				wealth = 250 #you don't need the money, but take it nonetheless
+			}
+			random = {
+				chance = 5
+				if = {
+					limit = {trait = just}
+					remove_trait = just
+				}
+				else = {
+					add_trait = arbitrary
+				}
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+				trait = arbitrary
+				NOT = {trait = greedy}
+				wealth = 2500 #you really do not need it...
+			}
+			random = {
+				chance = 5
+				if = {
+					limit = {trait = charitable}
+					remove_trait = charitable
+				}
+				else = {
+					add_trait = greedy
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB39250 #deny option for player
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			#clr_character_flag  = ask_for_indulgence #dont clear flag so character get's a cooldown...
+			character_event = { id = PDP.200 days = 3 random = 7 tooltip = PDP_not_accept_indulgence}
+		}
+		if = {
+			limit = {
+				ai = no
+				NOT = {trait = just}
+				NOT = {wealth = 250} #you need that money
+			}
+			random = {
+				chance = 2.5
+				if = {
+					limit = {trait = arbitrary}
+					remove_trait = arbitrary
+				}
+				else = {
+					add_trait = just
+				}
+			}
 		}
 	}
 }
@@ -2607,11 +2733,11 @@ character_event = {
 			limit = { piety = 500 }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -0.9
+				transfer_scaled_wealth = { to = FROM value = 0.9 }
 			}
 			if = {
 				limit = { NOT = { yearly_income = 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 0.25 min = 25 max = 25 }
 			}
 
 			piety = 50
@@ -2620,11 +2746,11 @@ character_event = {
 			limit = { NOT = { piety = 500 } }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -1.0
+				transfer_scaled_wealth = { to = FROM value = 1.0 }
 			}
 			if = {
 				limit = { NOT = { yearly_income= 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 0.25 min = 25 max = 25 }
 			}
 
 			piety = 50
@@ -2648,11 +2774,11 @@ character_event = {
 			limit = { piety = 400 }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -1.15
+				transfer_scaled_wealth = { to = FROM value = 1.15 }
 			}
 			if = {
 				limit = { NOT = { yearly_income = 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 1.0 min = 25}
 			}
 
 			piety = 50
@@ -2661,11 +2787,11 @@ character_event = {
 			limit = { NOT = { piety = 400 } }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -1.25
+				transfer_scaled_wealth = { to = FROM value = 1.25 min = 25}
 			}
 			if = {
 				limit = { NOT = { yearly_income = 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 1.25 min = 25}
 			}
 
 			piety = 50
@@ -2691,11 +2817,11 @@ character_event = {
 			limit = { piety = 400 }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -1.4
+				transfer_scaled_wealth = { to = FROM value = 1.4 min = 25}
 			}
 			if = {
 				limit = { NOT = { yearly_income = 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 1.4 min = 25}
 			}
 
 			piety = 50
@@ -2704,11 +2830,11 @@ character_event = {
 			limit = { NOT = { piety = 400 } }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -1.5
+				transfer_scaled_wealth = { to = FROM value = 1.5 min = 25}
 			}
 			if = {
 				limit = { NOT = { yearly_income = 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 1.4 min = 25}
 			}
 
 			piety = 50
@@ -2733,11 +2859,11 @@ character_event = {
 			limit = { piety = 400 }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -1.65
+				transfer_scaled_wealth = { to = FROM value = 1.65 min = 25}
 			}
 			if = {
 				limit = { NOT = { yearly_income = 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 1.0 min = 25}
 			}
 
 			piety = 50
@@ -2746,11 +2872,11 @@ character_event = {
 			limit = { NOT = { piety = 400 } }
 			if = {
 				limit = { yearly_income = 25 }
-				scaled_wealth = -1.75
+				transfer_scaled_wealth = { to = FROM value = 1.75 min = 25}
 			}
 			if = {
 				limit = { NOT = { yearly_income = 25 } }
-				wealth = -25
+				transfer_scaled_wealth = { to = FROM value = 1.0 min = 25}
 			}
 
 			piety = 50
@@ -3606,30 +3732,10 @@ province_event = {
 	mean_time_to_happen = {
 		months = 3600
 		modifier = {
-			factor = 3
-			NOT = {
-				owner = {
-					top_liege = {
-						ROOT = {
-							any_neighbor_province = {
-								religion = PREVPREV
-							}
-						}
-					}
-				}
-			}
-		}
-		modifier = {
 			factor = 0.6
 			owner = {
 				top_liege = {
-					OR = {
-						has_religion_feature = religion_proselytizing
-						AND = {
-							religion = west_african_pagan_reformed
-							has_religion_features = no
-						}
-					}
+					has_religion_feature = religion_proselytizing
 				}
 			}
 		}
@@ -3637,14 +3743,7 @@ province_event = {
 			factor = 2.5
 			owner = {
 				top_liege = {
-					OR = {
-						has_religion_feature = religion_cosmopolitan
-						religion = hellenic_pagan
-						AND = {
-							religion = hellenic_pagan_reformed
-							has_religion_features = no
-						}
-					}
+					has_religion_feature = religion_cosmopolitan
 				}
 			}
 		}
@@ -3671,7 +3770,7 @@ province_event = {
 					OR = {
 						religion_group = ROOT
 						emf_syncretized_religion_with_ROOT = yes
-						ROOT = { emf_syncretized_religion_with_PREV = yes }
+						emf_ROOT_is_syncretized_with_religion = yes
 					}
 				}
 			}
@@ -3691,13 +3790,6 @@ province_event = {
 		modifier = {
 			factor = 3.0
 			is_hard_to_convert = yes
-			NOT = {
-				owner = {
-					top_liege = {
-						ROOT = { emf_syncretized_religion_with_PREV = yes }
-					}
-				}
-			}
 		}
 		modifier = {
 			factor = 3.0
@@ -3874,7 +3966,7 @@ province_event = {
 							OR = {
 								religion_group = PREVPREV
 								emf_syncretized_religion_with_PREVPREV = yes
-								PREVPREV = { emf_syncretized_religion_with_PREV = yes }
+								emf_PREVPREV_is_syncretized_with_religion = yes
 							}
 						}
 					}
@@ -3913,7 +4005,7 @@ province_event = {
 					}
 					NOR = {
 						emf_syncretized_religion_with_ROOT = yes
-						ROOT = { emf_syncretized_religion_with_PREV = yes }
+						emf_ROOT_is_syncretized_with_religion = yes
 					}
 				}
 			}
@@ -4234,16 +4326,7 @@ character_event = {
 			# EMF: Less chance if Magyars prior to conquering Hungary
 			modifier = {
 				factor = 0.2
-				trigger_if = {
-					limit = { emf_has_swmh = yes }
-					OR = {
-						culture = old_hungarian
-						culture = khavar
-					}
-				}
-				trigger_else = {
-					culture = hungarian
-				}
+				culture = hungarian
 				NOT = { has_global_flag = emf_conquest_hungary_completed }
 				emf_alternate_start = no
 			}
@@ -4490,7 +4573,6 @@ character_event = {
 			ai = yes
 			FROMs_religion_is_playable_trigger = yes
 		}
-		emf_can_convert_religion = yes
 	}
 	
 	is_triggered_only = yes
@@ -4518,16 +4600,7 @@ character_event = {
 			# EMF: Less chance if Magyars prior to conquering Hungary
 			modifier = {
 				factor = 0.2
-				trigger_if = {
-					limit = { emf_has_swmh = yes }
-					OR = {
-						culture = old_hungarian
-						culture = khavar
-					}
-				}
-				trigger_else = {
-					culture = hungarian
-				}
+				culture = hungarian
 				NOT = { has_global_flag = emf_conquest_hungary_completed }
 				emf_alternate_start = no
 			}
@@ -4928,114 +5001,155 @@ character_event = {
 			FROM = { liege = { letter_event = { id = HF.20024 } } }
 			#break = yes
 		}
-		else = {
-			if = {
-				limit = {
+		
+	else = {
+		if = {
+			limit = {
+				trait = cynical
+				NOT = { trait = zealous }
+				age = 12
+			}
+			random = {
+				chance = 60
+				add_trait = sympathy_pagans
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
 					trait = cynical
-					NOT = { trait = zealous }
-					age = 12
+					trait = zealous
 				}
-				random = {
-					chance = 60
-					add_trait = sympathy_pagans
-				}
+				age = 12
 			}
-			else_if = {
-				limit = {
-					NOR = {
-						trait = cynical
-						trait = zealous
-					}
-					age = 12
-				}
-				random = {
-					chance = 50
-					add_trait = sympathy_pagans
-				}
+			random = {
+				chance = 50
+				add_trait = sympathy_pagans
 			}
-			emf_character_set_religion_to_FROM = yes
-			prestige = -500
-			piety = 250
-			if = {
-				limit = { ai = yes }
-				capital_scope = {
-					religion = FROM
-					religion_authority = {
-						modifier = province_converted_to
-						years = 5
-					}
-				}
+		}
+		if = {
+			limit = {
+				independent = yes
+				higher_real_tier_than = DUKE
+				NOT = { religion_group = christian }
+				FROM = { religion_group = christian }
 			}
-			any_courtier = {
-				limit = {
-					is_close_relative = ROOT
-					emf_can_convert_religion = yes
-				}
-				emf_character_set_religion_to_FROM = yes
+			set_character_flag = king_converted
+			FROM = { set_character_flag = converted_king }
+		}
+		
+		if = {
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
 			}
-			any_spouse = {
-				limit = {
-					is_consort = no
-					emf_can_convert_religion = yes
-				}
-				emf_character_set_religion_to_FROM = yes
-			}
-			random_list = {
-				50 = {
-					modifier = {
-						factor = 0
-						FROM = { religion_allows_male_temple_holders = no }
-					}
-					create_random_priest = {
-						random_traits = yes
-						dynasty = none
-						culture = ROOT
-						religion = FROM
-						female = no
-						age = 32
-						attributes = {
-							learning = 7
-							diplomacy = 5
-						}
-					}
-				}
-				50 = {
-					modifier = {
-						factor = 0
-						FROM = { religion_allows_female_temple_holders = no }
-					}
-					create_random_priest = {
-						random_traits = yes
-						dynasty = none
-						culture = ROOT
-						religion = FROM
-						female = yes
-						age = 32
-						attributes = {
-							learning = 7
-							diplomacy = 5
-						}
-					}
-				}
-			}
-			new_character = {
-				emf_new_character_priest = yes
-				give_job_title = job_spiritual
-				save_event_target_as = convert_lord_spiritual
-			}
+		}
+		religion = FROM
+		if = {
+			limit = { higher_tier_than = BARON }
 			hidden_tooltip = {
-				any_vassal = {
-					limit = {
-						NOT = { religion = ROOT }
-						ROOT = { ai = yes } # Only for AI!
-					}
-					letter_event = { id = 39617 } # Send out letter to vassals
-				}
-				FROM = {
-					character_event = { id = 39614 days = 1 } # Notify liege of the the proselytizer who converted you
+				religion_authority = {
+					modifier = ruler_converted_to
 				}
 			}
-			custom_tooltip = { text = preacher_convert }
+		}
+		prestige = -500
+		piety = 250
+
+		if = {
+			limit = { ai = yes }
+			capital_scope = {
+				religion = FROM
+				religion_authority = {
+					modifier = province_converted_to
+					years = 5
+				}
+			}
+		}
+
+		any_courtier = {
+			limit = { is_close_relative = ROOT }
+			religion = FROM
+		}
+		any_spouse = {
+			limit = { is_consort = no }
+			if = {
+				limit = { higher_tier_than = BARON }
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
+			}
+			religion = FROM
+			if = {
+				limit = { higher_tier_than = BARON }
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+			}
+		}
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 0
+					FROM = {
+						religion_allows_male_temple_holders = no
+					}
+				}
+				create_random_priest = {
+					random_traits = yes
+					dynasty = none
+					culture = ROOT
+					religion = FROM
+					female = no
+					age = 32
+					attributes = {
+						learning = 7
+						diplomacy = 5
+					}
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0
+					FROM = {
+						religion_allows_female_temple_holders = no
+					}
+				}
+				create_random_priest = {
+					random_traits = yes
+					dynasty = none
+					culture = ROOT
+					religion = FROM
+					female = yes
+					age = 32
+					attributes = {
+						learning = 7
+						diplomacy = 5
+					}
+				}
+			}
+		}
+		new_character = {
+			emf_new_character_priest = yes
+			give_job_title = job_spiritual
+			save_event_target_as = convert_lord_spiritual
+		}
+		hidden_tooltip = {
+			any_vassal = {
+				limit = {
+					NOT = { religion = ROOT }
+					ROOT = { ai = yes } # Only for AI!
+				}
+				letter_event = { id = 39617 } # Send out letter to vassals
+			}
+			FROM = {
+				character_event = { id = 39614 days = 1 } # Notify liege of the the proselytizer who converted you
+			}
+		}
+		custom_tooltip = { text = preacher_convert }
+		
 		}
 	}
 	option = {
@@ -5167,25 +5281,44 @@ letter_event = {
 				}
 			}
 		}
-		trigger = {
-			emf_can_convert_religion = yes
-		}
 
 		prestige = -250
-		emf_character_set_religion_to_FROM = yes
-		any_courtier = {
-			limit = {
-				is_close_relative = ROOT
-				emf_can_convert_religion = yes
+		if = {
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
 			}
-			emf_character_set_religion_to_FROM = yes
+		}
+		religion = FROM
+		if = {
+			limit = { higher_tier_than = BARON }
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
+		any_courtier = {
+			limit = { is_close_relative = ROOT }
+			religion = FROM
 		}
 		any_spouse = {
-			limit = {
-				is_consort = no
-				emf_can_convert_religion = yes
+			limit = { is_consort = no }
+			if = {
+				limit = { higher_tier_than = BARON }
+				religion_authority = {
+					modifier = ruler_converted_from
+				}
 			}
-			emf_character_set_religion_to_FROM = yes
+			religion = FROM
+			if = {
+				limit = { higher_tier_than = BARON }
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+			}
 		}
 		create_random_priest = {
 			random_traits = yes
@@ -5589,12 +5722,14 @@ narrative_event = {
 	religion_group = muslim
 
 	trigger = {
-		higher_real_tier_than = DUKE
-		is_landed = yes
-		d_ismaili = { has_holder = no }
-		year > 870
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		ai = yes
-		has_random_religion_names = no
+		year = 870
+		d_ismaili = { has_holder = no }
+		is_landed = yes
+		higher_tier_than = DUKE
 		capital_scope = {
 			OR = {
 				region = world_persia
@@ -5623,7 +5758,7 @@ narrative_event = {
 			kingdom = {
 				OR = {
 					has_holder = no
-					holder = ROOT
+					holder_scope = { character = ROOT }
 				}
 				num_title_realm_provs = {
 					who = ROOT
@@ -5688,7 +5823,7 @@ narrative_event = {
 					}
 					OR = {
 						has_holder = no
-						owner = { character = ROOT }
+						holder_scope = { character = ROOT }
 					}
 					num_title_realm_provs = {
 						who = ROOT
@@ -5709,7 +5844,7 @@ narrative_event = {
 				kingdom = {
 					OR = {
 						has_holder = no
-						owner = { character = ROOT }
+						holder_scope = { character = ROOT }
 					}
 					num_title_realm_provs = {
 						who = ROOT
@@ -5734,7 +5869,7 @@ narrative_event = {
 				kingdom = {
 					OR = {
 						has_holder = no
-						owner = { character = ROOT }
+						holder_scope = { character = ROOT }
 					}
 					num_title_realm_provs = {
 						who = ROOT
@@ -5768,16 +5903,8 @@ narrative_event = {
 			}
 		}
 		new_character = {
-			if = {
-				limit = {
-					any_dynasty_member_even_if_dead = {
-						NOT = { character = PREV }
-					}
-				}
-				# Oops. We've broken the Fatimid dynasty tree. Revert to a random dynasty.
-				dynasty = father_bastard
-			}
 			emf_dna_set_flags_for_high_health = yes
+			dynasty = 589 #Fatimid
 			log = "39640: [This.GetBestName] (id:[This.GetID]) is a newly-created Imamah starting the Isma'ili Caliphate Uprising in [ismaili_revolt_target_title.GetName]"
 			set_character_flag = is_imamah_claimant
 			set_character_flag = found_claimant
@@ -5818,70 +5945,28 @@ narrative_event = {
 
 	only_playable = yes
 	min_age = 16
-	religion_group = christian
+	religion = catholic
 
 	trigger = {
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
-		can_call_crusade = yes
-		OR = {
-			is_heretic = no
-			AND = {
-				catholic = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-				fraticelli = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-			}
-		}
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		year >= 1090
-		c_jerusalem = { # Jerusalem
+
+		774 = { # Jerusalem
 			NOT = {
 				owner = {
-					top_liege = {
-						OR = {
-							AND = {
-								religion_group = christian
-								NOR = {
-									is_heresy_of = ROOT
-									is_parent_religion = ROOT
-									AND = {
-										religion = bogomilist
-										is_heretic = yes
-										ROOT = {
-											religion = catholic
-											is_heretic = no
-										}
-									}
-								}
-							}
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-							liege_before_war = {
-								OR = {
-									AND = {
-										religion_group = christian
-										NOR = {
-											is_heresy_of = ROOT
-											is_parent_religion = ROOT
-											AND = {
-												religion = bogomilist
-												is_heretic = yes
-												ROOT = {
-													religion = catholic
-													is_heretic = no
-												}
-											}
-										}
-									}
-									ROOT = { emf_syncretized_religion_with_PREV = yes }
-								}
-							}
+					OR = {
+						religion_group = christian
+						top_liege = {
+							religion_group = christian
 						}
 					}
 				}
 			}
 		}
+
 		NOT = { has_global_flag = christian_crusades_unlocked }
 	}
 
@@ -5927,90 +6012,54 @@ narrative_event = {
 
 	only_playable = yes
 	min_age = 16
-	religion_group = christian
+	religion = catholic
 
 	trigger = {
-		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
 		}
-		can_call_crusade = yes
-		OR = {
-			is_heretic = no
-			AND = {
-				catholic = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-				fraticelli = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-			}
-		}
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		year >= 900
+		controls_religion = yes
 		NOT = { has_global_flag = christian_crusades_unlocked }
+
 		OR = {
 			e_byzantium = {
 				holder_scope = {
-					NOR = {
-						AND = {
+					NOT = { religion_group = christian }
+				}
+			}
+			496 = { # Constantinople
+				NOT = {
+					owner = {
+						OR = {
 							religion_group = christian
-							NOR = {
-								is_heresy_of = ROOT
-								is_parent_religion = ROOT
-								AND = {
-									religion = bogomilist
-									is_heretic = yes
-									ROOT = {
-										religion = catholic
-										is_heretic = no
-									}
-								}
+							top_liege = {
+								religion_group = christian
 							}
 						}
-						ROOT = { emf_syncretized_religion_with_PREV = yes }
 					}
 				}
 			}
-			any_landed_title = { # Any Orthodox holy sites in Europe
-				is_holy_site = orthodox
-				location = { region = world_europe }
-				NOT = {
-					owner = {
-						top_liege = {
+			AND = {
+				482 = { # Athens
+					NOT = {
+						owner = {
 							OR = {
-								AND = {
+								religion_group = christian
+								top_liege = {
 									religion_group = christian
-									NOR = {
-										is_heresy_of = ROOT
-										is_parent_religion = ROOT
-										AND = {
-											religion = bogomilist
-											is_heretic = yes
-											ROOT = {
-												religion = catholic
-												is_heretic = no
-											}
-										}
-									}
 								}
-								ROOT = { emf_syncretized_religion_with_PREV = yes }
-								liege_before_war = {
-									OR = {
-										AND = {
-											religion_group = christian
-											NOR = {
-												is_heresy_of = ROOT
-												is_parent_religion = ROOT
-												AND = {
-													religion = bogomilist
-													is_heretic = yes
-													ROOT = {
-														religion = catholic
-														is_heretic = no
-													}
-												}
-											}
-										}
-										ROOT = { emf_syncretized_religion_with_PREV = yes }
-									}
+							}
+						}
+					}
+				}
+				481 = { # Corinth
+					NOT = {
+						owner = {
+							OR = {
+								religion_group = christian
+								top_liege = {
+									religion_group = christian
 								}
 							}
 						}
@@ -6062,66 +6111,27 @@ narrative_event = {
 
 	only_playable = yes
 	min_age = 16
-	religion_group = christian
+	religion = catholic
 
 	trigger = {
-		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
 		}
-		can_call_crusade = yes
-		OR = {
-			is_heretic = no
-			AND = {
-				catholic = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-				fraticelli = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-			}
-		}
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		year >= 900
+		controls_religion = yes
 		NOT = { has_global_flag = christian_crusades_unlocked }
-		c_roma = { # Rome
+
+		333 = { # Rome
 			NOT = {
 				owner = {
-					top_liege = {
-						OR = {
-							AND = {
-								religion_group = christian
-								NOR = {
-									is_heresy_of = ROOT
-									is_parent_religion = ROOT
-									AND = {
-										religion = bogomilist
-										is_heretic = yes
-										ROOT = {
-											religion = catholic
-											is_heretic = no
-										}
-									}
-								}
-							}
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-							liege_before_war = {
-								OR = {
-									AND = {
-										religion_group = christian
-										NOR = {
-											is_heresy_of = ROOT
-											is_parent_religion = ROOT
-											AND = {
-												religion = bogomilist
-												is_heretic = yes
-												ROOT = {
-													religion = catholic
-													is_heretic = no
-												}
-											}
-										}
-									}
-									ROOT = { emf_syncretized_religion_with_PREV = yes }
-								}
-							}
+					OR = {
+						AND = {
+							religion_group = christian
+							is_heretic = no
+						}
+						top_liege = {
+							religion_group = christian
+							is_heretic = no
 						}
 					}
 				}
@@ -6171,101 +6181,65 @@ narrative_event = {
 
 	only_playable = yes
 	min_age = 16
-	religion_group = christian
+	religion = catholic
 
 	trigger = {
-		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
 		}
-		can_call_crusade = yes
-		OR = {
-			is_heretic = no
-			AND = {
-				catholic = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-				fraticelli = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
-			}
-		}
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		year >= 900
+		controls_religion = yes
 		NOT = { has_global_flag = christian_crusades_unlocked }
-		any_landed_title = { # Two holy sites of Western Christian traditions in Western Mainland Europe not under our control
-			count = 2
-			OR = {
-				AND = {
-					OR = {
-						is_holy_site = ROOT
-						is_holy_site = waldensian
-						is_holy_site = cathar
-						is_holy_site = lollard
-					}
-					location = {
+
+		OR = {
+			221 = { # Provence
+				NOT = {
+					owner = {
 						OR = {
-							region = world_europe_west_germania
-							region = world_europe_west_francia
-							region = world_europe_west_iberia
-							region = world_europe_south_italy
+							religion_group = christian
+							top_liege = { religion_group = christian }
 						}
 					}
 				}
-				AND = { # Also include pagan holy sites in Western Mainland Europe as well (to catch certain border provinces)
-					OR = {
-						is_holy_site = norse_pagan
-						is_holy_site = slavic_pagan
-					}
-					location = {
-						OR = {
-							region = world_europe_west_francia
-							region = world_europe_west_iberia
-							region = world_europe_south_italy
-						}
-					}
-				}
-				# Also include Naples and provinces that are too close to Rome
-				title = c_napoli
-				duchy = { title = d_latium }
 			}
-			NOT = {
-				owner = {
-					top_liege = {
+			214 = { # Toulouse
+				NOT = {
+					owner = {
 						OR = {
-							AND = {
-								religion_group = christian
-								NOR = {
-									is_heresy_of = ROOT
-									is_parent_religion = ROOT
-									AND = {
-										religion = bogomilist
-										is_heretic = yes
-										ROOT = {
-											religion = catholic
-											is_heretic = no
-										}
-									}
-								}
-							}
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-							liege_before_war = {
-								OR = {
-									AND = {
-										religion_group = christian
-										NOR = {
-											is_heresy_of = ROOT
-											is_parent_religion = ROOT
-											AND = {
-												religion = bogomilist
-												is_heretic = yes
-												ROOT = {
-													religion = catholic
-													is_heretic = no
-												}
-											}
-										}
-									}
-									ROOT = { emf_syncretized_religion_with_PREV = yes }
-								}
-							}
+							religion_group = christian
+							top_liege = { religion_group = christian }
+						}
+					}
+				}
+			}
+			112 = { # Paris
+				NOT = {
+					owner = {
+						OR = {
+							religion_group = christian
+							top_liege = { religion_group = christian }
+						}
+					}
+				}
+			}
+			119 = { # Cologne
+				religion_group = christian
+				NOT = {
+					owner = {
+						OR = {
+							religion_group = christian
+							top_liege = { religion_group = christian }
+						}
+					}
+				}
+			}
+			848 = { # Bremen
+				religion_group = christian
+				NOT = {
+					owner = {
+						OR = {
+							religion_group = christian
+							top_liege = { religion_group = christian }
 						}
 					}
 				}
@@ -6318,11 +6292,12 @@ narrative_event = {
 	religion_group = muslim
 
 	trigger = {
-		always = no # Disabled in EMF
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		controls_religion = yes
-		is_heretic = no
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		year >= 1187
+
 		NOT = { has_global_flag = muslim_jihads_unlocked }
 	}
 
@@ -6371,10 +6346,11 @@ narrative_event = {
 	religion_group = muslim
 
 	trigger = {
-		always = no # Disabled in EMF in favor of an expanded "Center cannot hold" trigger
-		controls_religion = yes
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		year >= 900
+		controls_religion = yes
 		NOT = { has_global_flag = muslim_jihads_unlocked }
 		774 = { # Jerusalem
 			NOT = {
@@ -6433,26 +6409,18 @@ narrative_event = {
 	religion_group = muslim
 
 	trigger = {
-		controls_religion = yes
-		can_call_crusade = yes
-		# is_heretic = no # Should be triggerable for all Muslim caliphs
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		year >= 900
+		controls_religion = yes
 		NOT = { has_global_flag = muslim_jihads_unlocked }
-		c_mecca = { # Mecca
+		719 = { # Mecca
 			NOT = {
 				owner = {
-					top_liege = {
-						OR = {
-							religion_group = muslim
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-							liege_before_war = {
-								OR = {
-									religion_group = muslim
-									ROOT = { emf_syncretized_religion_with_PREV = yes }
-								}
-							}
-						}
+					OR = {
+						religion_group = muslim
+						any_liege = { religion_group = muslim }
 					}
 				}
 			}
@@ -6504,27 +6472,39 @@ narrative_event = {
 	religion_group = muslim
 
 	trigger = {
-		controls_religion = yes
-		can_call_crusade = yes
-		is_heretic = no
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		year >= 900
+		controls_religion = yes
 		NOT = { has_global_flag = muslim_jihads_unlocked }
-		any_landed_title = { # Two of our holy sites not under Muslim control
-			count = 2
-			is_holy_site = ROOT
-			NOT = {
-				owner = {
-					top_liege = {
+		OR = {
+			693 = { # Baghdad
+				NOT = {
+					owner = {
 						OR = {
 							religion_group = muslim
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-							liege_before_war = {
-								OR = {
-									religion_group = muslim
-									ROOT = { emf_syncretized_religion_with_PREV = yes }
-								}
-							}
+							any_liege = { religion_group = muslim }
+						}
+					}
+				}
+			}
+			728 = { # Damascus
+				NOT = {
+					owner = {
+						OR = {
+							religion_group = muslim
+							any_liege = { religion_group = muslim }
+						}
+					}
+				}
+			}
+			796 = { # Cairo
+				NOT = {
+					owner = {
+						OR = {
+							religion_group = muslim
+							any_liege = { religion_group = muslim }
 						}
 					}
 				}
@@ -6577,37 +6557,39 @@ narrative_event = {
 	religion_group = muslim
 
 	trigger = {
-		controls_religion = yes
-		can_call_crusade = yes
-		is_heretic = no
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		year >= 1000
+		controls_religion = yes
 		NOT = { has_global_flag = muslim_jihads_unlocked }
-		any_landed_title = { # Any two Muslim holy sites in Africa not under Muslim control
-			count = 2
-			OR = {
-				is_holy_site = ROOT
-				is_holy_site = sunni
-				is_holy_site = shiite
-				is_holy_site = ibadi
-				is_holy_site = ismaili
-				is_holy_site = zaydi
-				is_holy_site = nabawiyya
-				is_holy_site = druze
-			}
-			location = { region = world_africa }
-			NOT = {
-				owner = {
-					top_liege = {
+		OR = {
+			843 = { # Marrakesh
+				NOT = {
+					owner = {
 						OR = {
 							religion_group = muslim
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-							liege_before_war = {
-								OR = {
-									religion_group = muslim
-									ROOT = { emf_syncretized_religion_with_PREV = yes }
-								}
-							}
+							any_liege = { religion_group = muslim }
+						}
+					}
+				}
+			}
+			817 = { # Tunis
+				NOT = {
+					owner = {
+						OR = {
+							religion_group = muslim
+							any_liege = { religion_group = muslim }
+						}
+					}
+				}
+			}
+			831 = { # Al Djazair
+				NOT = {
+					owner = {
+						OR = {
+							religion_group = muslim
+							any_liege = { religion_group = muslim }
 						}
 					}
 				}
@@ -6647,84 +6629,7 @@ narrative_event = {
 	id = 39680
 	title = EVTNAME39680
 	desc = EVTDESC39680
-	picture = {
-		trigger = {
-			ROOT = {
-				OR = {
-					religion = hellenic_pagan
-					religion = hellenic_pagan_reformed
-				}
-			}
-		}
-		picture = GFX_evt_hellenic_temple
-	}
-	picture = {
-		trigger = {
-			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-		}
-		picture = GFX_evt_west_african_ruler
-	}
-	picture = {
-		trigger = {
-			ROOT = {
-				OR = {
-					religion = aztec
-					religion = aztec_reformed
-				}
-			}
-		}
-		picture = GFX_evt_throne_room_mesoamerican
-	}
-	picture = {
-		trigger = {
-			ROOT = {
-				OR = {
-					religion = tengri_pagan
-					religion = tengri_pagan_reformed
-					religion = bon
-					religion = bon_reformed
-				}
-			}
-		}
-		picture = GFX_evt_steppe_mercenaries
-	}
-	picture = {
-		trigger = {
-			ROOT = {
-				OR = {
-					religion = zun_pagan
-					religion = zun_pagan_reformed
-				}
-			}
-		}
-		picture = GFX_evt_religious_exultation
-	}
-	picture = {
-		trigger = {
-			ROOT = {
-				NOR = {
-					religion = hellenic_pagan
-					religion = hellenic_pagan_reformed
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-					religion = aztec
-					religion = aztec_reformed
-					religion = tengri_pagan
-					religion = tengri_pagan_reformed
-					religion = bon
-					religion = bon_reformed
-					religion = zun_pagan
-					religion = zun_pagan_reformed
-				}
-			}
-		}
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
+	picture = GFX_evt_midwinter_blot_oldgods
 	border = GFX_event_narrative_frame_religion
 
 	major = yes
@@ -6737,13 +6642,17 @@ narrative_event = {
 	religion_group = pagan_group
 
 	trigger = {
+		NOT = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
 		controls_religion = yes
-		is_heretic = no
-		can_call_crusade = yes
-		NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+
 		NOT = { has_global_flag = pagan_ghws_unlocked }
-		has_global_flag = muslim_jihads_unlocked
-		has_global_flag = christian_crusades_unlocked
+
+		OR = {
+			has_global_flag = muslim_jihads_unlocked
+			has_global_flag = christian_crusades_unlocked
+		}
 	}
 
 	mean_time_to_happen = {
@@ -6752,117 +6661,10 @@ narrative_event = {
 			factor = 0
 			has_global_flag = emf_debug_fast_ghw_unlock
 		}
-		modifier = {
-			factor = 0.5
-			any_landed_title = {
-				is_holy_site = ROOT
-				owner = {
-					top_liege = {
-						NOR = {
-							religion = ROOT
-							is_reformed_religion = ROOT
-							ROOT = {
-								OR = {
-									is_reformed_religion = PREV
-									emf_syncretized_religion_with_PREV = yes
-								}
-							}
-							liege_before_war = {
-								OR = {
-									religion = ROOT
-									is_reformed_religion = ROOT
-									ROOT = {
-										OR = {
-											is_reformed_religion = PREV
-											emf_syncretized_religion_with_PREV = yes
-										}
-									}
-								}
-							}
-						}
-						OR = {
-							religion_group = christian
-							religion_group = muslim
-							trigger_if = {
-								limit = { religion_group = zoroastrian_group }
-								has_global_flag = zoroastrian_ghws_unlocked
-							}
-							trigger_else_if = {
-								limit = { religion_group = jewish_group }
-								has_global_flag = jewish_ghws_unlocked
-							}
-							liege_before_war = {
-								OR = {
-									religion_group = christian
-									religion_group = muslim
-									trigger_if = {
-										limit = { religion_group = zoroastrian_group }
-										has_global_flag = zoroastrian_ghws_unlocked
-									}
-									trigger_else_if = {
-										limit = { religion_group = jewish_group }
-										has_global_flag = jewish_ghws_unlocked
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		modifier = {
-			factor = 2
-			ROOT = {
-				religion_scope = {
-					NOR = {
-						has_religion_feature = religion_syncretic_christian
-						has_religion_feature = religion_syncretic_muslim
-					}
-				}
-			}
-			NAND = {
-				ROOT = { religion_scope = { has_religion_feature = religion_syncretic_zoroastrian } }
-				has_global_flag = zoroastrian_ghws_unlocked
-			}
-			NOT = {
-				any_landed_title = {
-					is_holy_site = ROOT
-					NOT = {
-						owner = {
-							top_liege = {
-								OR = {
-									religion = ROOT
-									is_reformed_religion = ROOT
-									ROOT = {
-										OR = {
-											is_reformed_religion = PREV
-											emf_syncretized_religion_with_PREV = yes
-										}
-									}
-									liege_before_war = {
-										OR = {
-											religion = ROOT
-											is_reformed_religion = ROOT
-											ROOT = {
-												OR = {
-													is_reformed_religion = PREV
-													emf_syncretized_religion_with_PREV = yes
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 
 	immediate = {
 		set_global_flag = pagan_ghws_unlocked
-		set_global_flag = emf_pagan_crusades_unlocked
 	}
 
 	option = {
@@ -6912,7 +6714,9 @@ character_event = {
 
 	immediate = {
 		if = {
-			limit = { character = FROM }
+			limit = {
+				character = FROM
+			}
 			opinion = {
 				who = FROMFROM
 				modifier = opinion_demanded_conversion
@@ -6920,11 +6724,15 @@ character_event = {
 			if = {
 				limit = {
 					prisoner = yes
-					host = { character = FROMFROM }
+					host = {
+						character = FROMFROM
+					}
 				}
 				imprison = no
 			}
 		}
+		#Clean-up leaders who are unfit to lead Holy Orders
+		abdicate_holy_order_if_religion_changes_effect = yes
 	}
 
 	option = { # No sympathy for the old religion
@@ -6933,9 +6741,31 @@ character_event = {
 		}
 		clr_religion_char_flag_effect = yes #Must clear all old flags to avoid double traits
 		add_religion_char_flag_effect = yes
-		emf_character_set_religion_to_FROMFROM = yes
 		if = {
-			limit = { character = FROM }
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+		}
+		religion = FROMFROM
+		if = {
+			limit = { higher_tier_than = BARON }
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion_group = indian_group
+			}
+			character_event = { id = RoI.120 } # Assign Indian religion branch
+		}
+		if = {
+			limit = {
+				character = FROM
+			}
 			character_event = { id = MNM.3949 days = 3 random = 10 }
 		}
 	}
@@ -6963,33 +6793,33 @@ character_event = {
 			}
 			add_trait = sympathy_christendom
 		}
-		else_if = {
+		if = {
 			limit = {
 				religion_group = muslim
 				NOT = { FROMFROM = { has_religion_feature = religion_syncretic_muslim } }
 			}
 			add_trait = sympathy_islam
 		}
-		else_if = {
+		if = {
 			limit = {
 				religion_group = pagan_group
 			}
 			add_trait = sympathy_pagans
 		}
-		else_if = {
+		if = {
 			limit = {
 				religion_group = zoroastrian_group
 				NOT = { FROMFROM = { has_religion_feature = religion_syncretic_zoroastrian } }
 			}
 			add_trait = sympathy_zoroastrianism
 		}
-		else_if = {
+		if = {
 			limit = {
 				religion_group = jewish_group
 			}
 			add_trait = sympathy_judaism
 		}
-		else_if = {
+		if = {
 			limit = {
 				religion_group = indian_group
 				NOT = { FROMFROM = { has_religion_feature = religion_syncretic_indian } }
@@ -6999,9 +6829,31 @@ character_event = {
 
 		clr_religion_char_flag_effect = yes #Must clear all old flags to avoid double traits
 		add_religion_char_flag_effect = yes
-		emf_character_set_religion_to_FROMFROM = yes
 		if = {
-			limit = { character = FROM }
+			limit = { higher_tier_than = BARON }
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
+		}
+		religion = FROMFROM
+		if = {
+			limit = { higher_tier_than = BARON }
+			hidden_tooltip = {
+				religion_authority = {
+					modifier = ruler_converted_to
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion_group = indian_group
+			}
+			character_event = { id = RoI.120 } # Assign Indian religion branch
+		}
+		if = {
+			limit = {
+				character = FROM
+			}
 			character_event = { id = MNM.3949 days = 3 random = 10 }
 		}
 	}

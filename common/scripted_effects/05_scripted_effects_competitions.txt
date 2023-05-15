@@ -1,4 +1,3 @@
-# -*- ck2.scripted_effects -*-
 
 pick_potential_blood_games_winners_effect = { #Only checking for characters existing and saving them as target for the event. 
 	if = { 
@@ -909,7 +908,7 @@ pick_blood_games_winner_effect = {
 					}
 					modifier = {
 						factor = 0.25 
-						event_target:blood_games_potential_winner_1 = { is_incapable = yes }
+						event_target:blood_games_potential_winner_1 = { trait = incapable }
 					}
 					modifier = {
 						factor = 0.95 
@@ -1146,7 +1145,7 @@ pick_blood_games_winner_effect = {
 					}
 					modifier = {
 						factor = 0.25 
-						event_target:blood_games_potential_winner_2 = { is_incapable = yes }
+						event_target:blood_games_potential_winner_2 = { trait = incapable }
 					}
 					modifier = {
 						factor = 0.95 
@@ -1383,7 +1382,7 @@ pick_blood_games_winner_effect = {
 					}
 					modifier = {
 						factor = 0.25 
-						event_target:blood_games_potential_winner_3 = { is_incapable = yes }
+						event_target:blood_games_potential_winner_3 = { trait = incapable }
 					}
 					modifier = {
 						factor = 0.95 
@@ -1619,7 +1618,7 @@ pick_blood_games_winner_effect = {
 					}
 					modifier = {
 						factor = 0.25 
-						event_target:blood_games_potential_winner_4 = { is_incapable = yes }
+						event_target:blood_games_potential_winner_4 = { trait = incapable }
 					}
 					modifier = {
 						factor = 0.95 
@@ -1855,7 +1854,7 @@ pick_blood_games_winner_effect = {
 					}
 					modifier = {
 						factor = 0.25 
-						event_target:blood_games_potential_winner_5 = { is_incapable = yes }
+						event_target:blood_games_potential_winner_5 = { trait = incapable }
 					}
 					modifier = {
 						factor = 0.95 
@@ -3173,7 +3172,7 @@ pick_potential_brawling_winners_effect = {
 			}
 			modifier = {
 				factor = 0.25 
-				event_target:tribal_festival_brawling_potential_winner_1 = { is_incapable = yes }
+				event_target:tribal_festival_brawling_potential_winner_1 = { trait = incapable }
 			}
 			modifier = {
 				factor = 0.95 
@@ -3343,7 +3342,7 @@ pick_potential_brawling_winners_effect = {
 			}
 			modifier = {
 				factor = 0.25 
-				event_target:tribal_festival_brawling_potential_winner_2 = { is_incapable = yes }
+				event_target:tribal_festival_brawling_potential_winner_2 = { trait = incapable }
 			}
 			modifier = {
 				factor = 0.95 
@@ -3539,7 +3538,7 @@ pick_potential_brawling_winners_effect = {
 			}
 			modifier = {
 				factor = 0.25 
-				event_target:great_tribal_festival_host = { is_incapable = yes }
+				event_target:great_tribal_festival_host = { trait = incapable }
 			}
 			modifier = {
 				factor = 0.95 
@@ -3607,7 +3606,7 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -3617,7 +3616,7 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -3627,7 +3626,7 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -3636,25 +3635,25 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				trait = diligent
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
@@ -3707,7 +3706,7 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -3717,7 +3716,7 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -3727,7 +3726,7 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -3736,25 +3735,25 @@ pick_potential_drinking_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				trait = diligent
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
@@ -3873,7 +3872,7 @@ pick_potential_drinking_winners_effect = {
 				factor = 1.5 
 				event_target:tribal_festival_drinking_potential_winner_1 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -3992,7 +3991,7 @@ pick_potential_drinking_winners_effect = {
 				factor = 1.5 
 				event_target:tribal_festival_drinking_potential_winner_2 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -4116,7 +4115,7 @@ pick_potential_drinking_winners_effect = {
 				factor = 1.5 
 				event_target:great_tribal_festival_host = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -4181,7 +4180,7 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -4191,7 +4190,7 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -4201,7 +4200,7 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -4210,25 +4209,25 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				trait = gluttonous
 				trait = diligent
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
 				trait = gluttonous
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
@@ -4281,7 +4280,7 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -4291,7 +4290,7 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -4301,7 +4300,7 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -4310,25 +4309,25 @@ pick_potential_eating_winners_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				trait = gluttonous
 				trait = diligent
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
 				trait = gluttonous
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
@@ -4451,7 +4450,7 @@ pick_potential_eating_winners_effect = {
 				factor = 1.5 
 				event_target:tribal_festival_eating_potential_winner_1 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -4574,7 +4573,7 @@ pick_potential_eating_winners_effect = {
 				factor = 1.5 
 				event_target:tribal_festival_eating_potential_winner_2 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -4702,7 +4701,7 @@ pick_potential_eating_winners_effect = {
 				factor = 1.5 
 				event_target:great_tribal_festival_host = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -5153,7 +5152,7 @@ pick_potential_taming_winners_effect = {
 			}
 			modifier = {
 				factor = 0.25 
-				event_target:tribal_festival_taming_potential_winner_1 = { is_incapable = yes }
+				event_target:tribal_festival_taming_potential_winner_1 = { trait = incapable }
 			}
 			modifier = {
 				factor = 0.95 
@@ -5323,7 +5322,7 @@ pick_potential_taming_winners_effect = {
 			}
 			modifier = {
 				factor = 0.25 
-				event_target:tribal_festival_taming_potential_winner_2 = { is_incapable = yes }
+				event_target:tribal_festival_taming_potential_winner_2 = { trait = incapable }
 			}
 			modifier = {
 				factor = 0.95 
@@ -5519,7 +5518,7 @@ pick_potential_taming_winners_effect = {
 			}
 			modifier = {
 				factor = 0.25 
-				event_target:great_tribal_festival_host = { is_incapable = yes }
+				event_target:great_tribal_festival_host = { trait = incapable }
 			}
 			modifier = {
 				factor = 0.95 
@@ -5584,7 +5583,7 @@ pick_potential_beauty_winners_effect = {
 				is_benevolent_trigger = yes
 				trait = diligent
 				trait = ambitious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -5592,61 +5591,61 @@ pick_potential_beauty_winners_effect = {
 				is_benevolent_trigger = yes
 				trait = diligent
 				trait = ambitious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 				trait = diligent
 				trait = ambitious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 				is_benevolent_trigger = yes
 				trait = ambitious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 				is_benevolent_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 			}
 			preferred_limit = { 
 				has_attractive_trait_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 			}
 			preferred_limit = { 
 				has_unattractive_trait_trigger = no
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 			}
 			preferred_limit = { 
 				has_unattractive_trait_trigger = no
@@ -5671,7 +5670,7 @@ pick_potential_beauty_winners_effect = {
 				is_benevolent_trigger = yes
 				trait = diligent
 				trait = ambitious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -5679,61 +5678,61 @@ pick_potential_beauty_winners_effect = {
 				is_benevolent_trigger = yes
 				trait = diligent
 				trait = ambitious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 				trait = diligent
 				trait = ambitious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 				is_benevolent_trigger = yes
 				trait = ambitious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 				is_benevolent_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes
 			}
 			preferred_limit = { 
 				has_attractive_trait_trigger = yes
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 			}
 			preferred_limit = { 
 				has_unattractive_trait_trigger = no
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 			}
 			preferred_limit = { 
 				has_unattractive_trait_trigger = no
@@ -5784,19 +5783,19 @@ pick_potential_beauty_winners_effect = {
 			}
 			modifier = {
 				factor = 0.85 
-				event_target:tribal_festival_beauty_potential_winner_1 = { practical_age = 30 }
+				event_target:tribal_festival_beauty_potential_winner_1 = { age = 30 }
 			}
 			modifier = {
 				factor = 0.75 
-				event_target:tribal_festival_beauty_potential_winner_1 = { practical_age = 40 }
+				event_target:tribal_festival_beauty_potential_winner_1 = { age = 40 }
 			}
 			modifier = {
 				factor = 0.5 
-				event_target:tribal_festival_beauty_potential_winner_1 = { practical_age = 50 }
+				event_target:tribal_festival_beauty_potential_winner_1 = { age = 50 }
 			}
 			modifier = {
 				factor = 0.35 
-				event_target:tribal_festival_beauty_potential_winner_1 = { practical_age = 60 }
+				event_target:tribal_festival_beauty_potential_winner_1 = { age = 60 }
 			}
 			modifier = {
 				factor = 0.85 
@@ -5884,19 +5883,19 @@ pick_potential_beauty_winners_effect = {
 			}
 			modifier = {
 				factor = 0.85 
-				event_target:tribal_festival_beauty_potential_winner_2 = { practical_age = 30 }
+				event_target:tribal_festival_beauty_potential_winner_2 = { age = 30 }
 			}
 			modifier = {
 				factor = 0.75 
-				event_target:tribal_festival_beauty_potential_winner_2 = { practical_age = 40 }
+				event_target:tribal_festival_beauty_potential_winner_2 = { age = 40 }
 			}
 			modifier = {
 				factor = 0.5 
-				event_target:tribal_festival_beauty_potential_winner_2 = { practical_age = 50 }
+				event_target:tribal_festival_beauty_potential_winner_2 = { age = 50 }
 			}
 			modifier = {
 				factor = 0.35 
-				event_target:tribal_festival_beauty_potential_winner_2 = { practical_age = 60 }
+				event_target:tribal_festival_beauty_potential_winner_2 = { age = 60 }
 			}
 			modifier = {
 				factor = 0.85 
@@ -5989,19 +5988,19 @@ pick_potential_beauty_winners_effect = {
 			}
 			modifier = {
 				factor = 0.85 
-				event_target:great_tribal_festival_host = { practical_age = 30 }
+				event_target:great_tribal_festival_host = { age = 30 }
 			}
 			modifier = {
 				factor = 0.75 
-				event_target:great_tribal_festival_host = { practical_age = 40 }
+				event_target:great_tribal_festival_host = { age = 40 }
 			}
 			modifier = {
 				factor = 0.5 
-				event_target:great_tribal_festival_host = { practical_age = 50 }
+				event_target:great_tribal_festival_host = { age = 50 }
 			}
 			modifier = {
 				factor = 0.35 
-				event_target:great_tribal_festival_host = { practical_age = 60 }
+				event_target:great_tribal_festival_host = { age = 60 }
 			}
 			modifier = {
 				factor = 0.85 
@@ -6074,7 +6073,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6082,7 +6081,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6108,7 +6107,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6116,7 +6115,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6136,21 +6135,21 @@ pick_potential_poetry_winners_effect = {
 			}
 			preferred_limit = { 
 				learning = 20
-			}
-			preferred_limit = { 
-				is_attractive_trigger = yes 
-				learning = 15
-				trait = poet
-				trait = gregarious
-				NOT = { practical_age = 30 }
-				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes 
 				learning = 15
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 30 }
+				is_ill = no
+			}
+			preferred_limit = { 
+				is_attractive_trigger = yes 
+				learning = 15
+				trait = poet
+				trait = gregarious
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6176,7 +6175,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6184,7 +6183,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6210,7 +6209,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6218,7 +6217,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6259,7 +6258,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6267,7 +6266,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6293,7 +6292,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6301,7 +6300,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6321,21 +6320,21 @@ pick_potential_poetry_winners_effect = {
 			}
 			preferred_limit = { 
 				learning = 20
-			}
-			preferred_limit = { 
-				is_attractive_trigger = yes 
-				learning = 15
-				trait = poet
-				trait = gregarious
-				NOT = { practical_age = 30 }
-				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes 
 				learning = 15
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 30 }
+				is_ill = no
+			}
+			preferred_limit = { 
+				is_attractive_trigger = yes 
+				learning = 15
+				trait = poet
+				trait = gregarious
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6361,7 +6360,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6369,7 +6368,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6395,7 +6394,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6403,7 +6402,7 @@ pick_potential_poetry_winners_effect = {
 				learning = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6832,7 +6831,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6840,7 +6839,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6866,7 +6865,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6874,7 +6873,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6894,21 +6893,21 @@ pick_potential_singing_winners_effect = {
 			}
 			preferred_limit = { 
 				diplomacy = 20
-			}
-			preferred_limit = { 
-				is_attractive_trigger = yes 
-				diplomacy = 15
-				trait = poet
-				trait = gregarious
-				NOT = { practical_age = 30 }
-				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes 
 				diplomacy = 15
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 30 }
+				is_ill = no
+			}
+			preferred_limit = { 
+				is_attractive_trigger = yes 
+				diplomacy = 15
+				trait = poet
+				trait = gregarious
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6934,7 +6933,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6942,7 +6941,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -6968,7 +6967,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -6976,7 +6975,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -7017,7 +7016,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -7025,7 +7024,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 25
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -7051,7 +7050,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -7059,7 +7058,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 20
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -7079,21 +7078,21 @@ pick_potential_singing_winners_effect = {
 			}
 			preferred_limit = { 
 				diplomacy = 20
-			}
-			preferred_limit = { 
-				is_attractive_trigger = yes 
-				diplomacy = 15
-				trait = poet
-				trait = gregarious
-				NOT = { practical_age = 30 }
-				is_ill = no
 			}
 			preferred_limit = { 
 				is_attractive_trigger = yes 
 				diplomacy = 15
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 30 }
+				is_ill = no
+			}
+			preferred_limit = { 
+				is_attractive_trigger = yes 
+				diplomacy = 15
+				trait = poet
+				trait = gregarious
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -7119,7 +7118,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -7127,7 +7126,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 10
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -7153,7 +7152,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 30 }
+				NOT = { age = 30 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -7161,7 +7160,7 @@ pick_potential_singing_winners_effect = {
 				diplomacy = 5
 				trait = poet
 				trait = gregarious
-				NOT = { practical_age = 40 }
+				NOT = { age = 40 }
 				is_ill = no
 			}
 			preferred_limit = {  
@@ -8170,23 +8169,23 @@ warrior_lodge_arm_wrestling_first_round_effect = {
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_1 = { NOT = { practical_age = 20 } }
+					event_target:arm_wrestling_fighter_1 = { NOT = { age = 20 } }
 				}
 				modifier = {
 					factor = 1.15 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 20 NOT = { practical_age = 40 } }
+					event_target:arm_wrestling_fighter_1 = { age = 20 NOT = { age = 40 } }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 40 }
+					event_target:arm_wrestling_fighter_1 = { age = 40 }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 50 }
+					event_target:arm_wrestling_fighter_1 = { age = 50 }
 				}
 				modifier = {
 					factor = 0.75 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 60 }
+					event_target:arm_wrestling_fighter_1 = { age = 60 }
 				}
 				modifier = {
 					factor = 1.25 
@@ -8234,7 +8233,7 @@ warrior_lodge_arm_wrestling_first_round_effect = {
 				}
 				modifier = {
 					factor = 0.25 
-					event_target:arm_wrestling_fighter_1 = { is_incapable = yes }
+					event_target:arm_wrestling_fighter_1 = { trait = incapable }
 				}
 				modifier = {
 					factor = 0.95 
@@ -8340,23 +8339,23 @@ warrior_lodge_arm_wrestling_first_round_effect = {
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_2 = { NOT = { practical_age = 20 } }
+					event_target:arm_wrestling_fighter_2 = { NOT = { age = 20 } }
 				}
 				modifier = {
 					factor = 1.15 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 20 NOT = { practical_age = 40 } }
+					event_target:arm_wrestling_fighter_2 = { age = 20 NOT = { age = 40 } }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 40 }
+					event_target:arm_wrestling_fighter_2 = { age = 40 }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 50 }
+					event_target:arm_wrestling_fighter_2 = { age = 50 }
 				}
 				modifier = {
 					factor = 0.75 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 60 }
+					event_target:arm_wrestling_fighter_2 = { age = 60 }
 				}
 				modifier = {
 					factor = 1.25 
@@ -8404,7 +8403,7 @@ warrior_lodge_arm_wrestling_first_round_effect = {
 				}
 				modifier = {
 					factor = 0.25 
-					event_target:arm_wrestling_fighter_2 = { is_incapable = yes }
+					event_target:arm_wrestling_fighter_2 = { trait = incapable }
 				}
 				modifier = {
 					factor = 0.95 
@@ -8525,23 +8524,23 @@ warrior_lodge_arm_wrestling_second_round_effect = {
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_1 = { NOT = { practical_age = 20 } }
+					event_target:arm_wrestling_fighter_1 = { NOT = { age = 20 } }
 				}
 				modifier = {
 					factor = 1.15 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 20 NOT = { practical_age = 40 } }
+					event_target:arm_wrestling_fighter_1 = { age = 20 NOT = { age = 40 } }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 40 }
+					event_target:arm_wrestling_fighter_1 = { age = 40 }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 50 }
+					event_target:arm_wrestling_fighter_1 = { age = 50 }
 				}
 				modifier = {
 					factor = 0.75 
-					event_target:arm_wrestling_fighter_1 = { practical_age = 60 }
+					event_target:arm_wrestling_fighter_1 = { age = 60 }
 				}
 				modifier = {
 					factor = 1.25 
@@ -8589,7 +8588,7 @@ warrior_lodge_arm_wrestling_second_round_effect = {
 				}
 				modifier = {
 					factor = 0.25 
-					event_target:arm_wrestling_fighter_1 = { is_incapable = yes }
+					event_target:arm_wrestling_fighter_1 = { trait = incapable }
 				}
 				modifier = {
 					factor = 0.95 
@@ -8706,23 +8705,23 @@ warrior_lodge_arm_wrestling_second_round_effect = {
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_2 = { NOT = { practical_age = 20 } }
+					event_target:arm_wrestling_fighter_2 = { NOT = { age = 20 } }
 				}
 				modifier = {
 					factor = 1.15 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 20 NOT = { practical_age = 40 } }
+					event_target:arm_wrestling_fighter_2 = { age = 20 NOT = { age = 40 } }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 40 }
+					event_target:arm_wrestling_fighter_2 = { age = 40 }
 				}
 				modifier = {
 					factor = 0.85 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 50 }
+					event_target:arm_wrestling_fighter_2 = { age = 50 }
 				}
 				modifier = {
 					factor = 0.75 
-					event_target:arm_wrestling_fighter_2 = { practical_age = 60 }
+					event_target:arm_wrestling_fighter_2 = { age = 60 }
 				}
 				modifier = {
 					factor = 1.25 
@@ -8770,7 +8769,7 @@ warrior_lodge_arm_wrestling_second_round_effect = {
 				}
 				modifier = {
 					factor = 0.25 
-					event_target:arm_wrestling_fighter_2 = { is_incapable = yes }
+					event_target:arm_wrestling_fighter_2 = { trait = incapable }
 				}
 				modifier = {
 					factor = 0.95 
@@ -8840,35 +8839,67 @@ post_arm_wrestling_flavor_effect = {
 					NOT = { num_of_lovers = 1 }
 					is_adult = yes
 					NOT = { trait = celibate }
-					is_incapable = no
+					NOT = { trait = incapable }
 					any_society_member = { 
 						same_society_as = ROOT
 						is_adult = yes
 						NOT = { trait = celibate }
 						opinion = { who = ROOT value = -20 }
-						is_incapable = no
 						NOR = { 
 							num_of_lovers = 1
+							trait = incapable
 							character = ROOT
+							is_rival = ROOT 
+							is_friend = ROOT
+							is_lover = ROOT
+							is_married = ROOT
 						}
-						possibly_romantically_interested_in_each_other_trigger = yes
+						OR = { #Incest check  
+							NOT = { dynasty = ROOT }
+							AND = { 
+								ROOT = { 
+									OR = { 
+										has_religion_feature = religion_holy_family
+                                        religion_openly_in_egyptian_subgroup_trigger = yes
+										religion = zoroastrian
+										religion = messalian 
+									} 
+								}
+								OR = { 
+									has_religion_feature = religion_holy_family
+                                    religion_openly_in_egyptian_subgroup_trigger = yes
+									religion = zoroastrian
+									religion = messalian 
+								} 
+							}
+						}
+						OR = { #Attraction check
+							AND = { 
+								ROOT = { is_female = yes } 
+								prefers_men_trigger = no
+							} 
+							AND = { 
+								ROOT = { is_female = no } 
+								prefers_men_trigger = yes
+							} 
+						}
 					}
 				}
 				modifier = { 
 					factor = 0.85 
-					practical_age = 30
+					age = 30
 				} 
 				modifier = { 
 					factor = 0.85 
-					practical_age = 40
+					age = 40
 				} 
 				modifier = { 
 					factor = 0.65 
-					practical_age = 50
+					age = 50
 				} 
 				modifier = { 
 					factor = 0.35 
-					practical_age = 60
+					age = 60
 				}
 				modifier = { 
 					factor = 1.5 
@@ -8887,15 +8918,47 @@ post_arm_wrestling_flavor_effect = {
 						same_society_as = ROOT
 						is_adult = yes
 						opinion = { who = ROOT value = -20 }
-						is_incapable = no
 						NOR = { 
 							num_of_lovers = 1
+							trait = incapable
 							character = ROOT
+							is_rival = ROOT 
+							is_friend = ROOT
+							is_lover = ROOT
+							is_married = ROOT
 						}
-						possibly_romantically_interested_in_each_other_trigger = yes
+						OR = { #Incest check  
+							NOT = { dynasty = ROOT }
+							AND = { 
+								ROOT = { 
+									OR = { 
+										has_religion_feature = religion_holy_family
+                                        religion_openly_in_egyptian_subgroup_trigger = yes
+										religion = zoroastrian
+										religion = messalian 
+									} 
+								}
+								OR = { 
+									has_religion_feature = religion_holy_family
+                                    religion_openly_in_egyptian_subgroup_trigger = yes
+									religion = zoroastrian
+									religion = messalian 
+								} 
+							}
+						}
+						OR = { #Attraction check
+							AND = { 
+								ROOT = { is_female = yes } 
+								prefers_men_trigger = no
+							} 
+							AND = { 
+								ROOT = { is_female = no } 
+								prefers_men_trigger = yes
+							} 
+						}
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 30 }
+						NOT = { age = 30 }
 						is_attractive_trigger = yes
 						NAND = { 
 							trait = chaste 
@@ -8903,7 +8966,7 @@ post_arm_wrestling_flavor_effect = {
 						}
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 40 }
+						NOT = { age = 40 }
 						is_attractive_trigger = yes
 						NAND = { 
 							trait = chaste 
@@ -8918,7 +8981,7 @@ post_arm_wrestling_flavor_effect = {
 						}
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 30 }
+						NOT = { age = 30 }
 						is_unattractive_trigger = no
 						NAND = { 
 							trait = chaste 
@@ -8926,7 +8989,7 @@ post_arm_wrestling_flavor_effect = {
 						}
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 40 }
+						NOT = { age = 40 }
 						is_unattractive_trigger = no
 						NAND = { 
 							trait = chaste 
@@ -8941,22 +9004,22 @@ post_arm_wrestling_flavor_effect = {
 						}
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 30 }
+						NOT = { age = 30 }
 						is_attractive_trigger = yes
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 40 }
+						NOT = { age = 40 }
 						is_attractive_trigger = yes
 					}
 					preferred_limit = { 
 						is_attractive_trigger = yes
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 30 }
+						NOT = { age = 30 }
 						is_unattractive_trigger = no
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 40 }
+						NOT = { age = 40 }
 						is_unattractive_trigger = no
 					}
 					preferred_limit = { 
@@ -8969,14 +9032,14 @@ post_arm_wrestling_flavor_effect = {
 				trigger = { 
 					NOT = { num_of_friends = 3 }
 					is_adult = yes
-					is_incapable = no
+					NOT = { trait = incapable }
 					any_society_member = { 
 						same_society_as = ROOT
 						is_adult = yes
 						opinion = { who = ROOT value = -20 }
-						is_incapable = no
 						NOR = { 
 							num_of_friends = 1
+							trait = incapable
 							character = ROOT
 							is_rival = ROOT 
 							is_friend = ROOT
@@ -8995,19 +9058,19 @@ post_arm_wrestling_flavor_effect = {
 				} 
 				modifier = { 
 					factor = 0.85 
-					practical_age = 30
+					age = 30
 				} 
 				modifier = { 
 					factor = 0.85 
-					practical_age = 40
+					age = 40
 				} 
 				modifier = { 
 					factor = 0.65 
-					practical_age = 50
+					age = 50
 				} 
 				modifier = { 
 					factor = 0.35 
-					practical_age = 60
+					age = 60
 				}
 				modifier = { 
 					factor = 1.5 
@@ -9022,9 +9085,9 @@ post_arm_wrestling_flavor_effect = {
 						same_society_as = ROOT
 						is_adult = yes
 						opinion = { who = ROOT value = -20 }
-						is_incapable = no
 						NOR = { 
 							num_of_friends = 1
+							trait = incapable
 							character = ROOT
 							is_rival = ROOT 
 							is_friend = ROOT
@@ -9033,19 +9096,19 @@ post_arm_wrestling_flavor_effect = {
 						}
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 30 }
+						NOT = { age = 30 }
 						trait = gregarious
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 40 }
+						NOT = { age = 40 }
 						trait = gregarious
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 30 }
+						NOT = { age = 30 }
 						NOT = { trait = shy }
 					}
 					preferred_limit = { 
-						NOT = { practical_age = 40 }
+						NOT = { age = 40 }
 						NOT = { trait = shy }
 					}
 					character_event = { id = HF.25222 }
@@ -10122,7 +10185,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				ai = no
 				is_weak_trigger = no
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -10132,7 +10195,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -10142,7 +10205,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -10152,7 +10215,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -10161,25 +10224,25 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				trait = diligent
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
@@ -10231,7 +10294,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				ai = no
 				is_weak_trigger = no
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -10241,7 +10304,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -10251,7 +10314,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_female = no
 				is_ill = no
 			}
@@ -10261,7 +10324,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				is_ill = no
 			}
 			preferred_limit = { 
@@ -10270,25 +10333,25 @@ pick_potential_WL_drinking_finalists_effect = {
 				trait = ambitious
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				trait = diligent
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 			}
 			preferred_limit = { 
 				is_strong_trigger = yes
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
 				trait = drunkard
 				age = 20
-				NOT = { practical_age = 50 }
+				NOT = { age = 50 }
 				NOT = { trait = slothful }
 			}
 			preferred_limit = { 
@@ -10407,7 +10470,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				factor = 1.5 
 				event_target:warrior_lodge_drinking_finalist_1 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -10524,7 +10587,7 @@ pick_potential_WL_drinking_finalists_effect = {
 				factor = 1.5 
 				event_target:warrior_lodge_drinking_finalist_2 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -10652,7 +10715,7 @@ pick_potential_WL_drinking_winner_effect = {
 				factor = 1.5 
 				event_target:warrior_lodge_drinking_finalist_1 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {
@@ -10678,6 +10741,10 @@ pick_potential_WL_drinking_winner_effect = {
 			modifier = {
 				factor = 1.35 
 				event_target:warrior_lodge_drinking_finalist_1 = { has_character_modifier = tribal_festival_bought_strength_charm }
+			}
+			modifier = {
+				factor = 1.15 
+				event_target:warrior_lodge_drinking_finalist_1 = { has_character_modifier = tribal_festival_bought_bravery_amulet }
 			}
 			modifier = {
 				factor = 1.15 
@@ -10778,7 +10845,7 @@ pick_potential_WL_drinking_winner_effect = {
 				factor = 1.5 
 				event_target:warrior_lodge_drinking_finalist_2 = { 
 					age = 20 
-					NOT = { practical_age = 50 } 
+					NOT = { age = 50 } 
 				}
 			}
 			modifier = {

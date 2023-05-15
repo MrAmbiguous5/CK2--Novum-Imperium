@@ -1,5 +1,3 @@
-# -*- ck2.events -*-
-
 #########################################
 #										#
 # RIP Hospital Events					#
@@ -64,64 +62,23 @@ character_event = {
 			}
 			save_event_target_as = pilgrim_physician_hospital
 		}
-		random_list = {
-			50 = {
-				trigger = {
-					OR = {
-						has_game_rule = { name = gender value = all }
-						emf_feminist_religion = yes
-						primary_title = {
-							OR = {
-								has_law = status_of_women_4
-								has_law = status_of_women_3
-							}
-						}
-					}
-				}
-				create_character = {
-					religion = ROOT
-					culture = ROOT
-					dynasty = none
-					age = 38
-					random_traits = yes
-					female = yes
-					attributes = {
-						learning = 6
-					}
-					health = 6
-					trait = scholarly_theologian
-					trait = theologian
-					trait = pilgrim
-					trait = humble
-				}
+		create_character = {
+			religion = ROOT
+			culture = ROOT
+			dynasty = none
+			age = 38
+			random_traits = yes
+			female = no
+			attributes = {
+				learning = 6
 			}
-			50 = {
-				trigger = {
-					OR = {
-						has_game_rule = { name = gender value = all }
-						NOT = { has_religion_feature = religion_matriarchal }
-					}
-				}
-				create_character = {
-					religion = ROOT
-					culture = ROOT
-					dynasty = none
-					age = 38
-					random_traits = yes
-					female = no
-					attributes = {
-						learning = 6
-					}
-					health = 6
-					trait = scholarly_theologian
-					trait = theologian
-					trait = pilgrim
-					trait = humble
-				}
-			}
+			health = 6
+			trait = scholarly_theologian
+			trait = theologian
+			trait = pilgrim
+			trait = humble
 		}
 		new_character = {
-			emf_dna_set_flags_for_high_health = yes
 			remove_trait = scholar
 			remove_trait = proud
 			remove_trait = socializer
@@ -152,7 +109,7 @@ character_event = {
 				limit = {
 					religion_group = christian
 				}
-				add_ascetic_trait_effect = yes
+				add_trait = monk
 			}
 			if = {
 				limit = {
@@ -161,7 +118,22 @@ character_event = {
 				remove_trait = pilgrim
 				add_trait = hajjaj
 			}
-			emf_new_character_priest = yes
+			if = {
+				limit = {
+					has_dharmic_religion_trigger = yes
+				}
+				add_trait = brahmin
+				character_event = { id = RoI.30121 }
+			}
+            if = {
+                limit = {
+                    OR = {
+                        religion = a_tag_roog
+                        religion = a_tag_roog_reformed
+                    }
+                }
+                add_trait = jakhanke
+            }
 			set_character_flag = is_court_physician
 			save_event_target_as = pilgrim_physician
 		}
@@ -505,7 +477,6 @@ character_event = {
 			trait = disfigured
 		}
 		new_character = {
-			emf_new_character_peasant = yes
 			save_event_target_as = homeless_leper
 		}
 	}

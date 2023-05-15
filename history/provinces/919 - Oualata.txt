@@ -1,5 +1,3 @@
-# -*- ck2.history.provinces -*-
-
 # 919 - Oualata
 
 # County Title
@@ -8,9 +6,8 @@ title = c_oualata
 # Settlements
 max_settlements = 2
 b_oualata = tribal
-#b_biru = city
 
-#b_tiguiguil = city
+#b_biru = city
 #b_neiguiat = temple #Neïguiat
 #b_konou = castle
 #b_birnsara = castle #Bir Nsara
@@ -20,13 +17,10 @@ b_oualata = tribal
 
 # Misc
 culture = soninke
-religion = west_african_pagan
+religion = a_tag_roog
 
 # History
-
-#berber colonization
-970.1.1 = { culture = zanata }
-
-#islamization
-980.1.1 = { religion = sunni }
-#1060.1.1 = { b_biru = city }
+1000.1.1 = { 
+	religion = sunni
+	#culture = butr
+}

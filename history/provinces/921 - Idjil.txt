@@ -1,13 +1,11 @@
-# -*- ck2.history.provinces -*-
-
 # 921 - Idjil
 
 # County Title
 title = c_idjil
 
 # Settlements
-max_settlements = 2
-b_idjil = tribal
+max_settlements = 1
+b_bir_um_grein = tribal
 
 #b_zouerat = city #Zouérat
 #b_tazadit = temple
@@ -15,10 +13,8 @@ b_idjil = tribal
 #b_fderick = castle #Fdérick
 
 # Misc
-culture = tagelmust
-religion = ibadi
+culture = maghreb_arabic
+religion = amazigh
 
 # History
-
-#islamization
-945.1.1 = { religion = sunni }
+1000.1.1 = { religion = sunni }

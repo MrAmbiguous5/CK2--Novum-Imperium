@@ -1,5 +1,3 @@
-# -*- ck2.events -*-
-
 ###########################################
 #                                         #
 # Warrior Lodge events				      #
@@ -330,7 +328,7 @@ character_event = {
                         additive_modifier = {
                             value = -500
                             OR = {
-                                practical_age = 60
+                                age = 60
                                 is_maimed_trigger = yes #has a maimed trait
                             }
                         }
@@ -536,7 +534,6 @@ letter_event = { #SUCCESS: Welcome to the society!
     option = {
         name = EVTOPTA_HF_10009
         
-        clr_character_flag = society_join_block 
         join_society = event_target:warrior_lodge_to_join
 
 
@@ -551,20 +548,18 @@ letter_event = { #SUCCESS: Welcome to the society!
 
         if = { # Give Sympathy trait if appropriate...
             limit = {
-                NOR = { 
-					religion_group = pagan_group
-					event_target:warrior_lodge_to_join = { 
-						leader = { 
-							is_member_of_non_pagan_warrior_lodge_trigger = yes
-						} 
-					}
-					event_target:hero_character = {
-						is_member_of_non_pagan_warrior_lodge_trigger = yes
-					}
-				}
+                NOT = { event_target:warrior_lodge_to_join = { is_society = warrior_lodge_west_african } }
+                NOT = { religion_group = pagan_group }
             }
             #Give Sympathy trait
             add_trait = sympathy_pagans
+        }
+        if = {
+            limit = {
+                event_target:warrior_lodge_to_join = { is_society = warrior_lodge_west_african }
+                NOT = { religion_group = african_group }
+            }
+            add_trait = sympathy_african
         }
 
         hidden_effect = {
@@ -601,6 +596,7 @@ letter_event = { #SUCCESS: Welcome to the society!
             event_target:recruiting_parent = { character_event = { id = HF.10013 } }
         }
         ###
+        clr_character_flag = society_join_block 
     } 
 }
 
@@ -2104,8 +2100,8 @@ character_event = {
                     random_list = { #Find someone who cares about the person caught in the fury...
                         10 = {
                             trigger = {
-                                is_married = yes
                                 any_spouse = { NOT = { character = ROOT } }
+                                is_married = yes
                             }
                             random_spouse = {
                                 limit = { NOT = { character = ROOT } }
@@ -2114,8 +2110,8 @@ character_event = {
                         }
                         10 = {
                             trigger = {
-                                num_of_friends > 0
                                 any_friend = { NOT = { character = ROOT } }
+                                any_friend = { always = yes }
                             }
                             random_friend = {
                                 limit = { NOT = { character = ROOT } }
@@ -2124,8 +2120,8 @@ character_event = {
                         }
                         10 = {
                             trigger = {
-                                has_lover = yes
                                 any_lover = { NOT = { character = ROOT } }
+                                any_lover = { always = yes }
                             }
                             random_lover = {
                                 limit = { NOT = { character = ROOT } }
@@ -2147,7 +2143,6 @@ character_event = {
                         }
                         10 = {
                             trigger = {
-                                has_children = yes
                                 any_child = {
                                     is_adult = yes
                                     NOT = { character = ROOT }
@@ -2174,7 +2169,7 @@ character_event = {
         else = {
             if = {
                 limit = {
-                    event_target:kinslayer_target = { is_married = ROOT }
+                    event_target:kinslayer_target = { any_spouse = { character = ROOT } }
                 }
                 reverse_opinion = {
                     who = event_target:kinslayer_target
@@ -2250,7 +2245,7 @@ character_event = {
     is_triggered_only = yes
 
     trigger = {
-        is_incapable = no
+        NOT = { trait = incapable }
         is_alive = yes
     }
     option = {      
@@ -2310,21 +2305,29 @@ character_event = {
             has_character_modifier = the_dungeon
         }
         host = {
-			any_courtier = { 
-				NOT = { character = PREV }
-				NOT = { character = ROOT }
-				is_incapable = no
-				OR = {
-					prisoner = yes # There is either another prisoner...
-					NOR = { #Or someone "unimportant" around...
-						is_lover = PREV
-						is_friend = PREV
-						is_rival = PREV
-					}
-				}
-				NOT = { is_friend = ROOT }
-				ai = yes
-			}
+            OR = {
+                any_courtier = { # There is either another prisoner...
+                    NOT = { character = PREV }
+                    NOT = { character = ROOT }
+                    NOT = { trait = incapable }
+                    prisoner = yes
+                    NOT = { is_friend = ROOT }
+                    ai = yes
+                }
+                any_courtier = { #Or someone "unimportant" around...
+                    NOT = { character = PREV }
+                    NOT = { character = ROOT }
+                    NOT = { trait = incapable }
+                    prisoner = no
+                    NOT = { is_friend = ROOT }
+                    NOR = {
+                        is_lover = PREV
+                        is_friend = PREV
+                        is_rival = PREV
+                    }
+                    ai = yes
+                }
+            }
         }
     }
     
@@ -2384,7 +2387,7 @@ character_event = {
                             any_courtier = { # There is either another prisoner...
                                 NOT = { character = PREV }
                                 NOT = { character = ROOT }
-                                is_incapable = no
+                                NOT = { trait = incapable }
                                 prisoner = yes
                                 NOT = { is_friend = ROOT }
                                 ai = yes
@@ -2396,7 +2399,7 @@ character_event = {
                             limit = {
                                 NOT = { character = ROOT }
                                 NOT = { character = PREV }
-                                is_incapable = no
+                                NOT = { trait = incapable }
                                 prisoner = yes
                                 NOT = { is_friend = ROOT }
                                 ai = yes
@@ -2415,7 +2418,7 @@ character_event = {
                             limit = {
                                 NOT = { character = ROOT }
                                 NOT = { character = PREV }
-                                is_incapable = no
+                                NOT = { trait = incapable }
                                 prisoner = no
                                 NOT = { is_friend = ROOT }
                                 NOR = {
@@ -2697,7 +2700,7 @@ character_event = {
     }
 
     trigger = {
-        is_incapable = no
+        NOT = { trait = incapable }
         is_alive = yes
     }
 
@@ -2870,7 +2873,10 @@ character_event = {
         }
         else_if = {
             limit = {
-                religion_openly_west_african_or_reformed_trigger = yes
+                OR = {
+                    religion_openly_west_african_or_reformed_trigger = yes
+                    religion_group = african_group
+                }
                 can_join_society = warrior_lodge_west_african
             }
             join_society = warrior_lodge_west_african
@@ -2895,48 +2901,6 @@ character_event = {
                 can_join_society = warrior_lodge_hellenic
             }
             join_society = warrior_lodge_hellenic
-        }
-		else_if = {
-            limit = {
-                religion_group = christian
-                can_join_society = warrior_lodge_cws_christian
-            }
-            join_society = warrior_lodge_cws_christian
-        }
-		else_if = {
-            limit = {
-                religion_group = zoroastrian_group
-                can_join_society = warrior_lodge_ws_mazdan
-            }
-            join_society = warrior_lodge_ws_mazdan
-        }
-		else_if = {
-            limit = {
-                religion_group = indian_group
-                can_join_society = warrior_lodge_ws_eastern
-            }
-            join_society = warrior_lodge_ws_eastern
-        }
-		else_if = {
-            limit = {
-                religion_openly_aztec_or_reformed_trigger = yes
-                can_join_society = warrior_lodge_aztec
-            }
-            join_society = warrior_lodge_aztec
-        }
-		else_if = {
-            limit = {
-                religion_group = muslim
-                can_join_society = warrior_lodge_ws_muslim
-            }
-            join_society = warrior_lodge_ws_muslim
-        }
-		else_if = {
-            limit = {
-                religion_group = jewish_group
-                can_join_society = warrior_lodge_ws_jewish
-            }
-            join_society = warrior_lodge_ws_jewish
         }
         else_if = {
             limit = {
@@ -3033,10 +2997,7 @@ character_event = {
 
         if = {
             limit = {
-                OR = {
-					is_landed = yes
-					is_patrician = yes
-				}
+                is_landed = yes
             }
             #Pick someone under you to lead the warrior lodge...
             any_courtier_or_vassal = {
@@ -3050,7 +3011,7 @@ character_event = {
                     }
                     has_secret_religion_trait_trigger = no
                     is_in_society = no
-                    is_adult = yes
+                    age = 16
                     NOT = { block_general_event_trigger = yes }
                 }
                 score_value = { #Prioritizes selecting some kind of warrior...
@@ -3089,7 +3050,7 @@ character_event = {
                         }
                         has_secret_religion_trait_trigger = no
                         is_in_society = no
-                        is_adult = yes
+                        age = 16
                         NOT = { block_general_event_trigger = yes }
                     }
                     score_value = { #Prioritizes selecting some kind of warrior...
@@ -3175,7 +3136,7 @@ character_event = {
             }
             event_target:my_warrior_lodge = {
                 clr_flag = used_legendary_gathering #So the whole thing is reset...
-				clr_flag = block_society_progress
+                clr_flag = block_society_progress
                 set_society_progress = 0
             }
         }
@@ -3205,7 +3166,7 @@ character_event = {
                     prisoner = no
                     society_rank == 4
                     ai = yes
-                    is_incapable = no
+                    NOT = { trait = incapable }
                     NOT = { has_character_flag = call_to_legend_active }
                 }
                 score_value = { #Prioritizes selecting some kind of warrior...

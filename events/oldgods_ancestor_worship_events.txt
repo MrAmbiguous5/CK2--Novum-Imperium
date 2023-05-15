@@ -1,5 +1,3 @@
-# -*- ck2.events -*-
-
 ###################################
 #
 # THE OLD GODS 
@@ -35,9 +33,7 @@ character_event = {
 			religion = tengri_pagan
 			religion = tengri_pagan_reformed
 			has_religion_feature = religion_beatification
-			has_religion_feature = religion_feature_baltic
-			has_religion_feature = religion_feature_slavic
-			has_religion_feature = religion_syncretic_christian
+            religion_group = african_group
 		}
 	}
 
@@ -1168,13 +1164,16 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_TOG_7011
-		
+
+		add_trait = robust
+
+		if = {
+			limit = { trait = weak }
+			remove_trait = weak
+		}
 		if = {
 			limit = { trait = feeble }
 			remove_trait = feeble
-		}
-		else = {
-			add_trait = robust
 		}
 	}
 }
@@ -1233,49 +1232,137 @@ character_event = {
 	picture = GFX_evt_lovers
 
 	is_triggered_only = yes
-	
-	trigger = {
-		any_courtier = {
-			is_adult = yes
-			NOT = { is_lover = ROOT }
-			NOT = { is_close_relative = ROOT }
-			ai = yes
-			prisoner = no
-			is_incapable = no
-			is_alive = yes
-			root_attraction_trigger = yes
-		}
-	}
 
 	immediate = {
-		random_courtier = {
-			limit = { 
-				is_adult = yes
-				NOT = { is_lover = ROOT }
-				NOT = { is_close_relative = ROOT }
-				ai = yes
-				prisoner = no
-				is_incapable = no
-				is_alive = yes
-				root_attraction_trigger = yes
+		#Targets male lover
+		if = {
+			limit = { prefers_men_trigger = yes }
+
+			#Grabs random courtier
+			if = {
+				limit = {
+					any_courtier = {
+						is_adult = yes
+						is_female = no
+						NOT = { is_lover = ROOT }
+						NOT = { is_close_relative = ROOT }
+						ai = yes
+						prisoner = no
+						NOT = { trait = incapable }
+						is_alive = yes
+					}
+				}
+
+				random_courtier = {
+					limit = { 
+						is_adult = yes
+						is_female = no
+						NOT = { is_lover = ROOT }
+						NOT = { is_close_relative = ROOT }
+						ai = yes
+						prisoner = no
+						NOT = { trait = incapable }
+						is_alive = yes
+					}
+					save_event_target_as = ancestors_lover
+				}
 			}
-			save_event_target_as = ancestors_lover
+
+			#Or creates a new one
+			else = {
+				create_character = {
+					female = no
+					random_traits = yes
+					dynasty = none
+				}
+				new_character = {
+					save_event_target_as = ancestors_lover
+				}
+			}
+		}
+
+		#Targets female lover
+		if = {
+			limit = { prefers_men_trigger = no }
+
+			#Grabs random courtier
+			if = {
+				limit = {
+					any_courtier = {
+						is_adult = yes
+						is_female = yes
+						NOT = { is_lover = ROOT }
+						NOT = { is_close_relative = ROOT }
+						ai = yes
+						prisoner = no
+						NOT = { trait = incapable }
+						is_alive = yes
+					}
+				}
+
+				random_courtier = {
+					limit = { 
+						is_adult = yes
+						is_female = yes
+						NOT = { is_lover = ROOT }
+						NOT = { is_close_relative = ROOT }
+						ai = yes
+						prisoner = no
+						NOT = { trait = incapable }
+						is_alive = yes
+					}
+					save_event_target_as = ancestors_lover
+				}
+			}
+
+			#Or creates a new one
+			else = {
+				create_character = {
+					female = yes
+					random_traits = yes
+					dynasty = none
+				}
+				new_character = {
+					save_event_target_as = ancestors_lover
+				}
+			}
 		}
 	}
 
 	#Confess
 	option = {
 		name = EVTOPTA_TOG_7020
-		if = { #Makes lover homosexual if both are same sex
-			limit = {
-				same_sex = event_target:ancestors_lover
-				event_target:ancestors_lover = { NOT = { trait = homosexual } }
-			}
-			event_target:ancestors_lover = { add_trait = homosexual }
-		}
+
 		add_lover = event_target:ancestors_lover
-		event_target:ancestors_lover = { save_event_target_as = sex_partner }
-		unprotected_sex_effect_event_target = yes
+
+		#Makes lover homosexual if both are same sex
+		hidden_tooltip = {
+			if = {
+				limit = { event_target:ancestors_lover = { same_sex = ROOT } }
+				event_target:ancestors_lover = { add_trait = homosexual }
+			}
+
+			if = {
+				limit = {
+					ROOT = { is_female = no }
+					event_target:ancestors_lover = { is_female = yes } 
+				}
+				random = {
+					chance = 50 
+					impregnate = event_target:ancestors_lover
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { is_female = yes }
+					event_target:ancestors_lover = { is_female = no } 
+				}
+				random = {
+					chance = 50 
+					event_target:ancestors_lover = { impregnate = ROOT }
+				}
+			}
+		}
 	}
 
 	#Or don't
@@ -1296,37 +1383,49 @@ character_event = {
 	picture = GFX_evt_feast
 
 	is_triggered_only = yes
-	
-	trigger = {
-		any_courtier = {
-			NOR = {
-				ai = no
-				is_friend = ROOT
-				is_rival = ROOT
-				is_lover = ROOT
-				prisoner = yes
-				is_incapable = yes
-				is_inaccessible_trigger = yes
-				is_alive = no
-			}
-		}
-	}
 
 	immediate = {
-		random_courtier = {
+		#Target a friend
+		if = {
 			limit = {
-				NOR = {
-					ai = no
-					is_friend = ROOT
-					is_rival = ROOT
-					is_lover = ROOT
-					prisoner = yes
-					is_incapable = yes
-					is_inaccessible_trigger = yes
-					is_alive = no
+				any_courtier = {
+					NOR = {
+						is_friend = ROOT
+						is_rival = ROOT
+						is_lover = ROOT
+						prisoner = yes
+						trait = incapable
+						is_inaccessible_trigger = yes
+						is_alive = no
+					}
 				}
-			} 
-			save_event_target_as = ancestors_friend
+			}
+
+			random_courtier = {
+				limit = {
+					NOR = {
+						is_friend = ROOT
+						is_rival = ROOT
+						is_lover = ROOT
+						prisoner = yes
+						trait = incapable
+						is_inaccessible_trigger = yes
+						is_alive = no
+					}
+				} 
+				save_event_target_as = ancestors_friend
+			}
+		}
+
+		#Or create new one
+		else = {
+			create_character = {
+				random_traits = yes
+				dynasty = random
+			}
+			new_character = {
+				save_event_target_as = ancestors_friend
+			}
 		}
 	}
 
@@ -1370,37 +1469,49 @@ character_event = {
 	picture = GFX_evt_tribal_shrine
 
 	is_triggered_only = yes
-	
-	trigger = {
-		any_courtier = {
-			NOR = {
-				ai = no
-				is_friend = ROOT
-				is_rival = ROOT
-				is_lover = ROOT
-				prisoner = yes
-				is_incapable = yes
-				is_inaccessible_trigger = yes
-				is_alive = no
-			}
-		}
-	}
 
 	immediate = {
-		random_courtier = {
+		#Target a rival
+		if = {
 			limit = {
-				NOR = {
-					ai = no
-					is_friend = ROOT
-					is_rival = ROOT
-					is_lover = ROOT
-					prisoner = yes
-					is_incapable = yes
-					is_inaccessible_trigger = yes
-					is_alive = no
+				any_courtier = {
+					NOR = {
+						is_friend = ROOT
+						is_rival = ROOT
+						is_lover = ROOT
+						prisoner = yes
+						trait = incapable
+						is_inaccessible_trigger = yes
+						is_alive = no
+					}
 				}
-			} 
-			save_event_target_as = ancestors_rival
+			}
+
+			random_courtier = {
+				limit = {
+					NOR = {
+						is_friend = ROOT
+						is_rival = ROOT
+						is_lover = ROOT
+						prisoner = yes
+						trait = incapable
+						is_inaccessible_trigger = yes
+						is_alive = no
+					}
+				} 
+				save_event_target_as = ancestors_rival
+			}
+		}
+
+		#Or create new one
+		else = {
+			create_character = {
+				random_traits = yes
+				dynasty = random
+			}
+			new_character = {
+				save_event_target_as = ancestors_rival
+			}
 		}
 	}
 
@@ -1480,61 +1591,70 @@ character_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_list = {
-			50 = {
-				modifier = {
-					factor = 0
-					NOR = {
-						has_game_rule = { name = gender value = all }
-						emf_feminist_religion = yes
-						primary_title = {
-							OR = {
-								has_law = status_of_women_4
-								has_law = status_of_women_3
-							}
-						}
+		if = { 
+			limit = {
+				OR = { 
+					has_law = status_of_women_3
+					has_law = status_of_women_4
+					has_game_rule = {
+						name = gender
+						value = all
 					}
-				}
-				create_character = {
-					female = yes
-					age = 35
-					random_traits = yes
-					trait = strong
-					trait = brave
-					trait = brilliant_strategist
-					trait = holy_warrior
-				}
-			}
-			50 = {
-				modifier = {
-					factor = 0
-					NOT = { has_game_rule = { name = gender value = all } }
 					has_religion_feature = religion_matriarchal
 				}
-				create_character = {
-					female = no
-					age = 35
-					random_traits = yes
-					trait = strong
-					trait = brave
-					trait = brilliant_strategist
-					trait = holy_warrior
-				}
+			}
+
+			create_character = {
+				female = yes
+				age = 35
+				random_traits = yes
+				trait = strong
+				trait = brave
+				trait = brilliant_strategist
+				trait = holy_warrior
+			}
+			new_character = {
+				remove_trait = feeble
+				remove_trait = weak
+				remove_trait = craven
+				remove_trait = imbecile
+				remove_trait = slow
+				remove_trait = dull
+				save_event_target_as = ancestors_commander
 			}
 		}
-		new_character = {
-			remove_trait = feeble
-			remove_trait = craven
-			remove_trait = dull
-			save_event_target_as = ancestors_commander
-			emf_new_character_noble = yes
-			emf_dna_improve_homozygous_recessive_for_intelligence = yes
-			remove_trait = dim
-			remove_trait = slow
-			remove_trait = imbecile
-			emf_dna_improve_homozygous_recessive_for_strength = yes
-			remove_trait = delicate
-			remove_trait = weak
+		if = { 
+			limit = {
+				NOR = { 
+					religion = cathar
+					religion = messalian
+					has_law = status_of_women_3
+					has_law = status_of_women_4
+					has_game_rule = {
+						name = gender
+						value = all
+					}
+				}
+			}
+
+			create_character = {
+				female = no
+				age = 35
+				random_traits = yes
+				trait = strong
+				trait = brave
+				trait = brilliant_strategist
+				trait = holy_warrior
+			}
+			new_character = {
+				remove_trait = feeble
+				remove_trait = weak
+				remove_trait = craven
+				remove_trait = imbecile
+				remove_trait = slow
+				remove_trait = dull
+				save_event_target_as = ancestors_commander
+			}
 		}
 	}
 
@@ -1867,6 +1987,19 @@ character_event = {
 	option = {
 		name = EVTOPTA_TOG_7050
 		add_trait = shrewd
+
+		if = {
+			limit = { trait = dull }
+			remove_trait = dull 
+		}
+		if = {
+			limit = { trait = imbecile }
+			remove_trait = imbecile 
+		}
+		if = {
+			limit = { trait = slow }
+			remove_trait = slow 
+		}
 	}
 }
 
@@ -1892,8 +2025,8 @@ character_event = {
 		}
 		new_character = {
 			remove_trait = dull
+			remove_trait = imbecile
 			save_event_target_as = ancestors_wise_woman
-			emf_new_character_priest = yes
 		}
 	}
 
@@ -2013,6 +2146,8 @@ character_event = {
 							has_character_modifier = follower_of_dievas
 							has_character_modifier = follower_of_akka
 							has_character_modifier = follower_of_ayyur
+							has_character_modifier = follower_of_samari
+							has_character_modifier = follower_of_tanit
 						}
 					}
 					character_event = { id = TOG.7500 }
@@ -2026,6 +2161,10 @@ character_event = {
 							has_character_modifier = follower_of_taipo_and_mielikki
 							has_character_modifier = follower_of_dongo
 							has_character_modifier = follower_of_perun
+							has_character_modifier = follower_of_tan_garki
+							has_character_modifier = follower_of_tan_dowa
+							has_character_modifier = follower_of_anti
+							has_character_modifier = follower_of_gurzil
 						}
 					}
 					character_event = { id = TOG.7501 }
@@ -2039,6 +2178,8 @@ character_event = {
 							has_character_modifier = follower_of_ukko
 							has_character_modifier = follower_of_bida
 							has_character_modifier = follower_of_jarilo
+							has_character_modifier = follower_of_babbaku
+							has_character_modifier = follower_of_magec
 						}
 					}
 					character_event = { id = TOG.7502 }
@@ -2052,6 +2193,8 @@ character_event = {
 							has_character_modifier = follower_of_lempo
 							has_character_modifier = follower_of_veles
 							has_character_modifier = follower_of_anansi
+							has_character_modifier = follower_of_yayan_zanzanna
+							has_character_modifier = follower_of_set
 						}
 					}
 					character_event = { id = TOG.7503 }
@@ -2063,6 +2206,7 @@ character_event = {
 						OR = {
 							has_character_modifier = follower_of_tsumburbura
 							has_character_modifier = follower_of_morana
+							has_character_modifier = follower_of_yan_riga
 						}
 					}
 					character_event = { id = TOG.7504 }
@@ -2073,12 +2217,12 @@ character_event = {
 				random_courtier_or_vassal = {
 					limit = {
 						ai = yes
-						is_incapable = no
 						NOR = {
 							is_friend = ROOT
 							is_rival = ROOT
 							is_lover = ROOT
 							prisoner = yes
+							trait = incapable
 							is_inaccessible_trigger = yes
 							is_alive = no
 						}
@@ -2146,6 +2290,50 @@ character_event = {
 							AND = {
 								has_character_modifier = follower_of_zemyna
 								ROOT = { has_character_modifier = follower_of_zemyna }
+							}
+							AND = {
+								has_character_modifier = follower_of_yan_riga
+								ROOT = { has_character_modifier = follower_of_yan_riga }
+							}
+							AND = {
+								has_character_modifier = follower_of_babbaku
+								ROOT = { has_character_modifier = follower_of_babbaku }
+							}
+							AND = {
+								has_character_modifier = follower_of_tan_garki
+								ROOT = { has_character_modifier = follower_of_tan_garki }
+							}
+							AND = {
+								has_character_modifier = follower_of_samari
+								ROOT = { has_character_modifier = follower_of_samari }
+							}
+							AND = {
+								has_character_modifier = follower_of_yayan_zanzanna
+								ROOT = { has_character_modifier = follower_of_yayan_zanzanna }
+							}
+							AND = {
+								has_character_modifier = follower_of_tan_dowa
+								ROOT = { has_character_modifier = follower_of_tan_dowa }
+							}
+							AND = {
+								has_character_modifier = follower_of_tanit
+								ROOT = { has_character_modifier = follower_of_tanit }
+							}
+							AND = {
+								has_character_modifier = follower_of_anti
+								ROOT = { has_character_modifier = follower_of_anti }
+							}
+							AND = {
+								has_character_modifier = follower_of_gurzil
+								ROOT = { has_character_modifier = follower_of_gurzil }
+							}
+							AND = {
+								has_character_modifier = follower_of_magec
+								ROOT = { has_character_modifier = follower_of_magec }
+							}
+							AND = {
+								has_character_modifier = follower_of_set
+								ROOT = { has_character_modifier = follower_of_set }
 							}
 						}
 					}
@@ -2255,6 +2443,7 @@ character_event = {
 						OR = {
 							has_character_modifier = follower_of_lempo
 							has_character_modifier = follower_of_jarilo
+							has_character_modifier = follower_of_samari
 						}
 						any_courtier_or_vassal = {
 							NOT = { is_close_relative = ROOT }
@@ -2289,6 +2478,7 @@ character_event = {
 								has_fair_trait_trigger = yes
 								has_character_modifier = follower_of_lempo
 								has_character_modifier = follower_of_jarilo
+								has_character_modifier = follower_of_samari
 							}
 						}
 						save_event_target_as = pagan_lover
@@ -2302,7 +2492,7 @@ character_event = {
 							is_female = no
 							AND = {
 								is_female = yes
-								NOT = { practical_age = 45 }
+								NOT = { age = 46 }
 							}
 						}
 						NOR = {
@@ -2313,6 +2503,7 @@ character_event = {
 							has_character_modifier = follower_of_zemyna
 							has_character_modifier = follower_of_tsumburbura
 							has_character_modifier = follower_of_akka
+							has_character_modifier = follower_of_tanit
 						}
 					}
 					random_spouse = {
@@ -2321,7 +2512,7 @@ character_event = {
 								is_female = no
 								AND = {
 									is_female = yes
-									NOT = { practical_age = 45 }
+									NOT = { age = 46 }
 								}
 							}
 							NOR = {
@@ -2376,9 +2567,89 @@ character_event = {
 				}
 				#Hunting dieties
 				if = {
-					limit = { has_character_modifier = follower_of_taipo_and_mielikki }
+					limit = { 
+						has_character_modifier = follower_of_taipo_and_mielikki 
+					}
 					character_event = { id = TOG.7517 }
 				} 
+				#Call Yan Riga flavour event
+				if = {
+					limit = { has_character_modifier = follower_of_yan_riga }
+					character_event = { id = AFRREL.106 }
+				}
+				#Call Babbaku flavour event
+				if = {
+					limit = { has_character_modifier = follower_of_babbaku }
+					character_event = { id = AFRREL.107 }
+				}
+				#Call Tan Garki flavour event
+				if = {
+					limit = { has_character_modifier = follower_of_tan_garki }
+					character_event = { id = AFRREL.110 }
+				}
+				#Call Yayan Zanzanna flavour event
+				if = {
+					limit = { 
+						AND = {
+							has_character_modifier = follower_of_yayan_zanzanna
+							OR = {
+								has_disease_trigger = yes
+								trait = incapable
+							}
+						}
+					}
+					character_event = { id = AFRREL.111 }
+				}
+				#Call Tan Dowa flavour event
+				if = {
+					limit = { has_character_modifier = follower_of_tan_dowa }
+					character_event = { id = AFRREL.112 }
+				}
+				#Call Anti flavour event
+				if = {
+					limit = { 
+                        has_character_modifier = follower_of_anti
+						is_married = yes
+                        NOR = {
+                            trait = celibate
+                            trait = eunuch
+                        }
+					}
+					random_spouse = {
+						limit = {
+							NOR = {
+								trait = celibate
+								trait = eunuch
+							}
+							prisoner = no
+						}
+                        preferred_limit = {
+                            NOT = { age = 30 }
+                        }
+                        preferred_limit = {
+                            NOT = { age = 40 }
+                        }
+                        preferred_limit = {
+                            NOT = { age = 46 }
+                        }
+					 	character_event = { id = AFRREL.117 } 
+					}
+				}
+				#Call Gurzil flavour event
+				if = {
+					limit = { has_character_modifier = follower_of_gurzil }
+					character_event = { id = AFRREL.114 }
+				}
+				#Call Magec flavour event
+				if = {
+					limit = { has_character_modifier = follower_of_magec }
+					character_event = { id = AFRREL.115 }
+				}
+				#Call Set flavour event
+				if = {
+					limit = { has_character_modifier = follower_of_set }
+					character_event = {id = AFRREL.116 }
+				}
 			}
 			#Theme events set 2
 			20 = {
@@ -2390,6 +2661,10 @@ character_event = {
 							has_character_modifier = follower_of_taipo_and_mielikki
 							has_character_modifier = follower_of_dongo
 							has_character_modifier = follower_of_perun
+							has_character_modifier = follower_of_tan_garki
+							has_character_modifier = follower_of_tan_dowa
+							has_character_modifier = follower_of_anti
+							has_character_modifier = follower_of_gurzil
 						}
 					}
 					character_event = { id = TOG.7516 }
@@ -2401,6 +2676,8 @@ character_event = {
 							has_character_modifier = follower_of_dievas
 							has_character_modifier = follower_of_akka
 							has_character_modifier = follower_of_ayyur
+							has_character_modifier = follower_of_samari
+							has_character_modifier = follower_of_tanit
 						}
 					}
 					character_event = { id = TOG.7518 }
@@ -2413,6 +2690,8 @@ character_event = {
 							has_character_modifier = follower_of_ukko
 							has_character_modifier = follower_of_bida
 							has_character_modifier = follower_of_jarilo
+							has_character_modifier = follower_of_babbaku
+							has_character_modifier = follower_of_magec
 						}
 					}
 					character_event = { id = TOG.7520 }
@@ -2424,6 +2703,8 @@ character_event = {
 							has_character_modifier = follower_of_velnias
 							has_character_modifier = follower_of_lempo
 							has_character_modifier = follower_of_veles
+							has_character_modifier = follower_of_yayan_zanzanna
+							has_character_modifier = follower_of_set
 						}
 					}
 					character_event = { id = TOG.7522 }
@@ -2434,6 +2715,7 @@ character_event = {
 						OR = {
 							has_character_modifier = follower_of_tsumburbura
 							has_character_modifier = follower_of_morana
+							has_character_modifier = follower_of_yan_riga
 						}
 					}
 					character_event = { id = TOG.7524 }
@@ -2488,6 +2770,10 @@ character_event = {
 				religion = tengri_pagan_reformed
 				FROM = { religion = tengri_pagan }
 			}
+			AND = {
+				religion = amazigh_reformed
+				FROM = { religion = amazigh }
+			}
 		}
 	}
 
@@ -2516,6 +2802,25 @@ character_event = {
 		remove_character_modifier = zemynas_blessing
 		remove_character_modifier = tsumburburas_blessing
 		remove_character_modifier = akkas_blessing
+		remove_character_modifier = follower_of_yan_riga
+		remove_character_modifier = follower_of_babbaku
+		remove_character_modifier = follower_of_tan_garki
+		remove_character_modifier = follower_of_samari
+		remove_character_modifier = follower_of_yayan_zanzanna
+		remove_character_modifier = follower_of_tan_dowa
+		remove_character_modifier = follower_of_tanit
+		remove_character_modifier = follower_of_anti
+		remove_character_modifier = follower_of_gurzil
+		remove_character_modifier = follower_of_magec
+		remove_character_modifier = follower_of_set
+		remove_character_modifier = tanit_blessing
+		remove_character_modifier = voice_of_samari
+		remove_character_modifier = voice_of_tanit
+		remove_character_modifier = honor_alkali
+		remove_character_modifier = blessing_of_magec
+		remove_character_modifier = blessing_of_ayu
+		remove_character_modifier = blessing_of_kadda
+		remove_character_modifier = blessing_of_gurzil
 	}
 }
 
@@ -2535,7 +2840,7 @@ character_event = {
 				limit = {
 					prisoner = no 
 					religion = ROOT
-					is_adult = yes
+					age = 16
 					has_minor_deity_trigger = no
 					NOT = { is_playable = yes }
 				}
@@ -2547,17 +2852,9 @@ character_event = {
 	option = {
 		name = EVTOPTA_TOG_7110
 
-		if = {
-			limit = {
-				OR = {
-					religion = slavic_pagan
-					religion = slavic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_perun
-				duration = -1
-			}
+		add_character_modifier = {
+			name = follower_of_perun
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7111 } }
@@ -2576,18 +2873,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTB_TOG_7110
-		
-		if = {
-			limit = {
-				OR = {
-					religion = slavic_pagan
-					religion = slavic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_veles
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_veles
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7112 } }
@@ -2606,18 +2895,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTC_TOG_7110
-		
-		if = {
-			limit = {
-				OR = {
-					religion = slavic_pagan
-					religion = slavic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_jarilo
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_jarilo
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7113 } }
@@ -2636,18 +2917,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTD_TOG_7110
-		
-		if = {
-			limit = {
-				OR = {
-					religion = slavic_pagan
-					religion = slavic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_morana
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_morana
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7114 } }
@@ -2734,7 +3007,6 @@ character_event = {
 	picture = GFX_evt_desert
 
 	is_triggered_only = yes
-	hide_window = yes
 
 	immediate = { 
 		if = {
@@ -2743,147 +3015,20 @@ character_event = {
 				limit = {
 					prisoner = no 
 					religion = ROOT
-					is_adult = yes
+					age = 16
 					has_minor_deity_trigger = no
 				}
 				character_event = { id = TOG.7200 days = 1 }
 			}
 		}
-		character_event = { id = TOG.7206 }
 	}
-}
-
-#Selecting deity, West African
-character_event = {
-	id = TOG.7205
-	desc = EVTDESC_TOG_7205
-	border = GFX_event_normal_frame_religion
-	picture = GFX_evt_desert
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTD_TOG_7200
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_dongo
-				duration = -1
-			}
-		}
-
-		hidden_tooltip = { character_event = { id = TOG.7204 } }
-
-		ai_chance = {
-			factor = 1
-			modifier = {
-				has_education_martial_trigger = yes
-				factor = 2
-			}
-			modifier = {
-				trait = brave
-				factor = 2
-			}
-		}
-	}
-	option = {
-		name = EVTOPTE_TOG_7205
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_anansi
-				duration = -1
-			}
-		}
-
-		hidden_tooltip = { character_event = { id = TOG.7207 } }
-
-		ai_chance = {
-			factor = 1
-			modifier = {
-				has_education_intrigue_trigger = yes
-				factor = 2
-			}
-			modifier = {
-				trait = deceitful
-				factor = 2
-			}
-		}
-	}
-	option = {
-		name = EVTOPTF_TOG_7205
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_dan
-				duration = -1
-			}
-		}
-
-		hidden_tooltip = { character_event = { id = TOG.7208 } }
-
-		ai_chance = {
-			factor = 1
-			modifier = {
-				has_education_learning_trigger = yes
-				factor = 2
-			}
-			modifier = {
-				trait = erudite
-				factor = 2
-			}
-		}
-	}
-	option = { #There are others.
-		name = EVTOPTG_TOG_7205
-		hidden_tooltip = { character_event = { id = TOG.7206 } }
-		trigger = {
-			ai = no
-		}
-	}
-}
-
-#Selecting deity, West African (no immediate)
-character_event = {
-	id = TOG.7206
-	desc = EVTDESC_TOG_7200
-	border = GFX_event_normal_frame_religion
-	picture = GFX_evt_desert
-
-	is_triggered_only = yes
 
 	option = {
 		name = EVTOPTA_TOG_7200
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_ayyur
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_ayyur
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7201 } }
@@ -2906,18 +3051,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTB_TOG_7200
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_bida
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_bida
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7202 } }
@@ -2936,18 +3073,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTC_TOG_7200
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_tsumburbura
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_tsumburbura
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7203 } }
@@ -2967,25 +3096,27 @@ character_event = {
 	option = { #There are others.
 		name = EVTOPTD_TOG_7200_B
 		hidden_tooltip = { character_event = { id = TOG.7205 } }
-		trigger = {
-			ai = no
+		ai_chance = {
+			factor = 1
 		}
 	}
-	# Options below won't be visible to human players, but allows AI chances to be properly applied
+}
+
+#Selecting deity, West African
+character_event = {
+	id = TOG.7205
+	desc = EVTDESC_TOG_7205
+	border = GFX_event_normal_frame_religion
+	picture = GFX_evt_desert
+
+	is_triggered_only = yes
+
 	option = {
 		name = EVTOPTD_TOG_7200
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_dongo
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_dongo
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7204 } }
@@ -3004,18 +3135,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTE_TOG_7205
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_anansi
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_anansi
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7207 } }
@@ -3034,18 +3157,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTF_TOG_7205
-		
-		if = {
-			limit = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_dan
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_dan
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7208 } }
@@ -3061,6 +3176,98 @@ character_event = {
 				factor = 2
 			}
 		}
+	}
+	option = { #There are others.
+		name = EVTOPTG_TOG_7205
+		hidden_tooltip = { character_event = { id = TOG.7206 } }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#Selecting deity, West African (no immediate)
+character_event = {
+	id = TOG.7206
+	desc = EVTDESC_TOG_7200
+	border = GFX_event_normal_frame_religion
+	picture = GFX_evt_desert
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_TOG_7200
+
+		add_character_modifier = {
+			name = follower_of_ayyur
+			duration = -1
+		}
+
+		hidden_tooltip = { character_event = { id = TOG.7201 } }
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_education_diplomacy_trigger = yes
+				factor = 2
+			}
+			modifier = {
+				is_infertile_trigger = yes
+				factor = 2
+			}
+			modifier = {
+				is_benevolent_trigger = yes
+				factor = 2
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_TOG_7200
+
+		add_character_modifier = {
+			name = follower_of_bida
+			duration = -1
+		}
+
+		hidden_tooltip = { character_event = { id = TOG.7202 } }
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_education_stewardship_trigger = yes
+				factor = 2
+			}
+			modifier = {
+				trait = greedy
+				factor = 2
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_TOG_7200
+
+		add_character_modifier = {
+			name = follower_of_tsumburbura
+			duration = -1
+		}
+
+		hidden_tooltip = { character_event = { id = TOG.7203 } }
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_education_learning_trigger = yes
+				factor = 2
+			}
+			modifier = {
+				is_learned_trigger = yes
+				factor = 2
+			}
+		}
+	}
+	option = { #There are others.
+		name = EVTOPTD_TOG_7200_B
+		hidden_tooltip = { character_event = { id = TOG.7205 } }
 	}
 }
 
@@ -3178,7 +3385,7 @@ character_event = {
 				limit = {
 					prisoner = no 
 					religion = ROOT
-					is_adult = yes
+					age = 16
 					has_minor_deity_trigger = no
 				}
 				character_event = { id = TOG.7300 days = 1 }
@@ -3188,18 +3395,10 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_TOG_7300
-		
-		if = {
-			limit = {
-				OR = {
-					religion = finnish_pagan
-					religion = finnish_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_ukko
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_ukko
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7301 } }
@@ -3214,18 +3413,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTB_TOG_7300
-		
-		if = {
-			limit = {
-				OR = {
-					religion = finnish_pagan
-					religion = finnish_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_akka
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_akka
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7302 } }
@@ -3248,18 +3439,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTC_TOG_7300
-		
-		if = {
-			limit = {
-				OR = {
-					religion = finnish_pagan
-					religion = finnish_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_taipo_and_mielikki
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_taipo_and_mielikki
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7303 } }
@@ -3278,18 +3461,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTD_TOG_7300
-		
-		if = {
-			limit = {
-				OR = {
-					religion = finnish_pagan
-					religion = finnish_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_lempo
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_lempo
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7304 } }
@@ -3403,7 +3578,7 @@ character_event = {
 				limit = {
 					prisoner = no 
 					religion = ROOT
-					is_adult = yes
+					age = 16
 					has_minor_deity_trigger = no
 				}
 				character_event = { id = TOG.7400 days = 1 }
@@ -3413,18 +3588,10 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_TOG_7400
-		
-		if = {
-			limit = {
-				OR = {
-					religion = baltic_pagan
-					religion = baltic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_dievas
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_dievas
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7401 } }
@@ -3439,18 +3606,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTB_TOG_7400
-		
-		if = {
-			limit = {
-				OR = {
-					religion = baltic_pagan
-					religion = baltic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_velnias
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_velnias
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7402 } }
@@ -3465,18 +3624,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTC_TOG_7400
-		
-		if = {
-			limit = {
-				OR = {
-					religion = baltic_pagan
-					religion = baltic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_perkunas
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_perkunas
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7403 } }
@@ -3491,18 +3642,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTD_TOG_7400
-		
-		if = {
-			limit = {
-				OR = {
-					religion = baltic_pagan
-					religion = baltic_pagan_reformed
-				}
-			}
-			add_character_modifier = {
-				name = follower_of_zemyna
-				duration = -1
-			}
+
+		add_character_modifier = {
+			name = follower_of_zemyna
+			duration = -1
 		}
 
 		hidden_tooltip = { character_event = { id = TOG.7404 } }
@@ -3600,6 +3743,16 @@ character_event = {
 		text = EVTDESC_TOG_7500_AYYUR
 		picture = GFX_evt_family
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_samari }
+		text = EVTDESC_TOG_7500_SAMARI
+		picture = GFX_evt_magic_ritual
+	}
+	desc = {
+		trigger = {has_character_modifier = follower_of_tanit }
+		text = EVTDESC_TOG_7500_TANIT
+		picture = GFX_evt_diplomatic_greeting
+	}
 
 	is_triggered_only = yes
 	hide_from = yes
@@ -3637,6 +3790,26 @@ character_event = {
 		trigger = { has_character_modifier = follower_of_perun }
 		text = EVTDESC_TOG_7501_PERUN
 		picture = GFX_evt_viking_battle_oldgods
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tan_garki }
+		text = EVTDESC_TOG_7501_TAN_GARKI
+		picture = GFX_evt_campfire_hf
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tan_dowa }
+		text = EVTDESC_TOG_7501_TAN_DOWA
+		picture = GFX_evt_mysterious_forest
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_anti }
+		text = EVTDESC_TOG_7501_ANTI
+		picture = GFX_evt_afr_berber_wrestling
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_gurzil }
+		text = EVTDESC_TOG_7501_GURZIL
+		picture = GFX_evt_moors
 	}
 
 	is_triggered_only = yes
@@ -3676,6 +3849,16 @@ character_event = {
 		text = EVTDESC_TOG_7502_JARILO
 		picture = GFX_evt_tribal_lands
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_babbaku }
+		text = EVTDESC_TOG_7502_BABBAKU
+		picture = GFX_evt_tribal_lands
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_magec }
+		text = EVTDESC_TOG_7502_MAGEC
+		picture = GFX_evt_tribal_lands
+	}
 
 	is_triggered_only = yes
 	hide_from = yes
@@ -3710,6 +3893,14 @@ character_event = {
 		trigger = { has_character_modifier = follower_of_anansi }
 		text = EVTDESC_TOG_7503_ANANSI
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_yayan_zanzanna }
+		text = EVTDESC_TOG_7503_YAYAN_ZANZANNA
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_set }
+		text = EVTDESC_TOG_7503_SET
+	}
 
 	is_triggered_only = yes
 	hide_from = yes
@@ -3735,6 +3926,10 @@ character_event = {
 	desc = {
 		trigger = { has_character_modifier = follower_of_morana }
 		text = EVTDESC_TOG_7503_MORANA
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_yan_riga }
+		text = EVTDESC_TOG_7503_YAN_RIGA
 	}
 
 	is_triggered_only = yes
@@ -3846,6 +4041,61 @@ character_event = {
 		text = EVTDESC_TOG_7506_VELNIAS
 		picture = GFX_evt_spymaster
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_yan_riga }
+		text = EVTDESC_TOG_7506_YAN_RIGA
+		picture = GFX_evt_tribal_shrine
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_babbaku }
+		text = EVTDESC_TOG_7506_BABBAKU
+		picture = GFX_evt_tribal_lands
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tan_garki }
+		text = EVTDESC_TOG_7506_TAN_GARKI
+		picture = GFX_evt_hunt
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_samari }
+		text = EVTDESC_TOG_7506_SAMARI
+		picture = GFX_evt_brothel
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_yayan_zanzanna }
+		text = EVTDESC_TOG_7506_YAYAN_ZANZANNA
+		picture = GFX_evt_sickness_hf
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tan_dowa }
+		text = EVTDESC_TOG_7506_TAN_DOWA
+		picture = GFX_evt_mysterious_forest
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tanit }
+		text = EVTDESC_TOG_7506_TANIT
+		picture = GFX_evt_tribal_shrine
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_anti }
+		text = EVTDESC_TOG_7506_ANTI
+		picture = GFX_evt_afr_berber_wrestling
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_gurzil }
+		text = EVTDESC_TOG_7506_GURZIL
+		picture = GFX_evt_hunt
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_magec }
+		text = EVTDESC_TOG_7506_MAGEC
+		picture = GFX_evt_tribal_lands
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_set }
+		text = EVTDESC_TOG_7506_SET
+		picture = GFX_evt_spymaster
+	}
 
 	is_triggered_only = yes
 
@@ -3928,11 +4178,17 @@ character_event = {
 					if = {
 						limit = {
 							has_dlc = "Zeus"
-							is_adult = no
+							NOT = { age = 16 }
 						}
 						add_trait = willful
 					}
-					else = {
+					if = {
+						limit = {
+							OR = {
+							 	NOT = { has_dlc = "Zeus" }
+							 	age = 16
+							}
+						}
 						remove_trait_craven_effect = yes
 						add_trait_brave_effect = yes
 					}
@@ -3981,11 +4237,17 @@ character_event = {
 					if = {
 						limit = {
 							has_dlc = "Zeus"
-							is_adult = no
+							NOT = { age = 16 }
 						}
 						add_trait = willful
 					}
-					else = {
+					if = {
+						limit = {
+							OR = {
+							 	NOT = { has_dlc = "Zeus" }
+							 	age = 16
+							}
+						}
 						remove_trait_craven_effect = yes
 						add_trait_brave_effect = yes
 					}
@@ -3994,12 +4256,18 @@ character_event = {
 					if = {
 						limit = {
 							has_dlc = "Zeus"
-							is_adult = no
+							NOT = { age = 16 }
+							NOT = { trait = timid }
 						}
 						add_trait = timid
 					}
-					else = {
-						remove_trait_brave_effect = yes
+					if = {
+						limit = {
+							OR = {
+							 	NOT = { has_dlc = "Zeus" }
+							 	age = 16
+							}
+						}
 						add_trait_craven_effect = yes
 					}
 				}
@@ -4037,6 +4305,10 @@ character_event = {
 		trigger = { has_character_modifier = follower_of_jarilo }
 		text = EVTDESC_TOG_7510_JARILO
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_samari }
+		text = EVTDESC_TOG_7510_SAMARI
+	}
 
 	is_triggered_only = yes
 
@@ -4050,24 +4322,33 @@ character_event = {
 			trigger = { has_character_modifier = follower_of_jarilo }
 			text = EVTOPTA_TOG_7510_JARILO
 		}
+		name = {
+			trigger = { has_character_modifier = follower_of_samari }
+			text = EVTOPTA_TOG_7510_SAMARI
+		}
+
 		add_trait_lustful_effect = yes
+
 		piety = 50
-		unprotected_sex_effect = yes
+
+		hidden_tooltip = { unprotected_sex_effect = yes }
 	}
 
 	#Become lovers
 	option = {
 		trigger = { NOT = { is_lover = FROM } }
 		name = EVTOPTB_TOG_7510
-		if = {
-			limit = {
-				same_sex = FROM
-				FROM = { NOT = { trait = homosexual } }
-			} 
-			FROM = { add_trait = homosexual }
-		}
+
 		add_lover = FROM
-		unprotected_sex_effect = yes
+
+		hidden_tooltip = {
+			unprotected_sex_effect = yes
+
+			if = {
+				limit = { trait = homosexual } 
+				FROM = { add_trait = homosexual }
+			}
+		}
 	}
 
 	#Not that interested
@@ -4110,6 +4391,10 @@ character_event = {
 		trigger = { has_character_modifier = follower_of_akka }
 		text = EVTDESC_TOG_7510_AKKA
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tanit }
+		text = EVTDESC_TOG_7510_TANIT
+	}
 
 	is_triggered_only = yes
 
@@ -4118,6 +4403,7 @@ character_event = {
 			has_character_modifier = zemynas_blessing
 			has_character_modifier = tsumburburas_blessing
 			has_character_modifier = akkas_blessing
+			has_character_modifier = tanit_blessing
 		}
 	}
 
@@ -4142,41 +4428,30 @@ character_event = {
 
 		#Fertility bonus
 		if = {
-			limit = {
-				has_character_modifier = follower_of_zemyna
-				OR = {
-					religion = baltic_pagan
-					religion = baltic_pagan_reformed
-				}
-			}
+			limit = { has_character_modifier = follower_of_zemyna }
 			add_character_modifier = {
 				name = zemynas_blessing
 				years = 5
 			}
 		}
 		if = {
-			limit = {
-				has_character_modifier = follower_of_tsumburbura
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
+			limit = { has_character_modifier = follower_of_tsumburbura }
 			add_character_modifier = {
 				name = tsumburburas_blessing
 				years = 5
 			}
 		}
 		if = {
-			limit = {
-				has_character_modifier = follower_of_akka
-				OR = {
-					religion = finnish_pagan
-					religion = finnish_pagan_reformed
-				}
-			}
+			limit = { has_character_modifier = follower_of_akka }
 			add_character_modifier = {
 				name = akkas_blessing
+				years = 5
+			}
+		}
+		if = {
+			limit = { has_character_modifier = follower_of_tanit }
+			add_character_modifier = {
+				name = tanit_blessing
 				years = 5
 			}
 		}
@@ -4184,7 +4459,7 @@ character_event = {
 		#Children become happy
 		any_child = {
 			limit = { 
-				vassal_of = ROOT
+				liege = { character = ROOT }
 				is_child_of = FROM
 			}
 			opinion = {
@@ -4200,7 +4475,8 @@ character_event = {
 				}
 			}
 		}
-		unprotected_sex_effect = yes
+
+		hidden_tooltip = { unprotected_sex_effect = yes }
 	}
 
 	#Not that interested
@@ -4271,7 +4547,7 @@ character_event = {
 		name = {
 			trigger = { has_character_modifier = follower_of_velnias }
 			text = EVTOPTA_TOG_7514_VELNIAS
-		} 
+		}
 		custom_tooltip = { text = EVTOPTA_TOG_7514_TOOLTIP }
 
 		random = {
@@ -4617,6 +4893,22 @@ character_event = {
 		trigger = { has_character_modifier = follower_of_perun }
 		text = EVTDESC_TOG_7516_PERUN
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tan_garki }
+		text = EVTDESC_TOG_7516_TAN_GARKI
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tan_dowa }
+		text = EVTDESC_TOG_7516_TAN_DOWA
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_anti }
+		text = EVTDESC_TOG_7516_ANTI
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_gurzil }
+		text = EVTDESC_TOG_7516_GURZIL
+	}
 
 	hide_from = yes
 
@@ -4628,7 +4920,33 @@ character_event = {
 			text = EVTOPTA_TOG_7516_A
 		} 
 		name = {
-			trigger = { NOT = { has_character_modifier = follower_of_taipo_and_mielikki } }
+			trigger = { 
+				OR = {
+					has_character_modifier = follower_of_tan_garki 
+					has_character_modifier = follower_of_tan_dowa
+				}
+			}
+			text = EVTOPTA_TOG_7516_BORI
+		}
+		name = {
+			trigger = { 
+				OR = {
+					has_character_modifier = follower_of_anti
+					has_character_modifier = follower_of_gurzil
+				}
+			}
+			text = EVTOPTA_TOG_7516_AMAZIGH
+		}
+		name = {
+			trigger = { 
+				NOR = { 
+					has_character_modifier = follower_of_taipo_and_mielikki 
+					has_character_modifier = follower_of_tan_garki 
+					has_character_modifier = follower_of_tan_dowa
+					has_character_modifier = follower_of_anti
+					has_character_modifier = follower_of_gurzil
+				}
+			}
 			text = EVTOPTA_TOG_7516_B
 		} 
 
@@ -4668,7 +4986,6 @@ character_event = {
 	id = TOG.7518
 	border = GFX_event_normal_frame_diplomacy
 	picture = GFX_evt_princess_byzantine
-
 	
 	desc = {
 		trigger = { has_character_modifier = follower_of_dievas }
@@ -4683,6 +5000,16 @@ character_event = {
 		text = EVTDESC_TOG_7518_AYYUR
 		picture = GFX_evt_emissary_arabic
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_samari }
+		text = EVTDESC_TOG_7518_SAMARI
+		picture = GFX_evt_feast_arabic
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_tanit }
+		text = EVTDESC_TOG_7518_TANIT
+		picture = GFX_evt_feast_arabic
+	}
 
 	hide_from = yes
 
@@ -4694,46 +5021,51 @@ character_event = {
 			text = EVTOPTA_TOG_7518_A
 		} 
 		name = {
-			trigger = { NOT = { has_character_modifier = follower_of_dievas } }
+			trigger = { has_character_modifier = follower_of_samari }
+			text = EVTOPTA_TOG_7518_SAMARI
+		}
+		name = {
+			trigger = { 
+				NOT = { 
+					has_character_modifier = follower_of_dievas 
+					has_character_modifier = follower_of_samari
+				} 
+			}
 			text = EVTOPTA_TOG_7518_B
 		} 
 
 		if = {
-			limit = {
-				has_character_modifier = follower_of_dievas
-				OR = {
-					religion = baltic_pagan
-					religion = baltic_pagan_reformed
-				}
-			}
+			limit = { has_character_modifier = follower_of_dievas }
 			add_character_modifier = {
 				name = voice_of_dievas
 				years = 10
 			}
 		}
 		if = {
-			limit = {
-				has_character_modifier = follower_of_akka
-				OR = {
-					religion = finnish_pagan
-					religion = finnish_pagan_reformed
-				}
-			}
+			limit = { has_character_modifier = follower_of_akka }
 			add_character_modifier = {
 				name = voice_of_akka
 				years = 10
 			}
 		}
 		if = {
-			limit = {
-				has_character_modifier = follower_of_ayyur
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
+			limit = { has_character_modifier = follower_of_ayyur }
 			add_character_modifier = {
 				name = voice_of_ayyur
+				years = 10
+			}
+		}
+		if = {
+			limit = { has_character_modifier = follower_of_samari }
+			add_character_modifier = {
+				name = voice_of_samari
+				years = 10
+			}
+		}
+		if = {
+			limit = { has_character_modifier = follower_of_tanit }
+			add_character_modifier = {
+				name = voice_of_tanit
 				years = 10
 			}
 		}
@@ -4760,9 +5092,18 @@ character_event = {
 		text = EVTDESC_TOG_7520_JARILO
 	}
 	desc = {
+		trigger = { has_character_modifier = follower_of_magec }
+		text = EVTDESC_TOG_7520_MAGEC
+	}
+	desc = {
 		trigger = { has_character_modifier = follower_of_bida }
 		text = EVTDESC_TOG_7520_BIDA
 		picture = GFX_evt_market_byzantine
+	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_babbaku }
+		text = EVTDESC_TOG_7520_BABBAKU
+		picture = GFX_evt_market_altaic
 	}
 
 	hide_from = yes
@@ -4851,6 +5192,20 @@ character_event = {
 	}
 	desc = {
 		trigger = { 
+			has_character_modifier = follower_of_yayan_zanzanna 
+			event_target:god_plot_target = { character = ROOT }
+		}
+		text = EVTDESC_TOG_7522_YAYAN_ZANZANNA_ME
+	}
+	desc = {
+		trigger = { 
+			has_character_modifier = follower_of_set
+			event_target:god_plot_target = { character = ROOT }
+		}
+		text = EVTDESC_TOG_7522_SET_ME
+	}
+	desc = {
+		trigger = { 
 			has_character_modifier = follower_of_lempo 
 			NOT = { event_target:god_plot_target = { character = ROOT } }
 		}
@@ -4870,7 +5225,20 @@ character_event = {
 		}
 		text = EVTDESC_TOG_7522_VELES
 	}
-	
+	desc = {
+		trigger = { 
+			has_character_modifier = follower_of_yayan_zanzanna
+			NOT = { event_target:god_plot_target = { character = ROOT } }
+		}
+		text = EVTDESC_TOG_7522_YAYAN_ZANZANNA
+	}
+	desc = {
+		trigger = { 
+			has_character_modifier = follower_of_set
+			NOT = { event_target:god_plot_target = { character = ROOT } }
+		}
+		text = EVTDESC_TOG_7522_SET
+	}
 	trigger = {
 		any_realm_character = {
 			has_plot = yes
@@ -4884,17 +5252,29 @@ character_event = {
 				has_plot = yes
 				NOT = { plot_is_known_by = ROOT }
 			}
-			preferred_limit = {
-				plot_target_char = { character = ROOT }
+			save_event_target_as = god_plotter
+		}
+		random_realm_character = {
+			limit = {
+				has_plot = yes
+				NOT = { plot_is_known_by = ROOT }
+				is_landed = yes
 			}
-			preferred_limit = {
+			save_event_target_as = god_plotter
+		}
+		random_realm_character = {
+			limit = {
+				has_plot = yes
+				NOT = { plot_is_known_by = ROOT }
 				plot_target_char = { is_close_relative = ROOT }
 			}
-			preferred_limit = {
-				OR = {
-					is_landed = yes
-					is_patrician = yes
-				}
+			save_event_target_as = god_plotter
+		}
+		random_realm_character = {
+			limit = {
+				has_plot = yes
+				NOT = { plot_is_known_by = ROOT }
+				plot_target_char = { character = ROOT }
 			}
 			save_event_target_as = god_plotter
 		}
@@ -4937,13 +5317,24 @@ character_event = {
 		trigger = { has_character_modifier = follower_of_morana }
 		text = EVTDESC_TOG_7524_MORANA
 	}
+	desc = {
+		trigger = { has_character_modifier = follower_of_yan_riga }
+		text = EVTDESC_TOG_7524_YAN_RIGA
+	}
 
 	is_triggered_only = yes
 
 	hide_from = yes
 
 	option = {
-		name = EVTOPTA_TOG_7524
+		name = {
+            text = EVTOPTA_TOG_7524
+            trigger = { NOT = { has_character_modifier = follower_of_yan_riga } }
+        }
+        name = {
+            text = EVTOPTA_TOG_7524_YAN_RIGA
+            trigger = { has_character_modifier = follower_of_yan_riga }
+        }
 
 		random_list = {
 			33 = { military_techpoints = 100 }
@@ -4975,6 +5366,8 @@ character_event = {
 			OR = {
 				religion = west_african_pagan
 				religion = west_african_pagan_reformed
+				religion = amazigh
+				religion = amazigh_reformed
 			}
 		}
 		text = EVTDESC_TOG_7526
@@ -4985,6 +5378,8 @@ character_event = {
 			NOR = {
 				religion = west_african_pagan
 				religion = west_african_pagan_reformed
+				religion = amazigh
+				religion = amazigh_reformed
 			}
 		}
 		text = EVTDESC_TOG_7526
@@ -5067,6 +5462,50 @@ character_event = {
 			trigger = { has_character_modifier = follower_of_dan }
 			text = EVTOPTA_TOG_7526_DAN
 		}
+		name = {
+			trigger = { has_character_modifier = follower_of_yan_riga }
+			text = EVTOPTA_TOG_7526_YAN_RIGA
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_babbaku }
+			text = EVTOPTA_TOG_7526_BABBAKU
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_tan_garki }
+			text = EVTOPTA_TOG_7526_TAN_GARKI
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_samari }
+			text = EVTOPTA_TOG_7526_SAMARI
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_yayan_zanzanna }
+			text = EVTOPTA_TOG_7526_YAYAN_ZANZANNA
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_tan_dowa }
+			text = EVTOPTA_TOG_7526_TAN_DOWA
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_tanit }
+			text = EVTOPTA_TOG_7526_TANIT
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_anti }
+			text = EVTOPTA_TOG_7526_ANTI
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_gurzil }
+			text = EVTOPTA_TOG_7526_GURZIL
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_magec }
+			text = EVTOPTA_TOG_7526_MAGEC
+		}
+		name = {
+			trigger = { has_character_modifier = follower_of_set }
+			text = EVTOPTA_TOG_7526_SET
+		}
 
 		custom_tooltip = { text = EVTOPTA_TOG_7525_TOOLTIP }
 
@@ -5127,6 +5566,8 @@ character_event = {
 			NOR = {
 				religion = west_african_pagan
 				religion = west_african_pagan_reformed
+				religion = amazigh
+				religion = amazigh_reformed
 			}
 		}
 		text = EVTDESC_TOG_7527_ANCESTORS
@@ -5137,6 +5578,8 @@ character_event = {
 			OR = {
 				religion = west_african_pagan
 				religion = west_african_pagan_reformed
+				religion = amazigh
+				religion = amazigh_reformed
 			}
 		}
 		text = EVTDESC_TOG_7527_ANCESTORS
@@ -5271,6 +5714,83 @@ character_event = {
 			has_character_modifier = follower_of_dan
 		}
 		text = EVTDESC_TOG_7527_DAN
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_yan_riga
+		}
+		text = EVTDESC_TOG_7527_YAN_RIGA
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_babbaku
+		}
+		text = EVTDESC_TOG_7527_BABBAKU
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_tan_garki
+		}
+		text = EVTDESC_TOG_7527_TAN_GARKI
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_samari
+		}
+		text = EVTDESC_TOG_7527_SAMARI
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_yayan_zanzanna
+		}
+		text = EVTDESC_TOG_7527_YAYAN_ZANZANNA
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_tan_dowa
+		}
+		text = EVTDESC_TOG_7527_TAN_DOWA
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_tanit
+		}
+		text = EVTDESC_TOG_7527_TANIT
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_anti
+		}
+		text = EVTDESC_TOG_7527_ANTI
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_gurzil
+		}
+		text = EVTDESC_TOG_7527_GURZIL
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_magec
+		}
+		text = EVTDESC_TOG_7527_MAGEC
+	}
+	desc = {
+		trigger = { 
+			NOT = { has_character_flag = monument_for_ancestors }
+			has_character_modifier = follower_of_set
+		}
+		text = EVTDESC_TOG_7527_SET
 	}
 
 	is_triggered_only = yes

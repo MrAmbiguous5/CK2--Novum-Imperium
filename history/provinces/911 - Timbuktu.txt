@@ -17,24 +17,14 @@ b_sankore = temple
 
 # Misc
 culture = soninke
-religion = west_african_pagan
+religion = a_tag_roog
 
 # History
-
-936.1.1 = {
-	build_wonder = wonder_timbuktu_university
-	set_wonder_stage = 1
-}
-
 1050.1.1 = {
-	culture = maghreb_arabic
 	#culture = butr
 	religion = sunni 
-	b_tirakka = castle
+	b_tirakka = castle 
 	}
-1066.1.1 = {
-	set_wonder_stage = 3
-}
 1200.1.1 = {
 	b_timbuktu = city
 	b_sankore = temple

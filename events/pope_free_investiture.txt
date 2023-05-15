@@ -59,6 +59,10 @@ character_event = {
 			factor = 0.25
 			trait = zealous
 		}
+		modifier = {
+			factor = 100
+			ai = no
+		}
 	}
 
 	option = {

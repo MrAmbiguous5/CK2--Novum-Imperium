@@ -861,19 +861,39 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					event_target:combatant_2 = { has_character_flag = flag_duel_no_draws } 
 				}
 			}
-			additive_modifier = {
-				duel_result_score_decent_trigger = yes #Score: fairly evenly matched
-				value = 1
+			modifier = { # added by Dragatus # This are conditions to disable this outcome so we have to reverse the logic.
+                # We allow double kills if duelists are evenly matched OR a weaker defender used poison undetected OR a weaker attacker used poison undetected.
+                # So we prohibit double kills if duelists are not evenly matched AND a weaker defender didn't use poison undetected AND a weaker attacker didn't use poison undetected.
+
+				duel_result_score_decent_trigger = no # score is not fairly evenly matched
+
+                NAND = {
+                    has_character_flag = defender_using_poison@event_target:combatant_1 # defender used poison
+					NOT = { has_character_flag = poison_can_fail_against@event_target:combatant_1 } # attacker didn't detect poison
+                    duel_result_score_high_group_trigger = yes # high score means attacker is better
+                }
+
+                NAND = {
+                    has_character_flag = attacker_using_poison@event_target:combatant_2 # attacker used poison
+					NOT = { has_character_flag = poison_can_fail_against@event_target:combatant_2 } # defender didn't detect poison
+                    duel_result_score_low_group_trigger = yes # low score means attacker is worse
+                }
+
+				factor = 0
 			}
-			additive_modifier = { #Both have highest skill
+			modifier = {
+				duel_result_score_decent_trigger = yes #Score: fairly evenly matched
+				factor = 1.2
+			}
+			modifier = { #Both have highest skill
 				is_the_best_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_best_duelist_trigger = yes }
-				value = 1
+				factor = 1.2
 			}
-			additive_modifier = { #Both have the worst skill
+			modifier = { #Both have the worst skill
 				is_the_worst_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_worst_duelist_trigger = yes }
-				value = 5
+				factor = 2
 			}
 			if = {
 				limit = { #Both have the best skill
@@ -924,35 +944,39 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					event_target:combatant_1 = { has_character_flag = deadly_duel@event_target:combatant_2 }
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_best_trigger = yes # Block this outcome if attacker scored 55 points better than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_low_group_trigger = yes #Score: you were outmatched
-				value = 5
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_worst_trigger = yes #Score: REALLY outmatched
-				value = 10
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				is_bad_duelist_trigger = yes #Skill: bad
-				value = 20
+				factor = 4
 			}
-			additive_modifier = {
+			modifier = {
 				is_terrible_duelist_trigger = yes #Skill: terrible
-				value = 30
+				factor = 6
 			}
-			additive_modifier = {
+			modifier = {
 				is_the_worst_duelist_trigger = yes #Skill: the worst
-				value = 40
+				factor = 8
 			}
-			additive_modifier = {
+			modifier = {
 				has_character_flag = defender_using_poison@event_target:combatant_1 #Defender used poison
-				value = 30
+				factor = 10
 			}
-			additive_modifier = {
+			modifier = {
 				has_character_flag = poison_can_fail_against@event_target:combatant_1 #Attacker might catch the poison
-				value = -25
+				factor = 0.1
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:dueling_weapon_2 = { #Defender is using a *gun*
 					has_artifact_flag = gun
 				}
@@ -961,7 +985,7 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 						has_artifact_flag = gun
 					}
 				}
-				value = 30
+				factor = 6
 			}
 
 			if = { #this fight is taking place on the battlefield!
@@ -999,35 +1023,39 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					event_target:combatant_1 = { has_character_flag = deadly_duel@event_target:combatant_2 }
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_worst_trigger = yes # Block this outcome if attacker scored 50 points lower than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_high_group_trigger = yes #Score: they were outmatched
-				value = 5
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_best_trigger = yes #Score: REALLY outmatched
-				value = 10
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_bad_duelist_trigger = yes } #Their Skill: bad
-				value = 20
+				factor = 4
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_terrible_duelist_trigger = yes } #Their Skill: terrible
-				value = 30
+				factor = 6
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_the_worst_duelist_trigger = yes } #Their Skill: the worst
-				value = 40
+				factor = 8
 			}
-			additive_modifier = {
+			modifier = {
 				has_character_flag = attacker_using_poison@event_target:combatant_2 #Attacker used poison
-				value = 30
+				factor = 10
 			}
-			additive_modifier = {
+			modifier = {
 				has_character_flag = poison_can_fail_against@event_target:combatant_2 #Defender might catch the poison
-				value = -25
+				factor = 0.1
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:dueling_weapon_1 = { #Attacker is using a *gun*
 					has_artifact_flag = gun
 				}
@@ -1036,7 +1064,7 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 						has_artifact_flag = gun
 					}
 				}
-				value = 30
+				factor = 6
 			}
 			
 			set_character_flag = someone_died
@@ -1059,54 +1087,58 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					has_character_flag = claim_duel@event_target:combatant_2
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_worst_trigger = yes # Block this outcome if attacker scored 50 points lower than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_good_trigger = yes #Score: you did well
-				value = 40
+				factor = 5
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_great_trigger = yes  #Score: you did great
-				value = 60
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_fantastic_trigger = yes  #Score: you did fantastic
-				value = 80
+				factor = 9
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_best_trigger = yes  #Score: you did the best
-				value = 100
+				factor = 11
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_high_group_trigger = yes  #Score group: over all good (extra bonus)
-				value = 60
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				duelist_skill_is_high_group_trigger = yes #Skill group: high
-				value = 20
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				has_character_flag = mock_duel
 				any_owned_bloodline = { has_bloodline_flag = bloodline_legendary_warrior }
-				value = 20
+				factor = 3
 			}
 
 			event_target:combatant_2 = {
 				random_list = {	#determine if opponent'll end up with a serious (losing a limb) injury, a sever one (severely injured trait) or only a mild one
 					10 = {
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { duel_result_score_high_group_trigger = yes }
-							value = 90 #increased chance if attacker did well
+							factor = 10 #increased chance if attacker did well
 						}
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { is_great_duelist_trigger = yes }
-							value = 10
+							factor = 2
 						}
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { is_fantastic_duelist_trigger = yes }
-							value = 20
+							factor = 3
 						}
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { is_the_best_duelist_trigger = yes }
-							value = 30
+							factor = 4
 						}
 						modifier = {
 							factor = 10
@@ -1130,21 +1162,21 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					}
 					40 = {
 						set_character_flag = mildly_injured
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { duel_result_score_low_group_trigger = yes }
-							value = 360 #increased chance if attacker did poorly
+							factor = 10 #increased chance if attacker did poorly
 						}
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { is_the_worst_duelist_trigger = yes }
-							value = 120
+							factor = 4
 						}
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { is_terrible_duelist_trigger = yes }
-							value = 80
+							factor = 3
 						}
-						additive_modifier = {
+						modifier = {
 							event_target:combatant_1 = { is_bad_duelist_trigger = yes }
-							value = 40
+							factor = 2
 						}
 					}
 				}
@@ -1188,48 +1220,52 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					has_character_flag = claim_duel@event_target:combatant_2
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_best_trigger = yes # Block this outcome if attacker scored 55 points better than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_ok_trigger = yes #Score: you did "ok"
-				value = 40
+				factor = 5
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_bad_trigger = yes  #Score: you did poorly
-				value = 60
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_terrible_trigger = yes  #Score: you did terribly
-				value = 80
+				factor = 9
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_worst_trigger = yes  #Score: you did the worst
-				value = 100
+				factor = 11
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_low_group_trigger = yes  #Score group: outmatched (extra malus)
-				value = 60
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { duelist_skill_is_high_group_trigger = yes } #Their Skill group: high
-				value = 20
+				factor = 3
 			}
 
 			random_list = { #determine if you'll end up with a serious (losing a limb) injury, a sever one (severely injured trait) or only a mild one
 				10 = {
-					additive_modifier = {
+					modifier = {
 						duel_result_score_low_group_trigger = yes
-						value = 90
+						factor = 10
 					}
-					additive_modifier = {
+					modifier = {
 						event_target:combatant_2 = { is_great_duelist_trigger = yes }
-						value = 10
+						factor = 2
 					}
-					additive_modifier = {
+					modifier = {
 						event_target:combatant_2 = { is_fantastic_duelist_trigger = yes }
-						value = 20
+						factor = 3
 					}
-					additive_modifier = {
+					modifier = {
 						event_target:combatant_2 = { is_the_best_duelist_trigger = yes }
-						value = 30
+						factor = 4
 					}
 					modifier = {
 						factor = 10
@@ -1253,21 +1289,21 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 				}
 				40 = {
 					set_character_flag = mildly_injured
-					additive_modifier = {
+					modifier = {
 						duel_result_score_high_group_trigger = yes
-						value = 360
+						factor = 10
 					}
-					additive_modifier = {
+					modifier = {
 						event_target:combatant_2 = { is_the_worst_duelist_trigger = yes }
-						value = 120
+						factor = 4
 					}
-					additive_modifier = {
+					modifier = {
 						event_target:combatant_2 = { is_terrible_duelist_trigger = yes }
-						value = 80
+						factor = 3
 					}
-					additive_modifier = {
+					modifier = {
 						event_target:combatant_2 = { is_bad_duelist_trigger = yes }
-						value = 40
+						factor = 2
 					}
 				}
 			}
@@ -1304,26 +1340,31 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 							trait = weak
 						}
 					}
-					any_owned_bloodline = { has_bloodline_flag = bloodline_legendary_warrior }
+					AND = { # Refined by Dragatus - if defender also has bloodline it negates attacker's bloodline
+						any_owned_bloodline = { has_bloodline_flag = bloodline_legendary_warrior }
+						event_target:combatant_2 = {
+							NOT = { any_owned_bloodline = { has_bloodline_flag = bloodline_legendary_warrior } }
+						}
+					}
 				}
 			}
 
-			additive_modifier = {
+			modifier = {
 				is_the_best_duelist_trigger = yes #Skill: the best
-				value = 10
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duelist_skill_is_high_group_trigger = yes #Skill group: high
 				event_target:combatant_2 = { duelist_skill_is_low_group_trigger = yes } #Their Skill group: low
-				value = 10
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_high_group_trigger = yes  #Score group: over all good
-				value = 10
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_best_trigger = yes  #Score: you did the best
-				value = 10
+				factor = 2
 			}
 			
 			if = {
@@ -1372,22 +1413,22 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 				}
 				NOT = { has_character_flag = is_legendary_duel }
 			}
-			additive_modifier = {
+			modifier = {
 				is_the_worst_duelist_trigger = yes #Skill: the worst
-				value = 10
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duelist_skill_is_low_group_trigger = yes #Skill group: low
 				event_target:combatant_2 = { duelist_skill_is_high_group_trigger = yes } #Their Skill group: high
-				value = 10
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_low_group_trigger = yes  #Score group: low (outmatched)
-				value = 10
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_worst_trigger = yes  #Score: you did the worst
-				value = 10
+				factor = 2
 			}
 			
 			if = {
@@ -1432,23 +1473,27 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					has_character_flag = claim_duel@event_target:combatant_2
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_worst_trigger = yes # Block this outcome if attacker scored 50 points lower than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_high_group_trigger = yes #Score group: low (outmatched)
-				value = 5
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_decent_trigger = yes #Score: fairly evenly matched
-				value = 5
+				factor = 2
 			}
-			additive_modifier = { #Both have highest skill
+			modifier = { #Both have highest skill
 				is_the_best_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_best_duelist_trigger = yes }
-				value = 5
+				factor = 2
 			}
-			additive_modifier = { #Both have the worst skill
+			modifier = { #Both have the worst skill
 				is_the_worst_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_worst_duelist_trigger = yes }
-				value = 5
+				factor = 2
 			}
 			random_list = { #determine if you'll end up with a serious (losing a limb) injury, a sever one (severely injured trait) or only a mild one
 				5 = {
@@ -1553,23 +1598,27 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					has_character_flag = claim_duel@event_target:combatant_2
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_best_trigger = yes # Block this outcome if attacker scored 55 points better than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_low_group_trigger = yes #Score group: low (outmatched)
-				value = 5
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_decent_trigger = yes #Score: fairly evenly matched
-				value = 5
+				factor = 2
 			}
-			additive_modifier = { #Both have highest skill
+			modifier = { #Both have highest skill
 				is_the_best_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_best_duelist_trigger = yes }
-				value = 5
+				factor = 2
 			}
-			additive_modifier = { #Both have the worst skill
+			modifier = { #Both have the worst skill
 				is_the_worst_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_worst_duelist_trigger = yes }
-				value = 5
+				factor = 2
 			}
 			random_list = { #determine if you'll both end up with a serious (losing a limb) injury, a sever one (severely injured trait) or only a mild one
 				10 = {
@@ -1653,25 +1702,29 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					event_target:combatant_2 = { has_character_flag = flag_duel_no_draws } 
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_worst_trigger = yes # Block this outcome if attacker scored 50 points lower than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_high_group_trigger = yes #Score: they were outmatched
-				value = 5
+				factor = 2
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_best_trigger = yes #Score: REALLY outmatched
-				value = 10
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_bad_duelist_trigger = yes } #Their Skill: bad
-				value = 20
+				factor = 5
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_terrible_duelist_trigger = yes } #Their Skill: terrible
-				value = 30
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_the_worst_duelist_trigger = yes } #Their Skill: the worst
-				value = 40
+				factor = 9
 			}
 			
 			event_target:combatant_2 = {
@@ -1694,55 +1747,59 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					event_target:combatant_2 = { has_character_flag = flag_duel_no_draws } 
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_worst_trigger = yes # Block this outcome if attacker scored 50 points lower than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_low_group_trigger = yes #Score: you were outmatched
-				value = 50
+				factor = 6
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_worst_trigger = yes #Score: REALLY outmatched
-				value = 60
+				factor = 6
 			}
-			additive_modifier = {
+			modifier = {
 				is_bad_duelist_trigger = yes #Skill: bad
-				value = 40
+				factor = 5
 			}
-			additive_modifier = {
+			modifier = {
 				is_terrible_duelist_trigger = yes #Skill: terrible
-				value = 60
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				is_the_worst_duelist_trigger = yes #Skill: the worst
-				value = 80
+				factor = 9
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: they are better than ROOT
 					duelist_skill_compared_to_prev_high_group_trigger = yes
 				}
-				value = 20
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: WAY better
 					is_the_best_dueler_compared_to_prev_trigger = yes
 				}
-				value = 40
+				factor = 5
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: fantastic
 					is_fantastic_dueler_compared_to_prev_trigger = yes
 				}
-				value = 30
+				factor = 4
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: great
 					is_great_dueler_compared_to_prev_trigger = yes
 				}
-				value = 20
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: good
 					is_good_dueler_compared_to_prev_trigger = yes
 				}
-				value = 10
+				factor = 2
 			}
 			
 			
@@ -1780,55 +1837,59 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					event_target:combatant_2 = { has_character_flag = flag_duel_no_draws } 
 				}
 			}
-			additive_modifier = {
+			modifier = { #added by Dragatus
+				duel_result_score_the_worst_trigger = yes # Block this outcome if attacker scored 50 points lower than defender.
+				factor = 0
+			}
+			modifier = {
 				duel_result_score_high_group_trigger = yes #Score: they were outmatched
-				value = 50
+				factor = 6
 			}
-			additive_modifier = {
+			modifier = {
 				duel_result_score_the_best_trigger = yes #Score: REALLY outmatched
-				value = 60
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_bad_duelist_trigger = yes } #Their Skill: bad
-				value = 40
+				factor = 5
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_terrible_duelist_trigger = yes } #Their Skill: terrible
-				value = 60
+				factor = 7
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { is_the_worst_duelist_trigger = yes } #Their Skill: the worst
-				value = 80
+				factor = 9
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: they are worse than ROOT
 					duelist_skill_compared_to_prev_low_group_trigger = yes
 				}
-				value = 20
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: way worse
 					is_the_worst_dueler_compared_to_prev_trigger = yes
 				}
-				value = 40
+				factor = 5
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: terrible
 					is_terrible_dueler_compared_to_prev_trigger = yes
 				}
-				value = 30
+				factor = 4
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: bad
 					is_bad_dueler_compared_to_prev_trigger = yes
 				}
-				value = 20
+				factor = 3
 			}
-			additive_modifier = {
+			modifier = {
 				event_target:combatant_2 = { #Relative skill of theirs: not bad
 					is_ok_dueler_compared_to_prev_trigger = yes
 				}
-				value = 10
+				factor = 2
 			}
 			
 
@@ -1869,19 +1930,39 @@ send_duel_result_event_effect = { # Runs via the attacker/combatant_1
 					event_target:combatant_2 = { has_character_flag = flag_duel_no_draws } 
 				}
 			}
-			additive_modifier = {
-				duel_result_score_decent_trigger = yes #Score: fairly evenly matched
-				value = 1
+			modifier = { # added by Dragatus # This are conditions to disable this outcome so we have to reverse the logic.
+                # We allow double kills if duelists are evenly matched OR a weaker defender used poison undetected OR a weaker attacker used poison undetected.
+                # So we prohibit double kills if duelists are not evenly matched AND a weaker defender didn't use poison undetected AND a weaker attacker didn't use poison undetected.
+
+				duel_result_score_decent_trigger = no # score is not fairly evenly matched
+
+                NAND = {
+                    has_character_flag = defender_using_poison@event_target:combatant_1 # defender used poison
+					NOT = { has_character_flag = poison_can_fail_against@event_target:combatant_1 } # attacker didn't detect poison
+                    duel_result_score_high_group_trigger = yes # high score means attacker is better
+                }
+
+                NAND = {
+                    has_character_flag = attacker_using_poison@event_target:combatant_2 # attacker used poison
+					NOT = { has_character_flag = poison_can_fail_against@event_target:combatant_2 } # defender didn't detect poison
+                    duel_result_score_low_group_trigger = yes # low score means attacker is worse
+                }
+
+				factor = 0
 			}
-			additive_modifier = { #Both have highest skill
+			modifier = {
+				duel_result_score_decent_trigger = yes #Score: fairly evenly matched
+				factor = 2
+			}
+			modifier = { #Both have highest skill
 				is_the_best_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_best_duelist_trigger = yes }
-				value = 1
+				factor = 2
 			}
-			additive_modifier = { #Both have the worst skill
+			modifier = { #Both have the worst skill
 				is_the_worst_duelist_trigger = yes
 				event_target:combatant_2 = { is_the_worst_duelist_trigger = yes }
-				value = 5
+				factor = 6
 			}
 			if = {
 				limit = { #Both have the best skill
@@ -2751,29 +2832,7 @@ clean_up_after_duel_effect = { #Runs for both combatant_1 and 2
 	#if this was on the battlefield...
 	apply_battlefield_duel_opinions_effect = yes
 	send_notifications_after_champion_stand_in_effect = yes
-	
-	
-	if = { 
-		limit = {
-			is_female = yes 
-			check_variable = { which = IB_female_warrior_duel value == 0 } 	
-		}
-		set_variable = { which = IB_female_warrior_duel value = 0 } 
-	}
-	
-	if = {
-		limit = {
-			is_alive = yes
-			is_female = yes
-			OR = {
-				has_character_flag = is_victorious_attacker
-				has_character_flag = is_victorious_defender
-			}
-			has_character_flag = is_battlefield_duel
-		}
-		change_variable = { which = IB_female_warrior_duel value = 1}
-		ib_female_warrior_effect = yes
-	}
+
 	if = {
 		limit = {
 			is_alive = yes
@@ -2789,7 +2848,7 @@ clean_up_after_duel_effect = { #Runs for both combatant_1 and 2
 	}
 
 	resolve_legendary_duel_effect = yes #if this was part of legendary journey (Warrior Lodge only)
-	ib_female_warrior_effect = yes
+
 	rank_up_to_hero_level_effect = yes
 	clr_duel_missions_effect = yes
 	clr_duel_flags_effect = yes

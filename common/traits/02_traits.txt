@@ -23,7 +23,7 @@ blinded = {
 	intrigue = -2
 	health = -1
 	
-	#customizer = no
+	customizer = no
 	
 	combat_rating = -100 #old value: -10
 	
@@ -147,7 +147,7 @@ has_aztec_disease = {
 child_of_consort = {
 	diplomacy = -1
 
-	#customizer = no
+	customizer = no
 }
 
 peasant_leader = {
@@ -159,7 +159,7 @@ peasant_leader = {
 	vassal_opinion = -10
 
 	rebel_inherited = yes
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_PEASANT
 	male_insult_adj = INSULT_LOWBORN
@@ -174,7 +174,7 @@ heresiarch = {
 	combat_rating = 3 #new value!
 	
 	rebel_inherited = yes
-	#customizer = no
+	customizer = no
 	religious = yes
 	
 	male_insult = INSULT_HERESIARCH
@@ -215,7 +215,7 @@ varangian = {
 	
 	same_opinion = 10
 	
-	#customizer = no
+	customizer = no
 }
 
 saoshyant = {
@@ -378,7 +378,7 @@ sympathy_christendom = {
 	
 	same_opinion_if_same_religion = 5
 
-	#customizer = no
+	customizer = no
 	random = no
 
 	male_insult = INSULT_LOVER_OF_HEATHENS
@@ -402,7 +402,7 @@ sympathy_islam = {
 
 	same_opinion_if_same_religion = 5
 
-	#customizer = no
+	customizer = no
 	random = no
 
 	male_insult = INSULT_LOVER_OF_HEATHENS
@@ -426,7 +426,7 @@ sympathy_pagans = {
 
 	same_opinion_if_same_religion = 5
 
-	#customizer = no
+	customizer = no
 	random = no
 
 	male_insult = INSULT_LOVER_OF_HEATHENS
@@ -450,7 +450,7 @@ sympathy_zoroastrianism = {
 
 	same_opinion_if_same_religion = 5
 
-	#customizer = no
+	customizer = no
 	random = no
 
 	male_insult = INSULT_LOVER_OF_HEATHENS
@@ -474,7 +474,7 @@ sympathy_judaism = {
 
 	same_opinion_if_same_religion = 5
 
-	#customizer = no
+	customizer = no
 	random = no
 
 	male_insult = INSULT_LOVER_OF_HEATHENS
@@ -674,7 +674,7 @@ brahmin = {
 
 	monthly_character_piety = 0.1
 
-	#customizer = no
+	customizer = no
 	random = no
 }
 
@@ -695,7 +695,7 @@ kshatriya = {
 
 	monthly_character_prestige = 0.1
 
-	#customizer = no
+	customizer = no
 	random = no
 }
 
@@ -716,7 +716,7 @@ vaishya = {
 
 	monthly_character_wealth = 0.03
 	
-	#customizer = no
+	customizer = no
 	random = no
 }
 
@@ -733,7 +733,7 @@ sympathy_indian = {
 
 	same_opinion_if_same_religion = 5
 
-	#customizer = no
+	customizer = no
 	random = no
 
 	male_insult = INSULT_LOVER_OF_HEATHENS
@@ -1001,7 +1001,7 @@ seducer = {
 	male_compliment = COMPL_SEDUCER
 	male_compliment_adj = COMPL_CHARMING
 	
-	#ruler_designer_cost = 12
+	ruler_designer_cost = 12
 }
 
 seductress = {
@@ -1026,7 +1026,7 @@ seductress = {
 	female_compliment = COMPL_ENCHANTRESS
 	female_compliment_adj = COMPL_RAVISHING
 	
-	#ruler_designer_cost = 12
+	ruler_designer_cost = 12
 }
 
 administrator = {
@@ -1038,7 +1038,7 @@ administrator = {
 		speed = 0.1
 	}
 	
-	#ruler_designer_cost = 10
+	ruler_designer_cost = 10
 }
 
 architect = {
@@ -1055,7 +1055,7 @@ architect = {
 		siege = 0.2
 	}
 	
-	#ruler_designer_cost = 10
+	ruler_designer_cost = 10
 	
 	male_compliment = COMPL_ARCHITECT
 	female_compliment = COMPL_ARCHITECT
@@ -1073,7 +1073,7 @@ strategist = {
 		defence = 0.2
 	}
 	
-	#ruler_designer_cost = 12
+	ruler_designer_cost = 12
 }
 
 socializer = {
@@ -1084,7 +1084,7 @@ socializer = {
 	
 	diplomacy = 3
 	
-	#ruler_designer_cost = 12
+	ruler_designer_cost = 12
 	
 	male_insult = INSULT_BLABBERER
 	female_insult = INSULT_BLABBERER
@@ -1100,7 +1100,7 @@ schemer = {
 	
 	intrigue = 3
 	
-	#ruler_designer_cost = 10
+	ruler_designer_cost = 10
 
 	male_insult = INSULT_INSTIGATOR
 	female_insult = INSULT_INSTIGATOR
@@ -1116,7 +1116,7 @@ theologian = {
 	learning = 2
 	intrigue = 1
 	
-	#ruler_designer_cost = 10
+	ruler_designer_cost = 10
 
 	male_insult = INSULT_BOOKWORM
 	female_insult = INSULT_BOOKWORM
@@ -1140,7 +1140,7 @@ gamer = {
 	
 	same_opinion = 10
 	
-	#ruler_designer_cost = 10
+	ruler_designer_cost = 10
 }
 
 adventurer = {
@@ -1155,7 +1155,7 @@ adventurer = {
 
 	ai_ambition = 40
 	
-	#customizer = no
+	customizer = no
 	random = no
 
 	male_insult = INSULT_UPSTART
@@ -1746,7 +1746,7 @@ one_handed = {
 	
 	combat_rating = -20 #old value: -2
 	
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_CRIPPLE
 	female_insult = INSULT_CRIPPLE
@@ -1766,7 +1766,7 @@ one_legged = {
 	
 	combat_rating = -30 #old value: -3
 
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_CRIPPLE
 	female_insult = INSULT_CRIPPLE
@@ -1785,7 +1785,7 @@ disfigured = {
 	
 	diplomacy = -4
 	
-	#customizer = no
+	customizer = no
 
 	male_insult = INSULT_FREAK
 	female_insult = INSULT_FREAK
@@ -1813,7 +1813,7 @@ mangled = {
 
 	health = -3
 	
-	#customizer = no
+	customizer = no
 
 	male_insult = INSULT_CRIPPLE
 	female_insult = INSULT_CRIPPLE
@@ -2017,7 +2017,7 @@ valhalla_bound  = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_compliment = COMPL_VALHALLA_BOUND_MALE
 	female_compliment = COMPL_VALHALLA_BOUND_FEMALE
@@ -2127,7 +2127,7 @@ shieldmaiden  = {
 
 	ai_zeal = 10
 	
-	#customizer = no
+	customizer = no
 
 	female_compliment = COMPL_VALKYRIE
 	female_compliment_adj = COMPL_VIKING_adj
@@ -2142,7 +2142,7 @@ physician = {
 	
 	general_opinion = 5
 	
-	#customizer = no
+	customizer = no
 	random = no
 	
 	male_compliment = COMPL_SCHOLAR
@@ -2228,7 +2228,7 @@ sea_queen = {
 	norse_pagan_reformed_opinion = 25
 	
 	#religious = yes
-	#customizer = no
+	customizer = no
 	
 	male_insult = COMPL_PIRATE
 	female_insult = COMPL_PIRATE
@@ -2262,7 +2262,7 @@ eagle_warrior = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2296,7 +2296,7 @@ sun_warrior = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2330,7 +2330,7 @@ ukkos_shield = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2364,7 +2364,7 @@ nyames_shield = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2398,7 +2398,7 @@ peruns_chosen = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2432,7 +2432,7 @@ romuvas_own = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2466,7 +2466,7 @@ ares_own = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2500,7 +2500,7 @@ tengri_warrior = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2534,7 +2534,7 @@ shaddai = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -2568,7 +2568,7 @@ gondi_shahansha = {
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
-	#customizer = no
+	customizer = no
 	
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -6652,7 +6652,7 @@ is_fat = {
 	tribal_opinion = -5
 	
 	random = no
-	#customizer = no
+	customizer = no
 
 	male_insult = INSULT_FATPIG
 	female_insult = INSULT_SOW
@@ -6674,7 +6674,7 @@ is_malnourished = {
 	fertility = -0.05
 	
 	random = no
-	#customizer = no
+	customizer = no
 
 	male_insult = INSULT_WEAKLING
 	female_insult = INSULT_CORPSE
@@ -6839,8 +6839,8 @@ hellenic_leader = {
 	random = no
 	command_modifier = {
 		speed = 0.1
-		morale_defence = 0.2
-		morale_offence = 0.3
+		morale_defence = 0.15
+		morale_offence = 0.2
 	}
 }
 
@@ -6986,7 +6986,7 @@ freckles_2 = { #Inherited via script - Thin
 		freckles_4 
 		freckles_5
 	}
-	#customizer = no
+	customizer = no
 	male_insult_adj = INSULT_CURSED
 	female_insult_adj = INSULT_CURSED
 }
@@ -7000,7 +7000,7 @@ freckles_3 = { #Inherited via script - Very Thin
 		freckles_5
 	}
 
-	#customizer = no
+	customizer = no
 	male_insult_adj = INSULT_CURSED
 	female_insult_adj = INSULT_CURSED
 }
@@ -7015,7 +7015,7 @@ freckles_4 = { #Inherited via script - Thick
 		freckles_5
 	}
 
-	#customizer = no
+	customizer = no
 	male_insult_adj = INSULT_CURSED
 	female_insult_adj = INSULT_CURSED
 }
@@ -7029,7 +7029,7 @@ freckles_5 = { #Inherited via script - Very Thick
 		freckles
 	}
 
-	#customizer = no
+	customizer = no
 	male_insult_adj = INSULT_CURSED
 	female_insult_adj = INSULT_CURSED
 }
@@ -7468,7 +7468,7 @@ crusader_king = {
 
 	same_religion_opinion = 35
 	
-	#customizer = no
+	customizer = no
 	random = no
 }
 
@@ -7503,7 +7503,7 @@ crusader_queen = {
 
 	same_religion_opinion = 35
 	
-	#customizer = no
+	customizer = no
 	random = no
 }
 
@@ -7572,7 +7572,7 @@ bloodthirsty_gods_1 = { #10 burned_hearts_points
 	ai_zeal = 30
 	customizer = yes
 	random = no
-	#ruler_designer_cost = 10
+	ruler_designer_cost = 10
 }
 bloodthirsty_gods_2 = { #50 burned_hearts_points
 	potential = {
@@ -7608,7 +7608,7 @@ bloodthirsty_gods_2 = { #50 burned_hearts_points
 	ai_zeal = 70
 	customizer = yes
 	random = no
-	#ruler_designer_cost = 20
+	ruler_designer_cost = 20
 }
 bloodthirsty_gods_3 = { #100 burned_hearts_points
 	potential = {
@@ -7644,7 +7644,7 @@ bloodthirsty_gods_3 = { #100 burned_hearts_points
 	ai_zeal = 100
 	customizer = yes
 	random = no
-	#ruler_designer_cost = 40
+	ruler_designer_cost = 40
 }
 
 groomed = {

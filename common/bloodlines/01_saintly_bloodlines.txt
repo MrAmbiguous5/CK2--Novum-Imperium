@@ -1,11 +1,9 @@
-# -*- ck2.bloodlines -*-
-
 # Catholic
 
 saintly_bloodline_catholic_01 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	command_modifier = {
-		religious_enemy = 0.15
+		religious_enemy = 0.3
 	}	
 	saintly_defender_bloodline = 1
 	inheritance = patrilineal
@@ -45,7 +43,7 @@ saintly_bloodline_catholic_02 = {
 }
 
 saintly_bloodline_catholic_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
 	allow_bastards = no
@@ -65,7 +63,7 @@ saintly_bloodline_catholic_03 = {
 
 saintly_bloodline_catholic_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
 	christian_church_opinion = 5
 	saintly_inquisitional_bloodline = 1
@@ -94,14 +92,7 @@ saintly_bloodline_catholic_05 = {
 	flags = { saintly_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_cross_1
 	active = {
-		custom_tooltip = {
-			text = saintly_bloodline_same_religion_TT
-			FROM = {
-				founder = {
-					religion = ROOT
-				}
-			}
-		}
+		religion_group = christian
 	}
 }
 
@@ -127,8 +118,8 @@ saintly_bloodline_catholic_06 = {
 ##Impious Saint
 
 saintly_bloodline_07 = {
-	monthly_character_prestige = 0.1
-	monthly_character_piety = -0.05
+	monthly_character_prestige = 1
+	monthly_character_piety = -0.1
 	christian_church_opinion = -5
 	inheritance = patrilineal
 	allow_bastards = no
@@ -142,9 +133,9 @@ saintly_bloodline_07 = {
 # Orthodox
 
 saintly_bloodline_orthodox_01 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	command_modifier = {
-		religious_enemy = 0.15
+		religious_enemy = 0.3
 	}	
 	saintly_defender_bloodline = 1
 	inheritance = patrilineal
@@ -184,7 +175,7 @@ saintly_bloodline_orthodox_02 = {
 }
 
 saintly_bloodline_orthodox_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
 	allow_bastards = no
@@ -204,7 +195,7 @@ saintly_bloodline_orthodox_03 = {
 
 saintly_bloodline_orthodox_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
 	christian_church_opinion = 5
 	saintly_inquisitional_bloodline = 1
@@ -233,14 +224,7 @@ saintly_bloodline_orthodox_05 = {
 	flags = { saintly_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_cross_orthodox
 	active = {
-		custom_tooltip = {
-			text = saintly_bloodline_same_religion_TT
-			FROM = {
-				founder = {
-					religion = ROOT
-				}
-			}
-		}
+		religion_group = christian
 	}
 }
 
@@ -266,9 +250,9 @@ saintly_bloodline_orthodox_06 = {
 # Coptic
 
 saintly_bloodline_coptic_01 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	command_modifier = {
-		religious_enemy = 0.15
+		religious_enemy = 0.3
 	}	
 	saintly_defender_bloodline = 1
 	inheritance = patrilineal
@@ -308,7 +292,7 @@ saintly_bloodline_coptic_02 = {
 }
 
 saintly_bloodline_coptic_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
 	allow_bastards = no
@@ -328,7 +312,7 @@ saintly_bloodline_coptic_03 = {
 
 saintly_bloodline_coptic_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
 	christian_church_opinion = 5
 	saintly_inquisitional_bloodline = 1
@@ -357,14 +341,7 @@ saintly_bloodline_coptic_05 = {
 	flags = { saintly_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_cross_miaphysite
 	active = {
-		custom_tooltip = {
-			text = saintly_bloodline_same_religion_TT
-			FROM = {
-				founder = {
-					religion = ROOT
-				}
-			}
-		}
+		religion_group = christian
 	}
 }
 
@@ -390,9 +367,9 @@ saintly_bloodline_coptic_06 = {
 # Nestorian
 
 saintly_bloodline_nestorian_01 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	command_modifier = {
-		religious_enemy = 0.15
+		religious_enemy = 0.3
 	}	
 	saintly_defender_bloodline = 1
 	inheritance = patrilineal
@@ -432,7 +409,7 @@ saintly_bloodline_nestorian_02 = {
 }
 
 saintly_bloodline_nestorian_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
 	allow_bastards = no
@@ -452,7 +429,7 @@ saintly_bloodline_nestorian_03 = {
 
 saintly_bloodline_nestorian_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
 	christian_church_opinion = 5
 	saintly_inquisitional_bloodline = 1
@@ -481,14 +458,7 @@ saintly_bloodline_nestorian_05 = {
 	flags = { saintly_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_cross_nestorian
 	active = {
-		custom_tooltip = {
-			text = saintly_bloodline_same_religion_TT
-			FROM = {
-				founder = {
-					religion = ROOT
-				}
-			}
-		}
+		religion_group = christian
 	}
 }
 
@@ -517,13 +487,13 @@ saintly_bloodline_nestorian_06 = {
 
 # Germanic
 saintly_bloodline_germanic_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		heavy_infantry = 0.10
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_norse
 	active = {
@@ -539,10 +509,10 @@ saintly_bloodline_germanic_01 = {
 }
 
 saintly_bloodline_germanic_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_norse
 	active = {
@@ -559,12 +529,12 @@ saintly_bloodline_germanic_03 = {
 
 saintly_bloodline_germanic_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.10
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_norse
 	active = {
@@ -581,10 +551,14 @@ saintly_bloodline_germanic_04 = {
 
 saintly_bloodline_germanic_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_norse
 	active = {
@@ -603,7 +577,7 @@ saintly_bloodline_germanic_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_norse
 	active = {
@@ -620,13 +594,14 @@ saintly_bloodline_germanic_06 = {
 
 # Romuva
 saintly_bloodline_romuva_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		flank = 0.1
+		defence = 0.025
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_romuva_tree
 	active = {
@@ -642,10 +617,10 @@ saintly_bloodline_romuva_01 = {
 }
 
 saintly_bloodline_romuva_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_romuva_tree
 	active = {
@@ -662,12 +637,12 @@ saintly_bloodline_romuva_03 = {
 
 saintly_bloodline_romuva_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_romuva_tree
 	active = {
@@ -684,10 +659,14 @@ saintly_bloodline_romuva_04 = {
 
 saintly_bloodline_romuva_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_romuva_tree
 	active = {
@@ -706,7 +685,7 @@ saintly_bloodline_romuva_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_romuva_tree
 	active = {
@@ -723,13 +702,14 @@ saintly_bloodline_romuva_06 = {
 
 # Slavic
 saintly_bloodline_slavic_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		morale = 0.10
+		retreat = 0.05
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_slavic_arrow
 	active = {
@@ -745,10 +725,10 @@ saintly_bloodline_slavic_01 = {
 }
 
 saintly_bloodline_slavic_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_slavic_arrow
 	active = {
@@ -765,12 +745,12 @@ saintly_bloodline_slavic_03 = {
 
 saintly_bloodline_slavic_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_slavic_arrow
 	active = {
@@ -787,10 +767,14 @@ saintly_bloodline_slavic_04 = {
 
 saintly_bloodline_slavic_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_slavic_arrow
 	active = {
@@ -809,7 +793,7 @@ saintly_bloodline_slavic_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_slavic_arrow
 	active = {
@@ -826,13 +810,14 @@ saintly_bloodline_slavic_06 = {
 
 # Tengri
 saintly_bloodline_tengri_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		cavalry = 0.05
+		pursue = 0.05
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_tengri_eagle
 	active = {
@@ -848,10 +833,10 @@ saintly_bloodline_tengri_01 = {
 }
 
 saintly_bloodline_tengri_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_tengri_eagle
 	active = {
@@ -868,12 +853,12 @@ saintly_bloodline_tengri_03 = {
 
 saintly_bloodline_tengri_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_tengri_eagle
 	active = {
@@ -890,10 +875,14 @@ saintly_bloodline_tengri_04 = {
 
 saintly_bloodline_tengri_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_tengri_eagle
 	active = {
@@ -912,7 +901,7 @@ saintly_bloodline_tengri_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_tengri_eagle
 	active = {
@@ -929,13 +918,14 @@ saintly_bloodline_tengri_06 = {
 
 # Suomenusko
 saintly_bloodline_suomenusko_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
 	command_modifier = {
-		religious_enemy = 0.15
+		winter_combat = 0.1
+		winter_supply = 2
 	}
+	garrison_size = 0.05
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_finnish_bearpaw
 	active = {
@@ -951,10 +941,10 @@ saintly_bloodline_suomenusko_01 = {
 }
 
 saintly_bloodline_suomenusko_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_finnish_bearpaw
 	active = {
@@ -971,12 +961,12 @@ saintly_bloodline_suomenusko_03 = {
 
 saintly_bloodline_suomenusko_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_finnish_bearpaw
 	active = {
@@ -993,10 +983,14 @@ saintly_bloodline_suomenusko_04 = {
 
 saintly_bloodline_suomenusko_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_finnish_bearpaw
 	active = {
@@ -1015,7 +1009,7 @@ saintly_bloodline_suomenusko_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_finnish_bearpaw
 	active = {
@@ -1032,13 +1026,14 @@ saintly_bloodline_suomenusko_06 = {
 
 # Aztec
 saintly_bloodline_aztec_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		damage = 0.05
+		random = 0.10
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_bloodthirsty
 	active = {
@@ -1054,10 +1049,10 @@ saintly_bloodline_aztec_01 = {
 }
 
 saintly_bloodline_aztec_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bloodthirsty
 	active = {
@@ -1074,12 +1069,12 @@ saintly_bloodline_aztec_03 = {
 
 saintly_bloodline_aztec_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bloodthirsty
 	active = {
@@ -1096,10 +1091,14 @@ saintly_bloodline_aztec_04 = {
 
 saintly_bloodline_aztec_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bloodthirsty
 	active = {
@@ -1118,7 +1117,7 @@ saintly_bloodline_aztec_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bloodthirsty
 	active = {
@@ -1135,13 +1134,14 @@ saintly_bloodline_aztec_06 = {
 
 # West African
 saintly_bloodline_african_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		light_infantry = 0.1
+		attrition = -0.1
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_african_waves
 	active = {
@@ -1157,10 +1157,10 @@ saintly_bloodline_african_01 = {
 }
 
 saintly_bloodline_african_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_african_waves
 	active = {
@@ -1177,12 +1177,12 @@ saintly_bloodline_african_03 = {
 
 saintly_bloodline_african_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_african_waves
 	active = {
@@ -1199,10 +1199,14 @@ saintly_bloodline_african_04 = {
 
 saintly_bloodline_african_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_african_waves
 	active = {
@@ -1221,7 +1225,7 @@ saintly_bloodline_african_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_african_waves
 	active = {
@@ -1238,13 +1242,14 @@ saintly_bloodline_african_06 = {
 
 # Zun
 saintly_bloodline_zun_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		siege = 0.05
+		speed = 0.05
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_zun_sun
 	active = {
@@ -1260,10 +1265,10 @@ saintly_bloodline_zun_01 = {
 }
 
 saintly_bloodline_zun_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_zun_sun
 	active = {
@@ -1280,12 +1285,12 @@ saintly_bloodline_zun_03 = {
 
 saintly_bloodline_zun_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
-	christian_church_opinion = 5
+	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_zun_sun
 	active = {
@@ -1302,10 +1307,14 @@ saintly_bloodline_zun_04 = {
 
 saintly_bloodline_zun_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_zun_sun
 	active = {
@@ -1324,7 +1333,7 @@ saintly_bloodline_zun_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_zun_sun
 	active = {
@@ -1341,13 +1350,14 @@ saintly_bloodline_zun_06 = {
 
 # Hellenic
 saintly_bloodline_hellenic_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		morale_offense = 0.10
+		speed = 0.02
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_stoics
 	active = {
@@ -1367,7 +1377,7 @@ saintly_bloodline_hellenic_02 = {
 	church_opinion = 5
 	saintly_monastic_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline monastic_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_stoics
 	active = {
@@ -1383,10 +1393,10 @@ saintly_bloodline_hellenic_02 = {
 }
 
 saintly_bloodline_hellenic_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_stoics
 	active = {
@@ -1403,12 +1413,12 @@ saintly_bloodline_hellenic_03 = {
 
 saintly_bloodline_hellenic_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
 	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_stoics
 	active = {
@@ -1425,10 +1435,14 @@ saintly_bloodline_hellenic_04 = {
 
 saintly_bloodline_hellenic_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_stoics
 	active = {
@@ -1447,7 +1461,7 @@ saintly_bloodline_hellenic_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_stoics
 	active = {
@@ -1464,13 +1478,14 @@ saintly_bloodline_hellenic_06 = {
 
 # Bon
 saintly_bloodline_bon_01 = {
-	saintly_defender_bloodline = 1
-	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.2
+	combat_rating = 3
 	command_modifier = {
-		religious_enemy = 0.15
+		light_infantry = 0.10
+		narrow_flank = 0.05
 	}
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline defender_of_the_faith }
 	picture = GFX_bloodlines_symbol_bon_candle
 	active = {
@@ -1486,10 +1501,10 @@ saintly_bloodline_bon_01 = {
 }
 
 saintly_bloodline_bon_03 = {
-	monthly_character_piety = 0.2
+	monthly_character_piety = 0.3
 	saintly_cultural_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bon_candle
 	active = {
@@ -1506,12 +1521,12 @@ saintly_bloodline_bon_03 = {
 
 saintly_bloodline_bon_04 = {
 	command_modifier = {
-		religious_enemy = 0.05
+		religious_enemy = 0.1
 	}	
 	church_opinion = 5
 	saintly_inquisitional_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bon_candle
 	active = {
@@ -1528,10 +1543,14 @@ saintly_bloodline_bon_04 = {
 
 saintly_bloodline_bon_05 = {
 	monthly_character_piety = 0.2
-	jewish_group_opinion = 15
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
 	saintly_jewish_bloodline = 1
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bon_candle
 	active = {
@@ -1550,7 +1569,7 @@ saintly_bloodline_bon_06 = {
 	saintly_theologians_bloodline = 1
 	monthly_character_piety = 0.2
 	inheritance = patrilineal
-	allow_bastards = no
+	allow_bastards = yes
 	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
 	picture = GFX_bloodlines_symbol_bon_candle
 	active = {
@@ -1569,7 +1588,7 @@ saintly_bloodline_bon_06 = {
 # Great Heroes Bloodline
 ancestor_worship_bloodline_01 = {
 	monthly_character_prestige = 0.2
-	combat_rating = 2
+	combat_rating = 5
 	bloodline_effect_great_heroes_appear = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -1580,8 +1599,8 @@ ancestor_worship_bloodline_01 = {
 # Bastard Bloodline
 ancestor_worship_bloodline_02 = {
 	monthly_character_prestige = 0.1
-	#bastard_opinion = 5
-	#legit_bastard_opinion = 5
+	bastard_opinion = 5
+	legit_bastard_opinion = 5
 	bloodline_effect_free_legitimize = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -1592,7 +1611,7 @@ ancestor_worship_bloodline_02 = {
 # Sky Burial Bloodline
 ancestor_worship_bloodline_03 = {
 	monthly_character_prestige = 0.2
-	combat_rating = 1
+	combat_rating = 3
 	bloodline_effect_sky_burial = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -1602,9 +1621,9 @@ ancestor_worship_bloodline_03 = {
 
 # Mercenary Bloodline
 ancestor_worship_bloodline_04 = {
-	#strategist_opinion = 5
-	#brave_opinion = 5
-	combat_rating = 2
+	strategist_opinion = 5
+	brave_opinion = 5
+	combat_rating = 5
 	bloodline_effect_bloodline_mercenary_traditions = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -1615,7 +1634,7 @@ ancestor_worship_bloodline_04 = {
 # Tanistry Bloodline
 ancestor_worship_bloodline_05 = {
 	dynasty_opinion = 5
-	combat_rating = 2
+	combat_rating = 5
 	bloodline_effect_tanistry = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -1625,10 +1644,10 @@ ancestor_worship_bloodline_05 = {
 
 # Raiding Bloodline
 ancestor_worship_bloodline_06 = {
-	combat_rating = 2
-	#brave_opinion = 5
+	combat_rating = 5
+	brave_opinion = 5
 	command_modifier = {
-		light_infantry = 0.1
+		light_infantry = 0.2
 	}
 	bloodline_effect_more_raiders = 1
 	inheritance = patrilineal
@@ -1640,9 +1659,10 @@ ancestor_worship_bloodline_06 = {
 # Dueling Bloodline
 ancestor_worship_bloodline_07 = {
 	monthly_character_prestige = 0.1
-	combat_rating = 2
+	combat_rating = 5
 	command_modifier = {
-		light_infantry = 0.1
+		damage = 0.025
+		defence = 0.025
 	}
 	bloodline_effect_duel = 1
 	inheritance = patrilineal
@@ -1650,4 +1670,3 @@ ancestor_worship_bloodline_07 = {
 	picture = GFX_bloodlines_symbol_lion
 	flags = { ancestor_worship_bloodline duelist_bloodline }
 }
-

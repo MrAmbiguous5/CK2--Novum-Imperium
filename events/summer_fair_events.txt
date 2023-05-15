@@ -1,5 +1,3 @@
-# -*- ck2.events -*-
-
 ################################################
 #
 # Events for Summer Fair
@@ -17,20 +15,32 @@
 #Dancing Monkey
 character_event = {
 	id = 74000
-	desc = "EVTDESC74000"
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74000_AWUSSU
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74000
+	}
+
 	picture = GFX_evt_jugglers
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		has_character_modifier = holding_summer_fair
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
@@ -45,24 +55,24 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_74000 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74000
-	}
+	}		
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 
 		modifier = {
 			factor = 0.5
@@ -71,7 +81,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			trait = greedy
-		}
+		}	
 	}
 
 
@@ -105,8 +115,8 @@ character_event = {
 			}
 			any_vassal = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				OR = {
 					trait = kind
@@ -118,8 +128,8 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				OR = {
 					trait = kind
@@ -158,59 +168,72 @@ character_event = {
 #Archery
 character_event = {
 	id = 74005
-	desc = "EVTDESC74005"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74005_AWUSSU
+		picture = GFX_evt_longbowman_arabic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74005
+		picture = GFX_evt_jugglers
+	}
+	
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 		}
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
 		NOT = { trait = paranoid }
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
 			flag = summer_fair_begin
 			days = 3
 		}
-		NOT = { has_character_flag = fair_event_74005 }
+		NOT = { has_character_flag = fair_event_74005 }	
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74005
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 
 		modifier = {
 			factor = 0.75
@@ -253,8 +276,8 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 			}
 			opinion = {
@@ -270,27 +293,39 @@ character_event = {
 #Jesters
 character_event = {
 	id = 74010
-	desc = "EVTDESC74010"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74010_AWUSSU
+		picture = GFX_evt_imam
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74010
+		picture = GFX_evt_jugglers
+	}	
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
-
+	only_rulers = yes
+	
 
 	trigger = {
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
 			flag = summer_fair_begin
@@ -298,24 +333,24 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_74010 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74010
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 
 		modifier = {
 			factor = 3
@@ -334,7 +369,19 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTA74010"
+		name = { 
+			text = EVTOPTA74010_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTA74010
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		trigger = {
 			NOT = {
 				trait = wroth
@@ -361,7 +408,19 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTG74010"
+		name = {
+			text = EVTOPTG74010_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPG74010
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		trigger = {
 			trait = charitable
 			NOT = {
@@ -377,59 +436,71 @@ character_event = {
 #Mummers
 character_event = {
 	id = 74015
-	desc = "EVTDESC74015"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74015_AWUSSU
+		picture = GFX_evt_joust_arabic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74015
+		picture = GFX_evt_jugglers
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
-			reverse_opinion = { who = ROOT value = 10 }
+			reverse_opinion = { who = ROOT value = 10 } 
 		}
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
 			flag = summer_fair_begin
 			days = 3
 		}
-		NOT = { has_character_flag = fair_event_74015 }
+		NOT = { has_character_flag = fair_event_74015 }	
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74015
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 
 		modifier = {
 			factor = 5
@@ -469,10 +540,10 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
-				reverse_opinion = { who = ROOT value = 10 }
+				reverse_opinion = { who = ROOT value = 10 } 
 			}
 			opinion = {
 				modifier = gregarious_neg
@@ -483,7 +554,19 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTE74015"
+		name = {
+			text = EVTOPTE74015_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTE74015
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		trigger = {
 			NOT = { trait = gregarious }
 			NOT = { trait = shy }
@@ -503,19 +586,31 @@ character_event = {
 #Summer Fair
 character_event = {
 	id = 74020
-	desc = "EVTDESC74020"
-	picture = "GFX_evt_market"
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74020_AWUSSU
+		picture = GFX_evt_torture
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74020
+		picture = GFX_evt_market
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			NOT = {
 				is_priest = yes
@@ -524,14 +619,14 @@ character_event = {
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
@@ -540,24 +635,24 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_74020 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74020
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 
 		modifier = {
 			factor = 5
@@ -585,8 +680,8 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				NOT = {
 					is_priest = yes
@@ -614,35 +709,47 @@ character_event = {
 #Strolling Players
 character_event = {
 	id = 74025
-	desc = "EVTDESC74025"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74025_AWUSSU
+		picture = GFX_evt_jugglers_arabic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74025
+		picture = GFX_evt_jugglers
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 	is_married = yes
 
 	trigger = {
 		learning = 10
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			learning = 10
 			is_adult = yes
 		}
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
@@ -651,25 +758,25 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_74025 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74025
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
-
+		}	
+		
 		modifier = {
 			factor = 0.75
 			trait = gregarious
@@ -682,12 +789,24 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTA74025"
+		name = {
+			text = EVTOPTA74025_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTA74025
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				learning = 10
 				is_adult = yes
 			}
@@ -700,7 +819,19 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTB74025"
+		name = {
+			text = EVTOPTB74025_AWUSSU
+			trigger = { 
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTB74025
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		trigger = {
 			NOT = { has_character_flag = learning_boost_fair }
 		}
@@ -710,7 +841,7 @@ character_event = {
 
 	option = {
 		name = "EVTOPTD74025"
-		random_spouse = {
+		spouse = {
 			opinion = {
 				modifier = opinion_delighted
 				who = ROOT
@@ -723,56 +854,68 @@ character_event = {
 #Jugglers
 character_event = {
 	id = 74030
-	desc = "EVTDESC74030"
-	picture = "GFX_evt_jugglers"
+		desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74030_AWUSSU
+		picture = GFX_evt_market_byzantine
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74030
+		picture = GFX_evt_jugglers
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			is_priest = yes
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
 			flag = summer_fair_begin
 			days = 3
 		}
-		NOT = { has_character_flag = fair_event_74030 }
+		NOT = { has_character_flag = fair_event_74030 }	
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74030
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 
 		modifier = {
 			factor = 0.75
@@ -786,18 +929,42 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTA74030"
+		name = {
+			text = EVTOPTA74030_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTA74030
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		prestige = 10
 		piety = -5
 	}
 
 	option = {
-		name = "EVTOPTB74030"
+		name = {
+			text = EVTOPTB74030_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		} 
+		name = {
+			text = EVTOPTB74030
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				is_priest = yes
 			}
@@ -810,14 +977,26 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTD74030"
+		name = {
+			text = EVTOPTD74030_AWUSSU
+			trigger = { 
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTD74030
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		prestige = -5
 		piety = 10
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				is_priest = yes
 			}
@@ -833,34 +1012,46 @@ character_event = {
 #Jumping Jews of Jerusalem
 character_event = {
 	id = 74035
-	desc = "EVTDESC74035"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74035_AWUSSU
+		picture = GFX_evt_jugglers_arabic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74035
+		picture = GFX_evt_jugglers
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 	religion = catholic
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			trait = gregarious
 		}
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
@@ -869,24 +1060,24 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_74035 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74035
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 360
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 
 		modifier = {
 			factor = 0.5
@@ -908,8 +1099,8 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				trait = gregarious
 			}
@@ -957,8 +1148,8 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				trait = gregarious
 			}
@@ -974,33 +1165,45 @@ character_event = {
 #Mages and Divinators visits the fair
 character_event = {
 	id = 74040
-	desc = "EVTDESC74040"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74040_AWUSSU
+		picture = GFX_evt_council_arabic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74040
+		picture = GFX_evt_jugglers
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			is_priest = yes
 		}
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
@@ -1009,40 +1212,40 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_74040 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74040
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 240
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 	}
 
 	option = {
 		name = "EVTOPTA74040" #Allow them
 		trigger = {
-			OR = {
+			OR = {	
 				ai = no
 				NOT = { trait = zealous }
 			}
-		}
+		}		
 		piety = -5
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				is_priest = yes
 			}
@@ -1057,8 +1260,20 @@ character_event = {
 			remove_trait = zealous
 		}
 	}
-	option = {
-		name = "EVTOPTB74040" #Banish them
+	option = { #Banish them
+		name = {
+			text = EVTOPTB74040_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		} 
+		name = {
+			text = EVTOPTB74040
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		piety = 10
 		capital_scope = {
 			add_province_modifier = {
@@ -1072,33 +1287,45 @@ character_event = {
 #Errant monk disturbing the fair
 character_event = {
 	id = 74042
-	desc = "EVTDESC74042"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74042_AWUSSU
+		picture = GFX_evt_heretic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74042
+		picture = GFX_evt_jugglers
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			is_priest = yes
 		}
 		capital_scope = {
 			NOT = { has_province_modifier = peasants_upset }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
@@ -1107,24 +1334,24 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_74042 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74042
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 240
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 	}
 
 	option = {
@@ -1136,8 +1363,8 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				is_priest = yes
 			}
@@ -1148,8 +1375,20 @@ character_event = {
 			}
 		}
 	}
-	option = {
-		name = "EVTOPTB74042" #Banish him
+	option = {  #Banish him
+		name = {
+			text = EVTOPTB74042_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTB74042
+			trigger = {
+				religion_group = african_group
+			}
+		}
+
 		piety = 10
 		capital_scope = {
 			add_province_modifier = {
@@ -1164,12 +1403,22 @@ character_event = {
 character_event = {
 	id = 74044
 	desc = "EVTDESC74044"
-	picture = GFX_evt_market
+	picture = {
+		trigger = { religion_group = african_group }
+		picture = GFX_evt_spymaster
+	}
 
+	picture = {
+		trigger = { 
+			NOT = { religion_group = african_group }
+		}
+		picture = GFX_evt_market
+	}
+	
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		job_marshal = {
@@ -1181,40 +1430,40 @@ character_event = {
 				has_province_modifier = public_execution
 			}
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
 			flag = summer_fair_begin
 			days = 3
 		}
-		NOT = { has_character_flag = fair_event_74044 }
+		NOT = { has_character_flag = fair_event_74044 }	
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74044
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 	}
 
 	option = {
@@ -1248,68 +1497,92 @@ character_event = {
 #Too many Peasants enter the city
 character_event = {
 	id = 74045
-	desc = "EVTDESC74045"
-	picture = GFX_evt_jugglers
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC74045_AWUSSU
+		picture = GFX_evt_feast_indo_aryan_group
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC74045
+		picture = GFX_evt_jugglers
+	}
 
 	min_age = 20
 	capable_only = yes
 	prisoner = no
-	only_playable = yes
+	only_rulers = yes
 
 	trigger = {
 		any_vassal = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			tier = baron
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}			
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
 			flag = summer_fair_begin
 			days = 3
 		}
-		NOT = { has_character_flag = fair_event_74045 }
+		NOT = { has_character_flag = fair_event_74045 }	
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_74045
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 180
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 	}
 
-	option = {
-		name = "EVTOPTA74045" #Tell him to accept the peasants
+	option = { #Tell him to accept the peasants
+		name = {
+			text = EVTOPTA74045_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTA74045
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		ai_chance = {
 			factor = 100
 		}
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				tier = baron
 			}
@@ -1321,7 +1594,19 @@ character_event = {
 		}
 	}
 	option = {
-		name = "EVTOPTB74045" #Restrict peasant access
+		name = { 
+			text = EVTOPTB74045_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTB74045  #Restrict peasant access
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		ai_chance = {
 			factor = 5
 		}
@@ -1374,9 +1659,9 @@ character_event = {
 	id = 74050
 	desc = "EVTDESC74050"
 	picture = GFX_evt_jugglers
-
+	
 	is_triggered_only = yes
-
+	
 	immediate = {
 		set_character_flag = summer_fair_begin
 	}
@@ -1389,7 +1674,20 @@ character_event = {
 #Satirical Puppet Show
 character_event = {
 	id = 4105
-	desc = "EVTDESC4105"
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC4105_AWUSSU
+		picture = GFX_evt_recieve_letter
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC4105
+	}
+
 	picture = GFX_evt_jugglers
 
 	only_playable = yes
@@ -1403,12 +1701,12 @@ character_event = {
 		any_vassal = {
 			war = no
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			reverse_opinion = { who = ROOT value = 20 }
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
@@ -1424,28 +1722,40 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_4105 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_4105
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 200
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 	}
 
 	option = {
-		name = "EVTOPTA4105"
+		name = {
+			text = EVTOPTA4105_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTA4105
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		trigger = {
 			NOT = { trait = kind }
 			NOT = { trait = gregarious }
@@ -1454,8 +1764,8 @@ character_event = {
 			limit = {
 				war = no
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				reverse_opinion = {
 					who = ROOT
@@ -1480,8 +1790,8 @@ character_event = {
 			limit = {
 				war = no
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				reverse_opinion = {
 					who = ROOT
@@ -1504,8 +1814,8 @@ character_event = {
 		random_vassal = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				reverse_opinion = {
 					who = ROOT
@@ -1524,7 +1834,19 @@ character_event = {
 #Performing Bear
 character_event = {
 	id = 4170
-	desc = "EVTDESC4170"
+	desc = {
+		trigger = {
+			religion_group = african_group
+		}
+		text = EVTDESC4170_AWUSSU
+	}
+	desc = {
+		trigger = {
+			NOT = { religion_group = african_group }
+		}
+		text = EVTDESC4170
+	}
+
 	picture = "GFX_evt_jugglers"
 
 	only_playable = yes
@@ -1537,19 +1859,19 @@ character_event = {
 		in_command = no
 		any_courtier = {
 			prisoner = no
-			is_incapable = no
-			is_inaccessible_trigger = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
 			is_adult = yes
 			is_female = no
 		}
-
+		
 		OR = {
 			NOT = { has_character_flag = fair_event_happened }
 			had_character_flag = {
 				flag = fair_event_happened
 				days = 3
 			}
-		}
+		}	
 
 		has_character_modifier = holding_summer_fair
 		had_character_flag = {
@@ -1558,24 +1880,24 @@ character_event = {
 		}
 		NOT = { has_character_flag = fair_event_4170 }
 	}
-
+	
 	immediate = {
 		set_character_flag = fair_event_happened
 		set_character_flag = fair_event_4170
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 200
-
+		
 		modifier = {
 			factor = 0.33
 			NOT = { has_character_flag = fair_event_happened }
-		}
-
+		}	
+		
 		modifier = {
 			factor = 1.5
 			has_character_flag = fair_event_happened
-		}
+		}			
 	}
 
 	option = {
@@ -1588,8 +1910,8 @@ character_event = {
 		random_courtier = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				is_female = no
 			}
@@ -1610,7 +1932,19 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTD4170"
+		name = {
+			text = EVTOPTD4170_AWUSSU
+			trigger = {
+				religion_group = african_group
+			}
+		}
+		name = {
+			text = EVTOPTD4170
+			trigger = {
+				NOT = { religion_group = african_group }
+			}
+		}
+
 		trigger = {
 			trait = proud
 			NOT = { trait = craven }
@@ -1619,8 +1953,8 @@ character_event = {
 		random_courtier = {
 			limit = {
 				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
 				is_adult = yes
 				is_female = no
 			}

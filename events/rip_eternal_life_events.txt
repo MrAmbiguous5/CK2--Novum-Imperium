@@ -1,5 +1,3 @@
-# -*- ck2.events -*-
-
 ###################################
 #
 # ETERNAL LIFE
@@ -7,7 +5,7 @@
 #
 ###################################
 
-# Written by Mathilda Bjarnehed, Milla Isaksson & Linnéa Thimrén
+# Written by Mathilda Bjarnehed, Milla Isaksson & LinnÃ©a ThimrÃ©n
 
 ###SEARCH STEP###
 
@@ -123,10 +121,7 @@ narrative_event = {
 					race = ROOT
 					culture = ROOT
 				}
-				new_character = {
-					emf_new_character_noble = yes
-					save_event_target_as = eternal_life_sad_example
-				}
+				new_character = { save_event_target_as = eternal_life_sad_example }
 			}
 		}
 	}
@@ -262,7 +257,6 @@ narrative_event = {
 narrative_event = {
 	title = EVTNAME_RIP_21001
 	id = RIP.21001
-	picture = GFX_evt_council
 	desc = {
 		text = EVTDSC_RIP_21001
 		picture = GFX_evt_council_arabic
@@ -434,7 +428,7 @@ narrative_event = {
 				intrigue = 12
 				learning = 12
 			}
-			is_dumb_trigger = no
+			is_dumb_trigger = NO
 		}
 
 		custom_tooltip = { text = EVTTOOLTIP_RIP_21007 }
@@ -531,7 +525,7 @@ narrative_event = {
 	trigger = {
 		FROM = {
 			is_alive = yes
-			vassal_of = ROOT
+			liege = { character = ROOT }
 		}
 	}
 
@@ -565,7 +559,7 @@ narrative_event = {
 	title = EVTNAME_RIP_21009
 	id = RIP.21009
 	desc = EVTDSC_RIP_21009
-	border = GFX_event_narrative_frame_war
+	border = GFX_event_normal_frame_war
 	picture = GFX_evt_knight_kneeling
 
 	is_triggered_only = yes
@@ -573,7 +567,7 @@ narrative_event = {
 	trigger = {
 		FROM = {
 			is_alive = yes
-			vassal_of = ROOT
+			liege = { character = ROOT }
 		}
 	}
 
@@ -629,7 +623,7 @@ narrative_event = {
 	trigger = {
 		FROM = {
 			is_alive = yes
-			vassal_of = ROOT
+			liege = { character = ROOT }
 		}
 	}
 
@@ -671,7 +665,7 @@ narrative_event = {
 	trigger = {
 		FROM = {
 			is_alive = yes
-			vassal_of = ROOT
+			liege = { character = ROOT }
 		}
 	}
 
@@ -752,7 +746,7 @@ narrative_event = {
 	trigger = {
 		FROM = {
 			is_alive = yes
-			vassal_of = ROOT
+			liege = { character = ROOT }
 		}
 		prisoner = no
 	}
@@ -843,7 +837,6 @@ narrative_event = {
 				trait = poet
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic 
 
 				will_not_marry_effect = yes
@@ -878,7 +871,6 @@ narrative_event = {
 						change_diplomacy = 6
 					}
 				}
-				emf_new_character_noble = yes
 				save_event_target_as = eternal_life_mystic
 			}
 		}
@@ -887,8 +879,8 @@ narrative_event = {
 			create_character = {
 				random_traits = no
 				dynasty = none
-				religion = west_african_pagan
-				culture = manden
+				religion = bori
+				culture = hausa
 				female = yes
 				age = 36
 				health = 15
@@ -902,7 +894,6 @@ narrative_event = {
 				trait = aggressive_leader
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic 
 
 				will_not_marry_effect = yes
@@ -943,7 +934,6 @@ narrative_event = {
 						change_martial = 6
 					}
 				}
-				emf_new_character_noble = yes
 				save_event_target_as = eternal_life_mystic
 			}
 		}
@@ -967,9 +957,10 @@ narrative_event = {
 				trait = ambitious
 				trait = deceitful
 				trait = erudite
+
+		
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic 
 
 				will_not_marry_effect = yes
@@ -1005,7 +996,6 @@ narrative_event = {
 						change_intrigue = 6
 					}
 				}
-				emf_new_character_steward = yes
 				save_event_target_as = eternal_life_mystic
 			}
 		}
@@ -1020,16 +1010,21 @@ narrative_event = {
 				age = 9
 				health = 15
 				trait = mystic
+				trait = brahmin
 				trait = theravada_buddhist
 				trait = quick
 				trait = fussy
 				trait = conscientious
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic 
 
 				will_not_marry_effect = yes
+
+				remove_trait = kshatriya
+				remove_trait = vaishya
+				remove_trait = vajrayana_buddhist
+				remove_trait = mahayana_buddhist
 
 				give_nickname = nick_the_gentle
 				change_diplomacy = 2
@@ -1065,10 +1060,6 @@ narrative_event = {
 						change_learning = 15
 					}
 				}
-				emf_new_character_priest = yes
-				remove_trait = vajrayana_buddhist
-				remove_trait = mahayana_buddhist
-				add_trait = theravada_buddhist
 				save_event_target_as = eternal_life_mystic
 			}
 		}
@@ -1098,11 +1089,9 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
-		event_target:eternal_life_advisor = { 
-			OR = {
-				is_alive = no
-				NOT = { vassal_of = ROOT }
-			}
+		OR = {
+			event_target:eternal_life_advisor = { is_alive = no }
+			event_target:eternal_life_advisor = { NOT = { liege = { character = ROOT } } }
 		}
 	}
 
@@ -1173,7 +1162,6 @@ narrative_event = {
 				trait = celibate
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic
 
 				will_not_marry_effect = yes
@@ -1208,7 +1196,6 @@ narrative_event = {
 				}
 				save_event_target_as = eternal_life_mystic
 				change_diplomacy = 6
-				emf_new_character_noble = yes
 			}
 		}
 		if = {
@@ -1216,8 +1203,8 @@ narrative_event = {
 			create_character = {
 				random_traits = no
 				dynasty = none
-				religion = west_african_pagan
-				culture = manden
+				religion = bori
+				culture = hausa
 				female = yes
 				age = 36
 				health = 15
@@ -1232,7 +1219,6 @@ narrative_event = {
 				trait = aggressive_leader
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic
 
 				will_not_marry_effect = yes
@@ -1274,7 +1260,6 @@ narrative_event = {
 						change_martial = 6
 					}
 				}
-				emf_new_character_noble = yes
 				save_event_target_as = eternal_life_mystic
 			}
 		}
@@ -1298,9 +1283,9 @@ narrative_event = {
 				trait = ambitious
 				trait = deceitful
 				trait = erudite
+		
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic
 
 				will_not_marry_effect = yes
@@ -1336,7 +1321,6 @@ narrative_event = {
 						change_intrigue = 6
 					}
 				}
-				emf_new_character_steward = yes
 				save_event_target_as = eternal_life_mystic
 			}
 		}
@@ -1354,16 +1338,19 @@ narrative_event = {
 				}
 				health = 15
 				trait = mystic
+				trait = brahmin
+				trait = theravada_buddhist
 				trait = quick
 				trait = fussy
 				trait = conscientious
 			}
 			new_character = {
-				emf_dna_set_flags_for_high_health = yes
 				set_character_flag = eternal_life_mystic
 
 				will_not_marry_effect = yes
 
+				remove_trait = kshatriya
+				remove_trait = vaishya
 				remove_trait = vajrayana_buddhist
 				remove_trait = mahayana_buddhist
 
@@ -1371,7 +1358,7 @@ narrative_event = {
 				change_diplomacy = 2
 				change_stewardship = 2
 				change_intrigue = -1
-				
+
 				random_list = {
 					90 = {
 						set_character_flag = mystic_is_fraud
@@ -1401,8 +1388,6 @@ narrative_event = {
 						change_learning = 15
 					}
 				}
-				emf_new_character_priest = yes
-				add_trait = theravada_buddhist
 				save_event_target_as = eternal_life_mystic
 			}
 		}
@@ -1636,12 +1621,7 @@ narrative_event = {
 				FROM = { religion_group = pagan_group }
 				NOT = { 
 					trait = sympathy_pagans 
-					FROM = {
-						OR = {
-							religion_group = ROOT
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-						}
-					}
+					FROM = { religion_group = ROOT }
 				} 
 			}
 			add_trait = sympathy_pagans
@@ -1652,12 +1632,7 @@ narrative_event = {
 				FROM = { religion_group = muslim } 
 				NOT = { 
 					trait = sympathy_islam 
-					FROM = {
-						OR = {
-							religion_group = ROOT
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-						}
-					}
+					FROM = { religion_group = ROOT }
 				} 
 			}
 			add_trait = sympathy_islam
@@ -1668,16 +1643,22 @@ narrative_event = {
 				FROM = { religion_group = indian_group } 
 				NOT = { 
 					trait = sympathy_indian 
-					FROM = {
-						OR = {
-							religion_group = ROOT
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-						}
-					}
+					FROM = { religion_group = ROOT }
 				} 
 			}
 			add_trait = sympathy_indian
 		}
+        
+        if = {
+            limit = {
+                FROM = { religion_group = african_group }
+                NOT = {
+                    trait = sympathy_african
+                    FROM = { religion_group = ROOT }
+                }
+            }
+            add_trait = sympathy_african
+        }
 	}
 	#Leave for different religion
 	option = {
@@ -2027,7 +2008,6 @@ narrative_event = {
 	id = RIP.21110
 	desc = EVTDSC_RIP_21110
 	border = GFX_event_narrative_frame_diplomacy
-	picture = GFX_evt_pagan
 
 	desc = {
 		trigger = { has_dlc = "Way of Life" }
@@ -2189,11 +2169,17 @@ narrative_event = {
 		name = EVTOPTA_RIP_21112
 		custom_tooltip = { text = EVTOPTA_RIP_21112_TOOLTIP }
 
+		
+		if = {
+			limit = { trait = strong }
+			remove_trait = strong
+		}
 		if = {
 			limit = { trait = robust }
 			remove_trait = robust
 		}
-		else = {
+		if = {
+			limit = { is_weak_trigger = no }
 			add_trait = feeble
 		}
 		if = {
@@ -2268,8 +2254,13 @@ narrative_event = {
 			limit = { trait = feeble }
 			remove_trait = feeble
 		}
-		else = {
-			add_trait = robust
+		if = {
+			limit = { trait = weak }
+			remove_trait = weak
+		}
+		if = {
+			limit = { is_strong_trigger = no }
+			add_trait = robust		
 		}
 		
 		hidden_tooltip = {
@@ -2829,7 +2820,8 @@ narrative_event = {
 			limit = { trait = one_handed }
 			add_trait = mangled
 		}
-		else = {
+		if = {
+			limit = { NOT = { trait = one_handed } }
 			add_trait = one_handed
 		}
 
@@ -2898,10 +2890,11 @@ narrative_event = {
 		change_martial = 1
 
 		if = {
-			limit = { trait = craven }
+			limit = { trait = craven}
 			remove_trait = craven
 		}
-		else = {
+		if = {
+			limit = { NOT = { trait = brave } }
 			add_trait = brave
 		}
 		FROM = {
@@ -3080,15 +3073,8 @@ narrative_event = {
 	option = {
 		name = EVTOPTA_RIP_21212
 		custom_tooltip = { text = EVTOPTA_RIP_21212_TOOLTIP }
-		
-		if = {
-			limit = { trait = robust }
-			remove_trait = robust
-		}
-		else = {
-			add_trait = feeble
-		}
-		
+
+		add_trait = feeble
 		hidden_tooltip = {
 			clr_character_flag = eternal_life_chose_defense
 			FROM = { leave_court_effect = yes }
@@ -3168,7 +3154,12 @@ narrative_event = {
 			limit = { trait = feeble }
 			remove_trait = feeble
 		}
-		else = {
+		if = {
+			limit = { trait = weak }
+			remove_trait = weak
+		}
+		if = {
+			limit = { is_strong_trigger = no }
 			add_trait = robust
 		}
 		if = {
@@ -3264,8 +3255,6 @@ narrative_event = {
 							religion = ROOT
 							culture = ROOT
 							race = ROOT
-							genetic_mother = ROOT
-							trait = reincarnation
 						}
 						new_character = {
 							set_mother = ROOT
@@ -3281,8 +3270,6 @@ narrative_event = {
 							religion = ROOT
 							culture = ROOT
 							race = ROOT
-							genetic_father = ROOT
-							trait = reincarnation
 						}
 						new_character = {
 							set_father = ROOT
@@ -4015,10 +4002,7 @@ narrative_event = {
 		custom_tooltip = { text = EVTOPTA_RIP_21312_TOOLTIP }
 
 		if = {
-			limit = { trait = shrewd }
-			remove_trait = shrewd
-		}
-		else = {
+			limit = { is_dumb_trigger = no }
 			add_trait = dull
 		}
 
@@ -4094,14 +4078,23 @@ narrative_event = {
 			limit = { trait = dull }
 			remove_trait = dull
 		}
-		else = {
-			add_trait = shrewd
+		if = {
+			limit = { trait = imbecile }
+			remove_trait = imbecile
+		}
+		if = {
+			limit = { trait = slow }
+			remove_trait = slow
+		}
+		if = {
+			limit = { is_smart_trigger = no }
+			add_trait = shrewd		
 		}
 		
 		hidden_tooltip = {
-			FROM = {
-				narrative_event = { id = RIP.21315 } 
-				remove_opinion = {
+			FROM = { 
+					narrative_event = { id = RIP.21315 } 
+					remove_opinion = {
 					who = ROOT
 					modifier = opinion_finished_mystic_task_1
 				}
@@ -4137,11 +4130,7 @@ narrative_event = {
 
 	trigger = {
 		prisoner = no
-		FROM = {
-			is_alive = yes
-			prisoner = no
-		}
-		is_liege_of = FROM
+		FROM = { is_alive = yes }
 	}
 	
 	fail_trigger_effect = {
@@ -4169,6 +4158,11 @@ narrative_event = {
 	desc = { 
 		trigger = { NOT = { has_dlc = "Way of Life" } }
 		text = EVTDSC_RIP_21320
+	}
+
+	trigger = {
+		FROM = { prisoner = no }
+		is_liege_of = FROM
 	}
 
 	option = {
@@ -4898,10 +4892,7 @@ narrative_event = {
 			add_trait = depressed
 		}
 		if = {
-			limit = { trait = shrewd }
-			remove_trait = shrewd
-		}
-		else = {
+			limit = { is_dumb_trigger = no }
 			add_trait = dull
 		}
 		if = {
@@ -4994,8 +4985,17 @@ narrative_event = {
 			limit = { trait = dull }
 			remove_trait = dull
 		}
-		else = {
-			add_trait = shrewd
+		if = {
+			limit = { trait = imbecile }
+			remove_trait = imbecile
+		}
+		if = {
+			limit = { trait = slow }
+			remove_trait = slow
+		}
+		if = {
+			limit = { is_smart_trigger = no }
+			add_trait = shrewd		
 		}
 		
 		hidden_tooltip = {
@@ -5081,8 +5081,6 @@ narrative_event = {
 							religion = ROOT
 							culture = ROOT
 							race = ROOT
-							genetic_mother = ROOT
-							trait = reincarnation
 						}
 						new_character = {
 							set_mother = ROOT
@@ -5098,8 +5096,6 @@ narrative_event = {
 							religion = ROOT
 							culture = ROOT
 							race = ROOT
-							genetic_father = ROOT
-							trait = reincarnation
 						}
 						new_character = {
 							set_father = ROOT
@@ -5361,7 +5357,8 @@ character_event = {
 					is_adult = yes
 					prisoner = no
 					NOT = { trait = in_hiding }
-					is_incapable = no
+					NOT = { trait = incapable }
+					
 					OR = {
 						NOR = {
 							has_character_modifier = in_seclusion
@@ -5387,7 +5384,8 @@ character_event = {
 					is_adult = yes
 					prisoner = no
 					NOT = { trait = in_hiding }
-					is_incapable = no
+					NOT = { trait = incapable }
+					
 					OR = {
 						NOR = {
 							has_character_modifier = in_seclusion
@@ -5410,7 +5408,8 @@ character_event = {
 					is_adult = no
 					prisoner = yes
 					trait = in_hiding
-					is_incapable = yes
+					trait = incapable
+					
 					AND = {
 						OR = {
 							has_character_modifier = in_seclusion
@@ -5431,7 +5430,8 @@ character_event = {
 					is_adult = no
 					prisoner = yes
 					trait = in_hiding
-					is_incapable = yes
+					trait = incapable
+					
 					AND = {
 						OR = {
 							has_character_modifier = in_seclusion
@@ -5926,153 +5926,19 @@ narrative_event = {
 
 		FROM = {
 			save_event_target_as = eternal_life_reincarnation_source
-			# Copy genetics from reincarnation source
-			ROOT = {
-				emf_dna_copy_genetics_prev = yes
-			}
 		}
-		
-		# Do random mutations for genetics
-		character_event = { id = emf_dna.2000 }
-		
-		# Copy caste
-		if = {
-			limit = { emf_religion_has_castes = yes }
-			emf_copy_caste_from_FROM = yes
+
+		ROOT = {
+
+			#Add traits of reincarnation source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
+			copy_random_personality_trait = event_target:eternal_life_reincarnation_source
 		}
-		# Copy religious branch
-		if = {
-			limit = { has_dharmic_religion_trigger = yes }
-			if = {
-				limit = {
-					FROM = { trait = shaivist_hindu }
-				}
-				add_trait = shaivist_hindu
-			}
-			if = {
-				limit = {
-					FROM = { trait = vaishnavist_hindu }
-				}
-				add_trait = vaishnavist_hindu
-			}
-			if = {
-				limit = {
-					FROM = { trait = shaktist_hindu }
-				}
-				add_trait = shaktist_hindu
-			}
-			if = {
-				limit = {
-					FROM = { trait = smartist_hindu }
-				}
-				add_trait = smartist_hindu
-			}
-			if = {
-				limit = {
-					FROM = { trait = mahayana_buddhist }
-				}
-				add_trait = mahayana_buddhist
-			}
-			if = {
-				limit = {
-					FROM = { trait = vajrayana_buddhist }
-				}
-				add_trait = vajrayana_buddhist
-			}
-			if = {
-				limit = {
-					FROM = { trait = theravada_buddhist }
-				}
-				add_trait = theravada_buddhist
-			}
-			if = {
-				limit = {
-					FROM = { trait = digambara_jain }
-				}
-				add_trait = digambara_jain
-			}
-			if = {
-				limit = {
-					FROM = { trait = svetambara_jain }
-				}
-				add_trait = svetambara_jain
-			}
-		}
-		
-		character_event = { id = emf_cadet.0 } # If assigned to a cadet dynasty & family, propagate cadet state
-		
-		# Zodiac sign is not copied
-		if = {
-			limit = {
-				emf_astrology_religion = yes
-			}
-			add_western_zodiac_trait_effect = yes
-		}
-		
-		character_event = { id = CM.10011 }
-		if = {
-			limit = {
-				FROM = { has_character_flag = wolf_blood_first_generation }
-			}
-			set_character_flag = wolf_blood_first_generation
-		}
-		if = {
-			limit = {
-				FROM = { has_character_flag = wolf_blood_inherited }
-			}
-			set_character_flag = wolf_blood_inherited
-		}
-		if = {
-			limit = {
-				FROM = { has_character_modifier = wolf_blood }
-			}
-			add_character_modifier = {
-				name = wolf_blood
-				duration = -1
-			}
-		}
-		character_event = { id = TOG.6001 }
-		character_event = { id = RIP.11064 }
-		if = {
-			limit = {
-				FROM = { has_character_flag = demon_child }
-			}
-			set_character_flag = demon_child
-		}
-		if = {
-			limit = {
-				FROM = { has_character_flag = demon_child_fake }
-			}
-			set_character_flag = demon_child_fake
-		}
-		if = {
-			limit = {
-				FROM = { has_character_flag = demon_child_non_pagan }
-			}
-			set_character_flag = demon_child_non_pagan
-			character_event = { id = SoA.3019 days = 90 random = 90 } # Demon child tombola
-		}
-		if = {
-			limit = {
-				FROM = { has_character_modifier = demon_child_non_pagan }
-			}
-			add_character_modifier = {
-				name = demon_child_non_pagan
-				hidden = yes
-				days = -1
-			}
-		}
-		character_event = { id = HFP.30030 }
-		character_event = { id = HF.23750 }
-		
-		# Add traits of reincarnation source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
-		copy_random_personality_trait = event_target:eternal_life_reincarnation_source
 	}
 }

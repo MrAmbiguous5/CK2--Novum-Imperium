@@ -1,5 +1,3 @@
-# -*- ck2.history.provinces -*-
-
 # 917 - Araouane
 
 # County Title
@@ -9,17 +7,18 @@ title = c_araouane
 max_settlements = 2
 b_araouane = tribal
 
-#b_abalessa = city
+#b_tessalit = city
+#b_aguelhok = temple
+#b_abalessa = castle
 #b_tinzaouten = castle
 #b_guezzam = castle
 #b_tamanrasset = castle
 #b_tazrouk = castle
 
 # Misc
-culture = tagelmust
-religion = west_african_pagan
+culture = maghreb_arabic
+religion = amazigh
 
 # History
 
-#islamization
-940.1.1 = { religion = sunni }
+1050.1.1 = { religion = sunni }

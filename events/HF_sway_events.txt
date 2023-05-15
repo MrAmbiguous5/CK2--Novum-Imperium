@@ -1,1435 +1,872 @@
-# -*- ck2.events -*-
-
 # Written by Flavio
 
 namespace=HF
 
-#on_five_year_pulse pulse handling the AI picking a Antagonizing target.
+#On_five_years pulse handling the AI picking a Antagonizing target.
 character_event = {
 	id = HF.21997
 	hide_window = yes
-	
 	only_playable = yes
-	capable_only = yes
-	has_dlc = "Holy Fury"
-	prisoner = no
-	min_age = 16
+
 	ai = yes
 
 	trigger = {
-		has_game_rule = {
-			name = sway_antagonize
-			value = allowed
-		}
+		has_dlc = "Holy Fury"
+		NOT = { trait = incapable }
+		prisoner = no
+		is_adult = yes
+		is_landed = yes
 		is_inaccessible_trigger = no
+		NOT = {	
+			persistent_event_target:antagonize_target = {	
+				is_alive = yes
+			}
+		}
 	}
 
 	is_triggered_only = yes
 
-	immediate = {
-		# Already have an antagonize target who we want to keep
-		if = {
-			limit = {
-				persistent_event_target:antagonize_target = {
-					OR = {
-						vassal_of = ROOT
-						same_liege = ROOT
-						AND = {
-							independent = yes
-							ROOT = { independent = yes }
-							any_neighbor_independent_ruler = { character = ROOT }
-						}
-						is_foe = ROOT
-					}
-					NOT = { reverse_opinion = { who = ROOT value = 0 } }
-					is_inaccessible_trigger = no
-					is_adult = yes
-					is_incapable = no
-					emf_isolated_character = no
-					is_within_diplo_range = ROOT
-					NOR = {
-						is_lover = ROOT
-						is_friend = ROOT
-						is_child_of = ROOT
-						ROOT = {
-							persistent_event_target:sway_target = {
-								character = PREVPREV
-							}
-						}
-					}
-					OR = {
-						NOT = { is_rival = ROOT }
-						AND = {
-							ROOT = { combat_rating_diff = { character = PREV value = 20 } }
-							this_can_duel_with_root_trigger = yes
-						}
-					}
-				}
-			}
-			random = {
-				chance = 10
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -99 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -89 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -79 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -69 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -59 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -49 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -39 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -29 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -19 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -9 }
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 10
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 20
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 30
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 40
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 50
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 60
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 70
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 80
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 90
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 100
-				}
-				break = yes
-			}
+	immediate = { 
+		if = { 
+			limit = { persistent_event_target:antagonize_target = { always = yes } }
+			persistent_event_target:antagonize_target = { clr_character_flag = flag_character_being_antagonized } 
+			remove_special_interest = persistent_event_target:antagonize_target 
 		}
-		# Chance to stop antagonizing outright based on ai_honor
-		random = {
-			chance = 25
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -99 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -89 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -79 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -69 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -59 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -49 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -39 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -29 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -19 }
-			}
-			modifier = {
-				factor = 0.9
-				NOT = { ai_honor = -9 }
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 10
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 20
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 30
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 40
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 50
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 60
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 70
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 80
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 90
-			}
-			modifier = {
-				factor = 1.1
-				ai_honor = 100
-			}
-			if = {
-				limit = { persistent_event_target:antagonize_target = { always = yes } }
-				remove_special_interest = persistent_event_target:antagonize_target
-				clear_persistent_event_target = antagonize_target
-			}
-			break = yes
-		}
-		# Vassals with a small pool of candidates will have an extra chance of not antagonizing anyone (and/or not changing their sway target if they already have one)
-		if = {
-			limit = {
-				independent = no
-			}
-			random = {
-				chance = 10
-				modifier = {
-					factor = 0
-					any_realm_lord = {
-						count = 9
-						OR = {
-							vassal_of = ROOT
-							same_liege = ROOT
-							is_foe = ROOT
-						}
-						OR = {
-							is_landed = yes
-							is_patrician = yes
-						}
-						ai = yes
-					}
-				}
-				modifier = {
-					factor = 2
-					NOT = {
-						any_realm_lord = {
-							count = 8
-							OR = {
-								vassal_of = ROOT
-								same_liege = ROOT
-								is_foe = ROOT
-							}
-							OR = {
-								is_landed = yes
-								is_patrician = yes
-							}
-							ai = yes
-						}
-					}
-				}
-				modifier = {
-					factor = 2
-					NOT = {
-						any_realm_lord = {
-							count = 4
-							OR = {
-								vassal_of = ROOT
-								same_liege = ROOT
-								is_foe = ROOT
-							}
-							OR = {
-								is_landed = yes
-								is_patrician = yes
-							}
-							ai = yes
-						}
-					}
-				}
-				modifier = {
-					factor = 2
-					NOT = {
-						any_realm_lord = {
-							count = 2
-							OR = {
-								vassal_of = ROOT
-								same_liege = ROOT
-								is_foe = ROOT
-							}
-							OR = {
-								is_landed = yes
-								is_patrician = yes
-							}
-							ai = yes
-						}
-					}
-				}
-				break = yes
-			}
-		}
-		random_playable_ruler = {
-			limit = {
-				OR = {
-					vassal_of = ROOT
-					same_liege = ROOT
-					AND = {
-						independent = yes
-						ROOT = { independent = yes }
-						any_neighbor_independent_ruler = { character = ROOT }
-					}
-					is_foe = ROOT
-				}
-				NOT = { reverse_opinion = { who = ROOT value = 0 } }
-				is_within_diplo_range = ROOT
+		random_realm_character = {
+			limit = { 
 				is_inaccessible_trigger = no
+				is_ruler = yes
 				is_adult = yes
-				is_incapable = no
-				emf_isolated_character = no
+				NOT = { trait = incapable }
 				NOR = {
-					character = ROOT
 					is_lover = ROOT
 					is_friend = ROOT
 					is_child_of = ROOT
-					ROOT = {
-						persistent_event_target:sway_target = {
-							character = PREVPREV
-						}
-					}
+					has_character_flag = flag_character_being_swayed
+					has_character_flag = flag_character_being_antagonized
 				}
-				OR = {
-					NOT = { is_rival = ROOT }
-					AND = {
-						ROOT = { combat_rating_diff = { character = PREV value = 20 } }
-						this_can_duel_with_root_trigger = yes
-					}
-				}
-			}
-			preferred_limit = {
-				NOT = { reverse_opinion = { who = ROOT value = -99 } }
-			}
-			preferred_limit = {
-				NOT = { reverse_opinion = { who = ROOT value = -74 } }
-			}
-			preferred_limit = {
-				NOT = { reverse_opinion = { who = ROOT value = -49 } }
-			}
-			preferred_limit = {
-				NOT = { reverse_opinion = { who = ROOT value = -24 } }
 			}
 			save_event_target_as = potential_antagonized
 		}
-		if = {
-			limit = { persistent_event_target:antagonize_target = { character = event_target:potential_antagonized } }
-			break = yes
-		}
-		if = {
-			limit = { event_target:potential_antagonized = { is_alive = yes } } #Prevent script asserts in case of no character being scoped to.
-			random = {
-				chance = 25
-				modifier = {
-					factor = 1.1
-					ai_rationality = 10
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
+		if = { limit = { event_target:potential_antagonized = { is_alive = yes } } #Prevent script asserts in case of no character being scoped to.
+		random = {
+			chance = 70
+			modifier = {
+				factor = 5 #Liege of player more likely to pick on him.
+				ROOT = { 
+					OR = { 
+						trait = cruel
+						trait = impaler
+						trait = deceitful
+						trait = schemer
+						trait = paranoid
+						trait = lunatic
+						trait = possessed
+					} 
 				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 20
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 30
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 40
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 50
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 60
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 70
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 80
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 90
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 100
-					event_target:potential_antagonized = {
-						is_foe = ROOT
-						NOT = { is_rival = ROOT }
-					}
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 10
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 20
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 30
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 40
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 50
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 60
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 70
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 80
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 90
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 1.1
-					ai_zeal = 100
-					event_target:potential_antagonized = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				if = {
-					limit = { persistent_event_target:antagonize_target = { always = yes } }
-					remove_special_interest = persistent_event_target:antagonize_target 
-				}
-				save_persistent_event_target = {
-					name = antagonize_target
-					scope = event_target:potential_antagonized
-				}
-				add_special_interest = { who = persistent_event_target:antagonize_target key = antagonizing_target_key }
+				event_target:potential_antagonized = { vassal_of = ROOT ai = no }
 			}
+			#Soft modifiers.
+			modifier = {
+				factor = 0.25 #The average liege should probably not pick on his vassals.
+				ROOT = { 
+					NOR = { 
+						trait = cruel
+						trait = impaler
+						trait = deceitful
+						trait = schemer
+						trait = paranoid
+						trait = lunatic
+						trait = possessed
+					} 
+				}
+				event_target:potential_antagonized = { vassal_of = ROOT }
+				event_target:potential_antagonized = { religion = ROOT }
+			}
+			modifier = {
+				factor = 1.25 #zealous picking on the unbelievers.
+				ROOT = { 
+					trait = zealous
+				}
+				OR = { 
+					trait = cynical
+					NOT = { religion = FROM }
+					event_target:potential_antagonized = { 
+						trait = sympathy_christendom
+						ROOT = { NOT = { religion_group = christian } }
+					}
+					event_target:potential_antagonized = { 
+						trait = sympathy_islam
+						ROOT = { NOT = { religion_group = muslim } }
+					}
+					event_target:potential_antagonized = { 
+						trait = sympathy_pagans
+						ROOT = { NOT = { religion_group = pagan_group } }
+					}
+					event_target:potential_antagonized = { 
+						trait = sympathy_zoroastrianism
+						ROOT = { NOT = { religion_group = zoroastrian_group } }
+					}
+					event_target:potential_antagonized = { 
+						trait = sympathy_judaism
+						ROOT = { NOT = { religion_group = jewish_group } }
+					}
+					event_target:potential_antagonized = { 
+						trait = sympathy_indian
+						ROOT = { NOT = { religion_group = indian_group } }
+					}
+                    event_target:potential_antagonized = {
+                        trait = sympathy_african
+                        ROOT = { NOT = { religion_group = african_group } }
+                    }
+				}
+			}
+			#Trait compatibility modifiers - Already so much in common, why fight?
+			modifier = {
+				factor = 0.2
+				calc_true_if = { 
+					amount = 4
+					event_target:potential_antagonized = { 
+						trait = lustful
+						ROOT = { trait = lustful }
+					}
+					event_target:potential_antagonized = { 
+						trait = gluttonous
+						ROOT = { trait = gluttonous }
+					}
+					event_target:potential_antagonized = { 
+						trait = greedy
+						ROOT = { trait = greedy }
+					}
+					event_target:potential_antagonized = { 
+						trait = slothful
+						ROOT = { trait = slothful }
+					}
+					event_target:potential_antagonized = { 
+						trait = wroth
+						ROOT = { trait = wroth }
+					}
+					event_target:potential_antagonized = { 
+						trait = envious
+						ROOT = { trait = envious }
+					}
+					event_target:potential_antagonized = { 
+						trait = proud
+						ROOT = { trait = proud }
+					}
+					event_target:potential_antagonized = { 
+						trait = chaste
+						ROOT = { trait = chaste }
+					}
+					event_target:potential_antagonized = { 
+						trait = temperate
+						ROOT = { trait = temperate }
+					}
+					event_target:potential_antagonized = { 
+						trait = charitable
+						ROOT = { trait = charitable }
+					}
+					event_target:potential_antagonized = { 
+						trait = diligent
+						ROOT = { trait = diligent }
+					}
+					event_target:potential_antagonized = { 
+						trait = patient
+						ROOT = { trait = patient }
+					}
+					event_target:potential_antagonized = { 
+						trait = kind
+						ROOT = { trait = kind }
+					}
+					event_target:potential_antagonized = { 
+						trait = humble
+						ROOT = { trait = humble }
+					}
+					event_target:potential_antagonized = { 
+						trait = deceitful
+						ROOT = { trait = deceitful }
+					}
+					event_target:potential_antagonized = { 
+						trait = honest
+						ROOT = { trait = honest }
+					}
+					event_target:potential_antagonized = { 
+						trait = brave
+						ROOT = { trait = brave }
+					}
+					event_target:potential_antagonized = { 
+						trait = craven
+						ROOT = { trait = craven }
+					}
+					event_target:potential_antagonized = { 
+						trait = gregarious
+						ROOT = { trait = gregarious }
+					}
+					event_target:potential_antagonized = { 
+						trait = ambitious
+						ROOT = { trait = ambitious }
+					}
+					event_target:potential_antagonized = { 
+						trait = content
+						ROOT = { trait = content }
+					}
+					event_target:potential_antagonized = { 
+						trait = arbitrary
+						ROOT = { trait = arbitrary }
+					}
+					event_target:potential_antagonized = { 
+						trait = just
+						ROOT = { trait = just }
+					}
+					event_target:potential_antagonized = { 
+						trait = cynical
+						ROOT = { trait = cynical }
+					}
+					event_target:potential_antagonized = { 
+						trait = zealous
+						ROOT = { trait = zealous }
+					}
+					event_target:potential_antagonized = { 
+						trait = paranoid
+						ROOT = { trait = paranoid }
+					}
+					event_target:potential_antagonized = { 
+						trait = trusting
+						ROOT = { trait = trusting }
+					}
+					event_target:potential_antagonized = { 
+						trait = cruel
+						ROOT = { trait = cruel }
+					}
+					event_target:potential_antagonized = { 
+						trait = erudite
+						ROOT = { trait = erudite }
+					}
+					event_target:potential_antagonized = { 
+						trait = stubborn
+						ROOT = { trait = stubborn }
+					}
+					event_target:potential_antagonized = { 
+						trait = hedonist
+						ROOT = { trait = hedonist }
+					}
+					event_target:potential_antagonized = { 
+						trait = scholar
+						ROOT = { trait = scholar }
+					}
+					event_target:potential_antagonized = { 
+						trait = gardener
+						ROOT = { trait = gardener }
+					}
+					event_target:potential_antagonized = { 
+						trait = mystic
+						ROOT = { trait = mystic }
+					}
+					event_target:potential_antagonized = { 
+						trait = impaler
+						ROOT = { trait = impaler }
+					}
+					event_target:potential_antagonized = { 
+						trait = duelist
+						ROOT = { trait = duelist }
+					}
+					event_target:potential_antagonized = { 
+						trait = hunter
+						ROOT = { trait = hunter }
+					}
+					event_target:potential_antagonized = { 
+						trait = seducer
+						ROOT = { trait = seducer }
+					}
+					event_target:potential_antagonized = { 
+						trait = seductress
+						ROOT = { trait = seductress }
+					}
+					event_target:potential_antagonized = { 
+						trait = administrator
+						ROOT = { trait = administrator }
+					}
+					event_target:potential_antagonized = { 
+						trait = architect
+						ROOT = { trait = architect }
+					}
+					event_target:potential_antagonized = { 
+						trait = strategist
+						ROOT = { trait = strategist }
+					}
+					event_target:potential_antagonized = { 
+						trait = socializer
+						ROOT = { trait = socializer }
+					}
+					event_target:potential_antagonized = { 
+						trait = schemer
+						ROOT = { trait = schemer }
+					}
+					event_target:potential_antagonized = { 
+						trait = theologian
+						religion = ROOT
+						ROOT = { trait = theologian }
+					}
+					event_target:potential_antagonized = { 
+						trait = gamer
+						ROOT = { trait = gamer }
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				event_target:potential_antagonized = { is_married = ROOT }
+			}
+			#Opinion modifiers
+
+			modifier = { #I hate you, you must hate me.
+				factor = 1.5
+				ROOT = {
+					NOT = {
+						opinion = {
+							who = event_target:potential_antagonized
+							value = 0
+						}
+					}
+				}
+				event_target:potential_antagonized = { 
+					opinion = {
+						who = ROOT
+						value = 20
+					}
+				}
+			}
+			modifier = { #I hate you, you must hate me.
+				factor = 1.5
+				ROOT = {
+					NOT = {
+						opinion = {
+							who = event_target:potential_antagonized
+							value = -20
+						}
+					}
+				}
+				event_target:potential_antagonized = { 
+					opinion = {
+						who = ROOT
+						value = 20
+					}
+				}
+			}
+			modifier = { #I hate you, you must hate me.
+				factor = 2
+				ROOT = {
+					NOT = {
+						opinion = {
+							who = event_target:potential_antagonized
+							value = -40
+						}
+					}
+				}
+				event_target:potential_antagonized = { 
+					opinion = {
+						who = ROOT
+						value = 20
+					}
+				}
+			}
+			modifier = { #I hate you, you must hate me.
+				factor = 2
+				ROOT = {
+					NOT = {
+						opinion = {
+							who = event_target:potential_antagonized
+							value = -60
+						}
+					}
+				}
+				event_target:potential_antagonized = { 
+					opinion = {
+						who = ROOT
+						value = 20
+					}
+				}
+			}
+			save_persistent_event_target = {
+				name = antagonize_target
+				scope = event_target:potential_antagonized
+			}
+			add_special_interest = { who = persistent_event_target:antagonize_target key = antagonizing_target_key } 
+			persistent_event_target:antagonize_target = { set_character_flag = flag_character_being_antagonized } #Only used for AI weights.
 		}
+		} #if
 	}
 
 }
-#on_five_year_pulse pulse handling the AI picking a Swaying target.
+#On_five_years pulse handling the AI picking a Swaying target.
 character_event = {
 	id = HF.21998
 	hide_window = yes
-	
 	only_playable = yes
-	capable_only = yes
-	has_dlc = "Holy Fury"
-	prisoner = no
-	min_age = 16
+
 	ai = yes
 
 	trigger = {
-		has_game_rule = {
-			name = sway_antagonize
-			value = allowed
-		}
+		has_dlc = "Holy Fury"
+		NOT = { trait = incapable }
+		prisoner = no
+		is_adult = yes
+		is_landed = yes
 		is_inaccessible_trigger = no
+		NOT = {	
+			persistent_event_target:sway_target = {	
+				is_alive = yes
+			}
+		}
 	}
 
 	is_triggered_only = yes
 
-	immediate = {
-		if = {
-			limit = {
+	immediate = { 
+		if = { 
+			limit = { persistent_event_target:sway_target = { always = yes } }
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed } 
+			remove_special_interest = persistent_event_target:sway_target 
+		}
+		random_realm_character = {
+			limit = { 
+				is_inaccessible_trigger = no
+				is_adult = yes
+				NOT = { trait = incapable }
 				OR = {
-					trait = envious
-					trait = cruel
-					trait = shy
+					vassal_of = ROOT
+					is_heir = ROOT
+					has_job_title = job_chancellor
+					has_job_title = job_marshal 
+					has_job_title = job_treasurer
+					has_job_title = job_spymaster
+					has_job_title = job_spiritual
 				}
-			}
-			random = {
-				chance = 5
-				modifier = {
-					factor = 2
-					OR = {
-						NOT = { trait = envious }
-						NOT = { trait = cruel }
-						NOT = { trait = shy }
+				OR = {
+					religion_group = ROOT
+					AND = {
+						ROOT = { trait = sympathy_christendom }
+						religion_group = christian
+					}
+					AND = {
+						ROOT = { trait = sympathy_islam }
+						religion_group = muslim
+					}
+					AND = {
+						ROOT = { trait = sympathy_pagans }
+						religion_group = pagan_group
+					}
+					AND = {
+						ROOT = { trait = sympathy_zoroastrianism }
+						religion_group = zoroastrian_group
+					}
+					AND = {
+						ROOT = { trait = sympathy_judaism }
+						religion_group = jewish_group
+					}
+					AND = {
+						ROOT = { trait = sympathy_indian }
+						religion_group = indian_group
+					}
+                    AND = {
+                        ROOT = { trait = sympathy_african }
+                        religion_group = african_group
+                    }
+				}
+				NOR = {
+					has_opinion_modifier = { who = FROM modifier = opinion_rebuked_appeaser_cooldown }
+					is_lover = ROOT
+					is_rival = ROOT
+					is_friend = ROOT
+					has_character_flag = flag_character_being_swayed
+					has_character_flag = flag_character_being_antagonized
+					AND = {
+						religion_group = pagan_group
+						NOT = { religion = ROOT }
+						ROOT = { trait = zealous }
 					}
 				}
-				modifier = {
-					factor = 3
-					trait = envious
-					trait = cruel
-					trait = shy
-				}
-				break = yes
 			}
+			save_event_target_as = potential_swayed
 		}
-		# Already have a sway target who we want to keep
-		if = {
-			limit = {
-				persistent_event_target:sway_target = {
-					OR = {
-						AND = {
-							is_ruler = yes
-							OR = {
-								vassal_of = ROOT
-								is_liege_or_above_of = ROOT
-								same_liege = ROOT
-								AND = {
-									independent = yes
-									ROOT = { independent = yes }
-									any_neighbor_independent_ruler = { character = ROOT }
-								}
-								AND = {
-									reverse_opinion = { who = ROOT value = 0 }
-									persistent_event_target:antagonize_target = {
-										character = ROOT
-									}
-								}
-							}
-						}
-						AND = {
-							is_heir = ROOT
-							OR = {
-								is_close_relative = ROOT
-								dynasty = ROOT
-							}
-							lower_educational_trait_trigger = yes
-						}
-					}
-					reverse_opinion = { who = ROOT value = 0 }
-					# Only sway human players if the requirements for becoming friends or lovers through the event chain would be immediately met. 
-					OR = {
-						ai = yes
-						AND = {
-							is_heir = ROOT
-							OR = {
-								is_close_relative = ROOT
-								dynasty = ROOT
-							}
-							lower_educational_trait_trigger = yes
-						}
-						AND = {
-							opinion = { who = ROOT value = 60 }
-							reverse_opinion = { who = ROOT value = 60 }
-							OR = {
-								NOR = { # Possibility to become friends
-									num_of_friends = 3
-									ROOT = { num_of_friends = 3 }
-								}
-								AND = { # Possibility to become lovers
-									possibly_romantically_interested_in_each_other_trigger = yes
-									NOR = {
-										num_of_lovers = 3
-										trait = celibate
-										trait = eunuch
-									}
-									ROOT = {
-										NOR = {
-											num_of_lovers = 3
-											trait = celibate
-											trait = eunuch
-										}
-									}
-								}
-							}
-						}
-					}
-					is_within_diplo_range = ROOT
-					is_inaccessible_trigger = no
-					is_adult = yes
-					is_incapable = no
-					emf_isolated_character = no
-					OR = {
-						NOR = {
-							is_lover = ROOT
-							is_friend = ROOT
-							is_rival = ROOT
-						}
-						AND = {
-							is_heir = ROOT
-							OR = {
-								is_close_relative = ROOT
-								dynasty = ROOT
-							}
-							lower_educational_trait_trigger = yes
-						}
-					}
-					NOR = {
-						has_opinion_modifier = { who = FROM modifier = opinion_rebuked_appeaser_cooldown }
-						AND = {
-							is_rival = ROOT
-							ROOT = {
-								NOR = {
-									trait = arbitrary
-									trait = lunatic
-								}
-							}
-						}
-						rightful_religious_head = ROOT
+		if = { limit = { event_target:potential_swayed = { is_alive = yes } } #Prevent script asserts in case of no character being scoped to.
+		random = {
+			chance = 70
+			modifier = {
+				factor = 3 #Vassal of player more likely to suck up to him.
+				event_target:potential_antagonized = { vassal_of = ROOT ai = no }
+			}
+			#Soft AI triggers
+			modifier = {
+				factor = 0.5
+				event_target:potential_swayed = { lower_tier_than = DUKE }
+			}
+			modifier = {
+				factor = 0.5
+				event_target:potential_swayed = { lower_tier_than = COUNT }
+			}
+			#Evil claimant to my title.
+			modifier = {
+				factor = 0.1
+				event_target:potential_swayed = { 
+					any_claim = {
+						holder_scope = { character = ROOT }
 					}
 				}
 			}
-			random = {
-				chance = 10
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -99 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -89 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -79 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -69 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -59 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -49 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -39 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -29 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -19 }
-				}
-				modifier = {
-					factor = 0.9
-					NOT = { ai_rationality = -9 }
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 10
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 20
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 30
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 40
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 50
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 60
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 70
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 80
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 90
-				}
-				modifier = {
-					factor = 1.1
-					ai_rationality = 100
-				}
-				break = yes
+			#Trait modifiers
+			modifier = {
+				factor = 0.25
+				ROOT = { trait = shy }
 			}
-		}
-		player_heir = {
-			if = {
-				limit = {
-					lower_educational_trait_trigger = yes
-					is_inaccessible_trigger = no
-					is_adult = yes
-					is_incapable = no
-					emf_isolated_character = no
-					is_within_diplo_range = ROOT
-					OR = {
-						is_close_relative = ROOT
-						dynasty = ROOT
-					}
-					NOT = { character = ROOT }
-					NOR = {
-						has_opinion_modifier = { who = FROM modifier = opinion_rebuked_appeaser_cooldown }
-						AND = {
-							is_rival = ROOT
-							ROOT = {
-								NOR = {
-									trait = arbitrary
-									trait = lunatic
-								}
-							}
-						}
-						ROOT = {
-							persistent_event_target:antagonize_target = {
-								character = PREVPREV
-							}
-						}
-						rightful_religious_head = ROOT
-					}
-				}
-				save_event_target_as = potential_swayed
+			modifier = {
+				factor = 3
+				ROOT = { trait = gregarious }
 			}
-		}
-		# Make sure we definitely stop swaying a player if the conditions to become friends/lovers with them are not met.
-		if = {
-			limit = {
-				persistent_event_target:sway_target = {
-					ai = no
-					NAND = {
-						opinion = { who = ROOT value = 60 }
-						reverse_opinion = { who = ROOT value = 60 }
-						NOR = {
-							is_friend = ROOT
-							is_lover = ROOT
-						}
-						OR = {
-							NOR = { # Possibility to become friends
-								num_of_friends = 3
-								ROOT = { num_of_friends = 3 }
-							}
-							AND = { # Possibility to become lovers
-								possibly_romantically_interested_in_each_other_trigger = yes
-								NOR = {
-									num_of_lovers = 3
-									trait = celibate
-									trait = eunuch
-								}
-								ROOT = {
-									NOR = {
-										num_of_lovers = 3
-										trait = celibate
-										trait = eunuch
-									}
-								}
-							}
-						}
-					}
+			modifier = {
+				factor = 3
+				ROOT = { trait = socializer }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { trait = hedonist }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { has_focus = focus_carousing }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { 
+					has_focus = focus_family
+					is_close_relative = event_target:potential_swayed
 				}
 			}
-			remove_special_interest = persistent_event_target:sway_target
-			clear_persistent_event_target = sway_target
-		}
-		# Vassals with a small pool of candidates will have an extra chance of not swaying anyone (and/or not changing their sway target if they already have one)
-		if = {
-			limit = {
-				independent = no
+			#Trait compatibility modifiers
+			modifier = {
+				factor = 7
+				calc_true_if = { 
+					amount = 4
+					event_target:potential_swayed = { 
+						trait = lustful
+						ROOT = { trait = lustful }
+					}
+					event_target:potential_swayed = { 
+						trait = gluttonous
+						ROOT = { trait = gluttonous }
+					}
+					event_target:potential_swayed = { 
+						trait = greedy
+						ROOT = { trait = greedy }
+					}
+					event_target:potential_swayed = { 
+						trait = slothful
+						ROOT = { trait = slothful }
+					}
+					event_target:potential_swayed = { 
+						trait = wroth
+						ROOT = { trait = wroth }
+					}
+					event_target:potential_swayed = { 
+						trait = envious
+						ROOT = { trait = envious }
+					}
+					event_target:potential_swayed = { 
+						trait = proud
+						ROOT = { trait = proud }
+					}
+					event_target:potential_swayed = { 
+						trait = chaste
+						ROOT = { trait = chaste }
+					}
+					event_target:potential_swayed = { 
+						trait = temperate
+						ROOT = { trait = temperate }
+					}
+					event_target:potential_swayed = { 
+						trait = charitable
+						ROOT = { trait = charitable }
+					}
+					event_target:potential_swayed = { 
+						trait = diligent
+						ROOT = { trait = diligent }
+					}
+					event_target:potential_swayed = { 
+						trait = patient
+						ROOT = { trait = patient }
+					}
+					event_target:potential_swayed = { 
+						trait = kind
+						ROOT = { trait = kind }
+					}
+					event_target:potential_swayed = { 
+						trait = humble
+						ROOT = { trait = humble }
+					}
+					event_target:potential_swayed = { 
+						trait = deceitful
+						ROOT = { trait = deceitful }
+					}
+					event_target:potential_swayed = { 
+						trait = honest
+						ROOT = { trait = honest }
+					}
+					event_target:potential_swayed = { 
+						trait = brave
+						ROOT = { trait = brave }
+					}
+					event_target:potential_swayed = { 
+						trait = craven
+						ROOT = { trait = craven }
+					}
+					event_target:potential_swayed = { 
+						trait = gregarious
+						ROOT = { trait = gregarious }
+					}
+					event_target:potential_swayed = { 
+						trait = ambitious
+						ROOT = { trait = ambitious }
+					}
+					event_target:potential_swayed = { 
+						trait = content
+						ROOT = { trait = content }
+					}
+					event_target:potential_swayed = { 
+						trait = arbitrary
+						ROOT = { trait = arbitrary }
+					}
+					event_target:potential_swayed = { 
+						trait = just
+						ROOT = { trait = just }
+					}
+					event_target:potential_swayed = { 
+						trait = cynical
+						ROOT = { trait = cynical }
+					}
+					event_target:potential_swayed = { 
+						trait = zealous
+						ROOT = { trait = zealous }
+					}
+					event_target:potential_swayed = { 
+						trait = paranoid
+						ROOT = { trait = paranoid }
+					}
+					event_target:potential_swayed = { 
+						trait = trusting
+						ROOT = { trait = trusting }
+					}
+					event_target:potential_swayed = { 
+						trait = cruel
+						ROOT = { trait = cruel }
+					}
+					event_target:potential_swayed = { 
+						trait = erudite
+						ROOT = { trait = erudite }
+					}
+					event_target:potential_swayed = { 
+						trait = stubborn
+						ROOT = { trait = stubborn }
+					}
+					event_target:potential_swayed = { 
+						trait = hedonist
+						ROOT = { trait = hedonist }
+					}
+					event_target:potential_swayed = { 
+						trait = scholar
+						ROOT = { trait = scholar }
+					}
+					event_target:potential_swayed = { 
+						trait = gardener
+						ROOT = { trait = gardener }
+					}
+					event_target:potential_swayed = { 
+						trait = mystic
+						ROOT = { trait = mystic }
+					}
+					event_target:potential_swayed = { 
+						trait = impaler
+						ROOT = { trait = impaler }
+					}
+					event_target:potential_swayed = { 
+						trait = duelist
+						ROOT = { trait = duelist }
+					}
+					event_target:potential_swayed = { 
+						trait = hunter
+						ROOT = { trait = hunter }
+					}
+					event_target:potential_swayed = { 
+						trait = seducer
+						ROOT = { trait = seducer }
+					}
+					event_target:potential_swayed = { 
+						trait = seductress
+						ROOT = { trait = seductress }
+					}
+					event_target:potential_swayed = { 
+						trait = administrator
+						ROOT = { trait = administrator }
+					}
+					event_target:potential_swayed = { 
+						trait = architect
+						ROOT = { trait = architect }
+					}
+					event_target:potential_swayed = { 
+						trait = strategist
+						ROOT = { trait = strategist }
+					}
+					event_target:potential_swayed = { 
+						trait = socializer
+						ROOT = { trait = socializer }
+					}
+					event_target:potential_swayed = { 
+						trait = schemer
+						ROOT = { trait = schemer }
+					}
+					event_target:potential_swayed = { 
+						trait = theologian
+						religion = ROOT
+						ROOT = { trait = theologian }
+					}
+					event_target:potential_swayed = { 
+						trait = gamer
+						ROOT = { trait = gamer }
+					}
+				}
 			}
-			random = {
-				chance = 10
-				modifier = {
-					factor = 0
-					any_realm_lord = {
-						count = 9
-						OR = {
-							vassal_of = ROOT
-							is_liege_or_above_of = ROOT
-							same_liege = ROOT
-						}
-						OR = {
-							is_landed = yes
-							is_patrician = yes
-						}
-						ai = yes
+
+			#Opinion modifiers
+			modifier = {
+				factor = 1.25
+				ROOT = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 30
 					}
 				}
-				modifier = {
-					factor = 2
-					NOT = {
-						any_realm_lord = {
-							count = 8
-							OR = {
-								vassal_of = ROOT
-								is_liege_or_above_of = ROOT
-								same_liege = ROOT
-							}
-							OR = {
-								is_landed = yes
-								is_patrician = yes
-							}
-							ai = yes
-						}
-					}
-				}
-				modifier = {
-					factor = 2
-					NOT = {
-						any_realm_lord = {
-							count = 4
-							OR = {
-								vassal_of = ROOT
-								is_liege_or_above_of = ROOT
-								same_liege = ROOT
-							}
-							OR = {
-								is_landed = yes
-								is_patrician = yes
-							}
-							ai = yes
-						}
-					}
-				}
-				modifier = {
-					factor = 2
-					NOT = {
-						any_realm_lord = {
-							count = 2
-							OR = {
-								vassal_of = ROOT
-								is_liege_or_above_of = ROOT
-								same_liege = ROOT
-							}
-							OR = {
-								is_landed = yes
-								is_patrician = yes
-							}
-							ai = yes
-						}
-					}
-				}
-				if = {
-					limit = { event_target:potential_swayed = { always = yes } }
-					if = {
-						limit = { persistent_event_target:sway_target = { always = yes } } 
-						remove_special_interest = persistent_event_target:sway_target 
-					}
-					save_persistent_event_target = {
-						name = sway_target
-						scope = event_target:potential_swayed
-					}
-					add_special_interest = { who = persistent_event_target:sway_target key = swaying_target_key }
-				}
-				break = yes
 			}
-		}
-		if = {
-			limit = { NOT = { event_target:potential_swayed = { always = yes } } }
-			any_playable_ruler = { # any + score_value is about 16% faster than random + preferred_limit here
-				limit = {
-					OR = {
-						vassal_of = ROOT
-						is_liege_or_above_of = ROOT
-						same_liege = ROOT
-						AND = {
-							independent = yes
-							ROOT = { independent = yes }
-							any_neighbor_independent_ruler = { character = ROOT }
-						}
-						AND = {
-							reverse_opinion = { who = ROOT value = 0 }
-							persistent_event_target:antagonize_target = {
-								character = ROOT
-							}
-						}
-					}
-					reverse_opinion = { who = ROOT value = 0 }
-					# Only sway human players if the requirements for becoming friends or lovers through the event chain would be immediately met. 
-					OR = {
-						ai = yes
-						AND = {
-							opinion = { who = ROOT value = 60 }
-							reverse_opinion = { who = ROOT value = 60 }
-							OR = {
-								NOR = { # Possibility to become friends
-									num_of_friends = 3
-									ROOT = { num_of_friends = 3 }
-								}
-								AND = { # Possibility to become lovers
-									possibly_romantically_interested_in_each_other_trigger = yes
-									NOR = {
-										num_of_lovers = 3
-										trait = celibate
-										trait = eunuch
-									}
-									ROOT = {
-										NOR = {
-											num_of_lovers = 3
-											trait = celibate
-											trait = eunuch
-										}
-									}
-								}
-							}
-						}
-					}
-					is_within_diplo_range = ROOT
-					is_inaccessible_trigger = no
-					is_adult = yes
-					is_incapable = no
-					emf_isolated_character = no
-					NOR = {
-						character = ROOT
-						is_lover = ROOT
-						is_friend = ROOT
-						is_rival = ROOT
-					}
-					NOR = {
-						has_opinion_modifier = { who = FROM modifier = opinion_rebuked_appeaser_cooldown }
-						AND = {
-							is_rival = ROOT
-							ROOT = {
-								NOR = {
-									trait = arbitrary
-									trait = lunatic
-								}
-							}
-						}
-						ROOT = {
-							persistent_event_target:antagonize_target = {
-								character = PREVPREV
-							}
-						}
-						rightful_religious_head = ROOT
-					}
-				}
-				score_value = {
-					value = 1
-					additive_modifier = {
-						reverse_opinion = { who = ROOT value = 100 }
-						value = 200
-					}
-					additive_modifier = {
-						reverse_opinion = { who = ROOT value = 75 }
-						value = 200
-					}
-					additive_modifier = {
-						reverse_opinion = { who = ROOT value = 50 }
-						value = 200
-					}
-					additive_modifier = {
-						persistent_event_target:antagonize_target = {
-							character = ROOT
-						}
-						value = 100
-					}
-					additive_modifier = {
-						reverse_opinion = { who = ROOT value = 50 }
-						NOT = { opinion = { who = ROOT value = 0 } }
+			modifier = {
+				factor = 1.25
+				ROOT = {
+					opinion = {
+						who = event_target:potential_swayed
 						value = 50
 					}
-					additive_modifier = {
-						reverse_opinion = { who = ROOT value = 25 }
-						value = 25
-					}
-					# Randomize to break ties
-					# Set to 40% by calibrating to pool of 20 candidates (rough approximation of the list size where this is called)
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
-					additive_modifier = {
-						random = 40
-						value = 1
-					}
 				}
-				save_event_target_as = potential_swayed
 			}
-		}
-		if = {
-			limit = { persistent_event_target:sway_target = { character = event_target:potential_swayed } }
-			break = yes
-		}
-		if = {
-			limit = { event_target:potential_swayed = { is_alive = yes } } #Prevent script asserts in case of no character being scoped to.
-			random = {
-				chance = 40
-				# Can improve heir education
-				modifier = {
-					factor = 100
-					event_target:potential_swayed = {
-						is_heir = ROOT
-						OR = {
-							is_close_relative = ROOT
-							dynasty = ROOT
-						}
-						lower_educational_trait_trigger = yes
+			modifier = {
+				factor = 1.5
+				ROOT = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 70
 					}
 				}
-				# Shared lifestyle event
-				modifier = {
-					factor = 1.25
-					OR = {
-						AND = {
-							trait = hunter
-							event_target:potential_swayed = { trait = hunter }
-						}
-						AND = {
-							trait = duelist
-							event_target:potential_swayed = { trait = duelist }
-						}
-						AND = {
-							OR = {
-								trait = gamer
-								trait = strategist
-							}
-							event_target:potential_swayed = {
-								OR = {
-									trait = gamer
-									trait = strategist
-								}
-							}
-						}
-						AND = {
-							OR = {
-								trait = socializer
-								trait = seducer
-								trait = seductress
-								trait = hedonist
-							}
-							event_target:potential_swayed = {
-								OR = {
-									trait = socializer
-									trait = seducer
-									trait = seductress
-									trait = hedonist
-								}
-							}
-						}
-						AND = {
-							OR = {
-								trait = mystic
-								trait = faqih
-								trait = scholar
-								trait = theologian
-							}
-							event_target:potential_swayed = {
-								OR = {
-									trait = mystic
-									trait = faqih
-									trait = scholar
-									trait = theologian
-								}
-							}
-						}
-						AND = {
-							OR = {
-								trait = administrator
-								trait = gardener
-								trait = architect
-							}
-							event_target:potential_swayed = {
-								OR = {
-									trait = administrator
-									trait = gardener
-									trait = architect
-								}
-							}
-						}
-						AND = {
-							OR = {
-								trait = impaler
-								trait = schemer
-							}
-							event_target:potential_swayed = {
-								OR = {
-									trait = impaler
-									trait = schemer
-								}
-							}
-						}
-					}
-				}
-				modifier = {
-					factor = 1.1
-					OR = {
-						trait = kind
-						trait = gregarious
-						AND = {
-							trait = lustful
-							is_valid_attraction = event_target:potential_swayed
-						}
-						AND = {
-							OR = {
-								trait = seducer
-								trait = seductress
-							}
-							is_valid_attraction = event_target:potential_swayed
-						}
-						trait = hedonist
-						trait = socializer
-					}
-				}
-				modifier = {
-					factor = 1.1
-					calc_true_if = {
-						amount = 2
-						trait = kind
-						trait = gregarious
-						AND = {
-							trait = lustful
-							is_valid_attraction = event_target:potential_swayed
-						}
-						AND = {
-							OR = {
-								trait = seducer
-								trait = seductress
-							}
-							is_valid_attraction = event_target:potential_swayed
-						}
-						trait = hedonist
-						trait = socializer
-					}
-				}
-				modifier = {
-					factor = 1.1
-					calc_true_if = {
-						amount = 3
-						trait = kind
-						trait = gregarious
-						AND = {
-							trait = lustful
-							is_valid_attraction = event_target:potential_swayed
-						}
-						AND = {
-							OR = {
-								trait = seducer
-								trait = seductress
-							}
-							is_valid_attraction = event_target:potential_swayed
-						}
-						trait = hedonist
-						trait = socializer
-					}
-				}
-				modifier = {
-					factor = 1.1
-					calc_true_if = {
-						amount = 4
-						trait = kind
-						trait = gregarious
-						AND = {
-							trait = lustful
-							is_valid_attraction = event_target:potential_swayed
-						}
-						AND = {
-							OR = {
-								trait = seducer
-								trait = seductress
-							}
-							is_valid_attraction = event_target:potential_swayed
-						}
-						trait = hedonist
-						trait = socializer
-					}
-				}
-				modifier = {
-					factor = 1.1
-					calc_true_if = {
-						amount = 5
-						trait = kind
-						trait = gregarious
-						AND = {
-							trait = lustful
-							is_valid_attraction = event_target:potential_swayed
-						}
-						AND = {
-							OR = {
-								trait = seducer
-								trait = seductress
-							}
-							is_valid_attraction = event_target:potential_swayed
-						}
-						trait = hedonist
-						trait = socializer
-					}
-				}
-				modifier = {
-					factor = 1.1
-					trait = kind
-					trait = gregarious
-					AND = {
-						trait = lustful
-						is_valid_attraction = event_target:potential_swayed
-					}
-					AND = {
-						OR = {
-							trait = seducer
-							trait = seductress
-						}
-						is_valid_attraction = event_target:potential_swayed
-					}
-					trait = hedonist
-					trait = socializer
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 10
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 20
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 30
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 40
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 50
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 60
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 70
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 80
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 90
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				modifier = {
-					factor = 0.9
-					ai_zeal = 100
-					event_target:potential_swayed = { ROOT = { emf_hostile_true_religion_to_PREV = yes } }
-				}
-				if = {
-					limit = { persistent_event_target:sway_target = { always = yes } } 
-					remove_special_interest = persistent_event_target:sway_target 
-				}
-				save_persistent_event_target = {
-					name = sway_target
-					scope = event_target:potential_swayed
-				}
-				add_special_interest = { who = persistent_event_target:sway_target key = swaying_target_key }
 			}
+			modifier = {
+				factor = 1.75
+				ROOT = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 100
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				event_target:potential_swayed = {	
+					NOT = {
+						opinion = {
+							who = ROOT
+							value = 0
+						}
+					}
+				}
+				FROM = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				event_target:potential_swayed = {
+					NOT = {
+						opinion = {
+							who = FROM
+							value = -20
+						}
+					}
+				}
+				FROM = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:potential_swayed = {
+					NOT = {
+						opinion = {
+							who = FROM
+							value = -40
+						}
+					}
+				}
+				FROM = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:potential_swayed = {
+					NOT = {
+						opinion = {
+							who = FROM
+							value = -60
+						}
+					}
+				}
+				FROM = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 3
+				event_target:potential_swayed = {
+					NOT = {
+						opinion = {
+							who = FROM
+							value = -80
+						}
+					}
+				}
+				ROOT = {
+					opinion = {
+						who = event_target:potential_swayed
+						value = 30
+					}
+				}
+			}
+			save_persistent_event_target = {
+				name = sway_target
+				scope = event_target:potential_swayed
+			}
+			add_special_interest = { who = persistent_event_target:sway_target key = swaying_target_key } 
+			persistent_event_target:sway_target = { set_character_flag = flag_character_being_swayed } #Only used for AI weights.
 		}
+		} #if
+		
 	}
 }
 
@@ -1438,11 +875,9 @@ character_event = {
 	id = HF.21999
 	hide_window = yes
 	
-	only_playable = yes
-	
 	trigger = {
 		has_dlc = "Holy Fury"
-		is_incapable = no
+		NOT = { trait = incapable }
 		prisoner = no
 		persistent_event_target:sway_target = {	#If character has become incapable, out of reach or otherwise unable to be interacted with, a notification event will be sent.
 			is_alive = yes
@@ -1459,10 +894,8 @@ character_event = {
 	id = HF.21000
 	hide_window = yes
 	
-	only_playable = yes
-	
 	trigger = {
-		is_incapable = no
+		NOT = { trait = incapable }
 		prisoner = no
 		persistent_event_target:sway_target = {	#If character has become incapable, out of reach or otherwise unable to be interacted with, a notification event will be sent.
 			is_alive = yes
@@ -1539,7 +972,7 @@ character_event = {
 			100 = { #Incapable, clear event target.
 				modifier = { 
 					factor = 0
-					persistent_event_target:sway_target = { is_incapable = no }
+					persistent_event_target:sway_target = { NOT = { trait = incapable } }
 				}
 				persistent_event_target:sway_target = { character_event = { id = HF.21007 } }
 			}
@@ -1549,10 +982,7 @@ character_event = {
 					NOT = { persistent_event_target:sway_target = { is_rival = ROOT } }
 				}
 				trigger = { #Arbitrary Appeasers can keep swaying their Rivals.
-					NOR = {
-						trait = arbitrary
-						trait = lunatic
-					}
+					NOT = { trait = arbitrary }
 				}
 				persistent_event_target:sway_target = { character_event = { id = HF.21122 } }
 			}
@@ -1577,6 +1007,7 @@ character_event = {
 
 							#Family grievances
 							family_grievance_trigger = yes
+							location = { character = ROOT }
 						}
 					}
 				}
@@ -2305,6 +1736,8 @@ character_event = {
 character_event = {
 	id = HF.21001
 	hide_window = yes
+	
+	has_character_flag = flag_character_being_swayed
 
 #	trigger = {
 #	any_playable_ruler = {
@@ -2328,6 +1761,7 @@ character_event = {
 					character = ROOT
 				}
 			}
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 			remove_special_interest = persistent_event_target:sway_target
 			clear_persistent_event_target = sway_target
 			clr_character_flag = flag_tired_of_gifts
@@ -2339,6 +1773,7 @@ character_event = {
 #					character = ROOT
 #				}
 #			}
+#			persistent_event_target:antagonize_target = { clr_character_flag = flag_character_being_antagonized }
 #			remove_special_interest = persistent_event_target:antagonize_target
 #			clear_persistent_event_target = antagonize_target
 #			character_event = { id = HF.21138 } 
@@ -2434,7 +1869,8 @@ character_event = {
 		name = EVTOPTAHFP21002
 		custom_tooltip = { text = tooltip_stop_swaying }
 
-		hidden_effect = {
+		hidden_effect = { 
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 			remove_special_interest = persistent_event_target:sway_target
 			clear_persistent_event_target = sway_target
 			clr_character_flag = flag_tired_of_gifts
@@ -2456,7 +1892,8 @@ character_event = {
 	option = { 
 		name = EVTOPTAHFP21003
 		custom_tooltip = { text = tooltip_21003_A }
-		hidden_tooltip = {
+		hidden_tooltip = { 
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 			remove_special_interest = persistent_event_target:sway_target
 			clear_persistent_event_target = sway_target
 			clr_character_flag = flag_tired_of_gifts
@@ -2503,7 +1940,8 @@ character_event = {
 	option = { #Stop trying to appease him.
 		name = EVTOPTBHFP21005
 		custom_tooltip = { text = tooltip_21005_B }
-		hidden_tooltip = {
+		hidden_tooltip = { 
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 			remove_special_interest = persistent_event_target:sway_target
 			clear_persistent_event_target = sway_target
 			clr_character_flag = flag_tired_of_gifts
@@ -2558,7 +1996,7 @@ character_event = {
 	trigger = { 
 		FROM = { 
 			is_alive = yes 
-			is_incapable = yes
+			trait = incapable
 		} 
 	}
 	is_triggered_only = yes
@@ -2566,7 +2004,8 @@ character_event = {
 	option = { 
 		name = EVTOPTAHFP21008
 		custom_tooltip = { text = tooltip_21003_A }
-		hidden_tooltip = {
+		hidden_tooltip = { 
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 			remove_special_interest = persistent_event_target:sway_target
 			clear_persistent_event_target = sway_target
 			clr_character_flag = flag_tired_of_gifts
@@ -2604,7 +2043,8 @@ character_event = {
 	option = { #Stop Appeasing
 		name = EVTOPTAHFP21010
 		custom_tooltip = { text = tooltip_21003_A }
-		hidden_tooltip = {
+		hidden_tooltip = { 
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 			remove_special_interest = persistent_event_target:sway_target
 			clear_persistent_event_target = sway_target
 			clr_character_flag = flag_tired_of_gifts
@@ -4022,14 +3462,14 @@ character_event = {
 		text = EVTDESCAHFP21033_COURT
 		trigger = { 
 			has_character_flag = flag_appease_discuss_strategy
-			NOT = { FROM = { at_location = ROOT } }
+			NOT = { FROM = { location = { character = ROOT } } }
 		}
 	}
 	desc = {
 		text = EVTDESCAHFP21033
 		trigger = { 
 			has_character_flag = flag_appease_discuss_strategy
-			FROM = { at_location = ROOT }
+			FROM = { location = { character = ROOT } }
 		}
 	}
 	desc = {
@@ -4080,14 +3520,14 @@ character_event = {
 		text = EVTDESCAHFP21034
 		trigger = { 
 			has_character_flag = flag_appease_discuss_strategy
-			NOT = { FROM = { at_location = ROOT } }
+			NOT = { FROM = { location = { character = ROOT } } }
 		}
 	}
 	desc = {
 		text = EVTDESCAHFP21034_COURT
 		trigger = { 
 			has_character_flag = flag_appease_discuss_strategy
-			FROM = { at_location = ROOT }
+			FROM = { location = { character = ROOT } }
 		}
 	}
 	desc = {
@@ -4962,10 +4402,7 @@ character_event = {
 			NOT = { 
 				trait = cynical
 			} 
-			OR = {
-				religion_group = FROM
-				emf_syncretized_religion_with_FROM = yes
-			}
+			religion_group = FROM
 		}
 		custom_tooltip = { text = tooltip_21046_B } 
 		set_character_flag = flag_appease_offer_prayers
@@ -5491,10 +4928,10 @@ character_event = {
 			modifier = {  
 				factor = 0.5
 				FROM = { 
-					practical_age = 40
+					age = 40
 				}
 				NOT = { 
-					practical_age = 40
+					age = 40
 				}
 			}
 			modifier = {  
@@ -7564,15 +7001,12 @@ character_event = {
 		name = EVTOPTCHFP21076
 		trigger = { 
 			NOT = { trait = zealous }
-			FROM = { NOT = { religion = FROM } }
+			FROM = { NOT = { religion = ROOT } }
 		}
 		custom_tooltip = { text = tooltip_21076_C } 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				OR = { 
 					AND = { 
 						FROM = { religion_group = christian }
@@ -7597,7 +7031,11 @@ character_event = {
 					AND = { 
 						FROM = { religion_group = indian_group }
 						NOT = { trait = sympathy_indian } 
-					} 
+					}
+                    AND = {
+                        FROM = { religion_group = african_group }
+                        NOT = { trait = sympathy_african }
+                    }
 				}
 			} 
 			custom_tooltip = { text = tooltip_21076_sympathy } 
@@ -7708,10 +7146,7 @@ character_event = {
 		}
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_christendom }
 				FROM = { religion_group = christian }
 				FROM = { has_character_flag = flag_appease_kind_religion }
@@ -7720,10 +7155,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_islam }
 				FROM = { religion_group = muslim }
 				FROM = { has_character_flag = flag_appease_kind_religion }
@@ -7732,10 +7164,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_pagans }
 				FROM = { religion_group = pagan_group }
 				FROM = { has_character_flag = flag_appease_kind_religion }
@@ -7744,10 +7173,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_zoroastrianism }
 				FROM = { religion_group = zoroastrian_group }
 				FROM = { has_character_flag = flag_appease_kind_religion }
@@ -7756,10 +7182,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_judaism }
 				FROM = { religion_group = jewish_group }
 				FROM = { has_character_flag = flag_appease_kind_religion }
@@ -7768,15 +7191,21 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_indian }
 				FROM = { religion_group = indian_group }
 				FROM = { has_character_flag = flag_appease_kind_religion }
 			} 
 			random = { chance = 30 add_trait = sympathy_indian }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_african }
+				FROM = { religion_group = african_group }
+				FROM = { has_character_flag = flag_appease_kind_religion }
+			} 
+			random = { chance = 30 add_trait = sympathy_african }
 		} 
 		hidden_tooltip = { FROM = { character_event = { id = HF.21078 days = 10 } } }
 		ai_chance = { 
@@ -7967,10 +7396,7 @@ character_event = {
 		}
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_christendom }
 				FROM = { religion_group = christian }
 			} 
@@ -7978,10 +7404,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_islam }
 				FROM = { religion_group = muslim }
 			} 
@@ -7989,10 +7412,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_pagans }
 				FROM = { religion_group = pagan_group }
 			} 
@@ -8000,10 +7420,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_zoroastrianism }
 				FROM = { religion_group = zoroastrian_group }
 			} 
@@ -8011,10 +7428,7 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_judaism }
 				FROM = { religion_group = jewish_group }
 			} 
@@ -8022,14 +7436,19 @@ character_event = {
 		} 
 		if = { 
 			limit = { 
-				NOR = {
-					religion_group = FROM
-					emf_syncretized_religion_with_FROM = yes
-				}
+				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_indian }
 				FROM = { religion_group = indian_group }
 			} 
 			random = { chance = 30 add_trait = sympathy_indian }
+		}
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_african }
+				FROM = { religion_group = african_group }
+			} 
+			random = { chance = 30 add_trait = sympathy_african }
 		}
 		clr_character_flag = flag_appease_kind_approach
 		clr_character_flag = flag_appease_kind_health
@@ -9457,13 +8876,13 @@ character_event = {
 	desc = {
 		text = EVTDESCHFP21098
 		trigger = { 
-			FROM = { at_location = ROOT }
+			FROM = { location = { character = ROOT } }
 		}
 	}
 	desc = {
 		text = EVTDESCHFPB21098
 		trigger = { 
-			NOT = { FROM = { at_location = ROOT } }
+			NOT = { FROM = { location = { character = ROOT } } }
 		}
 	}
 	picture = GFX_evt_diplomat_hf
@@ -9473,7 +8892,7 @@ character_event = {
 		FROM = { 
 			is_alive = yes 
 			is_inaccessible_trigger = no
-			is_incapable = no
+			NOT = { trait = incapable }
 		} 
 	}
 
@@ -9510,7 +8929,7 @@ character_event = {
 	trigger = { 
 		FROM = { 
 			is_alive = yes 
-			is_incapable = no
+			NOT = { trait = incapable }
 		} 
 	}
 
@@ -9555,7 +8974,7 @@ character_event = {
 	trigger = { 
 		FROM = { 
 			is_alive = yes 
-			is_incapable = no
+			NOT = { trait = incapable }
 		} 
 	}
 
@@ -9580,7 +8999,7 @@ character_event = {
 	trigger = { 
 		FROM = { 
 			is_alive = yes 
-			is_incapable = no
+			NOT = { trait = incapable }
 		} 
 	}
 
@@ -9613,7 +9032,7 @@ character_event = {
 	trigger = { 
 		FROM = { 
 			is_alive = yes 
-			is_incapable = no
+			NOT = { trait = incapable }
 		} 
 	}
 
@@ -9635,7 +9054,7 @@ character_event = {
 	trigger = { 
 		FROMFROM = { 
 			is_alive = yes 
-			is_incapable = no
+			NOT = { trait = incapable }
 		} 
 	}
 
@@ -11018,6 +10437,19 @@ character_event = {
 						AND = {
 							trait = trusting
 							persistent_event_target:sway_target = { trait = paranoid }
+						}
+					}
+				}
+				modifier = { 
+					factor = 2
+					OR = {
+						AND = {
+							trait = cynical
+							persistent_event_target:sway_target = { trait = zealous }
+						}
+						AND = {
+							trait = zealous
+							persistent_event_target:sway_target = { trait = cynical }
 						}
 					}
 				}
@@ -14757,11 +14189,27 @@ character_event = {
 					}
 					modifier = { 
 						factor = 0
-						num_of_lovers = 3
+						FROM = { is_female = yes }
+						prefers_men_trigger = yes
 					}
 					modifier = { 
 						factor = 0
-						possibly_romantically_interested_in_each_other_FROM_trigger = no
+						FROM = { is_female = no }
+						prefers_men_trigger = no
+					}
+					modifier = { 
+						factor = 0
+						is_female = yes
+						FROM = { prefers_men_trigger = yes }
+					}
+					modifier = { 
+						factor = 0
+						is_female = no
+						FROM = { prefers_men_trigger = no }
+					}
+					modifier = { 
+						factor = 0
+						num_of_lovers = 3
 					}
 					modifier = { 
 						factor = 0
@@ -14800,16 +14248,6 @@ character_event = {
 					modifier = { 
 						factor = 0
 						trait = celibate
-					}
-					modifier = { 
-						factor = 0
-						FROM = { 
-							trait = eunuch
-						}
-					}
-					modifier = { 
-						factor = 0
-						trait = eunuch
 					}
 					modifier = { 
 						factor = 1.5
@@ -14923,6 +14361,7 @@ character_event = {
 		add_friend = FROM
 		hidden_tooltip = {
 			FROM = {
+				persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 				remove_special_interest = persistent_event_target:sway_target
 				clear_persistent_event_target = sway_target
 				clr_character_flag = flag_tired_of_gifts
@@ -14993,6 +14432,7 @@ character_event = {
 		add_lover = FROM
 		hidden_tooltip = {
 			FROM = {
+				persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 				remove_special_interest = persistent_event_target:sway_target
 				clear_persistent_event_target = sway_target
 				clr_character_flag = flag_tired_of_gifts
@@ -15519,7 +14959,8 @@ character_event = {
 	option = { 
 		name = EVTOPTAHFP21123
 		custom_tooltip = { text = tooltip_21123_A }
-		hidden_tooltip = {
+		hidden_tooltip = { 
+			persistent_event_target:sway_target = { clr_character_flag = flag_character_being_swayed }
 			remove_special_interest = persistent_event_target:sway_target
 			clear_persistent_event_target = sway_target
 			clr_character_flag = flag_tired_of_gifts
@@ -16206,6 +15647,7 @@ character_event = {
 		clr_character_flag = flag_sway_turned_gluttonous
 		clr_character_flag = flag_sway_turned_greedy
 		clr_character_flag = flag_sway_turned_slothful
+		clr_character_flag = flag_sway_turned_chaste
 		clr_character_flag = flag_sway_turned_wroth
 		clr_character_flag = flag_sway_turned_envious
 		clr_character_flag = flag_sway_turned_proud
@@ -17192,6 +16634,7 @@ character_event = {
 	option = { 
 		name = EVTOPTAHFP21132
 		custom_tooltip = { text = EVTTTHFP21132_A }
+			clr_character_flag = flag_character_being_swayed #Only used for AI weights.
 		hidden_tooltip = {
 			remove_special_interest = FROM
 			clear_persistent_event_target = sway_target
@@ -17698,98 +17141,62 @@ character_event = {
 			}
 			modifier = {  #Not if I'm winning.
 				factor = 0.5
-				NOT = {
-					any_war = {
-						OR = {
-							AND = {
-								attacker = { character = FROM }
-								war_score = -24
-							}
-							AND = {
-								defender = { character = FROM }
-								NOT = { war_score = 24 }
-							}
-						}
+				any_war = {
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = 25
 				}
 			}
 			modifier = {  #Not if I'm winning.
 				factor = 0.01
-				NOT = {
-					any_war = {
-						OR = {
-							AND = {
-								attacker = { character = FROM }
-								war_score = -49
-							}
-							AND = {
-								defender = { character = FROM }
-								NOT = { war_score = 49 }
-							}
-						}
+				any_war = {
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = 50
 				}
 			}
 			modifier = {  #Not if I'm winning.
 				factor = 0
-				NOT = {
-					any_war = {
-						OR = {
-							AND = {
-								attacker = { character = FROM }
-								war_score = -69
-							}
-							AND = {
-								defender = { character = FROM }
-								NOT = { war_score = 69 }
-							}
-						}
+				any_war = {
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = 70
 				}
 			}
 			modifier = {
 				factor = 1.5
 				any_war = {
-					OR = {
-						AND = {
-							attacker = { character = FROM }
-							war_score = 25
-						}
-						AND = {
-							defender = { character = FROM }
-							NOT = { war_score = -24 }
-						}
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = -25
 				}
 			}
 			modifier = {
 				factor = 1.75
 				any_war = {
-					OR = {
-						AND = {
-							attacker = { character = FROM }
-							war_score = 50
-						}
-						AND = {
-							defender = { character = FROM }
-							NOT = { war_score = -49 }
-						}
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = -50
 				}
 			}
 			modifier = {
 				factor = 2
 				any_war = {
-					OR = {
-						AND = {
-							attacker = { character = FROM }
-							war_score = 70
-						}
-						AND = {
-							defender = { character = FROM }
-							NOT = { war_score = -69 }
-						}
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = -70
 				}
 			}
 
@@ -17964,98 +17371,62 @@ character_event = {
 			}
 			modifier = {  #Not if I'm winning.
 				factor = 0.5
-				NOT = {
-					any_war = {
-						OR = {
-							AND = {
-								attacker = { character = FROM }
-								war_score = -24
-							}
-							AND = {
-								defender = { character = FROM }
-								NOT = { war_score = 24 }
-							}
-						}
+				any_war = {
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = 25
 				}
 			}
 			modifier = {  #Not if I'm winning.
 				factor = 0.01
-				NOT = {
-					any_war = {
-						OR = {
-							AND = {
-								attacker = { character = FROM }
-								war_score = -49
-							}
-							AND = {
-								defender = { character = FROM }
-								NOT = { war_score = 49 }
-							}
-						}
+				any_war = {
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = 50
 				}
 			}
 			modifier = {  #Not if I'm winning.
 				factor = 0
-				NOT = {
-					any_war = {
-						OR = {
-							AND = {
-								attacker = { character = FROM }
-								war_score = -69
-							}
-							AND = {
-								defender = { character = FROM }
-								NOT = { war_score = 69 }
-							}
-						}
+				any_war = {
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = 70
 				}
 			}
 			modifier = {
 				factor = 1.5
 				any_war = {
-					OR = {
-						AND = {
-							attacker = { character = FROM }
-							war_score = 25
-						}
-						AND = {
-							defender = { character = FROM }
-							NOT = { war_score = -24 }
-						}
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = -25
 				}
 			}
 			modifier = {
 				factor = 1.75
 				any_war = {
-					OR = {
-						AND = {
-							attacker = { character = FROM }
-							war_score = 50
-						}
-						AND = {
-							defender = { character = FROM }
-							NOT = { war_score = -49 }
-						}
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = -50
 				}
 			}
 			modifier = {
 				factor = 2
 				any_war = {
-					OR = {
-						AND = {
-							attacker = { character = FROM }
-							war_score = 70
-						}
-						AND = {
-							defender = { character = FROM }
-							NOT = { war_score = -69 }
-						}
+					OR = { 
+						attacker = { character = FROM } 
+						defender = { character = FROM } 
 					}
+					war_score = -70
 				}
 			}
 			modifier = {  

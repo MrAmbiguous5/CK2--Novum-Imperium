@@ -73,6 +73,7 @@ decisions = {
 			is_adult = yes
 			NOT = { has_flag = ask_for_indulgence }
 			NOT = { trait = excommunicated }
+			NOT = { has_landed_title = k_papal_state}
 		}
 		allow = {
 			prisoner = no
@@ -304,9 +305,8 @@ decisions = {
 			custom_tooltip = {
 				text = TT_IR_CONTROL_TIER_1
 				NOT = {
-					any_landed_title = {
-						tier = COUNT
-						location = { region = emf_region_ir_tier_1 }
+					any_province = {
+						region = emf_region_ir_tier_1
 						owner_under_ROOT = no
 					}
 				}
@@ -314,9 +314,8 @@ decisions = {
 			custom_tooltip = {
 				text = TT_IR_CONTROL_TIER_2
 				NOT = {
-					any_landed_title = {
-						tier = COUNT
-						location = { region = emf_region_ir_tier_2 }
+					any_province = {
+						region = emf_region_ir_tier_2
 						owner_under_ROOT = no
 					}
 				}
@@ -324,9 +323,8 @@ decisions = {
 			custom_tooltip = {
 				text = TT_IR_CONTROL_TIER_3
 				NOT = {
-					any_landed_title = {
-						tier = COUNT
-						location = { region = emf_region_ir_tier_3 }
+					any_province = {
+						region = emf_region_ir_tier_3
 						owner_under_ROOT = no
 					}
 				}
@@ -386,15 +384,90 @@ decisions = {
 			piety = 2000
 			religion_authority = 0.75 #Consistent with nerf to controlled holy sites bonus to religious authority
 			completely_controls = c_byzantion
-			b_hagiasophia = { holder_scope = { religion = ROOT } }
+			b_hagiasophia = {
+				custom_tooltip = { # Custom tooltip to shorten the in-game tooltip
+					text = MEND_SCHISM_PENTARCHY_HOLDER_RELIGION
+					hidden_tooltip = {
+						holder_scope = {
+							OR = {
+								religion = orthodox
+								religion = bogomilist
+								religion = monothelite
+								religion = iconoclast
+							}
+							is_heretic = no
+						}
+					}
+				}
+			}
 			completely_controls = c_antiocheia
-			b_antiocheia = { holder_scope = { religion = ROOT } }
+			b_antiocheia = {
+				custom_tooltip = { # Custom tooltip to shorten the in-game tooltip
+					text = MEND_SCHISM_PENTARCHY_HOLDER_RELIGION
+					hidden_tooltip = {
+						holder_scope = {
+							OR = {
+								religion = orthodox
+								religion = bogomilist
+								religion = monothelite
+								religion = iconoclast
+							}
+							is_heretic = no
+						}
+					}
+				}
+			}
 			completely_controls = c_jerusalem
-			b_jerusalem = { holder_scope = { religion = ROOT } }
+			b_jerusalem = {
+				custom_tooltip = { # Custom tooltip to shorten the in-game tooltip
+					text = MEND_SCHISM_PENTARCHY_HOLDER_RELIGION
+					hidden_tooltip = {
+						holder_scope = {
+							OR = {
+								religion = orthodox
+								religion = bogomilist
+								religion = monothelite
+								religion = iconoclast
+							}
+							is_heretic = no
+						}
+					}
+				}
+			}
 			completely_controls = c_alexandria
-			b_alexandria = { holder_scope = { religion = ROOT } }
+			b_alexandria = {
+				custom_tooltip = { # Custom tooltip to shorten the in-game tooltip
+					text = MEND_SCHISM_PENTARCHY_HOLDER_RELIGION
+					hidden_tooltip = {
+						holder_scope = {
+							OR = {
+								religion = orthodox
+								religion = bogomilist
+								religion = monothelite
+								religion = iconoclast
+							}
+							is_heretic = no
+						}
+					}
+				}
+			}
 			completely_controls = c_roma
-			b_roma = { holder_scope = { religion = ROOT } }
+			b_roma = {
+				custom_tooltip = { # Custom tooltip to shorten the in-game tooltip
+					text = MEND_SCHISM_PENTARCHY_HOLDER_RELIGION
+					hidden_tooltip = {
+						holder_scope = {
+							OR = {
+								religion = orthodox
+								religion = bogomilist
+								religion = monothelite
+								religion = iconoclast
+							}
+							is_heretic = no
+						}
+					}
+				}
+			}
 		}
 		effect = {
 			set_flag = emf_context_mended_schism_orthodox
@@ -699,9 +772,8 @@ decisions = {
 				text = emf_ctt_controls_persia_and_mesopotamia
 				hidden_tooltip = {
 					NOT = {
-						any_landed_title = {
-							tier = COUNT
-							location = { region = emf_region_saoshyant }
+						any_province = {
+							region = emf_region_saoshyant
 							owner_under_ROOT = no
 						}
 					}
@@ -718,28 +790,41 @@ decisions = {
 			custom_tooltip = { text = tooltip_forge_pahalavi_crown }
 			hidden_tooltip = {
 				add_artifact = crown_pahlavi
-				new_artifact = { set_name = crown_pahlavi_name }
+				new_artifact = {
+					set_name = crown_pahlavi_name
+				}
 			}
 			prestige = 500
 			piety = 500
 			if = {
-				limit = { has_dlc = "Holy Fury" }
-				if = {
-					limit = { is_female = yes }
-					create_bloodline = {
-						type = saoshyant_female
-					}
+				limit = {
+					is_female = yes
+					has_dlc = "Holy Fury"
 				}
-				else = {
-					create_bloodline = {
-						type = saoshyant_male
-					}
+				create_bloodline = {
+					type = saoshyant_female
 				}
-				new_bloodline = { set_description = "bloodline_desc_saoshyant" }
+				new_bloodline = {
+					set_description = "bloodline_desc_saoshyant"
+				}
+			}
+			if = {
+				limit = {
+					is_female = no
+					has_dlc = "Holy Fury"
+				}
+				create_bloodline = {
+					type = saoshyant_male
+				}
+				new_bloodline = {
+					set_description = "bloodline_desc_saoshyant"
+				}
 			}
 			hidden_tooltip = {
 				narrative_event = { id = TOG.6000 }
-				any_child = { character_event = { id = TOG.6001 } }
+				any_child = {
+					character_event = { id = TOG.6001 }
+				}
 			}
 		}
 		ai_will_do = {
@@ -912,7 +997,6 @@ decisions = {
 			religion_group = jewish_group
 			k_israel = {
 				has_holder = no
-				is_de_jure_title = no
 			}
 			has_random_religion_names = no
 			emf_hiprio_decision_basic_potential = yes
@@ -935,28 +1019,29 @@ decisions = {
 			narrative_event = { id = SoA.102 tooltip = EVTTOOLTIP_SoA_102 }
 			if = {
 				limit = {
-					NOT = { has_global_flag = emf_create_israel_used_before }
+					is_female = yes
+					has_dlc = "Holy Fury"
 				}
-				set_global_flag = emf_create_israel_used_before
-				if = {
-					limit = { has_dlc = "Holy Fury" }
-					if = {
-						limit = { is_female = yes }
-						create_bloodline = {
-							type = israel_female
-						}
-					}
-					else = {
-						create_bloodline = {
-							type = israel_male
-						}
-					}
-					new_bloodline = {
-						set_description = "bloodline_desc_israel"
-					}
+				create_bloodline = {
+					type = israel_female
 				}
-				prestige = 1000
+				new_bloodline = {
+					set_description = "bloodline_desc_israel"
+				}
 			}
+			if = {
+				limit = {
+					is_female = no
+					has_dlc = "Holy Fury"
+				}
+				create_bloodline = {
+					type = israel_male
+				}
+				new_bloodline = {
+					set_description = "bloodline_desc_israel"
+				}
+			}
+			prestige = 1000
 		}
 		ai_will_do = {
 			factor = 1
@@ -1534,6 +1619,8 @@ decisions = {
 				limit = { has_nickname = no }
 				give_nickname = nick_the_great
 			}
+			#Create Electors, depending on capital location:
+			princely_elective_apply_elector_setup_effect = yes
 			primary_title = {
 				show_scope_change = no
 				e_hre = {
@@ -1576,19 +1663,6 @@ decisions = {
 				# Adjust the HRE title's preferred capital based upon owner demesne
 				character_event = { id = emf_empires.71 }
 			}
-			hidden_effect = {
-				# Dynamic elector title assignment:
-				e_hre = {
-					clear_persistent_event_target = hre_title_1_per
-					clear_persistent_event_target = hre_title_2_per
-					clear_persistent_event_target = hre_title_3_per
-					clear_persistent_event_target = hre_title_4_per
-					clear_persistent_event_target = hre_title_5_per
-					clear_persistent_event_target = hre_title_6_per
-					clear_persistent_event_target = hre_title_7_per
-				}
-				character_event = { id = emf_hre.60 }
-			}
 			e_byzantium = {
 				show_scope_change = no
 				owner = {
@@ -1613,7 +1687,11 @@ decisions = {
 				add_artifact = crown_hre
 				hidden_tooltip = { narrative_event = { id = CM.510 } }		# Spread the news
 			}
-			else = {
+			if = {
+				limit = {
+					has_flag = is_charlemagne
+					NOT = { has_flag = charlemagne_coronation }
+				}
 				hidden_tooltip = { narrative_event = { id = CM.1500 } }		# Charlemagne coronation
 			}
 			if = {
@@ -1721,7 +1799,7 @@ decisions = {
 				OR = {
 					AND = {
 						holding_type = tribal
-						has_building = tb_r_settlement_7
+						has_building = tb_hillfort_4
 					}
 					holding_type = castle
 				}
@@ -1768,37 +1846,22 @@ decisions = {
 			log = "-> switched to a [This.EMF_GetGovernmentGroupName] government (should be feudal)"
 			hidden_effect = {
 				set_flag = emf_no_law_penalties
+				primary_title = {
+					if = {
+						limit = {
+							is_law_potential = administration_0
+							NOT = { has_law = administration_0 }
+						}
+						log = "-> added law to [This.GetID] (primary): administration_0"
+						add_law = administration_0
+					}
+				}
 				any_demesne_title = {
 					limit = { higher_tier_than = DUKE }
 					if = {
-						limit = {
-							is_law_potential = crown_authority_1
-							emf_laws_crownlaw_title_limited_ca_plus = no
-						}
-						add_law = { law = crown_authority_1 cooldown = no opinion_effect = no }
-						log = "-> added law to [This.GetID]: crown_authority_1"
-					}
-					else_if = {
-						limit = {
-							is_law_potential = crown_authority_0
-							NOR = {
-								has_law = crown_authority_0
-								emf_laws_crownlaw_title_limited_ca_plus = yes
-							}
-						}
+						limit = { is_law_potential = crown_authority_0 }
 						add_law = { law = crown_authority_0 cooldown = no opinion_effect = no }
 						log = "-> added law to [This.GetID]: crown_authority_0"
-					}
-					if = { 
-						limit = {
-							is_law_potential = revokation_1
-							NOR = {
-								has_law = revokation_1
-								has_law = revokation_2
-							}
-						}
-						log = "-> added law to [This.GetID] (primary): revokation_1"
-						add_law = revokation_1
 					}
 					if = {
 						limit = {
@@ -1827,27 +1890,6 @@ decisions = {
 						}
 						add_law = investiture_law_0
 						log = "-> added law to [This.GetID]: investiture_law_0"
-					}
-				}
-				primary_title = {
-					if = {
-						limit = {
-							is_law_potential = administration_0
-							NOT = { has_law = administration_0 }
-						}
-						log = "-> added law to [This.GetID] (primary): administration_0"
-						add_law = administration_0
-					}
-					if = {
-						limit = {
-							is_law_potential = ze_revokation_1
-							NOR = {
-								has_law = ze_revokation_1
-								has_law = ze_revokation_2
-							}
-						}
-						log = "-> added law to [This.GetID] (primary): ze_revokation_1"
-						add_law = ze_revokation_1
 					}
 				}
 				clr_flag = emf_no_law_penalties
@@ -1894,7 +1936,7 @@ decisions = {
 					limit = {
 						tier = BARON
 						holding_type = tribal
-						has_building = tb_r_settlement_7
+						has_building = tb_hillfort_4
 					}
 					convert_to = castle
 					refill_holding_levy = yes
@@ -1905,9 +1947,9 @@ decisions = {
 								holder = ROOT
 								location = {
 									has_empty_holding = yes
-									NAND = {
-										any_province_holding = { holding_type = temple }
-										any_province_holding = { holding_type = city }
+									OR = {
+										NOT = { any_province_holding = { holding_type = temple } }
+										NOT = { any_province_holding = { holding_type = city } }
 									}
 								}
 							}
@@ -1989,7 +2031,7 @@ decisions = {
 					OR = {
 						AND = {
 							holding_type = tribal
-							has_building = tb_r_settlement_7
+							has_building = tb_hillfort_4
 						}
 						holding_type = castle
 					}
@@ -2052,37 +2094,22 @@ decisions = {
 			log = "-> switched to a [This.EMF_GetGovernmentGroupName] government (should be feudal)"
 			hidden_effect = {
 				set_flag = emf_no_law_penalties
+				primary_title = {
+					if = {
+						limit = {
+							is_law_potential = administration_0
+							NOT = { has_law = administration_0 }
+						}
+						log = "-> added law to [This.GetID] (primary): administration_0"
+						add_law = administration_0
+					}
+				}
 				any_demesne_title = {
 					limit = { higher_tier_than = DUKE }
 					if = {
-						limit = {
-							is_law_potential = crown_authority_1
-							emf_laws_crownlaw_title_limited_ca_plus = no
-						}
-						add_law = { law = crown_authority_1 cooldown = no opinion_effect = no }
-						log = "-> added law to [This.GetID]: crown_authority_1"
-					}
-					else_if = {
-						limit = {
-							is_law_potential = crown_authority_0
-							NOR = {
-								has_law = crown_authority_0
-								emf_laws_crownlaw_title_limited_ca_plus = yes
-							}
-						}
+						limit = { is_law_potential = crown_authority_0 }
 						add_law = { law = crown_authority_0 cooldown = no opinion_effect = no }
 						log = "-> added law to [This.GetID]: crown_authority_0"
-					}
-					if = { 
-						limit = {
-							is_law_potential = revokation_1
-							NOR = {
-								has_law = revokation_1
-								has_law = revokation_2
-							}
-						}
-						log = "-> added law to [This.GetID] (primary): revokation_1"
-						add_law = revokation_1
 					}
 					if = {
 						limit = {
@@ -2111,27 +2138,6 @@ decisions = {
 						}
 						add_law = investiture_law_0
 						log = "-> added law to [This.GetID]: investiture_law_0"
-					}
-				}
-				primary_title = {
-					if = {
-						limit = {
-							is_law_potential = administration_0
-							NOT = { has_law = administration_0 }
-						}
-						log = "-> added law to [This.GetID] (primary): administration_0"
-						add_law = administration_0
-					}
-					if = {
-						limit = {
-							is_law_potential = ze_revokation_1
-							NOR = {
-								has_law = ze_revokation_1
-								has_law = ze_revokation_2
-							}
-						}
-						log = "-> added law to [This.GetID] (primary): ze_revokation_1"
-						add_law = ze_revokation_1
 					}
 				}
 				clr_flag = emf_no_law_penalties
@@ -2220,7 +2226,7 @@ decisions = {
 					limit = {
 						tier = BARON
 						holding_type = tribal
-						has_building = tb_r_settlement_7
+						has_building = tb_hillfort_4
 					}
 					convert_to = castle
 					refill_holding_levy = yes
@@ -2327,7 +2333,7 @@ decisions = {
 				OR = {
 					AND = {
 						holding_type = tribal
-						has_building = tb_r_market_4
+						has_building = tb_market_town_4
 					}
 					holding_type = city
 				}
@@ -2399,7 +2405,7 @@ decisions = {
 					limit = {
 						tier = BARON
 						holding_type = tribal
-						has_building = tb_r_market_4
+						has_building = tb_market_town_4
 					}
 					convert_to = city
 					refill_holding_levy = yes
@@ -2437,34 +2443,8 @@ decisions = {
 				any_demesne_title = {
 					limit = { higher_tier_than = DUKE }
 					if = {
-						limit = {
-							is_law_potential = crown_authority_1
-							emf_laws_crownlaw_title_limited_ca_plus = no
-						}
-						add_law = { law = crown_authority_1 cooldown = no opinion_effect = no }
-						log = "-> added law to [This.GetID]: crown_authority_1"
-					}
-					else_if = {
-						limit = {
-							is_law_potential = crown_authority_0
-							NOR = {
-								has_law = crown_authority_0
-								emf_laws_crownlaw_title_limited_ca_plus = yes
-							}
-						}
-						add_law = { law = crown_authority_0 cooldown = no opinion_effect = no }
-						log = "-> added law to [This.GetID]: crown_authority_0"
-					}
-					if = { 
-						limit = {
-							is_law_potential = revokation_1
-							NOR = {
-								has_law = revokation_1
-								has_law = revokation_2
-							}
-						}
-						log = "-> added law to [This.GetID] (primary): revokation_1"
-						add_law = revokation_1
+						limit = { is_law_potential = crown_authority_0 }
+						add_law = crown_authority_0
 					}
 					if = {
 						limit = {
@@ -2474,54 +2454,15 @@ decisions = {
 								is_law_potential = investiture_law_0
 								is_law_allowed = investiture_law_0
 							}
-							NOR = {
-								has_law = investiture_law_0
-								has_law = investiture_law_1
-							}
 						}
 						add_law = investiture_law_1
-						log = "-> added law to [This.GetID]: investiture_law_1"
-					}
-					else_if = {
-						limit = {
-							is_law_potential = investiture_law_0
-							is_law_allowed = investiture_law_0
-							NOR = {
-								has_law = investiture_law_0
-								has_law = investiture_law_1
-							}
-						}
-						add_law = investiture_law_0
-						log = "-> added law to [This.GetID]: investiture_law_0"
-					}
-				}
-				primary_title = {
-					if = { # Currently does nothing because MRs fail is_law_potential = administration_0, but here for submods and future-proofing that change this
-						limit = {
-							is_law_potential = administration_0
-							NOT = { has_law = administration_0 }
-						}
-						log = "-> added law to [This.GetID] (primary): administration_0"
-						add_law = administration_0
 					}
 					if = {
 						limit = {
-							is_law_potential = ze_revokation_1
-							NOR = {
-								has_law = ze_revokation_1
-								has_law = ze_revokation_2
-							}
+							is_law_potential = investiture_law_0
+							is_law_allowed = investiture_law_0
 						}
-						log = "-> added law to [This.GetID] (primary): ze_revokation_1"
-						add_law = ze_revokation_1
-					}
-					if = { # MRs are forced to always have Law Voting power enabled on the republic title
-						limit = {
-							is_law_potential = law_voting_power_1
-							NOT = { has_law = law_voting_power_1 }
-						}
-						log = "-> added law to [This.GetID] (primary): law_voting_power_1"
-						add_law = law_voting_power_1
+						add_law = investiture_law_0
 					}
 				}
 				clr_flag = emf_no_law_penalties

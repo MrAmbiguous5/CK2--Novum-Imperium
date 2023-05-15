@@ -1,21 +1,19 @@
-# -*- ck2.events -*-
-
 ##############################
 # LORD SPIRITUAL
 #
 # Job: action_inquisition
-#	 900: County Religion Converted
-#	 901: Subject Religion Converted
-#	 902: Heathens Attack the Lord Spiritual
-#	 903: Heretic Noble
+# 	900: County Religion Converted
+# 	901: Subject Religion Converted
+# 	902: Heathens Attack the Lord Spiritual
+# 	903: Heretic Noble
 #
 # Job: action_improve_rel_relations
-#	 906: The Lord Spiritual attempts to improve relations with a priest
-#	 907: The Lord Spiritual attempts to sabotage the relations of a priest towards the official head of the religion
+# 	906: The Lord Spiritual attempts to improve relations with a priest
+# 	907: The Lord Spiritual attempts to sabotage the relations of a priest towards the official head of the religion
 #
 # Job: action_advance_cul_tech
-#	 926: A Great Inventor offers his help: Random Culture Tech increases
-#	 927: Lord Spiritual = heretic
+# 	926: A Great Inventor offers his help: Random Culture Tech increases
+# 	927: Lord Spiritual = heretic
 #
 ##############################
 
@@ -33,43 +31,44 @@ character_event = {
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_religion
 
+	min_age = 16
 	capable_only = yes
 	prisoner = no
-	min_age = 16
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
+		NOT = { location = { religion = ROOT } }
 		location = {
-			NOT = { religion = ROOT }
-			NOT = { religion = { target = ROOT target_type = true } }
 			owner = { same_realm = ROOT }
 		}
 	}
-
+	
 	mean_time_to_happen = {
-		months = 1200
+		months = 960
+		
 		modifier = {
-			factor = 0.6
-			OR = {
-				has_religion_feature = religion_proselytizing
-				AND = {
-					religion = west_african_pagan_reformed
-					has_religion_features = no
-				}
+			factor = 2.0
+			liege = {
+				tier = count
+				ai = yes
 			}
 		}
 		modifier = {
+			factor = 0.6
+			has_religion_feature = religion_proselytizing
+		}
+		modifier = {
 			factor = 2.5
-			OR = {
-				has_religion_feature = religion_cosmopolitan
-				religion = hellenic_pagan
-				AND = {
-					religion = hellenic_pagan_reformed
-					has_religion_features = no
-				}
+			has_religion_feature = religion_cosmopolitan
+		}
+		modifier = {
+			factor = 0.75
+			liege = {
+				has_artifact = finger_of_st_john
 			}
 		}
 		modifier = {
@@ -85,13 +84,7 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			has_job_action = action_inquisition
-			location = {
-				OR = {
-					religion_group = ROOT
-					emf_syncretized_religion_with_ROOT = yes
-					ROOT = { emf_syncretized_religion_with_PREV = yes }
-				}
-			}
+			location = { religion_group = ROOT }
 		}
 		modifier = {
 			factor = 0.75
@@ -111,14 +104,11 @@ character_event = {
 		modifier = {
 			factor = 3.0
 			has_job_action = action_inquisition
-			location = {
-				is_hard_to_convert = yes
-				NOT = { emf_syncretized_religion_with_PREV = yes }
-			}
+			location = { is_hard_to_convert = yes }
 		}
 
 		job_event_mtth_modifier_learning_score = yes
-
+        
 		modifier = {
 			factor = 3.0
 			NOT = { religion_authority = 0.1 }
@@ -193,7 +183,9 @@ character_event = {
 			liege = {
 		    	any_owned_bloodline = {
     				has_bloodline_flag = inquisitional_saintly_bloodline
-					bloodline_is_active_for = PREV
+    				founder = {
+    					religion = ROOT
+    				}
     			}
     		}
 		}
@@ -209,35 +201,28 @@ character_event = {
 		
 		modifier = {
 			factor = 0.6
-			liege = {
-				religion = hindu
-				any_owned_bloodline = {
-					has_bloodline_flag = bloodline_faster_hindu
-					bloodline_is_active_for = PREV
-				}
-			}
+			religion = hindu
+	    	any_owned_bloodline = {
+    			has_bloodline_flag = bloodline_faster_hindu
+    		}
 		}
 
 		# Effect of wonder upgrades
 		modifier = {
 			factor = 0.6
 			liege = {
-				any_realm_wonder = {
-					any_upgrade_on_wonder = {
-						has_wonder_upgrade_flag = religion_conversion_faster
-						is_active = yes
-					}
-					original_wonder_owner = {
-						OR = {
-							religion_group = PREVPREV
-							emf_syncretized_religion_with_PREVPREV = yes
-							PREVPREV = { emf_syncretized_religion_with_PREV = yes }
+				any_realm_wonder_upgrade = {
+					has_wonder_upgrade_flag = religion_conversion_faster
+					is_active = yes
+					wonder = {
+						original_wonder_owner = {
+							religion_group = PREVPREVPREV
 						}
 					}
 				}
 			}
 		}
-
+		
 		# Hindus and Buddhists have a hard time converting other Indian religions
 		modifier = {
 			factor = 3.0
@@ -247,15 +232,13 @@ character_event = {
 				religion = buddhist
 			}
 			location = {
-				OR = {
-					has_dharmic_religion_trigger = yes
-					religion_scope = {
-						has_religion_feature = religion_syncretic_indian
-					}
+				religion_group = indian_group
+				NOT = {
+					religion = taoist
 				}
 			}
 		}
-		# Jains, Taoists and Bön have a hard time converting ALL non-pagans
+		# Jains, Taoists and BÃ¶n have a hard time converting ALL non-pagans
 		modifier = {
 			factor = 3.0
 			has_job_action = action_inquisition
@@ -267,19 +250,30 @@ character_event = {
 			}
 			location = {
 				NOT = { religion_group = pagan_group }
-				NOR = {
-					emf_syncretized_religion_with_ROOT = yes
-					ROOT = { emf_syncretized_religion_with_PREV = yes }
-				}
 			}
 		}
-
+		
 		modifier = {
 			factor = 3.0
 			has_job_action = action_inquisition
-			emf_unreformed_pagan = yes
+            OR = {
+                religion_group = pagan_group
+                religion = a_tag_roog
+                religion = amazigh
+            }
+            OR = {
+                is_reformed_religion = no
+                religion_group = african_group
+            }
 			location = {
-				emf_unreformed_pagan = no
+				OR = {
+					NOR = {
+                        religion_group = pagan_group
+                        religion = a_tag_roog
+                        religion = amazigh
+                    }
+					is_reformed_religion = yes
+				}
 			}
 		}
 		modifier = {
@@ -308,61 +302,7 @@ character_event = {
 				value = slower
 			}
 		}
-		#Turkish culture spread quickly inland
-		modifier = {
-			factor = 0.5
-			location = {
-				port = no
-				county = {
-					OR = {
-						de_jure_liege_or_above = e_byzantium
-						de_jure_liege_or_above = k_rum
-					}
-				}
-			}
-			liege = {
-				OR = {
-					culture = turkish
-					culture = turkmen
-				}
-			}
-		}
-		#Muslims didn't convert each other very quickly
-		modifier = {
-			factor = 1.5
-			location = {
-				OR = {
-					religion_group = muslim
-					religion_scope = {
-						has_religion_feature = religion_syncretic_muslim
-					}
-				}
-			}
-			OR = {
-				religion_group = muslim
-				has_religion_feature = religion_syncretic_muslim
-			}
-		}
-		# Harsh holy war integration policy makes local religious conversion more rapid
-		modifier = {
-			factor = 0.75
-			location = {
-				OR = {
-					has_province_modifier = emf_relsub_heavy_unrest_base_modifier
-					has_province_modifier = emf_relsub_heavy_unrest_modifier
-				}
-			}
-		}
-		# "Gentle" holy war integration policy slows local religious conversion (insofar as the modifier lasts)
-		modifier = {
-			factor = 1.333
-			location = {
-				OR = {
-					has_province_modifier = emf_relsub_light_unrest_base_modifier
-					has_province_modifier = emf_relsub_light_unrest_modifier
-				}
-			}
-		}
+
 	}
 
 	option = {
@@ -377,11 +317,6 @@ character_event = {
 				}
 			}
 		}
-		religion_authority = {
-			modifier = province_converted_to
-			years = 5
-		}
-
 		liege = {
 			letter_event = { id = 20000 tooltip = EVTTOOLTIP20000 }
 			hidden_tooltip = {
@@ -392,7 +327,7 @@ character_event = {
 							religion = ROOT
 						}
 					}
-					top_liege = { character_event = { id = emf_vanilla.20 } }
+					top_liege = { character_event = { id = 20001 } }
 				}
 			}
 		}
@@ -404,7 +339,7 @@ letter_event = {
 	id = 20000
 	desc = "EVTDESC20000"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
 
 	option = {
@@ -417,10 +352,6 @@ letter_event = {
 				}
 				change_variable = { which = strengthen_religion value = 1 }
 			}
-		}
-		if = {
-			limit = { has_ambition = obj_convert_a_province }
-			set_character_flag = converted_a_province
 		}
 		if = {
 			limit = {
@@ -442,16 +373,15 @@ letter_event = {
 	}
 }
 
-# EMF: emf_vanilla.20 used instead (notification = yes)
 # 20001: Informs top liege
 character_event = {
 	id = 20001
 	desc = EVTDESC20001
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	notification = yes
 
 	option = {
@@ -471,11 +401,12 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		location = {
 			any_province_character = {
 				ai = yes
@@ -495,35 +426,21 @@ character_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
-		# Still using public religion for MTTH to not give away to players that their chancellor has a secret religion
 		months = 120
-
+	
 		modifier = {
 			factor = 0.75
-			OR = {
-				has_religion_feature = religion_proselytizing
-				AND = {
-					religion = west_african_pagan_reformed
-					has_religion_features = no
-				}
-			}
+			has_religion_feature = religion_proselytizing
 		}
 		modifier = {
 			factor = 2.75
-			OR = {
-				has_religion_feature = religion_cosmopolitan
-				religion = hellenic_pagan
-				AND = {
-					religion = hellenic_pagan_reformed
-					has_religion_features = no
-				}
-			}
+			has_religion_feature = religion_cosmopolitan
 		}
 
 		job_event_mtth_modifier_learning_score = yes
-
+        
 		modifier = {
 			factor = 2.0
 			NOT = { religion_authority = 0.4 }
@@ -542,10 +459,17 @@ character_event = {
 		}
 		modifier = {
 			factor = 3.0
-			emf_unreformed_pagan = yes
+            OR = {
+                AND = {
+                    religion_group = pagan_group
+                    is_reformed_religion = no
+                }
+                religion = a_tag_roog
+                religion = amazigh
+            }
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA901"
 		piety = 5
@@ -578,48 +502,30 @@ letter_event = {
 	id = 20010
 	desc = "EVTDESC20010"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20010"
-
+		
 		if = {
 			limit = { higher_tier_than = BARON }
 			religion_authority = {
 				modifier = ruler_converted_from
 			}
 		}
-
-		if = { # Needed to circumvent bug where converting theocracies immediately get replaced with a new character
-			limit = { emf_requires_workaround_for_religion_switch = yes }
-			set_flag = needs_fake_feudal_government
-			set_government_type = fake_feudal_government
-			religion = FROM
-			emf_set_theocracy_government_safe = yes
-			clr_flag = needs_fake_feudal_government
-		}
-		else = {
-			religion = FROM
-		}
 		
-		if = {
-			limit = {
-				has_secret_religion = no
-				FROM = { has_secret_religion = yes }
-			}
-			set_secret_religion = { target_type = true target = FROM }
-		}
+		religion = FROM
 		
 		save_event_target_as = portrait_target
-
+		
 		if = {
 			limit = { higher_tier_than = BARON }
 			religion_authority = {
 				modifier = ruler_converted_to
 			}
 		}
-
+		
 		hidden_tooltip = {
 			FROM = {
 				liege = { letter_event = { id = 20011 } }
@@ -643,11 +549,11 @@ letter_event = {
 	id = 20011
 	desc = "EVTDESC20011"
 	border = GFX_event_letter_frame_religion
-
+	
 	show_from_from = yes
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20011"
 		show_portrait = event_target:portrait_target
@@ -659,9 +565,9 @@ letter_event = {
 	id = 20012
 	desc = "EVTDESC20012"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20012"
 		trigger = { FROM = { religion = ROOT } }
@@ -687,25 +593,25 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		location = {
 			NOT = { religion = ROOT }
-			NOT = { religion = { target = ROOT target_type = true } }
 			owner = { same_realm = ROOT }
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 120
-
+		
 		modifier = {
 			factor = 2.0
 			liege = {
-				tier = COUNT
+				tier = count
 				ai = yes
 			}
 		}
@@ -732,34 +638,21 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
-			OR = {
-				has_religion_feature = religion_proselytizing
-				AND = {
-					religion = west_african_pagan_reformed
-					has_religion_features = no
-				}
-			}
+			has_religion_feature = religion_proselytizing
 		}
 		modifier = {
 			factor = 2.75
-			OR = {
-				has_religion_feature = religion_cosmopolitan
-				religion = hellenic_pagan
-				AND = {
-					religion = hellenic_pagan_reformed
-					has_religion_features = no
-				}
-			}
+			has_religion_feature = religion_cosmopolitan
 		}
-
+	
 		job_event_mtth_modifier_inverted_learning_score = yes
-
+    
 		modifier = {
 			factor = 0.75
 			NOT = { religion_authority = 0.4 }
 		}
 		modifier = {
-			factor = 0.75
+			factor =0.75
 			NOT = { religion_authority = 0.2 }
 		}
 		modifier = {
@@ -771,7 +664,7 @@ character_event = {
 			religion_authority = 0.8
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA902"
 		random_list = {
@@ -795,9 +688,9 @@ character_event = {
 	desc = "EVTDESC20020"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20020"
 		prestige = -10
@@ -810,7 +703,7 @@ character_event = {
 	desc = "EVTDESC20021"
 	picture = GFX_evt_illness
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
 
 	immediate = {
@@ -818,7 +711,7 @@ character_event = {
 			save_event_target_as = wounded_location
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA20021"
 		trigger = {
@@ -830,7 +723,7 @@ character_event = {
 			}
 		}
 		add_trait = wounded
-		liege = { character_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
+		liege = { letter_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
 	}
 	option = {
 		name = "EVTOPTB20021"
@@ -841,7 +734,7 @@ character_event = {
 		}
 		add_trait = wounded
 		add_trait = zealous
-		liege = { character_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
+		liege = { letter_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
 	}
 	option = {
 		name = "EVTOPTC20021"
@@ -855,7 +748,7 @@ character_event = {
 			}
 		}
 		add_trait = wounded
-		liege = { character_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
+		liege = { letter_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
 	}
 }
 
@@ -865,14 +758,14 @@ character_event = {
 	desc = EVTDESC20022
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
 	notification = yes
-
+	
 	immediate = {
 		prestige = -10
 	}
-
+	
 	option = {
 		name = EVTOPTA20022
 		tooltip = { prestige = -10 }
@@ -885,9 +778,9 @@ character_event = {
 	desc = "EVTDESC20023"
 	picture = GFX_evt_death
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20023"
 		prestige = -15
@@ -907,21 +800,16 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
-		NOR = {
-			has_religion_feature = religion_cosmopolitan
-			religion = hellenic_pagan
-			AND = {
-				religion = hellenic_pagan_reformed
-				has_religion_features = no
-			}
-			religion_group = pagan_group
-			religion_group = indian_group
-		}
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
+		NOT = { has_religion_feature = religion_cosmopolitan }
+		NOT = { religion_group = pagan_group }
+		NOT = { religion_group = indian_group }
+        NOT = { religion_group = african_group }
 		trait = zealous
 		location = {
 			any_province_lord = {
@@ -932,26 +820,23 @@ character_event = {
 				NOT = { character = ROOT }
 				age = 20
 				same_realm = ROOT
-				OR = {
-					religion_group = ROOT
-					ROOT = { emf_syncretized_religion_with_PREV = yes }
-				}
+				religion_group = ROOT
 				can_change_religion = yes
 				NOT = { piety = 100 }
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 240
-
+	
 		modifier = {
 			factor = 1.5
 			has_religion_feature = religion_dogmatic
 		}
 
 		job_event_mtth_modifier_learning_score = yes
-
+        
 		modifier = {
 			factor = 2.0
 			NOT = { religion_authority = 0.4 }
@@ -969,7 +854,7 @@ character_event = {
 			religion_authority = 0.8
 		}
 	}
-
+	
 	immediate = {
 		location = {
 			random_province_lord = {
@@ -981,10 +866,7 @@ character_event = {
 					NOT = { character = ROOT }
 					age = 20
 					same_realm = ROOT
-					OR = {
-						religion_group = ROOT
-						ROOT = { emf_syncretized_religion_with_PREV = yes }
-					}
+					religion_group = ROOT
 					can_change_religion = yes
 					NOT = { piety = 100 }
 				}
@@ -992,7 +874,7 @@ character_event = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA903"
 		ai_chance = { factor = 75 }
@@ -1010,9 +892,9 @@ character_event = {
 	desc = "EVTDESC20030"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20030"
 		trigger = {
@@ -1040,9 +922,9 @@ letter_event = {
 	id = 20032
 	desc = "EVTDESC20032"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20032" #Noble = no heretic
 		ai_chance = {
@@ -1107,9 +989,9 @@ letter_event = {
 	id = 20033
 	desc = "EVTDESC20033"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20033"
 		trigger = {
@@ -1133,12 +1015,12 @@ letter_event = {
 	id = 20034
 	desc = "EVTDESC20034"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20034"
-		liege = {
+		liege = {	
 			reverse_opinion = {
 				modifier = opinion_disappointed
 				who = ROOT
@@ -1153,9 +1035,9 @@ letter_event = {
 	id = 20035
 	desc = "EVTDESC20035"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20035"
 		FROM = {
@@ -1174,9 +1056,9 @@ letter_event = {
 	id = 20036
 	desc = "EVTDESC20036"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20036"
 		piety = 10
@@ -1194,30 +1076,24 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
-		NOR = {
-			has_religion_feature = religion_cosmopolitan
-			religion = hellenic_pagan
-			AND = {
-				religion = hellenic_pagan_reformed
-				has_religion_features = no
-			}
-		}
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
+		NOT = { has_religion_feature = religion_cosmopolitan }
 		location = {
 			NOT = { religion = ROOT }
 			NOT = { has_province_modifier = religious_tension }
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 240
-
+        
 		job_event_mtth_modifier_inverted_learning_score = yes
-
+	
 		modifier = {
 			factor = 1.25
 			has_religion_feature = religion_dogmatic
@@ -1276,9 +1152,9 @@ character_event = {
 	desc = "EVTDESC20038"
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20038"
 	}
@@ -1289,9 +1165,9 @@ letter_event = {
 	id = 20039
 	desc = "EVTDESC20039"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20039"
 		FROM = {
@@ -1324,23 +1200,27 @@ character_event = {
 	desc = EVTDESC39650
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		NOT = { has_character_flag = preacher_arrives }
 		location = {
 			owner = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				religion_group = pagan_group
+                OR = {
+                    religion_group = pagan_group
+                    religion_group = african_group
+                }
 				NOT = { same_realm = ROOT }
 				NOT = { has_character_flag = flag_converting_baptism }
 				NOT = { has_character_modifier = baptism_request_cooldown }
@@ -1348,11 +1228,11 @@ character_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		days = 1
 	}
-
+	
 	option = {
 		name = EVTOPTA39650
 		set_character_flag = preacher_arrives
@@ -1370,25 +1250,33 @@ character_event = {
 	desc = EVTDESC39651
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_character_flag = preacher_arrives
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		location = {
 			owner = {
 				is_adult = yes
-				is_incapable = no
+				NOT = { trait = incapable }
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
-				NOT = { religion = { target = ROOT target_type = true } }
-				emf_unreformed_pagan = yes
+				NOT = { religion = ROOT }
+                OR = {
+                    AND = {
+                        religion_group = pagan_group
+                        is_reformed_religion = no
+                    }
+                    religion = a_tag_roog
+                    religion = amazigh
+                }
 				NOT = { same_realm = ROOT }
 				controls_religion = no
 				NOT = { has_character_flag = flag_converting_baptism }
@@ -1397,21 +1285,15 @@ character_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 120
-
+        
 		job_event_mtth_modifier_learning_score = yes
-
+	
 		modifier = {
 			factor = 1.5
-			OR = {
-				has_religion_feature = religion_proselytizing
-				AND = {
-					religion = west_african_pagan_reformed
-					has_religion_features = no
-				}
-			}
+			has_religion_feature = religion_proselytizing
 		}
 		modifier = {
 			factor = 2.0
@@ -1463,7 +1345,7 @@ character_event = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = EVTOPTA39651
 		hidden_tooltip = {
@@ -1482,42 +1364,44 @@ character_event = {
 	desc = EVTDESC39652
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_character_flag = preacher_arrives
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		location = {
 			owner = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				emf_unreformed_pagan = yes
+                OR = {
+                    AND = {
+                        religion_group = pagan_group
+                        is_reformed_religion = no
+                    }
+                    religion = a_tag_roog
+                    religion = amazigh
+                }
 				NOT = { same_realm = ROOT }
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 120
-
+        
 		job_event_mtth_modifier_learning_score = yes
-
+	
 		modifier = {
 			factor = 1.5
-			OR = {
-				has_religion_feature = religion_proselytizing
-				AND = {
-					religion = west_african_pagan_reformed
-					has_religion_features = no
-				}
-			}
+			has_religion_feature = religion_proselytizing
 		}
 		modifier = {
 			factor = 2.0
@@ -1536,21 +1420,24 @@ character_event = {
 			religion_authority = 0.8
 		}
 	}
-
+	
 	option = {
 		name = EVTOPTA39652
 		hidden_tooltip = {
 			location = {
 				owner = {
 					random_courtier = {
-						limit = {
+						limit = { 
 							age = 10
 							prisoner = no
 							at_location = ROOT
-							is_incapable = no
+							NOT = { trait = incapable }
 							ai = yes
-							emf_unreformed_pagan = yes
-							NOT = { religion = { target = ROOT target_type = true } }
+                            OR = {
+                                religion_group = pagan_group
+                                religion = a_tag_roog
+                                religion = amazigh
+                            }
 						}
 						character_event = { id = 39610 days = 1 }
 					}
@@ -1566,23 +1453,27 @@ character_event = {
 	desc = EVTDESC39653
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_character_flag = preacher_arrives
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_inquisition
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		location = {
 			owner = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				religion_group = pagan_group
+                OR = {
+                    religion_group = pagan_group
+                    religion_group = african_group
+                }
 				NOT = { same_realm = ROOT }
 			}
 		}
@@ -1594,13 +1485,13 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { same_liege = ROOT }
 			}
-		}
+		}			
 	}
-
+	
 	mean_time_to_happen = {
 		months = 120
 	}
-
+	
 	option = {
 		name = EVTOPTA39653
 		hidden_tooltip = {
@@ -1633,20 +1524,20 @@ character_event = {
 character_event = {
 	id = 39654
 	hide_window = yes
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_character_flag = preacher_arrives
-
+	
 	trigger = {
 		NOT = { has_job_action = action_inquisition }
 	}
-
+	
 	mean_time_to_happen = {
 		days = 1
 	}
-
+	
 	immediate = {
 		clr_character_flag = preacher_arrives
 	}
@@ -1671,12 +1562,13 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_improve_rel_relations
-		in_seclusion = no
-		is_incapable = no
-		location = {
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
+		location = { 
 			any_province_lord = {
 				NOT = { character = ROOT }
 				is_priest = yes
@@ -1685,10 +1577,10 @@ character_event = {
 			}
 		}
 	}
-
-	mean_time_to_happen = {
+	
+	mean_time_to_happen = { 
 		months = 240
-
+        
 		job_event_mtth_modifier_learning_score = yes
 
 		modifier = {
@@ -1708,7 +1600,7 @@ character_event = {
 			religion_authority = 0.8
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA906"
 		hidden_tooltip = {
@@ -1732,9 +1624,9 @@ character_event = {
 	desc = "EVTDESC20060"
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20060"
 		hidden_tooltip = {
@@ -1750,11 +1642,11 @@ letter_event = {
 	id = 20061
 	desc = "EVTDESC20061"
 	border = GFX_event_letter_frame_religion
-
+	
 	show_from_from = yes
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20061"
 		FROM = {
@@ -1776,20 +1668,21 @@ character_event = {
 	picture = GFX_evt_pope_feast
 	border = GFX_event_normal_frame_religion
 
+	min_age = 16
 	capable_only = yes
 	prisoner = no
-	min_age = 16
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_improve_rel_relations
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		NOT = { religion_group = indian_group }
 		religion_head = {
 			NOT = { character = liege }
 		}
-		location = {
+		location = { 
 			any_province_lord = {
 				NOT = { character = ROOT }
 				is_priest = yes
@@ -1802,13 +1695,12 @@ character_event = {
 			}
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 240
-
 		job_event_mtth_modifier_learning_score = yes
 	}
-
+	
 	option = {
 		name = "EVTOPTA907"
 		hidden_tooltip = {
@@ -1836,9 +1728,9 @@ character_event = {
 	desc = "EVTDESC20070"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20070"
 		hidden_tooltip = {
@@ -1854,9 +1746,9 @@ letter_event = {
 	id = 20071
 	desc = "EVTDESC20071"
 	border = GFX_event_letter_frame_religion
-
+	
 	show_from_from = yes
-
+	
 	is_triggered_only = yes
 
 	option = {
@@ -1886,21 +1778,22 @@ character_event = {
 	desc = "EVTDESC926"
 	picture = GFX_evt_emissary
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_advance_cul_tech
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 1000
-
+		
 		modifier = {
 			factor = 0.5
 			OR = {
@@ -1914,18 +1807,11 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.75
-			OR = {
-				has_religion_feature = religion_cosmopolitan
-				religion = hellenic_pagan
-				AND = {
-					religion = hellenic_pagan_reformed
-					has_religion_features = no
-				}
-			}
+			has_religion_feature = religion_cosmopolitan
 		}
 
 		job_event_mtth_modifier_learning_score = yes
-
+        
 		modifier = {
 			factor = 0.5
 			liege = {
@@ -1944,7 +1830,7 @@ character_event = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA926"
 		liege = { letter_event = { id = 20260 tooltip = "EVTTOOLTIP20260" } }
@@ -1956,9 +1842,9 @@ letter_event = {
 	id = 20260
 	desc = "EVTDESC20260"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20260"
 		scaled_wealth = -0.5
@@ -1992,25 +1878,19 @@ character_event = {
 	desc = "EVTDESC927"
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_advance_cul_tech
-		in_seclusion = no
-		is_incapable = no
-		has_heresies = yes
-		NOR = {
-			has_religion_feature = religion_cosmopolitan
-			religion = hellenic_pagan
-			AND = {
-				religion = hellenic_pagan_reformed
-				has_religion_features = no
-			}
-		}
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
+		NOT = { religion_group = indian_group }
+		NOT = { has_religion_feature = religion_cosmopolitan }
 		is_heretic = no
 		has_secret_religion = no
 		OR = {
@@ -2030,22 +1910,22 @@ character_event = {
 			religion_head = { character = ROOT }
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 1000
-
+		
 		modifier = {
 			factor = 2
 			has_religion_feature = religion_dogmatic
 		}
-		
+        
 		job_event_mtth_modifier_learning_score = yes
 	}
-
+	
 	option = {
 		name = "EVTOPTA927"
 		ai_chance = { factor = 80 }
-		emf_character_become_heretic = yes
+		become_heretic = yes
 		hidden_tooltip = {
 			liege = { letter_event = { id = 20270 } }
 		}
@@ -2061,9 +1941,9 @@ letter_event = {
 	id = 20270
 	desc = "EVTDESC20270"
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20270"
 		ai_chance = { factor = 100 }
@@ -2084,31 +1964,7 @@ letter_event = {
 	option = {
 		name = "EVTOPTB20270"
 		ai_chance = { factor = 0 }
-		if = {
-			limit = { higher_tier_than = BARON }
-			religion_authority = {
-				modifier = ruler_converted_from
-			}
-		}
-		if = { # Needed to circumvent bug where converting theocracies immediately get replaced with a new character
-			limit = { emf_requires_workaround_for_religion_switch = yes }
-			set_flag = needs_fake_feudal_government
-			set_government_type = fake_feudal_government
-			religion = FROM
-			emf_set_theocracy_government_safe = yes
-			clr_flag = needs_fake_feudal_government
-		}
-		else = {
-			religion = FROM
-		}
-		if = {
-			limit = { higher_tier_than = BARON }
-			hidden_tooltip = {
-				religion_authority = {
-					modifier = ruler_converted_to
-				}
-			}
-		}
+		religion = FROM
 	}
 }
 
@@ -2116,36 +1972,12 @@ letter_event = {
 	id = 20271
 	desc = EVTDESC20271
 	border = GFX_event_letter_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = EVTOPTA20271
-		if = {
-			limit = { higher_tier_than = BARON }
-			religion_authority = {
-				modifier = ruler_converted_from
-			}
-		}
-		if = { # Needed to circumvent bug where converting theocracies immediately get replaced with a new character
-			limit = { emf_requires_workaround_for_religion_switch = yes }
-			set_flag = needs_fake_feudal_government
-			set_government_type = fake_feudal_government
-			religion = FROM
-			emf_set_theocracy_government_safe = yes
-			clr_flag = needs_fake_feudal_government
-		}
-		else = {
-			religion = FROM
-		}
-		if = {
-			limit = { higher_tier_than = BARON }
-			hidden_tooltip = {
-				religion_authority = {
-					modifier = ruler_converted_to
-				}
-			}
-		}
+		religion = FROM
 		set_secret_religion = { target_type = true target = FROM }
 		hidden_tooltip = {
 			liege = { letter_event = { id = 20272 } }
@@ -2154,6 +1986,9 @@ letter_event = {
 	}
 	option = {
 		name = EVTOPTB20271
+		hidden_tooltip = {
+			liege = { letter_event = { id = 20273 } }
+		}
 		ai_chance = { factor = 5 }
 	}
 }
@@ -2199,24 +2034,25 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_charity
-		in_seclusion = no
-		is_incapable = no
-		location = {
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
+		location = { 
 			any_province_lord = {
 				religion = ROOT
 				NOT = { is_liege_of = ROOT }
 			}
 		}
 	}
-
-	mean_time_to_happen = {
+	
+	mean_time_to_happen = { 
 		months = 220
-
+        
 		job_event_mtth_modifier_learning_score = yes
-
+		
 		modifier = {
 			factor = 2.0
 			NOT = { religion_authority = 0.4 }
@@ -2234,7 +2070,7 @@ character_event = {
 			religion_authority = 0.8
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA20040"
 		hidden_tooltip = {
@@ -2257,9 +2093,9 @@ character_event = {
 	desc = "EVTDESC20041"
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20041"
 		hidden_tooltip = {
@@ -2276,11 +2112,11 @@ character_event = {
 	desc = "EVTDESC20042"
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	show_from_from = yes
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20042"
 		FROM = {
@@ -2305,20 +2141,21 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_charity
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 		location = {
 			religion = ROOT
 			owner = { same_realm = ROOT }
 		}
 	}
-
+	
 	mean_time_to_happen = {
 		months = 120
-
+        
 		job_event_mtth_modifier_inverted_learning_score = yes
 
 		modifier = {
@@ -2338,7 +2175,7 @@ character_event = {
 			religion_authority = 0.8
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA20043"
 		random_list = {
@@ -2362,9 +2199,9 @@ character_event = {
 	desc = "EVTDESC20044"
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20044"
 		prestige = -30
@@ -2377,9 +2214,9 @@ character_event = {
 	desc = "EVTDESC20045"
 	picture = GFX_evt_bloody_man
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20045"
 		add_trait = wounded
@@ -2395,9 +2232,9 @@ character_event = {
 	desc = "EVTDESC20046"
 	picture = GFX_evt_bloody_man
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20046"
 		prestige = -10
@@ -2410,37 +2247,38 @@ character_event = {
 	desc = "EVTDESC20047"
 	picture = GFX_evt_death
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20047"
 		prestige = -15
 	}
 }
 
-# 20048: The Mufti pockets money meant for the poor
+# 20048: The Mufti pockets money meant for the poor 
 character_event = {
 	id = 20048
 	desc = "EVTDESC20048"
 	title = "EVTNAME20048"
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_charity
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 1000
-
+		
 		modifier = {
 			factor = 1.5
 			trait = charitable
@@ -2458,7 +2296,7 @@ character_event = {
 			trait = envious
 		}
 	}
-
+	
 	option = {
 		name = "EVTOPTA20048"
 		ai_chance = { factor = 80 }
@@ -2480,19 +2318,13 @@ character_event = {
 	desc = "EVTDESC20049"
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20049"
 		wealth = 35
-		if = {
-			limit = { uses_decadence = yes }
-			decadence = 10
-		}
-		else = {
-			piety = -100
-		}
+		decadence = 10
 	}
 	option = {
 		name = "EVTOPTB20049"
@@ -2508,24 +2340,25 @@ character_event = {
 	title = "EVTNAME20050"
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	min_age = 16
 	capable_only = yes
 	prisoner = no
 	has_job_title = yes
-
+	
 	trigger = {
 		has_job_action = action_charity
-		in_seclusion = no
-		is_incapable = no
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
 	}
-
+	
 	mean_time_to_happen = {
 		months = 180
-
+        
 		job_event_mtth_modifier_learning_score = yes
 	}
-
+	
 	option = {
 		name = "EVTOPTA20050"
 		liege = { character_event = { id = 20051 days = 2 tooltip = "EVTTOOLTIP20051" } }
@@ -2538,9 +2371,9 @@ character_event = {
 	desc = "EVTDESC20051"
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
 	is_triggered_only = yes
-
+	
 	option = {
 		name = "EVTOPTA20051"
 		piety = 15
@@ -2560,17 +2393,73 @@ character_event = {
 	picture = GFX_evt_battle
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes # EMF: Triggered from liege by emf_vanilla.50
-
-	mean_time_to_happen = { # Here for purpose of GUI's yearly chance display
-		months = 180
-
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	has_job_title = yes
+	
+	trigger = {
+		has_job_action = action_build_zeal
+		NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+		NOT = { trait = incapable }
+		liege = {
+			OR = { # The AI pretty much always just let their warriors stand around, getting a piety hit when they disband
+				war = yes
+				ai = no
+			}
+			is_adult = yes
+			prisoner = no
+			piety = 10
+			NOT = { trait = incapable }
+			OR = {
+				NOT = { has_character_flag = tribal_build_zeal_troops }
+				had_character_flag = { flag = tribal_build_zeal_troops days = 1825 }
+			}
+			OR = {
+				war = no
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+						using_cb = religious
+						using_cb = religious_revolt
+						using_cb = pagan_holy_war
+						using_cb = buddhist_holy_war
+						using_cb = muslim_invasion
+						using_cb = manifest_destiny_invasion
+					}
+				}
+			}
+		}
+		location = {
+			county = {
+				is_occupied = no
+			}
+			ROOT = {
+				liege = {
+					is_capital = PREVPREV
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		
+		modifier = {
+			factor = 3.0
+			liege = {
+				tier = count
+			}
+		}
+        
 		job_event_mtth_modifier_learning_score = yes
 	}
-
+	
 	option = {
 		name = EVTOPTA20218
-
+		
 		piety = 25
 		hidden_tooltip  = {
 			liege = { character_event = { id = 20219 } }
@@ -2584,9 +2473,9 @@ character_event = {
 	desc = EVTDESC20219
 	picture = GFX_evt_battle
 	border = GFX_event_normal_frame_war
-
+	
 	is_triggered_only = yes
-
+	
 	immediate = {
 		capital_scope = {
 			ROOT = {
@@ -2596,14 +2485,13 @@ character_event = {
 					owner = THIS
 					#leader = none
 					match_character = THIS
-					match_mult = 0.08333
-					match_min = 200
-					match_max = 3500
+					match_mult = 0.075
+					match_min = 100
+					match_max = 3000
 					attrition = 1.0
 					earmark = tribal_build_zeal
 					disband_on_peace = yes
 					can_toggle_looting = no
-					is_looter = no
 				}
 				spawn_unit = {
 					province = PREV
@@ -2611,14 +2499,13 @@ character_event = {
 					owner = THIS
 					#leader = none
 					match_character = THIS
-					match_mult = 0.07692 # Normally 0.08333, but normalized to 1.08333 due to previously spawned event troops
-					match_min = 200
-					match_max = 3500
+					match_mult = 0.075
+					match_min = 100
+					match_max = 3000
 					attrition = 1.0
 					earmark = tribal_build_zeal
 					disband_on_peace = yes
 					can_toggle_looting = no
-					is_looter = no
 				}
 				spawn_unit = {
 					province = PREV
@@ -2626,25 +2513,23 @@ character_event = {
 					owner = THIS
 					#leader = none
 					match_character = THIS
-					match_mult = 0.07143 # Normally 0.08333, but normalized to 1.16666 due to previously spawned event troops
-					match_min = 200
-					match_max = 3500
+					match_mult = 0.075
+					match_min = 100
+					match_max = 3000
 					attrition = 1.0
 					earmark = tribal_build_zeal
 					disband_on_peace = yes
 					can_toggle_looting = no
-					is_looter = no
 				}
 			}
 		}
-
+		
 		clr_character_flag = tribal_build_zeal_troops
 		set_character_flag = tribal_build_zeal_troops
-
-		set_variable = { which = tribal_build_zeal_troops_months_without_religious_war value = 0 }
-		character_event = { id = emf_vanilla.51 days = 30 }
+		
+		character_event = { id = 20220 days = 365 random = 90 }
 	}
-
+	
 	option = {
 		name = EVTOPTA20219
 		opinion = {
@@ -2661,15 +2546,35 @@ character_event = {
 	desc = EVTDESC20220
 	picture = GFX_evt_battle
 	border = GFX_event_normal_frame_war
-
+	
 	is_triggered_only = yes
-
+	
+	trigger = {
+		has_earmarked_regiments = tribal_build_zeal
+		
+		NOR = {
+			any_war = {
+				defender = { character = ROOT }
+				attacker = {
+					NOT = {
+						religion = ROOT
+					}		
+				}
+			}
+			any_war = {
+				attacker = { character = ROOT }
+				defender = {
+					NOT = {
+						religion = ROOT
+					}				
+				}
+			}
+		}
+	}
+	
 	option = {
 		name = EVTOPTA20220
-		if = {
-			limit = { ai = no }
-			piety = -25
-		}
+		piety = -25
 		clr_character_flag = tribal_build_zeal_troops
 		disband_event_forces = tribal_build_zeal
 	}

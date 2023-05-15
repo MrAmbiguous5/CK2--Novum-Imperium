@@ -1,27 +1,33 @@
-# -*- ck2.history.provinces -*-
-
 # 913 - Ghana
 
 # County Title
-title = c_ghana #Wagadu
+title = c_ghana
 
 # Settlements
-max_settlements = 7
-b_koumbi_saleh = castle
-b_samakanda = city #Sama/Samakanda
-b_ghanata = temple
-b_goumbou = castle
+max_settlements = 5
+b_el_ghaba = tribal
+#b_koumbi_saleh = city
+b_diara = temple
 
-#b_kusata = castle 
-#b_nema = castle 
-#b_daligumbe = castle
-#b_el_ghaba = castle
+
+#b_baghena = castle
+#b_goumbou = city
+#b_kughah - castle #Kúghah
+#b_nema = castle
 
 # Misc
 culture = soninke
-religion = west_african_pagan
+religion = a_tag_roog
 
 # History
-
-#islamization
-1067.1.1 = { religion = sunni }
+#Golden age of Wagadu
+900.1.1 = {
+	b_el_ghaba = castle
+	b_koumbi_saleh = city
+	b_goumbou = city
+}
+#Decline of Wagadu
+1150.1.1 = {
+	# VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
+	remove_settlement = b_goumbou 
+}

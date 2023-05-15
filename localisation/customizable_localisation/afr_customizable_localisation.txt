@@ -1,0 +1,527 @@
+defined_text = {
+	name = GetReformationReligionAfr
+	
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = norse_pagan_reformed
+				NOR = { 
+					has_religion_feature = religion_matriarchal 
+					has_religion_feature = religion_equal
+				} 
+			} 
+		}
+		localisation_key = string_reformed_religion_norse
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = norse_pagan_reformed
+				OR = { 
+					has_religion_feature = religion_matriarchal 
+					has_religion_feature = religion_equal
+				} 
+			} 
+		}
+		localisation_key = string_reformed_religion_norse_equal
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = tengri_pagan_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_tengri
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = slavic_pagan_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_slavic
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = baltic_pagan_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_baltic
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = finnish_pagan_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_finnish
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = west_african_pagan_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_west_african
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = zun_pagan_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_zunist
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = bon_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_bon
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = aztec_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_aztec
+	}
+	text = {
+		trigger = { 
+			ROOT = { 
+				religion = hellenic_pagan_reformed
+			} 
+		}
+		localisation_key = string_reformed_religion_hellenic
+	}
+    
+    text = {
+        trigger = {
+            ROOT = {
+                religion = a_tag_roog_reformed
+            }
+        }
+        localisation_key = string_reformed_religion_a_tag_roog
+    }
+    
+    text = {
+        trigger = {
+            ROOT = {
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = string_reformed_religion_amazigh
+    }
+}
+
+defined_text = {
+    name = ChangeATagRoogCasteDesc
+    
+    text = {
+        trigger = {
+            any_character = {
+                has_minor_title = title_griot
+                liege = { character = PREVPREV }
+            }
+        }
+        localisation_key = change_caste_griot
+    }
+    
+    text = {
+        trigger = {
+            NOT = {
+                any_character = {
+                    has_minor_title = title_griot
+                    liege = { character = PREVPREV }
+                }
+            }
+        }
+        localisation_key = change_caste_no_griot
+    }
+}
+
+defined_text = {
+    name = MaghrebArabicKing
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = AGELLID
+    }
+    
+    text = {
+        trigger = {
+            NOR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = king_arabic
+    }
+}
+
+defined_text = {
+    name = MaghrebArabicQueen
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = TAGELLIDT
+    }
+    
+    text = {
+        trigger = {
+            NOR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = king_female_arabic
+    }
+}
+
+defined_text = {
+    name = MaghrebArabicEmperor
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = AMENKAD
+    }
+    
+    text = {
+        trigger = {
+            NOR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = emperor_arabic
+    }
+}
+
+defined_text = {
+    name = MaghrebArabicEmpress
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = TAGELLIDT
+    }
+    
+    text = {
+        trigger = {
+            NOR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = emperor_female
+    }
+}
+
+defined_text = {
+    name = MaghrebArabicKingdomOf
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = kingdom_of
+    }
+    
+    text = {
+        trigger = {
+            NOR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = kingdom_of_arabic
+    }
+}
+
+defined_text = {
+    name = MaghrebArabicKingdom
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = kingdom
+    }
+    
+    text = {
+        trigger = {
+            NOR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = kingdom_arabic
+    }
+}
+
+defined_text = {
+    name = GetReligiousCeremonyName
+    
+    text = {
+        trigger = {
+            religion = bori
+        }
+        localisation_key = ceremony_bori
+    }
+    
+    text = {
+        trigger = {
+            NOT = { religion = bori }
+        }
+        localisation_key = ceremony_not_bori
+    }
+}
+
+defined_text = {
+    name = GetReligiousCeremonyLocation
+    
+    text = {
+        trigger = {
+            religion = bori
+        }
+        localisation_key = ceremony_location_bori
+    }
+    
+    text = {
+        trigger = {
+            NOT = { religion = bori }
+        }
+        localisation_key = ceremony_location_not_bori
+    }
+}
+
+defined_text = {
+    name = GetReligiousCeremonyHangings
+    
+    text = {
+        trigger = {
+            religion = bori
+        }
+        localisation_key = ceremony_wall_hangings_bori
+    }
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+        }
+        localisation_key = ceremony_wall_hangings_a_tag_roog
+    }
+    
+    text = {
+        trigger = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        localisation_key = ceremony_wall_hangings_amazigh
+    }
+}
+
+defined_text = {
+    name = PickPatronDeityReligionCheck
+
+    text = {
+        localisation_key = bori_pick_main_deity
+        trigger = {
+            religion = bori
+        }
+    }
+
+    text = {
+        localisation_key = vanilla_pick_main_deity
+        trigger = {
+            NOT = { religion = bori }
+        }
+    }
+}
+
+defined_text = {
+    name = PickPatronDeityDescriptionReligionCheck
+
+    text = {
+        localisation_key = bori_pick_main_deity_desc
+        trigger = {
+            religion = bori
+        }
+    }
+
+    text = {
+        localisation_key = vanilla_pick_main_deity_desc
+        trigger = {
+            NOT = { religion = bori }
+        }
+    }
+}
+
+defined_text = {
+    name = PatronDeity
+    
+    text = {
+        localisation_key = patron_deity_bori
+        trigger = { religion = bori }
+    }
+    
+    text = {
+        localisation_key = patron_deity_non_bori
+        trigger = { NOT = { religion = bori } }
+    }
+}
+
+defined_text = {
+    name = AwussuGetAppropriateSexualInnuendo
+
+    text = {
+        localisation_key = awussu_female_innuendo
+        trigger = { is_female = yes }
+    }
+    text = {
+        localisation_key = awussu_male_innuendo
+        trigger = { is_female = no }
+    }
+}
+
+defined_text = {
+    name = BidaSelfSacrificeTooltipInfo
+    
+    text = {
+        localisation_key = bida_self_sacrifice_lunatic
+        trigger = { trait = lunatic }
+    }
+    
+    text = {
+        localisation_key = bida_self_sacrifice_zealous
+        trigger = {
+            NOT = { trait = lunatic }
+            trait = zealous
+        }
+    }
+    
+    text = {
+        localisation_key = bida_self_sacrifice_dumb
+        trigger = {
+            NOR = {
+                trait = lunatic
+                trait = zealous
+            }
+            is_dumb_trigger = yes
+        }
+    }
+}
+
+defined_text = {
+    name = HawanSallahClothes
+    
+    text = {
+        localisation_key = hawan_sallah_old_clothes
+        trigger = { has_character_flag = hawan_sallah_old_clothes }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_white_robes
+        trigger = { has_character_flag = hawan_sallah_white_tunic }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_gold_clothes
+        trigger = { has_character_flag = hawan_sallah_gold_clothes }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_dark_mantle
+        trigger = { has_character_flag = hawan_sallah_dark_mantle }
+    }
+}
+
+defined_text = {
+    name = HawanSallahClothesEffect
+    
+    text = {
+        localisation_key = hawan_sallah_impressive_clothes
+        trigger = { has_character_flag = hawan_sallah_impressive_clothes }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_unimpressive_clothes
+        trigger = { NOT = { has_character_flag = hawan_sallah_impressive_clothes } }
+    }
+}
+
+defined_text = {
+    name = HawanSallahHorse
+    
+    text = {
+        localisation_key = hawan_sallah_old_horse
+        trigger = { has_character_flag = hawan_sallah_old_horse }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_mare
+        trigger = { has_character_flag = hawan_sallah_mare }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_stallion
+        trigger = { has_character_flag = hawan_sallah_stallion }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_wild_beast
+        trigger = { has_character_flag = hawan_sallah_wild_beast }
+    }
+}
+
+defined_text = {
+    name = HawanSallahBetHorse
+    
+    text = {
+        localisation_key = hawan_sallah_arabian
+        trigger = { has_character_flag = hawan_sallah_bet_arabian }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_palomino
+        trigger = { has_character_flag = hawan_sallah_bet_palomino }
+    }
+    
+    text = {
+        localisation_key = hawan_sallah_andalusian
+        trigger = { has_character_flag = hawan_sallah_bet_andalusian }
+    }
+}

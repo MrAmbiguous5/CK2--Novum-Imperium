@@ -1,22 +1,20 @@
-# -*- ck2.history.provinces -*-
-
 # 927 - Zarma
 
 # County Title
 title = c_zarma
 
 # Settlements
-max_settlements = 5
-b_kukiya = castle
-b_ansongo = temple  
-b_tillaberi = city
-
+max_settlements = 3
+b_zuru = tribal
 #b_ouallam = city
-# b_tera = temple
-
+#b_tera = temple
 
 # Misc
 culture = songhay
-religion = west_african_pagan
+religion = a_tag_roog
 
 # History
+1300.1.1 = {
+	b_zuru = castle
+	b_ouallam = city
+}

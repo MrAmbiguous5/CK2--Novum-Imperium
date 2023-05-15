@@ -1,5 +1,3 @@
-# -*- ck2.events -*-
-
 ###EVENTS FOR THE CHINESE GRACE DECISIONS###
 
 #Written by:
@@ -194,12 +192,15 @@ character_event = {
         FROMFROM = { 
             random_list = {
                 50 = { #Female
-					trigger = {
-						has_game_rule = {
-                            name = gender
-                            value = all
+                    modifier = {
+                        NOT = {
+                            has_game_rule = {
+                                name = gender
+                                value = all
+                            }
                         }
-					}
+                        factor = 0.05
+                    }
                     create_character = {
                         age = 35
                         dynasty = actually_culture
@@ -237,7 +238,6 @@ character_event = {
                 }
             }
             new_character = {
-				emf_dna_set_flags_for_high_health = yes
                 #Education & other basic stuff
                 save_event_target_as = chinese_doctor
 				set_character_flag = ai_flag_refuse_concubinage
@@ -264,6 +264,17 @@ character_event = {
                     5 = { add_trait = genius }
                 }
                 random_list = {
+                    80 = { } #Nothing
+                    2 = { add_trait = clubfooted }
+                    2 = { add_trait = harelip }
+                    2 = { add_trait = hunchback }
+                    4 = { add_trait = lisp }
+                    4 = { add_trait = stutter }
+                    2 = { add_trait = ugly }
+                    2 = { add_trait = dwarf }
+                    2 = { add_trait = weak }
+                }
+                random_list = {
                     50 = { } #Nothing
                     25 = { add_trait = patient }
                     25 = { add_trait = diligent }
@@ -277,23 +288,14 @@ character_event = {
                     modifier = opinion_servant
                     months = 1200
                 }
-				
+
                 #Add archetype 
                 random_list = {
                     20 = { #Combat medic
-						set_character_flag = archetype_combat_medic
                         set_character_flag = archetype_decisive
                         random_list = {
                             50 = { add_trait = duelist }
-                            50 = {
-								if = {
-									limit = { religion_group = muslim }
-									add_trait = faqih
-								}
-								else = {
-									add_trait = scholar
-								}
-							}
+                            50 = { add_trait = scholar }
                         }
                         add_scarred_tiered_effect = yes
                         add_trait = robust
@@ -327,18 +329,15 @@ character_event = {
                             20 = { add_trait = kind }
                             30 = { add_trait = honest }
                         }
+                        remove_trait = dwarf
+                        remove_trait = weak
                     }
                     #Dr Jerk
                     15 = { 
                         set_character_flag = archetype_decisive
-                        if = {
-							limit = { religion_group = muslim }
-							add_trait = faqih
-						}
-						else = {
-							add_trait = scholar
-						}
+                        add_trait = scholar
                         add_trait = wroth
+                        remove_trait = patient
                         random_list = {
                             30 = { add_trait = proud }
                             30 = { add_trait = envious }
@@ -375,6 +374,7 @@ character_event = {
                             33 = { add_trait = possessed }
                         }
                         add_trait = genius
+                        remove_trait = quick
                         remove_trait = shrewd
                         add_trait = paranoid
                         random_list = {
@@ -385,7 +385,6 @@ character_event = {
                         }   
                     }
                     20 = { #Herbalist
-						set_character_flag = archetype_herbalist
                         set_character_flag = archetype_supportive
                         add_trait = gardener
                         add_trait = diligent
@@ -399,6 +398,7 @@ character_event = {
                             chance = 50
                             add_trait = robust
                         }
+                        remove_trait = weak
                     }
                     20 = { #Health nut
                         set_character_flag = archetype_conservative
@@ -417,15 +417,7 @@ character_event = {
                         set_character_flag = archetype_supportive
                         random_list = {
                             50 = { add_trait = socializer }
-                            50 = {
-								if = {
-									limit = { religion_group = muslim }
-									add_trait = faqih
-								}
-								else = {
-									add_trait = scholar
-								}
-							}
+                            50 = { add_trait = scholar }
                         }
                         add_trait = kind
                         add_trait = patient
@@ -438,7 +430,6 @@ character_event = {
                         set_focus = focus_family
                     }
                     15 = { #McDreamy
-						set_character_flag = archetype_mcdreamy
                         set_character_flag = archetype_sociable
                         if = {
                             limit = { is_female = yes }
@@ -464,6 +455,15 @@ character_event = {
                             30 = { } #Nothing
                         }
                         set_focus = focus_seduction
+                        remove_trait = clubfooted
+                        remove_trait = harelip
+                        remove_trait =  hunchback 
+                        remove_trait = lisp
+                        remove_trait = stutter
+                        remove_trait = ugly
+                        remove_trait = dwarf
+                        remove_trait = giant
+                        remove_trait = weak
                     }
                 }
 				if = {
@@ -473,34 +473,6 @@ character_event = {
 						}
 					}
 					change_learning = 5
-				}
-				emf_new_character_priest = yes
-				if = {
-					limit = { has_character_flag = archetype_combat_medic }
-					emf_dna_remove_trait_dwarf = yes
-                    emf_dna_improve_homozygous_recessive_for_strength = yes
-					remove_trait = delicate
-					remove_trait = weak
-				}
-				if = {
-					limit = { has_character_flag = archetype_herbalist }
-					emf_dna_improve_homozygous_recessive_for_strength = yes
-					remove_trait = delicate
-					remove_trait = weak
-				}
-				if = {
-					limit = { has_character_flag = archetype_mcdreamy }
-					emf_dna_remove_negative_mendelian_traits_with_genetics = yes
-                    emf_dna_improve_homozygous_recessive_for_attractiveness = yes
-					remove_trait = homely
-					remove_trait = ugly
-					emf_dna_improve_homozygous_recessive_for_strength = yes
-					remove_trait = delicate
-					remove_trait = weak
-                    if = {
-						limit = { trait = giant }
-						emf_dna_remove_trait_giant = yes
-					}
 				}
             }
             letter_event = { id = JD.20022 } 
@@ -568,11 +540,14 @@ character_event = {
         FROMFROM = { 
             random_list = {
                 50 = { #Female
-                    trigger = {
-                        has_game_rule = {
-                            name = gender
-                            value = all
+                    modifier = {
+                        NOT = {
+                            has_game_rule = {
+                                name = gender
+                                value = all
+                            }
                         }
+                        factor = 0.05
                     }
                     create_character = {
                         age = 30
@@ -611,7 +586,6 @@ character_event = {
                 }
             }
             new_character = {
-				emf_dna_set_flags_for_high_health = yes
                 #Education & other basic stuff
                 save_event_target_as = chinese_administrator
                 add_character_modifier = {
@@ -646,6 +620,20 @@ character_event = {
                     5 = { add_trait = genius }
                     5 = { add_trait = fair }
                 }
+                random_list = {
+                    85 = { } #Nothing
+                    1 = { add_trait = clubfooted }
+                    2 = { add_trait = harelip }
+                    2 = { add_trait = hunchback }
+                    3 = { add_trait = lisp }
+                    3 = { add_trait = stutter }
+                    2 = { 
+                        add_trait = ugly 
+                        remove_trait = fair 
+                    }
+                    1 = { add_trait = dwarf }
+                    1 = {  add_trait = weak }
+                }
                 random = {
                     chance = 10
                     add_trait = homosexual
@@ -664,15 +652,7 @@ character_event = {
                         if = {
                             limit = { has_dlc = "Way of Life" }
                             random_list = {
-                                50 = {
-									if = {
-										limit = { religion_group = muslim }
-										add_trait = faqih
-									}
-									else = {
-										add_trait = scholar
-									}
-								}
+                                50 = { add_trait = scholar }
                                 50 = { add_trait = administrator }
                             }
                         }
@@ -706,15 +686,7 @@ character_event = {
                             limit = { has_dlc = "Way of Life" }    
                             random_list = {
                                 50 = { add_trait = administrator }
-                                25 = {
-									if = {
-										limit = { religion_group = muslim }
-										add_trait = faqih
-									}
-									else = {
-										add_trait = scholar
-									}
-								}
+                                25 = { add_trait = scholar }
                                 25 = { add_trait = gardener }
                             }
                         }
@@ -795,9 +767,7 @@ character_event = {
                             25 = { add_trait = lustful }
                         }   
                     }
-                }
-				
-				emf_new_character_steward = yes
+                } 
             }
             letter_event = { id = JD.20030 } 
         } 
@@ -876,7 +846,7 @@ character_event = { # Reapply modifier on succession
 			has_character_modifier = employing_jd_administrator_golden_age
 			has_character_modifier = employing_jd_administrator
 		}
-		any_courtier_or_vassal = {
+		any_courtier = {
 			has_minor_title = title_administrator
 		}
 	}
@@ -919,11 +889,14 @@ character_event = {
         FROMFROM = { 
             random_list = {
                 50 = { #Female
-                    trigger = {
-                        has_game_rule = {
-                            name = gender
-                            value = all
+                    modifier = {
+                        NOT = {
+                            has_game_rule = {
+                                name = gender
+                                value = all
+                            }
                         }
+                        factor = 0.05
                     }
                     create_character = {
                         age = 30
@@ -962,7 +935,6 @@ character_event = {
                 }
             }
             new_character = {
-				emf_dna_set_flags_for_high_health = yes
                 #Education & other basic stuff
                 save_event_target_as = chinese_master_engineer
                 add_character_modifier = {
@@ -998,6 +970,24 @@ character_event = {
                     10 = { add_trait = groomed }
                     5 = { add_trait = strong }
                     5 = { add_trait = fair }
+                }
+                random_list = {
+                    85 = { } #Nothing
+                    1 = { add_trait = clubfooted }
+                    2 = { add_trait = harelip }
+                    2 = { add_trait = hunchback }
+                    3 = { add_trait = lisp }
+                    3 = { add_trait = stutter }
+                    2 = { 
+                        add_trait = ugly 
+                        remove_trait = fair 
+                    }
+                    1 = { add_trait = dwarf }
+                    1 = { 
+                        add_trait = weak 
+                        remove_trait = strong 
+                        remove_trait = robust
+                    }
                 }
                 random = {
                     chance = 10
@@ -1132,9 +1122,7 @@ character_event = {
                             25 = { add_trait = lustful }
                         }   
                     }
-                }
-				
-				emf_new_character_steward = yes
+                } 
             }
             letter_event = { id = JD.20032 } 
         } 
@@ -1488,11 +1476,14 @@ character_event = {
         FROMFROM = { 
             random_list = {
                 50 = { #Female
-                    trigger = {
-                        has_game_rule = {
-                            name = gender
-                            value = all
+                    modifier = {
+                        NOT = {
+                            has_game_rule = {
+                                name = gender
+                                value = all
+                            }
                         }
+                        factor = 0
                     }
                     create_character = {
                         age = 30
@@ -1531,7 +1522,6 @@ character_event = {
                 }
             }
             new_character = {
-				emf_dna_set_flags_for_high_health = yes
                 #Education & other basic stuff
                 save_event_target_as = chinese_strategist
                 add_character_modifier = {
@@ -1720,8 +1710,6 @@ character_event = {
                     } 
 					set_character_flag = jd_strategist_golden_age
                 }
-				
-				emf_new_character_noble = yes
 			}
             letter_event = { id = JD.20040 } 
         } 
@@ -1993,7 +1981,6 @@ character_event = {
                         }
                     }
                     new_character = {
-						emf_dna_set_flags_for_high_health = yes
 						set_character_flag = always_show_in_marriage_selection
                         save_event_target_as = imperial_marriage_spouse_2
                         add_trait = cannot_marry #Is removed upon marriage
@@ -2011,11 +1998,22 @@ character_event = {
 						if = {
 							limit = {
 								event_target:imperial_marriage_spouse_1 = {
-									emf_religion_has_castes = yes
+									religion = hindu
 								}
 							}
 							add_trait = kshatriya
 						}
+                        if = {
+                            limit = {
+                                event_target:imperial_marriage_spouse_1 = {
+                                    OR = {
+                                        religion = a_tag_roog
+                                        religion = a_tag_roog_reformed
+                                    }
+                                }
+                            }
+                            add_trait = foro
+                        }
 
                         PREVPREV = { #Emperor/Empress
 							trigger_switch = {
@@ -2083,9 +2081,8 @@ character_event = {
 											religion = PREV
 											culture = PREV
 										}
-										new_character = {
-											emf_new_character_noble = yes
-											set_flag = death_in_china_historic
+										new_character = { 
+											death = { death_reason = death_in_china_historic }
 											save_event_target_as = imperial_marriage_parent
 										}
 										set_father = event_target:imperial_marriage_parent
@@ -2165,9 +2162,8 @@ character_event = {
 											religion = PREV
 											culture = PREV
 										}
-										new_character = {
-											emf_new_character_noble = yes
-											set_flag = death_in_china_historic
+										new_character = { 
+											death = { death_reason = death_in_china_historic }
 											save_event_target_as = imperial_marriage_parent
 										}
 										set_father = event_target:imperial_marriage_parent
@@ -2180,9 +2176,7 @@ character_event = {
 										is_female = no
 									}
 								}
-								event_target:imperial_marriage_spouse_2 = {
-									set_father = event_target:imperial_marriage_parent
-								}
+								event_target:imperial_marriage_spouse_2 = { set_father = event_target:imperial_marriage_parent }
 							}
 							if = {
 								limit = {
@@ -2190,9 +2184,7 @@ character_event = {
 										is_female = yes
 									}
 								}
-								event_target:imperial_marriage_spouse_2 = {
-									set_mother = event_target:imperial_marriage_parent
-								}
+								event_target:imperial_marriage_spouse_2 = { set_mother = event_target:imperial_marriage_parent }
 							}
                         }
 
@@ -2209,6 +2201,30 @@ character_event = {
                             10 = { add_trait = quick }
                             5 = { add_trait = genius }
                         }
+
+                        #Negative genetic trait
+						random_list = {
+							90 = { } #Nothing
+							1 = { add_trait = clubfooted }
+							1 = { add_trait = harelip }
+							1 = { add_trait = hunchback }
+							1 = { add_trait = lisp }
+							2 = { add_trait = stutter }
+							1 = { 
+								remove_trait = fair
+								add_trait = ugly 
+							}
+							1 = { add_trait = dwarf }
+							1 = { 
+								remove_trait = genius
+								remove_trait = quick
+								add_trait = slow 
+							}
+							1 = { 
+								remove_trait = strong
+								add_trait = weak 
+							}
+						}
 
                         random = {
                             chance = 5
@@ -2552,13 +2568,7 @@ character_event = {
                                     33 = {
                                         if = {
                                             limit = { has_dlc = "Way of Life" }
-                                            if = {
-												limit = { religion_group = muslim }
-												add_trait = faqih
-											}
-											else = {
-												add_trait = scholar
-											}
+                                            add_trait = scholar
                                         }
                                         add_trait = erudite
                                     }
@@ -2599,18 +2609,6 @@ character_event = {
                             limit = { NOT = { trait = zealous } }
                             event_target:imperial_marriage_spouse_1 = { event_target:imperial_marriage_spouse_2 = { add_sympathy_for_prevs_open_religion_effect = yes } }
                         }
-						
-						emf_new_character_noble = yes
-						
-						# For genetics
-						if = {
-							limit = {
-								event_target:imperial_marriage_parent = {
-									has_flag = death_in_china_historic
-								}
-							}
-							death = { death_reason = death_in_china_historic }
-						}
                     }
                 }
             }
@@ -2631,7 +2629,7 @@ letter_event = {
     desc = {
         trigger = {
 			event_target:imperial_marriage_spouse_2 = { is_female = yes }
-			offmap_china = { offmap_ruler = { practical_age = 32 } }
+			offmap_china = { offmap_ruler = { age = 32 } }
 		}
         text = EVTDESC_JD_20046_A
     }
@@ -2642,7 +2640,7 @@ letter_event = {
 	desc = {
         trigger = {
 			event_target:imperial_marriage_spouse_2 = { is_female = yes }
-			offmap_china = { offmap_ruler = { NOT = { practical_age = 32 } } }
+			offmap_china = { offmap_ruler = { NOT = { age = 32 } } }
 		}
         text = EVTDESC_JD_20046_C
     }
@@ -2792,48 +2790,21 @@ character_event = {
     is_triggered_only = yes
     immediate = { 
         FROMFROM = {
-			if = {
-				limit = {
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-				create_random_soldier = {
-					age = 55
-					dynasty = actually_culture
-					religion = ROOT
-					culture = ROOT
-					female = 50
-					random_traits = yes
-					attributes = {
-						diplomacy = 2
-						learning = 2
-						stewardship = 2
-						intrigue = 2
-						martial = 16
-					}
-					trait = sapper
-				}
-			}
-			else = {
-				create_random_soldier = {
-					age = 55
-					dynasty = actually_culture
-					religion = ROOT
-					culture = ROOT
-					female = no
-					random_traits = yes
-					attributes = {
-						diplomacy = 2
-						learning = 2
-						stewardship = 2
-						intrigue = 2
-						martial = 16
-					}
-					trait = sapper
-				}
-			}
+            create_random_soldier = {
+                age = 55
+                dynasty = actually_culture
+                religion = ROOT
+                culture = ROOT
+                female = no
+                random_traits = yes
+                attributes = {
+                    diplomacy = 2
+					learning = 2
+					stewardship = 2
+					intrigue = 2
+					martial = 16
+                }
+            }
             new_character = {
                 save_event_target_as = chinese_siege_engineer_1
 				set_character_flag = ai_flag_refuse_concubinage
@@ -2849,6 +2820,9 @@ character_event = {
 				set_character_flag = taught_chinese_strategy
 				set_character_flag = is_chinese_siege_engineer
 				
+				remove_trait = weak
+				remove_trait = slow
+				remove_trait = imbecile
 				remove_trait = dull
 				
 				remove_trait = craven
@@ -2868,6 +2842,8 @@ character_event = {
 				remove_trait = seductress
 				remove_trait = theologian
 				remove_trait = scholar
+				
+				add_trait = sapper
 				
 				if = {
 					limit = {
@@ -2909,62 +2885,27 @@ character_event = {
 						add_trait = shrewd
 					}
 				}
-				emf_new_character_noble = yes
-				emf_dna_improve_homozygous_recessive_for_intelligence = yes
-				remove_trait = dim
-				remove_trait = slow
-				remove_trait = imbecile
-				emf_dna_improve_homozygous_recessive_for_strength = yes
-				remove_trait = delicate
-				remove_trait = weak
                 opinion = {
                     who = PREV
                     modifier = opinion_servant
                     months = 1200
                 }
             }
-			if = {
-				limit = {
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-				create_random_soldier = {
-					age = 35
-					dynasty = actually_culture
-					religion = ROOT
-					culture = ROOT
-					female = 50
-					random_traits = yes
-					attributes = {
-						diplomacy = 2
-						learning = 2
-						stewardship = 2
-						intrigue = 2
-						martial = 8
-					}
-					trait = sapper
-				}
-			}
-			else = {
-				create_random_soldier = {
-					age = 35
-					dynasty = actually_culture
-					religion = ROOT
-					culture = ROOT
-					female = no
-					random_traits = yes
-					attributes = {
-						diplomacy = 2
-						learning = 2
-						stewardship = 2
-						intrigue = 2
-						martial = 8
-					}
-					trait = sapper
-				}
-			}
+			create_random_soldier = {
+                age = 35
+                dynasty = actually_culture
+                religion = ROOT
+                culture = ROOT
+                female = no
+                random_traits = yes
+                attributes = {
+                    diplomacy = 2
+					learning = 2
+					stewardship = 2
+					intrigue = 2
+					martial = 8
+                }
+            }
             new_character = {
                 save_event_target_as = chinese_siege_engineer_2
 				set_character_flag = ai_flag_refuse_concubinage
@@ -2980,6 +2921,9 @@ character_event = {
 				set_character_flag = taught_chinese_strategy
 				set_character_flag = is_chinese_siege_engineer
 				
+				remove_trait = weak
+				remove_trait = slow
+				remove_trait = imbecile
 				remove_trait = dull
 				
 				remove_trait = craven
@@ -2999,6 +2943,8 @@ character_event = {
 				remove_trait = seductress
 				remove_trait = theologian
 				remove_trait = scholar
+				
+				add_trait = sapper
 				
 				if = {
 					limit = {
@@ -3040,62 +2986,27 @@ character_event = {
 						add_trait = shrewd
 					}
 				}
-				emf_new_character_noble = yes
-				emf_dna_improve_homozygous_recessive_for_intelligence = yes
-				remove_trait = dim
-				remove_trait = slow
-				remove_trait = imbecile
-				emf_dna_improve_homozygous_recessive_for_strength = yes
-				remove_trait = delicate
-				remove_trait = weak
                 opinion = {
                     who = PREV
                     modifier = opinion_servant
                     months = 1200
                 }
             }
-			if = {
-				limit = {
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-				create_random_soldier = {
-					age = 37
-					dynasty = actually_culture
-					religion = ROOT
-					culture = ROOT
-					female = 50
-					random_traits = yes
-					attributes = {
-						diplomacy = 2
-						learning = 2
-						stewardship = 2
-						intrigue = 2
-						martial = 8
-					}
-					trait = sapper
-				}
-			}
-			else = {
-				create_random_soldier = {
-					age = 37
-					dynasty = actually_culture
-					religion = ROOT
-					culture = ROOT
-					female = no
-					random_traits = yes
-					attributes = {
-						diplomacy = 2
-						learning = 2
-						stewardship = 2
-						intrigue = 2
-						martial = 8
-					}
-					trait = sapper
-				}
-			}
+			create_random_soldier = {
+                age = 37
+                dynasty = actually_culture
+                religion = ROOT
+                culture = ROOT
+                female = no
+                random_traits = yes
+                attributes = {
+                    diplomacy = 2
+					learning = 2
+					stewardship = 2
+					intrigue = 2
+					martial = 8
+                }
+            }
             new_character = {
                 save_event_target_as = chinese_siege_engineer_3
 				set_character_flag = ai_flag_refuse_concubinage
@@ -3111,6 +3022,9 @@ character_event = {
 				set_character_flag = taught_chinese_strategy
 				set_character_flag = is_chinese_siege_engineer
 				
+				remove_trait = weak
+				remove_trait = slow
+				remove_trait = imbecile
 				remove_trait = dull
 				
 				remove_trait = craven
@@ -3130,6 +3044,8 @@ character_event = {
 				remove_trait = seductress
 				remove_trait = theologian
 				remove_trait = scholar
+				
+				add_trait = sapper
 				
 				if = {
 					limit = {
@@ -3171,14 +3087,6 @@ character_event = {
 						add_trait = shrewd
 					}
 				}
-				emf_new_character_noble = yes
-				emf_dna_improve_homozygous_recessive_for_intelligence = yes
-				remove_trait = dim
-				remove_trait = slow
-				remove_trait = imbecile
-				emf_dna_improve_homozygous_recessive_for_strength = yes
-				remove_trait = delicate
-				remove_trait = weak
                 opinion = {
                     who = PREV
                     modifier = opinion_servant
@@ -3248,25 +3156,6 @@ letter_event = {
 		custom_tooltip = {
 			text = EVTOPTB_JD_3001_tt
 		}
-		trigger = {
-			OR = {
-				event_target:chinese_siege_engineer_1 = { can_hold_title = title_commander }
-				event_target:chinese_siege_engineer_2 = { can_hold_title = title_commander }
-				event_target:chinese_siege_engineer_3 = { can_hold_title = title_commander }
-			}
-			OR = {
-				can_grant_title = title_commander
-				any_courtier_or_vassal = {
-					NOR = {
-						has_character_flag = originated_from_chinese_court
-						has_character_flag = taught_chinese_strategy
-					}
-					NOT = { higher_tier_than = BARON }
-					has_minor_title = title_commander
-					NOT = { martial = event_target:chinese_siege_engineer_1 }
-				}
-			}
-		}
 		event_target:chinese_siege_engineer_1 = {
 			set_character_flag = appear_in_option
 			clr_character_flag = appear_in_option
@@ -3280,213 +3169,372 @@ letter_event = {
 			clr_character_flag = appear_in_option
 		}
 		hidden_effect = {
-			if = {
-				limit = {
-					event_target:chinese_siege_engineer_1 = { can_hold_title = title_commander }
-					OR = {
-						can_grant_title = title_commander
-						any_courtier_or_vassal = {
-							NOR = {
-								has_character_flag = originated_from_chinese_court
-								has_character_flag = taught_chinese_strategy
-							}
-							NOT = { higher_tier_than = BARON }
-							has_minor_title = title_commander
-							NOT = { martial = event_target:chinese_siege_engineer_1 }
-						}
-					}
-				}
+			event_target:chinese_siege_engineer_1 = {
+				show_scope_change = no
 				if = {
-					limit = { NOT = { can_grant_title = title_commander } }
-					random_courtier_or_vassal = {
-						limit = {
-							NOR = {
-								has_character_flag = originated_from_chinese_court
-								has_character_flag = taught_chinese_strategy
-							}
-							NOT = { higher_tier_than = BARON }
+					limit = { 
+						can_hold_title = title_commander 
+						ROOT = { can_grant_title = title_commander }
+					}
+					give_minor_title = title_commander
+				}
+				else_if = {
+					limit = {
+						NOT = {
 							has_minor_title = title_commander
-							NOT = { martial = event_target:chinese_siege_engineer_1 }
 						}
-						preferred_limit = { NOT = { martial = 1 } }
-						preferred_limit = { NOT = { martial = 2 } }
-						preferred_limit = { NOT = { martial = 3 } }
-						preferred_limit = { NOT = { martial = 4 } }
-						preferred_limit = { NOT = { martial = 5 } }
-						preferred_limit = { NOT = { martial = 6 } }
-						preferred_limit = { NOT = { martial = 7 } }
-						preferred_limit = { NOT = { martial = 8 } }
-						preferred_limit = { NOT = { martial = 9 } }
-						preferred_limit = { NOT = { martial = 10 } }
-						preferred_limit = { NOT = { martial = 11 } }
-						preferred_limit = { NOT = { martial = 12 } }
-						preferred_limit = { NOT = { martial = 13 } }
-						preferred_limit = { NOT = { martial = 14 } }
-						preferred_limit = { NOT = { martial = 15 } }
-						preferred_limit = { NOT = { martial = 16 } }
-						preferred_limit = { NOT = { martial = 17 } }
-						preferred_limit = { NOT = { martial = 18 } }
-						preferred_limit = { NOT = { martial = 19 } }
-						preferred_limit = { NOT = { martial = 20 } }
-						preferred_limit = { NOT = { martial = 21 } }
-						preferred_limit = { NOT = { martial = 22 } }
-						preferred_limit = { NOT = { martial = 23 } }
-						preferred_limit = { NOT = { martial = 24 } }
-						preferred_limit = { NOT = { martial = 25 } }
-						preferred_limit = { NOT = { martial = 26 } }
-						preferred_limit = { NOT = { martial = 27 } }
-						preferred_limit = { NOT = { martial = 28 } }
-						preferred_limit = { NOT = { martial = 29 } }
-						preferred_limit = { NOT = { martial = 30 } }
-						remove_title = title_commander
-						opinion = {
-							modifier = insulted
-							who = ROOT
-							years = 2
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								NOT = {
+									martial = 10
+								}
+							}
 						}
 					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								NOT = {
+									martial = 10
+								}
+							}
+							remove_title = title_commander
+						}
+					}
+					give_minor_title = title_commander
 				}
-				event_target:chinese_siege_engineer_1 = {
+				else_if = {
+					limit = {
+						NOT = {
+							has_minor_title = title_commander
+						}
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								martial = 10
+							}
+						}
+					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								martial = 10
+							}
+							remove_title = title_commander
+						}
+					}
+					give_minor_title = title_commander
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							has_minor_title = title_commander
+						}
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+							}
+						}
+					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+							}
+							remove_title = title_commander
+						}
+					}
 					give_minor_title = title_commander
 				}
 			}
-			if = {
-				limit = {
-					event_target:chinese_siege_engineer_2 = { can_hold_title = title_commander }
-					OR = {
-						can_grant_title = title_commander
-						any_courtier_or_vassal = {
-							NOR = {
-								has_character_flag = originated_from_chinese_court
-								has_character_flag = taught_chinese_strategy
-							}
-							NOT = { higher_tier_than = BARON }
-							has_minor_title = title_commander
-							NOT = { martial = event_target:chinese_siege_engineer_2 }
-						}
-					}
-				}
+			event_target:chinese_siege_engineer_2 = {
+				show_scope_change = no
 				if = {
-					limit = { NOT = { can_grant_title = title_commander } }
-					random_courtier_or_vassal = {
-						limit = {
-							NOR = {
-								has_character_flag = originated_from_chinese_court
-								has_character_flag = taught_chinese_strategy
-							}
-							NOT = { higher_tier_than = BARON }
+					limit = { 
+						can_hold_title = title_commander 
+						ROOT = { can_grant_title = title_commander }
+					}
+					give_minor_title = title_commander
+				}
+				else_if = {
+					limit = {
+						NOT = {
 							has_minor_title = title_commander
-							NOT = { martial = event_target:chinese_siege_engineer_2 }
 						}
-						preferred_limit = { NOT = { martial = 1 } }
-						preferred_limit = { NOT = { martial = 2 } }
-						preferred_limit = { NOT = { martial = 3 } }
-						preferred_limit = { NOT = { martial = 4 } }
-						preferred_limit = { NOT = { martial = 5 } }
-						preferred_limit = { NOT = { martial = 6 } }
-						preferred_limit = { NOT = { martial = 7 } }
-						preferred_limit = { NOT = { martial = 8 } }
-						preferred_limit = { NOT = { martial = 9 } }
-						preferred_limit = { NOT = { martial = 10 } }
-						preferred_limit = { NOT = { martial = 11 } }
-						preferred_limit = { NOT = { martial = 12 } }
-						preferred_limit = { NOT = { martial = 13 } }
-						preferred_limit = { NOT = { martial = 14 } }
-						preferred_limit = { NOT = { martial = 15 } }
-						preferred_limit = { NOT = { martial = 16 } }
-						preferred_limit = { NOT = { martial = 17 } }
-						preferred_limit = { NOT = { martial = 18 } }
-						preferred_limit = { NOT = { martial = 19 } }
-						preferred_limit = { NOT = { martial = 20 } }
-						preferred_limit = { NOT = { martial = 21 } }
-						preferred_limit = { NOT = { martial = 22 } }
-						preferred_limit = { NOT = { martial = 23 } }
-						preferred_limit = { NOT = { martial = 24 } }
-						preferred_limit = { NOT = { martial = 25 } }
-						preferred_limit = { NOT = { martial = 26 } }
-						preferred_limit = { NOT = { martial = 27 } }
-						preferred_limit = { NOT = { martial = 28 } }
-						preferred_limit = { NOT = { martial = 29 } }
-						preferred_limit = { NOT = { martial = 30 } }
-						remove_title = title_commander
-						opinion = {
-							modifier = insulted
-							who = ROOT
-							years = 2
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								NOT = {
+									martial = 10
+								}
+							}
 						}
 					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								NOT = {
+									martial = 10
+								}
+							}
+							remove_title = title_commander
+						}
+					}
+					give_minor_title = title_commander
 				}
-				event_target:chinese_siege_engineer_2 = {
+				else_if = {
+					limit = {
+						NOT = {
+							has_minor_title = title_commander
+						}
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								martial = 10
+							}
+						}
+					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								martial = 10
+							}
+							remove_title = title_commander
+						}
+					}
+					give_minor_title = title_commander
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							has_minor_title = title_commander
+						}
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+							}
+						}
+					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+							}
+							remove_title = title_commander
+						}
+					}
 					give_minor_title = title_commander
 				}
 			}
-			if = {
-				limit = {
-					event_target:chinese_siege_engineer_3 = { can_hold_title = title_commander }
-					OR = {
-						can_grant_title = title_commander
-						any_courtier_or_vassal = {
-							NOR = {
-								has_character_flag = originated_from_chinese_court
-								has_character_flag = taught_chinese_strategy
-							}
-							NOT = { higher_tier_than = BARON }
-							has_minor_title = title_commander
-							NOT = { martial = event_target:chinese_siege_engineer_3 }
-						}
-					}
-				}
+			event_target:chinese_siege_engineer_3 = {
+				show_scope_change = no
 				if = {
-					limit = { NOT = { can_grant_title = title_commander } }
-					random_courtier_or_vassal = {
-						limit = {
-							NOR = {
-								has_character_flag = originated_from_chinese_court
-								has_character_flag = taught_chinese_strategy
-							}
-							NOT = { higher_tier_than = BARON }
+					limit = { 
+						can_hold_title = title_commander 
+						ROOT = { can_grant_title = title_commander }
+					}
+					give_minor_title = title_commander
+				}
+				else_if = {
+					limit = {
+						NOT = {
 							has_minor_title = title_commander
-							NOT = { martial = event_target:chinese_siege_engineer_3 }
 						}
-						preferred_limit = { NOT = { martial = 1 } }
-						preferred_limit = { NOT = { martial = 2 } }
-						preferred_limit = { NOT = { martial = 3 } }
-						preferred_limit = { NOT = { martial = 4 } }
-						preferred_limit = { NOT = { martial = 5 } }
-						preferred_limit = { NOT = { martial = 6 } }
-						preferred_limit = { NOT = { martial = 7 } }
-						preferred_limit = { NOT = { martial = 8 } }
-						preferred_limit = { NOT = { martial = 9 } }
-						preferred_limit = { NOT = { martial = 10 } }
-						preferred_limit = { NOT = { martial = 11 } }
-						preferred_limit = { NOT = { martial = 12 } }
-						preferred_limit = { NOT = { martial = 13 } }
-						preferred_limit = { NOT = { martial = 14 } }
-						preferred_limit = { NOT = { martial = 15 } }
-						preferred_limit = { NOT = { martial = 16 } }
-						preferred_limit = { NOT = { martial = 17 } }
-						preferred_limit = { NOT = { martial = 18 } }
-						preferred_limit = { NOT = { martial = 19 } }
-						preferred_limit = { NOT = { martial = 20 } }
-						preferred_limit = { NOT = { martial = 21 } }
-						preferred_limit = { NOT = { martial = 22 } }
-						preferred_limit = { NOT = { martial = 23 } }
-						preferred_limit = { NOT = { martial = 24 } }
-						preferred_limit = { NOT = { martial = 25 } }
-						preferred_limit = { NOT = { martial = 26 } }
-						preferred_limit = { NOT = { martial = 27 } }
-						preferred_limit = { NOT = { martial = 28 } }
-						preferred_limit = { NOT = { martial = 29 } }
-						preferred_limit = { NOT = { martial = 30 } }
-						remove_title = title_commander
-						opinion = {
-							modifier = insulted
-							who = ROOT
-							years = 2
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								NOT = {
+									martial = 10
+								}
+							}
 						}
 					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								NOT = {
+									martial = 10
+								}
+							}
+							remove_title = title_commander
+						}
+					}
+					give_minor_title = title_commander
 				}
-				event_target:chinese_siege_engineer_3 = {
+				else_if = {
+					limit = {
+						NOT = {
+							has_minor_title = title_commander
+						}
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								martial = 10
+							}
+						}
+					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								NOT = {
+									higher_tier_than = BARON
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+								martial = 10
+							}
+							remove_title = title_commander
+						}
+					}
+					give_minor_title = title_commander
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							has_minor_title = title_commander
+						}
+						ROOT = {
+							any_realm_character = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+							}
+						}
+					}
+					ROOT = {
+						random_realm_character = {
+							limit = {
+								NOR = {
+									has_character_flag = originated_from_chinese_court
+									has_character_flag = taught_chinese_strategy
+								}
+								liege = { character = ROOT }
+								has_minor_title = title_commander
+							}
+							remove_title = title_commander
+						}
+					}
 					give_minor_title = title_commander
 				}
 			}
@@ -3565,6 +3613,7 @@ letter_event = {
 
 narrative_event = { # NEWS: visible event for player (shatter realm invasion)
     id = JD.3022
+	has_dlc = "Jade Dragon"
     title = NEWS_FROM_CHINA
 	picture = GFX_evt_china_expansionist
     portrait = offmap_china
@@ -3629,27 +3678,11 @@ narrative_event = { # NEWS: visible event for player (shatter realm invasion)
     option = {
         name = {
         	text = EVTOPTA_JD_10102_B_same_religion #May [HighGod] protect them
-        	trigger = {
-				event_target:chinese_invasion_target = {
-					OR = {
-						religion_group = ROOT
-						ROOT = { emf_syncretized_religion_with_PREV = yes }
-					}
-				}
-			}
+        	trigger = {	event_target:chinese_invasion_target = { religion_group = ROOT } }
         }
         name = {
         	text = EVTOPTA_JD_10102_B_other_religion #May their gods protect them
-        	trigger = {
-				NOT = {
-					event_target:chinese_invasion_target = {
-						OR = {
-							religion_group = ROOT
-							ROOT = { emf_syncretized_religion_with_PREV = yes }
-						}
-					}
-				}
-			}
+        	trigger = {	NOT = { event_target:chinese_invasion_target = { religion_group = ROOT } } }
         }
         trigger = {
          	NOR = {
@@ -4283,26 +4316,13 @@ character_event = {
     option = { #Silk Road dominance
         name = EVT_OPTB_JD_60301
         trigger = {
-			trigger_if = {
-				limit = { emf_has_swmh = yes }
-				any_realm_province = {
-					OR = {
-						province_id = 1571 #Yulduz
-						province_id = 1570 #Qarashahr
-						province_id = 1968 #Niya
-						province_id = 1600 #Debul
-					}
-				}
-			}
-			trigger_else = {
-				any_realm_province = {
-					OR = {
-						province_id = 1513 #Jiuquan
-						province_id = 1505 #Markam
-						province_id = 1114 #Mahoyadapuram
-					}
-				}
-			}
+            any_realm_province = {
+                OR = {
+                    province_id = 1513 #Jiuquan
+                    province_id = 1505 #Markam
+                    province_id = 1114 #Mahoyadapuram
+                }
+            }
             trade_route_control = {
                 trade_route = silk_road
                 value >= 0.25
@@ -4422,6 +4442,16 @@ narrative_event = {
 	window = EventWindowOffmap
 	background = GFX_event_window_news_from_china
     is_triggered_only = yes
+	
+	immediate = {
+		offmap_china = {
+			ruler = {
+				save_event_target_as = portrait_target
+			}
+		}
+	}
+	
+	portrait = event_target:portrait_target
 	
     option = {
         name = EVT_OPTA_JD_60304
@@ -4620,14 +4650,14 @@ letter_event = {
                         25 = {
                             trigger = {
                                 any_courtier = {
-									is_incapable = no
                                     NOR = {
                                         has_character_flag = originated_from_chinese_court
                                         has_character_flag = eunuch_gift
                                         is_landed = yes
                                         is_female = yes
                                         is_betrothed = yes
-                                        is_married = yes
+                                        spouse = { always = yes }
+                                        trait = incapable
                                         trait = inbred
                                         trait = imbecile
                                     }
@@ -4670,15 +4700,15 @@ letter_event = {
                                 offmap_china = { offmap_has_dislike = likes_eunuchs }
                             }
                             random_courtier = {
-                                limit = {
-									is_incapable = no
+                                limit = { 
                                     NOR = {
                                         has_character_flag = originated_from_chinese_court
                                         has_character_flag = eunuch_gift
                                         is_landed = yes
                                         is_female = yes
                                         is_betrothed = yes
-                                        is_married = yes
+                                        spouse = { always = yes }
+                                        trait = incapable
                                         trait = inbred
                                         trait = imbecile
                                     }
@@ -4738,17 +4768,16 @@ letter_event = {
                                     }
                                     is_close_relative = ROOT_FROM
                                     is_adult = yes
-                                    NOT = { practical_age = 45 }
-									is_incapable = no
+                                    NOT = { age = 45 }
                                     NOR = {
                                         has_character_flag = originated_from_chinese_court
                                         is_landed = yes
                                         is_betrothed = yes
                                         is_married = yes
+                                        trait = incapable
                                         trait = inbred
                                         trait = imbecile
                                         trait = celibate
-										trait = eunuch
                                     }
                                     is_heir = no
                                     is_ill = no
@@ -4786,17 +4815,16 @@ letter_event = {
                                     }
                                     is_close_relative = ROOT_FROM
                                     is_adult = yes
-                                    NOT = { practical_age = 45 }
-									is_incapable = no
+                                    NOT = { age = 45 }
                                     NOR = {
                                         has_character_flag = originated_from_chinese_court
                                         is_landed = yes
                                         is_betrothed = yes
                                         is_married = yes
+                                        trait = incapable
                                         trait = inbred
                                         trait = imbecile
                                         trait = celibate
-										trait = eunuch
                                     }
                                     is_heir = no
                                     is_ill = no
@@ -4974,6 +5002,16 @@ narrative_event = {
 	window = EventWindowOffmap
 	background = GFX_event_window_news_from_china
     is_triggered_only = yes
+	
+	immediate = {
+		offmap_china = {
+			ruler = {
+				save_event_target_as = portrait_target
+			}
+		}
+	}
+	
+	portrait = event_target:portrait_target
 
     option = {
         name = EVT_OPTA_JD_60308
