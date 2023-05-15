@@ -1,0 +1,54 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.54
+	desc = descexpandedtraits.54
+	picture = GFX_evt_musicnotes
+	border = GFX_event_normal_frame_learning
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		AND = {
+			trait = bipolaire
+			learning >= 20
+			OR = {
+				trait = neugierig
+				trait = creative
+				trait = romantique
+				trait = dreamer
+				trait = poet
+				trait = genius
+			}
+			NOT = {
+				ROOT = {
+					any_owned_bloodline = {
+						has_bloodline_flag = bipolaireblood_xt
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 100
+	}
+
+	option = {
+		name = optaexpandedtraits.54
+		give_nickname = nick_bipolaire_xt
+		create_bloodline = {
+			type = bipolaire_xt
+		}
+		new_bloodline = {
+			set_description = "desc_bipolairext_bloodline"
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.54
+		set_focus = focus_rulership
+	}
+}

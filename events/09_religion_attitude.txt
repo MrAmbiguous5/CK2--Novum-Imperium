@@ -1,0 +1,47 @@
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.9
+	desc = descexpandedtraits.9
+	picture = GFX_evt_beatification
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_theology
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.9
+		trigger = {
+		 	OR = {
+		 		any_friend = {
+		 			is_heretic = yes
+		 		}
+		 		religion_group = indian_group #doesnt work yet
+		 		has_religion_feature = religion_cosmopolitan
+		 		has_religion_feature = religion_feature_hellenic
+		 		has_religion_feature = religion_peaceful
+		 		learning >= 25
+			}
+		}
+		add_trait = tolerant
+		tooltip_info_custom = tooltipexpandedtraits.9
+	}
+
+	option = {
+		name = optbexpandedtraits.9
+		add_trait = raciste
+	}
+
+	option = {
+		name = optcexpandedtraits.9
+		add_trait = egoiste
+	}
+}

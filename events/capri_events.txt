@@ -1,0 +1,1105 @@
+namespace = toe
+
+#Start the "chain"
+character_event = {
+	id = toe.1700
+	desc = EVTDESC_toe.1700
+	picture = "GFX_evt_stressed_ruler"
+	trigger = {
+		primary_title = {
+			tier = EMPEROR
+			temporary = no
+			is_tribal = no
+			is_nomadic = no
+		}
+		OR = {
+			had_character_flag = { flag = decided_capri days = 1825 }
+			NOT = { has_character_flag = decided_capri }
+		}
+		has_regent = no
+	}
+	
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			factor = 0.5
+			age = 60
+		}
+		modifier = {
+			factor = 0.5
+			age = 70
+		}
+		modifier = {
+			factor = 4
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2
+			trait = diligent
+		}
+		modifier = {
+			factor = 2
+			trait = patient
+		}
+		modifier = {
+			factor = 2
+			trait = proud
+		}
+		modifier = {
+			factor = 2
+			trait = envious
+		}
+		modifier = {
+			factor = 2
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.5
+			trait = content
+		}
+		modifier = {
+			factor = 0.5
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			factor = 0.5
+			trait = humble
+		}
+		modifier = {
+			factor = 0.5
+			trait = paranoid
+		}
+		modifier = {
+			factor = 0.5
+			trait = shy
+		}
+		modifier = {
+			factor = 0.5
+			trait = stressed
+		}
+		modifier = {
+			factor = 0.25
+			trait = depressed
+		}
+	}
+	
+	immediate = {
+		clr_character_flag = decided_capri
+		set_character_flag = decided_capri
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1700 #That's a good idea
+		add_trait = capri_seclusion
+		character_event = { id = toe.1701 days = 365 }
+	}
+	option = {
+		name = EVTOPTB_toe.1700 #No, my job is too important
+		trigger = {
+			NOT = { trait = stressed }
+			NOT = { trait = depressed }
+		}
+		add_trait = stressed
+	}
+	option = {
+		name = EVTOPTB_toe.1700 #No, my job is too important
+		trigger = {
+			trait = stressed
+			NOT = { trait = depressed }
+		}
+		add_trait = depressed
+	}
+}
+
+#Effects
+character_event = {
+	id = toe.1701
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		trait = capri_seclusion
+	}
+	immediate = {
+		character_event = { id = toe.1701 days = 365 random = 180 }
+		random_list = {
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = patient
+						trait = content
+						trait = erudite
+						trait = honest
+						trait = just
+						trait = shy
+						trait = zealous
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = chaste
+				}
+				modifier = {
+					factor = 1.25
+					trait = patient
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = erudite
+				}
+				modifier = {
+					factor = 1.25
+					trait = honest
+				}
+				modifier = {
+					factor = 1.25
+					trait = just
+				}
+				modifier = {
+					factor = 1.25
+					trait = shy
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				character_event = { id = toe.1702 } #Become chaste
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = charitable
+						trait = diligent
+						trait = patient
+						trait = content
+						trait = craven
+						trait = erudite
+						trait = zealous
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = temperate
+				}
+				modifier = {
+					factor = 1.25
+					trait = charitable
+				}
+				modifier = {
+					factor = 1.25
+					trait = diligent
+				}
+				modifier = {
+					factor = 1.25
+					trait = patient
+				}
+				modifier = {
+					factor = 1.25
+					trait = craven
+				}
+				modifier = {
+					factor = 1.25
+					trait = erudite
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				character_event = { id = toe.1703 } #Become temperate
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = temperate
+						trait = kind
+						trait = arbitrary
+						trait = content
+						trait = gregarious
+						trait = honest
+						trait = just
+						trait = trusting
+						trait = zealous
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = charitable
+				}
+				modifier = {
+					factor = 1.25
+					trait = temperate
+				}
+				modifier = {
+					factor = 1.25
+					trait = kind
+				}
+				modifier = {
+					factor = 1.25
+					trait = arbitrary
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = gregarious
+				}
+				modifier = {
+					factor = 1.25
+					trait = honest
+				}
+				modifier = {
+					factor = 1.25
+					trait = just
+				}
+				modifier = {
+					factor = 1.25
+					trait = trusting
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				character_event = { id = toe.1704 } #Become charitable
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = patient
+						trait = greedy
+						trait = envious
+						trait = ambitious
+						trait = brave
+						trait = cynical
+						trait = erudite
+						trait = just
+						trait = stubborn
+						trait = zealous
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = diligent
+				}
+				modifier = {
+					factor = 1.25
+					trait = patient
+				}
+				modifier = {
+					factor = 1.25
+					trait = greedy
+				}
+				modifier = {
+					factor = 1.25
+					trait = envious
+				}
+				modifier = {
+					factor = 1.25
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.25
+					trait = brave
+				}
+				modifier = {
+					factor = 1.25
+					trait = cynical
+				}
+				modifier = {
+					factor = 1.25
+					trait = erudite
+				}
+				modifier = {
+					factor = 1.25
+					trait = just
+				}
+				modifier = {
+					factor = 1.25
+					trait = stubborn
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				character_event = { id = toe.1705 } #Become diligent
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = chaste
+						trait = temperate
+						trait = diligent
+						trait = humble
+						trait = ambitious
+						trait = brave
+						trait = content
+						trait = erudite
+						trait = just
+						trait = stubborn
+						trait = trusting
+						trait = zealous
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = patient
+				}
+				modifier = {
+					factor = 1.25
+					trait = chaste
+				}
+				modifier = {
+					factor = 1.25
+					trait = temperate
+				}
+				modifier = {
+					factor = 1.25
+					trait = diligent
+				}
+				modifier = {
+					factor = 1.25
+					trait = humble
+				}
+				modifier = {
+					factor = 1.25
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.25
+					trait = brave
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = erudite
+				}
+				modifier = {
+					factor = 1.25
+					trait = just
+				}
+				modifier = {
+					factor = 1.25
+					trait = stubborn
+				}
+				modifier = {
+					factor = 1.25
+					trait = trusting
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				character_event = { id = toe.1706 } #Become patient
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = temperate
+						trait = charitable
+						trait = arbitrary
+						trait = content
+						trait = gregarious
+						trait = honest
+						trait = just
+						trait = trusting
+						trait = zealous
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = kind
+				}
+				modifier = {
+					factor = 1.25
+					trait = temperate
+				}
+				modifier = {
+					factor = 1.25
+					trait = charitable
+				}
+				modifier = {
+					factor = 1.25
+					trait = arbitrary
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = gregarious
+				}
+				modifier = {
+					factor = 1.25
+					trait = honest
+				}
+				modifier = {
+					factor = 1.25
+					trait = just
+				}
+				modifier = {
+					factor = 1.25
+					trait = trusting
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				character_event = { id = toe.1707 } #Become kind
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = charitable
+						trait = kind
+						trait = slothful
+						trait = content
+						trait = gregarious
+						trait = honest
+						trait = just
+						trait = shy
+						trait = trusting
+						trait = zealous
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = humble
+				}
+				modifier = {
+					factor = 1.25
+					trait = charitable
+				}
+				modifier = {
+					factor = 1.25
+					trait = kind
+				}
+				modifier = {
+					factor = 1.25
+					trait = slothful
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = gregarious
+				}
+				modifier = {
+					factor = 1.25
+					trait = honest
+				}
+				modifier = {
+					factor = 1.25
+					trait = just
+				}
+				modifier = {
+					factor = 1.25
+					trait = shy
+				}
+				modifier = {
+					factor = 1.25
+					trait = trusting
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				character_event = { id = toe.1708 } #Become humble
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = ambitious
+						trait = arbitrary
+						trait = cynical
+						trait = deceitful
+						trait = gregarious
+						trait = drunkard
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = lustful
+				}
+				modifier = {
+					factor = 1.25
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.25
+					trait = arbitrary
+				}
+				modifier = {
+					factor = 1.25
+					trait = cynical
+				}
+				modifier = {
+					factor = 1.25
+					trait = deceitful
+				}
+				modifier = {
+					factor = 1.25
+					trait = gregarious
+				}
+				modifier = {
+					factor = 1.25
+					trait = drunkard
+				}
+				character_event = { id = toe.1709 } #Become lustful
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = slothful
+						trait = content
+						trait = drunkard
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = gluttonous
+				}
+				modifier = {
+					factor = 1.25
+					trait = slothful
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = drunkard
+				}
+				character_event = { id = toe.1710 } #Become gluttonous
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = diligent
+						trait = gluttonous
+						trait = envious
+						trait = ambitious
+						trait = cruel
+						trait = cynical
+						trait = deceitful
+						trait = paranoid
+						trait = stubborn
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = greedy
+				}
+				modifier = {
+					factor = 1.25
+					trait = diligent
+				}
+				modifier = {
+					factor = 1.25
+					trait = gluttonous
+				}
+				modifier = {
+					factor = 1.25
+					trait = envious
+				}
+				modifier = {
+					factor = 1.25
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.25
+					trait = cruel
+				}
+				modifier = {
+					factor = 1.25
+					trait = cynical
+				}
+				modifier = {
+					factor = 1.25
+					trait = deceitful
+				}
+				modifier = {
+					factor = 1.25
+					trait = paranoid
+				}
+				modifier = {
+					factor = 1.25
+					trait = stubborn
+				}
+				character_event = { id = toe.1711 } #Become greedy
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = patient
+						trait = humble
+						trait = gluttonous
+						trait = proud
+						trait = arbitrary
+						trait = content
+						trait = stubborn
+						trait = trusting
+						trait = drunkard
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = slothful
+				}
+				modifier = {
+					factor = 1.25
+					trait = patient
+				}
+				modifier = {
+					factor = 1.25
+					trait = humble
+				}
+				modifier = {
+					factor = 1.25
+					trait = gluttonous
+				}
+				modifier = {
+					factor = 1.25
+					trait = proud
+				}
+				modifier = {
+					factor = 1.25
+					trait = arbitrary
+				}
+				modifier = {
+					factor = 1.25
+					trait = content
+				}
+				modifier = {
+					factor = 1.25
+					trait = stubborn
+				}
+				modifier = {
+					factor = 1.25
+					trait = trusting
+				}
+				modifier = {
+					factor = 1.25
+					trait = drunkard
+				}
+				character_event = { id = toe.1712 } #Become slothful
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = arbitrary
+						trait = cruel
+						trait = zealous
+						trait = drunkard
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = wroth
+				}
+				modifier = {
+					factor = 1.25
+					trait = arbitrary
+				}
+				modifier = {
+					factor = 1.25
+					trait = cruel
+				}
+				modifier = {
+					factor = 1.25
+					trait = zealous
+				}
+				modifier = {
+					factor = 1.25
+					trait = drunkard
+				}
+				character_event = { id = toe.1713 } #Become wroth
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = lustful
+						trait = greedy
+						trait = wroth
+						trait = proud
+						trait = ambitious
+						trait = arbitrary
+						trait = cruel
+						trait = gregarious
+						trait = paranoid
+						trait = shy
+						trait = drunkard
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = envious
+				}
+				modifier = {
+					factor = 1.25
+					trait = lustful
+				}
+				modifier = {
+					factor = 1.25
+					trait = greedy
+				}
+				modifier = {
+					factor = 1.25
+					trait = wroth
+				}
+				modifier = {
+					factor = 1.25
+					trait = proud
+				}
+				modifier = {
+					factor = 1.25
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.25
+					trait = arbitrary
+				}
+				modifier = {
+					factor = 1.25
+					trait = cruel
+				}
+				modifier = {
+					factor = 1.25
+					trait = gregarious
+				}
+				modifier = {
+					factor = 1.25
+					trait = paranoid
+				}
+				modifier = {
+					factor = 1.25
+					trait = shy
+				}
+				modifier = {
+					factor = 1.25
+					trait = drunkard
+				}
+				character_event = { id = toe.1714 } #Become envious
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						trait = diligent
+						trait = lustful
+						trait = greedy
+						trait = envious
+						trait = ambitious
+						trait = brave
+						trait = gregarious
+						trait = stubborn
+					}
+				}
+				modifier = {
+					factor = 0
+					trait = proud
+				}
+				modifier = {
+					factor = 1.25
+					trait = diligent
+				}
+				modifier = {
+					factor = 1.25
+					trait = lustful
+				}
+				modifier = {
+					factor = 1.25
+					trait = greedy
+				}
+				modifier = {
+					factor = 1.25
+					trait = envious
+				}
+				modifier = {
+					factor = 1.25
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.25
+					trait = brave
+				}
+				modifier = {
+					factor = 1.25
+					trait = gregarious
+				}
+				modifier = {
+					factor = 1.25
+					trait = stubborn
+				}
+				character_event = { id = toe.1715 } #Become proud
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOT = { trait = stressed }
+				}
+				character_event = { id = toe.1716 } #Remove stress
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOT = { trait = depressed }
+				}
+				character_event = { id = toe.1717 } #Remove depression
+			}
+		}
+	}
+}
+
+
+#Become chaste
+character_event = {
+	id = toe.1702
+	desc = EVTDESC_toe.1702
+	picture = "GFX_evt_fishing"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = chaste
+	}
+}
+
+#Become temperate
+character_event = {
+	id = toe.1703
+	desc = EVTDESC_toe.1703
+	picture = "GFX_evt_fishing"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = temperate
+	}
+}
+
+#Become charitable
+character_event = {
+	id = toe.1704
+	desc = EVTDESC_toe.1704
+	picture = "GFX_evt_fishing"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = charitable
+	}
+}
+
+#Become diligent
+character_event = {
+	id = toe.1705
+	desc = EVTDESC_toe.1705
+	picture = "GFX_evt_fishing"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = diligent
+	}
+}
+
+#Become patient
+character_event = {
+	id = toe.1706
+	desc = EVTDESC_toe.1706
+	picture = "GFX_evt_fishing"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = patient
+	}
+}
+
+#Become kind
+character_event = {
+	id = toe.1707
+	desc = EVTDESC_toe.1707
+	picture = "GFX_evt_fishing"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = kind
+	}
+}
+
+#Become humble
+character_event = {
+	id = toe.1708
+	desc = EVTDESC_toe.1708
+	picture = "GFX_evt_fishing"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = humble
+	}
+}
+
+#Become lustful
+character_event = {
+	id = toe.1709
+	desc = EVTDESC_toe.1709
+	picture = "GFX_evt_lunatic"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = lustful
+	}
+}
+
+#Become gluttonous
+character_event = {
+	id = toe.1710
+	desc = EVTDESC_toe.1710
+	picture = "GFX_evt_lunatic"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = gluttonous
+	}
+}
+
+#Become greedy
+character_event = {
+	id = toe.1711
+	desc = EVTDESC_toe.1711
+	picture = "GFX_evt_lunatic"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = greedy
+	}
+}
+
+#Become slothful
+character_event = {
+	id = toe.1712
+	desc = EVTDESC_toe.1712
+	picture = "GFX_evt_lunatic"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = slothful
+	}
+}
+
+#Become wroth
+character_event = {
+	id = toe.1713
+	desc = EVTDESC_toe.1713
+	picture = "GFX_evt_lunatic"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = wroth
+	}
+}
+
+#Become envious
+character_event = {
+	id = toe.1714
+	desc = EVTDESC_toe.1714
+	picture = "GFX_evt_lunatic"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = envious
+	}
+}
+
+#Become proud
+character_event = {
+	id = toe.1715
+	desc = EVTDESC_toe.1715
+	picture = "GFX_evt_lunatic"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1702 #Alright
+		add_trait = proud
+	}
+}
+
+#Lose stressed
+character_event = {
+	id = toe.1716
+	desc = EVTDESC_toe.1716
+	picture = "GFX_evt_recovery"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1716 #A great weight is lifted
+		remove_trait = stressed
+	}
+}
+
+#Lose depressed
+character_event = {
+	id = toe.1717
+	desc = EVTDESC_toe.1717
+	picture = "GFX_evt_recovery"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1716 #A great weight is lifted
+		remove_trait = depressed
+	}
+}
+
+#End Capri
+character_event = {
+	id = toe.1718
+	desc = EVTDESC_toe.1718
+	picture = "GFX_evt_recovery"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1718 #Back to normal life
+		remove_trait = capri_seclusion
+	}
+}

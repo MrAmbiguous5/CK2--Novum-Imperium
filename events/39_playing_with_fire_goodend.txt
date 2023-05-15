@@ -1,0 +1,33 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.39 #aerion brightflame
+	desc = descexpandedtraits.39
+	picture = GFX_evt_greendragon
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+		}
+		OR = {
+			trait = mystic
+			trait = lunatic
+		}
+	}
+
+	option = {
+		name = optaexpandedtraits.39
+		#create_bloodline
+		give_nickname = nick_brightflame_xt
+		culture = dragon_culture
+		set_graphical_culture = dragon_culture
+	}
+}

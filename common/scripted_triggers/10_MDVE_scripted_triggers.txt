@@ -1,0 +1,248 @@
+is_enslaved = {
+	custom_tooltip = {
+		text = custom_is_enslaved
+		trait = slave_trait
+	}
+}
+
+slavery_trigger = {
+	conditional_tooltip = {
+		OR = {
+			custom_tooltip = {
+				text = slavery_enabled_culture
+				OR = {
+					culture = han
+					culture = persian
+					culture_group = arabic
+					culture_group = central_african
+					culture_group = east_african
+					culture_group = west_african
+				}
+			}
+			custom_tooltip = {
+				text = slavery_enabled_religion
+				OR = {
+					religion_group = muslim
+					religion = norse_pagan
+					religion = slavic_pagan
+					religion = tengri_pagan
+					religion = finnish_pagan
+					religion = west_african_pagan
+					religion = aztec
+					religion = aztec_reformed
+					religion = zun_pagan
+					religion = zun_pagan_reformed
+					religion = hellenic_pagan
+					religion = hindu
+					has_religion_feature = religion_feature_hellenic
+					has_religion_feature = religion_feature_norse
+					has_religion_feature = religion_feature_west_african
+					has_religion_feature = religion_ritual_sacrifice
+					has_religion_feature = religion_jizya
+					has_religion_feature = religion_feature_finnish
+					has_religion_feature = religion_feature_slavic
+				}
+			}
+			custom_tooltip = {
+				text = slavery_enabled_government
+				OR = {
+					is_nomadic = yes
+					government = roman_imperial_government
+					OR = {
+						government = adventurer_government
+						primary_title = { has_title_flag = adventurer_title }
+					}
+					has_landed_title = e_byzantium
+					has_landed_title = e_roman_empire
+					has_landed_title = e_western_roman_empire
+				}
+			}
+		}
+	}
+}
+
+is_inaccessible_trigger_A = {
+	custom_tooltip = {
+		text = is_inaccessible_tooltip
+		hidden_tooltip = {
+			OR = {
+				has_character_flag = flag_holding_great_tribal_festival
+				trait = in_hiding
+				trait = on_hajj
+				trait = on_pilgrimage
+				trait = diplomatic_interview
+				trait = on_indian_pilgrimage
+				trait = kow_tow_travels
+				trait = travelling
+				trait = troubled_pregnancy
+				trait = pregnancy_finishing
+				has_character_modifier = mother_minor_rest
+				has_character_modifier = in_seclusion
+				has_character_modifier = in_meditation
+				has_character_modifier = doing_penance
+				has_character_modifier = out_traveling
+			}
+		}
+	}
+}
+
+diplomatic_interview_trigger = {
+	custom_tooltip = {
+		text = diplomatic_interview_tooltip
+		hidden_tooltip = {
+		    OR = {
+		        AND = {
+		    	    OR = {
+		    	    	ROOT = { reverse_has_opinion_modifier = { who = FROM modifier = target_diplomatic_interview } }
+                        FROM = { reverse_has_opinion_modifier = { who = ROOT modifier = target_diplomatic_interview } }
+		    	    }
+		    	    OR = {
+		    	        ROOT = { reverse_has_opinion_modifier = { who = FROM modifier = host_diplomatic_interview } }
+                        FROM = { reverse_has_opinion_modifier = { who = ROOT modifier = host_diplomatic_interview } }
+		    	    }
+		    	}
+		    	OR = {
+		    	    ROOT = { reverse_has_opinion_modifier = { who = FROM modifier = counterpart_diplomatic_interview } }
+                    FROM = { reverse_has_opinion_modifier = { who = ROOT modifier = counterpart_diplomatic_interview } }
+		    	}
+		    }
+		}
+	}
+}
+
+cvt_can_be_transferred_trigger = {
+    # Scope: character (should be our direct vassal)
+
+    in_revolt = no
+    is_primary_war_defender = no
+
+    custom_tooltip = {
+        text = cvt_trigger_not_an_antipope
+        hidden_tooltip = {
+            NOR = {
+                has_claim = k_papal_state
+                has_claim = d_fraticelli
+            }
+        }
+    }
+
+    custom_tooltip = {
+        text = cvt_trigger_not_minor_patrician
+        hidden_tooltip = {
+            OR = {
+                is_patrician = no
+                is_merchant_republic = yes
+            }
+        }
+    }
+
+    conditional_tooltip = {
+        trigger = {
+            FROM = {
+                ai = yes
+            }
+        }
+        custom_tooltip = {
+            text = cvt_tooltip_not_ai_flag_never_transfer
+            hidden_tooltip = {
+                NOT = {
+                    has_character_flag = ai_flag_never_transfer
+                }
+            }
+        }
+    }
+}
+
+not_in_crusade_war = {
+	conditional_tooltip = {
+	
+		trigger = {
+			ROOT = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+			}
+		}
+	
+		custom_tooltip = {
+			text = not_in_crusade_war_tooltip
+			
+			FROM = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+				NOT = {
+					any_war = {
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+	}
+}
+
+is_not_busy_trigger = {
+	custom_tooltip = {
+		text = is_not_busy_trigger_tooltip
+		hidden_tooltip = {
+			NOR = {
+				has_character_modifier = do_not_disturb
+				has_character_flag = do_not_disturb
+			}
+		}
+	}
+}
+
+has_condition_horse_armor_triggers = {
+    custom_tooltip = {
+	    text = horse_armor_tooltip
+	    any_artifact = {
+	    	OR = {
+	    		artifact_type = horse_1
+	    		artifact_type = horse_2
+	    		artifact_type = horse_3
+	        }
+	    	is_artifact_equipped = yes 
+	    }
+	}
+}
+
+have_all_horse_artifacts_trigger = {
+	has_artifact = horse_1
+	has_artifact = horse_2
+	has_artifact = horse_3
+}
+
+have_all_horse_armor_artifacts_trigger = {
+	has_artifact = horse_armor_tier_1
+	has_artifact = horse_armor_tier_2
+	has_artifact = horse_armor_tier_3_golden_stallion
+	has_artifact = horse_armor_tier_3_gilded_mare
+	has_artifact = horse_armor_tier_3_ornate_steed
+}
+
+MDVE_is_african_culture = {
+	OR = {
+		culture_group = east_african
+		culture_group = central_african
+		culture_group = west_african
+		culture_group = north_african
+	}
+}
+
+MDVE_is_arabic_culture = {
+	OR = {
+		culture_group = arabic
+	}
+}
+
+MDVE_is_greco_roman = {
+	OR = {
+		culture = roman
+		culture_group = byzantine
+		religion = hellenic_pagan
+		religion = hellenic_pagan_reformed
+	}
+}

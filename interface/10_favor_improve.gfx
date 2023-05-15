@@ -1,0 +1,8 @@
+spriteTypes = {
+	
+	# Decisions
+	spriteType = {
+		name = "GFX_favor_improve_icon_1"
+		texturefile = "gfx\\interface\\10_favor_improve.dds"
+	}
+}

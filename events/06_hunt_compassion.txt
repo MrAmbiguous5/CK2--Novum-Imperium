@@ -1,0 +1,31 @@
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.6
+	desc = descexpandedtraits.6
+	picture = GFX_evt_hunting_scene
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_hunting
+	}
+
+	mean_time_to_happen = {
+	months = 250
+	}
+
+	option = {
+		name = optaexpandedtraits.6
+		add_trait = meatlover
+
+	}
+
+	option = {
+		name = optbexpandedtraits.6
+		add_trait = vegetarien
+		set_focus = focus_theology
+	}
+}

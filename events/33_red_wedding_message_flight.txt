@@ -1,0 +1,23 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.33
+	desc = descexpandedtraits.33
+	picture = GFX_evt_house_arrest_escape
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.33
+		ROOT = {
+			give_nickname = nick_red_wedding_killer
+			add_character_modifier = {
+				name = killed_guests_red_wedding
+				duration = -1
+			}
+		}
+	}

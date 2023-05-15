@@ -1,0 +1,35 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.56
+	desc = descexpandedtraits.56
+	#hide_window = yes
+	only_playable = yes
+	picture = GFX_evt_secluded_in_prayer
+
+	trigger = {
+				ROOT = {
+					any_owned_bloodline = {
+						has_bloodline_flag = bipolaireblood_xt
+						bloodline_is_active_for = ROOT
+					}
+					NOT = {
+						has_character_modifier = phase_of_creativity
+					}
+				}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.56
+		culture_techpoints = -100
+		add_character_modifier = {
+			modifier = phase_of_depression
+			months = 18
+		}
+	}
+}

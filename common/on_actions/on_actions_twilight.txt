@@ -1,0 +1,111 @@
+on_bi_yearly_pulse = {
+	events = {
+		toe.1003
+	}
+}
+
+on_create_title = {
+	events = {
+		toe.999
+	}
+}
+
+on_new_holder = {
+	events = {
+		toe.1000
+		toe.1052
+		toe.1200
+		toe.1201
+		toe.1203
+		toe.1205
+		toe.1304
+	}	
+}
+
+on_new_holder_inheritance = {
+	events = {
+		toe.1000
+		toe.1052
+		toe.1200
+		toe.1201
+		toe.1203
+		toe.1205
+		toe.1304
+		toe.1328
+	}	
+}
+
+on_new_holder_usurpation = {
+	events = {
+		toe.1000
+		toe.1052
+		toe.1200
+		toe.1201
+		toe.1203
+		toe.1304
+		toe.1329
+	}	
+}
+
+on_decade_pulse = {
+	events = {
+		toe.1203
+	}
+}
+
+on_startup = {
+	events = {
+		toe.1003
+		toe.1306
+		toe.1807
+	}
+}
+
+on_marriage = {
+	events = {
+		toe.1003
+	}
+}
+
+on_divorce = {
+	events = {
+		toe.1003
+	}
+}
+
+on_death = {
+	events = {
+		toe.1353
+		toe.1354
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		toe.1306
+	}
+}
+
+on_war_ended_victory = {
+	events = {
+		toe.1003
+	}
+}
+
+on_war_ended_invalid = {
+	events = {
+		toe.1003
+	}
+}
+
+on_war_ended_whitepeace = {
+	events = {
+		toe.1003
+	}
+}
+
+on_war_ended_defeat = {
+	events = {
+		toe.1003
+	}
+}

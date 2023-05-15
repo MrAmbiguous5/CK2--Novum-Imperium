@@ -1,0 +1,135 @@
+targetted_decisions = {
+
+######################################
+####### Demander un prisonnier #######
+######################################
+
+	request_prisoner = {
+		filter = all
+		ai_target_filter = none
+		ai_check_interval = 24
+		diplomacy_icon = GFX_send_prisoner_icon
+		
+		third_party_filter = all
+        third_party = ROOT
+		
+        third_party_potential = {
+            FROMFROM = {
+			    host = { character = ROOT }
+                prisoner = yes
+				NOT = { has_character_modifier = mark_prisoner_tag }
+			}
+        }
+		
+		potential = {
+		    prisoner = no
+			is_ruler = yes
+			NOT = { has_character_flag = request_prisoner_flag }
+		}
+		
+		allow = {
+			show_only_failed_conditions = yes
+			ROOT = {
+				custom_tooltip = {
+					text = custom_has_prisoner
+					any_courtier = {
+						count = 1
+						prisoner = yes
+						host = { character = ROOT }
+					}
+				}
+			}
+			is_within_diplo_range = FROM
+			in_seclusion = no
+		}
+		
+		third_party_score = {
+			factor = 25
+			
+			calculate_prisoner_price = yes
+		}
+		
+        effect = {
+		    hidden_tooltip = {
+		        FROMFROM = {
+			    	add_character_modifier  = {
+			    		name = mark_prisoner_tag
+			    		duration = 360
+			    	}
+			    }
+			    FROM = {
+					character_event = { id = send.1 days = 1 }
+					set_character_flag = request_prisoner_flag
+				}
+		    }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+#####################################
+####### Envoyer un prisonnier #######
+#####################################
+
+	send_prisoner = {
+		filter = all
+		ai_target_filter = none
+		ai_check_interval = 24
+		diplomacy_icon = GFX_send_prisoner_icon
+		
+		third_party_filter = home_court
+        third_party = FROM
+		
+        third_party_potential = {
+            FROMFROM = {
+				host = { character = FROMFROM }
+                prisoner = yes
+				NOT = { has_character_modifier = mark_prisoner_tag }
+			}
+        }
+		
+		from_potential = {
+		    prisoner = no
+			is_ruler = yes
+			in_seclusion = no
+		}
+		
+		potential = {
+		    prisoner = no
+			is_ruler = yes
+		}
+		
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				custom_tooltip = {
+					text = custom_has_prisoner
+					any_host_courtier = {
+						count = 1
+						prisoner = yes
+					}
+				}
+			}
+			is_within_diplo_range = FROM
+			in_seclusion = no
+		}
+		
+        effect = {
+		    hidden_tooltip = {
+		        FROMFROM = {
+			    	add_character_modifier  = {
+			    		name = mark_prisoner_tag
+			    		duration = 360
+			    	}
+			    }
+			    FROM = { character_event = { id = send.10 days = 1 } }
+		    }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+}

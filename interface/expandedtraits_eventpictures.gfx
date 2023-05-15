@@ -1,0 +1,43 @@
+spriteTypes = {
+
+     spriteType = {
+          name = "GFX_evt_wintervillage"
+          texturefile = "gfx\\event_pictures\\wintervillage.dds"
+     }
+
+     spriteType = {
+        name = "GFX_evt_retinueforest"
+        texturefile = "gfx\\event_pictures\\retinueforest.dds"
+     }
+
+     spriteType = {
+        name = "GFX_evt_lionsimprisoned"
+        texturefile = "gfx\\event_pictures\\lionsimprisoned.dds"
+     }
+
+     spriteType = {
+        name = "GFX_evt_succubusnight"
+        texturefile = "gfx\\event_pictures\\succubusnight.dds"
+     }
+
+     spriteType = {
+     name = "GFX_trait_dreamer"
+     texturefile = "gfx/traits/dreamer.tga"
+     noOfFrames = 1
+     norefcount = yes
+     effectFile = "gfx/FX/buttonstate.lua"
+     }
+
+     spriteType = {
+     name = "GFX_trait_naive"
+     texturefile = "gfx/traits/naive.tga"
+     noOfFrames = 1
+     norefcount = yes
+     effectFile = "gfx/FX/buttonstate.lua"
+     }
+
+     spriteType = {
+        name = "GFX_evt_musicnotes"
+        texturefile = "gfx\\event_pictures\\musicnotes.tga"
+     }
+}

@@ -1,0 +1,901 @@
+namespace = toe
+
+#Ping letter event
+character_event = {
+	id = toe.1049
+	hide_window = yes
+	
+	trigger = {
+		any_war = { war_score = -25 }
+		real_tier = EMPEROR
+		is_nomadic = no
+		is_tribal = no
+		OR = {
+			has_character_modifier = imperial_inefficiency_6
+			has_character_modifier = imperial_inefficiency_7
+			has_character_modifier = imperial_inefficiency_8
+			has_character_modifier = imperial_inefficiency_9
+			has_character_modifier = imperial_inefficiency_10
+		}
+		NOT = { has_character_flag = refused_autonomy days = 180 }
+	}
+	
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			factor = 4
+			has_character_flag = refused_autonomy
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				OR = {
+					NOT = { culture = ROOT }
+					NOT = { religion = ROOT }
+				}
+				age = 16
+				OR = {
+					tier = king
+					tier = duke
+					tier = count
+				}
+				is_landed = yes
+				mercenary = no   #No weird guards running around
+				primary_title = {
+					temporary = no
+				}
+				ai = yes
+			}
+			save_event_target_as = attempted_autonomous
+			liege = { letter_event = { id = toe.1050 }}
+		}
+	}
+}
+
+# Vassal suggests donating troops in exchange for autonomy
+
+letter_event = {
+	id = toe.1050
+	desc = EVTDESC_toe.1050
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = refused_autonomy
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1050
+		trigger = {
+			event_target:attempted_autonomous = { tier = king }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = event_target:attempted_autonomous
+			home = ROOT
+			troops = {
+				archers = { 400 400 }
+				light_infantry = { 1300 1300 }
+				heavy_infantry = { 200 200 }
+				light_cavalry = { 100 100 }
+			}
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = event_target:attempted_autonomous
+			home = ROOT
+			troops = {
+				archers = { 400 400 }
+				light_infantry = { 1300 1300 }
+				heavy_infantry = { 200 200 }
+				light_cavalry = { 100 100 }
+			}
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = event_target:attempted_autonomous
+			home = ROOT
+			troops = {
+				archers = { 400 400 }
+				light_infantry = { 1300 1300 }
+				heavy_infantry = { 200 200 }
+				light_cavalry = { 100 100 }
+			}
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = event_target:attempted_autonomous
+			home = ROOT
+			troops = {
+				archers = { 400 400 }
+				light_infantry = { 1300 1300 }
+				heavy_infantry = { 200 200 }
+				light_cavalry = { 100 100 }
+			}
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		event_target:attempted_autonomous = { 
+			set_defacto_liege = THIS 
+			set_character_flag = granted_autonomy
+		}
+		make_tributary = {
+			who = event_target:attempted_autonomous
+			tributary_type = autonomous_tributary
+		}
+	}
+	option = {
+		name = EVTOPTA_toe.1050
+		trigger = {
+			event_target:attempted_autonomous = { tier = duke }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = event_target:attempted_autonomous
+			home = ROOT
+			troops = {
+				archers = { 200 200 }
+				light_infantry = { 650 650 }
+				heavy_infantry = { 100 100 }
+				light_cavalry = { 50 50 }
+			}
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = event_target:attempted_autonomous
+			home = ROOT
+			troops = {
+				archers = { 200 200 }
+				light_infantry = { 650 650 }
+				heavy_infantry = { 100 100 }
+				light_cavalry = { 50 50 }
+			}
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		event_target:attempted_autonomous = { 
+			set_defacto_liege = THIS 
+			set_character_flag = granted_autonomy
+		}
+		make_tributary = {
+			who = event_target:attempted_autonomous
+			tributary_type = autonomous_tributary
+		}
+	}
+	option = {
+		name = EVTOPTA_toe.1050
+		trigger = {
+			event_target:attempted_autonomous = { tier = count }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = event_target:attempted_autonomous
+			home = ROOT
+			troops = {
+				archers = { 200 200 }
+				light_infantry = { 650 650 }
+				heavy_infantry = { 100 100 }
+				light_cavalry = { 50 50 }
+			}
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		event_target:attempted_autonomous = { 
+			set_defacto_liege = THIS 
+			set_character_flag = granted_autonomy
+		}
+		make_tributary = {
+			who = event_target:attempted_autonomous
+			tributary_type = autonomous_tributary
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1050
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 1.5
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.5
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.5
+				trait = envious
+			}
+		}
+		set_character_flag = refused_autonomy
+	}
+}
+
+#Letter ping
+character_event = {
+	id = toe.1061
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				war = yes
+				NOT = { wealth = 100 }
+			}
+			NOT = { wealth = 0 }
+		}
+		real_tier = emperor
+		is_nomadic = no
+		is_tribal = no
+		OR = {
+			has_character_modifier = imperial_inefficiency_6
+			has_character_modifier = imperial_inefficiency_7
+			has_character_modifier = imperial_inefficiency_8
+			has_character_modifier = imperial_inefficiency_9
+			has_character_modifier = imperial_inefficiency_10
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			factor = 4
+			has_character_flag = refused_autonomy
+		}
+	}
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				OR = {
+					NOT = { culture = ROOT }
+					NOT = { religion = ROOT }
+				}
+				age = 16
+				OR = {
+					tier = king
+					tier = duke
+				}
+				is_landed = yes
+				mercenary = no   #No weird guards running around
+				ai = yes
+			}
+			save_event_target_as = attempted_autonomous
+			liege = { letter_event = { id = toe.1051 }}
+		}
+	}
+}
+
+# Vassal suggests donating money in exchange for autonomy
+
+letter_event = {
+	id = toe.1051
+	desc = EVTDESC_toe.1051
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = refused_autonomy
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1051
+		trigger = {
+			event_target:attempted_autonomous = { tier = king }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+		}
+		scaled_wealth = 1
+		event_target:attempted_autonomous = { 
+			set_defacto_liege = THIS 
+			set_character_flag = granted_autonomy
+		}
+		make_tributary = {
+			who = event_target:attempted_autonomous
+			tributary_type = autonomous_tributary
+		}
+	}
+	option = {
+		name = EVTOPTA_toe.1051
+		trigger = {
+			event_target:attempted_autonomous = { tier = duke }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+		}
+		scaled_wealth = 0.25
+		event_target:attempted_autonomous = { 
+			set_defacto_liege = THIS 
+			set_character_flag = granted_autonomy
+		}
+		make_tributary = {
+			who = event_target:attempted_autonomous
+			tributary_type = autonomous_tributary
+		}
+	}
+	option = {
+		name = EVTOPTA_toe.1051
+		trigger = {
+			event_target:attempted_autonomous = { tier = count }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+		}
+		scaled_wealth = 0.1
+		event_target:attempted_autonomous = { 
+			set_defacto_liege = THIS 
+			set_character_flag = granted_autonomy
+		}
+		make_tributary = {
+			who = event_target:attempted_autonomous
+			tributary_type = autonomous_tributary
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1051
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 1.5
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.5
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.5
+				trait = envious
+			}
+		}
+		set_character_flag = refused_autonomy
+	}
+}
+
+###Leaving on succession
+
+# Upon a new emperor send to tributaries
+character_event = {
+	id = toe.1052
+	
+	hide_window = yes
+	
+	trigger = {
+		any_tributary = {
+			is_tributary = {
+				type = autonomous_tributary
+				suzerain = ROOT
+			}
+		}
+		NOT = { has_character_flag = tributaries_given_choice }
+		NOT = { ruled_years = 1 }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	immediate = {
+		any_tributary = {
+			limit = {
+				is_tributary = {
+					type = autonomous_tributary
+					suzerain = ROOT
+				}
+				prisoner = no
+				is_adult = yes
+				NOT = { trait = incapable }
+			}
+			character_event = { id = toe.1053 days = 2 }
+		}
+		set_character_flag = tributaries_given_choice
+	}
+}
+
+# Event to choose independence or not
+character_event = {
+	id = toe.1053
+	title = EVTNAME_toe.1053
+	desc = EVTDESC_toe.1053
+	picture = "GFX_evt_diplomat_hf"
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1053 # declare independence
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				OR = {
+					dynasty = FROM
+					is_allied_with = FROM
+				}
+			}
+			modifier = {
+				factor = 3
+				NOT = { religion = FROM }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { culture = FROM }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { culture_group = FROM }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { opinion = { who = FROM value = -25 } }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { opinion = { who = FROM value = -75 } }
+			}
+			modifier = {
+				factor = 1.5
+				relative_power = { who = FROM power = 1.0 }
+			}
+			modifier = {
+				factor = 2
+				relative_power = { who = FROM power = 1.5 }
+			}
+			modifier = {
+				factor = 2.5
+				relative_power = { who = FROM power = 2.0 }
+			}
+			modifier = {
+				factor = 1.5
+				any_allied_character = {
+					war = no
+					independent = yes
+					is_ruler = yes
+					NOT = { same_realm = ROOT }
+					higher_tier_than = DUKE
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = envious
+			}
+			modifier = {
+				factor = 1.5
+				trait = greedy
+			}
+			modifier = {
+				factor = 10
+				trait = lunatic
+			}
+			modifier = {
+				factor = 5
+				FROM = {
+					OR = {
+						AND = {
+							is_female = yes
+							NOR = {
+								has_law = true_cognatic_succession
+								has_law = enatic_succession
+								has_law = enatic_cognatic_succession
+							}
+						}
+						is_adult = no
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				FROM = {
+					OR = {
+						trait = lunatic
+						trait = incapable
+						trait = infirm
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					OR = {
+						trait = disfigured
+						trait = bastard
+						trait = imbecile
+						trait = inbred
+						trait = lisp
+						trait = slow
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					OR = {
+						trait = stutter
+						trait = ugly
+						trait = harelip
+					}
+				}
+			}
+		}
+		FROM = {
+			remove_tributary = ROOT
+		}
+		hidden_tooltip = {
+			FROM = { letter_event = { id = toe.1054 } }
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1053 # remain loyal vassal
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				OR = {
+					dynasty = FROM
+					is_allied_with = FROM
+				}
+			}
+			modifier = {
+				factor = 3
+				tier = DUKE
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = 25 }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = FROM value = 75 }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { relative_power = { who = FROM power = 0.5 } }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { relative_power = { who = FROM power = 0.25 } }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { relative_power = { who = FROM power = 0.1 } }
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 1.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					OR = {
+						trait = genius
+						trait = quick
+						trait = attractive
+						trait = strong
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					OR = {
+						trait = shrewd
+						trait = socializer
+						trait = charitable
+						trait = honest
+						trait = gregarious
+					}
+				}
+			}
+		}
+	}
+}
+
+# Notification to the new emperor of a declaration of independence
+letter_event = {
+	id = toe.1054
+	desc = EVTDESC_toe.1054
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1054
+		FROM = {
+			any_demesne_title = {
+				limit = {
+					higher_tier_than = COUNT
+					NOT = { ROOT = { has_claim = PREV } }
+				}
+				add_claim = ROOT
+			}
+			reverse_opinion = {
+				modifier = opinion_traitor
+				who = FROM
+				multiplier = 2
+				years = 25
+			}
+		}
+	}
+}
+
+# Notification from the emperor of accepted autonomy
+letter_event = {
+	id = toe.1055
+	desc = EVTDESC_toe.1055
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1055
+		set_defacto_liege = THIS 
+		set_character_flag = granted_autonomy
+		FROM = {
+			make_tributary = {
+				who = ROOT
+				tributary_type = autonomous_tributary
+			}
+		}
+	}
+}
+
+# Notification from the emperor of accepted integration
+letter_event = {
+	id = toe.1056
+	desc = EVTDESC_toe.1056
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1056
+		set_defacto_liege = FROM
+	}
+}

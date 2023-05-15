@@ -1,0 +1,686 @@
+dec_snf_show_menu;Shiny New Faith;;;;;;;;;;;;;x
+dec_snf_show_menu_desc;And the bezan shall be huge and black, and the eyes thereof red with the blood of living creatures, and the whore of Babylon shall ride forth on a three-headed serpent, and throughout the lands, there'll be a great rubbing of parts.  Yeeah.\n\n -- Brian  15:1;;;;;;;;;;;;;x
+dec_snf_show_menu_desc_long;And the bezan shall be huge and black, and the eyes thereof red with the blood of living creatures, and the whore of Babylon shall ride forth on a three-headed serpent, and throughout the lands, there'll be a great rubbing of parts.  Yeeah.\n\n -- Brian  15:1\n\n\nClick to show the Shiny New Faith menu.;;;;;;;;;;;;;x
+dec_snf_show_menu2;Shiny New Faith;;;;;;;;;;;;;x
+dec_snf_show_menu2_desc;And the bezan shall be huge and black, and the eyes thereof red with the blood of living creatures, and the whore of Babylon shall ride forth on a three-headed serpent, and throughout the lands, there'll be a great rubbing of parts.  Yeeah.\n\n -- Brian  15:1;;;;;;;;;;;;;x
+dec_snf_show_menu2_desc_long;And the bezan shall be huge and black, and the eyes thereof red with the blood of living creatures, and the whore of Babylon shall ride forth on a three-headed serpent, and throughout the lands, there'll be a great rubbing of parts.  Yeeah.\n\n -- Brian  15:1\n\n\nClick to show the Shiny New Faith menu.;;;;;;;;;;;;;x
+dec_snf_hide_menu;Shiny New Faith >>;;;;;;;;;;;;;x
+dec_snf_hide_menu_desc;And Saint Attila raised the hand grenade up on high, saying, "O Lord, bless this Thy hand grenade that, with it, Thou mayest blow Thine enemies to tiny bits in Thy mercy."\n\n -- Armaments  2:9;;;;;;;;;;;;;x
+dec_snf_hide_menu_desc_long;And Saint Attila raised the hand grenade up on high, saying, "O Lord, bless this Thy hand grenade that, with it, Thou mayest blow Thine enemies to tiny bits in Thy mercy."\n\n -- Armaments  2:9\n\n\nClick to hide the Shiny New Faith menu.;;;;;;;;;;;;;x
+dec_snf_clergy_leadership_show;+ Clergy & Leadership >;;;;;;;;;;;;;x
+dec_snf_clergy_leadership_show_desc;Structural organization of the faith and rights of its clergy.;;;;;;;;;;;;;x
+dec_snf_clergy_leadership_show_desc_long;Structural organization of the faith and rights of its clergy.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_clergy_leadership_hide;- Clergy & Leadership >>;;;;;;;;;;;;;x
+dec_snf_clergy_leadership_hide_desc;Structural organization of the faith and rights of its clergy.;;;;;;;;;;;;;x
+dec_snf_clergy_leadership_hide_desc_long;Structural organization of the faith and rights of its clergy.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_leadership_structure_show;    + Organization >;;;;;;;;;;;;;x
+dec_snf_leadership_structure_show_desc;How the faith's supreme authority is organized.;;;;;;;;;;;;;x
+dec_snf_leadership_structure_show_desc_long;How the faith's supreme authority is organized.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_leadership_structure_hide;    - Organization >>;;;;;;;;;;;;;x
+dec_snf_leadership_structure_hide_desc;How the faith's supreme authority is organized.;;;;;;;;;;;;;x
+dec_snf_leadership_structure_hide_desc_long;How the faith's supreme authority is organized.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_autocephaly_yes;        * Autocephaly:  OFF;;;;;;;;;;;;;x
+dec_snf_autocephaly_yes_desc;Does this faith allow autonomous patriarchs under kings?;;;;;;;;;;;;;x
+dec_snf_autocephaly_yes_desc_long;Does this faith allow autonomous patriarchs under kings?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_autocephaly_no;        * Autocephaly:  ON;;;;;;;;;;;;;x
+dec_snf_autocephaly_no_desc;Does this faith allow autonomous patriarchs under kings?;;;;;;;;;;;;;x
+dec_snf_autocephaly_no_desc_long;Does this faith allow autonomous patriarchs under kings?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_pentarchy_yes;        * Pentarchy:  OFF;;;;;;;;;;;;;x
+dec_snf_pentarchy_yes_desc;Is there a council of 5 at the top?;;;;;;;;;;;;;x
+dec_snf_pentarchy_yes_desc_long;Is there a council of 5 at the top?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_pentarchy_no;        * Pentarchy:  ON;;;;;;;;;;;;;x
+dec_snf_pentarchy_no_desc;Is there a council of 5 at the top?;;;;;;;;;;;;;x
+dec_snf_pentarchy_no_desc_long;Is there a council of 5 at the top?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_antipopes_yes;        * Antipopes:  OFF;;;;;;;;;;;;;x
+dec_snf_antipopes_yes_desc;Can alternative leadership be proposed?;;;;;;;;;;;;;x
+dec_snf_antipopes_yes_desc_long;Can alternative leadership be proposed?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_antipopes_no;        * Antipopes:  ON;;;;;;;;;;;;;x
+dec_snf_antipopes_no_desc;Can alternative leadership be proposed?;;;;;;;;;;;;;x
+dec_snf_antipopes_no_desc_long;Can alternative leadership be proposed?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_menu_clergy_show;    + Clergy >;;;;;;;;;;;;;x
+dec_snf_menu_clergy_show_desc;Gender, marriage, and inheritance settings for clergy members.;;;;;;;;;;;;;x
+dec_snf_menu_clergy_show_desc_long;Gender, marriage, and inheritance settings for clergy members.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_menu_clergy_hide;    - Clergy >>;;;;;;;;;;;;;x
+dec_snf_menu_clergy_hide_desc;Gender, marriage, and inheritance settings for clergy members.;;;;;;;;;;;;;x
+dec_snf_menu_clergy_hide_desc_long;Gender, marriage, and inheritance settings for clergy members.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_male_temple_holders_yes;        * Male Clergy:  OFF;;;;;;;;;;;;;x
+dec_snf_male_temple_holders_yes_desc;Can men be in the clergy?;;;;;;;;;;;;;x
+dec_snf_male_temple_holders_yes_desc_long;Can men be in the clergy?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_male_temple_holders_no;        * Male Clergy:  ON;;;;;;;;;;;;;x
+dec_snf_male_temple_holders_no_desc;Can men be in the clergy?;;;;;;;;;;;;;x
+dec_snf_male_temple_holders_no_desc_long;Can men be in the clergy?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_female_temple_holders_yes;        * Female Clergy:  OFF;;;;;;;;;;;;;x
+dec_snf_female_temple_holders_yes_desc;Can women be in the clergy?;;;;;;;;;;;;;x
+dec_snf_female_temple_holders_yes_desc_long;Can women be in the clergy?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_female_temple_holders_no;        * Female Clergy:  ON;;;;;;;;;;;;;x
+dec_snf_female_temple_holders_no_desc;Can women be in the clergy?;;;;;;;;;;;;;x
+dec_snf_female_temple_holders_no_desc_long;Can women be in the clergy?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_priests_can_marry_yes;        * Clergy can Marry:  OFF;;;;;;;;;;;;;x
+dec_snf_priests_can_marry_yes_desc;Can clergy members marry or have concubines or consorts?;;;;;;;;;;;;;x
+dec_snf_priests_can_marry_yes_desc_long;Can clergy members marry or have concubines or consorts?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_priests_can_marry_no;        * Clergy can Marry:  ON;;;;;;;;;;;;;x
+dec_snf_priests_can_marry_no_desc;Can clergy members marry or have concubines or consorts?;;;;;;;;;;;;;x
+dec_snf_priests_can_marry_no_desc_long;Can clergy members marry or have concubines or consorts?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_priests_can_inherit_yes;        * Clergy can Inherit:  OFF;;;;;;;;;;;;;x
+dec_snf_priests_can_inherit_yes_desc;Can clergy members inherit titles?;;;;;;;;;;;;;x
+dec_snf_priests_can_inherit_yes_desc_long;Can clergy members inherit titles?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_priests_can_inherit_no;        * Clergy can Inherit:  ON;;;;;;;;;;;;;x
+dec_snf_priests_can_inherit_no_desc;Can clergy members inherit titles?;;;;;;;;;;;;;x
+dec_snf_priests_can_inherit_no_desc_long;Can clergy members inherit titles?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_menu_leadership_show;    + Powers of the Leadership >;;;;;;;;;;;;;x
+dec_snf_menu_leadership_show_desc;Extraordinary powers exercised exclusively by the faith leadership.\n\nNote that some or all of these options may not have any effect upon your religion, based on its leadership structure.;;;;;;;;;;;;;x
+dec_snf_menu_leadership_show_desc_long;Extraordinary powers exercised exclusively by the faith leadership.\n\nNote that some or all of these options may not have any effect upon your religion, based on its leadership structure.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_menu_leadership_hide;    - Powers of the Leadership >>;;;;;;;;;;;;;x
+dec_snf_menu_leadership_hide_desc;Extraordinary powers exercised exclusively by the faith leadership.\n\nNote that some or all of these options may not have any effect upon your religion, based on its leadership structure.;;;;;;;;;;;;;x
+dec_snf_menu_leadership_hide_desc_long;Extraordinary powers exercised exclusively by the faith leadership.\n\nNote that some or all of these options may not have any effect upon your religion, based on its leadership structure.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_excommunication_yes;        * Excommunication:  OFF;;;;;;;;;;;;;x
+dec_snf_excommunication_yes_desc;Can the faith leadership excommunicate members?;;;;;;;;;;;;;x
+dec_snf_excommunication_yes_desc_long;Can the faith leadership excommunicate members?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_excommunication_no;        * Excommunication:  ON;;;;;;;;;;;;;x
+dec_snf_excommunication_no_desc;Can the faith leadership excommunicate members?;;;;;;;;;;;;;x
+dec_snf_excommunication_no_desc_long;Can the faith leadership excommunicate members?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_call_crusade_yes;        * Call Crusade:  OFF;;;;;;;;;;;;;x
+dec_snf_call_crusade_yes_desc;Can the faith leadership call crusades?;;;;;;;;;;;;;x
+dec_snf_call_crusade_yes_desc_long;Can the faith leadership call crusades?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_call_crusade_no;        * Call Crusade:  ON;;;;;;;;;;;;;x
+dec_snf_call_crusade_no_desc;Can the faith leadership call crusades?;;;;;;;;;;;;;x
+dec_snf_call_crusade_no_desc_long;Can the faith leadership call crusades?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_grant_invasion_yes;        * Grant Invasion CB:  OFF;;;;;;;;;;;;;x
+dec_snf_grant_invasion_yes_desc;Can the faith leadership grant the right to invade a kingdom?;;;;;;;;;;;;;x
+dec_snf_grant_invasion_yes_desc_long;Can the faith leadership grant the right to invade a kingdom?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_grant_invasion_no;        * Grant Invasion CB:  ON;;;;;;;;;;;;;x
+dec_snf_grant_invasion_no_desc;Can the faith leadership grant the right to invade a kingdom?;;;;;;;;;;;;;x
+dec_snf_grant_invasion_no_desc_long;Can the faith leadership grant the right to invade a kingdom?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_grant_divorce_yes;        * Grant Divorce:  OFF;;;;;;;;;;;;;x
+dec_snf_grant_divorce_yes_desc;Can the faith leadership grant the right to a divorce?;;;;;;;;;;;;;x
+dec_snf_grant_divorce_yes_desc_long;Can the faith leadership grant the right to a divorce?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_grant_divorce_no;        * Grant Divorce:  ON;;;;;;;;;;;;;x
+dec_snf_grant_divorce_no_desc;Can the faith leadership grant the right to a divorce?;;;;;;;;;;;;;x
+dec_snf_grant_divorce_no_desc_long;Can the faith leadership grant the right to a divorce?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_grant_claim_yes;        * Grant Claim:  OFF;;;;;;;;;;;;;x
+dec_snf_grant_claim_yes_desc;Can the faith leadership grant claims to titles?;;;;;;;;;;;;;x
+dec_snf_grant_claim_yes_desc_long;Can the faith leadership grant claims to titles?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_grant_claim_no;        * Grant Claim:  ON;;;;;;;;;;;;;x
+dec_snf_grant_claim_no_desc;Can the faith leadership grant claims to titles?;;;;;;;;;;;;;x
+dec_snf_grant_claim_no_desc_long;Can the faith leadership grant claims to titles?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_menu_society_show;+ Social Structure >;;;;;;;;;;;;;x
+dec_snf_menu_society_show_desc;Various settings related to social norms and succession.\n\nThis is kind of a miscellaneous category.;;;;;;;;;;;;;x
+dec_snf_menu_society_show_desc_long;Various settings related to social norms and succession.\n\nThis is kind of a miscellaneous category.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_menu_society_hide;- Social Structure >>;;;;;;;;;;;;;x
+dec_snf_menu_society_hide_desc;Various settings related to social norms and succession.\n\nThis is kind of a miscellaneous category.;;;;;;;;;;;;;x
+dec_snf_menu_society_hide_desc_long;Various settings related to social norms and succession.\n\nThis is kind of a miscellaneous category.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_short_reign_0_00;    * Short Reign Opinion Penalty:  300%;;;;;;;;;;;;;x
+dec_snf_short_reign_0_00_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_0_00_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%\n       250%\n ->   300%   (Current);;;;;;;;;;;;;x
+dec_snf_short_reign_0_25;    * Short Reign Opinion Penalty:  0%;;;;;;;;;;;;;x
+dec_snf_short_reign_0_25_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_0_25_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n ->   0%   (Current)\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_0_50;    * Short Reign Opinion Penalty:  25%;;;;;;;;;;;;;x
+dec_snf_short_reign_0_50_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_0_50_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n ->   25%   (Current)\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_0_75;    * Short Reign Opinion Penalty:  50%;;;;;;;;;;;;;x
+dec_snf_short_reign_0_75_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_0_75_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n ->   50%   (Current)\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_00;    * Short Reign Opinion Penalty:  75%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_00_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_1_00_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n ->   75%   (Current)\n       100%\n       125%\n       150%\n       175%\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_25;    * Short Reign Opinion Penalty:  100%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_25_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_1_25_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n ->   100%   (Current)\n       125%\n       150%\n       175%\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_50;    * Short Reign Opinion Penalty:  125%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_50_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_1_50_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n ->   125%   (Current)\n       150%\n       175%\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_75;    * Short Reign Opinion Penalty:  150%;;;;;;;;;;;;;x
+dec_snf_short_reign_1_75_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_1_75_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n ->   150%   (Current)\n       175%\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_2_00;    * Short Reign Opinion Penalty:  175%;;;;;;;;;;;;;x
+dec_snf_short_reign_2_00_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_2_00_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n ->   175%   (Current)\n       200%\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_2_50;    * Short Reign Opinion Penalty:  200%;;;;;;;;;;;;;x
+dec_snf_short_reign_2_50_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_2_50_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n ->   200%   (Current)\n       250%\n       300%;;;;;;;;;;;;;x
+dec_snf_short_reign_3_00;    * Short Reign Opinion Penalty:  250%;;;;;;;;;;;;;x
+dec_snf_short_reign_3_00_desc;How unpopular is the new kid, really?;;;;;;;;;;;;;x
+dec_snf_short_reign_3_00_desc_long;How unpopular is the new kid, really?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%\n ->   250%   (Current)\n       300%;;;;;;;;;;;;;x
+dec_snf_heir_designation_yes;    * Heir Designation:  OFF;;;;;;;;;;;;;x
+dec_snf_heir_designation_yes_desc;Can members of this faith designate their own heirs?;;;;;;;;;;;;;x
+dec_snf_heir_designation_yes_desc_long;Can members of this faith designate their own heirs?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_heir_designation_no;    * Heir Designation:  ON;;;;;;;;;;;;;x
+dec_snf_heir_designation_no_desc;Can members of this faith designate their own heirs?;;;;;;;;;;;;;x
+dec_snf_heir_designation_no_desc_long;Can members of this faith designate their own heirs?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_feminist_yes;    * Female Equality:  OFF;;;;;;;;;;;;;x
+dec_snf_feminist_yes_desc;Are female rulers considered equal to their male counterparts in this faith?\n\nThis setting only affects the opinion penalty applied to female rulers.  It does not otherwise change any gender settings regarding inheritance or ownership.;;;;;;;;;;;;;x
+dec_snf_feminist_yes_desc_long;Are female rulers considered equal to their male counterparts in this faith?\n\nThis setting only affects the opinion penalty applied to female rulers.  It does not otherwise change any gender settings regarding inheritance or ownership.\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_feminist_no;    * Female Equality:  ON;;;;;;;;;;;;;x
+dec_snf_feminist_no_desc;Are female rulers considered equal to their male counterparts in this faith?\n\nThis setting only affects the opinion penalty applied to female rulers.  It does not otherwise change any gender settings regarding inheritance or ownership.;;;;;;;;;;;;;x
+dec_snf_feminist_no_desc_long;Are female rulers considered equal to their male counterparts in this faith?\n\nThis setting only affects the opinion penalty applied to female rulers.  It does not otherwise change any gender settings regarding inheritance or ownership.\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_monastery_yes;    * Monastic Orders:  OFF;;;;;;;;;;;;;x
+dec_snf_monastery_yes_desc;Does this faith have monastic orders where adherents can take vows and retire from society?;;;;;;;;;;;;;x
+dec_snf_monastery_yes_desc_long;Does this faith have monastic orders where adherents can take vows and retire from society?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_monastery_no;    * Monastic Orders:  ON;;;;;;;;;;;;;x
+dec_snf_monastery_no_desc;Does this faith have monastic orders where adherents can take vows and retire from society?;;;;;;;;;;;;;x
+dec_snf_monastery_no_desc_long;Does this faith have monastic orders where adherents can take vows and retire from society?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_decadence_yes;    * Decadence:  OFF;;;;;;;;;;;;;x
+dec_snf_decadence_yes_desc;Does this faith have issues keeping its flock on the right path?\n\nWhen activated, this faith will use the Muslim decadence system.;;;;;;;;;;;;;x
+dec_snf_decadence_yes_desc_long;Does this faith have issues keeping its flock on the right path?\n\nWhen activated, this faith will use the Muslim decadence system.\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_decadence_no;    * Decadence:  ON;;;;;;;;;;;;;x
+dec_snf_decadence_no_desc;Does this faith have issues keeping its flock on the right path?\n\nWhen activated, this faith will use the Muslim decadence system.;;;;;;;;;;;;;x
+dec_snf_decadence_no_desc_long;Does this faith have issues keeping its flock on the right path?\n\nWhen activated, this faith will use the Muslim decadence system.\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_menu_other_faiths_show;+ Interfaith Relations >;;;;;;;;;;;;;x
+dec_snf_menu_other_faiths_show_desc;How members of this faith regard members of other faiths.;;;;;;;;;;;;;x
+dec_snf_menu_other_faiths_show_desc_long;How members of this faith regard members of other faiths.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_menu_other_faiths_hide;- Interfaith Relations >>;;;;;;;;;;;;;x
+dec_snf_menu_other_faiths_hide_desc;How members of this faith regard members of other faiths.;;;;;;;;;;;;;x
+dec_snf_menu_other_faiths_hide_desc_long;How members of this faith regard members of other faiths.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_0;    * Will Try to Convert Other Faith Groups:  Always;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_0_desc;Will rulers of the faith actively attempt to convert non-believers from other faith groups?;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_0_desc_long;Will rulers of the faith actively attempt to convert non-believers from other faith groups?\n\n\nClick to cycle through options.\n-----------------------------------\n       Never\n       Maybe\n ->   Always   (Current);;;;;;;;;;;;;x
+dec_snf_convert_other_groups_1;    * Will Try to Convert Other Faith Groups:  Never;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_1_desc;Will rulers of the faith actively attempt to convert non-believers from other faith groups?;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_1_desc_long;Will rulers of the faith actively attempt to convert non-believers from other faith groups?\n\n\nClick to cycle through options.\n-----------------------------------\n ->   Never   (Current)\n       Maybe\n       Always;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_2;    * Will Try to Convert Other Faith Groups:  Maybe;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_2_desc;Will rulers of the faith actively attempt to convert non-believers from other faith groups?;;;;;;;;;;;;;x
+dec_snf_convert_other_groups_2_desc_long;Will rulers of the faith actively attempt to convert non-believers from other faith groups?\n\n\nClick to cycle through options.\n-----------------------------------\n       Never\n ->   Maybe   (Current)\n       Always;;;;;;;;;;;;;x
+dec_snf_convert_same_group_0;    * Will Try to Convert Same Faith Group:  Always;;;;;;;;;;;;;x
+dec_snf_convert_same_group_0_desc;Will rulers of the faith actively attempt to convert non-belivers from this faith group?;;;;;;;;;;;;;x
+dec_snf_convert_same_group_0_desc_long;Will rulers of the faith actively attempt to convert non-belivers from this faith group?\n\n\nClick to cycle through options.\n-----------------------------------\n       Never\n       Maybe\n ->   Always   (Current);;;;;;;;;;;;;x
+dec_snf_convert_same_group_1;    * Will Try to Convert Same Faith Group:  Never;;;;;;;;;;;;;x
+dec_snf_convert_same_group_1_desc;Will rulers of the faith actively attempt to convert non-belivers from this faith group?;;;;;;;;;;;;;x
+dec_snf_convert_same_group_1_desc_long;Will rulers of the faith actively attempt to convert non-belivers from this faith group?\n\n\nClick to cycle through options.\n-----------------------------------\n ->   Never   (Current)\n       Maybe\n       Always;;;;;;;;;;;;;x
+dec_snf_convert_same_group_2;    * Will Try to Convert Same Faith Group:  Maybe;;;;;;;;;;;;;x
+dec_snf_convert_same_group_2_desc;Will rulers of the faith actively attempt to convert non-belivers from this faith group?;;;;;;;;;;;;;x
+dec_snf_convert_same_group_2_desc_long;Will rulers of the faith actively attempt to convert non-belivers from this faith group?\n\n\nClick to cycle through options.\n-----------------------------------\n       Never\n ->   Maybe   (Current)\n       Always;;;;;;;;;;;;;x
+dec_snf_hard_to_convert_yes;    * Hard to Convert:  OFF;;;;;;;;;;;;;x
+dec_snf_hard_to_convert_yes_desc;Are members of this faith generally resistant to conversion attempts?;;;;;;;;;;;;;x
+dec_snf_hard_to_convert_yes_desc_long;Are members of this faith generally resistant to conversion attempts?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_hard_to_convert_no;    * Hard to Convert:  ON;;;;;;;;;;;;;x
+dec_snf_hard_to_convert_no_desc;Are members of this faith generally resistant to conversion attempts?;;;;;;;;;;;;;x
+dec_snf_hard_to_convert_no_desc_long;Are members of this faith generally resistant to conversion attempts?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_jizya_tax_yes;    * Tax the Infidels:  OFF;;;;;;;;;;;;;x
+dec_snf_jizya_tax_yes_desc;Does this faith charge a special tax for those who do not profess the faith?;;;;;;;;;;;;;x
+dec_snf_jizya_tax_yes_desc_long;Does this faith charge a special tax for those who do not profess the faith?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_jizya_tax_no;    * Tax the Infidels:  ON;;;;;;;;;;;;;x
+dec_snf_jizya_tax_no_desc;Does this faith charge a special tax for those who do not profess the faith?;;;;;;;;;;;;;x
+dec_snf_jizya_tax_no_desc_long;Does this faith charge a special tax for those who do not profess the faith?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_menu_war_peace_show;+ War & Peace >;;;;;;;;;;;;;x
+dec_snf_menu_war_peace_show_desc;Military options and AI aggressiveness.;;;;;;;;;;;;;x
+dec_snf_menu_war_peace_show_desc_long;Military options and AI aggressiveness.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_menu_war_peace_hide;- War & Peace >>;;;;;;;;;;;;;x
+dec_snf_menu_war_peace_hide_desc;Military options and AI aggressiveness.;;;;;;;;;;;;;x
+dec_snf_menu_war_peace_hide_desc_long;Military options and AI aggressiveness.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_reputation_show;    + Reputation >;;;;;;;;;;;;;x
+dec_snf_reputation_show_desc;Piety, Prestige, and Opinion modifiers relating to matters of war and peace.;;;;;;;;;;;;;x
+dec_snf_reputation_show_desc_long;Piety, Prestige, and Opinion modifiers relating to matters of war and peace.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_reputation_hide;    - Reputation >>;;;;;;;;;;;;;x
+dec_snf_reputation_hide_desc;Piety, Prestige, and Opinion modifiers relating to matters of war and peace.;;;;;;;;;;;;;x
+dec_snf_reputation_hide_desc_long;Piety, Prestige, and Opinion modifiers relating to matters of war and peace.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_0_0;        * Gain Piety While at Peace:  4.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_0_0_desc;Do rulers of this faith gain piety for keeping the realm peaceful?;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_0_0_desc_long;Do rulers of this faith gain piety for keeping the realm peaceful?\n\n\nClick to cycle through options.\n-----------------------------------\n       0.0\n       1.0\n       2.0\n       3.0\n ->   4.0   (Current);;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_1_0;        * Gain Piety While at Peace:  0.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_1_0_desc;Do rulers of this faith gain piety for keeping the realm peaceful?;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_1_0_desc_long;Do rulers of this faith gain piety for keeping the realm peaceful?\n\n\nClick to cycle through options.\n-----------------------------------\n ->   0.0   (Current)\n       1.0\n       2.0\n       3.0\n       4.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_2_0;        * Gain Piety While at Peace:  1.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_2_0_desc;Do rulers of this faith gain piety for keeping the realm peaceful?;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_2_0_desc_long;Do rulers of this faith gain piety for keeping the realm peaceful?\n\n\nClick to cycle through options.\n-----------------------------------\n       0.0\n ->   1.0   (Current)\n       2.0\n       3.0\n       4.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_3_0;        * Gain Piety While at Peace:  2.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_3_0_desc;Do rulers of this faith gain piety for keeping the realm peaceful?;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_3_0_desc_long;Do rulers of this faith gain piety for keeping the realm peaceful?\n\n\nClick to cycle through options.\n-----------------------------------\n       0.0\n       1.0\n ->   2.0   (Current)\n       3.0\n       4.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_4_0;        * Gain Piety While at Peace:  3.0;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_4_0_desc;Do rulers of this faith gain piety for keeping the realm peaceful?;;;;;;;;;;;;;x
+dec_snf_peace_piety_gain_4_0_desc_long;Do rulers of this faith gain piety for keeping the realm peaceful?\n\n\nClick to cycle through options.\n-----------------------------------\n       0.0\n       1.0\n       2.0\n ->   3.0   (Current)\n       4.0;;;;;;;;;;;;;x
+dec_snf_peace_prestige_loss_yes;        * Lose Prestige While at Peace:  OFF;;;;;;;;;;;;;x
+dec_snf_peace_prestige_loss_yes_desc;Do rulers of this faith lose prestige by staying out of armed conflict?;;;;;;;;;;;;;x
+dec_snf_peace_prestige_loss_yes_desc_long;Do rulers of this faith lose prestige by staying out of armed conflict?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_peace_prestige_loss_no;        * Lose Prestige While at Peace:  ON;;;;;;;;;;;;;x
+dec_snf_peace_prestige_loss_no_desc;Do rulers of this faith lose prestige by staying out of armed conflict?;;;;;;;;;;;;;x
+dec_snf_peace_prestige_loss_no_desc_long;Do rulers of this faith lose prestige by staying out of armed conflict?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_piety_loss_faithful_yes;        * Lose Piety for Attacking Faithful:  OFF;;;;;;;;;;;;;x
+dec_snf_piety_loss_faithful_yes_desc;Does this faith frown on its adherents attacking other relams of the faith?;;;;;;;;;;;;;x
+dec_snf_piety_loss_faithful_yes_desc_long;Does this faith frown on its adherents attacking other relams of the faith?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_piety_loss_faithful_no;        * Lose Piety for Attacking Faithful:  ON;;;;;;;;;;;;;x
+dec_snf_piety_loss_faithful_no_desc;Does this faith frown on its adherents attacking other relams of the faith?;;;;;;;;;;;;;x
+dec_snf_piety_loss_faithful_no_desc_long;Does this faith frown on its adherents attacking other relams of the faith?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_raised_vassal_opinion_loss_yes;        * Vassals Dislike Raised Levies:  OFF;;;;;;;;;;;;;x
+dec_snf_raised_vassal_opinion_loss_yes_desc;Do the vassals really care if you keep their men too long?;;;;;;;;;;;;;x
+dec_snf_raised_vassal_opinion_loss_yes_desc_long;Do the vassals really care if you keep their men too long?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_raised_vassal_opinion_loss_no;        * Vassals Dislike Raised Levies:  ON;;;;;;;;;;;;;x
+dec_snf_raised_vassal_opinion_loss_no_desc;Do the vassals really care if you keep their men too long?;;;;;;;;;;;;;x
+dec_snf_raised_vassal_opinion_loss_no_desc_long;Do the vassals really care if you keep their men too long?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_aggressiveness_show;    + Aggressiveness >;;;;;;;;;;;;;x
+dec_snf_aggressiveness_show_desc;How generally aggressive realms of this faith tend to be.;;;;;;;;;;;;;x
+dec_snf_aggressiveness_show_desc_long;How generally aggressive realms of this faith tend to be.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_aggressiveness_hide;    - Aggressiveness >>;;;;;;;;;;;;;x
+dec_snf_aggressiveness_hide_desc;How generally aggressive realms of this faith tend to be.;;;;;;;;;;;;;x
+dec_snf_aggressiveness_hide_desc_long;How generally aggressive realms of this faith tend to be.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_00;        * AI Aggressiveness:  200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_00_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_00_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n ->   200%   (Current);;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_25;        * AI Aggressiveness:  0%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_25_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_25_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n ->   0%   (Current)\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_50;        * AI Aggressiveness:  25%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_50_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_50_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n ->   25%   (Current)\n       50%\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_75;        * AI Aggressiveness:  50%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_75_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_0_75_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n ->   50%   (Current)\n       75%\n       100%\n       125%\n       150%\n       175%\n       200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_00;        * AI Aggressiveness:  75%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_00_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_00_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n ->   75%   (Current)\n       100%\n       125%\n       150%\n       175%\n       200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_25;        * AI Aggressiveness:  100%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_25_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_25_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n ->   100%   (Current)\n       125%\n       150%\n       175%\n       200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_50;        * AI Aggressiveness:  125%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_50_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_50_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n ->   125%   (Current)\n       150%\n       175%\n       200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_75;        * AI Aggressiveness:  150%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_75_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_1_75_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n ->   150%   (Current)\n       175%\n       200%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_2_00;        * AI Aggressiveness:  175%;;;;;;;;;;;;;x
+dec_snf_ai_aggression_2_00_desc;How aggressive is the typical realm which practices this faith?;;;;;;;;;;;;;x
+dec_snf_ai_aggression_2_00_desc_long;How aggressive is the typical realm which practices this faith?\n\n\nClick to cycle through options.\n-----------------------------------\n       0%\n       25%\n       50%\n       75%\n       100%\n       125%\n       150%\n ->   175%   (Current)\n       200%;;;;;;;;;;;;;x
+dec_snf_pacifist_yes;        * Pacifism:  OFF;;;;;;;;;;;;;x
+dec_snf_pacifist_yes_desc;Whether or not this religion embraces non-aggression as a central tenant.;;;;;;;;;;;;;x
+dec_snf_pacifist_yes_desc_long;Whether or not this religion embraces non-aggression as a central tenant.\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_pacifist_no;        * Pacifism:  ON;;;;;;;;;;;;;x
+dec_snf_pacifist_no_desc;Whether or not this religion embraces non-aggression as a central tenant.;;;;;;;;;;;;;x
+dec_snf_pacifist_no_desc_long;Whether or not this religion embraces non-aggression as a central tenant.\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_prepared_invasions_yes;        * Prepared Invasions:  OFF;;;;;;;;;;;;;x
+dec_snf_prepared_invasions_yes_desc;Does this faith permit Viking-style invasions?;;;;;;;;;;;;;x
+dec_snf_prepared_invasions_yes_desc_long;Does this faith permit Viking-style invasions?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_prepared_invasions_no;        * Prepared Invasions:  ON;;;;;;;;;;;;;x
+dec_snf_prepared_invasions_no_desc;Does this faith permit Viking-style invasions?;;;;;;;;;;;;;x
+dec_snf_prepared_invasions_no_desc_long;Does this faith permit Viking-style invasions?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_tactics_show;    + Features >;;;;;;;;;;;;;x
+dec_snf_tactics_show_desc;Alternative military tactics:  raiding, seafaring, etc.;;;;;;;;;;;;;x
+dec_snf_tactics_show_desc_long;Alternative military tactics:  raiding, seafaring, etc.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_tactics_hide;    - Features >>;;;;;;;;;;;;;x
+dec_snf_tactics_hide_desc;Alternative military tactics:  raiding, seafaring, etc.;;;;;;;;;;;;;x
+dec_snf_tactics_hide_desc_long;Alternative military tactics:  raiding, seafaring, etc.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_looting_yes;        * Looting:  OFF;;;;;;;;;;;;;x
+dec_snf_looting_yes_desc;Does this faith promote looting?;;;;;;;;;;;;;x
+dec_snf_looting_yes_desc_long;Does this faith promote looting?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_looting_no;        * Looting:  ON;;;;;;;;;;;;;x
+dec_snf_looting_no_desc;Does this faith promote looting?;;;;;;;;;;;;;x
+dec_snf_looting_no_desc_long;Does this faith promote looting?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_seafaring_yes;        * Seafaring:  OFF;;;;;;;;;;;;;x
+dec_snf_seafaring_yes_desc;Are this faith's adherents skilled in naval warfare?;;;;;;;;;;;;;x
+dec_snf_seafaring_yes_desc_long;Are this faith's adherents skilled in naval warfare?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_seafaring_no;        * Seafaring:  ON;;;;;;;;;;;;;x
+dec_snf_seafaring_no_desc;Are this faith's adherents skilled in naval warfare?;;;;;;;;;;;;;x
+dec_snf_seafaring_no_desc_long;Are this faith's adherents skilled in naval warfare?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_river_movement_yes;        * River Movement:  OFF;;;;;;;;;;;;;x
+dec_snf_river_movement_yes_desc;Do members of this faith like sailing their boats up the rivers?;;;;;;;;;;;;;x
+dec_snf_river_movement_yes_desc_long;Do members of this faith like sailing their boats up the rivers?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_river_movement_no;        * River Movement:  ON;;;;;;;;;;;;;x
+dec_snf_river_movement_no_desc;Do members of this faith like sailing their boats up the rivers?;;;;;;;;;;;;;x
+dec_snf_river_movement_no_desc_long;Do members of this faith like sailing their boats up the rivers?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_defensive_attrition_yes;        * Defensive Attrition:  OFF;;;;;;;;;;;;;x
+dec_snf_defensive_attrition_yes_desc;Are this faith's realms difficult to invade?;;;;;;;;;;;;;x
+dec_snf_defensive_attrition_yes_desc_long;Are this faith's realms difficult to invade?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_defensive_attrition_no;        * Defensive Attrition:  ON;;;;;;;;;;;;;x
+dec_snf_defensive_attrition_no_desc;Are this faith's realms difficult to invade?;;;;;;;;;;;;;x
+dec_snf_defensive_attrition_no_desc_long;Are this faith's realms difficult to invade?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_ignore_defensive_attrition_yes;        * Ignore Defensive Attrition:  OFF;;;;;;;;;;;;;x
+dec_snf_ignore_defensive_attrition_yes_desc;Are this faith's forces able to overcome defensive attrition?;;;;;;;;;;;;;x
+dec_snf_ignore_defensive_attrition_yes_desc_long;Are this faith's forces able to overcome defensive attrition?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_ignore_defensive_attrition_no;        * Ignore Defensive Attrition:  ON;;;;;;;;;;;;;x
+dec_snf_ignore_defensive_attrition_no_desc;Are this faith's forces able to overcome defensive attrition?;;;;;;;;;;;;;x
+dec_snf_ignore_defensive_attrition_no_desc_long;Are this faith's forces able to overcome defensive attrition?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_menu_love_marriage_show;+ Love & Marriage >;;;;;;;;;;;;;x
+dec_snf_menu_love_marriage_show_desc;Marriage, concubines, consorts, and lovers.;;;;;;;;;;;;;x
+dec_snf_menu_love_marriage_show_desc_long;Marriage, concubines, consorts, and lovers.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_menu_love_marriage_hide;- Love & Marriage >>;;;;;;;;;;;;;x
+dec_snf_menu_love_marriage_hide_desc;Marriage, concubines, consorts, and lovers.;;;;;;;;;;;;;x
+dec_snf_menu_love_marriage_hide_desc_long;Marriage, concubines, consorts, and lovers.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_max_wives_1;    * Maximum # of Wives:  100;;;;;;;;;;;;;x
+dec_snf_max_wives_1_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_1_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n       10\n ->   100   (Current);;;;;;;;;;;;;x
+dec_snf_max_wives_2;    * Maximum # of Wives:  1;;;;;;;;;;;;;x
+dec_snf_max_wives_2_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_2_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n ->   1   (Current)\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_3;    * Maximum # of Wives:  2;;;;;;;;;;;;;x
+dec_snf_max_wives_3_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_3_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n ->   2   (Current)\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_4;    * Maximum # of Wives:  3;;;;;;;;;;;;;x
+dec_snf_max_wives_4_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_4_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n ->   3   (Current)\n       4\n       5\n       6\n       7\n       8\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_5;    * Maximum # of Wives:  4;;;;;;;;;;;;;x
+dec_snf_max_wives_5_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_5_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n ->   4   (Current)\n       5\n       6\n       7\n       8\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_6;    * Maximum # of Wives:  5;;;;;;;;;;;;;x
+dec_snf_max_wives_6_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_6_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n       4\n ->   5   (Current)\n       6\n       7\n       8\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_7;    * Maximum # of Wives:  6;;;;;;;;;;;;;x
+dec_snf_max_wives_7_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_7_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n       4\n       5\n ->   6   (Current)\n       7\n       8\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_8;    * Maximum # of Wives:  7;;;;;;;;;;;;;x
+dec_snf_max_wives_8_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_8_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n       4\n       5\n       6\n ->   7   (Current)\n       8\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_9;    * Maximum # of Wives:  8;;;;;;;;;;;;;x
+dec_snf_max_wives_9_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_9_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n ->   8   (Current)\n       9\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_10;    * Maximum # of Wives:  9;;;;;;;;;;;;;x
+dec_snf_max_wives_10_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_10_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n ->   9   (Current)\n       10\n       100;;;;;;;;;;;;;x
+dec_snf_max_wives_100;    * Maximum # of Wives:  10;;;;;;;;;;;;;x
+dec_snf_max_wives_100_desc;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.;;;;;;;;;;;;;x
+dec_snf_max_wives_100_desc_long;Maximum allowable number of wives for men.  Sorry ladies, Paradox says you can only have one husband.\n\nSetting this to any value higher than 1 will cause Concubines for Men to have no effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n ->   10   (Current)\n       100;;;;;;;;;;;;;x
+dec_snf_matrilineal_marriages_yes;    * Matrilineal Marriages:  OFF;;;;;;;;;;;;;x
+dec_snf_matrilineal_marriages_yes_desc;Whether or not matrilineal marriages are permitted within the faith.;;;;;;;;;;;;;x
+dec_snf_matrilineal_marriages_yes_desc_long;Whether or not matrilineal marriages are permitted within the faith.\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_matrilineal_marriages_no;    * Matrilineal Marriages:  ON;;;;;;;;;;;;;x
+dec_snf_matrilineal_marriages_no_desc;Whether or not matrilineal marriages are permitted within the faith.;;;;;;;;;;;;;x
+dec_snf_matrilineal_marriages_no_desc_long;Whether or not matrilineal marriages are permitted within the faith.\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_concubines_consorts_show;    + Concubines & Consorts >;;;;;;;;;;;;;x
+dec_snf_concubines_consorts_show_desc;Who can have concubines/consorts and how many they can have.;;;;;;;;;;;;;x
+dec_snf_concubines_consorts_show_desc_long;Who can have concubines/consorts and how many they can have.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_concubines_consorts_hide;    - Concubines & Consorts >>;;;;;;;;;;;;;x
+dec_snf_concubines_consorts_hide_desc;Who can have concubines/consorts and how many they can have.;;;;;;;;;;;;;x
+dec_snf_concubines_consorts_hide_desc_long;Who can have concubines/consorts and how many they can have.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_max_consorts_0;        * Maximum # of Consorts:  99;;;;;;;;;;;;;x
+dec_snf_max_consorts_0_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_0_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n ->   99   (Current);;;;;;;;;;;;;x
+dec_snf_max_consorts_1;        * Maximum # of Consorts:  0;;;;;;;;;;;;;x
+dec_snf_max_consorts_1_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_1_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n ->   0   (Current)\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_2;        * Maximum # of Consorts:  1;;;;;;;;;;;;;x
+dec_snf_max_consorts_2_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_2_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n ->   1   (Current)\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_3;        * Maximum # of Consorts:  2;;;;;;;;;;;;;x
+dec_snf_max_consorts_3_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_3_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n ->   2   (Current)\n       3\n       4\n       5\n       6\n       7\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_4;        * Maximum # of Consorts:  3;;;;;;;;;;;;;x
+dec_snf_max_consorts_4_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_4_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n ->   3   (Current)\n       4\n       5\n       6\n       7\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_5;        * Maximum # of Consorts:  4;;;;;;;;;;;;;x
+dec_snf_max_consorts_5_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_5_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n       3\n ->   4   (Current)\n       5\n       6\n       7\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_6;        * Maximum # of Consorts:  5;;;;;;;;;;;;;x
+dec_snf_max_consorts_6_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_6_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n       3\n       4\n ->   5   (Current)\n       6\n       7\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_7;        * Maximum # of Consorts:  6;;;;;;;;;;;;;x
+dec_snf_max_consorts_7_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_7_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n       3\n       4\n       5\n ->   6   (Current)\n       7\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_8;        * Maximum # of Consorts:  7;;;;;;;;;;;;;x
+dec_snf_max_consorts_8_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_8_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n       3\n       4\n       5\n       6\n ->   7   (Current)\n       8\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_9;        * Maximum # of Consorts:  8;;;;;;;;;;;;;x
+dec_snf_max_consorts_9_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_9_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n ->   8   (Current)\n       9\n       99;;;;;;;;;;;;;x
+dec_snf_max_consorts_99;        * Maximum # of Consorts:  9;;;;;;;;;;;;;x
+dec_snf_max_consorts_99_desc;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.;;;;;;;;;;;;;x
+dec_snf_max_consorts_99_desc_long;Maximum number of concubines or consorts that a person may have.\n\nThis must be greater than 0 for either of the two below options to have any effect.\n\n\nClick to cycle through options.\n-----------------------------------\n       0\n       1\n       2\n       3\n       4\n       5\n       6\n       7\n       8\n ->   9   (Current)\n       99;;;;;;;;;;;;;x
+dec_snf_concubines_yes;        * Concubines for Men:  OFF;;;;;;;;;;;;;x
+dec_snf_concubines_yes_desc;Whether or not men can have concubines.\n\nIf Maximum # of Consorts is 0 or Maximum # of Wives is greater than 1, this setting will have no effect.;;;;;;;;;;;;;x
+dec_snf_concubines_yes_desc_long;Whether or not men can have concubines.\n\nIf Maximum # of Consorts is 0 or Maximum # of Wives is greater than 1, this setting will have no effect.\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_concubines_no;        * Concubines for Men:  ON;;;;;;;;;;;;;x
+dec_snf_concubines_no_desc;Whether or not men can have concubines.\n\nIf Maximum # of Consorts is 0 or Maximum # of Wives is greater than 1, this setting will have no effect.;;;;;;;;;;;;;x
+dec_snf_concubines_no_desc_long;Whether or not men can have concubines.\n\nIf Maximum # of Consorts is 0 or Maximum # of Wives is greater than 1, this setting will have no effect.\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_consorts_yes;        * Consorts for Women:  OFF;;;;;;;;;;;;;x
+dec_snf_consorts_yes_desc;Whether or not women can have consorts.\n\nIf Maximum # of Consorts = 0, this setting will have no effect.;;;;;;;;;;;;;x
+dec_snf_consorts_yes_desc_long;Whether or not women can have consorts.\n\nIf Maximum # of Consorts = 0, this setting will have no effect.\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_consorts_no;        * Consorts for Women:  ON;;;;;;;;;;;;;x
+dec_snf_consorts_no_desc;Whether or not women can have consorts.\n\nIf Maximum # of Consorts = 0, this setting will have no effect.;;;;;;;;;;;;;x
+dec_snf_consorts_no_desc_long;Whether or not women can have consorts.\n\nIf Maximum # of Consorts = 0, this setting will have no effect.\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_menu_incest_show;    + Family Affairs >;;;;;;;;;;;;;x
+dec_snf_menu_incest_show_desc;Limitations on romantic relationships between close family members.;;;;;;;;;;;;;x
+dec_snf_menu_incest_show_desc_long;Limitations on romantic relationships between close family members.\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_menu_incest_hide;    - Family Affairs >>;;;;;;;;;;;;;x
+dec_snf_menu_incest_hide_desc;Limitations on romantic relationships between close family members.;;;;;;;;;;;;;x
+dec_snf_menu_incest_hide_desc_long;Limitations on romantic relationships between close family members.\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_cousin_marriage_yes;        * Cousins:  OFF;;;;;;;;;;;;;x
+dec_snf_cousin_marriage_yes_desc;Can they marry their cousins?;;;;;;;;;;;;;x
+dec_snf_cousin_marriage_yes_desc_long;Can they marry their cousins?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_cousin_marriage_no;        * Cousins:  ON;;;;;;;;;;;;;x
+dec_snf_cousin_marriage_no_desc;Can they marry their cousins?;;;;;;;;;;;;;x
+dec_snf_cousin_marriage_no_desc_long;Can they marry their cousins?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_psc_marriage_yes;        * Uncles/Aunts:  OFF;;;;;;;;;;;;;x
+dec_snf_psc_marriage_yes_desc;Can they marry their aunts, uncles, neices, or nephews?;;;;;;;;;;;;;x
+dec_snf_psc_marriage_yes_desc_long;Can they marry their aunts, uncles, neices, or nephews?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_psc_marriage_no;        * Uncles/Aunts:  ON;;;;;;;;;;;;;x
+dec_snf_psc_marriage_no_desc;Can they marry their aunts, uncles, neices, or nephews?;;;;;;;;;;;;;x
+dec_snf_psc_marriage_no_desc_long;Can they marry their aunts, uncles, neices, or nephews?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_bs_marriage_yes;        * Siblings:  OFF;;;;;;;;;;;;;x
+dec_snf_bs_marriage_yes_desc;Can they marry their brothers or sisters?;;;;;;;;;;;;;x
+dec_snf_bs_marriage_yes_desc_long;Can they marry their brothers or sisters?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_bs_marriage_no;        * Siblings:  ON;;;;;;;;;;;;;x
+dec_snf_bs_marriage_no_desc;Can they marry their brothers or sisters?;;;;;;;;;;;;;x
+dec_snf_bs_marriage_no_desc_long;Can they marry their brothers or sisters?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_pc_marriage_yes;        * Parents/Children:  OFF;;;;;;;;;;;;;x
+dec_snf_pc_marriage_yes_desc;Can they marry their parents or children?;;;;;;;;;;;;;x
+dec_snf_pc_marriage_yes_desc_long;Can they marry their parents or children?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_pc_marriage_no;        * Parents/Children:  ON;;;;;;;;;;;;;x
+dec_snf_pc_marriage_no_desc;Can they marry their parents or children?;;;;;;;;;;;;;x
+dec_snf_pc_marriage_no_desc_long;Can they marry their parents or children?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_divine_blood_yes;        * Divine Blood:  OFF;;;;;;;;;;;;;x
+dec_snf_divine_blood_yes_desc;Does the faith embrace this kind of behavior, or is this just a weird cultural thing?;;;;;;;;;;;;;x
+dec_snf_divine_blood_yes_desc_long;Does the faith embrace this kind of behavior, or is this just a weird cultural thing?\n\n\nClick to turn this setting on.;;;;;;;;;;;;;x
+dec_snf_divine_blood_no;        * Divine Blood:  ON;;;;;;;;;;;;;x
+dec_snf_divine_blood_no_desc;Does the faith embrace this kind of behavior, or is this just a weird cultural thing?;;;;;;;;;;;;;x
+dec_snf_divine_blood_no_desc_long;Does the faith embrace this kind of behavior, or is this just a weird cultural thing?\n\n\nClick to turn this setting off.;;;;;;;;;;;;;x
+dec_snf_attributes_show;+ Ruler Bonus >;;;;;;;;;;;;;x
+dec_snf_attributes_show_desc;Many faiths have qualities which assist rulers of that faith in managing their realms.  Your faith should be one of those.\n\nNote that this setting can take a little while (sometimes 8 or 9 months) to actually take effect.  Be patient--your Shiny New Faith will deliver, eventually!;;;;;;;;;;;;;x
+dec_snf_attributes_show_desc_long;Many faiths have qualities which assist rulers of that faith in managing their realms.  Your faith should be one of those.\n\nNote that this setting can take a little while (sometimes 8 or 9 months) to actually take effect.  Be patient--your Shiny New Faith will deliver, eventually!\n\n\nClick to show this menu.;;;;;;;;;;;;;x
+dec_snf_attributes_hide;- Ruler Bonus >>;;;;;;;;;;;;;x
+dec_snf_attributes_hide_desc;Many faiths have qualities which assist rulers of that faith in managing their realms.  Your faith should be one of those.\n\nNote that this setting can take a little while (sometimes 8 or 9 months) to actually take effect.  Be patient--your Shiny New Faith will deliver, eventually!;;;;;;;;;;;;;x
+dec_snf_attributes_hide_desc_long;Many faiths have qualities which assist rulers of that faith in managing their realms.  Your faith should be one of those.\n\nNote that this setting can take a little while (sometimes 8 or 9 months) to actually take effect.  Be patient--your Shiny New Faith will deliver, eventually!\n\n\nClick to hide this menu.;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_3;    * Diplomacy:  +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_3_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_3_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n ->   +100   (Current);;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_2;    * Diplomacy:  -3;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_2_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_2_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n ->   -3   (Current)\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_1;    * Diplomacy:  -2;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_1_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_minus_1_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n ->   -2   (Current)\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_0;    * Diplomacy:  -1;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_0_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_0_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n ->   -1   (Current)\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_1;    * Diplomacy:  +0;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_1_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_1_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n ->   +0   (Current)\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_2;    * Diplomacy:  +1;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_2_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_2_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n ->   +1   (Current)\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_3;    * Diplomacy:  +2;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_3_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_3_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n ->   +2   (Current)\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_4;    * Diplomacy:  +3;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_4_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_4_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n ->   +3   (Current)\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_5;    * Diplomacy:  +4;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_5_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_5_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n ->   +4   (Current)\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_10;    * Diplomacy:  +5;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_10_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_10_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n ->   +5   (Current)\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_25;    * Diplomacy:  +10;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_25_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_25_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n ->   +10   (Current)\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_50;    * Diplomacy:  +25;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_50_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_50_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n ->   +25   (Current)\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_100;    * Diplomacy:  +50;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_100_desc;Adjusts the Diplomacy stat;;;;;;;;;;;;;x
+dec_snf_diplomacy_diplomacy_100_desc_long;Adjusts the Diplomacy stat\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n ->   +50   (Current)\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_3;    * Martial:  +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_3_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_3_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n ->   +100   (Current);;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_2;    * Martial:  -3;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_2_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_2_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n ->   -3   (Current)\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_1;    * Martial:  -2;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_1_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_minus_1_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n ->   -2   (Current)\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_0;    * Martial:  -1;;;;;;;;;;;;;x
+dec_snf_martial_martial_0_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_0_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n ->   -1   (Current)\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_1;    * Martial:  +0;;;;;;;;;;;;;x
+dec_snf_martial_martial_1_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_1_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n ->   +0   (Current)\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_2;    * Martial:  +1;;;;;;;;;;;;;x
+dec_snf_martial_martial_2_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_2_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n ->   +1   (Current)\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_3;    * Martial:  +2;;;;;;;;;;;;;x
+dec_snf_martial_martial_3_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_3_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n ->   +2   (Current)\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_4;    * Martial:  +3;;;;;;;;;;;;;x
+dec_snf_martial_martial_4_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_4_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n ->   +3   (Current)\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_5;    * Martial:  +4;;;;;;;;;;;;;x
+dec_snf_martial_martial_5_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_5_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n ->   +4   (Current)\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_10;    * Martial:  +5;;;;;;;;;;;;;x
+dec_snf_martial_martial_10_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_10_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n ->   +5   (Current)\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_25;    * Martial:  +10;;;;;;;;;;;;;x
+dec_snf_martial_martial_25_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_25_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n ->   +10   (Current)\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_50;    * Martial:  +25;;;;;;;;;;;;;x
+dec_snf_martial_martial_50_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_50_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n ->   +25   (Current)\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_martial_martial_100;    * Martial:  +50;;;;;;;;;;;;;x
+dec_snf_martial_martial_100_desc;Adjusts the Martial attribute.;;;;;;;;;;;;;x
+dec_snf_martial_martial_100_desc_long;Adjusts the Martial attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n ->   +50   (Current)\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_3;    * Stewardship:  +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_3_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_3_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n ->   +100   (Current);;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_2;    * Stewardship:  -3;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_2_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_2_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n ->   -3   (Current)\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_1;    * Stewardship:  -2;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_1_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_minus_1_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n ->   -2   (Current)\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_0;    * Stewardship:  -1;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_0_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_0_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n ->   -1   (Current)\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_1;    * Stewardship:  +0;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_1_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_1_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n ->   +0   (Current)\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_2;    * Stewardship:  +1;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_2_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_2_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n ->   +1   (Current)\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_3;    * Stewardship:  +2;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_3_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_3_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n ->   +2   (Current)\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_4;    * Stewardship:  +3;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_4_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_4_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n ->   +3   (Current)\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_5;    * Stewardship:  +4;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_5_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_5_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n ->   +4   (Current)\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_10;    * Stewardship:  +5;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_10_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_10_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n ->   +5   (Current)\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_25;    * Stewardship:  +10;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_25_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_25_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n ->   +10   (Current)\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_50;    * Stewardship:  +25;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_50_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_50_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n ->   +25   (Current)\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_100;    * Stewardship:  +50;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_100_desc;Adjusts the Stewardship attribute.;;;;;;;;;;;;;x
+dec_snf_stewardship_stewardship_100_desc_long;Adjusts the Stewardship attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n ->   +50   (Current)\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_3;    * Intrigue:  +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_3_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_3_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n ->   +100   (Current);;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_2;    * Intrigue:  -3;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_2_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_2_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n ->   -3   (Current)\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_1;    * Intrigue:  -2;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_1_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_minus_1_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n ->   -2   (Current)\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_0;    * Intrigue:  -1;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_0_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_0_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n ->   -1   (Current)\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_1;    * Intrigue:  +0;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_1_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_1_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n ->   +0   (Current)\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_2;    * Intrigue:  +1;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_2_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_2_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n ->   +1   (Current)\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_3;    * Intrigue:  +2;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_3_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_3_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n ->   +2   (Current)\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_4;    * Intrigue:  +3;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_4_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_4_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n ->   +3   (Current)\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_5;    * Intrigue:  +4;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_5_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_5_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n ->   +4   (Current)\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_10;    * Intrigue:  +5;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_10_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_10_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n ->   +5   (Current)\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_25;    * Intrigue:  +10;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_25_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_25_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n ->   +10   (Current)\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_50;    * Intrigue:  +25;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_50_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_50_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n ->   +25   (Current)\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_100;    * Intrigue:  +50;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_100_desc;Adjusts the Intrigue attribute.;;;;;;;;;;;;;x
+dec_snf_intrigue_intrigue_100_desc_long;Adjusts the Intrigue attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n ->   +50   (Current)\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_3;    * Learning:  +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_3_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_3_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n ->   +100   (Current);;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_2;    * Learning:  -3;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_2_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_2_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n ->   -3   (Current)\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_1;    * Learning:  -2;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_1_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_minus_1_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n ->   -2   (Current)\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_0;    * Learning:  -1;;;;;;;;;;;;;x
+dec_snf_learning_learning_0_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_0_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n ->   -1   (Current)\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_1;    * Learning:  +0;;;;;;;;;;;;;x
+dec_snf_learning_learning_1_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_1_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n ->   +0   (Current)\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_2;    * Learning:  +1;;;;;;;;;;;;;x
+dec_snf_learning_learning_2_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_2_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n ->   +1   (Current)\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_3;    * Learning:  +2;;;;;;;;;;;;;x
+dec_snf_learning_learning_3_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_3_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n ->   +2   (Current)\n       +3\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_4;    * Learning:  +3;;;;;;;;;;;;;x
+dec_snf_learning_learning_4_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_4_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n ->   +3   (Current)\n       +4\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_5;    * Learning:  +4;;;;;;;;;;;;;x
+dec_snf_learning_learning_5_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_5_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n ->   +4   (Current)\n       +5\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_10;    * Learning:  +5;;;;;;;;;;;;;x
+dec_snf_learning_learning_10_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_10_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n ->   +5   (Current)\n       +10\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_25;    * Learning:  +10;;;;;;;;;;;;;x
+dec_snf_learning_learning_25_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_25_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n ->   +10   (Current)\n       +25\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_50;    * Learning:  +25;;;;;;;;;;;;;x
+dec_snf_learning_learning_50_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_50_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n ->   +25   (Current)\n       +50\n       +100;;;;;;;;;;;;;x
+dec_snf_learning_learning_100;    * Learning:  +50;;;;;;;;;;;;;x
+dec_snf_learning_learning_100_desc;Adjusts the Learning attribute.;;;;;;;;;;;;;x
+dec_snf_learning_learning_100_desc_long;Adjusts the Learning attribute.\n\n\nClick to cycle through options.\n-----------------------------------\n       -3\n       -2\n       -1\n       +0\n       +1\n       +2\n       +3\n       +4\n       +5\n       +10\n       +25\n ->   +50   (Current)\n       +100;;;;;;;;;;;;;x
+dec_snf_init;Shiny New Faith;;;;;;;;;;;;;x
+dec_snf_init_desc;Breathe some new life into that busted old religion.  Brand new flavor--same great name!\n\n\nAnd lo, the Angel of The Lord did speak, and verily he said unto me: \n\n"And now shalt thou go forth, and remake the faith in the image of thyself, that it may be all shiny and new."\n\n -- I Conniptions  3:14-15;;;;;;;;;;;;;x
+dec_snf_init_desc_long;Breathe some new life into that busted old religion.  Brand new flavor--same great name!\n\n\nAnd lo, the Angel of The Lord did speak, and verily he said unto me: \n\n"And now shalt thou go forth, and remake the faith in the image of thyself, that it may be all shiny and new."\n\n -- I Conniptions  3:14-15\n\n\nClick to start your Shiny New Faith.;;;;;;;;;;;;;x
+dec_snf_reset;* Reset the Shiny New Faith;;;;;;;;;;;;;x
+dec_snf_reset_desc;Restore your Shiny New Faith to its factory defaults.;;;;;;;;;;;;;x
+dec_snf_reset_desc_long;Restore your Shiny New Faith to its factory defaults.\n\nClick to restore.;;;;;;;;;;;;;x
+tdec_snf_set_holy_site;Set Holy Site;;;;;;;;;;;;;x
+tdec_snf_remove_holy_site;Remove Holy Site;;;;;;;;;;;;;x
+tdec_snf_set_religion_head;Set Title as Head of Religion;;;;;;;;;;;;;x
+tdec_snf_remove_religion_head;Remove Title as Head of Religion;;;;;;;;;;;;;x
+snf_attribute_modifier_name;Shiny New Faith;;;;;;;;;;;;;x
+evttitle_snf_2;A Shiny New Faith Awaits!;;;;;;;;;;;;;x
+evtdesc_snf_2;WARNING:  Proceeding beyond this point will change the settings of your current faith to the Shiny New Faith defaults.  This is done so the faith and the menu interface can be put in sync.  It will not alter any setting that cannot be restored using this mod.\n\nNote that you will lose any concubines you may have, so if you intend to keep them, you should mark them as a special interest and re-take them after the conversion.  You may re-enable concubinage by setting Maximum # of Wives to 1.;;;;;;;;;;;;;x
+evtopta_snf_2;Make it shiny and new!;;;;;;;;;;;;;x
+evtoptadesc_snf_2;The faith will be set to the Shiny New Faith factory settings.;;;;;;;;;;;;;x
+evtoptb_snf_2;Actually, I kind of like my grungy old faith.;;;;;;;;;;;;;x
+evtoptbdesc_snf_2;The faith will remain unchanged.;;;;;;;;;;;;;x
+evttitle_snf_3;This Faith Sucks.  Change It!;;;;;;;;;;;;;x
+evtdesc_snf_3;WARNING:  Pressing the "Give it a faith-lift" button below will restore your faith to the Shiny New Faith factory defaults.;;;;;;;;;;;;;x
+evtopta_snf_3;Give it a faith-lift!;;;;;;;;;;;;;x
+evtoptadesc_snf_3;The faith will be restored to the Shiny New Faith factory settings.;;;;;;;;;;;;;x
+evtoptb_snf_3;It's still shiny enough for me.;;;;;;;;;;;;;x
+evtoptbdesc_snf_3;The faith will remain unchanged.;;;;;;;;;;;;;x

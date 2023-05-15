@@ -1,0 +1,52 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.25
+	desc = descexpandedtraits.25
+	picture = GFX_evt_mounted_knights_hf
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	only_men = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		AND = {
+			trait = gigantisme
+			trait = silencieux
+			OR = {
+				trait = cruel
+				trait = humournoir
+				trait = impaler
+			}
+			NOT = {
+				ROOT = {
+					any_owned_bloodline = {
+						has_bloodline_flag = mountain_blood
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 100
+	}
+
+	option = {
+		name = optaexpandedtraits.25
+		give_nickname = nick_the_mountain
+		create_bloodline = {
+			type = the_riding_mountain
+		}
+		new_bloodline = {
+			set_description = "desc_mountain_bloodline"
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.25
+		set_focus = focus_theology
+	}
+}

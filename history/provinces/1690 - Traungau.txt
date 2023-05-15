@@ -1,0 +1,27 @@
+# 1690 - Traungau
+
+# County title
+title = c_traungau
+
+# Settlements
+max_settlements = 3
+
+b_enisiburg = castle
+b_linz = city
+
+# Misc
+culture = german
+religion = catholic
+
+351.1.1 = {
+	build_wonder = wonder_traungau_unique
+	set_wonder_stage = 4
+}
+
+400.1.1 = {
+	set_wonder_stage = 3
+}
+
+500.1.1 = {
+	set_wonder_damaged = yes
+}

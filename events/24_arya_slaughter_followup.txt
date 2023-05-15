@@ -1,0 +1,72 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.24
+	desc = descexpandedtraits.24
+	picture = GFX_evt_child_sword #GFX_evt_child_bully
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	trigger = {
+		has_children = yes
+	}
+
+
+	option = {
+		name = optaexpandedtraits.24
+		add_trait = cruel
+		FROM = {
+				opinion = {
+					modifier = butchered_friend
+					years = 10
+					who = ROOT
+				}
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.24
+		add_trait = influencable
+		prestige = -500
+	}
+
+	option = {
+		name = optcexpandedtraits.24 #syrio forel
+		trigger = {
+			OR = {
+				trait = tolerant
+				trait = skilled_tactician
+				trait = brilliant_strategist
+				has_law = status_of_women_4
+				trait = belliciste
+				trait = kind
+			}
+		}
+		scaled_wealth = -2.0
+		FROM = {
+			change_martial = 3
+		}
+		tooltip_info_custom = tooltipexpandedtraits.24
+	}
+
+	option = { #etiquette
+		name = optdexpandedtraits.24
+		trigger = {
+			OR = {
+				has_law = status_of_women_0
+				trait = grey_eminence
+				trait = charismatique
+			}
+		}
+		FROM = {
+			set_focus = focus_ch_etiquette
+			add_trait = rancunier
+		}
+		tooltip_info_custom = tooltipexpandedtraits.24b
+	}
+}

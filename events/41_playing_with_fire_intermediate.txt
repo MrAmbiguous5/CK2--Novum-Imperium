@@ -1,0 +1,51 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.41 #aerion brightflame
+	desc = descexpandedtraits.41
+	picture = GFX_evt_performing_experiments
+	border = GFX_event_normal_frame_war#GFX_evt_experiments_failed
+
+	only_playable = yes
+	is_triggered_only = yes
+
+	option = {
+		name = optaexpandedtraits.41
+		random = {
+			chance = 20
+			add_trait = etourdi
+		}
+		random_list = {
+			40 = {
+				ROOT = {
+					character_event = {
+						id = expandedtraits.40
+						days = 10
+						random = 10
+						tooltip = tooltipexpandedtraits.41b
+					}
+				}
+			}
+			60 = {
+				ROOT = {
+					character_event = {
+						id = expandedtraits.42
+						days = 10
+						random = 10
+						tooltip = tooltipexpandedtraits.41c
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.41
+		military_techpoints = 150
+		random = {
+			chance = 20
+			add_trait = scientifique
+		}
+	}
+}

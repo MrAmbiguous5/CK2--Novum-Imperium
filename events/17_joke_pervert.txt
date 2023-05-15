@@ -1,0 +1,55 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.17
+	desc = descexpandedtraits.17
+	picture = GFX_evt_impalement
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+			OR = {
+				is_society = the_satanists
+				is_society = the_trollcrafters
+				is_society = the_cult_of_kali
+				is_society = the_cold_ones
+				is_society = the_plaguebringers
+				is_society = the_vodouns
+				is_society = the_bacchants
+			}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.17
+		ai_chance = {
+			factor = 30
+		}
+		add_trait = unfunny
+
+	}
+
+	option = {
+		name = optbexpandedtraits.17
+		ai_chance = {
+			factor = 10
+		}
+		add_trait = necro
+	}
+
+	option = {
+		name = optcexpandedtraits.17
+		ai_chance = {
+			factor = 60
+		}
+		add_trait = humournoir
+	}
+}

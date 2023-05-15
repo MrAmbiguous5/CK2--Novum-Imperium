@@ -1,0 +1,37 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.23
+	desc = descexpandedtraits.23
+	hide_window = yes
+	max_age = 16
+	min_age = 5
+
+	only_women = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		OR = {
+			martial >= 6
+			trait = willful
+			trait = rowdy
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	option = {
+		name = optaexpandedtraits.23
+		ROOT = {
+			father = {
+				character_event = {
+					id = expandedtraits.24
+				}
+			}
+		}
+	}
+}

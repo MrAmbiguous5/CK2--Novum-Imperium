@@ -1,0 +1,39 @@
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.10
+	desc = descexpandedtraits.10
+	picture = GFX_evt_heads_on_pikes_hf
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_intrigue
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.10
+		trigger = {
+			diplomacy <= 16
+		}
+		add_trait = rancunier
+		tooltip_info_custom = tooltipexpandedtraits.10
+	}
+
+	option = {
+		name = optbexpandedtraits.10
+		add_trait = silencieux
+
+	}
+
+	option = {
+		name = optcexpandedtraits.10
+		add_trait = humournoir
+	}
+}

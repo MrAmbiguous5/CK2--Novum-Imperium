@@ -1,0 +1,16 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.43
+	desc = descexpandedtraits.43
+	picture = GFX_evt_bloodlines
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.43
+	}
+}

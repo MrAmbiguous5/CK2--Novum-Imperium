@@ -1,0 +1,137 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.28
+	desc = descexpandedtraits.28
+	picture = GFX_evt_marriage #GFX_evt_pregnancy
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		AND = {
+			is_female = no
+			is_betrothed = yes
+			age <= 30
+			age >= 13
+			betrothed = {
+				is_ruler = no
+			}
+				OR = {
+					trait = etourdi
+					trait = romantique
+					trait = indecis
+					trait = influencable
+				}
+				NOT = {
+					has_character_flag = had_red_wedding
+				}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+
+	option = {
+		name = optaexpandedtraits.28
+		create_character = {
+			age =< 30
+			age <= 16
+			female = yes
+			religion = ROOT
+			culture = ROOT
+			random_traits = yes
+			trait = fair
+			trait = well_endowed
+			trait = tall
+			trait = melodious
+			dynasty = none
+		}
+		ROOT = {
+			set_character_flag = had_red_wedding
+			betrothed = {
+				give_nickname = nick_red_wedding_spurned
+				break_betrothal = ROOT
+				liege = {
+					opinion = {
+						modifier = dishonored_marriage_treaty
+						who = ROOT
+						years = 10
+					}
+					character_event = {
+						id = expandedtraits.29
+						days = 14
+						random = 14
+						tooltip = tooltipexpandedtraits.28
+					}
+				}
+			}
+		}
+
+		new_character = {
+			add_spouse = ROOT
+			add_lover = ROOT
+		}
+
+
+	}
+
+
+	option = {
+		name = optbexpandedtraits.28
+		add_character_modifier = {
+			modifier = duty_before_love
+			duration = -1
+		}
+		set_character_flag = had_red_wedding
+		random = {
+			chance = 30
+			add_trait = depressed
+		}
+	}
+
+	option = {
+		name = optcexpandedtraits.28
+		trigger = {
+			trait = lustful
+		}
+		create_character = {
+			age =< 30
+			age <= 16
+			female = yes
+			religion = ROOT
+			culture = ROOT
+			random_traits = yes
+			trait = fair
+			trait = well_endowed
+			trait = tall
+			trait = melodious
+			dynasty = none
+		}
+		new_character = {
+			add_lover = ROOT
+		}
+		random_list = {
+			30 = {add_trait = lovers_pox}
+			30 = {add_trait = syphilitic}
+			40 = {}
+		}
+		set_character_flag = had_red_wedding
+		tooltip_info = lustful
+	}
+
+	option = {
+		name = optdexpandedtraits.28
+		trigger = {
+			trait = zealous
+		}
+		add_trait = celibate
+		set_character_flag = had_red_wedding
+		tooltip_info = zealous
+	}
+}

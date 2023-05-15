@@ -1,0 +1,65 @@
+
+namespace = expandedtraits
+
+#Base Event
+character_event = {
+	id = expandedtraits.38 #aerion brightflame
+	desc = descexpandedtraits.38
+	picture = GFX_evt_experiment
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		OR = {
+			trait = mystic
+			trait = lunatic
+			trait = scientifique
+		}
+		NOT = {
+			has_character_flag = playing_with_fire_xt
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 450
+	}
+
+	option = {
+		name = optaexpandedtraits.38
+		random_list = {
+			60 = {
+				ROOT = {
+					character_event = {
+						id = expandedtraits.41
+						days = 10
+						random = 10
+						tooltip = tooltipexpandedtraits.38a
+					}
+				}
+			}
+			40 = {
+				ROOT = {
+					character_event = {
+						id = expandedtraits.42
+						days = 10
+						random = 10
+						tooltip = tooltipexpandedtraits.38b
+					}
+				}
+			}
+		}
+		set_character_flag = playing_with_fire_xt
+	}
+
+	option = {
+		name = optbexpandedtraits.38
+		random = {
+			chance = 30
+			add_trait = nonscientifique
+		}
+		set_character_flag = playing_with_fire_xt
+	}
+}

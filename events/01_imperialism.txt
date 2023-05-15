@@ -1,0 +1,66 @@
+#TODO: Bilder anpassen, gooderection hinzufügen, Events die Traits hinzufügen, Events die sch je nach Traits verändern
+
+
+namespace = expandedtraits
+
+character_event = {   # Imperialism
+	id = expandedtraits.1
+	desc = descexpandedtraits.1
+	picture = GFX_evt_mounted_combat_hf
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		AND = {
+			has_focus = focus_war
+			martial >= 11
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 250
+	}
+
+	option = {
+		name = optaexpandedtraits.1
+		random_list = {
+			65 = {add_trait = imperialiste}
+			35 = {add_trait = cruel}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.1
+		random_list = {
+			65 = {add_trait = nonviolent}
+			35 = {add_trait = craven}
+		}
+		set_focus = focus_theology
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {
+		name = optcexpandedtraits.1
+		trigger = {
+			OR = {
+				trait = kind
+				trait = temperate
+				trait = egoiste
+			}
+		}
+
+		tooltip_info_custom = tooltipexpandedtraits.1
+
+		ai_chance = {
+			factor = 30
+		}
+
+	}
+}

@@ -1,0 +1,16 @@
+butchered_friend = {
+    opinion = -30
+    obedient = no
+    years = 10
+}
+spoke_up = {
+    opinion = 15
+}
+
+dishonored_marriage_treaty = {
+    opinion = -30
+}
+
+held_lionfight_tohonor = {
+    opinion = 20
+}

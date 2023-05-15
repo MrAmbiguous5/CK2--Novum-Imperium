@@ -1,0 +1,90 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.12
+	desc = descexpandedtraits.12
+	picture = GFX_evt_woman_at_window_hf
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		AND = {
+			has_lover = yes
+			diplomacy <= 16
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 550
+	}
+
+	option = {
+		name = optaexpandedtraits.12
+		ai_chance = {
+			factor = 30
+		}
+		lover = {
+			opinion = {
+				modifier = opinion_shocked
+  				who = ROOT
+ 				years = 2
+				}
+		}
+
+		add_trait = pudique
+		set_focus = focus_family
+
+	}
+
+	option = {
+		name = optbexpandedtraits.12
+		ai_chance = {
+			factor = 30
+		}
+		lover = {
+			add_favor = ROOT
+		}
+		add_trait = peurdunoir
+	}
+
+	option = {
+		name = optcexpandedtraits.12
+		ai_chance = {
+			factor = 5
+		}
+		add_trait = anthropophobie
+		add_trait = genius
+		set_focus = focus_scholarship
+	}
+
+	option = {
+		name = optdexpandedtraits.12
+		trigger = {
+			OR = {
+				trait = seducer
+				trait = seductress
+			}
+		}
+
+		ai_chance = {
+			factor = 60
+		}
+
+		tooltip_info = seducer
+		add_character_modifier = {
+			name = dismissed_proposal
+			years = 5
+		}
+		lover = {
+			add_rival = ROOT
+			remove_lover = ROOT
+		}
+	}
+}
+
+
+##scaled_wealth = -0.2

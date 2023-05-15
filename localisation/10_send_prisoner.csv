@@ -1,0 +1,164 @@
+#CODE;ENGLISH;FRENCH;GERMAN;SPANISH;;;;;;;;;x
+
+#;;;;;;;;;;;;;;x
+
+#Decisions
+send_prisoner;Send a prisoner;Donner un prisonnier;;;;;;;;;;;;x
+send_prisoner_desc;Send prisoner.;Donner le prisonnier.;;;;;;;;;;;;x
+request_prisoner;Request prisoner;Demander un prisonnier;;;;;;;;;;;;x
+request_prisoner_desc;Request prisoner;Demander un prisonnier;;;;;;;;;;;;x
+
+#Modifiers
+mark_prisoner_tag;Prisoner marked;Prisonnier marque;;;;;;;;;;;;x
+mark_prisoner_tag_desc;Prisoner marked to send to someone.;Prisonnier marque pour donner a quelqu'un.;;;;;;;;;;;;x
+release_;Release;Liberation;;;;;;;;;;;;x
+
+#Events
+EVTDESC_send_2;Do you agree to transfer a prisoner to me?;Acceptez-vous de me transferer un prisonnier ?;;;;;;;;;;;;x
+EVTDESC_send_3;I accept in exchange for a favor.;J'accepte en echange d'une faveur.;;;;;;;;;;;;x
+EVTDESC_send_4;I accept in exchange for a ransom.;J'accepte en echange d'une rancon.;;;;;;;;;;;;x
+EVTDESC_send_5;I offer it to you.;Je vous l'offre.;;;;;;;;;;;;x
+EVTDESC_send_6;I refuse your request.;Je refuser votre demande.;;;;;;;;;;;;x
+
+EVTDESC_send_11;As a token of my respect, I send you this prisoner, may he be useful to you.;En signe de respect, je vous envoie ce prisonnier, qu'il vous soit utile.;;;;;;;;;;;;x
+EVTDESC_send_12;I accept your prisoner;J'accepte votre prisonnier.;;;;;;;;;;;;x
+EVTDESC_send_13;I refuse your prisoner.;Je refuse votre prisonnier.;;;;;;;;;;;;x
+
+##A
+EVTOPTA_send_2;In exchange for a favor.;En echange d'une faveur.;;;;;;;;;;;;x
+EVTOPTA_send_3;Okay;D'accord;;;;;;;;;;;;x
+EVTOPTA_send_4;Okay;D'accord;;;;;;;;;;;;x
+
+EVTOPTA_send_11;Okay;D'accord;;;;;;;;;;;;x
+
+##B
+EVTOPTB_send_2;In exchange for a ransom.;En echange d'une rancon.;;;;;;;;;;;;x
+EVTOPTB_send_3;Release him;Liberez-le/la;;;;;;;;;;;;x
+EVTOPTB_send_4;Release him;Liberez-le/la;;;;;;;;;;;;x
+EVTOPTB_send_5;Release him;Liberez-le/la;;;;;;;;;;;;x
+
+EVTOPTB_send_11;Release him;Liberez-le/la;;;;;;;;;;;;x
+
+##C
+EVTOPTC_send_2;I offer it to you.;Je vous l'offre.;;;;;;;;;;;;x
+
+EVTOPTC_send_11;I refuse.;Je refuse;;;;;;;;;;;;x
+
+##D
+EVTOPTD_send_2;No, I keep it.;Non, je le garde.;;;;;;;;;;;;x
+
+##Custom Tooltip
+EVTOPTA_send_CT;The prisoner will be transferred to your prison.;Le prisonnier sera transferer dans vos prisons.;;;;;;;;;;;;x
+## RED ##
+MDVE_AIReason_Modifier_FROMFROM_Same_Culture;§R[FromFrom.Culture.GetName]§! ([From.Culture.GetName]);§R[FromFrom.Culture.GetName]§! ([From.Culture.GetName]);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Same_Religion_Group;§R[FromFrom.Religion.GetGroupName]§! ([From.Religion.GetGroupName]);§R[FromFrom.Religion.GetGroupName]§! ([From.Religion.GetGroupName]);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Carries_Disease;§RSick§!;§RMalade§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Incapable;§RIncapable§!;§RIncapable§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Infirm;§RInfirm§!;§RInfirme§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Imbecile;§RImbecile§!;§RImbécile§!;;;;;;;;x
+## YELLOW ##
+#Mental disabilities
+MDVE_AIReason_Modifier_FROMFROM_Is_Slow;§YSlow§!;§YLent§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Inbred;§YInbred§!;§YConsanguin§!;;;;;;;;x
+#Injuries
+MDVE_AIReason_Modifier_FROMFROM_Is_Mangled;§YMangled§!;§Ymutilé[From.Get_E]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Blind;§YBlinded§!;§YAveugle§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_One_Eyed;§YOne-Eyed§!;§Yborgne§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_One_Handed;§YOne-Handed§!;§Y§Ymanchot[From.Get_E]§!§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_One_Legged;§YOne-Legged§!;§Yunijambiste§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Disfigured;§YDisfigured§!;§YDéfiguré§!;;;;;;;;x
+#Terrible congenital
+MDVE_AIReason_Modifier_FROMFROM_Is_Weak;§YWeak§!;§Yfaible§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Ugly;§YUgly§!;§Ylaid[From.Get_E]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Clubfooted;§YClubfooted§!;§Ypied bot§!;;;;;;;;x
+#Congenital equivalents
+MDVE_AIReason_Modifier_FROMFROM_Is_Shrewd;§YRuse§!;;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Dull;§YDull§!;§YSimplet§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Brawny;§YBrawny§!;§YMusculature§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Frail;§YFrail§!;§Yfrêle§!;;;;;;;;x
+#Good congenital
+MDVE_AIReason_Modifier_FROMFROM_Is_Attractive;§YAttractive§!;§YBeauté§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Strong;§YStrong§!;§Yfort§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Quick;§YQuick§!;§YVivacité§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Genius;§YGenius§!;§YGénie§!;;;;;;;;x
+#Height traits
+MDVE_AIReason_Modifier_FROMFROM_Is_Giant;§YGiant§!;§Ygéant[From.Get_E]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Dwarf;§YDwarf§!;§YNain§!;;;;;;;;x
+#Lifestyle and profession
+MDVE_AIReason_Modifier_FROMFROM_Is_Renowned_Physician;§YRenowned Physician§!;§YPhysicien réputé§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Administrator;§YAdministrator§!;§YAdministrateur§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Architect;§YArchitect§!;§YArchitecte§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Gardener;§YGardener§!;§YJardinier§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Poet;§YPoet§!;§YPoète§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Strategist;§YStrategist§!;§YStratège§!;;;;;;;;x
+#Personality and misc
+MDVE_AIReason_Modifier_FROMFROM_Is_Stubborn;§YStubborn§!;§Yentêté[From.Get_E]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Wroth;§YWroth§!;§Ycolère§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Slothful;§YSlothful§!;§Yparesseu[FromFrom.GetXSe]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Gluttonous;§YGluttonous§!;§Yglouto[Root.GetNNne]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Temperate;§YTemperate§!;§Ytempéré[Root.Get_E]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Diligent;§YDiligent§!;§YDiligence§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Patient;§YPatient§!;§Ypatient[FromFrom.Get_E]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Ambitious;§YAmbitious§!;§YForte ambition§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Content;§YContent§!;§YContentement§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Envious;§YEnvious§!;§Yenvieu[Root.GetXSe]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Honest;§YHonest§!;§YHonnêteté§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Deceitful;§YDeceitful§!;§Yfourbe§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Paranoid;§YParanoid§!;§Yparanoïaque§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Zealous;§YZealous§!;§Yzèle§!;;;;;;;;x
+#Mental illness
+MDVE_AIReason_Modifier_FROMFROM_Is_Depressed;§YDepressed§!;§Ydépression§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Possessed;§YPossessed§!;§Ypossédé[From.Get_E]§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_Lunatic;§YLunatic§!;lunatique;;;;;;;;x
+#Cultural Features
+MDVE_AIReason_Modifier_FROMFROM_Patriarchal;§YFemale§! (Agnatic Clans);§YFemme§! (Clans agnatiques);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Matriarchal;§YMale§! (Enatic Clans);§YHomme§! (clans utérins);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Culture_Group;§Y[FromFrom.Culture.GetGroupName]§! ([Prev.Culture.GetGroupName]);§Y[FromFrom.Culture.GetGroupName]§! ([Prev.Culture.GetGroupName]);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Barbarian;§YBarbarian§! (Civilized);§YBarbare§! (Civilized);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Martial_Gov;§YMilitary Education§! ([Prev.Government.GetName]);§YÉducation militaire§! ([Prev.Government.GetName]);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Stewardship_Gov;§YStewardship Education§! ([Prev.Government.GetName]);§YÉducation à l'intendance§! ([Prev.Government.GetName]);;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Caste;§RHigh Caste§! ([hindu.GetName]);§RHaute caste§! ([hindu.GetName]);;;;;;;;x
+#Ageism
+MDVE_AIReason_Modifier_FROMFROM_Young_Child;§YYoung Child§!;§YJeune enfant§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Child;§YChild§!;§YEnfant§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Teenager;§YTeenager§!;§YAdolescent§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Old;§YOld§!;§VVieux§!;;;;;;;;x
+#Attributes
+MDVE_AIReason_Modifier_FROMFROM_Diplomacy;§YDiplomacy§!;§YDiplomatie§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Martial;§YMartial§!;§YMartialité§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Stewardship;§YStewardship§!;§YIntendance§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Intrigue;§YIntrigue§!;§YIntrigue§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Learning;§YLearning§!;§YÉrudition§!;;;;;;;;x
+#Diplomacy
+MDVE_AIReason_Modifier_FROMFROM_Edu_Naive_Appeaser;§YNaive Appeaser§!;§YConciliateur naïf§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Underhanded_Rogue;§YUnderhanded Rogue§!;§YEscroc sournois§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Charismatic_Negotiator;§YCharismatic Negotiator§!;§YCharismatic Negotiator§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Grey_Eminence;§YGrey Eminence§!;§YÉminence grise§!;;;;;;;;x
+#Martial
+MDVE_AIReason_Modifier_FROMFROM_Edu_Misguided_Warrior;§YMisguided Warrior§!;§YGuerrier malavisé§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Tough_Soldier;§YTough Soldier§!;§YSoldat endurci§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Skilled_Tactician;§YSkilled Tactician§!;§YFin tacticien§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Brilliant_Strategist;§YBrilliant Strategist§!;§YBrillant stratège§!;;;;;;;;x
+#Stewardship
+MDVE_AIReason_Modifier_FROMFROM_Edu_Indulgent_Wastrel;§YIndulgent Wastrel§!;§YVaurien indulgent§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Thrifty_Clerk;§YThrifty Clerk§!;§YEmployé économe§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Fortune_Builder;§YFortune Builder§!;§YBâtisseur de fortunes§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Midas_Touched;§YMidas Touched§!;§YFaiseur d'or§!;;;;;;;;x
+#Intrigue
+MDVE_AIReason_Modifier_FROMFROM_Edu_Amateurish_Plotter;§YAmateurish Plotter§!;§YComploteur amateur§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Flamboyant_Schemer;§YFlamboyant Schemer§!;§YIntrigant flamboyant§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Intricate_Webweaver;§YIntricate Webweaver§!;§YHabile intrigant§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Elusive_Shadow;§YElusive Shadow§!;§YOmbre insaisissable§!;;;;;;;;x
+#Learning
+MDVE_AIReason_Modifier_FROMFROM_Edu_Detached_Priest;§YDetached Priest§!;§YPrêtre désinvolte§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Dutiful_Cleric;§YDutiful Cleric§!;§YReligieux soumis§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Scholarly_Theologian;§YScholarly Theologian§!;§YThéologien érudit§!;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Edu_Mastermind_Theologian;§YMastermind Theologian§!;§YGrand théologien§!;;;;;;;;x
+#Time Enslaved
+MDVE_AIReason_Modifier_FROMFROM_Years_Enslaved;§YYears Enslaved§!;§YAnnées d'esclavage§!;;;;;;;;x
+#Divers
+MDVE_AIReason_Modifier_FROMFROM_Is_BARON;§YBARON§!;§YBaron§!;;;;;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_COUNT;§YCOUNT§!;§YComte§!;;;;;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_DUKE;§YDUKE§!;§YDuc§!;;;;;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_KING;§YKING§!;§YRoi§!;;;;;;;;;;;;x
+MDVE_AIReason_Modifier_FROMFROM_Is_EMPEROR;§YEMPEROR§!;§YEmpereur§!;;;;;;;;;;;;x

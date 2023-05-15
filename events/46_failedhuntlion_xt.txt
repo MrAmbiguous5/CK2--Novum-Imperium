@@ -1,0 +1,21 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.46
+	desc = descexpandedtraits.46
+	picture = GFX_evt_sand_desert #GFX_evt_wintervillage
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.46
+		random = {
+			chance = 20
+			add_trait = influencable
+		}
+	}
+}

@@ -1,0 +1,28 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.53
+	desc = descexpandedtraits.53
+	picture = GFX_evt_suspicious_noble
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.53
+		hidden_effect = {
+			remove_trait = awaywithjugglers
+		}
+		random_list = {
+			50 = {
+				add_trait = unfunny
+			}
+			50 = {
+				add_trait = offensive
+			}
+		}
+	}
+}

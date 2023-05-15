@@ -1,0 +1,39 @@
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.5
+	desc = descexpandedtraits.5
+	picture = GFX_evt_fancy_feast
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_carousing
+	}
+
+	mean_time_to_happen = {
+	months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.5
+		trigger = {
+			trait = wroth
+		}
+		add_trait = bagarreur #brawler
+		tooltip_info = wroth
+	}
+
+	option = {
+		name = optbexpandedtraits.5
+		add_trait = baratineur #silvertongued
+
+	}
+
+	option = {
+		name = optcexpandedtraits.5
+		add_trait = bavard #talkative
+
+	}
+}

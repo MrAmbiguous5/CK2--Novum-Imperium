@@ -1,0 +1,671 @@
+defined_text = {
+	name = GetWonderName
+
+	use_first_valid = yes # (Defaults to no)
+
+	######### Very rare...
+	text = {
+		trigger = {
+			wonder_stage = 3
+			NOT = {
+				has_wonder = wonder_statue_ruler
+			}
+			OR = {
+				has_wonder_flag = wonder_name_5			
+				has_wonder_flag = wonder_name_6
+				has_wonder_flag = wonder_name_7
+			}
+		}
+		localisation_key = String_special_wonder_name # The Devils Workshop, The Citadel of Horrors etc
+	}
+
+	#### Edge cases ...
+	text = { #Statue
+		trigger = {
+			has_wonder = wonder_statue_ruler
+			wonder_stage = 3
+		}
+		localisation_key = String_adj_statue_wonder_type_in_location
+	}
+	text = { #Statue
+		trigger = {
+			has_wonder = wonder_statue_ruler
+			wonder_stage = 2
+			NOT = {
+				wonder_stage = 4
+			}
+		}
+		localisation_key = String_adj_statue_wonder_type
+	}
+	text = { #Statue
+		trigger = {
+			has_wonder = wonder_statue_ruler
+		}
+		localisation_key = String_statue_wonder_type
+	}
+	#########################################
+	text = {
+		trigger = {
+			has_wonder = wonder_mbw_colossus
+			wonder_stage = 3
+		}
+		localisation_key = String_mbw_colossus_custom_2
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_mbw_colossus
+		}
+		localisation_key = String_mbw_colossus_custom_1
+	}
+	
+	text = {
+		trigger = {
+			has_wonder = wonder_mbw_arch
+			wonder_stage = 3
+		}
+		localisation_key = String_mbw_arch_custom_2
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_mbw_arch
+		}
+		localisation_key = String_mbw_arch_custom_1
+	}
+	#########################################
+	### Regular...
+	text = {
+		trigger = {
+			wonder_stage = 3
+			NOT = {
+				has_game_rule = {
+					name = supernatural_events
+					value = off
+				}
+				has_wonder = wonder_statue_ruler
+				has_wonder = wonder_mbw_colossus ##
+			}
+			OR = {
+				has_wonder_flag = wonder_name_5			
+				has_wonder_flag = wonder_name_6
+			}
+		}
+		localisation_key = String_adj_wondertype_of_noun # Grand Cathedral of Light/Bloody Palace of Shadows, etc
+	}
+	text = {
+		trigger = {
+			wonder_stage = 3
+			NOT = {
+				has_wonder = wonder_statue_ruler
+			}
+			OR = {
+				has_wonder_flag = wonder_name_2
+				has_wonder_flag = wonder_name_3
+				has_wonder_flag = wonder_name_4
+				has_wonder_flag = wonder_name_5			
+				has_wonder_flag = wonder_name_6
+			}
+		}
+		localisation_key = String_adj_wondertype_of_location # Grand Cathedral of Paris/Bloody Palace of Stockholm, etc
+	}
+	text = {
+		trigger = {
+			NOT = {
+				wonder_stage = 2
+				has_wonder = wonder_statue_ruler
+			}
+			OR = {
+				has_wonder_flag = wonder_name_1
+				has_wonder_flag = wonder_name_2
+				has_wonder_flag = wonder_name_3
+			}
+		}
+		localisation_key = String_location_wondertype # Stockholm Cathedral/Paris University, etc
+	}
+	#In case it cannot find anything...
+    fallback_text = {
+        localisation_key = String_location_wondertype # Simplest version
+    }
+}
+
+defined_text = {
+	name = GetWonderTypeShortCap # Basically, what kind of building this is: "Cathedral", or "Pyramid", or "Harbor"
+
+	use_first_valid = yes # (Defaults to no)
+
+	text = {
+		trigger = { has_wonder = wonder_cathedral }
+		localisation_key = String_Cathedral
+	}
+	text = {
+		trigger = { has_wonder = wonder_mosque }
+		localisation_key = String_Mosque
+	}
+	text = {
+		trigger = { has_wonder = wonder_synagogue }
+		localisation_key = String_Synagogue
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_temple_pagan
+				has_wonder = wonder_temple_hindu
+				has_wonder = wonder_temple_buddhist
+			}
+		}
+		localisation_key = String_Temple
+	}
+	text = {
+		trigger = { has_wonder = wonder_statue_ruler }
+		localisation_key = String_Statue
+	}
+	text = {
+		trigger = { has_wonder = wonder_statue_ruler }
+		localisation_key = String_Colossus
+	}
+	text = {
+		trigger = { has_wonder = wonder_statue_horse }
+		localisation_key = String_Statue
+	}
+	text = {
+		trigger = { has_wonder = wonder_statue_horse }
+		localisation_key = String_Stallion
+	}
+	text = {
+		trigger = { has_wonder = wonder_statue_horse }
+		localisation_key = String_Mare
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_fortress
+			wonder_stage = 6
+		}
+		localisation_key = String_Citadel
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_fortress
+			num_of_wonder_upgrades = 4
+			any_wonder_upgrade = {
+				has_wonder_upgrade = upgrade_garden_inner
+			}
+		}
+		localisation_key = String_Castle
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_fortress
+			wonder_stage = 3
+		}
+		localisation_key = String_Keep
+	}
+	text = {
+		trigger = { has_wonder = wonder_fortress }
+		localisation_key = String_Fortress
+	}
+	text = {
+		trigger = { has_wonder = wonder_underground_city }
+		localisation_key = String_Underground_City
+	}
+	text = {
+		trigger = { 
+			has_wonder = wonder_wall
+			wonder_stage = 3
+			num_of_wonder_upgrades = 4
+		}
+		localisation_key = String_Shield
+	}
+	text = {
+		trigger = { has_wonder = wonder_wall }
+		localisation_key = String_Walls
+	}
+	text = {
+		trigger = { has_wonder = wonder_harbor }
+		localisation_key = String_Harbor
+	}
+	text = {
+		trigger = { has_wonder = wonder_lighthouse }
+		localisation_key = String_Lighthouse
+	}
+	text = {
+		trigger = { has_wonder = wonder_amphitheater }
+		localisation_key = String_Amphitheater
+	}
+	text = {
+		trigger = { has_wonder = wonder_palace }
+		localisation_key = String_Palace
+	}
+	text = {
+		trigger = { has_wonder = wonder_garden }
+		localisation_key = String_Garden
+	}
+	text = {
+		trigger = { has_wonder = wonder_university }
+		localisation_key = String_University
+	}
+	text = {
+		trigger = { has_wonder = wonder_library }
+		localisation_key = String_Library 
+	}
+	text = {
+		trigger = { has_wonder = wonder_mausoleum }
+		localisation_key = String_Mausoleum
+	}
+	text = {
+		trigger = { has_wonder = wonder_pagan_stones }
+		localisation_key = String_Monolith
+	}	
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_pyramid
+				has_wonder = wonder_pyramid_giza
+				has_wonder = wonder_aztec_pyramid
+			}
+		}
+		localisation_key = String_Pyramid
+	}
+	text = {
+		trigger = { has_wonder = wonder_pagan_stones_stonehenge }
+		localisation_key = String_Stonehenge
+	}
+	text = {
+		trigger = { has_wonder = wonder_mausoleum_halicarnassus }
+		localisation_key = wonder_mausoleum_halicarnassus
+	}
+	text = {
+		trigger = { has_wonder = wonder_lighthouse_alexandria }
+		localisation_key = wonder_lighthouse_alexandria
+	}
+	text = {
+		trigger = { has_wonder = wonder_temple_hindu_konark }
+		localisation_key = wonder_temple_hindu_konark
+	}
+	text = {
+		trigger = { has_wonder = wonder_apostolic_palace }
+		localisation_key = wonder_apostolic_palace
+	}
+	text = {
+		trigger = { has_wonder = wonder_house_of_wisdom }
+		localisation_key = wonder_house_of_wisdom
+	}
+	text = {
+		trigger = { has_wonder = wonder_underground_city_petra }
+		localisation_key = wonder_underground_city_petra
+	}
+	text = {
+		trigger = { has_wonder = wonder_cathedral_notre_dame }
+		localisation_key = String_Cathedral
+	}
+	
+	text = {
+		trigger = { has_wonder = wonder_mbw_aqueduct }
+		localisation_key = String_mbw_Aqueduct
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_arch }
+		localisation_key = String_mbw_Arch
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_bridge }
+		localisation_key = String_mbw_River_Bridge
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_colossus }
+		localisation_key = String_mbw_Colossus
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_market }
+		localisation_key = String_mbw_Market
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_obelisk }
+		localisation_key = String_mbw_Obelisk
+	}
+	
+	#In case it cannot find anything...
+    fallback_text = {
+        localisation_key = String_Great_Work
+    }
+}
+
+defined_text = {
+	name = GetWonderTypeShort # Basically, what kind of building this is: "cathedral", or "pyramid", or "harbor"
+
+	use_first_valid = yes # (Defaults to no)
+
+	text = {
+		trigger = { has_wonder = wonder_cathedral }
+		localisation_key = String_cathedral
+	}
+	text = {
+		trigger = { has_wonder = wonder_mosque }
+		localisation_key = String_mosque
+	}
+	text = {
+		trigger = { has_wonder = wonder_synagogue }
+		localisation_key = String_synagogue
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_temple_pagan
+				has_wonder = wonder_temple_hindu
+				has_wonder = wonder_temple_buddhist
+				has_wonder = wonder_temple_hindu_konark
+			}
+		}
+		localisation_key = String_temple
+	}
+	text = {
+		trigger = { has_wonder = wonder_statue_ruler }
+		localisation_key = String_statue
+	}
+	text = {
+		trigger = { has_wonder = wonder_statue_horse }
+		localisation_key = String_statue
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_fortress
+			wonder_stage = 6
+		}
+		localisation_key = String_citadel
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_fortress
+			num_of_wonder_upgrades = 4
+			any_wonder_upgrade = {
+				has_wonder_upgrade = upgrade_garden_inner
+			}
+		}
+		localisation_key = String_castle
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_fortress
+			wonder_stage = 3
+		}
+		localisation_key = String_keep
+	}
+	text = {
+		trigger = { has_wonder = wonder_fortress }
+		localisation_key = String_fortress
+	}
+	text = {
+		trigger = { has_wonder = wonder_underground_city }
+		localisation_key = String_underground_city
+	}
+	text = {
+		trigger = { has_wonder = wonder_wall }
+		localisation_key = String_walls
+	}
+	text = {
+		trigger = { has_wonder = wonder_harbor }
+		localisation_key = String_harbor
+	}
+	text = {
+		trigger = { has_wonder = wonder_lighthouse }
+		localisation_key = String_lighthouse
+	}
+	text = {
+		trigger = { has_wonder = wonder_amphitheater }
+		localisation_key = String_amphitheater
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_palace
+				has_wonder = wonder_apostolic_palace
+			}
+		}
+		localisation_key = String_palace
+	}
+	text = {
+		trigger = { has_wonder = wonder_garden }
+		localisation_key = String_garden
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_university
+				has_wonder = wonder_house_of_wisdom
+			}
+		}
+		localisation_key = String_university
+	}
+	text = {
+		trigger = { has_wonder = wonder_library }
+		localisation_key = String_library
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_mausoleum
+				has_wonder = wonder_mausoleum_halicarnassus
+			}
+		}
+		localisation_key = String_mausoleum
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_pyramid
+				has_wonder = wonder_pyramid_giza
+				has_wonder = wonder_aztec_pyramid
+			}
+		}
+		localisation_key = String_pyramid
+	}
+	text = {
+		trigger = { has_wonder = wonder_pagan_stones }
+		localisation_key = String_monolith
+	}
+	text = {
+		trigger = { has_wonder = wonder_pagan_stones_stonehenge }
+		localisation_key = String_stone_formation
+	}
+	text = {
+		trigger = { has_wonder = wonder_underground_city_petra }
+		localisation_key = String_underground_city
+	}
+	text = {
+		trigger = { has_wonder = wonder_cathedral_notre_dame }
+		localisation_key = String_cathedral
+	}
+	
+	text = {
+		trigger = { has_wonder = wonder_mbw_aqueduct }
+		localisation_key = String_mbw_aqueduct
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_arch }
+		localisation_key = String_mbw_arch
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_bridge }
+		localisation_key = String_mbw_river_bridge
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_colossus }
+		localisation_key = String_mbw_colossus
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_market }
+		localisation_key = String_mbw_market
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_obelisk }
+		localisation_key = String_mbw_obelisk
+	}
+	
+	#In case it cannot find anything...
+    fallback_text = {
+        localisation_key = String_great_work
+    }
+}	
+
+defined_text = {
+	name = GetWonderPurpose
+	# Needs to be in a wonder scope!
+	# All in past tense! Eg. <the wonder has> "inspired scholars and hardworking students" <for years>
+
+	text = {
+		trigger = { has_wonder_flag = inspires_piety }
+		localisation_key = String_inspired_pious
+	}
+	text = {
+		trigger = { has_wonder_flag = inspires_piety }
+		localisation_key = String_safe_haven_for_lost_souls
+	}
+	text = {
+		trigger = { has_wonder_flag = inspires_piety }
+		localisation_key = String_a_place_of_comfort_for_believers
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_cathedral
+				has_wonder = wonder_temple_pagan
+			}
+		}
+		localisation_key = String_brought_people_together
+	}
+	text = {
+		trigger = { has_wonder = wonder_fortress }
+		localisation_key = String_lent_its_protection
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder = wonder_fortress
+				has_wonder = wonder_wall
+			}
+		}
+		localisation_key = String_shielded_its_people
+	}
+	text = {
+		trigger = { has_wonder = wonder_underground_city }
+		localisation_key = String_been_impressive_curiosity
+	}
+	text = {
+		trigger = { has_wonder = wonder_underground_city }
+		localisation_key = String_inspired_wonder
+	}
+	text = {
+		trigger = { has_wonder = wonder_harbor }
+		localisation_key = String_been_bringing_traffic
+	}
+	text = {
+		trigger = { has_wonder = wonder_lighthouse }
+		localisation_key = String_been_aiding_maritime_matters
+	}
+	text = {
+		trigger = { has_wonder = wonder_lighthouse }
+		localisation_key = String_been_guiding_ships_to_port
+	}
+	#
+	text = {
+		trigger = { has_wonder = wonder_mbw_colossus }
+		localisation_key = String_been_bringing_traffic
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_colossus }
+		localisation_key = String_been_aiding_maritime_matters
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_colossus }
+		localisation_key = String_been_guiding_ships_to_port
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_market }
+		localisation_key = String_tourist_attraction
+	}
+	text = {
+		trigger = { has_wonder = wonder_mbw_market }
+		localisation_key = String_been_bringing_traffic
+	}
+	#
+	text = {
+		trigger = { has_wonder = wonder_amphitheater }
+		localisation_key = String_tourist_attraction
+	}
+	text = {
+		trigger = {
+			has_wonder = wonder_garden
+			wonder_stage = 2
+		}
+		localisation_key = String_center_of_leisure
+	}
+	text = {
+		trigger = { has_wonder = wonder_mausoleum }
+		localisation_key = String_source_of_veneration
+	}
+	text = {
+		trigger = { has_wonder = wonder_pyramid }
+		localisation_key = String_impressive_feat_of_architecture
+	}
+	text = {
+		trigger = { has_wonder = wonder_pagan_stones }
+		localisation_key = String_inspired_imagination
+	}
+	text = {
+		trigger = {
+			has_wonder_flag = inspires_relaxing
+		}
+		localisation_key = String_eased_the_burden
+	}
+	text = {
+		trigger = {
+			has_wonder_flag = inspires_contentedness
+		}
+		localisation_key = String_improved_lives
+	}
+	text = {
+		trigger = { has_wonder = wonder_palace }
+		localisation_key = String_hot_spot_for_gossip
+	}
+	text = {
+		trigger = { has_wonder = wonder_palace }
+		localisation_key = String_house_of_envy
+	}
+	text = {
+		trigger = { has_wonder_flag = inspires_greatness }
+		localisation_key = String_encouraged_greatness_1
+	}
+	text = {
+		trigger = { has_wonder_flag = inspires_greatness }
+		localisation_key = String_encouraged_greatness_2
+	}
+	#
+	text = {
+		trigger = { has_wonder_flag = inspires_fear }
+		localisation_key = String_encouraged_fear_1
+	}
+	text = {
+		trigger = { has_wonder_flag = inspires_dear }
+		localisation_key = String_encouraged_fear_2
+	}
+	#
+	text = {
+		trigger = {
+			has_wonder_flag = inspires_learning
+		}
+		localisation_key = String_inspired_students
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_wonder_flag = inspires_learning
+				any_upgrade_on_wonder = {
+					has_wonder_upgrade_flag = inspires_learning
+					wonder_upgrade_age = 100
+				}
+			}
+		}
+		localisation_key = String_encouraged_learning
+	}
+	fallback_text = {
+		localisation_key = String_inspired_wonder
+	}
+}

@@ -1,0 +1,76 @@
+namespace = expandedtraits
+character_event = {
+	id = expandedtraits.4
+	desc = descexpandedtraits.4
+	picture = GFX_evt_dark_love
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_seduction
+	}
+
+	mean_time_to_happen = {
+	months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.4
+		trigger = {
+			OR = {
+				trait = wroth
+				trait = cruel
+				martial >= 16
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		tooltip_info_custom = tooltipexpandedtraits.3
+		add_trait = sadomaso
+
+
+	}
+
+	option = {
+		name = optbexpandedtraits.4
+		trigger = {
+			diplomacy >= 13
+		}
+		ai_chance = {
+			factor = 30
+		}
+		add_trait = romantique
+		tooltip_info = diplomacy
+	}
+
+
+	option = {
+		name = optcexpandedtraits.4
+		ai_chance = {
+			factor = 30
+		}
+		add_trait = nonromantique
+	}
+
+
+	option = {
+		name = optdexpandedtraits.4
+		ai_chance = {
+			factor = 10
+		}
+		random_list = {
+		 	30 = {
+				add_trait = pedophile
+			}
+			70 = {
+				add_character_modifier = {
+					modifier = attraction_petite
+					duration = -1
+				}
+			}
+		}
+	}
+}

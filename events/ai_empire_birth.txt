@@ -1,0 +1,50 @@
+namespace = toe
+
+#Create automatic empire for ai
+character_event = {
+	id = toe.1250
+	
+	hide_window = yes
+
+	trigger = {
+		independent = yes
+		real_tier = KING
+		num_of_king_titles >= 3
+		realm_size >= 200
+		ai = yes
+		NOT = {
+			any_demesne_title = {
+				tier = KING
+				OR = {
+					has_law = succ_gavelkind
+					has_law = succ_eldership
+					has_law = succ_feudal_elective
+					has_law = succ_tanistry
+					has_law = succ_elective_gavelkind
+				}
+			}
+		}
+		is_feudal = yes
+		has_game_rule = {
+			name = ai_empire_rate
+			value = enhanced
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	immediate = {
+		primary_title = {
+            create_title = {
+                tier = EMPEROR
+                landless = no
+                temporary = no
+                custom_created = yes
+                culture = ROOT
+                holder = ROOT
+                base_title = THIS
+                copy_title_laws = yes
+            }
+        }
+	}
+}

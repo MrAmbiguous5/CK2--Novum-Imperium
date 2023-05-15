@@ -1,0 +1,94 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.48
+	desc = descexpandedtraits.48
+	picture = GFX_evt_jugglers
+	border = GFX_event_normal_frame_economy
+
+ 	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		AND = {
+			NOT = {
+				trait = humble
+				trait = mature
+				trait = pudique
+				trait = shy
+			}
+			OR = {
+				trait = proud
+				trait = ambitious
+				trait = poet
+				trait = aimelire
+			}
+			OR = {
+				trait = dreamer
+				trait = neugierig
+				trait = immature
+				trait = romantique
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 550
+	}
+
+	option = {
+		name = optaexpandedtraits.48
+		character_event = {
+			id = expandedtraits.49
+			days = 4
+			random = 4
+			tooltip = tooltipexpandedtraits.48
+		}
+		hidden_effect = {
+			add_trait = awaywithjugglers
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.48
+			if = {
+				limit = {
+					trait = romantique
+					}
+					random = {
+						chance = 50
+						remove_trait = romantique
+					}
+			}
+			if = {
+				limit = {
+					trait = dreamer
+					}
+					random = {
+						chance = 50
+						remove_trait = dreamer
+					}
+			}
+			if = {
+				limit = {
+					trait = neugierig
+					}
+					random = {
+						chance = 50
+						remove_trait = neugierig
+					}
+			}
+			if = {
+				limit = {
+					trait = immature
+					}
+					random = {
+						chance = 50
+						remove_trait = immature
+					}
+			}
+
+	}
+}

@@ -1,0 +1,54 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.14
+	desc = descexpandedtraits.14
+	picture = GFX_evt_courier
+	border = GFX_event_normal_frame_economy
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_hunt
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.14
+		add_trait = etourdi
+		random = {
+			chance = 60
+			add_trait = wounded
+		}
+
+	}
+
+
+	option = {
+		name = optcexpandedtraits.14
+		add_trait = indecis
+		any_vassal = {
+			opinion = {
+				modifier = opinion_dishonorable
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.14
+		trigger = {
+			stewardship >= 14
+		}
+		add_trait = mature
+		tooltip_info = stewardship
+
+	}
+}

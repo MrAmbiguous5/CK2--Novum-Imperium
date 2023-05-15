@@ -1,0 +1,39 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.11
+	desc = descexpandedtraits.11
+	picture = GFX_evt_market_hf
+	border = GFX_event_normal_frame_religion
+
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_theology
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.11
+		add_trait = egoiste
+
+	}
+
+	option = {
+		name = optbexpandedtraits.11
+		add_trait = kind
+		scaled_wealth = -0.1
+	}
+
+	option = {
+		name = optcexpandedtraits.11
+		add_trait = bagarreur
+	}
+}

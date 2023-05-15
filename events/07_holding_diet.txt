@@ -1,0 +1,37 @@
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.7
+	desc = descexpandedtraits.7
+	picture = GFX_evt_a_crowning_ceremony
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_rulership
+	}
+
+	mean_time_to_happen = {
+		months = 350
+	}
+
+	option = {
+		name = optaexpandedtraits.7
+		trigger = {
+			diplomacy >= 13
+		}
+		add_trait = charismatique
+		tooltip_info = diplomacy
+	}
+
+	option = {
+		name = optbexpandedtraits.7
+		add_trait = influencable
+	}
+
+	option = {
+		name = optcexpandedtraits.7
+		add_trait = egoiste
+	}
+}

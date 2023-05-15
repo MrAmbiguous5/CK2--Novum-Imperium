@@ -1,0 +1,6 @@
+ruined_holding = {       #destruction
+	opinion = -40
+}
+raided_holding = {       #the other 3 types of destruction
+	opinion = -25
+}

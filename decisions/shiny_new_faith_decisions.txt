@@ -1,0 +1,6842 @@
+decisions = {
+	# Show Menu
+	dec_snf_show_menu = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_character_initialized
+				NOT = { has_flag = snf_menu_main }
+				religion_scope = {
+					has_flag = snf_init
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_main
+			}
+			custom_tooltip = { text = dec_snf_show_menu_desc_long }
+		}
+	}
+	
+	# Show Menu 2
+	dec_snf_show_menu2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				NOT = { has_flag = snf_character_initialized }
+				religion_scope = {
+					has_flag = snf_init
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = "snf.4" }
+			}
+			custom_tooltip = { text = dec_snf_show_menu_desc_long }
+		}
+	}
+	
+	# Hide Menu
+	dec_snf_hide_menu = {
+		ai = no
+		diplomacy_icon = GFX_snf_decision_root
+		potential = {
+			has_flag = snf_menu_main
+			religion_scope = {
+				has_flag = snf_init
+			}
+		}
+		effect = {
+			clr_flag = snf_menu_main
+			custom_tooltip = { text = dec_snf_hide_menu_desc_long }
+		}
+	}
+		
+
+	# Clergy & Leadership:  
+	dec_snf_clergy_leadership_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_clergy_leadership_show
+				clr_flag = snf_clergy_leadership_hide
+
+			}
+			custom_tooltip = { text = dec_snf_clergy_leadership_show_desc_long }
+		}
+	}
+	
+	# Clergy & Leadership:  
+	dec_snf_clergy_leadership_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_clergy_leadership_show
+				set_flag = snf_clergy_leadership_hide
+
+			}
+			custom_tooltip = { text = dec_snf_clergy_leadership_hide_desc_long }
+		}
+	}
+	
+	# Organization:  
+	dec_snf_leadership_structure_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_leadership_structure_show
+				clr_flag = snf_leadership_structure_hide
+
+			}
+			custom_tooltip = { text = dec_snf_leadership_structure_show_desc_long }
+		}
+	}
+	
+	# Organization:  
+	dec_snf_leadership_structure_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_leadership_structure_show
+				set_flag = snf_leadership_structure_hide
+
+			}
+			custom_tooltip = { text = dec_snf_leadership_structure_hide_desc_long }
+		}
+	}
+	
+	# Autocephaly:  ON
+	dec_snf_autocephaly_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_show
+				religion_scope = {
+					has_flag = snf_autocephaly_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_autocephaly = yes
+					set_flag = snf_autocephaly_yes
+					clr_flag = snf_autocephaly_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_autocephaly_yes_desc_long }
+		}
+	}
+	
+	# Autocephaly:  OFF
+	dec_snf_autocephaly_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_show
+				religion_scope = {
+					has_flag = snf_autocephaly_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_autocephaly = no
+					clr_flag = snf_autocephaly_yes
+					set_flag = snf_autocephaly_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_autocephaly_no_desc_long }
+		}
+	}
+	
+	# Pentarchy:  ON
+	dec_snf_pentarchy_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_show
+				religion_scope = {
+					has_flag = snf_pentarchy_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_pentarchy = yes
+					set_flag = snf_pentarchy_yes
+					clr_flag = snf_pentarchy_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_pentarchy_yes_desc_long }
+		}
+	}
+	
+	# Pentarchy:  OFF
+	dec_snf_pentarchy_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_show
+				religion_scope = {
+					has_flag = snf_pentarchy_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_pentarchy = no
+					clr_flag = snf_pentarchy_yes
+					set_flag = snf_pentarchy_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_pentarchy_no_desc_long }
+		}
+	}
+	
+	# Antipopes:  ON
+	dec_snf_antipopes_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_show
+				religion_scope = {
+					has_flag = snf_antipopes_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_have_antipopes = yes
+					set_flag = snf_antipopes_yes
+					clr_flag = snf_antipopes_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_antipopes_yes_desc_long }
+		}
+	}
+	
+	# Antipopes:  OFF
+	dec_snf_antipopes_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_leadership_structure_show
+				religion_scope = {
+					has_flag = snf_antipopes_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_have_antipopes = no
+					clr_flag = snf_antipopes_yes
+					set_flag = snf_antipopes_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_antipopes_no_desc_long }
+		}
+	}
+	
+	# Clergy:  
+	dec_snf_menu_clergy_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_clergy_show
+				clr_flag = snf_menu_clergy_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_clergy_show_desc_long }
+		}
+	}
+	
+	# Clergy:  
+	dec_snf_menu_clergy_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_menu_clergy_show
+				set_flag = snf_menu_clergy_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_clergy_hide_desc_long }
+		}
+	}
+	
+	# Male Clergy:  ON
+	dec_snf_male_temple_holders_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_male_temple_holders_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_male_temple_holders = yes
+					set_flag = snf_male_temple_holders_yes
+					clr_flag = snf_male_temple_holders_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_male_temple_holders_yes_desc_long }
+		}
+	}
+	
+	# Male Clergy:  OFF
+	dec_snf_male_temple_holders_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_male_temple_holders_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_male_temple_holders = no
+					clr_flag = snf_male_temple_holders_yes
+					set_flag = snf_male_temple_holders_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_male_temple_holders_no_desc_long }
+		}
+	}
+	
+	# Female Clergy:  ON
+	dec_snf_female_temple_holders_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_female_temple_holders_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_female_temple_holders = yes
+					set_flag = snf_female_temple_holders_yes
+					clr_flag = snf_female_temple_holders_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_female_temple_holders_yes_desc_long }
+		}
+	}
+	
+	# Female Clergy:  OFF
+	dec_snf_female_temple_holders_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_female_temple_holders_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_female_temple_holders = no
+					clr_flag = snf_female_temple_holders_yes
+					set_flag = snf_female_temple_holders_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_female_temple_holders_no_desc_long }
+		}
+	}
+	
+	# Clergy can Marry:  ON
+	dec_snf_priests_can_marry_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_priests_can_marry_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_priests_can_marry = yes
+					set_flag = snf_priests_can_marry_yes
+					clr_flag = snf_priests_can_marry_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_priests_can_marry_yes_desc_long }
+		}
+	}
+	
+	# Clergy can Marry:  OFF
+	dec_snf_priests_can_marry_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_priests_can_marry_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_priests_can_marry = no
+					clr_flag = snf_priests_can_marry_yes
+					set_flag = snf_priests_can_marry_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_priests_can_marry_no_desc_long }
+		}
+	}
+	
+	# Clergy can Inherit:  ON
+	dec_snf_priests_can_inherit_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_priests_can_inherit_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_priests_can_inherit = yes
+					set_flag = snf_priests_can_inherit_yes
+					clr_flag = snf_priests_can_inherit_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_priests_can_inherit_yes_desc_long }
+		}
+	}
+	
+	# Clergy can Inherit:  OFF
+	dec_snf_priests_can_inherit_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_clergy_show
+				religion_scope = {
+					has_flag = snf_priests_can_inherit_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_priests_can_inherit = no
+					clr_flag = snf_priests_can_inherit_yes
+					set_flag = snf_priests_can_inherit_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_priests_can_inherit_no_desc_long }
+		}
+	}
+	
+	# Powers of the Leadership:  
+	dec_snf_menu_leadership_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_leadership_show
+				clr_flag = snf_menu_leadership_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_leadership_show_desc_long }
+		}
+	}
+	
+	# Powers of the Leadership:  
+	dec_snf_menu_leadership_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_menu_leadership_show
+				set_flag = snf_menu_leadership_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_leadership_hide_desc_long }
+		}
+	}
+	
+	# Excommunication:  ON
+	dec_snf_excommunication_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_excommunication_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_excommunicate = yes
+					set_flag = snf_excommunication_yes
+					clr_flag = snf_excommunication_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_excommunication_yes_desc_long }
+		}
+	}
+	
+	# Excommunication:  OFF
+	dec_snf_excommunication_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_excommunication_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_excommunicate = no
+					clr_flag = snf_excommunication_yes
+					set_flag = snf_excommunication_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_excommunication_no_desc_long }
+		}
+	}
+	
+	# Call Crusade:  ON
+	dec_snf_call_crusade_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_call_crusade_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_call_crusade = yes
+					set_flag = snf_call_crusade_yes
+					clr_flag = snf_call_crusade_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_call_crusade_yes_desc_long }
+		}
+	}
+	
+	# Call Crusade:  OFF
+	dec_snf_call_crusade_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_call_crusade_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_call_crusade = no
+					clr_flag = snf_call_crusade_yes
+					set_flag = snf_call_crusade_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_call_crusade_no_desc_long }
+		}
+	}
+	
+	# Grant Invasion CB:  ON
+	dec_snf_grant_invasion_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_grant_invasion_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_grant_invasion_cb = yes
+					set_flag = snf_grant_invasion_yes
+					clr_flag = snf_grant_invasion_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_grant_invasion_yes_desc_long }
+		}
+	}
+	
+	# Grant Invasion CB:  OFF
+	dec_snf_grant_invasion_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_grant_invasion_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_grant_invasion_cb = no
+					clr_flag = snf_grant_invasion_yes
+					set_flag = snf_grant_invasion_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_grant_invasion_no_desc_long }
+		}
+	}
+	
+	# Grant Divorce:  ON
+	dec_snf_grant_divorce_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_grant_divorce_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_grant_divorce = yes
+					set_flag = snf_grant_divorce_yes
+					clr_flag = snf_grant_divorce_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_grant_divorce_yes_desc_long }
+		}
+	}
+	
+	# Grant Divorce:  OFF
+	dec_snf_grant_divorce_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_grant_divorce_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_grant_divorce = no
+					clr_flag = snf_grant_divorce_yes
+					set_flag = snf_grant_divorce_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_grant_divorce_no_desc_long }
+		}
+	}
+	
+	# Grant Claim:  ON
+	dec_snf_grant_claim_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_grant_claim_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_grant_claim = yes
+					set_flag = snf_grant_claim_yes
+					clr_flag = snf_grant_claim_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_grant_claim_yes_desc_long }
+		}
+	}
+	
+	# Grant Claim:  OFF
+	dec_snf_grant_claim_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_clergy_leadership_show
+				has_flag = snf_menu_leadership_show
+				religion_scope = {
+					has_flag = snf_grant_claim_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_grant_claim = no
+					clr_flag = snf_grant_claim_yes
+					set_flag = snf_grant_claim_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_grant_claim_no_desc_long }
+		}
+	}
+	
+	# Social Structure:  
+	dec_snf_menu_society_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_society_show
+				clr_flag = snf_menu_society_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_society_show_desc_long }
+		}
+	}
+	
+	# Social Structure:  
+	dec_snf_menu_society_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_menu_society_show
+				set_flag = snf_menu_society_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_society_hide_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  0%
+	dec_snf_short_reign_0_00 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_3_00
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 0.00
+					set_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_0_00_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  25%
+	dec_snf_short_reign_0_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_0_00
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 0.25
+					clr_flag = snf_short_reign_0_00
+					set_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_0_25_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  50%
+	dec_snf_short_reign_0_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_0_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 0.50
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					set_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_0_50_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  75%
+	dec_snf_short_reign_0_75 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_0_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 0.75
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					set_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_0_75_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  100%
+	dec_snf_short_reign_1_00 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_0_75
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 1.00
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					set_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_1_00_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  125%
+	dec_snf_short_reign_1_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_1_00
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 1.25
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					set_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_1_25_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  150%
+	dec_snf_short_reign_1_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_1_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 1.50
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					set_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_1_50_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  175%
+	dec_snf_short_reign_1_75 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_1_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 1.75
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					set_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_1_75_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  200%
+	dec_snf_short_reign_2_00 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_1_75
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 2.00
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					set_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_2_00_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  250%
+	dec_snf_short_reign_2_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_2_00
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 2.50
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					set_flag = snf_short_reign_2_50
+					clr_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_2_50_desc_long }
+		}
+	}
+	
+	# Short Reign Opinion Penalty:  300%
+	dec_snf_short_reign_3_00 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_short_reign_2_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_short_reign_opinion_year_mult = 3.00
+					clr_flag = snf_short_reign_0_00
+					clr_flag = snf_short_reign_0_25
+					clr_flag = snf_short_reign_0_50
+					clr_flag = snf_short_reign_0_75
+					clr_flag = snf_short_reign_1_00
+					clr_flag = snf_short_reign_1_25
+					clr_flag = snf_short_reign_1_50
+					clr_flag = snf_short_reign_1_75
+					clr_flag = snf_short_reign_2_00
+					clr_flag = snf_short_reign_2_50
+					set_flag = snf_short_reign_3_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_short_reign_3_00_desc_long }
+		}
+	}
+	
+	# Heir Designation:  ON
+	dec_snf_heir_designation_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_heir_designation_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_heir_designation = yes
+					set_flag = snf_heir_designation_yes
+					clr_flag = snf_heir_designation_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_heir_designation_yes_desc_long }
+		}
+	}
+	
+	# Heir Designation:  OFF
+	dec_snf_heir_designation_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_heir_designation_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_heir_designation = no
+					clr_flag = snf_heir_designation_yes
+					set_flag = snf_heir_designation_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_heir_designation_no_desc_long }
+		}
+	}
+	
+	# Female Equality:  ON
+	dec_snf_feminist_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_feminist_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_feminist = yes
+					set_flag = snf_feminist_yes
+					clr_flag = snf_feminist_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_feminist_yes_desc_long }
+		}
+	}
+	
+	# Female Equality:  OFF
+	dec_snf_feminist_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_feminist_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_feminist = no
+					clr_flag = snf_feminist_yes
+					set_flag = snf_feminist_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_feminist_no_desc_long }
+		}
+	}
+	
+	# Monastic Orders:  ON
+	dec_snf_monastery_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_monastery_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_retire_to_monastery = yes
+					set_flag = snf_monastery_yes
+					clr_flag = snf_monastery_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_monastery_yes_desc_long }
+		}
+	}
+	
+	# Monastic Orders:  OFF
+	dec_snf_monastery_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_monastery_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_can_retire_to_monastery = no
+					clr_flag = snf_monastery_yes
+					set_flag = snf_monastery_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_monastery_no_desc_long }
+		}
+	}
+	
+	# Decadence:  ON
+	dec_snf_decadence_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_decadence_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_uses_decadence = yes
+					set_flag = snf_decadence_yes
+					clr_flag = snf_decadence_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_decadence_yes_desc_long }
+		}
+	}
+	
+	# Decadence:  OFF
+	dec_snf_decadence_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_society_show
+				religion_scope = {
+					has_flag = snf_decadence_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_uses_decadence = no
+					clr_flag = snf_decadence_yes
+					set_flag = snf_decadence_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_decadence_no_desc_long }
+		}
+	}
+	
+	# Interfaith Relations:  
+	dec_snf_menu_other_faiths_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_other_faiths_show
+				clr_flag = snf_menu_other_faiths_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_other_faiths_show_desc_long }
+		}
+	}
+	
+	# Interfaith Relations:  
+	dec_snf_menu_other_faiths_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_menu_other_faiths_show
+				set_flag = snf_menu_other_faiths_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_other_faiths_hide_desc_long }
+		}
+	}
+	
+	# Will Try to Convert Other Faith Groups:  Never
+	dec_snf_convert_other_groups_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_convert_other_groups_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_convert_other_groups = 0
+					set_flag = snf_convert_other_groups_0
+					clr_flag = snf_convert_other_groups_1
+					clr_flag = snf_convert_other_groups_2
+				}
+			}
+			custom_tooltip = { text = dec_snf_convert_other_groups_0_desc_long }
+		}
+	}
+	
+	# Will Try to Convert Other Faith Groups:  Maybe
+	dec_snf_convert_other_groups_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_convert_other_groups_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_convert_other_groups = 1
+					clr_flag = snf_convert_other_groups_0
+					set_flag = snf_convert_other_groups_1
+					clr_flag = snf_convert_other_groups_2
+				}
+			}
+			custom_tooltip = { text = dec_snf_convert_other_groups_1_desc_long }
+		}
+	}
+	
+	# Will Try to Convert Other Faith Groups:  Always
+	dec_snf_convert_other_groups_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_convert_other_groups_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_convert_other_groups = 2
+					clr_flag = snf_convert_other_groups_0
+					clr_flag = snf_convert_other_groups_1
+					set_flag = snf_convert_other_groups_2
+				}
+			}
+			custom_tooltip = { text = dec_snf_convert_other_groups_2_desc_long }
+		}
+	}
+	
+	# Will Try to Convert Same Faith Group:  Never
+	dec_snf_convert_same_group_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_convert_same_group_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_convert_same_group = 0
+					set_flag = snf_convert_same_group_0
+					clr_flag = snf_convert_same_group_1
+					clr_flag = snf_convert_same_group_2
+				}
+			}
+			custom_tooltip = { text = dec_snf_convert_same_group_0_desc_long }
+		}
+	}
+	
+	# Will Try to Convert Same Faith Group:  Maybe
+	dec_snf_convert_same_group_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_convert_same_group_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_convert_same_group = 1
+					clr_flag = snf_convert_same_group_0
+					set_flag = snf_convert_same_group_1
+					clr_flag = snf_convert_same_group_2
+				}
+			}
+			custom_tooltip = { text = dec_snf_convert_same_group_1_desc_long }
+		}
+	}
+	
+	# Will Try to Convert Same Faith Group:  Always
+	dec_snf_convert_same_group_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_convert_same_group_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_convert_same_group = 2
+					clr_flag = snf_convert_same_group_0
+					clr_flag = snf_convert_same_group_1
+					set_flag = snf_convert_same_group_2
+				}
+			}
+			custom_tooltip = { text = dec_snf_convert_same_group_2_desc_long }
+		}
+	}
+	
+	# Hard to Convert:  ON
+	dec_snf_hard_to_convert_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_hard_to_convert_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_hard_to_convert = yes
+					set_flag = snf_hard_to_convert_yes
+					clr_flag = snf_hard_to_convert_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_hard_to_convert_yes_desc_long }
+		}
+	}
+	
+	# Hard to Convert:  OFF
+	dec_snf_hard_to_convert_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_hard_to_convert_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_hard_to_convert = no
+					clr_flag = snf_hard_to_convert_yes
+					set_flag = snf_hard_to_convert_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_hard_to_convert_no_desc_long }
+		}
+	}
+	
+	# Tax the Infidels:  ON
+	dec_snf_jizya_tax_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_jizya_tax_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_jizya_tax = yes
+					set_flag = snf_jizya_tax_yes
+					clr_flag = snf_jizya_tax_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_jizya_tax_yes_desc_long }
+		}
+	}
+	
+	# Tax the Infidels:  OFF
+	dec_snf_jizya_tax_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_other_faiths_show
+				religion_scope = {
+					has_flag = snf_jizya_tax_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_jizya_tax = no
+					clr_flag = snf_jizya_tax_yes
+					set_flag = snf_jizya_tax_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_jizya_tax_no_desc_long }
+		}
+	}
+	
+	# War & Peace:  
+	dec_snf_menu_war_peace_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_war_peace_show
+				clr_flag = snf_menu_war_peace_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_war_peace_show_desc_long }
+		}
+	}
+	
+	# War & Peace:  
+	dec_snf_menu_war_peace_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_menu_war_peace_show
+				set_flag = snf_menu_war_peace_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_war_peace_hide_desc_long }
+		}
+	}
+	
+	# Reputation:  
+	dec_snf_reputation_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_reputation_show
+				clr_flag = snf_reputation_hide
+
+			}
+			custom_tooltip = { text = dec_snf_reputation_show_desc_long }
+		}
+	}
+	
+	# Reputation:  
+	dec_snf_reputation_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_reputation_show
+				set_flag = snf_reputation_hide
+
+			}
+			custom_tooltip = { text = dec_snf_reputation_hide_desc_long }
+		}
+	}
+	
+	# Gain Piety While at Peace:  0.0
+	dec_snf_peace_piety_gain_0_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_peace_piety_gain_4_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_peace_piety_gain = 0.0
+					set_flag = snf_peace_piety_gain_0_0
+					clr_flag = snf_peace_piety_gain_1_0
+					clr_flag = snf_peace_piety_gain_2_0
+					clr_flag = snf_peace_piety_gain_3_0
+					clr_flag = snf_peace_piety_gain_4_0
+				}
+			}
+			custom_tooltip = { text = dec_snf_peace_piety_gain_0_0_desc_long }
+		}
+	}
+	
+	# Gain Piety While at Peace:  1.0
+	dec_snf_peace_piety_gain_1_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_peace_piety_gain_0_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_peace_piety_gain = 1.0
+					clr_flag = snf_peace_piety_gain_0_0
+					set_flag = snf_peace_piety_gain_1_0
+					clr_flag = snf_peace_piety_gain_2_0
+					clr_flag = snf_peace_piety_gain_3_0
+					clr_flag = snf_peace_piety_gain_4_0
+				}
+			}
+			custom_tooltip = { text = dec_snf_peace_piety_gain_1_0_desc_long }
+		}
+	}
+	
+	# Gain Piety While at Peace:  2.0
+	dec_snf_peace_piety_gain_2_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_peace_piety_gain_1_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_peace_piety_gain = 2.0
+					clr_flag = snf_peace_piety_gain_0_0
+					clr_flag = snf_peace_piety_gain_1_0
+					set_flag = snf_peace_piety_gain_2_0
+					clr_flag = snf_peace_piety_gain_3_0
+					clr_flag = snf_peace_piety_gain_4_0
+				}
+			}
+			custom_tooltip = { text = dec_snf_peace_piety_gain_2_0_desc_long }
+		}
+	}
+	
+	# Gain Piety While at Peace:  3.0
+	dec_snf_peace_piety_gain_3_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_peace_piety_gain_2_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_peace_piety_gain = 3.0
+					clr_flag = snf_peace_piety_gain_0_0
+					clr_flag = snf_peace_piety_gain_1_0
+					clr_flag = snf_peace_piety_gain_2_0
+					set_flag = snf_peace_piety_gain_3_0
+					clr_flag = snf_peace_piety_gain_4_0
+				}
+			}
+			custom_tooltip = { text = dec_snf_peace_piety_gain_3_0_desc_long }
+		}
+	}
+	
+	# Gain Piety While at Peace:  4.0
+	dec_snf_peace_piety_gain_4_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_peace_piety_gain_3_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_peace_piety_gain = 4.0
+					clr_flag = snf_peace_piety_gain_0_0
+					clr_flag = snf_peace_piety_gain_1_0
+					clr_flag = snf_peace_piety_gain_2_0
+					clr_flag = snf_peace_piety_gain_3_0
+					set_flag = snf_peace_piety_gain_4_0
+				}
+			}
+			custom_tooltip = { text = dec_snf_peace_piety_gain_4_0_desc_long }
+		}
+	}
+	
+	# Lose Prestige While at Peace:  ON
+	dec_snf_peace_prestige_loss_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_peace_prestige_loss_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_peace_prestige_loss = yes
+					set_flag = snf_peace_prestige_loss_yes
+					clr_flag = snf_peace_prestige_loss_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_peace_prestige_loss_yes_desc_long }
+		}
+	}
+	
+	# Lose Prestige While at Peace:  OFF
+	dec_snf_peace_prestige_loss_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_peace_prestige_loss_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_peace_prestige_loss = no
+					clr_flag = snf_peace_prestige_loss_yes
+					set_flag = snf_peace_prestige_loss_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_peace_prestige_loss_no_desc_long }
+		}
+	}
+	
+	# Lose Piety for Attacking Faithful:  ON
+	dec_snf_piety_loss_faithful_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_piety_loss_faithful_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_piety_loss_for_attacking_same_religion = yes
+					set_flag = snf_piety_loss_faithful_yes
+					clr_flag = snf_piety_loss_faithful_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_piety_loss_faithful_yes_desc_long }
+		}
+	}
+	
+	# Lose Piety for Attacking Faithful:  OFF
+	dec_snf_piety_loss_faithful_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_piety_loss_faithful_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_piety_loss_for_attacking_same_religion = no
+					clr_flag = snf_piety_loss_faithful_yes
+					set_flag = snf_piety_loss_faithful_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_piety_loss_faithful_no_desc_long }
+		}
+	}
+	
+	# Vassals Dislike Raised Levies:  ON
+	dec_snf_raised_vassal_opinion_loss_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_raised_vassal_opinion_loss_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_raised_vassal_opinion_loss = yes
+					set_flag = snf_raised_vassal_opinion_loss_yes
+					clr_flag = snf_raised_vassal_opinion_loss_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_raised_vassal_opinion_loss_yes_desc_long }
+		}
+	}
+	
+	# Vassals Dislike Raised Levies:  OFF
+	dec_snf_raised_vassal_opinion_loss_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_reputation_show
+				religion_scope = {
+					has_flag = snf_raised_vassal_opinion_loss_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_raised_vassal_opinion_loss = no
+					clr_flag = snf_raised_vassal_opinion_loss_yes
+					set_flag = snf_raised_vassal_opinion_loss_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_raised_vassal_opinion_loss_no_desc_long }
+		}
+	}
+	
+	# Aggressiveness:  
+	dec_snf_aggressiveness_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_aggressiveness_show
+				clr_flag = snf_aggressiveness_hide
+
+			}
+			custom_tooltip = { text = dec_snf_aggressiveness_show_desc_long }
+		}
+	}
+	
+	# Aggressiveness:  
+	dec_snf_aggressiveness_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_aggressiveness_show
+				set_flag = snf_aggressiveness_hide
+
+			}
+			custom_tooltip = { text = dec_snf_aggressiveness_hide_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  0%
+	dec_snf_ai_aggression_0_00 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_2_00
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 0.00
+					set_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_0_00_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  25%
+	dec_snf_ai_aggression_0_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_0_00
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 0.25
+					clr_flag = snf_ai_aggression_0_00
+					set_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_0_25_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  50%
+	dec_snf_ai_aggression_0_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_0_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 0.50
+					clr_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					set_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_0_50_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  75%
+	dec_snf_ai_aggression_0_75 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_0_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 0.75
+					clr_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					set_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_0_75_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  100%
+	dec_snf_ai_aggression_1_00 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_0_75
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 1.00
+					clr_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					set_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_1_00_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  125%
+	dec_snf_ai_aggression_1_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_1_00
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 1.25
+					clr_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					set_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_1_25_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  150%
+	dec_snf_ai_aggression_1_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_1_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 1.50
+					clr_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					set_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_1_50_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  175%
+	dec_snf_ai_aggression_1_75 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_1_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 1.75
+					clr_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					set_flag = snf_ai_aggression_1_75
+					clr_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_1_75_desc_long }
+		}
+	}
+	
+	# AI Aggressiveness:  200%
+	dec_snf_ai_aggression_2_00 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_ai_aggression_1_75
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ai_aggression = 2.00
+					clr_flag = snf_ai_aggression_0_00
+					clr_flag = snf_ai_aggression_0_25
+					clr_flag = snf_ai_aggression_0_50
+					clr_flag = snf_ai_aggression_0_75
+					clr_flag = snf_ai_aggression_1_00
+					clr_flag = snf_ai_aggression_1_25
+					clr_flag = snf_ai_aggression_1_50
+					clr_flag = snf_ai_aggression_1_75
+					set_flag = snf_ai_aggression_2_00
+				}
+			}
+			custom_tooltip = { text = dec_snf_ai_aggression_2_00_desc_long }
+		}
+	}
+	
+	# Pacifism:  ON
+	dec_snf_pacifist_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_pacifist_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_pacifist = yes
+					set_flag = snf_pacifist_yes
+					clr_flag = snf_pacifist_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_pacifist_yes_desc_long }
+		}
+	}
+	
+	# Pacifism:  OFF
+	dec_snf_pacifist_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_pacifist_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_pacifist = no
+					clr_flag = snf_pacifist_yes
+					set_flag = snf_pacifist_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_pacifist_no_desc_long }
+		}
+	}
+	
+	# Prepared Invasions:  ON
+	dec_snf_prepared_invasions_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_prepared_invasions_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					enable_prepared_invasion = yes
+					set_flag = snf_prepared_invasions_yes
+					clr_flag = snf_prepared_invasions_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_prepared_invasions_yes_desc_long }
+		}
+	}
+	
+	# Prepared Invasions:  OFF
+	dec_snf_prepared_invasions_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_aggressiveness_show
+				religion_scope = {
+					has_flag = snf_prepared_invasions_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					enable_prepared_invasion = no
+					clr_flag = snf_prepared_invasions_yes
+					set_flag = snf_prepared_invasions_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_prepared_invasions_no_desc_long }
+		}
+	}
+	
+	# Features:  
+	dec_snf_tactics_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_tactics_show
+				clr_flag = snf_tactics_hide
+
+			}
+			custom_tooltip = { text = dec_snf_tactics_show_desc_long }
+		}
+	}
+	
+	# Features:  
+	dec_snf_tactics_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_tactics_show
+				set_flag = snf_tactics_hide
+
+			}
+			custom_tooltip = { text = dec_snf_tactics_hide_desc_long }
+		}
+	}
+	
+	# Looting:  ON
+	dec_snf_looting_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_looting_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_allow_looting = yes
+					set_flag = snf_looting_yes
+					clr_flag = snf_looting_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_looting_yes_desc_long }
+		}
+	}
+	
+	# Looting:  OFF
+	dec_snf_looting_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_looting_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_allow_looting = no
+					clr_flag = snf_looting_yes
+					set_flag = snf_looting_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_looting_no_desc_long }
+		}
+	}
+	
+	# Seafaring:  ON
+	dec_snf_seafaring_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_seafaring_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_seafaring = yes
+					set_flag = snf_seafaring_yes
+					clr_flag = snf_seafaring_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_seafaring_yes_desc_long }
+		}
+	}
+	
+	# Seafaring:  OFF
+	dec_snf_seafaring_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_seafaring_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_seafaring = no
+					clr_flag = snf_seafaring_yes
+					set_flag = snf_seafaring_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_seafaring_no_desc_long }
+		}
+	}
+	
+	# River Movement:  ON
+	dec_snf_river_movement_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_river_movement_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_allow_rivermovement = yes
+					set_flag = snf_river_movement_yes
+					clr_flag = snf_river_movement_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_river_movement_yes_desc_long }
+		}
+	}
+	
+	# River Movement:  OFF
+	dec_snf_river_movement_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_river_movement_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_allow_rivermovement = no
+					clr_flag = snf_river_movement_yes
+					set_flag = snf_river_movement_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_river_movement_no_desc_long }
+		}
+	}
+	
+	# Defensive Attrition:  ON
+	dec_snf_defensive_attrition_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_defensive_attrition_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_defensive_attrition = yes
+					set_flag = snf_defensive_attrition_yes
+					clr_flag = snf_defensive_attrition_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_defensive_attrition_yes_desc_long }
+		}
+	}
+	
+	# Defensive Attrition:  OFF
+	dec_snf_defensive_attrition_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_defensive_attrition_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_defensive_attrition = no
+					clr_flag = snf_defensive_attrition_yes
+					set_flag = snf_defensive_attrition_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_defensive_attrition_no_desc_long }
+		}
+	}
+	
+	# Ignore Defensive Attrition:  ON
+	dec_snf_ignore_defensive_attrition_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_ignore_defensive_attrition_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ignores_defensive_attrition = yes
+					set_flag = snf_ignore_defensive_attrition_yes
+					clr_flag = snf_ignore_defensive_attrition_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_ignore_defensive_attrition_yes_desc_long }
+		}
+	}
+	
+	# Ignore Defensive Attrition:  OFF
+	dec_snf_ignore_defensive_attrition_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_war_peace_show
+				has_flag = snf_tactics_show
+				religion_scope = {
+					has_flag = snf_ignore_defensive_attrition_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_ignores_defensive_attrition = no
+					clr_flag = snf_ignore_defensive_attrition_yes
+					set_flag = snf_ignore_defensive_attrition_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_ignore_defensive_attrition_no_desc_long }
+		}
+	}
+	
+	# Love & Marriage:  
+	dec_snf_menu_love_marriage_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_love_marriage_show
+				clr_flag = snf_menu_love_marriage_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_love_marriage_show_desc_long }
+		}
+	}
+	
+	# Love & Marriage:  
+	dec_snf_menu_love_marriage_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_menu_love_marriage_show
+				set_flag = snf_menu_love_marriage_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_love_marriage_hide_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  1
+	dec_snf_max_wives_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_100
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 1
+					set_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_1_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  2
+	dec_snf_max_wives_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 2
+					clr_flag = snf_max_wives_1
+					set_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_2_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  3
+	dec_snf_max_wives_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 3
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					set_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_3_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  4
+	dec_snf_max_wives_4 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 4
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					set_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_4_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  5
+	dec_snf_max_wives_5 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_4
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 5
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					set_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_5_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  6
+	dec_snf_max_wives_6 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_5
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 6
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					set_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_6_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  7
+	dec_snf_max_wives_7 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_6
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 7
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					set_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_7_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  8
+	dec_snf_max_wives_8 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_7
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 8
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					set_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_8_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  9
+	dec_snf_max_wives_9 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_8
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 9
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					set_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_9_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  10
+	dec_snf_max_wives_10 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_9
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 10
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					set_flag = snf_max_wives_10
+					clr_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_10_desc_long }
+		}
+	}
+	
+	# Maximum # of Wives:  100
+	dec_snf_max_wives_100 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_max_wives_10
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_wives = 100
+					clr_flag = snf_max_wives_1
+					clr_flag = snf_max_wives_2
+					clr_flag = snf_max_wives_3
+					clr_flag = snf_max_wives_4
+					clr_flag = snf_max_wives_5
+					clr_flag = snf_max_wives_6
+					clr_flag = snf_max_wives_7
+					clr_flag = snf_max_wives_8
+					clr_flag = snf_max_wives_9
+					clr_flag = snf_max_wives_10
+					set_flag = snf_max_wives_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_wives_100_desc_long }
+		}
+	}
+	
+	# Matrilineal Marriages:  ON
+	dec_snf_matrilineal_marriages_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_matrilineal_marriages_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_allows_matrilineal_marriage = yes
+					set_flag = snf_matrilineal_marriages_yes
+					clr_flag = snf_matrilineal_marriages_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_matrilineal_marriages_yes_desc_long }
+		}
+	}
+	
+	# Matrilineal Marriages:  OFF
+	dec_snf_matrilineal_marriages_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				religion_scope = {
+					has_flag = snf_matrilineal_marriages_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_allows_matrilineal_marriage = no
+					clr_flag = snf_matrilineal_marriages_yes
+					set_flag = snf_matrilineal_marriages_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_matrilineal_marriages_no_desc_long }
+		}
+	}
+	
+	# Concubines & Consorts:  
+	dec_snf_concubines_consorts_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_concubines_consorts_show
+				clr_flag = snf_concubines_consorts_hide
+
+			}
+			custom_tooltip = { text = dec_snf_concubines_consorts_show_desc_long }
+		}
+	}
+	
+	# Concubines & Consorts:  
+	dec_snf_concubines_consorts_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_concubines_consorts_show
+				set_flag = snf_concubines_consorts_hide
+
+			}
+			custom_tooltip = { text = dec_snf_concubines_consorts_hide_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  0
+	dec_snf_max_consorts_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_99
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 0
+					set_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_0_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  1
+	dec_snf_max_consorts_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 1
+					clr_flag = snf_max_consorts_0
+					set_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_1_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  2
+	dec_snf_max_consorts_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 2
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					set_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_2_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  3
+	dec_snf_max_consorts_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 3
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					set_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_3_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  4
+	dec_snf_max_consorts_4 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 4
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					set_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_4_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  5
+	dec_snf_max_consorts_5 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_4
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 5
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					set_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_5_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  6
+	dec_snf_max_consorts_6 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_5
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 6
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					set_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_6_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  7
+	dec_snf_max_consorts_7 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_6
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 7
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					set_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_7_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  8
+	dec_snf_max_consorts_8 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_7
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 8
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					set_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_8_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  9
+	dec_snf_max_consorts_9 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_8
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 9
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					set_flag = snf_max_consorts_9
+					clr_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_9_desc_long }
+		}
+	}
+	
+	# Maximum # of Consorts:  99
+	dec_snf_max_consorts_99 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_max_consorts_9
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_max_consorts = 99
+					clr_flag = snf_max_consorts_0
+					clr_flag = snf_max_consorts_1
+					clr_flag = snf_max_consorts_2
+					clr_flag = snf_max_consorts_3
+					clr_flag = snf_max_consorts_4
+					clr_flag = snf_max_consorts_5
+					clr_flag = snf_max_consorts_6
+					clr_flag = snf_max_consorts_7
+					clr_flag = snf_max_consorts_8
+					clr_flag = snf_max_consorts_9
+					set_flag = snf_max_consorts_99
+				}
+			}
+			custom_tooltip = { text = dec_snf_max_consorts_99_desc_long }
+		}
+	}
+	
+	# Concubines for Men:  ON
+	dec_snf_concubines_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_concubines_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_men_can_take_consorts = yes
+					set_flag = snf_concubines_yes
+					clr_flag = snf_concubines_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_concubines_yes_desc_long }
+		}
+	}
+	
+	# Concubines for Men:  OFF
+	dec_snf_concubines_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_concubines_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_men_can_take_consorts = no
+					clr_flag = snf_concubines_yes
+					set_flag = snf_concubines_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_concubines_no_desc_long }
+		}
+	}
+	
+	# Consorts for Women:  ON
+	dec_snf_consorts_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_consorts_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_women_can_take_consorts = yes
+					set_flag = snf_consorts_yes
+					clr_flag = snf_consorts_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_consorts_yes_desc_long }
+		}
+	}
+	
+	# Consorts for Women:  OFF
+	dec_snf_consorts_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_concubines_consorts_show
+				religion_scope = {
+					has_flag = snf_consorts_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_women_can_take_consorts = no
+					clr_flag = snf_consorts_yes
+					set_flag = snf_consorts_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_consorts_no_desc_long }
+		}
+	}
+	
+	# Family Affairs:  
+	dec_snf_menu_incest_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_menu_incest_show
+				clr_flag = snf_menu_incest_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_incest_show_desc_long }
+		}
+	}
+	
+	# Family Affairs:  
+	dec_snf_menu_incest_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_menu_incest_show
+				set_flag = snf_menu_incest_hide
+
+			}
+			custom_tooltip = { text = dec_snf_menu_incest_hide_desc_long }
+		}
+	}
+	
+	# Cousins:  ON
+	dec_snf_cousin_marriage_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_cousin_marriage_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_cousin_marriage = yes
+					set_flag = snf_cousin_marriage_yes
+					clr_flag = snf_cousin_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_cousin_marriage_yes_desc_long }
+		}
+	}
+	
+	# Cousins:  OFF
+	dec_snf_cousin_marriage_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_cousin_marriage_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_cousin_marriage = no
+					clr_flag = snf_cousin_marriage_yes
+					set_flag = snf_cousin_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_cousin_marriage_no_desc_long }
+		}
+	}
+	
+	# Uncles/Aunts:  ON
+	dec_snf_psc_marriage_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_psc_marriage_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_psc_marriage = yes
+					set_flag = snf_psc_marriage_yes
+					clr_flag = snf_psc_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_psc_marriage_yes_desc_long }
+		}
+	}
+	
+	# Uncles/Aunts:  OFF
+	dec_snf_psc_marriage_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_psc_marriage_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_psc_marriage = no
+					clr_flag = snf_psc_marriage_yes
+					set_flag = snf_psc_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_psc_marriage_no_desc_long }
+		}
+	}
+	
+	# Siblings:  ON
+	dec_snf_bs_marriage_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_bs_marriage_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_bs_marriage = yes
+					set_flag = snf_bs_marriage_yes
+					clr_flag = snf_bs_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_bs_marriage_yes_desc_long }
+		}
+	}
+	
+	# Siblings:  OFF
+	dec_snf_bs_marriage_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_bs_marriage_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_bs_marriage = no
+					clr_flag = snf_bs_marriage_yes
+					set_flag = snf_bs_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_bs_marriage_no_desc_long }
+		}
+	}
+	
+	# Parents/Children:  ON
+	dec_snf_pc_marriage_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_pc_marriage_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_pc_marriage = yes
+					set_flag = snf_pc_marriage_yes
+					clr_flag = snf_pc_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_pc_marriage_yes_desc_long }
+		}
+	}
+	
+	# Parents/Children:  OFF
+	dec_snf_pc_marriage_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_pc_marriage_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_pc_marriage = no
+					clr_flag = snf_pc_marriage_yes
+					set_flag = snf_pc_marriage_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_pc_marriage_no_desc_long }
+		}
+	}
+	
+	# Divine Blood:  ON
+	dec_snf_divine_blood_yes = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_divine_blood_no
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_divine_blood = yes
+					set_flag = snf_divine_blood_yes
+					clr_flag = snf_divine_blood_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_divine_blood_yes_desc_long }
+		}
+	}
+	
+	# Divine Blood:  OFF
+	dec_snf_divine_blood_no = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_menu_love_marriage_show
+				has_flag = snf_menu_incest_show
+				religion_scope = {
+					has_flag = snf_divine_blood_yes
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				religion_scope = {
+					set_divine_blood = no
+					clr_flag = snf_divine_blood_yes
+					set_flag = snf_divine_blood_no
+				}
+			}
+			custom_tooltip = { text = dec_snf_divine_blood_no_desc_long }
+		}
+	}
+	
+	# Ruler Bonus:  
+	dec_snf_attributes_show = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_hide
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_flag = snf_attributes_show
+				clr_flag = snf_attributes_hide
+
+			}
+			custom_tooltip = { text = dec_snf_attributes_show_desc_long }
+		}
+	}
+	
+	# Ruler Bonus:  
+	dec_snf_attributes_hide = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				clr_flag = snf_attributes_show
+				set_flag = snf_attributes_hide
+
+			}
+			custom_tooltip = { text = dec_snf_attributes_hide_desc_long }
+		}
+	}
+	
+	# Diplomacy:  -3
+	dec_snf_diplomacy_diplomacy_minus_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy =-3
+					key = snf_attribute_modifier_name
+				}
+					set_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_minus_3_desc_long }
+		}
+	}
+	
+	# Diplomacy:  -2
+	dec_snf_diplomacy_diplomacy_minus_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_minus_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy=-2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					set_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_minus_2_desc_long }
+		}
+	}
+	
+	# Diplomacy:  -1
+	dec_snf_diplomacy_diplomacy_minus_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_minus_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy=-1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					set_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_minus_1_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +0
+	dec_snf_diplomacy_diplomacy_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_minus_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 0
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					set_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_0_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +1
+	dec_snf_diplomacy_diplomacy_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					set_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_1_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +2
+	dec_snf_diplomacy_diplomacy_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					set_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_2_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +3
+	dec_snf_diplomacy_diplomacy_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 3
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					set_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_3_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +4
+	dec_snf_diplomacy_diplomacy_4 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 4
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					set_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_4_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +5
+	dec_snf_diplomacy_diplomacy_5 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_4
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 5
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					set_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_5_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +10
+	dec_snf_diplomacy_diplomacy_10 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_5
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 10
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					set_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_10_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +25
+	dec_snf_diplomacy_diplomacy_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_10
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 25
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					set_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_25_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +50
+	dec_snf_diplomacy_diplomacy_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 50
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					set_flag = snf_diplomacy_diplomacy_50
+					clr_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_50_desc_long }
+		}
+	}
+	
+	# Diplomacy:  +100
+	dec_snf_diplomacy_diplomacy_100 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_diplomacy_diplomacy_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					diplomacy = 100
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_diplomacy_diplomacy_minus_3
+					clr_flag = snf_diplomacy_diplomacy_minus_2
+					clr_flag = snf_diplomacy_diplomacy_minus_1
+					clr_flag = snf_diplomacy_diplomacy_0
+					clr_flag = snf_diplomacy_diplomacy_1
+					clr_flag = snf_diplomacy_diplomacy_2
+					clr_flag = snf_diplomacy_diplomacy_3
+					clr_flag = snf_diplomacy_diplomacy_4
+					clr_flag = snf_diplomacy_diplomacy_5
+					clr_flag = snf_diplomacy_diplomacy_10
+					clr_flag = snf_diplomacy_diplomacy_25
+					clr_flag = snf_diplomacy_diplomacy_50
+					set_flag = snf_diplomacy_diplomacy_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_diplomacy_diplomacy_100_desc_long }
+		}
+	}
+	
+	# Martial:  -3
+	dec_snf_martial_martial_minus_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_100
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial=-3
+					key = snf_attribute_modifier_name
+				}
+					set_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_minus_3_desc_long }
+		}
+	}
+	
+	# Martial:  -2
+	dec_snf_martial_martial_minus_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_minus_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial=-2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					set_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_minus_2_desc_long }
+		}
+	}
+	
+	# Martial:  -1
+	dec_snf_martial_martial_minus_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_minus_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial=-1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					set_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_minus_1_desc_long }
+		}
+	}
+	
+	# Martial:  +0
+	dec_snf_martial_martial_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_minus_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 0
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					set_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_0_desc_long }
+		}
+	}
+	
+	# Martial:  +1
+	dec_snf_martial_martial_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					set_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_1_desc_long }
+		}
+	}
+	
+	# Martial:  +2
+	dec_snf_martial_martial_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					set_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_2_desc_long }
+		}
+	}
+	
+	# Martial:  +3
+	dec_snf_martial_martial_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 3
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					set_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_3_desc_long }
+		}
+	}
+	
+	# Martial:  +4
+	dec_snf_martial_martial_4 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 4
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					set_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_4_desc_long }
+		}
+	}
+	
+	# Martial:  +5
+	dec_snf_martial_martial_5 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_4
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 5
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					set_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_5_desc_long }
+		}
+	}
+	
+	# Martial:  +10
+	dec_snf_martial_martial_10 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_5
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 10
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					set_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_10_desc_long }
+		}
+	}
+	
+	# Martial:  +25
+	dec_snf_martial_martial_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_10
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 25
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					set_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_25_desc_long }
+		}
+	}
+	
+	# Martial:  +50
+	dec_snf_martial_martial_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 50
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					set_flag = snf_martial_martial_50
+					clr_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_50_desc_long }
+		}
+	}
+	
+	# Martial:  +100
+	dec_snf_martial_martial_100 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_martial_martial_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					martial = 100
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_martial_martial_minus_3
+					clr_flag = snf_martial_martial_minus_2
+					clr_flag = snf_martial_martial_minus_1
+					clr_flag = snf_martial_martial_0
+					clr_flag = snf_martial_martial_1
+					clr_flag = snf_martial_martial_2
+					clr_flag = snf_martial_martial_3
+					clr_flag = snf_martial_martial_4
+					clr_flag = snf_martial_martial_5
+					clr_flag = snf_martial_martial_10
+					clr_flag = snf_martial_martial_25
+					clr_flag = snf_martial_martial_50
+					set_flag = snf_martial_martial_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_martial_martial_100_desc_long }
+		}
+	}
+	
+	# Stewardship:  -3
+	dec_snf_stewardship_stewardship_minus_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_100
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship=-3
+					key = snf_attribute_modifier_name
+				}
+					set_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_minus_3_desc_long }
+		}
+	}
+	
+	# Stewardship:  -2
+	dec_snf_stewardship_stewardship_minus_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_minus_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship=-2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					set_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_minus_2_desc_long }
+		}
+	}
+	
+	# Stewardship:  -1
+	dec_snf_stewardship_stewardship_minus_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_minus_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship=-1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					set_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_minus_1_desc_long }
+		}
+	}
+	
+	# Stewardship:  +0
+	dec_snf_stewardship_stewardship_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_minus_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 0
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					set_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_0_desc_long }
+		}
+	}
+	
+	# Stewardship:  +1
+	dec_snf_stewardship_stewardship_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					set_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_1_desc_long }
+		}
+	}
+	
+	# Stewardship:  +2
+	dec_snf_stewardship_stewardship_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					set_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_2_desc_long }
+		}
+	}
+	
+	# Stewardship:  +3
+	dec_snf_stewardship_stewardship_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 3
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					set_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_3_desc_long }
+		}
+	}
+	
+	# Stewardship:  +4
+	dec_snf_stewardship_stewardship_4 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 4
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					set_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_4_desc_long }
+		}
+	}
+	
+	# Stewardship:  +5
+	dec_snf_stewardship_stewardship_5 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_4
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 5
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					set_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_5_desc_long }
+		}
+	}
+	
+	# Stewardship:  +10
+	dec_snf_stewardship_stewardship_10 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_5
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 10
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					set_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_10_desc_long }
+		}
+	}
+	
+	# Stewardship:  +25
+	dec_snf_stewardship_stewardship_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_10
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 25
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					set_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_25_desc_long }
+		}
+	}
+	
+	# Stewardship:  +50
+	dec_snf_stewardship_stewardship_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 50
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					set_flag = snf_stewardship_stewardship_50
+					clr_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_50_desc_long }
+		}
+	}
+	
+	# Stewardship:  +100
+	dec_snf_stewardship_stewardship_100 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_stewardship_stewardship_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					stewardship = 100
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_stewardship_stewardship_minus_3
+					clr_flag = snf_stewardship_stewardship_minus_2
+					clr_flag = snf_stewardship_stewardship_minus_1
+					clr_flag = snf_stewardship_stewardship_0
+					clr_flag = snf_stewardship_stewardship_1
+					clr_flag = snf_stewardship_stewardship_2
+					clr_flag = snf_stewardship_stewardship_3
+					clr_flag = snf_stewardship_stewardship_4
+					clr_flag = snf_stewardship_stewardship_5
+					clr_flag = snf_stewardship_stewardship_10
+					clr_flag = snf_stewardship_stewardship_25
+					clr_flag = snf_stewardship_stewardship_50
+					set_flag = snf_stewardship_stewardship_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_stewardship_stewardship_100_desc_long }
+		}
+	}
+	
+	# Intrigue:  -3
+	dec_snf_intrigue_intrigue_minus_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_100
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue=-3
+					key = snf_attribute_modifier_name
+				}
+					set_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_minus_3_desc_long }
+		}
+	}
+	
+	# Intrigue:  -2
+	dec_snf_intrigue_intrigue_minus_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_minus_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue=-2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					set_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_minus_2_desc_long }
+		}
+	}
+	
+	# Intrigue:  -1
+	dec_snf_intrigue_intrigue_minus_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_minus_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue=-1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					set_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_minus_1_desc_long }
+		}
+	}
+	
+	# Intrigue:  +0
+	dec_snf_intrigue_intrigue_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_minus_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 0
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					set_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_0_desc_long }
+		}
+	}
+	
+	# Intrigue:  +1
+	dec_snf_intrigue_intrigue_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					set_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_1_desc_long }
+		}
+	}
+	
+	# Intrigue:  +2
+	dec_snf_intrigue_intrigue_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					set_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_2_desc_long }
+		}
+	}
+	
+	# Intrigue:  +3
+	dec_snf_intrigue_intrigue_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 3
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					set_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_3_desc_long }
+		}
+	}
+	
+	# Intrigue:  +4
+	dec_snf_intrigue_intrigue_4 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 4
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					set_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_4_desc_long }
+		}
+	}
+	
+	# Intrigue:  +5
+	dec_snf_intrigue_intrigue_5 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_4
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 5
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					set_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_5_desc_long }
+		}
+	}
+	
+	# Intrigue:  +10
+	dec_snf_intrigue_intrigue_10 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_5
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 10
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					set_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_10_desc_long }
+		}
+	}
+	
+	# Intrigue:  +25
+	dec_snf_intrigue_intrigue_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_10
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 25
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					set_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_25_desc_long }
+		}
+	}
+	
+	# Intrigue:  +50
+	dec_snf_intrigue_intrigue_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 50
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					set_flag = snf_intrigue_intrigue_50
+					clr_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_50_desc_long }
+		}
+	}
+	
+	# Intrigue:  +100
+	dec_snf_intrigue_intrigue_100 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_intrigue_intrigue_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					intrigue = 100
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_intrigue_intrigue_minus_3
+					clr_flag = snf_intrigue_intrigue_minus_2
+					clr_flag = snf_intrigue_intrigue_minus_1
+					clr_flag = snf_intrigue_intrigue_0
+					clr_flag = snf_intrigue_intrigue_1
+					clr_flag = snf_intrigue_intrigue_2
+					clr_flag = snf_intrigue_intrigue_3
+					clr_flag = snf_intrigue_intrigue_4
+					clr_flag = snf_intrigue_intrigue_5
+					clr_flag = snf_intrigue_intrigue_10
+					clr_flag = snf_intrigue_intrigue_25
+					clr_flag = snf_intrigue_intrigue_50
+					set_flag = snf_intrigue_intrigue_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_intrigue_intrigue_100_desc_long }
+		}
+	}
+	
+	# Learning:  -3
+	dec_snf_learning_learning_minus_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_100
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning=-3
+					key = snf_attribute_modifier_name
+				}
+					set_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_minus_3_desc_long }
+		}
+	}
+	
+	# Learning:  -2
+	dec_snf_learning_learning_minus_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_minus_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning=-2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					set_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_minus_2_desc_long }
+		}
+	}
+	
+	# Learning:  -1
+	dec_snf_learning_learning_minus_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_minus_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning=-1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					set_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_minus_1_desc_long }
+		}
+	}
+	
+	# Learning:  +0
+	dec_snf_learning_learning_0 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_minus_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 0
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					set_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_0_desc_long }
+		}
+	}
+	
+	# Learning:  +1
+	dec_snf_learning_learning_1 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_0
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 1
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					set_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_1_desc_long }
+		}
+	}
+	
+	# Learning:  +2
+	dec_snf_learning_learning_2 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_1
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 2
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					set_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_2_desc_long }
+		}
+	}
+	
+	# Learning:  +3
+	dec_snf_learning_learning_3 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_2
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 3
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					set_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_3_desc_long }
+		}
+	}
+	
+	# Learning:  +4
+	dec_snf_learning_learning_4 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_3
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 4
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					set_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_4_desc_long }
+		}
+	}
+	
+	# Learning:  +5
+	dec_snf_learning_learning_5 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_4
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 5
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					set_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_5_desc_long }
+		}
+	}
+	
+	# Learning:  +10
+	dec_snf_learning_learning_10 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_5
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 10
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					set_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_10_desc_long }
+		}
+	}
+	
+	# Learning:  +25
+	dec_snf_learning_learning_25 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_10
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 25
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					set_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_25_desc_long }
+		}
+	}
+	
+	# Learning:  +50
+	dec_snf_learning_learning_50 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_25
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 50
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					set_flag = snf_learning_learning_50
+					clr_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_50_desc_long }
+		}
+	}
+	
+	# Learning:  +100
+	dec_snf_learning_learning_100 = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				has_flag = snf_attributes_show
+				religion_scope = {
+					has_flag = snf_learning_learning_50
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.1 }
+				
+				religion_scope = {
+					set_character_modifier = {
+					learning = 100
+					key = snf_attribute_modifier_name
+				}
+					clr_flag = snf_learning_learning_minus_3
+					clr_flag = snf_learning_learning_minus_2
+					clr_flag = snf_learning_learning_minus_1
+					clr_flag = snf_learning_learning_0
+					clr_flag = snf_learning_learning_1
+					clr_flag = snf_learning_learning_2
+					clr_flag = snf_learning_learning_3
+					clr_flag = snf_learning_learning_4
+					clr_flag = snf_learning_learning_5
+					clr_flag = snf_learning_learning_10
+					clr_flag = snf_learning_learning_25
+					clr_flag = snf_learning_learning_50
+					set_flag = snf_learning_learning_100
+				}
+			}
+			custom_tooltip = { text = dec_snf_learning_learning_100_desc_long }
+		}
+	}
+	
+	# Initialize
+	dec_snf_init = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				religion_scope = {
+					NOT = { has_flag = snf_init }
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.2 }
+			}
+			custom_tooltip = { text = dec_snf_init_desc_long }
+		}
+	}
+	
+	# Reset
+	dec_snf_reset = {
+		ai = no
+		potential = {
+			hidden_tooltip = {
+				has_flag = snf_menu_main
+				religion_scope = {
+					has_flag = snf_init
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = snf.3 }
+			}
+			custom_tooltip = { text = dec_snf_reset_desc_long }
+		}
+	}	
+}
+
+title_decisions = {
+	tdec_snf_set_holy_site = {
+		ai = no
+		filter = all
+		
+		from_potential = {
+			religion_scope = {
+				has_flag = snf_init
+			}
+		}
+		potential = {
+			tier = baron
+			NOT = { is_holy_site = FROM }
+#			FROM = {
+#				religion_scope = {
+#					NOT = { is_holy_site = PREV }
+#				}
+#			}
+		}
+		
+		effect = {
+			set_holy_site_with_heresies = FROM
+#			FROM = {
+#				religion_scope = {
+#					ROOT = { set_holy_site_with_heresies = PREV }
+#				}
+#			}
+		}
+	}
+	
+	tdec_snf_remove_holy_site = {
+		ai = no
+		filter = all
+		
+		from_potential = {
+			religion_scope = {
+				has_flag = snf_init
+			}
+		}
+		potential = {
+			tier = baron
+			is_holy_site = FROM
+#			FROM = {
+#				religion_scope = {
+#					ROOT = { is_holy_site = PREV }
+#				}
+#			}
+		}
+		
+		effect = {
+			remove_holy_site_with_heresies = FROM
+#			FROM = {
+#				religion_scope = {
+#					ROOT = { remove_holy_site_with_heresies = PREV }
+#				}
+#			}
+		}
+	}
+	
+	tdec_snf_set_religion_head = {
+		ai = no
+		filter = all
+		
+		from_potential = {
+			religion_scope = {
+				has_flag = snf_init
+			}
+		}
+		potential = {
+			FROM = {
+				religion_scope = {
+					ROOT = { controls_religion = no }
+				}
+			}
+		}		
+		
+		effect = {
+			FROM = {
+				religion_scope = { set_religion_head = ROOT }
+			}
+		}
+	}
+	
+	tdec_snf_remove_religion_head = {
+		ai = no
+		filter = all
+		
+		from_potential = {
+			religion_scope = {
+				has_flag = snf_init
+			}
+		}
+		potential = {
+			FROM = {
+				religion_scope = {
+					ROOT = { controls_religion = yes }
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				religion_scope = { set_religion_head = none }
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+tribal = {
+	tb_hillfort_4 = {
+		desc = tb_r_walls_4_desc
+		upgrades_from = tb_r_walls_3
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}
+		prerequisites = {
+			tb_r_settlement_2
+		}
+ 
+		extra_tech_building_start = 9
+		ai_creation_factor = 106
+ 
+		build_time = 112
+ 
+		gold_cost = 149.3
+ 
+		fort_level = 0.3
+		garrison_size = 0.02
+ 
+ 
+		tax_income = -0.1
+		local_revolt_risk = -0.005
+ 
+		land_morale = 0.01
+ 
+ 
+ 
+	}
+	tb_r_walls_5 = {
+		desc = tb_r_walls_5_desc
+		upgrades_from = tb_hillfort_4
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}
+		prerequisites = {
+			tb_r_settlement_3
+		}
+ 
+		extra_tech_building_start = 9
+		ai_creation_factor = 105
+ 
+		build_time = 146
+ 
+		gold_cost = 194.4
+ 
+		fort_level = 0.3
+		garrison_size = 0.02
+ 
+ 
+		tax_income = -0.1
+		local_revolt_risk = -0.005
+ 
+		land_morale = 0.01
+	}
+	tb_market_town_4 = {
+		desc = tb_r_market_1_desc
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}
+		prerequisites = {
+			tb_r_settlement_5
+		}
+ 
+		extra_tech_building_start = 9
+		ai_creation_factor = 114
+ 
+		build_time = 10
+ 
+		gold_cost = 20.6
+ 
+ 
+ 
+		tax_income = 0.087
+	}
+	tb_r_market_2 = {
+		desc = tb_r_market_2_desc
+		upgrades_from = tb_market_town_4
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}
+		prerequisites = {
+			tb_r_settlement_5
+		}
+ 
+		extra_tech_building_start = 9
+		ai_creation_factor = 113
+ 
+		build_time = 49
+ 
+		gold_cost = 104.2
+ 
+ 
+ 
+		tax_income = 0.439
+	}
+}

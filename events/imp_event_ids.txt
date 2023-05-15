@@ -1,0 +1,23 @@
+###Inefficiency events 999-1004
+
+###Autonomy events 1049-1054,1061
+
+###Claim events 1100-1101
+
+###Empire death events 1150-1153
+
+###Reform events 1200-1205
+
+###Ai empire creation events 1250
+
+###Imperal guard events 1300-1332, 1352-1355
+
+###Council events 1400
+
+###Coup plot events 1499-1517,1564,1566
+
+###Court ritual events 1600-1611
+
+###Capri events 1700-1718
+
+###Eunuch events 1800-1809

@@ -1,0 +1,44 @@
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.8
+	desc = descexpandedtraits.8
+	picture = GFX_evt_open_book_hf
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		has_focus = focus_sholarship
+	}
+
+	mean_time_to_happen = {
+		months = 350
+	}
+
+	option = {
+		name = optaexpandedtraits.8
+		trigger = {
+			OR = {
+				has_wonder = wonder_university
+				has_wonder = wonder_library
+				learning > 20
+			}
+
+		}
+		add_trait = scientifique
+		tooltip_info_custom = tooltipexpandedtraits.8
+	}
+
+	option = {
+		name = optbexpandedtraits.8
+		add_trait = nonscientifique
+
+	}
+
+	option = {
+		name = optcexpandedtraits.8
+		add_trait = hypersensible
+	}
+}

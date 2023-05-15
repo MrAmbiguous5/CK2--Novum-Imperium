@@ -1,0 +1,75 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+e_bavaria_lombardy;Bavaria-Lombardy;;;;;;;;;;x
+e_bavaria_lombardy_adj;Rhaetian;;;;;;;;;;x
+form_bavaria_lombardy;Establish Bavaria-Lombardy;x
+form_bavaria_lombardy_desc; ;x
+gov_rhaetian_imperial_government;Rhaetian Phoenix;x
+bavarian_imperial_government;Bavarian Imperial;
+bavarian_imperial_government_desc;An Imperial government differs from its feudal counterpart by placing a larger focus on urban areas and a centralized court whose influence deeply affects internal politics. Councilors and Commanders hold a varying degree of influence, depending on their prestige and competence, which they can use to support or oppose the official heir of the Empire...;
+e_greater_mumu;Mumu;;;;;;;;;;x
+e_greater_mumu_adj;Mumian;;;;;;;;;;x
+d_greencoats;Greencoats;;;;;;;;;;x
+mumuhighking;High King;x
+mumuhighqueen;High Queen;x
+mumuhighking_FOA;Your Imperial Majesty;x
+gov_irish_imperial_government;Feudal Celtic Tribal State;x
+e_divine_walhaz;Divine Walhazenlond;;;;;;;;;;x
+e_divine_walhaz_adj;Walhazan;;;;;;;;;;x
+form_divine_walhaz;Establish the Divine Walhazenlond;x
+form_divine_walhaz_desc; ;x
+form_greater_mumu;Form Greater Mumu;x
+form_greater_mumu_desc; ;x
+e_lechina_empire;Lechina Empire;;;;;;;;;;x
+e_lechina_empire_adj;Slavic;;;;;;;;;;x
+rebrand_to_lechina;Proclaim the Lechina Empire;x
+rebrand_to_lechina_desc; ;x
+e_ingstate;Ingland;;;;;;;;;;x
+e_ingstate_adj;Inglish;;;;;;;;;;x
+gov_ingstate_imperial_government;Totalitarian Dictatorial Consulship;x
+ingstate_dictatorship_government;Inglish Authoritarian;
+ingstate_dictatorship_government_desc; ;
+ANGLOMOMENT;Kuningazaireich of;
+ingruler;Consul;x
+ingruler_FOA;Consul of the People;x
+form_ingstate;Establish Ingland;x
+form_ingstate_desc; ;x
+ingstate_prefix;State of;x
+form_the_vague_empire;One Empire;x
+form_the_vague_empire_desc; ;x
+mumu_feudal_government;Irish Feudal;
+mumu_feudal_government_desc;Feudal government revolves around the oath between liege and vassal, and Feudal lords can only directly own so many Holdings before they must start to rely on vassals - whose loyalty may vary... There are several Succession Laws to pick between - each with its own merits. The Centralization Law controls the maximum size of your Demesne and the number of direct vassals you can have.;
+e_empire_no_subtitle;Empire;;;;;;;;;;x
+e_empire_no_subtitle_adj;Imperial;;;;;;;;;;x
+d_emps_imperial_guard;Eminent Guard;;;;;;;;;;x
+gov_neoroman_imperial_government;Neo-Roman Autocracy;x
+late_empire_imperial_government;Late Imperial;
+late_empire_imperial_government_desc;An Imperial government differs from its feudal counterpart by placing a larger focus on urban areas and a centralized court whose influence deeply affects internal politics. Councilors and Commanders hold a varying degree of influence, depending on their prestige and competence, which they can use to support or oppose the official heir of the Empire...;
+e_greater_sicily;Greater Sicily;;;;;;;;;;x
+e_greater_sicily_adj;Mediterranid;;;;;;;;;;x
+form_greater_sicily;Proclaim Greater Sicily;x
+form_greater_sicily_desc; ;x
+e_balkan_empire;Balkan Empire;;;;;;;;;;x
+e_balkan_empire_adj;Balkan;;;;;;;;;;x
+form_balkan_empire;Proclaim a Balkan Empire;x
+form_balkan_empire_desc; ;x
+e_western_medi_empire;Western Mediterranean Empire;;;;;;;;;;x
+e_western_medi_empire_adj;Western Mediterranean;;;;;;;;;;x
+form_western_medi_empire;Establish the Western Mediterranean Empire;x
+form_western_medi_empire_desc; ;x
+title_pre_alt_caesar;Caesar;x
+title_pre_alt_caesar_desc; ;x
+title_pre_proconsul;Proconsul;x
+title_pre_proconsul_desc; ;x
+title_pre_consul;Consul;x
+title_pre_consul_desc; ;x
+title_pre_feudal_state_inquisitor;State Inquisitor;x
+title_pre_feudal_state_inquisitor_desc; ;x
+title_pre_feudal_high_admiral;High Admiral;x
+title_pre_feudal_high_admiral_desc; ;x
+title_pre_feudal_high_judge;High Judge;x
+title_pre_feudal_high_judge_desc; ;x
+title_pre_patrician;Patrician;x
+title_pre_patrician_desc; ;x
+
+title_chief_architect_walhaz;Chief Architect;Maître-architecte;Chef-Architekt;;Arquitecto Jefe;;;;;;;;;x
+title_chief_architect_walhaz_desc;The Chief Architect is responsible for designing and overseeing the construction of palaces, aquaducts and grand monuments.;;;;;;;;;x

@@ -1,0 +1,158 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.50
+	desc = descexpandedtraits.50
+	picture = GFX_evt_reincarnation
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.50
+		random = {
+			chance = 50
+			add_trait = funny #komödie
+		}
+		random_list = {
+			30 = {
+				character_event = {
+					id = expandedtraits.51
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50
+				}
+			}
+			10 = {
+				character_event = {
+					id = expandedtraits.52
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50b
+				}
+			}
+			60 = {
+				character_event = {
+					id = expandedtraits.53
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50c
+				}
+			}
+		} #comedy
+	}
+
+	option = {
+		name = optbexpandedtraits.50
+		random = {
+			chance = 50
+			add_trait = humournoir #tragödie
+		}
+		random_list = {
+			30 = {
+				character_event = {
+					id = expandedtraits.51
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50
+				}
+			}
+			10 = {
+				character_event = {
+					id = expandedtraits.52
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50b
+				}
+			}
+			60 = {
+				character_event = {
+					id = expandedtraits.53
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50c
+				}
+			}
+		} #tragedy
+	}
+
+	option = { #good play
+		name = optcexpandedtraits.50
+		tooltip_info_custom = tooltipexpandedtraits.50d
+		trigger = {
+			OR = {
+				trait = poet
+				AND = {
+					trait = romantique
+					trait = dreamer
+				}
+			}
+		}
+		random_list = {
+			40 = {
+				character_event = {
+					id = expandedtraits.51
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50
+				}
+			}
+			30 = {
+				character_event = {
+					id = expandedtraits.52
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50b
+				}
+			}
+			30 = {
+				character_event = {
+					id = expandedtraits.53
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50c
+				}
+			}
+		}
+	}
+
+	option = { #monologue
+		name = optdexpandedtraits.50
+		tooltip_info_custom = tooltipexpandedtraits.50e
+		trigger = {
+			OR = {
+				trait = schizo
+				trait = bipolaire
+				trait = genius
+			}
+		}
+		random_list = {
+			50 = {
+				character_event = {
+					id = expandedtraits.51
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50
+				}
+			}
+			50 = {
+				character_event = {
+					id = expandedtraits.52
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50b
+				}
+			}
+			0 = {
+				character_event = {
+					id = expandedtraits.53
+					days = 10
+					random = 10
+					tooltip = tooltipexpandedtraits.50c
+				}
+			}
+	}
+}

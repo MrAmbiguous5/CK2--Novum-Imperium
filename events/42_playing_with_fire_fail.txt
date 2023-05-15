@@ -1,0 +1,21 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.42 #aerion brightflame
+	desc = descexpandedtraits.42
+	picture = GFX_evt_experiments_failed
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	is_triggered_only = yes
+
+	option = {
+		name = optaexpandedtraits.42
+		military_techpoints = -200
+		random = {
+			chance = 50
+			add_trait = scientifique
+		}
+	}
+}

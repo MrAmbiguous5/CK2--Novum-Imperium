@@ -1,0 +1,467 @@
+namespace = lmmitg
+
+# Main event, called by the "on_new_holder" on_action. Sets event targets and sends an event to all realm characters to get their opinion. 
+character_event = {
+	id = lmmitg.2001
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {		
+		if = {
+			limit = { 
+				FROM = { 
+					higher_tier_than = baron
+					is_theocracy = no
+				} 
+			}
+			ROOT = { save_event_target_as = lmmitg_new_holder }
+			FROM = { save_event_target_as = lmmitg_title_granted }
+			FROMFROM = { save_event_target_as = lmmitg_prev_holder }
+			
+			set_variable = { which = global_lmmitg_title_tier value = 0 }		
+			
+			if = {
+				limit = {
+					event_target:lmmitg_new_holder = {
+						num_of_dynasty_members < 2
+						num_of_titles < 3
+					}
+				}				
+				set_global_flag = lmmitg_gave_to_lowborn_flag
+			}
+			
+			FROM = {
+				trigger_switch = {
+					on_trigger = tier
+					
+					#baron = { change_variable = { which = global_lmmitg_title_tier value = 1 } }
+					count = { change_variable = { which = global_lmmitg_title_tier value = 1 } }
+					duke = { change_variable = { which = global_lmmitg_title_tier value = 2 } }
+					king = { change_variable = { which = global_lmmitg_title_tier value = 4 } }
+					emperor = { change_variable = { which = global_lmmitg_title_tier value = 6 } }		
+				}
+			}		
+			
+			FROMFROM = {			
+				any_realm_character = {
+					limit = { 
+						NOT = { character = event_target:lmmitg_prev_holder }
+						age = 14 
+					}
+					character_event = { id = lmmitg.2002 }
+				}
+			}
+			
+			set_variable = { which = global_lmmitg_title_tier value = 0 }
+			clr_global_flag = lmmitg_gave_to_lowborn_flag
+		}		
+	}
+}
+
+# Event received by all realm characters. Sets opinion modifiers based on different parameters.
+character_event = {
+	id = lmmitg.2002
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = { 
+			limit = { 
+				OR = {
+					is_heresy_of = event_target:lmmitg_new_holder
+					event_target:lmmitg_new_holder = { is_heresy_of = ROOT }
+				}						
+			}
+			set_character_flag = lmmitg_heresy_flag
+		}
+		
+		# CULTURAL REASONS #
+		
+		# If the new holder was lowborn
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }		
+		if = {
+			limit = { 				
+				has_global_flag = lmmitg_gave_to_lowborn_flag
+			}			
+			if = {
+				limit = { 
+					higher_real_tier_than = baron
+					is_theocracy = no
+					OR = {
+						is_republic = no
+						AND = {
+							is_republic = yes
+							any_close_relative = {
+								is_landed = yes
+								is_feudal = yes
+							}
+						}
+					}
+				}								
+				lmmitg_apply_tech_culture_flex_effect = yes
+				lmmitg_cultural_reasons_effect = yes				
+				while = { 
+					limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+					subtract_variable = { which = lmmitg_loop_counter value = 1 }					
+					opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_lowborn_neg_opinion }
+					opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_lowborn_neg_new_holder_opinion }
+				}		
+			}
+			else_if = {
+				limit = { is_lowborn = yes }
+				if = { 
+					limit = { trait = proud }
+					change_variable = { which = lmmitg_loop_counter value = 1 }
+				}
+				if = { 
+					limit = { trait = ambitious }
+					change_variable = { which = lmmitg_loop_counter value = 1 }
+				}
+				while = { 
+					limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+					subtract_variable = { which = lmmitg_loop_counter value = 1 }
+					opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_lowborn_pos_opinion }
+				}
+			}
+		}		
+		
+		# If new holder is of a different culture
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }	
+		lmmitg_apply_tech_culture_flex_effect = yes
+		if = {
+			limit = { NOT = { culture = event_target:lmmitg_new_holder } }			
+			# change_variable = { which = lmmitg_loop_counter value = 2 }
+			lmmitg_cultural_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_diff_culture_opinion }
+				opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_diff_culture_new_holder_opinion }
+			}		
+		}
+		
+		# If the title is count tier, and of the same culture as this character, but the new holder is of a different culture
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }
+		lmmitg_apply_tech_culture_flex_effect = yes
+		if = {
+			limit = {
+				event_target:lmmitg_title_granted = {
+					tier = count
+					location = { culture = ROOT } 
+				}
+				NOT = { culture = event_target:lmmitg_new_holder } 
+			}			
+			# change_variable = { which = lmmitg_loop_counter value = 2 }
+			lmmitg_cultural_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_diff_culture_county_opinion }
+				opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_diff_culture_county_new_holder_opinion }
+			}
+		}
+		
+		# Positive: If new holder is of same culture as this character but different culture than the title granter
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }			
+		if = {
+			limit = { 
+				culture = event_target:lmmitg_new_holder
+				NOT = { culture = event_target:lmmitg_prev_holder }			
+			}		
+			lmmitg_cultural_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_diff_culture_pos_opinion }				
+			}		
+		}
+		
+		# RELIGIOUS REASONS #
+		
+		# If new holder is of a different religion
+		if = {
+			limit = {
+				NOT = { religion = event_target:lmmitg_new_holder }
+				# Characters in the Indian group will only react against an Indian group new holder if Zealous
+				OR = {
+					trait = zealous
+					NOT = { religion_group = indian_group }
+					# The following line implies that both the characters belong to an Indian group.
+					religion_group = event_target:lmmitg_new_holder					
+				}				
+			}
+			
+			set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }	
+			lmmitg_apply_tech_culture_flex_effect = yes
+			# change_variable = { which = lmmitg_loop_counter value = 2 }
+			lmmitg_religious_reasons_effect = yes	
+			lmmitg_landless_counter_effect = yes				
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				if = {
+					limit = { has_character_flag = lmmitg_heresy_flag }			
+					opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_heresy_opinion }
+					opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_heresy_new_holder_opinion }
+				}
+				else_if = {
+					limit = { religion_group = event_target:lmmitg_new_holder  }				
+					opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_religion_group_opinion }
+					opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_religion_group_new_holder_opinion }
+				}
+				else = {
+					opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_diff_religion_opinion }
+					opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_diff_religion_new_holder_opinion }
+				}
+			}	
+			
+			# If the title is count tier, and of the same religion as this character, but the new holder is of a different religion
+			set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }
+			lmmitg_apply_tech_culture_flex_effect = yes
+			if = {
+				limit = {
+					event_target:lmmitg_title_granted = {
+						tier = count
+						location = { religion = ROOT } 
+					}
+					NOT = { religion = event_target:lmmitg_new_holder }
+				}			
+				# change_variable = { which = lmmitg_loop_counter value = 2 }
+				lmmitg_religious_reasons_effect = yes
+				lmmitg_landless_counter_effect = yes				
+				while = { 
+					limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+					subtract_variable = { which = lmmitg_loop_counter value = 1 }
+					if = {
+						limit = { has_character_flag = lmmitg_heresy_flag }			
+						opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_heresy_county_opinion }
+						opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_heresy_county_new_holder_opinion }
+					}
+					else_if = {
+						limit = { religion_group = event_target:lmmitg_new_holder  }				
+						opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_religion_group_county_opinion }
+						opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_religion_group_county_new_holder_opinion }
+					}
+					else = {
+						opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_diff_religion_county_opinion }
+						opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_diff_religion_county_new_holder_opinion }
+					}
+				}
+			}
+		}
+		
+		# Positive: If character shares religion with new holder but title granter has a different religion		
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }			
+		if = {
+			limit = { 
+				religion = event_target:lmmitg_new_holder
+				NOT = { religion = event_target:lmmitg_prev_holder }			
+			}		
+			lmmitg_religious_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes				
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_diff_religion_pos_opinion }				
+			}		
+		}
+		
+		# Positive: If character shares religion with new holder and is zealous or theocratic. The new holder is very pious.
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }			
+		if = {
+			limit = { 
+				event_target:lmmitg_new_holder = {
+					piety = 50
+				}
+				religion = event_target:lmmitg_new_holder
+				OR = {
+					trait = zealous
+					is_theocracy = yes
+				}
+			}
+			lmmitg_religious_reasons_effect = yes
+			event_target:lmmitg_new_holder = {
+				trigger_switch = {
+					on_trigger = piety
+					
+					1000	=	{ PREV = { change_variable = { which = lmmitg_loop_counter value = 10 } } }
+					800		=	{ PREV = { change_variable = { which = lmmitg_loop_counter value = 8 } } }
+					600		=	{ PREV = { change_variable = { which = lmmitg_loop_counter value = 6 } } }
+					400		=	{ PREV = { change_variable = { which = lmmitg_loop_counter value = 4 } } }
+					300		=	{ PREV = { change_variable = { which = lmmitg_loop_counter value = 3 } } }
+					200		=	{ PREV = { change_variable = { which = lmmitg_loop_counter value = 2 } } }
+					100		=	{ PREV = { change_variable = { which = lmmitg_loop_counter value = 1 } } }
+				}
+			}
+			lmmitg_landless_counter_effect = yes				
+			while = {
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_gave_to_pious_pos_opinion }				
+			}		
+		}
+		
+		# Positive: If the new holder has a religion-specific Crusader trait and this character shares religion.
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }			
+		if = {
+			limit = { 
+				event_target:lmmitg_new_holder = { has_crusade_trait_trigger = yes }
+				religion = event_target:lmmitg_new_holder							
+			}		
+			lmmitg_religious_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_gave_to_crusader_pos_opinion }				
+			}		
+		}		
+		
+		# PERSONAL REASONS #
+		
+		# If this character is a powerful vassal and not from new holder's dynasty
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }
+		lmmitg_apply_tech_noble_customs_effect = yes
+		if = {
+			limit = { 
+				liege = { character = event_target:lmmitg_prev_holder }
+				is_powerful_vassal = yes
+				NOT = { dynasty = event_target:lmmitg_new_holder }
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_powerful_vassal_opinion }
+				opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_powerful_vassal_new_holder_opinion }
+			}
+		}
+		
+		# If this character belongs to the prev_holder's dynasty, and new holder is not from the same dynasty
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }
+		lmmitg_apply_tech_noble_customs_effect = yes
+		if = {
+			limit = { 				
+				dynasty = event_target:lmmitg_prev_holder
+				NOT = { dynasty = event_target:lmmitg_new_holder }
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_same_dynasty_neg_opinion }
+				opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_same_dynasty_neg_new_holder_opinion }
+			}
+		}
+		
+		# Positive: If the title was granted to this character's child
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }		
+		if = {
+			limit = { 				
+				dynasty = event_target:lmmitg_prev_holder
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = {
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_granted_to_child_pos_opinion }				
+			}
+		}
+		
+		# Positive: If this character is a powerful vassal and the new holder is from their dynasty
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }		
+		if = {
+			limit = { 
+				liege = { character = event_target:lmmitg_prev_holder }
+				is_powerful_vassal = yes
+				dynasty = event_target:lmmitg_new_holder
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_powerful_vassal_pos_opinion }				
+			}
+		}
+		
+		# Positive: If this character belongs to prev_holder's dynasty and the new character is from the same dynasty
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }		
+		if = {
+			limit = { 				
+				dynasty = event_target:lmmitg_prev_holder
+				dynasty = event_target:lmmitg_new_holder
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_same_dynasty_pos_opinion }				
+			}
+		}
+		
+		# Positive: If this character is a Friend/Lover of the new holder or has a very high opinion of him/her
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }		
+		if = {
+			limit = { 				
+				OR = {
+					is_friend = event_target:lmmitg_new_holder
+					is_lover = event_target:lmmitg_new_holder
+					opinion = { who = event_target:lmmitg_new_holder value = 75 }
+				}
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_approves_of_grant_pos_opinion }				
+			}
+		}
+		
+		# Negative: If this character is a Foe of the new holder or has a very low opinion of him/her
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }		
+		if = {
+			limit = { 				
+				OR = {
+					is_foe = event_target:lmmitg_new_holder					
+					NOT = { opinion = { who = event_target:lmmitg_new_holder value = -50 } }
+				}
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_disapproves_of_grant_neg_opinion }				
+			}
+		}
+		
+		# Negative: If this character is a claimant to the title which was granted
+		set_variable = { which = lmmitg_loop_counter which = global_lmmitg_title_tier }		
+		if = {
+			limit = { 				
+				has_claim = event_target:lmmitg_title_granted
+			}
+			lmmitg_personal_reasons_effect = yes
+			lmmitg_landless_counter_effect = yes
+			while = { 
+				limit = { check_variable = { which = lmmitg_loop_counter value = 1 } }
+				subtract_variable = { which = lmmitg_loop_counter value = 1 }
+				opinion = { who = event_target:lmmitg_prev_holder modifier = lmmitg_claimant_neg_opinion }
+				opinion = { who = event_target:lmmitg_new_holder modifier = lmmitg_claimant_neg_new_holder_opinion }
+			}
+		}
+		
+		clr_character_flag = lmmitg_heresy_flag
+		set_variable = { which = lmmitg_loop_counter value = 0 }
+	}
+}
+

@@ -1,0 +1,223 @@
+##############
+## CULTURAL ##
+##############
+# Negative
+lmmitg_diff_culture_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_diff_culture_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_diff_culture_county_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_diff_culture_county_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_lowborn_neg_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_lowborn_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+# Positive
+lmmitg_diff_culture_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+
+###############
+## RELIGIOUS ##
+###############
+# Negative
+lmmitg_diff_religion_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_diff_religion_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_heresy_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_heresy_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_religion_group_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_religion_group_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_diff_religion_county_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_diff_religion_county_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_heresy_county_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_heresy_county_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_religion_group_county_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_religion_group_county_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+# Positive
+lmmitg_diff_religion_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+
+lmmitg_gave_to_pious_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+
+lmmitg_gave_to_crusader_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+
+##############
+## PERSONAL ##
+##############
+
+# Negative
+lmmitg_powerful_vassal_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_powerful_vassal_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_same_dynasty_neg_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_lowborn_neg_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+# lmmitg_lowborn_pos_new_holder_opinion = {
+	# opinion = 3
+	# months = 24
+# }
+
+lmmitg_same_dynasty_neg_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_disapproves_of_grant_neg_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_claimant_neg_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+lmmitg_claimant_neg_new_holder_opinion = {
+	opinion = -3
+	months = 24
+	decay = yes
+}
+
+# Positive
+lmmitg_powerful_vassal_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+
+lmmitg_granted_to_child_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+
+lmmitg_same_dynasty_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}
+
+lmmitg_approves_of_grant_pos_opinion = {
+	opinion = 3
+	months = 24
+	decay = yes
+}

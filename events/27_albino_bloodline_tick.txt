@@ -1,0 +1,44 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.27
+	desc = descexpandedtraits.27
+	#hide_window = yes
+	only_playable = yes
+	picture = GFX_evt_bacchants_initiation #GFX_evt_dark_prayer
+
+	trigger = {
+		AND = {
+				ROOT = {
+					any_owned_bloodline = {
+						has_bloodline_flag = albino_blood
+					}
+				}
+				OR = {
+					society_member_of = the_satanists
+					society_member_of = the_trollcrafters
+					society_member_of = the_cult_of_kali
+					society_member_of = the_cold_ones
+					society_member_of = the_plaguebringers
+					society_member_of = the_vodouns
+					society_member_of = the_bacchants
+				}
+				NOT = {
+					ROOT = {
+						has_character_flag = was_worshipped
+					}
+				}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 100
+	}
+
+	option = {
+		name = optaexpandedtraits.27
+		#change_society_currency = 48
+		society_rank_up = 3
+		set_character_flag = was_worshipped
+	}

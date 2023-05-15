@@ -1,0 +1,66 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.19
+	desc = descexpandedtraits.19
+	picture = GFX_evt_busy_trading_dock_republic  #GFX_evt_merchant_ship_at_sea_republic # GFX_evt_trade_post_republic GFX_evt_busy_trading_dock_republic
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = {
+			port = yes
+		}
+		num_of_trade_posts >= 2
+	}
+
+	mean_time_to_happen = {
+		months = 450
+	}
+
+	option = {
+		name = optaexpandedtraits.19
+		ai_chance = {
+			factor = 30
+		}
+		add_trait = sympathy_islam
+	}
+
+	option = {
+		name = optbexpandedtraits.19
+		ai_chance = {
+			factor = 30
+		}
+		add_trait = baratineur
+		scaled_wealth = -0.3
+	}
+
+	option = {
+		name = optcexpandedtraits.19
+		ai_chance = {
+			factor = 30
+		}
+		add_trait = raciste
+		scaled_wealth = 0.5
+	}
+
+	option = {
+		name = optdexpandedtraits.19
+
+		trigger = {
+			AND = {
+				trait = sympathy_islam
+				has_dlc = "The Sword of Islam"
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+		religion = sunni
+		tooltip_info = sympathy_islam
+	}
+}

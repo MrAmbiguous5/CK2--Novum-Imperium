@@ -1,0 +1,8 @@
+spriteTypes = {
+     
+     spriteType = {
+          name = "GFX_evt_dromedar"
+          texturefile = "gfx\\event_pictures\\dromedar.dds"
+     }
+     
+}

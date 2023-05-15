@@ -1,0 +1,23 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.32
+	desc = descexpandedtraits.32
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.32
+		ROOT = {
+			give_nickname = nick_red_wedding_killer
+			add_character_modifier = {
+				name = killed_guests_red_wedding
+				duration = -1
+			}
+		}
+	}

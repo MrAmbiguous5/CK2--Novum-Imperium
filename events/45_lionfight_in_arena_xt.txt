@@ -1,0 +1,30 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.45
+	desc = descexpandedtraits.45
+	picture = GFX_evt_hippodrome_byzantine
+	border = GFX_event_normal_frame_war #GFX_evt_sand_desert #GFX_evt_anorlondo
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.45
+		ROOT = {
+			add_character_modifier = {
+				modifier = held_lionfight_populace
+				months = 48
+			}
+			liege = {
+				opinion = {
+					modifier = held_lionfight_tohonor
+					who = ROOT
+					years = 5
+				}
+			}
+		}
+	}
+}

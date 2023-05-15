@@ -1,0 +1,309 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;x
+descexpandedtraits.1; After a long day of typical ruler's work, you are sitting on your bed and contemplating the nature of war and conquest. Thinking about it, you clearly notice how much more civilized your people is and how ridiculous the problems other, more primitive cultures are facing are. After a night's worth of thought, you come to the conclusion that... ;;;;;;;;;;;;;x
+optaexpandedtraits.1; I should show other peoples the delights of civiliation und true faith!;;;;;;;;;;x
+optbexpandedtraits.1; Every culture should be left to prosper in peace.;;;;;;;;;;;;x
+optcexpandedtraits.1; There is no need for drastic measures.;;;;;;;;;;;x
+tooltipexpandedtraits.1;This option is available due to you being kind, temperate or selfish.;;;;;;;;;;x
+
+descexpandedtraits.2; You are searching for ideas to rekindle your and your wifes lust for each other, when suddenly you come accross an old shack with a warty woman inside. "Come close your grace" she croaks, "I think i can solve your little problem in the bedchamber...". How can she know of it? The crone lifts a dusty bottle "'Tis potion here will give you the virility of a young ox", she promises...;;;;;;;;;;;;;x
+optaexpandedtraits.2; You suddenly realize: An ox has no Testicles and no potence!...;;;;;;;;;;x
+optbexpandedtraits.2; The power of an ox's testicles is also mentioned by magister Konrad.;;;;;;;;;;;;x
+optcexpandedtraits.2; You decline the offer and leave, ashamed of your problems.;;;;;;;;x
+tooltipexpandedtraits.2;This option is available due to you having the trait Mystic or your high learning skill.;;;;;;;;;;;;;x
+
+descexpandedtraits.3;Your Council gave you some tax reports for you to look over and control. You are pretending to understand what is going on, but the numbers and the spreadsheets are complicated and you have a hard time making sense out of them.;;;;;;;;;;;;;;;;x
+optaexpandedtraits.3;The numbers become blurred before your eyes, the longer you stare at them.;;;;;;;;;;;;;;x
+optbexpandedtraits.3;After a while you easily understand the gist of the documents.;;;;;;;;;;;;;x
+optcexpandedtraits.3;Get help from someone who is more proficient in matters of taxation.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.3;This option is available due to you being cruel, wrothful or due to your high martial skill.;;;;;;x
+
+descexpandedtraits.4;During a starless night, you are preocuppied with reports from all parts of your realm, when suddenly the door is opened reluctantly. The beautiful face of your new washerwoman appears in the dim light of the candles. "These scrolls look most boring... would Mylord fancy some.... distraction?" she asks, licking her lips and letting her garb slip down her shoulder.;;;;;;;;;;;;;;;;x
+optaexpandedtraits.4;You drag her in forcefully and bend her over the bed, tearing her skirt apart.;;;;;;;;;;;;;;x   ###sado
+optbexpandedtraits.4;Such beautiful mountains and such wet and tasty meadows...;;;;;;;;;;;;;x #flirty
+optcexpandedtraits.4;I really can't afford those lousy distractions. Begone, Thot.;;;;;;;;;;;;;;x ###unflirty
+optdexpandedtraits.4;Her opulent breasts disgust you. You would prefer it if she were... flatter...;;;;;;;;;;;;;;;;;;;;x ##pedo
+
+descexpandedtraits.5;You have invited some friends and subjects to your keep for a little bit of eating and dancing, when one of your guests suddenly throws his jug and loudly proclaims you to be a stingy host, and that your beer tastes like a donkey's pussy, cearly trying to provoke a scandal.;;;;;;;;;;;;;;;;x
+optaexpandedtraits.5;Enough! You stand up and give the troublemaker a good beating.;;;;;;;;;;;;;;x
+optbexpandedtraits.5;"I am not surprised you know that taste...";;;;;;;;;;;;;x
+optcexpandedtraits.5;You try to alleviate the situation by making a joke.;;;;;;;;;;;;;;x
+
+descexpandedtraits.6;Your Dogs are chasing the doe you and your party have been after for days down without mercy. When you arrive at your prey, its guts are lying on the entire clearing, forming bloody patterns, and your dogs are tearing big parts of its flesh out of the animal. You are filled with disgust and look at your dogs with aversion in your eyes.;;;;;;;;;;;;;;;;x
+optaexpandedtraits.6;This violence was unnecessary. Next time we won't use dogs.;;;;;;;;;;;;;;x
+optbexpandedtraits.6;I am not going to harm any animal again.;;;;;;;;;;;;;x
+
+descexpandedtraits.7;You called in the lords of your realm for a diet and listen to your vassal's concerns and problems. At some point, one of your subjects complains about the frequent raids of his demesne. "My liege, without your aid my land will soon be barren, with all my peasants enslaved, raped or dead. Please send your knights and help a fellow noble in distress.". Your vassals await your reaction.;;;;;;;;;;;;;;;;x
+optaexpandedtraits.7;"Be assured that I will do what i can to assist you.";;;;;;;;;;;;;;x
+optbexpandedtraits.7;"This is of utmost importance to all of us, send the entire army!";;;;;;;;;;;;;x
+optcexpandedtraits.7;"This is of no interest to me or the realm.";;;;;;;;;;;;;;x
+
+descexpandedtraits.8;You are browsing your library for interesting topics to read about, when you stumble upon a book describing the interior of a human, written by some ancient greek physician. According to him, the infamous "side sickness" is caused by some shrivelled extension of the intestines, that becomes infected.;;;;;;;;;;;;;;;;x
+optaexpandedtraits.8;Most interesting. I should order my scholars to look further into this.;;;;;;;;;;;;;;;;x
+optbexpandedtraits.8;And how exactly is that important?;;;;;;;;;;;;;;;;x
+optcexpandedtraits.8;You clap the book shut disgustedly.;;;;;;;;;;;;;;;x
+tooltipexpandedtraits.8;This option is available due to a prestigious center of learning in your demesne or your high learning skill.;;;;;;;;;;x
+
+descexpandedtraits.9;A wandering mendicant is preaching on the marketplace about how all heretics and pagans will suffer eternally in the seventh circle of hell. No true believer should tolerate heathens in his vicinity! ;;;;;;;;;;;;;;;;x
+optaexpandedtraits.9;Narrow-minded fool. People are defined by character, not by religion.;;;;;;;;;;;;;;x
+optbexpandedtraits.9;He is right. I should do my best to live a pious live.;;;;;;;;;;;;;x
+optcexpandedtraits.9;I only care about my own salvation.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.9;This option is available due to your religion being tolerant in nature or your high learning skill.;;;;;;;;;;x
+
+descexpandedtraits.10;Your advisors request you to follow them outside your castle. On the drawbridge you are greeted by some knights, holding long pikes with the heads of some of your spies on them. "The Lannisters send their regards. Stop your foul cabals or your family will end like these poor fools.".;;;;;;;;;;;;;;;;x
+optaexpandedtraits.10;Be assured, I always pay my debts...;;;;;;;;;;;;;;x
+optbexpandedtraits.10;...;;;;;;;;;;;;;x
+optcexpandedtraits.10;They would at least finally have something in their heads...;;;;;;;;;;;;;;x
+tooltipexpandedtraits.10;This option is available to your low diplomacy skill.;;;;;;;;;;;;;;;x
+
+descexpandedtraits.11;You are walking the less crowded streets of your capital, when suddenly a ragged figure sitting on the edge of the street clutches your garb. "Please your Grace, show mercy to a poor soul. I only need a ducat for some water and food...".;;;;;;;;;;;;;;x
+optaexpandedtraits.11;Pah! I merely have enough money for my family...;;;;;;;;;;;;;x
+optbexpandedtraits.11;Here, take this and treat yourself.;;;;;;;;;;;;;;x
+optcexpandedtraits.11;Give this imbecile a good beating.;;;;;;;;;;;;;;x
+
+descexpandedtraits.12;You and your lover [From.Lover.GetBestName] are spending a romantic evening together. Once you try to penetrate [From.Lover.GetHerHim], your genitals suddenly fail you. This never happened before, and your lover is clearly disturbed and there is some doubt and irritation to be found in [From.Lover.GetHerHis] eyes.;;;;;;;;;;;;;;x
+optaexpandedtraits.12;I can never risk such a blamage again!;;;;;;;;;;;;;x
+optbexpandedtraits.12;The towering clouds and the moon somehow unnerve me...;;;;;;;;;;;;;;x
+optcexpandedtraits.12;A sudden clarity befalls you: Humanity disgusts you!;;;;;;;;;;;;;;x
+optdexpandedtraits.12;Alas, i don't love you anymore, you lost your beauty!;;;;;;;;;;;;;x
+
+descexpandedtraits.13;The candles are slowly burning down and the beer is drying on the tables and on the floor, when your chancellor comes at you, clearly having something on their mind. "My liege, during the feasting one of your vassals had a slip of the tongue, and seemed to indicate that he is planning an attempt to take someones live, though i am not sure of the victim." ;;;;;;;;;;;;;;x
+optaexpandedtraits.13;I don't care, get me some whores!;;;;;;;;;;;;;x
+optbexpandedtraits.13;The sins of men shall be forgiven in heaven.;;;;;;;;;;;;;;x
+optcexpandedtraits.13;I will make sure he will regret this plottery.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.13;This option is available due to your generally promiscuous nature.;;;;;;;;;;x
+
+descexpandedtraits.14;You and your courtiers are having a nice trip to the countryside, when one of your fellow hunters suddenly challenges you to a horse race for a large oak you can see in the distance. "Come on, don't be afraid Milord, let's get some sportsmanship into this boring stroll!".;;;;;;;;;;;;;;x
+optaexpandedtraits.14;Let's go then you gobshite!;;;;;;;;;;;;;x
+optbexpandedtraits.14;It is unfit for a ruler to waste his time with such childish amusements.;;;;;;;;;;;;;;x
+optcexpandedtraits.14;Deal!..... On the other hand.. this sounds dangerous.;;;;;;;;;;;;;;x
+
+descexpandedtraits.15;Your liege [Root.Liege.GetTitledFirstName] summoned all [Root.Liege.GetHerHis] vassals to make a formal declaration. As the inflammatory mumbling slowly succumbs, [Root.Liege.GetTitledFirstName] stands up: "I hereby declare that during my reign, no more unnecessary wars shall be waged, it is time to let the old wounds heal!". You feel like you can't just let such a opportunity to influence the spheres of politics slide by... ;;;;;;;;;;;;;;;x
+optaexpandedtraits.15;"We all shall prosper due to your wisdom my liege!";;;;;;;;;;;;;;;x
+optbexpandedtraits.15;"But what about our plundering neighbours? War is the only just punishment!";;;;;;;;;;;;;;x
+optcexpandedtraits.15;"Uhm yes m'lord, that sounds great i guess...";;;;;;;;;;;;;;x
+optdexpandedtraits.15;"What? Are you a coward without balls m'lord?";;;;;;;;;;;;;;;;;;;;;x
+
+descexpandedtraits.16;Your Tutors insist you spend more time in your library stuying the classics, to deepen your knowledge of architecture, politics and strategy.;;;;;;;;;;;;;;;x
+optaexpandedtraits.16;That sounds relaxing!;;;;;;;;;;;;;;;x
+optbexpandedtraits.16;I should devise a new system to catalogize all my books.;;;;;;;;;;;;;;x
+optcexpandedtraits.16;Fucking nerds. I'd rather go to the brothel or do some raiding.;;;;;;;;;;;;;;x
+optdexpandedtraits.16;I am gonna draw a penis in here c====3;;;;;;;;;;;;x
+
+descexpandedtraits.17;During a voyage to another noble's court you come across an impaled woman on a marketplace. Her body is horribly deformed from that beastly execution. Only a monster could do that...;;;;;;;;;;;;;;;x
+optaexpandedtraits.17;Haha, look at her arm, she is waving!;;;;;;;;;;;;;;;x
+optbexpandedtraits.17;You feel a strange urge...;;;;;;;;;;;;;;x
+optcexpandedtraits.17;That's what happens if you are overzealous with what you can take on i guess.;;;;;;;;;;;;x
+
+descexpandedtraits.18;A delegation from the faraway land of Cipangu arrived at your doorstep today. Their leader calls himself  "Bushi" and carries a strange curved sword. While conversation proves to be difficult, from what you understand he is a warrior and on some kind of pilgrimage. He already killed several of your peasants because they seemingly violated his honor.;;;;;;;;;;;;;;;x
+optaexpandedtraits.18;This weakling is a warrior? I can duel him myself!;;;;;;;;;;;;;;;x
+optbexpandedtraits.18;Other Countries, other customs.;;;;;;;;;;;;;;x
+optcexpandedtraits.18;Hold a small feast for him.;;;;;;;;;;;;;;x
+
+descexpandedtraits.19;You are informed that a galleass of muslim merchants entered the harbour of your capital today. They humbly send you some oriental spices as a gift, and want to know if your grace would be interested in reaching a profitable agreement.;;;;;;;;;;;;;;;x
+optaexpandedtraits.19;I'd rather get to know some more about their religion!;;;;;;;;;;;;;;;x
+optbexpandedtraits.19;Escort me to their ship, i will conduct the negotiations myself.;;;;;;;;;;;;;;x
+optcexpandedtraits.19;Take everything they have and burn their ship.;;;;;;;;;;;;;;x
+optdexpandedtraits.19;I want them to introduce me into the Ummah!;;;;;;;;;;;;x
+
+descexpandedtraits.20;You and your rival [From.Rival.GetBestName] are having a spat over some of your bordering territory once again. You are searching for ways to score [From.Rival.GetHerHim] off.;;;;;;;;;;;;;;;x
+optaexpandedtraits.20;Command your [From.GetChancellorName] to issue a formal declaration of war!;;;;;;;;;;;;;;;x
+optbexpandedtraits.20;Deal with [From.Rival.GetHerHim] another time.;;;;;;;;;;;;;;x
+optcexpandedtraits.20;My Court Jester shall devise a play to ridicule [From.Rival.GetHerHim].;;;;;;;;;;;;;;x
+optdexpandedtraits.20;This is all pointless, we should try to find a compromise.;;;;;;;;;;;;x
+tooltipexpandedtraits.20;This option is available due to your forgiving and mature nature.;;;;;;;;;;x
+
+descexpandedtraits.21;A group of jewish travellers arrived at your court today. They claim that they have been expelled from their former home, and ask you for permission to settle within your walls.;;;;;;;;;;;;;;;x
+optaexpandedtraits.21;They may stay, but only in their ghetto where their kin lives.;;;;;;;;;;;;;;;x
+optbexpandedtraits.21;For a small "donation" i am willing to give you shelter...;;;;;;;;;;;;;;x
+optcexpandedtraits.21;I have not met your kind for a long time. Let us do some chawruta.;;;;;;;;;;;;;;x
+optdexpandedtraits.21;Can you help me perform gijur? I seek the comfort of Jahwe.;;;;;;;;;;;;x
+
+descexpandedtraits.22;You are sitting in your garden, trying to relax a bit. You enjoy the gurgling of the ditch and the chirping of the sparrows. The smell of beds of flowers fills your nose when suddenly a thought crosses your mind, clear as the summer sky.;;;;;;;;;;;;;;;x
+optaexpandedtraits.22;Why are there different colors of the same kind of flower?;;;;;;;;;;;;;;;x
+optbexpandedtraits.22;I really should bring [Root.Spouse.GetFirstName] here one day.;;;;;;;;;;;;;;x
+optcexpandedtraits.22;This is the perfect place to delve into some books.;;;;;;;;;;;;;;x
+optdexpandedtraits.22;I should talk a bit to the gardeners.;;;;;;;;;;;;x
+
+descexpandedtraits.24;Your daughter [From.GetFirstName] is brought to you by your knights. "Milord, your daughter was caught exercising with a weapon she must have stolen from the smith with the son of the local butcher. Your daughter turned on us when we found them, and the boy ran as fast as he could. What are we to do with them?";;;;;;;;;;;;;;;x
+optaexpandedtraits.24;Catch that little rat. I will punish my daughter myself.;;;;;;;;;;;;;;;x
+optbexpandedtraits.24;Set her free. She may continue playing with the locals if she so wishes.;;;;;;;;;;;;;;x
+optcexpandedtraits.24;I will send for a more fitting sparring partner for her.;;;;;;;;;;;;;;x
+optdexpandedtraits.24;Make sure the ladies-in-waiting teach her the female arts.;;;;;;;;;;;;x
+tooltipexpandedtraits.24;This option is available due to yourself valuing a martial education highly or being generally tolerant.;;;;;;;;;;;;x
+tooltipexpandedtraits.24b;This option is available due to yourself valuing diplomatic education highly or believing in women taking traditional roles.;;;;;;;;;;x
+
+descexpandedtraits.25;Wherever you go, the thundering of hooves, the crying of women and children and the sooty smell of burnt wood accompany you. For your enormous physique und your lack of words, people call you "The Mountain" behind your back, cowering in fear.;;;;;;;;;;;;;;;x
+optaexpandedtraits.25;Embrace your nature.;;;;;;;;;;;;;;;x
+optbexpandedtraits.25;Take a vow of silence and repent.;;;;;;;;;;;;;;x
+
+
+descexpandedtraits.26;Men are flocking in your bed to see your breasts, as white as milk, and taste your nectar. What once was your burden is now your biggest strength, people admire your beauty. You are mocking them now, and use their lesser instincts against them, to give them proper payback for past humiliation. Your bloodred eyes gaze into the night...;;;;;;;;;;;;;;;x
+optaexpandedtraits.26;Embrace your nature.;;;;;;;;;;;;;;;x
+optbexpandedtraits.26;This can't be the way to go.;;;;;;;;;;;;;;x
+
+
+descexpandedtraits.27;You and your fellow disciples are gathering for the annual Walpurgis night on Bald Mountain, to worship Satan. During the Ceremony, the whole Fellowship suddenly circles you. They synchronously chant "[Root.GetFirstName] we want you, of the Pale blood of Lilith, to lead us, we acknowledge you as an incarnation of [Root.Religion.GetRandomEvilGodName]!";;;;;;;;;;;;;;;x
+optaexpandedtraits.27;Hail [Root.Religion.GetRandomEvilGodName]!;;;;;;;;;;;;;;;x
+
+descexpandedtraits.28;During a ride through the neighboring villages today, you met the most beautiful woman on earth, and fell in love with her on first sight. You have the firm intention to marry her, but that would be a grave insult to your Betrothed [Root.Betrothed.GetFirstName], as your true love is only a peasant by birth...;;;;;;;;;;;;;;;x
+optaexpandedtraits.28;To Hell with Conventions!;;;;;;;;;;;;;;;x
+optbexpandedtraits.28;I have a duty towards the Realm and my Family.;;;;;;;;;;;;;;x
+optcexpandedtraits.28;Why not keep them both around?;;;;;;;;;;;;;;x
+optdexpandedtraits.28;I'd rather not love anyone ever again then.;;;;;;;;;;;;x
+tooltipexpandedtraits.28;[Root.Betrothed.Liege.GetTitledFirstName] will hear of your betrayal and your choice might have consequences...;;;;;;;;;;x
+
+descexpandedtraits.29;[From.GetTitledFirstName] broke the marriage treaty we had negotiated and instead married a common whore. This is a grave insult to our family... I should in any case try to lift the mood for now and show my good will. ;;;;;;;;;;;;;;;x
+optaexpandedtraits.29;I will write a letter and invite them to a feast.;;;;;;;;;;;;;;;x
+optbexpandedtraits.29;This incident shall be forgiven...in exchange for a small sign of appreciation.;;;;;;;;;;;;;;x
+optcexpandedtraits.29;Sooner or later i will get my chance for revenge.;;;;;;;;;;;;;;x
+optdexpandedtraits.29;I once was young and in love too...;;;;;;;;;;;;x
+tooltipexpandedtraits.29;Seemingly grant them absolution but plot to pay them back in the meantime...;;;;;;;;;;;x
+
+descexpandedtraits.30;The feasting at [From.Capital.GetName] is going on for a few hours already. The music is a bit unnerving, and your host seems to have an awkward humour, but all in all it is fun. Out of the corner of your eye, you see [From.Heir.GetTitledFirstName] slam the big door shut. Your table-mate, a distant nephew or something, grips his jug, letting his garb slide down his arm and revealing that he is wearing chainmail... ;;;;;;;;;;;;;;;x
+optaexpandedtraits.30;A knife cuts deep into your throat.;;;;;;;;;;;;;;;x
+optdexpandedtraits.30;Stand up, and try to escape by force.;;;;;;;;;;;;;;x
+optcexpandedtraits.30;Excuse yourself and your wife for a quick midnight stroll and escape.;;;;;;;;;;;;;;x
+optbexpandedtraits.30;Your dear friend sacrifices himself to help you escape!;;;;;;;;;;;;;;;;;;x
+
+descexpandedtraits.31;[From.GetTitledFirstName] and his little Whore were killed in my trap, together with their entire entourage, just as planned.;;;;;;;;;;;;;;;x
+optaexpandedtraits.31;Excellent.;;;;;;;;;;;;;;;x
+
+descexpandedtraits.32;[From.GetTitledFirstName] unfortunately managed to fight his way out of your deathtrap with a few loyal men, but he may well succumb to his severe injuries...;;;;;;;;;;;;;;;x
+optaexpandedtraits.32;Damn!;;;;;;;;;;;;;;;x
+
+descexpandedtraits.33;[From.GetTitledFirstName] seems to have had anticipated that something was wrong and escaped with his whore before my trap snapped shut. I at least was able to kill his honor guard though.;;;;;;;;;;;;;;;x
+optaexpandedtraits.33;Whoever let them escape will hang.;;;;;;;;;;;;;;;x
+
+descexpandedtraits.34;You find your spouse [Root.Spouse.GetFirstName] in the garden, her joy and relief written all over her face. "My dear, this letter is from [From.GetTitledFirstName], [From.GetSheHe] says that [From.GetSheHe] is happy for you and wants to invite us to a feast to your honor, to renew your good relations".;;;;;;;;;;;;;;;x
+optaexpandedtraits.34;Let us depart tomorrow then!;;;;;;;;;;;;;;;x
+optbexpandedtraits.34;Politely decline the invitation.;;;;;;;;;;;;x
+
+descexpandedtraits.35;[From.GetTitledFirstName] let you know that he and his retinue are on the way to your keep. Now your plans need to be put in action. During the feast, [Root.Heir.GetFirstName] will close the gates, and guards will be at every entry. You hired some mercenaries, which will be disguised as musicians, and all your relatives at the feast will be wearing chainmail under their clothes.;;;;;;;;;;;;;;;x
+optaexpandedtraits.35;Nobody will leave that feast alive!;;;;;;;;;;;;;;;x
+
+descexpandedtraits.36;You find your spouse [Root.Spouse.GetFirstName] in the garden, her joy and relief written all over her face. "My dear, this letter is from [From.GetTitledFirstName], [From.GetSheHe] says that [From.GetSheHe] is happy for you and is willing to forget the incident if you still pay the bride price you negotiated".;;;;;;;;;;;;;;;x
+optaexpandedtraits.36;If that is what's needed for reconciliation!;;;;;;;;;;;;;;;x
+tooltipexpandedtraits.36;[From.GetTitledFirstName] will receive a letter with your demands.;;;;;;;;;;x
+
+descexpandedtraits.37;You find your spouse [Root.Spouse.GetFirstName] in the garden, her joy and relief written all over her face. "My dear, this letter is from [From.GetTitledFirstName], [From.GetSheHe] says that [From.GetSheHe] is happy for you and that we should not worry about it".;;;;;;;;;;;;;;;x
+optaexpandedtraits.37;Excellent! ;;;;;;;;;;;;;;;x
+tooltipexpandedtraits.37;[From.GetTitledFirstName] will receive a letter expressing your reconciliation.;;;;;;;;;x
+
+descexpandedtraits.38;Lately you have been very interested in the creative and destructive powers of fire, one of the four elements. All things are born from warmth and can't live without it, alas the flames also devour and eat away at the essence of live. There might be some secrets hidden behind smoke and ashes, who knows what you might find out...;;;;;;;;;;;;;;;x
+optaexpandedtraits.38;Start experiments trying to harness the power of fire. ;;;;;;;;;;;;;;;x
+optbexpandedtraits.38;This sounds dangerous.;;;;;;;;;;;;;;x
+optcexpandedtraits.38;;;;;;;;;;;;;;;x
+optdexpandedtraits.38;;;;;;;;;;;;;x
+tooltipexpandedtraits.38a;The Experiments succeed and you gain new knowledge.;;;;;;;;;;;x
+tooltipexpandedtraits.38b;The Experiments fail.;;;;;;;;;;;x
+
+descexpandedtraits.39;After hours of agonizing pain and delirium, you awake. Your shoulders itch, and two bubons are growing there. Your skin seems to be thicker and harder. You realize you have a tail and sharp fangs. As you try to move, you accidently create a massive air current, due to the massive wings sprouting out of your torso. You... You turned into a dragon!;;;;;;;;;;;;;;;x
+optaexpandedtraits.39;Fire and Blood!;;;;;;;;;;;;;;;x
+optbexpandedtraits.39;;;;;;;;;;;;;;;x
+optcexpandedtraits.39;;;;;;;;;;;;;;;x
+optdexpandedtraits.39;;;;;;;;;;;;;x
+
+descexpandedtraits.40;After countless nights of experimenting and theorizing you have come to a conclusion: To climb the next step on the way to the essence of fire, you will have to become one with the substance you already distilled and wait for a permutation...;;;;;;;;;;;;;;;x
+optaexpandedtraits.40;Drink of your "Greek Fire" and wait...;;;;;;;;;;;;;;;x
+optbexpandedtraits.40;Bring your efforts to a halt, this is insane.;;;;;;;;;;;;;;x
+optcexpandedtraits.40;;;;;;;;;;;;;;;x
+optdexpandedtraits.40;;;;;;;;;;;;;x
+tooltipexpandedtraits.40;Possibly discern the true nature of fire.;;;;;;;;;x
+tooltipexpandedtraits.40b;This option is available due to you being a reasonable scientist and not a mad ideologist.;;;;;;;;;;;x
+
+descexpandedtraits.41;You have made good progress in your analysis of the fiery element. One of your results is thick, greenish paste, that once lit keeps burning for a long time, and can't be extinguished by water or sand. Your invention somewhat resembles the 'Greek Fire' the Byzantines are rumoured to have used in the times of old. Your experiments kept getting increasingly dangerous up to this point though...;;;;;;;;;;;;;;;x
+optaexpandedtraits.41;Delve even deeper, despite the risk...;;;;;;;;;;;;;;;x
+optbexpandedtraits.41;Conclude your research.;;;;;;;;;;;;;;x
+optcexpandedtraits.41;;;;;;;;;;;;;;;x
+optdexpandedtraits.41;;;;;;;;;;;;;x
+tooltipexpandedtraits.41b;Get a deeper understanding of the true nature of fire.;;;;;;;;;;;;x
+tooltipexpandedtraits.41c;Hit a dead end in your research.;;;;;;;;;;;;x
+
+descexpandedtraits.42;Pots of molten steel are boiling in your laboratory, filling the air with smoke. The past weeks were marked by failure following after failure, one time you even cut yourself with a sharp piece of obsidian. The elements true power eludes you... There just seems no way forward anymore.;;;;;;;;;;;;;;;x
+optaexpandedtraits.42;Your Experiments have failed.;;;;;;;;;;;;;;;x
+
+descexpandedtraits.43;[From.GetTitledFirstName] refused your invitation using flimsy excuses. He probably smelt the rat...;;;;;;;;;;;;;;;x
+optaexpandedtraits.43;Another time...;;;;;;;;;;;;;;;x
+optbexpandedtraits.43;;;;;;;;;;;;;;;x
+optcexpandedtraits.43;;;;;;;;;;;;;;;x
+optdexpandedtraits.43;;;;;;;;;;;;;x
+
+descexpandedtraits.44;After a long and difficult hunt, you managed to capture two of the lions alive. They are now caged in one of the stalls in the palace and are lying around apathetically, obviously suffering. The question now is, what should you do with your royal prey?;;;;;;;;;;;;;;;x
+optaexpandedtraits.44;Hold some games with the lions!;;;;;;;;;;;;;;;x
+optbexpandedtraits.44;Get their pelt.;;;;;;;;;;;;;;x
+optcexpandedtraits.44;Set them free, i have proven my prowess already.;;;;;;;;;;;;;;x
+optdexpandedtraits.44;Enter their cage.;;;;;;;;;;;;x
+tooltipexpandedtraits.44b;This option is available to do you being either trusting, brave or reckless.;;;;;;;;;;;;;x
+tooltipexpandedtraits.44a;Please the People and Organize some warriors to fight the lions in the arena.;;;;;;;;;;;;x
+
+descexpandedtraits.45;The day of the games has come, and the blistering sun is heating the sand in the arena. A deep roar lets everyone know that the lions have entered. The poor sods willing or forced to fight them wear nothing but light leather armor, round shields and long spears. They are trying to form a phalanx as the male lion circles them in a safe distance...
+optaexpandedtraits.45;A great spectacle!;;;;;;;;;;;;;;;x
+
+descexpandedtraits.46;After hours of hours of straying in the desert, your retinue is asking you to stop the hunt. They don't think we will find another lion trace today.;;;;;;;;;;;;;;;x
+optaexpandedtraits.46;They are probably right, let us return home.;;;;;;;;;;;;;;;x
+
+descexpandedtraits.47;You received message that a pride of lions is roaming the countryside near [Root.Capital.GetName]. Hunting a lion is the supreme discipline of the hunt. This is a once in a lifetime chance to get hold of a pelt and a mane.;;;;;;;;;;;;;;;x
+optaexpandedtraits.47;To the steppes!;;;;;;;;;;;;;;;x
+tooltipexpandedtraits.47a;You successfully hunt the lions down.;;;;;;;;;;;;;x
+tooltipexpandedtraits.47b;You fail to find the prides tracks...;;;;;;;;;;;;;x
+
+descexpandedtraits.48;A famous group of harlequins, actresses and jugglers is visiting [Root.Capital.GetName]. Their performance is quite funny and pleasing, and you catch yourself admiring these free and creative people. When they are finished, their leader, a jester named Patchface, catches you in a narrow hallway. "I have noticed your glances, and you are known to be an artist, would you fancy to be one of us?".;;;;;;;;;;;;;;;x
+optaexpandedtraits.48;Go with the showmen and leave the realm in the hands of your regent.;;;;;;;;;;;;;;x
+optbexpandedtraits.48;My duties to the realm are more important.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.48;You will travel the lands with your new peers.;;;;;;;;;;;;;x
+
+descexpandedtraits.49;You have been with the showmen for a few days now. Their life is way harder than yours, you have to get water, repair spokes and cook food, but you are enjoying the camaraderie at the campfire every evening. One day the jester Patchface suggests that you should perform your own play in the next town you visit!;;;;;;;;;;;;;;;x
+optaexpandedtraits.49;Come up with a play and a role for you.;;;;;;;;;;;;;;;x
+optbexpandedtraits.49;Timidly decline the offer.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.49;Your first performance will be in a few weeks!;;;;;;;;;;;x
+tooltipexpandedtraits.49b;The other showmen might laugh at you...;;;;;;;;;;;;;x
+
+descexpandedtraits.50;The day of your play is drawing nearer. You will have to think about the content and story, and especially what kind of play you think would please the audience best.;;;;;;;;;;;;;;;x
+optaexpandedtraits.50;I think i will perform a comedy.;;;;;;;;;;;;;;;x
+optbexpandedtraits.50;I am in the mood for a tragedy.;;;;;;;;;;;;;;x
+optcexpandedtraits.50;I will write an heroic epos!;;;;;;;;;;;;;;x
+optdexpandedtraits.50;An elaborate Monologue will be best to express feelings.;;;;;;;;;;;;x
+tooltipexpandedtraits.50;Your Play will arise lots of attention and you will be caught by your regent's henchmen.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.50b;Your ingenious Play sparks the audience and your fellows alike!;;;;;;;;;;;;;;x
+tooltipexpandedtraits.50c;Your Play fails completely...;;;;;;;;;;;;;;x
+tooltipexpandedtraits.50d;This option is available due to your lyrical expertise.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.50e;This option is available due to your bipolar personality or great genius.;;;;;;;;;;;;;;x
+
+descexpandedtraits.51;In the audience at your play were some of your Regents Soldiers, which immediately stormed the stage when they recognized you. You are now brought back to your court in [Root.Capital.GetName] in chains. As you enter the throneroom, everybody is watching you. [Root.Regent.GetTitledFirstName] demands you to resume your duties and renounce your silly fantasies. What a humiliation!;;;;;;;;;;;;;;;x
+optaexpandedtraits.51;Grudgingly accept [Root.Regent.GetTitledFirstName]'s demands.;;;;;;;;;;;;;;;x
+optbexpandedtraits.51;Convince everybody you have been held hostage against your will.;;;;;;;;;;;;;;x
+tooltipexpandedtraits.51;This option is available due to your charismatic personality.;;;;;;;;;;;;;;x
+
+descexpandedtraits.52;Your play has been a thundering success. The other showmen look at you with admiration and envy. The common populace loves you and beautiful maidens are lifting their skirts willingly wherever you go. As you and your outfit are resting at an inn, you are contemplating your further life...;;;;;;;;;;;;;;;x
+optaexpandedtraits.52;Fake your death and embrace your new life. Long live the Jester-Prince!;;;;;;;;;;;;;;;x
+optbexpandedtraits.52;It was nice while it lasted. Time to get back.;;;;;;;;;;;;;;x
+
+descexpandedtraits.53;Your peers are snickering whenever you pass by. Your royal manners and all of your habits clearly demarcate you as a noble. No matter how hard you try, you just can't fit in with your fellow actors and harlequins. You are missing your cozy solar in [Root.Capital.GetName]...;;;;;;;;;;;;;;;x
+optaexpandedtraits.53;Return to your court chastened.;;;;;;;;;;;;;;;x
+
+descexpandedtraits.54;Your days are signified by drastically changing moods. You constantly swing between a feeling of superiority and senselessness. As crippling as it is, you have also noticed enhanced creative and innovative capabilities during your extreme mood swings. The works you produced in those moments are already famed from Ireland to Cathay and Cipangu.;;;;;;;;;;;;;;;x
+optaexpandedtraits.54;Embrace your nature.;;;;;;;;;;;;;;;x
+optbexpandedtraits.54;I should rather focus on my duties as a ruler.;;;;;;;;;;;;;;x
+
+descexpandedtraits.55;During the past weeks you have been filled with great euphoria. Your mind is experiencing a constant barrage of great and innovative ideas, you could even trump Aristotle today!;;;;;;;;;;;;;;;x
+optaexpandedtraits.55;The muses are singing to me!;;;;;;;;;;;;;;;x
+
+descexpandedtraits.56;Recently, life seems bland and dull to you. Everything is weighing you down, and you don't even find solace in the arts anymore, as you used to.;;;;;;;;;;;;;;;x
+optaexpandedtraits.56;I feel nothing but coldness...;;;;;;;;;;;;;;;x
+
+descexpandedtraits.50;;;;;;;;;;;;;;;;x
+optaexpandedtraits.50;;;;;;;;;;;;;;;;x
+optbexpandedtraits.50;;;;;;;;;;;;;;;x
+optcexpandedtraits.50;;;;;;;;;;;;;;;x
+optdexpandedtraits.50;;;;;;;;;;;;;x
+tooltipexpandedtraits.50;;;;;;;;;;;;;;;x
+tooltipexpandedtraits.50b;;;;;;;;;;;;;;;x
+
+descexpandedtraits.50;;;;;;;;;;;;;;;;x
+optaexpandedtraits.50;;;;;;;;;;;;;;;;x
+optbexpandedtraits.50;;;;;;;;;;;;;;;x
+optcexpandedtraits.50;;;;;;;;;;;;;;;x
+optdexpandedtraits.50;;;;;;;;;;;;;x
+tooltipexpandedtraits.50;;;;;;;;;;;;;;;x
+tooltipexpandedtraits.50b;;;;;;;;;;;;;;;x

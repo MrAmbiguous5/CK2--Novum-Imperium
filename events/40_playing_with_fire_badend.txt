@@ -1,0 +1,57 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.40 #aerion brightflame
+	desc = descexpandedtraits.40
+	picture = GFX_evt_burning_man_hf
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	is_triggered_only = yes
+
+	option = {
+		name = optaexpandedtraits.40
+		random_list = {
+			25 = {
+				ROOT = {
+					give_nickname = nick_brightflame_xt
+					death = {
+						death_reason = death_murder_unknown_combustion
+					}
+				}
+			}
+			20 = {
+				add_trait = schizo
+			}
+			50 = {
+				add_trait = severely_injured
+			}
+			5 = {
+				character_event = {
+					id = expandedtraits.39
+					days = 1
+					random = 1
+					tooltip = tooltipexpandedtraits.40
+				}
+			}
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.40
+		trigger = {
+			OR = {
+				trait = mature
+				trait = scientifique
+				trait = concentre
+			}
+			NOT = {
+				trait = lunatic
+				trait = mystic
+			}
+		}
+		military_techpoints = 150
+		tooltip_info_custom = tooltipexpandedtraits.40b
+	}
+}

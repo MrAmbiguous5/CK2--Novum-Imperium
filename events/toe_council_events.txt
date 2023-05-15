@@ -1,0 +1,39 @@
+namespace = toe
+
+#Add political rivalry between councillors
+character_event = {
+	id = toe.1400
+	hide_window = yes
+
+	trigger = {
+		is_councillor = yes
+		NOT = { has_character_flag = council_rivalry }
+		liege = { 
+			tier = EMPEROR 
+			is_nomadic = no
+			is_tribal = no
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	immediate = {
+		set_character_flag = council_rivalry
+		any_courtier = {
+			limit = { 
+				is_councillor = yes
+				NOT = { character = ROOT }
+			}
+			opinion = {
+				modifier = opinion_political_rival
+				years = -1
+				who = ROOT
+			}
+			reverse_opinion = {
+				modifier = opinion_political_rival
+				years = -1
+				who = ROOT
+			}
+		}	
+	}
+}

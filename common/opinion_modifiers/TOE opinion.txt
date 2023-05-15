@@ -1,0 +1,13 @@
+opinion_political_rival = {
+	opinion = -20
+}
+opinion_emperor_attention = {
+	opinion = 10
+}
+opinion_emperor_neglect = {
+	opinion = -10
+}
+opinion_castrated_me_education = {
+	opinion = -50
+	months = 180
+}

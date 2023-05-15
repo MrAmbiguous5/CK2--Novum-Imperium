@@ -1,0 +1,5 @@
+safavid_order_composition = {
+    levy_size = 4
+	light_cavalry = 700
+	horse_archers = 300
+}

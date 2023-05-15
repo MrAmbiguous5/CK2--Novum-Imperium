@@ -1,0 +1,52 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.16
+	desc = descexpandedtraits.16
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		has_focus = focus_sholarship
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.16
+		trigger = {
+			learning >= 13
+		}
+		tooltip_info = learning
+		add_trait = aimelire
+	}
+
+	option = {
+		name = optbexpandedtraits.16
+		trigger = {
+			stewardship >= 13
+		}
+		add_trait = concentre
+		scaled_wealth = -0.4
+		tooltip_info = stewardship
+
+	}
+
+	option = {
+		name = optcexpandedtraits.16
+		add_trait = detestelire
+	}
+
+	option = {
+		name = optdexpandedtraits.16
+		add_trait = immature
+	}
+}

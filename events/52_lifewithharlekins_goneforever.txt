@@ -1,0 +1,73 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.52
+	desc = descexpandedtraits.52
+	picture = GFX_evt_brothel
+	border = GFX_event_normal_frame_economy
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.52
+		ROOT = {
+			give_nickname = nick_newlifeharlekins
+			set_character_flag = flag_newlifeharlekins
+			create_bloodline = {
+				type = harlekin_xt
+			}
+			new_bloodline = {
+				set_description = "desc_harlekinxt_bloodline"
+			}
+			death = {
+				death_reason = death_missing
+			}
+		}
+	}
+	option = {
+		name = optbexpandedtraits.52
+		hidden_effect = {
+			remove_trait = awaywithjugglers
+		}
+		add_trait = mature  #respinsible
+			if = {
+				limit = {
+					trait = romantique
+					}
+					random = {
+						chance = 50
+						remove_trait = romantique
+					}
+			}
+			if = {
+				limit = {
+					trait = dreamer
+					}
+					random = {
+						chance = 50
+						remove_trait = dreamer
+					}
+			}
+			if = {
+				limit = {
+					trait = neugierig
+					}
+					random = {
+						chance = 50
+						remove_trait = neugierig
+					}
+			}
+			if = {
+				limit = {
+					trait = immature
+					}
+					random = {
+						chance = 50
+						remove_trait = immature
+					}
+			}
+	}
+}

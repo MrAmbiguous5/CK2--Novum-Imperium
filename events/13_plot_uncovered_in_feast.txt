@@ -1,0 +1,54 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.13
+	desc = descexpandedtraits.13
+	picture = GFX_evt_leaving_table_angrily
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		any_rival = {
+  			has_plot = plot_kill_character
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 250
+	}
+
+	option = {
+		name = optaexpandedtraits.13
+		trigger = {
+			OR = {
+				trait = lustful
+				trait = lovers_pox
+				trait = hedonist
+			}
+		}
+
+			tooltip_info_custom = tooltipexpandedtraits.13
+
+
+		add_trait = gooderection
+		scaled_wealth = -1
+	}
+
+	option = {
+		name = optbexpandedtraits.13
+		add_trait = indulgent
+
+	}
+
+	option = {
+		name = optcexpandedtraits.13
+		add_trait = rancunier
+		random_vassal = {
+			add_rival = ROOT
+		}
+	}
+}

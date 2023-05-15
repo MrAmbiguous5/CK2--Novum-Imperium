@@ -1,0 +1,161 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.30
+	desc = descexpandedtraits.30
+	picture = GFX_evt_slit_throat_hf
+	border = GFX_event_normal_frame_war #GFX_evt_bleeding_from_neck_hf #GFX_evt_marriage  #GFX_evt_bloody_knife_hf
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.30
+		ai_chance = {
+			factor = 1
+		}
+		ROOT = {
+			give_nickname = nick_red_wedding_groom
+			death = {
+				death_reason = death_execution
+				killer = {FROM}
+			}
+			spouse = {
+				give_nickname = nick_the_whore
+				death = {
+					death_reason = death_execution
+					killer = {FROM}
+				}
+			}
+		}
+		FROM = {
+			give_nickname = nick_red_wedding_killer
+			add_character_modifier = {
+				name = killed_guests_red_wedding
+				duration = -1
+			}
+			character_event = {
+				id = expandedtraits.31
+				days = 4
+			}
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.30
+		trigger = {
+			ROOT = {
+				num_of_friends >= 1
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		ROOT = {
+			random_friend = {
+				death = {
+					death_reason = death_execution
+					killer = {FROM}
+				}
+			}
+			spouse = {
+				give_nickname = nick_the_whore
+				death = {
+					death_reason = death_execution
+					killer = {FROM}
+				}
+			}
+		}
+		FROM = {
+			give_nickname = nick_red_wedding_killer
+			add_character_modifier = {
+				name = killed_guests_red_wedding
+				duration = -1
+			}
+			character_event = {
+				id = expandedtraits.32
+				days = 4
+			}
+			add_rival = ROOT
+		}
+	}
+
+	option = { # mother sacrifies?
+		name = optcexpandedtraits.30
+		trigger = {
+			OR = {
+				trait = cynical
+				trait = paranoid
+				intrigue >= 20
+				FROM = {
+					intrigue <= 12
+				}
+			NOT = {
+				trait = trusting
+			}
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		tooltip_info = intrigue
+		FROM = {
+			give_nickname = nick_red_wedding_killer
+			add_character_modifier = {
+				name = killed_guests_red_wedding
+				duration = -1
+			}
+			character_event = {
+				id = expandedtraits.33
+				days = 4
+			}
+			add_rival = ROOT
+		}
+	}
+
+	option = {
+		name = optdexpandedtraits.30
+		trigger = {
+			martial >= 18
+		}
+		tooltip_info = martial
+		ai_chance = {
+			factor = 10
+		}
+		random_list = {
+			50 = {add_trait = wounded}
+			40 = {add_trait = maimed}
+			10 = {
+				ROOT = {
+					give_nickname = nick_red_wedding_groom
+					death = {
+						death_reason = death_execution
+						killer = {FROM}
+					}
+				}
+			}
+		}
+		ROOT = {
+			spouse = {
+				death = {
+					death_reason = death_execution
+					killer = {FROM}
+				}
+			}
+		}
+		FROM = {
+			give_nickname = nick_red_wedding_killer
+			add_character_modifier = {
+				name = killed_guests_red_wedding
+				duration = -1
+			}
+			character_event = {
+				id = expandedtraits.32
+				days = 4
+			}
+			add_rival = ROOT
+		}
+	}
+}

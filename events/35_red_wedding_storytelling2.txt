@@ -1,0 +1,23 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.35
+	desc = descexpandedtraits.35
+	picture = GFX_evt_mountaintop_castle_hf
+	border = GFX_event_normal_frame_war
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.35
+		FROM = {
+			character_event = {
+				id = expandedtraits.30
+				days = 7
+				random = 7
+			}
+		}
+	}

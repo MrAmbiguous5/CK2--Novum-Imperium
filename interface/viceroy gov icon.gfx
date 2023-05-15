@@ -1,0 +1,37 @@
+spriteTypes = {
+  spriteType = {
+    name = "GFX_icon_viceroy_government"
+    texturefile = "gfx\\interface\\government_icon_viceroy.dds"
+  }
+  
+  	spriteType = {
+		name = "GFX_charframe_34_viceroyalty"
+		texturefile = "gfx\\interface\\charframe_34_viceroyalty.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_50_viceroyalty"
+		texturefile = "gfx\\interface\\charframe_50_viceroyalty.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_75_viceroyalty"
+		texturefile = "gfx\\interface\\charframe_75_viceroyalty.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_100_viceroyalty"
+		texturefile = "gfx\\interface\\charframe_100_viceroyalty.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_charframe_150_viceroyalty"
+		texturefile = "gfx\\interface\\charframe_150_viceroyalty.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+}

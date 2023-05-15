@@ -1,0 +1,77 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.21
+	desc = descexpandedtraits.21
+	picture = GFX_evt_jewish_market
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		is_decision_potential = expel_jews
+		piety <= 1000
+	}
+
+	mean_time_to_happen = {
+		months = 350
+	}
+
+	option = {
+		name = optaexpandedtraits.21
+		add_trait = mature
+
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.21
+
+		ai_chance = {
+			factor = 30
+		}
+
+		add_trait = egoiste
+		scaled_wealth = 3
+	}
+
+	option = {
+		name = optcexpandedtraits.21
+		trigger = {
+			learning >= 14
+		}
+
+		ai_chance = {
+			factor = 30
+		}
+
+		random_list = {
+			50 = {add_trait = aimelire}
+			50 = {add_trait = sympathy_judaism}
+		}
+		tooltip_info = learning
+	}
+
+	option = {
+		name = optdexpandedtraits.21
+
+		trigger = {
+			AND = {
+				trait = sympathy_judaism
+				has_dlc = "Sons of Abraham"
+			}
+		}
+
+		ai_chance = {
+			factor = 10
+		}
+
+		religion = jewish
+		tooltip_info = sympathy_judaism
+	}
+}

@@ -1,0 +1,64 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.44
+	desc = descexpandedtraits.44
+	picture = GFX_evt_lionsimprisoned
+	border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+	only_playable = yes
+
+
+	option = {
+		name = optaexpandedtraits.44
+			character_event = {
+				id = expandedtraits.45
+				days = 10
+				random = 5
+				tooltip = tooltipexpandedtraits.44a
+			}
+			add_trait = lechebottes
+	}
+
+	option = {
+		name = optbexpandedtraits.44
+		random = {
+			chance = 40
+			add_trait = cruel
+		}
+		add_character_modifier = {
+			modifier = dressed_in_lion_pelt
+			duration = -1
+		}
+		scaled_wealth = -2
+	}
+
+	option = {
+		name = optcexpandedtraits.44
+		random = {
+			chance = 20
+			add_trait = mature
+		}
+	}
+
+	option = {
+		name = optdexpandedtraits.44
+		trigger = {
+			OR = {
+				trait = trusting
+				trait = brave
+				trait = etourdi
+			}
+		}
+		random = {
+			chance = 40
+			add_trait = charismatique
+		}
+		add_character_modifier = {
+			modifier = tamed_lions_pet_xt
+			months = 120
+		}
+		tooltip_info_custom = tooltipexpandedtraits.44b
+	}
+}

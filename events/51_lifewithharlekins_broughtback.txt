@@ -1,0 +1,38 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.51
+	desc = descexpandedtraits.51
+	picture = GFX_evt_catching_heretic
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = optaexpandedtraits.51
+		add_character_modifier = {
+			name = mod_unrealisticdreamer
+			duration = -1
+		}
+		hidden_effect = {
+			remove_trait = awaywithjugglers
+		}
+	}
+
+ 	option = {
+		name = optbexpandedtraits.51
+		tooltip_info_custom = tooltipexpandedtraits.51
+		hidden_effect = {
+			remove_trait = awaywithjugglers
+		}
+		trigger = {
+			OR = {
+				trait = charismatique
+				diplomacy >= 18
+			}
+		}
+	}
+}

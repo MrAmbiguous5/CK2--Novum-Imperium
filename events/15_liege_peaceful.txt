@@ -1,0 +1,77 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.15
+	desc = descexpandedtraits.15
+	picture = GFX_evt_council_speaker
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		AND = {
+			independent = no
+			any_liege = {
+				AND = {
+					martial <= 14
+					ai_ambition <= 50
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 350
+	}
+
+	option = {
+		name = optaexpandedtraits.15
+		trigger = {
+			diplomacy >= 14
+		}
+
+		add_trait = lechebottes
+		tooltip_info = diplomacy
+	}
+
+	option = {
+		name = optbexpandedtraits.15
+		trigger = {
+			martial >= 14
+		}
+		add_trait = belliciste
+		tooltip_info = martial
+
+	}
+
+	option = {
+		name = optcexpandedtraits.15
+		random = {
+			chance = 50
+			add_trait = mauvaismenteur
+		}
+	}
+
+	option = {
+		name = optdexpandedtraits.15
+		add_trait = offensive
+		liege = {
+			opinion = {
+				modifier = opinion_shocked
+  				who = ROOT
+ 				years = 2
+			}
+
+			any_vassal = {
+				opinion = {
+					modifier = spoke_up
+					who = ROOT
+					years = 5
+				}
+			}
+		}
+	}
+}

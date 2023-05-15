@@ -1,0 +1,125 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.29
+	desc = descexpandedtraits.29
+	picture = GFX_evt_sway_hf
+	border = GFX_event_normal_frame_war #GFX_evt_upsetting_letter
+
+	only_playable = yes
+	is_triggered_only = yes
+	
+
+	option = {
+		name = optaexpandedtraits.29
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					trait = indulgent
+					trait = romantique
+					trait = kind
+					ai_honor >= 50
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					ai_honor <= 0
+					trait = rancunier
+					trait = cruel
+				}
+			}
+		}
+		add_trait = hypersensible
+		FROM = {
+			character_event = {
+				id = expandedtraits.34
+				days = 14
+				random = 14
+				tooltip = tooltipexpandedtraits.29
+			}
+		}
+
+	}
+
+	option = {
+		name = optbexpandedtraits.29
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				OR = {
+					trait = greedy
+					scaled_wealth <= 0.3
+					ai_greed >= 50
+				}
+			}
+		}
+		random = {
+			chance = 50
+			add_trait = greedy
+		}
+		scaled_wealth = 3
+		FROM = {
+			character_event = {
+				id = expandedtraits.36
+				days = 14
+				random = 14
+				tooltip = tooltipexpandedtraits.36
+				}
+			}
+	}
+
+	option = {
+		name = optcexpandedtraits.29
+		ai_chance = {
+			factor = 20
+				modifier = {
+					factor = 10
+					OR = {
+						intrigue <= 12
+					}
+				}
+		}
+		add_trait = rancunier
+		FROM = {
+			character_event = {
+				id = expandedtraits.37
+				days = 14
+				random = 14
+				tooltip = tooltipexpandedtraits.37
+				}
+			}
+	}
+
+	option = {
+		name = optdexpandedtraits.29
+		trigger = {
+			trait = indulgent
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				OR = {
+					trait = romantique
+					trait = kind
+				}
+			}
+		}
+		scaled_prestige = -3
+		scaled_piety = 4
+		tooltip_info = indulgent
+		FROM = {
+			character_event = {
+				id = expandedtraits.37
+				days = 14
+				random = 14
+				tooltip = tooltipexpandedtraits.37
+				}
+			}
+	}
+}

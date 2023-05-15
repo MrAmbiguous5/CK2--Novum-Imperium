@@ -1,0 +1,49 @@
+namespace = expandedtraits
+character_event = {  # Potence Witch
+	id = expandedtraits.2
+	desc = descexpandedtraits.2
+	picture = GFX_evt_mysterious_forest
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	only_capable = yes
+
+	trigger = {
+		AND = {
+			has_focus = focus_family
+			age >= 40
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 350
+	}
+
+	option = {
+		name = optaexpandedtraits.2
+		add_trait = baderection
+	}
+
+	option = {
+
+		trigger = {
+			OR = {
+				learning > 20
+				trait = mystic
+			}
+		}
+		name = optbexpandedtraits.2
+		tooltip_info_custom = tooltipexpandedtraits.2
+		add_trait = gooderection
+
+	}
+
+	option = {
+		name = optcexpandedtraits.2
+		random = {
+			chance = 65
+			add_trait = depressed
+		}
+
+	}
+}

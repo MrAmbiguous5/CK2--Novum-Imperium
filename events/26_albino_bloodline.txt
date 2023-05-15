@@ -1,0 +1,53 @@
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.26
+	desc = descexpandedtraits.26
+	picture = GFX_evt_succubusnight
+	border = GFX_event_normal_frame_intrigue
+
+	only_playable = yes
+	only_women = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		AND = {
+			trait = albinos
+			trait = seductress
+			OR = {
+				trait = charismatique
+				trait = humournoir
+				trait = fair
+			}
+			NOT = {
+				ROOT = {
+					any_owned_bloodline = {
+						has_bloodline_flag = albino_blood
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 100
+	}
+
+	option = {
+		name = optaexpandedtraits.26
+		give_nickname = nick_the_succubus_xt
+		create_bloodline = {
+			type = pale_lilith
+		}
+		new_bloodline = {
+			set_description = "desc_lilith_bloodline"
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.25
+		add_trait = celibate
+		set_focus = focus_theology
+	}
+}

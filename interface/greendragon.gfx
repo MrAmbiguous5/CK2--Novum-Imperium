@@ -1,0 +1,6 @@
+spriteTypes = {
+     spriteType = {
+          name = "GFX_evt_greendragon"
+          texturefile = "gfx\\event_pictures\\greendragon.dds"
+     }
+}

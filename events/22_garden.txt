@@ -1,0 +1,56 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.22
+	desc = descexpandedtraits.22
+	picture = GFX_evt_garden
+	border = GFX_event_normal_frame_economy
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+			has_wonder = wonder_garden
+	}
+
+	mean_time_to_happen = {
+		months = 550
+	}
+
+	option = {
+		name = optaexpandedtraits.22
+		random_list = {
+			50 = {add_trait = scientifique}
+			50 = {add_trait = gardener}
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.22
+		add_trait = romantique
+		any_lover = {
+			remove_lover = ROOT
+		}
+	}
+
+	option = {
+		name = optcexpandedtraits.22
+		add_trait = aimelire
+		random = {
+			chance = 30
+			add_trait = maigre
+		}
+	}
+
+	option = {
+		name = optdexpandedtraits.22
+		trigger = {
+			trait = gardener
+		}
+		add_trait = charismatique
+		tooltip_info = gardener
+	}
+}

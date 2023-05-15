@@ -1,0 +1,5 @@
+on_new_holder = {
+	events = {
+		lmmitg.2001
+	}	
+}

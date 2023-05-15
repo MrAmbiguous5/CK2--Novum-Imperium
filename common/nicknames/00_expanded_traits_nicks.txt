@@ -1,0 +1,20 @@
+#############################################
+# CHARACTER NICKNAMES
+# Independent dukes, kings and emperors only
+#
+# 'factor' is the percentage per year of
+# gaining the nickname
+#
+#############################################
+
+# TRIGGERED ONLY
+################
+nick_the_mountain = {}
+nick_the_succubus_xt = {}
+nick_the_whore = {}
+nick_red_wedding_groom = {}
+nick_red_wedding_killer = {}
+nick_red_wedding_spurned = {}
+nick_brightflame_xt = {}
+nick_newlifeharlekins = {}
+nick_bipolaire_xt = {}

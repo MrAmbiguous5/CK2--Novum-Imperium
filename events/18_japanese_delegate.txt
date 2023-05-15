@@ -1,0 +1,54 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.18
+	desc = descexpandedtraits.18
+	picture = GFX_evt_china_diplomatic_success
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		has_offmap_currency = {
+			offmap = offmap_china
+			value = 500
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = optaexpandedtraits.18
+		add_trait = offensive
+		add_trait = wounded
+		add_offmap_currency = {
+			offmap = offmap_china
+			value = 500
+		}
+
+	}
+
+	option = {
+		name = optbexpandedtraits.18
+		add_trait = indulgent
+		add_offmap_currency = {
+			offmap = offmap_china
+			value = -500
+		}
+	}
+
+	option = {
+		name = optcexpandedtraits.18
+		trigger = {
+			stewardship >= 15
+		}
+		add_trait = tolerant
+		scaled_wealth = -0.3
+		tooltip_info = stewardship
+	}
+}

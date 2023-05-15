@@ -1,0 +1,68 @@
+
+
+namespace = expandedtraits
+
+character_event = {
+	id = expandedtraits.20
+	desc = descexpandedtraits.20
+	picture = GFX_evt_rival_rulers
+
+	only_playable = yes
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		martial >= 14
+		num_of_rivals >= 3
+	}
+
+	mean_time_to_happen = {
+		months = 350
+	}
+
+	option = {
+		name = optaexpandedtraits.20
+		add_trait = belliciste
+		random_rival = {
+			primary_title = {
+  				add_claim = ROOT
+			}
+		}
+		job_chancellor = {
+			opinion = {
+					modifier = opinion_shocked
+  					who = ROOT
+ 					years = 2
+			}
+		}
+	}
+
+	option = {
+		name = optbexpandedtraits.20
+		add_trait = indecis
+	}
+
+	option = {
+		name = optcexpandedtraits.20
+		add_trait = funny
+		scaled_wealth = -0.3
+	}
+
+	option = {
+		name = optdexpandedtraits.20
+		trigger = {
+			OR = {
+				trait = indulgent
+				trait = kind
+				trait = mature
+			}
+		}
+		any_rival = {
+			remove_rival = ROOT
+		}
+		tooltip_info_custom = tooltipexpandedtraits.20
+
+		remove_trait = rancunier
+		remove_trait = cruel
+	}
+}
