@@ -16592,8 +16592,8 @@ muslim = {
 	marabout = {
 		graphical_culture = muslimgfx
 		color = { 143 255 31 }
-		icon = 327
-		heresy_icon = 327
+		icon = 616
+		heresy_icon = 616
 		
 		reformed = muslim_sufi_reformed
 		#reformer_head_of_religion = yes
@@ -16685,7 +16685,7 @@ muslim = {
 		intermarry = ibadi
 		intermarry = shiite
 		intermarry = muslim_aliite_reformed
-		}
+	}
 	
 	haruri = {
 		crusade_name = JIHAD
