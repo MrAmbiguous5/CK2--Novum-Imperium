@@ -1185,19 +1185,10 @@ targetted_decisions = {
 		potential = {
 			is_playable = yes
 			is_heretic = yes
-			OR = {
-				religion = norse_pagan
-				religion = finnish_pagan
-				religion = baltic_pagan
-				religion = tengri_pagan
-				religion = slavic_pagan
-				religion = aztec
-				religion = west_african_pagan
-				religion = bon
-				religion = hellenic_pagan
-                religion = a_tag_roog
-                religion = amazigh
-			}
+			is_organized_religion_trigger = no
+			controls_religion = no
+			holy_order = no
+			emf_can_convert_religion = yes
 		}
 		allow = {
 			NOT = { trait = zealous }
@@ -1206,49 +1197,8 @@ targetted_decisions = {
 		}
 		effect = {
 			piety = -50
-			if = {
-				limit = { religion = norse_pagan }
-				religion = norse_pagan_reformed
-			}
-			if = {
-				limit = { religion = finnish_pagan }
-				religion = finnish_pagan_reformed
-			}
-			if = {
-				limit = { religion = baltic_pagan }
-				religion = baltic_pagan_reformed
-			}
-			if = {
-				limit = { religion = tengri_pagan }
-				religion = tengri_pagan_reformed
-			}
-			if = {
-				limit = { religion = slavic_pagan }
-				religion = slavic_pagan_reformed
-			}
-			if = {
-				limit = { religion = aztec }
-				religion = aztec_reformed
-			}
-			if = {
-				limit = { religion = west_african_pagan }
-				religion = west_african_pagan_reformed
-			}
-			if = {
-				limit = { religion = bon }
-				religion = bon_reformed
-			}
-			if = {
-				limit = { religion = hellenic_pagan }
-				religion = hellenic_pagan_reformed
-			}
-            if = {
-                limit = { religion = a_tag_roog }
-                religion = a_tag_roog_reformed
-            }
-            if = {
-                limit = { religion = amazigh }
-                religion = amazigh_reformed
+			emf_character_set_religion_to_reformed = yes
+
             }
 			
 			hidden_tooltip = {
@@ -1370,6 +1320,14 @@ targetted_decisions = {
                         religion = amazigh
                         amazigh_reformed = { has_religion_feature = religion_proselytizing }
                     }
+					AND = {
+						religion = celtic_pagan
+						celtic_pagan_reformed = { has_religion_feature = religion_proselytizing }
+					}
+					AND = {
+						religion = egyptian_pagan
+						egyptian_pagan_reformed = { has_religion_feature = religion_proselytizing }
+					}
 				}
 			}
 		}
@@ -3008,7 +2966,7 @@ decisions = {
                     OR = {
                         AND = {
                             religion_group = pagan_group
-                            is_reformed_religion = no
+                            is_organized_religion_trigger = no
                         }
                         religion = a_tag_roog
                         religion = amazigh
@@ -3033,7 +2991,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_reformed_religion = yes
+						is_organized_religion_trigger = yes
 					}
 				}
 				OR = {
@@ -3063,14 +3021,7 @@ decisions = {
 						attacker = {
 							NOT = { religion = ROOT }
 							religion_authority = 0.5
-							OR = {
-								NOR = {
-                                    religion_group = pagan_group
-                                    religion = a_tag_roog
-                                    religion = amazigh
-                                }
-								is_reformed_religion = yes
-							}
+							is_organized_religion_trigger = yes
 						}
 						OR = {
 							using_cb = crusade
@@ -3092,14 +3043,9 @@ decisions = {
 				limit = { 
 					has_dlc = "Holy Fury"
 					is_tribal = yes
-                    OR = {
-                        religion_group = pagan_group
-                        religion = a_tag_roog
-                        religion = amazigh
-                    }
 					higher_real_tier_than = count 		
 					NOT = { trait = incapable }
-					NOT = { is_reformed_religion = yes }
+					is_organized_religion_trigger = no
 					NOT = { has_character_flag = flag_converting_baptism }
 					NOT = { has_character_modifier = baptism_request_cooldown } 
 					independent = yes 
@@ -3248,14 +3194,7 @@ decisions = {
 						attacker = {
 							NOT = { religion = ROOT }
 							religion_authority = 0.45
-							OR = {
-								NOR = {
-                                    religion_group = pagan_group
-                                    religion = a_tag_roog
-                                    religion = amazigh
-                                }
-								is_reformed_religion = yes
-							}
+							is_organized_religion_trigger = yes
 						}
 						OR = {
 							using_cb = crusade
@@ -3283,14 +3222,7 @@ decisions = {
 					attacker = {
 						NOT = { religion = ROOT }
 						religion_authority = 0.45
-						OR = {
-							NOR = {
-                                religion_group = pagan_group
-                                religion = a_tag_roog
-                                religion = amazigh
-                            }
-							is_reformed_religion = yes
-						}
+						is_organized_religion_trigger = yes
 					}
 					OR = {
 						using_cb = crusade
@@ -3689,6 +3621,225 @@ decisions = {
 			modifier = {
 				factor = 0.01 #Would consider it a step down.
 				culture = greek
+			}
+		}
+	}
+	# Gaulish Emperor may restore Gaulish Culture
+	gaulish_renaissance = {
+		ai_check_interval = 120 #check only once every 120 months.
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_playable = yes
+			has_landed_title = e_gaul
+			NOT = { government = chinese_imperial_government }
+			NOT = { has_global_flag = flag_started_gaulish_renaissance }
+			NOT = {
+				has_alternate_start_parameter = { key = culture_names value = random }
+			}
+		}
+		allow = {
+			show_only_failed_conditions = yes
+			OR = { 
+				religion = celtic_pagan
+				religion = celtic_pagan_reformed
+				religion = promethean_pagan
+			}
+			capital_scope = { province = 112 }
+			war = no
+		}
+		effect = {
+			set_global_flag = flag_started_gaulish_renaissance
+			culture = gaulish
+			hidden_tooltip = {
+				any_courtier_or_vassal = { 
+					limit = { lower_tier_than = COUNT }
+					culture = gaulish
+				}
+			}
+			capital_scope = { culture = gaulish }
+			custom_tooltip = {
+				text = tooltip_gaulish_culture_starts_spreading
+				hidden_tooltip = {
+					any_realm_province = {
+						if = {
+							limit = { any_neighbor_province = { province = 112 } }
+							culture = gaulish
+						}
+						if = {
+							limit = { 
+								culture = french
+								NOT = { distance = { where = 112 distance = 100 } } 
+							}
+							random = { 
+								chance = 40 
+								culture = gaulish
+							}
+						}
+						if = {
+							limit = { 
+								culture_group = latin
+								NOT = { distance = { where = 112 distance = 200 } } 
+							}
+							random = { 
+								chance = 20 
+								culture = gaulish
+							}
+						}
+						if = {
+							limit = { 
+								culture_group = latin
+								NOT = { distance = { where = 112 distance = 400 } } 
+							}
+							random = { 
+								chance = 5
+								culture = gaulish
+							}
+						}
+					}
+				}
+			}
+			hidden_tooltip = {
+				if = { #Hellenic Emperor gets chance to spread Hellenism a bit alongside the culture.
+					limit = { OR = { religion = celtic_pagan_reformed religion = celtic_pagan } }
+					any_realm_province = {
+						if = {
+							limit = { any_neighbor_province = { province = 112 } }
+							religion = ROOT
+						}
+						if = {
+							limit = { 
+								culture = gaulish
+								NOT = { distance = { where = 112 distance = 100 } } 
+							}
+							random = { 
+								chance = 10 
+								religion = ROOT
+							}
+						}
+						if = {
+							limit = { 
+								culture = gaulish
+								NOT = { distance = { where = 112 distance = 200 } } 
+							}
+							random = { 
+								chance = 5 
+								religion = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				religion = celtic_pagan_reformed
+			}
+			modifier = {
+				factor = 10 #Would consider it a step down.
+				culture = gaulish
+			}
+		}
+	}
+	embrace_gaulish_culture = {
+		ai_check_interval = 120 #check only once every 120 months.
+		only_playable = yes
+		
+		potential = {
+			is_playable = yes
+			NOT = { culture = gaulish }
+			OR = { 
+				culture_group = latin 
+				culture_group = celtic
+			}
+			has_dlc = "Holy Fury"
+			NOT = { government = chinese_imperial_government }
+			has_global_flag = flag_started_gaulish_renaissance
+			NOT = {
+				has_alternate_start_parameter = { key = culture_names value = random }
+			}
+			top_liege = { has_landed_title = e_gaul }
+		}
+		allow = {
+			show_only_failed_conditions = yes
+			OR = { 
+				culture_group = latin 
+				culture_group = celtic
+			}
+		}
+		effect = {
+			culture = gaulish
+			hidden_tooltip = {
+				any_courtier_or_vassal = { 
+					limit = { lower_tier_than = COUNT }
+					culture = gaulish
+				}
+			}
+			capital_scope = { culture = gaulish}
+			custom_tooltip = {
+				text = tooltip_gaulish_culture_spreads
+				hidden_tooltip = {
+					any_demesne_province = {
+						if = {
+							limit = { any_neighbor_province = { province = 112 } }
+							culture = gaulish
+						}
+						if = {
+							limit = { 
+								culture = french
+								capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
+							}
+							random = { 
+								chance = 40 
+								culture = gaulish
+							}
+						}
+						if = {
+							limit = { 
+								culture_group = latin
+								capital_scope = { NOT = { distance = { where = PREV distance = 200 } } } 
+							}
+							random = { 
+								chance = 20 
+								culture = gaulish
+							}
+						}
+						if = {
+							limit = { 
+								culture_group = latin
+								capital_scope = { NOT = { distance = { where = PREV distance = 400 } } } 
+							}
+							random = { 
+								chance = 5
+								culture = gaulish
+							}
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				religion = celtic_pagan_reformed
+			}
+			modifier = {
+				factor = 3
+				capital_scope = { culture = gaulish } 
+			}
+			modifier = {
+				factor = 10 #Would consider it a step down.
+				culture = gaulish
 			}
 		}
 	}
