@@ -600,13 +600,8 @@ arabpagan_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = zigguratgfx
 		color = { 255 206 10 }
-<<<<<<< Updated upstream
-		icon = 208
-		heresy_icon = 209
-=======
 		icon = 497
 		heresy_icon = 498
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_SHAMS
@@ -691,13 +686,8 @@ arabpagan_group = {
 		crusade_name = CRUSADE
 		graphical_culture = zigguratgfx
 		color = { 255 165 20 }
-<<<<<<< Updated upstream
-		icon = 71
-		heresy_icon = 72
-=======
 		icon = 360
 		heresy_icon = 361
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ALMAQAH
 		
@@ -781,13 +771,8 @@ arabpagan_group = {
 	talab = {
 		graphical_culture = zigguratgfx
 		color = { 82 148 255 }
-<<<<<<< Updated upstream
-		icon = 71
-		heresy_icon = 72
-=======
 		icon = 360
 		heresy_icon = 361
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_TALAB
 		
@@ -863,13 +848,8 @@ arabpagan_group = {
 	shams = {
 		graphical_culture = zigguratgfx
 		color = { 255 255 143 }
-<<<<<<< Updated upstream
-		icon = 206
-		heresy_icon = 207
-=======
 		icon = 495
 		heresy_icon = 496
->>>>>>> Stashed changes
 		
 		reformed = arab_pagan_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -952,13 +932,8 @@ arabpagan_group = {
 	allat = {
 		graphical_culture = zigguratgfx
 		color = { 61 83 148 }
-<<<<<<< Updated upstream
-		icon = 206
-		heresy_icon = 207
-=======
 		icon = 495
 		heresy_icon = 496
->>>>>>> Stashed changes
 		
 		parent = shams
 		reformed = arab_pagan_reformed
@@ -1042,13 +1017,8 @@ arabpagan_group = {
 	hubal = {
 		graphical_culture = zigguratgfx
 		color = { 255 102 82 }
-<<<<<<< Updated upstream
-		icon = 205
-		heresy_icon = 205
-=======
 		icon = 494
 		heresy_icon = 494
->>>>>>> Stashed changes
 		
 		reformed = arab_pagan_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -1125,13 +1095,8 @@ arabpagan_group = {
 	attar = {
 		graphical_culture = zigguratgfx
 		color = { 214 25 0 }
-<<<<<<< Updated upstream
-		icon = 203
-		heresy_icon = 204
-=======
 		icon = 492
 		heresy_icon = 493
->>>>>>> Stashed changes
 		
 		reformed = arab_pagan_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -1203,13 +1168,8 @@ arabpagan_group = {
 	maher = {
 		graphical_culture = zigguratgfx
 		color = { 138 16 0 }
-<<<<<<< Updated upstream
-		icon = 254
-		heresy_icon = 255
-=======
 		icon = 543
 		heresy_icon = 544
->>>>>>> Stashed changes
 		
 		reformed = ethiopian_war_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -1296,11 +1256,7 @@ aztec_group = {
 	ai_convert_same_group = 1 # try to convert if ai_zeal is high
 	ai_convert_other_group = 2 # always try to convert
 	
-<<<<<<< Updated upstream
-	aztec = {
-=======
 	tlateotocani = {
->>>>>>> Stashed changes
 		crusade_name = CRUSADE
 		graphical_culture = mesoamericangfx
 		color = { 255 100 25 }
@@ -1382,15 +1338,9 @@ pagan_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 235 255 135 }
-<<<<<<< Updated upstream
-		icon = 195
-		reformer_head_of_religion = no
-		heresy_icon = 196
-=======
 		icon = 484
 		reformer_head_of_religion = no
 		heresy_icon = 485
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_SEHUL
 		
@@ -1474,20 +1424,12 @@ pagan_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dievas
@@ -1496,19 +1438,11 @@ pagan_group = {
 		intermarry = baltic_pagan_reformed 
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		# Slavic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dazhbog
 		intermarry = perun
@@ -1535,11 +1469,7 @@ baltic_group = {
 	ai_convert_other_group = 2 # always try to convert
 	
 	# Reformed
-<<<<<<< Updated upstream
-	baltic_pagan_reformed = {
-=======
 	romuva_pagan_reformed = {
->>>>>>> Stashed changes
 		allow_in_ruler_designer = no
 		reformer_head_of_religion = yes
 		graphical_culture = norsegfx
@@ -1619,25 +1549,15 @@ baltic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-		intermarry = teiwaz_reformed
-		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
-=======
 		intermarry = odin_pagan_reformed
 		intermarry = teiwaz_reformed
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = baltic_pagan
->>>>>>> Stashed changes
 		intermarry = dievas
 		intermarry = peckols
 		intermarry = perkunas
@@ -1646,19 +1566,11 @@ baltic_group = {
 		intermarry = saule
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		# Slavic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dazhbog
 		intermarry = perun
@@ -1672,8 +1584,6 @@ baltic_group = {
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 	}
-<<<<<<< Updated upstream
-=======
 	
 	baltic_pagan = {
 		graphical_culture = pagangfx
@@ -1733,17 +1643,12 @@ baltic_group = {
 		religious_clothing_priest = 6
 	}
 	
->>>>>>> Stashed changes
 	######################
 	dievas = {
 		graphical_culture = norsegfx
 		color = { 31 150 220 }
 		icon = 31
-<<<<<<< Updated upstream
-		heresy_icon = 165
-=======
 		heresy_icon = 454
->>>>>>> Stashed changes
 		
 		reformed = baltic_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -1819,20 +1724,12 @@ baltic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dievas
@@ -1843,19 +1740,11 @@ baltic_group = {
 		intermarry = saule
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		# Slavic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dazhbog
 		intermarry = perun
@@ -1873,11 +1762,7 @@ baltic_group = {
 		graphical_culture = norsegfx
 		color = { 200 150 150 }
 		icon = 31
-<<<<<<< Updated upstream
-		heresy_icon = 165
-=======
 		heresy_icon = 454
->>>>>>> Stashed changes
 	
 		parent = dievas
 		reformed = northern_sun_reformed
@@ -1967,13 +1852,8 @@ baltic_group = {
 	perkunas = {
 		graphical_culture = norsegfx
 		color = { 78 120 162 }
-<<<<<<< Updated upstream
-		icon = 308
-		heresy_icon = 308
-=======
 		icon = 597
 		heresy_icon = 597
->>>>>>> Stashed changes
 		
 		reformed = baltic_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -2044,20 +1924,12 @@ baltic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dievas
@@ -2068,19 +1940,11 @@ baltic_group = {
 		intermarry = saule
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		# Slavic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dazhbog
 		intermarry = perun
@@ -2098,13 +1962,8 @@ baltic_group = {
 	peckols = {
 		graphical_culture = norsegfx
 		color = { 10 20 100 }
-<<<<<<< Updated upstream
-		icon = 309
-		heresy_icon = 309
-=======
 		icon = 498
 		heresy_icon = 498
->>>>>>> Stashed changes
 		
 		reformed = baltic_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -2175,20 +2034,12 @@ baltic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dievas
@@ -2198,19 +2049,11 @@ baltic_group = {
 		intermarry = saule
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		# Slavic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dazhbog
 		intermarry = perun
@@ -2242,13 +2085,8 @@ bantu_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = africangfx
 		color = { 0.3 0.5 0.6 }
-<<<<<<< Updated upstream
-		icon = 269
-		heresy_icon = 270
-=======
 		icon = 558
 		heresy_icon = 559
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_MUNGU
@@ -2348,13 +2186,8 @@ bantu_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = africangfx
 		color = { 0.3 0.45 0.3 }
-<<<<<<< Updated upstream
-		icon = 274
-		heresy_icon = 275
-=======
 		icon = 563
 		heresy_icon = 564
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_RUOTHNYASAY
 		
@@ -2456,13 +2289,8 @@ bantu_group = {
 		crusade_name = CRUSADE
 		graphical_culture = africangfx
 		color = { 69 19 0 }
-<<<<<<< Updated upstream
-		icon = 341
-		heresy_icon = 342
-=======
 		icon = 630
 		heresy_icon = 631
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_MBORI
 		
@@ -2543,13 +2371,8 @@ bantu_group = {
 		crusade_name = CRUSADE
 		graphical_culture = africangfx
 		color = { 0.1 0.15 0.2 }
-<<<<<<< Updated upstream
-		icon = 69
-		heresy_icon = 70
-=======
 		icon = 358
 		heresy_icon = 359
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_UNKULUNKULU
@@ -2628,13 +2451,8 @@ bantu_group = {
 	kintu = {
 		graphical_culture = africangfx
 		color = { 0.6 0.35 0.0 }
-<<<<<<< Updated upstream
-		icon = 268
-		heresy_icon = 268
-=======
 		icon = 557
 		heresy_icon = 557
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_KINTO
 		
@@ -2730,13 +2548,8 @@ bantu_group = {
 	batembuzi = {
 		graphical_culture = africangfx
 		color = { 0.2 0.05 0.65 }
-<<<<<<< Updated upstream
-		icon = 338
-		heresy_icon = 338
-=======
 		icon = 627
 		heresy_icon = 627
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_RUHANGA
 		
@@ -2820,13 +2633,8 @@ bantu_group = {
 	imana = {
 		graphical_culture = africangfx
 		color = { 0.45 0.1 0.25 }
-<<<<<<< Updated upstream
-		icon = 339
-		heresy_icon = 339
-=======
 		icon = 628
 		heresy_icon = 628
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_IMANA
 		
@@ -2918,13 +2726,8 @@ bantu_group = {
 	nyasaye = {
 		graphical_culture = africangfx
 		color = { 0.3 0.3 0.9 }
-<<<<<<< Updated upstream
-		icon = 273
-		heresy_icon = 273
-=======
 		icon = 562
 		heresy_icon = 562
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_NYASAYE
 		
@@ -3020,13 +2823,8 @@ bantu_group = {
 		crusade_name = CRUSADE_NYAU
 		graphical_culture = africangfx
 		color = { 0.5 0.4 0.75 }
-<<<<<<< Updated upstream
-		icon = 267
-		heresy_icon = 267
-=======
 		icon = 556
 		heresy_icon = 556
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_CHIUTA
 		
@@ -3107,13 +2905,8 @@ bantu_group = {
 	makonde_pagan = {
 		graphical_culture = africangfx
 		color = { 0.1 0.2 0.15 }
-<<<<<<< Updated upstream
-		icon = 271
-		heresy_icon = 271
-=======
 		icon = 560
 		heresy_icon = 560
->>>>>>> Stashed changes
 		
 		high_god_name = THE_ANCESTORS
 		
@@ -3206,13 +2999,8 @@ bantu_group = {
 	mwari = {
 		graphical_culture = africangfx
 		color = { 0.4 0.8 0.1 }
-<<<<<<< Updated upstream
-		icon = 266
-		heresy_icon = 266
-=======
 		icon = 555
 		heresy_icon = 555
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_MWARI
 		
@@ -3302,13 +3090,8 @@ bantu_group = {
 	zande_pagan = {
 		graphical_culture = africangfx
 		color = { 74 24 0 }
-<<<<<<< Updated upstream
-		icon = 340
-		heresy_icon = 340
-=======
 		icon = 629
 		heresy_icon = 629
->>>>>>> Stashed changes
 		
 		reformed = zande_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -3378,13 +3161,8 @@ bantu_group = {
 	zulu_pagan = {
 		graphical_culture = africangfx
 		color = { 0.0 0.1 0.15 }
-<<<<<<< Updated upstream
-		icon = 67
-		heresy_icon = 68
-=======
 		icon = 356
 		heresy_icon = 357
->>>>>>> Stashed changes
 		
 		high_god_name = THE_ANCESTORS
 		
@@ -3471,13 +3249,8 @@ berberpagan_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = desertgfx
 		color = { 255 128 206 }
-<<<<<<< Updated upstream
-		icon = 80
-		heresy_icon = 81
-=======
 		icon = 369
 		heresy_icon = 370
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_MASTIMAN
 		reformer_head_of_religion = yes
@@ -3555,13 +3328,8 @@ berberpagan_group = {
 	berber_pagan = {
 		graphical_culture = desertgfx
 		color = { 255 175 125 }
-<<<<<<< Updated upstream
-		icon = 79
-		heresy_icon = 81
-=======
 		icon = 368
 		heresy_icon = 370
->>>>>>> Stashed changes
 		
 		reformed = berber_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -3647,13 +3415,8 @@ berberpagan_group = {
 	gurzil = {
 		graphical_culture = desertgfx
 		color = { 255 75 93 }
-<<<<<<< Updated upstream
-		icon = 222
-		heresy_icon = 222
-=======
 		icon = 511
 		heresy_icon = 511
->>>>>>> Stashed changes
 		
 		reformed = berber_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -3729,13 +3492,8 @@ berberpagan_group = {
 	amanai = {
 		graphical_culture = desertgfx
 		color = { 255 148 77 }
-<<<<<<< Updated upstream
-		icon = 223
-		heresy_icon = 223
-=======
 		icon = 512
 		heresy_icon = 512
->>>>>>> Stashed changes
 		
 		reformed = berber_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -3831,13 +3589,8 @@ bud_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = buddhistgfx
 		color = { 130 155 164 }
-<<<<<<< Updated upstream
-		icon = 313
-		heresy_icon = 314
-=======
 		icon = 602
 		heresy_icon = 603
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_THE_BUDDHA
@@ -3923,17 +3676,10 @@ bud_group = {
 		intermarry = indohelen_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 
 		# Buddhist open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -3954,13 +3700,8 @@ bud_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = buddhistgfx
 		color = { 0 245 94 }
-<<<<<<< Updated upstream
-		icon = 316
-		heresy_icon = 317
-=======
 		icon = 605
 		heresy_icon = 606
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_HURMUZ
 		reformer_head_of_religion = no
@@ -4039,17 +3780,10 @@ bud_group = {
 		intermarry = indohelen_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 
 		# Buddhist open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -4140,17 +3874,10 @@ bud_group = {
 		intermarry = indohelen_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 
 		# Buddhist open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -4249,13 +3976,8 @@ bud_group = {
 	bud_mahayana = {
 		graphical_culture = buddhistgfx
 		color = { 0.4 0.5 0.3 }
-<<<<<<< Updated upstream
-		icon = 197
-		heresy_icon = 198
-=======
 		icon = 486
 		heresy_icon = 487
->>>>>>> Stashed changes
 		
 		parent = bud_sthaviravada
 		
@@ -4406,13 +4128,8 @@ bud_group = {
 	bud_pratyeka = {
 		graphical_culture = buddhistgfx
 		color = { 180 76 67 }
-<<<<<<< Updated upstream
-		icon = 232
-		heresy_icon = 232
-=======
 		icon = 521
 		heresy_icon = 521
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_THE_BUDDHA
 		
@@ -4482,17 +4199,10 @@ bud_group = {
 		intermarry = indohelen_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 
 		# Buddhist open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -4513,13 +4223,8 @@ bud_group = {
 	bud_vajrayana = {
 		graphical_culture = buddhistgfx
 		color = { 150 85 175 }
-<<<<<<< Updated upstream
-		icon = 201
-		heresy_icon = 202
-=======
 		icon = 490
 		heresy_icon = 491
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_THE_BUDDHA
 		
@@ -4586,13 +4291,8 @@ bud_group = {
 		crusade_name = CRUSADE
 		graphical_culture = buddhistgfx
 		color = { 125 125 135 }
-<<<<<<< Updated upstream
-		icon = 312
-		heresy_icon = 312
-=======
 		icon = 601
 		heresy_icon = 601
->>>>>>> Stashed changes
 		
 		reformed = bud_zen_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -4675,17 +4375,10 @@ bud_group = {
 		intermarry = indohelen_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 
 		# Buddhist open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -4706,13 +4399,8 @@ bud_group = {
 	bud_zor = {
 		graphical_culture = persiangfx
 		color = { 92 255 154 }
-<<<<<<< Updated upstream
-		icon = 315
-		heresy_icon = 315
-=======
 		icon = 604
 		heresy_icon = 604
->>>>>>> Stashed changes
 		
 		reformed = bud_zor_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -4784,17 +4472,10 @@ bud_group = {
 		intermarry = indohelen_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 
 		# Buddhist open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -4829,13 +4510,8 @@ celtic_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 127 195 77 }
-<<<<<<< Updated upstream
-		icon = 85
-		heresy_icon = 86
-=======
 		icon = 374
 		heresy_icon = 375
->>>>>>> Stashed changes
 		
 		high_god_name = HERO_CUC
 		reformer_head_of_religion = no
@@ -4907,21 +4583,13 @@ celtic_group = {
 		hard_to_convert = yes
 
 		# Celtic open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = celtic_pagan
-=======
 		intermarry = stonehenge_pagan
->>>>>>> Stashed changes
 		intermarry = endovellico
 		intermarry = iberian_pagan_reformed
 
 		# Celtic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = lugh
-<<<<<<< Updated upstream
-		intermarry = celtic_pagan_reformed
-=======
 		intermarry = stonehenge_pagan_reformed
->>>>>>> Stashed changes
 
 		# Christian open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = adoptionist
@@ -4951,21 +4619,12 @@ celtic_group = {
 		religious_clothing_head = 1
 		religious_clothing_priest = 1
 	}
-<<<<<<< Updated upstream
-	celtic_pagan_reformed = {
-		allow_in_ruler_designer = no
-		graphical_culture = norsegfx
-		color = { 0 255 0 }
-		icon = 89
-		heresy_icon = 90
-=======
 	stonehenge_pagan_reformed = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 0 255 0 }
 		icon = 378
 		heresy_icon = 379
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_TARANIS
 		reformer_head_of_religion = no
@@ -5039,11 +4698,7 @@ celtic_group = {
 		hard_to_convert = yes
 
 		# Celtic open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = celtic_pagan
-=======
 		intermarry = stonehenge_pagan
->>>>>>> Stashed changes
 		intermarry = endovellico
 		intermarry = celtic_christ_reformed
 		intermarry = iberian_pagan_reformed
@@ -5058,13 +4713,8 @@ celtic_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 0.55 0.7 0.4 }
-<<<<<<< Updated upstream
-		icon = 264
-		heresy_icon = 265
-=======
 		icon = 553
 		heresy_icon = 554
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ENDOVELICUS
 		reformer_head_of_religion = yes
@@ -5137,35 +4787,18 @@ celtic_group = {
 		hard_to_convert = yes
 
 		# Celtic open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = celtic_pagan
-=======
 		intermarry = stonehenge_pagan
->>>>>>> Stashed changes
 		intermarry = endovellico
 		intermarry = celtic_christ_reformed
 
 		# Celtic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = lugh
-<<<<<<< Updated upstream
-		intermarry = celtic_pagan_reformed
-=======
 		intermarry = stonehenge_pagan_reformed
->>>>>>> Stashed changes
 		
 		religious_clothing_head = 12
 		religious_clothing_priest = 12
 	}
 	######################
-<<<<<<< Updated upstream
-	celtic_pagan = {
-		graphical_culture = norsegfx
-		color = { 0 135 0 }
-		icon = 87
-		heresy_icon = 88
-		
-		reformed = celtic_pagan_reformed
-=======
 	stonehenge_pagan = {
 		graphical_culture = norsegfx
 		color = { 0 135 0 }
@@ -5173,7 +4806,6 @@ celtic_group = {
 		heresy_icon = 377
 		
 		reformed = stonehenge_pagan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
 		
 		high_god_name = GOD_TARANIS
@@ -5248,11 +4880,7 @@ celtic_group = {
 
 		# Celtic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = lugh
-<<<<<<< Updated upstream
-		intermarry = celtic_pagan_reformed
-=======
 		intermarry = stonehenge_pagan_reformed
->>>>>>> Stashed changes
 		
 		religious_clothing_head = 12
 		religious_clothing_priest = 12
@@ -5260,19 +4888,11 @@ celtic_group = {
 	lugh = {
 		graphical_culture = norsegfx
 		color = { 133 133 0 }
-<<<<<<< Updated upstream
-		icon = 87
-		heresy_icon = 88
-		
-		parent = celtic_pagan
-		reformed = celtic_pagan_reformed
-=======
 		icon = 376
 		heresy_icon = 377
 		
 		parent = stonehenge_pagan
 		reformed = stonehenge_pagan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
 		
 		high_god_name = GOD_CELT
@@ -5352,13 +4972,8 @@ celtic_group = {
 	endovellico = {
 		graphical_culture = norsegfx
 		color = { 40 155 61 }
-<<<<<<< Updated upstream
-		icon = 263
-		heresy_icon = 263
-=======
 		icon = 552
 		heresy_icon = 552
->>>>>>> Stashed changes
 		
 		reformed = iberian_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -5439,22 +5054,13 @@ chinese_group = {
 	ai_convert_other_group = 2 # always try to convert
 	
 	# Reformed
-<<<<<<< Updated upstream
-	bon_reformed = {
-=======
 	tibetan_reformed = {
->>>>>>> Stashed changes
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
 		graphical_culture = mongolgfx
 		color = { 0.75 0.5 0.35 }
-<<<<<<< Updated upstream
-		icon = 92
-		heresy_icon = 93
-=======
 		icon = 381
 		heresy_icon = 382
->>>>>>> Stashed changes
 
 		high_god_name = GOD_SHENLA_OKAR
 		reformer_head_of_religion = yes
@@ -5528,11 +5134,7 @@ chinese_group = {
 		hard_to_convert = yes
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-=======
 		intermarry = tibetan
->>>>>>> Stashed changes
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = lubu_reformed
@@ -5557,13 +5159,8 @@ chinese_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = mongolgfx
 		color = { 0.55 0.65 0.95 }
-<<<<<<< Updated upstream
-		icon = 95
-		heresy_icon = 96
-=======
 		icon = 384
 		heresy_icon = 385
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_LUBU
 		reformer_head_of_religion = yes
@@ -5639,13 +5236,8 @@ chinese_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = mongolgfx
 		color = { 0.4 0.35 0.65 }
-<<<<<<< Updated upstream
-		icon = 98
-		heresy_icon = 99
-=======
 		icon = 387
 		heresy_icon = 388
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_JADEEMPEROR
@@ -5722,13 +5314,8 @@ chinese_group = {
 	confucian = {
 		graphical_culture = mongolgfx
 		color = { 0.9 0.7 0.0 }
-<<<<<<< Updated upstream
-		icon = 162
-		heresy_icon = 163
-=======
 		icon = 451
 		heresy_icon = 452
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_SHANGDI
 		
@@ -5809,15 +5396,9 @@ chinese_group = {
 		intermarry = bud_zor_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 		
 		# Chinese restrictive (sectarian 1), can be married from the same group or civilization or related ones
@@ -5831,13 +5412,8 @@ chinese_group = {
 	lubu = {
 		graphical_culture = mongolgfx
 		color = { 143 86 60 }
-<<<<<<< Updated upstream
-		icon = 94
-		heresy_icon = 96
-=======
 		icon = 383
 		heresy_icon = 385
->>>>>>> Stashed changes
 		
 		reformed = lubu_reformed
 		#reformer_head_of_religion = yes
@@ -5909,15 +5485,6 @@ chinese_group = {
 		religious_clothing_priest = 4
 	}
 	
-<<<<<<< Updated upstream
-	bon = {
-		graphical_culture = mongolgfx
-		color = { 0.6 0.5 0.4 }
-		icon = 91
-		heresy_icon = 93
-		
-		reformed = bon_reformed
-=======
 	tibetan = {
 		graphical_culture = mongolgfx
 		color = { 0.6 0.5 0.4 }
@@ -5925,7 +5492,6 @@ chinese_group = {
 		heresy_icon = 382
 		
 		reformed = tibetan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
 		
 		high_god_name = GOD_SHENLA_OKAR
@@ -6006,17 +5572,10 @@ chinese_group = {
 		intermarry = bud_zor_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 		
 		# Chinese restrictive (sectarian 1), can be married from the same group or civilization or related ones
@@ -6031,13 +5590,8 @@ chinese_group = {
 	tao = {
 		graphical_culture = mongolgfx
 		color = { 0.4 0.1 0.1 }
-<<<<<<< Updated upstream
-		icon = 97
-		heresy_icon = 99
-=======
 		icon = 386
 		heresy_icon = 388
->>>>>>> Stashed changes
 		
 		reformed = tao_reformed
 		#reformer_head_of_religion = yes
@@ -6148,13 +5702,8 @@ norsegerman_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 154 130 106 }
-<<<<<<< Updated upstream
-		icon = 102
-		heresy_icon = 103
-=======
 		icon = 391
 		heresy_icon = 392
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_WODANAZ
 		reformer_head_of_religion = yes
@@ -6228,19 +5777,11 @@ norsegerman_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-		intermarry = sowilo
-		intermarry = teiwaz
-		intermarry = norse_christ_reformed
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = norse_christ_reformed
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Germanic restrictive (sectarian 1), can be married only from the same group or civilization
@@ -6272,13 +5813,8 @@ norsegerman_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 154 154 106 }
-<<<<<<< Updated upstream
-		icon = 240
-		heresy_icon = 241
-=======
 		icon = 529
 		heresy_icon = 530
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_KRISTUR
@@ -6347,19 +5883,11 @@ norsegerman_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-		intermarry = sowilo
-		intermarry = teiwaz
-		intermarry = german_pagan_reformed
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Germanic restrictive (sectarian 1), can be married only from the same group or civilization
@@ -6387,11 +5915,7 @@ norsegerman_group = {
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 	}
-<<<<<<< Updated upstream
-	norse_pagan_reformed = {
-=======
 	odin_pagan_reformed = {
->>>>>>> Stashed changes
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 186 186 186 }
@@ -6464,11 +5988,7 @@ norsegerman_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
@@ -6505,13 +6025,8 @@ norsegerman_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 25 25 25 }
-<<<<<<< Updated upstream
-		icon = 278
-		heresy_icon = 279
-=======
 		icon = 567
 		heresy_icon = 568
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_FENRIR
@@ -6591,13 +6106,8 @@ norsegerman_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 158 172 189 }
-<<<<<<< Updated upstream
-		icon = 217
-		heresy_icon = 218
-=======
 		icon = 506
 		heresy_icon = 507
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_TEIWAZ
 		reformer_head_of_religion = yes
@@ -6674,15 +6184,6 @@ norsegerman_group = {
 		religious_clothing_priest = 3
 	}
 	######################
-<<<<<<< Updated upstream
-	norse_pagan = {
-		graphical_culture = norsegfx
-		color = { 182 182 182 }
-		icon = 19
-		heresy_icon = 164
-		
-		reformed = norse_pagan_reformed
-=======
 	odin_pagan = {
 		graphical_culture = norsegfx
 		color = { 182 182 182 }
@@ -6690,7 +6191,6 @@ norsegerman_group = {
 		heresy_icon = 453
 		
 		reformed = odin_pagan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = yes
 		
 		high_god_name = GOD_THE_ODIN
@@ -6760,11 +6260,7 @@ norsegerman_group = {
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Germanic restrictive (sectarian 1), can be married only from the same group or civilization
@@ -6796,21 +6292,12 @@ norsegerman_group = {
 		graphical_culture = norsegfx
 		color = { 206 186 186 }
 		icon = 19
-<<<<<<< Updated upstream
-		heresy_icon = 164
-		
-		high_god_name = GOD_TYR
-		
-		parent = norse_pagan
-		reformed = norse_pagan_reformed
-=======
 		heresy_icon = 453
 		
 		high_god_name = GOD_TYR
 		
 		parent = odin_pagan
 		reformed = odin_pagan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = yes
 		
 		piety_name = PIETY
@@ -6885,19 +6372,11 @@ norsegerman_group = {
 		graphical_culture = norsegfx
 		color = { 50 50 50 }
 		icon = 19
-<<<<<<< Updated upstream
-		heresy_icon = 164
-		
-		high_god_name = GOD_FENRIR
-		
-		parent = norse_pagan
-=======
 		heresy_icon = 453
 		
 		high_god_name = GOD_FENRIR
 		
 		parent = odin_pagan
->>>>>>> Stashed changes
 		reformed = ragnarok_reformed
 		#reformer_head_of_religion = yes
 		
@@ -6979,13 +6458,8 @@ norsegerman_group = {
 	sowilo = {
 		graphical_culture = norsegfx
 		color = { 255 255 209 }
-<<<<<<< Updated upstream
-		icon = 276
-		heresy_icon = 276
-=======
 		icon = 565
 		heresy_icon = 565
->>>>>>> Stashed changes
 		
 		reformed = northern_sun_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -7050,19 +6524,11 @@ norsegerman_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-		intermarry = teiwaz
-		intermarry = german_pagan_reformed
-		intermarry = norse_christ_reformed
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Germanic restrictive (sectarian 1), can be married only from the same group or civilization
@@ -7094,17 +6560,10 @@ norsegerman_group = {
 	nott = {
 		graphical_culture = norsegfx
 		color = { 15 20 20 }
-<<<<<<< Updated upstream
-		icon = 277
-		heresy_icon = 277
-		
-		reformed = norse_pagan_reformed
-=======
 		icon = 566
 		heresy_icon = 566
 		
 		reformed = odin_pagan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = yes
 		
 		high_god_name = GOD_NOTT
@@ -7183,13 +6642,8 @@ norsegerman_group = {
 	german_pagan = {
 		graphical_culture = norsegfx
 		color = { 189 173 158 }
-<<<<<<< Updated upstream
-		icon = 100
-		heresy_icon = 101
-=======
 		icon = 389
 		heresy_icon = 390
->>>>>>> Stashed changes
 		
 		reformed = german_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -7262,20 +6716,12 @@ norsegerman_group = {
 
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Germanic restrictive (sectarian 1), can be married only from the same group or civilization
@@ -7306,13 +6752,8 @@ norsegerman_group = {
 	irminsul = {
 		graphical_culture = norsegfx
 		color = { 189 158 158 }
-<<<<<<< Updated upstream
-		icon = 100
-		heresy_icon = 101
-=======
 		icon = 389
 		heresy_icon = 390
->>>>>>> Stashed changes
 		
 		parent = german_pagan
 		reformed = german_pagan_reformed
@@ -7395,13 +6836,8 @@ norsegerman_group = {
 	allfather = {
 		graphical_culture = norsegfx
 		color = { 91 134 134 }
-<<<<<<< Updated upstream
-		icon = 213
-		heresy_icon = 214
-=======
 		icon = 502
 		heresy_icon = 503
->>>>>>> Stashed changes
 		
 		reformed = german_pagan_reformed
 		#reformer_head_of_religion = yes
@@ -7472,20 +6908,12 @@ norsegerman_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Germanic restrictive (sectarian 1), can be married only from the same group or civilization
@@ -7517,13 +6945,8 @@ norsegerman_group = {
 	teiwaz = {
 		graphical_culture = norsegfx
 		color = { 91 111 134 }
-<<<<<<< Updated upstream
-		icon = 215
-		heresy_icon = 216
-=======
 		icon = 504
 		heresy_icon = 505
->>>>>>> Stashed changes
 		
 		reformed = teiwaz_reformed
 		#reformer_head_of_religion = yes
@@ -7623,13 +7046,8 @@ christian = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
 		color = { 143 31 255 }
-<<<<<<< Updated upstream
-		icon = 177
-		heresy_icon = 178
-=======
 		icon = 466
 		heresy_icon = 467
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		
@@ -7724,13 +7142,8 @@ christian = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
 		color = { 255 255 255 }
-<<<<<<< Updated upstream
-		icon = 106
-		heresy_icon = 107
-=======
 		icon = 595
 		heresy_icon = 396
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		
@@ -7795,13 +7208,8 @@ christian = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
 		color = { 75 138 0 }
-<<<<<<< Updated upstream
-		icon = 387
-		heresy_icon = 388
-=======
 		icon = 676
 		heresy_icon = 677
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		high_god_name = GOD_THE_BLESSED_VIRGIN
 		
@@ -7913,13 +7321,8 @@ christian = {
 		allow_in_ruler_designer = no
 		graphical_culture = westerngfx
 		color = { 255 66 129 }
-<<<<<<< Updated upstream
-		icon = 350
-		heresy_icon = 351
-=======
 		icon = 639
 		heresy_icon = 640
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_GOD
@@ -7996,13 +7399,8 @@ christian = {
 		allow_in_ruler_designer = no
 		graphical_culture = indiangfx
 		color = { 0.7 0.4 0.6 }
-<<<<<<< Updated upstream
-		icon = 347
-		heresy_icon = 348
-=======
 		icon = 636
 		heresy_icon = 637
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		reformer_head_of_religion = no
@@ -8108,13 +7506,8 @@ christian = {
 		allow_in_ruler_designer = no
 		graphical_culture = westerngfx
 		color = { 174 0 184 }
-<<<<<<< Updated upstream
-		icon = 390
-		heresy_icon = 391
-=======
 		icon = 679
 		heresy_icon = 680
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		reformer_head_of_religion = no
@@ -8199,13 +7592,8 @@ christian = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
 		color = { 94 181 119 }
-<<<<<<< Updated upstream
-		icon = 244
-		heresy_icon = 245
-=======
 		icon = 533
 		heresy_icon = 534
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		reformer_head_of_religion = no
@@ -8313,121 +7701,11 @@ christian = {
 		religious_clothing_priest = 2
 	}
 	######################
-<<<<<<< Updated upstream
-	catholic = {
-		graphical_culture = westerngfx
-		color = { 255 255 153 }
-		icon = 1
-		heresy_icon = 6
-		
-		high_god_name = GOD_GOD
-		
-		crusade_name = "CRUSADE"
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.04
-			general_opinion = 10
-			church_opinion = 20
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.65
-			land_organisation = 0.05
-			temple_vassal_min_levy = -0.35
-			temple_vassal_max_levy = -0.35
-#			monthly_character_prestige = 1.00
-#			monthly_character_piety = 0.50
-			diplomacy = 2
-			martial = -1
-			stewardship = -1
-			intrigue = 1
-			fertility = -0.10
-#			ai_zeal = 20
-#			ai_honor = 20
-#			ai_greed = 50
-#			ai_rationality = -20
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-	
-			light_cavalry_defensive = 0.20
-			light_infantry_defensive = 0.20
-			archers_defensive = 0.20
-			land_morale = 0.30
-		}
-		
-		can_call_crusade = yes
-		can_excommunicate = yes
-		can_grant_divorce = yes
-		can_grant_invasion_cb = invasion
-		can_grant_claim = yes
-		can_have_antipopes = yes
-		can_retire_to_monastery = yes
-		investiture = yes
-		priests_can_inherit = no
-		short_reign_opinion_year_mult = 4 # The default in LI is 5
-
-		# Christian open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = adoptionist
-		intermarry = apollinarist
-		intermarry = arian
-		intermarry = audianist 
-		intermarry = docetist
-		intermarry = mari_christ
-		intermarry = monophysite
-		intermarry = monothelite
-		intermarry = nasrani
-		intermarry = orthodox
-		intermarry = sabellianist 
-		intermarry = semipelagian
-		intermarry = slavic_christian
-		intermarry = unctionist
-		intermarry = cathar_reformed
-		intermarry = mari_christ_reformed
-		intermarry = montanist_reformed
-		intermarry = slavic_christian_reformed
-		# ! Not in Christian civilization  but in Christian group: not to be married from sectarian 1 Christian faiths
-		intermarry = celtic_christ
-		intermarry = norse_christ
-		intermarry = nasrani_reformed
-
-		# Christian restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = donatist 
-		intermarry = fraticelli
-		intermarry = iconoclast
-		intermarry = marcionist 
-		intermarry = melkite
-		intermarry = montanist
-		intermarry = nestorian
-		intermarry = pelagian
-		intermarry = solomonic_christ
-		intermarry = valentinian 
-		intermarry = waldensian
-		intermarry = christian_populist_reformed
-		intermarry = priscillian_reformed
-		
-		religious_clothing_head = 0
-		religious_clothing_priest = 1
-	}
-	antinomian = {
-		graphical_culture = westerngfx
-		color = { 152 255 189 }
-		icon = 106
-		heresy_icon = 107
-=======
 	antinomian = {
 		graphical_culture = westerngfx
 		color = { 152 255 189 }
 		icon = 395
 		heresy_icon = 396
->>>>>>> Stashed changes
 		
 		parent = catholic
 		reformed = christian_populist_reformed
@@ -8588,13 +7866,8 @@ christian = {
 	donatist = {
 		graphical_culture = westerngfx
 		color = { 211 211 105 }
-<<<<<<< Updated upstream
-		icon = 104
-		heresy_icon = 105
-=======
 		icon = 393
 		heresy_icon = 394
->>>>>>> Stashed changes
 		
 		parent = catholic
 		
@@ -8661,321 +7934,6 @@ christian = {
 		religious_clothing_head = 2
 		religious_clothing_priest = 2
 	}
-<<<<<<< Updated upstream
-	fraticelli = {
-		graphical_culture = westerngfx
-		color = { 225 189 152 }
-		icon = 104
-		heresy_icon = 105
-		
-		parent = catholic
-		reformed = christian_populist_reformed
-		#christian_populist_reformed has NO religious head, WAD
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN GOD_POORGOD
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = 0.01
-			general_opinion = -20
-			same_religion_opinion = 40
-			church_opinion = -5
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.20
-			land_organisation = -0.25
-			temple_vassal_min_levy = 0.05
-##			monthly_character_prestige = -2.00
-##			monthly_character_piety = -0.20
-			assassinate_chance_modifier = -0.20
-			arrest_chance_modifier = -0.20
-			diplomacy = -1
-			intrigue = 1
-			learning = 2
-			fertility = -0.10
-#			ai_ambition = 20
-#			ai_honor = -30
-#			ai_greed = -20
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_offensive = 0.50
-			light_infantry_offensive = 0.50
-			archers_offensive = 0.50
-			knights_offensive = -0.50
-			heavy_infantry_offensive = -0.50
-			pikemen_offensive = -0.50
-			land_morale = 0.80
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-		}
-		
-		allow_viking_invasion = yes
-		can_call_crusade = no
-		hard_to_convert = yes
-		short_reign_opinion_year_mult = 8 # The default in LI is 5
-		priests_can_marry = yes
-		
-		religious_clothing_head = 0
-		religious_clothing_priest = 1
-	}
-	waldensian = {
-		graphical_culture = westerngfx
-		color = { 105 105 211 }
-		icon = 104
-		heresy_icon = 105
-		
-		parent = catholic
-		reformed = christian_populist_reformed
-		#christian_populist_reformed has NO religious head, WAD
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN GOD_POORGOD
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = 0.01
-			general_opinion = -20
-			same_religion_opinion = 40
-			church_opinion = -5
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.20
-			land_organisation = -0.25
-			temple_vassal_min_levy = 0.05
-##			monthly_character_prestige = -2.00
-##			monthly_character_piety = -0.20
-			assassinate_chance_modifier = -0.20
-			arrest_chance_modifier = -0.20
-			diplomacy = -1
-			intrigue = 1
-			learning = 2
-			fertility = -0.10
-#			ai_ambition = 20
-#			ai_honor = -30
-#			ai_greed = -20
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_offensive = 0.50
-			light_infantry_offensive = 0.50
-			archers_offensive = 0.50
-			heavy_infantry_offensive = -0.50
-			knights_offensive = -0.50
-			pikemen_offensive = -0.50
-			land_morale = 0.80
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-		}
-		
-		can_call_crusade = no
-		priests_can_marry = yes
-		allow_viking_invasion = yes
-		short_reign_opinion_year_mult = 8 # The default in LI is 5
-		hard_to_convert = yes
-		
-		religious_clothing_head = 0
-		religious_clothing_priest = 1
-	}
-
-	orthodox = {
-		graphical_culture = westerngfx
-		color = { 255 212 128 }
-		icon = 2
-		heresy_icon = 7
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.02
-			general_opinion = 10
-			church_opinion = -10
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.10
-			build_cost_modifier = -0.10
-			land_organisation = 0.25
-#			monthly_character_prestige = 1.20
-			diplomacy = 3
-			stewardship = 1
-			learning = -3
-			fertility = -0.10
-#			ai_ambition = 20
-#			ai_zeal = 20
-#			ai_honor = 60
-#			ai_rationality = 50
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			heavy_infantry_defensive = 0.50
-			knights_defensive = 0.50
-			pikemen_defensive = 0.50
-			land_morale = 0.50
-		}
-		
-		pentarchy = yes
-		can_call_crusade = no
-		can_excommunicate = yes
-		can_grant_claim = yes
-		can_grant_divorce = yes
-		can_grant_invasion_cb = invasion
-		can_retire_to_monastery = yes
-		investiture = no
-		raised_vassal_opinion_loss = no
-		short_reign_opinion_year_mult = 2 # The default in LI is 5
-		has_heir_designation = yes
-		
-		# Christian open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = adoptionist
-		intermarry = apollinarist
-		intermarry = arian
-		intermarry = audianist 
-		intermarry = catholic
-		intermarry = docetist
-		intermarry = mari_christ
-		intermarry = monophysite
-		intermarry = monothelite
-		intermarry = nasrani
-		intermarry = sabellianist 
-		intermarry = semipelagian
-		intermarry = slavic_christian
-		intermarry = unctionist
-		intermarry = cathar_reformed
-		intermarry = mari_christ_reformed
-		intermarry = montanist_reformed
-		intermarry = slavic_christian_reformed
-		# ! Not in Christian civilization  but in Christian group: not to be married from sectarian 1 Christian faiths
-		intermarry = celtic_christ
-		intermarry = norse_christ
-		intermarry = nasrani_reformed
-
-		# Christian restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = donatist 
-		intermarry = fraticelli
-		intermarry = iconoclast
-		intermarry = marcionist 
-		intermarry = melkite
-		intermarry = montanist
-		intermarry = nestorian
-		intermarry = pelagian
-		intermarry = solomonic_christ
-		intermarry = valentinian 
-		intermarry = waldensian
-		intermarry = christian_populist_reformed
-		intermarry = priscillian_reformed
-
-		religious_clothing_head = 2
-		religious_clothing_priest = 2
-	}
-	bogomilist = {
-		graphical_culture = westerngfx
-		color = { 255 172 5 }
-		icon = 2
-		heresy_icon = 7
-		
-		high_god_name = GOD_GOD
-		
-		parent = orthodox
-		reformed = cathar_reformed
-		#christian_populist_reformed has NO religious head, WAD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BOGOMIL
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS PROPHET_BOGOMIL
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = 0.01
-			general_opinion = -40
-			same_religion_opinion = 80
-			church_opinion = 15 
-			land_organisation = -0.25
-			temple_vassal_min_levy = 0.05 
-##			monthly_character_prestige = -2.00
-			assassinate_chance_modifier = -0.20
-			arrest_chance_modifier = -0.20
-			diplomacy = -3
-			intrigue = 1
-			learning = 3
-#			ai_ambition = 20
-#			ai_honor = -30
-#			ai_greed = -20
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_offensive = 0.50
-			light_infantry_offensive = 0.50
-			archers_offensive = 0.50
-			heavy_infantry_offensive = -0.50
-			knights_offensive = -0.50
-			pikemen_offensive = -0.50
-			land_morale = 0.90
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-		}
-		
-		allow_viking_invasion = yes
-		can_call_crusade = no
-		short_reign_opinion_year_mult = 8 # The default in LI is 5
-		priests_can_marry = yes
-		has_heir_designation = yes
-		hard_to_convert = yes
-		
-		religious_clothing_head = 2
-		religious_clothing_priest = 2
-	} 
-=======
->>>>>>> Stashed changes
 	melkite = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
@@ -9058,13 +8016,8 @@ christian = {
 	montanist = {
 		graphical_culture = westerngfx
 		color = { 255 128 170 }
-<<<<<<< Updated upstream
-		icon = 349
-		heresy_icon = 351
-=======
 		icon = 638
 		heresy_icon = 640
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		
@@ -9326,222 +8279,11 @@ christian = {
 		religious_clothing_head = 2
 		religious_clothing_priest = 2
 	}
-<<<<<<< Updated upstream
-
-	arian = {
-		graphical_culture = westerngfx
-		color = { 255 53 63 }
-		icon = 158
-		heresy_icon = 159
-		
-		
-		
-		high_god_name = GOD_GOD
-		
-		crusade_name = "EXALTED_MARCH"
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_ARIAN
-		god_names = {
-			GOD_GOD GOD_THE_LORD PROPHET_ARIUS
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.02
-			general_opinion = 10
-			church_opinion = -10
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.10
-			build_cost_modifier = -0.10
-			land_organisation = 0.25
-#			monthly_character_prestige = 1.20
-			diplomacy = 3
-			stewardship = 1
-			learning = -3
-			fertility = -0.10
-#			ai_ambition = 20
-#			ai_zeal = 20
-#			ai_honor = 60
-#			ai_rationality = 50	
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			heavy_infantry_defensive = 0.50
-			knights_defensive = 0.50
-			pikemen_defensive = 0.50
-			land_morale = 0.50
-		}
-		
-		pentarchy = yes 
-		investiture = yes
-		can_call_crusade = no
-		can_excommunicate = yes
-		can_grant_claim = yes
-		can_grant_divorce = yes
-		can_grant_invasion_cb = invasion
-		can_have_antipopes = no
-		can_retire_to_monastery = yes
-		raised_vassal_opinion_loss = no
-		short_reign_opinion_year_mult = 2 # The default in LI is 5
-		has_heir_designation = yes
-
-		# Christian open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = adoptionist
-		intermarry = apollinarist
-		intermarry = audianist 
-		intermarry = catholic
-		intermarry = docetist
-		intermarry = mari_christ
-		intermarry = monophysite
-		intermarry = monothelite
-		intermarry = nasrani
-		intermarry = orthodox
-		intermarry = sabellianist 
-		intermarry = semipelagian
-		intermarry = slavic_christian
-		intermarry = unctionist
-		intermarry = cathar_reformed
-		intermarry = mari_christ_reformed
-		intermarry = montanist_reformed
-		intermarry = slavic_christian_reformed
-		# ! Not in Christian civilization  but in Christian group: not to be married from sectarian 1 Christian faiths
-		intermarry = celtic_christ
-		intermarry = norse_christ
-		intermarry = nasrani_reformed
-
-		# Christian restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = donatist 
-		intermarry = fraticelli
-		intermarry = iconoclast
-		intermarry = marcionist 
-		intermarry = melkite
-		intermarry = montanist
-		intermarry = nestorian
-		intermarry = pelagian
-		intermarry = solomonic_christ
-		intermarry = valentinian 
-		intermarry = waldensian
-		intermarry = christian_populist_reformed
-		intermarry = priscillian_reformed
-		
-		religious_clothing_head = 0
-		religious_clothing_priest = 1
-	}
-	adoptionist = {
-		crusade_name = CRUSADE
-		graphical_culture = westerngfx
-		color = { 255 143 51 }
-		icon = 158
-		heresy_icon = 159
-		
-		parent = arian
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.03
-			church_opinion = 15
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.55
-			temple_vassal_min_levy = -0.30
-			temple_vassal_max_levy = -0.35
-#			monthly_character_piety = 0.30
-			diplomacy = 1
-			martial = -1
-			intrigue = 1
-			learning = 1
-			fertility = -0.10
-#			ai_ambition = 20
-#			ai_zeal = 20
-#			ai_greed = 50
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_defensive = 0.20
-			light_infantry_defensive = 0.20
-			archers_defensive = 0.20
-			land_morale = 0.30
-		}
-		
-		pentarchy = yes
-		investiture = yes
-		can_call_crusade = yes
-		can_excommunicate = yes
-		can_grant_claim = yes
-		can_grant_divorce = yes
-		can_grant_invasion_cb = invasion
-		can_have_antipopes = no
-		short_reign_opinion_year_mult = 4 # The default in LI is 5
-		
-		# Christian open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = apollinarist
-		intermarry = arian
-		intermarry = audianist 
-		intermarry = catholic
-		intermarry = docetist
-		intermarry = mari_christ
-		intermarry = monophysite
-		intermarry = monothelite
-		intermarry = nasrani
-		intermarry = orthodox
-		intermarry = sabellianist 
-		intermarry = semipelagian
-		intermarry = slavic_christian
-		intermarry = unctionist
-		intermarry = cathar_reformed
-		intermarry = mari_christ_reformed
-		intermarry = montanist_reformed
-		intermarry = slavic_christian_reformed
-		# ! Not in Christian civilization  but in Christian group: not to be married from sectarian 1 Christian faiths
-		intermarry = celtic_christ
-		intermarry = norse_christ
-		intermarry = nasrani_reformed
-
-		# Christian restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = donatist 
-		intermarry = fraticelli
-		intermarry = iconoclast
-		intermarry = marcionist 
-		intermarry = melkite
-		intermarry = montanist
-		intermarry = nestorian
-		intermarry = pelagian
-		intermarry = solomonic_christ
-		intermarry = valentinian 
-		intermarry = waldensian
-		intermarry = christian_populist_reformed
-		intermarry = priscillian_reformed
-
-		religious_clothing_head = 2
-		religious_clothing_priest = 2
-	}
-	mari_christ = {
-		graphical_culture = westerngfx
-		color = { 61 255 51 }
-		icon = 386
-		heresy_icon = 388
-=======
 	mari_christ = {
 		graphical_culture = westerngfx
 		color = { 61 255 51 }
 		icon = 675
 		heresy_icon = 677
->>>>>>> Stashed changes
 		
 		parent = arian
 		reformed = mari_christ_reformed
@@ -9654,13 +8396,8 @@ christian = {
 	priscillian = {
 		graphical_culture = westerngfx
 		color = { 245 51 255 }
-<<<<<<< Updated upstream
-		icon = 389
-		heresy_icon = 391
-=======
 		icon = 678
 		heresy_icon = 680
->>>>>>> Stashed changes
 		
 		parent = arian
 		reformed = priscillian_reformed
@@ -9733,96 +8470,10 @@ christian = {
 		religious_clothing_head = 0
 		religious_clothing_priest = 1
 	}
-<<<<<<< Updated upstream
-	
-	nestorian = {
-		crusade_name = CRUSADE
-		graphical_culture = westerngfx
-		color = { 102 204 153 }
-		icon = 46
-		heresy_icon = 47
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_CHRISTHUMAN GOD_CHRISTDIVINE PROPHET_NESTORIUS
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			general_opinion = -10
-			same_religion_opinion = 40
-#			dynasty_opinion = 10
-			castle_vassal_tax_modifier = 0.20
-			city_vassal_tax_modifier = -0.10
-			land_organisation = -0.05
-			city_vassal_min_levy = -0.20
-			city_vassal_max_levy = -0.20
-			temple_vassal_min_levy = 0.30
-			temple_vassal_max_levy = 0.30
-#			monthly_character_prestige = 1.00
-#			monthly_character_piety = 1.00
-			assassinate_chance_modifier = 0.40
-			arrest_chance_modifier = 0.40
-			martial = 2
-			stewardship = -2
-			intrigue = 1
-			fertility = -0.10
-#			ai_ambition = 50
-#			ai_zeal = 80
-#			ai_honor = -30
-#			ai_rationality = -50
-		}
-		unit_modifier = {
-			key = "OFF_RELIGION"
-			
-			levy_size = 0.15
-			light_cavalry_offensive = -0.10
-			light_infantry_offensive = -0.10
-			archers_offensive = -0.10
-			knights_offensive = 0.10
-			heavy_infantry_offensive = 0.10
-			pikemen_offensive = 0.10
-			land_morale = 0.35
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-			land_morale = 1.25
-		}
-		
-		allow_viking_invasion = yes
-		pentarchy = yes
-		can_call_crusade = yes
-		can_excommunicate = yes
-		can_grant_claim = yes
-		can_grant_divorce = yes
-		can_grant_invasion_cb = invasion
-		defensive_attrition = yes
-		investiture = no
-		short_reign_opinion_year_mult = 6 # The default in LI is 5
-		
-		religious_clothing_head = 2
-		religious_clothing_priest = 2
-	}
-	docetist = {
-		graphical_culture = westerngfx
-		color = { 46 138 92 }
-		icon = 46
-=======
 	docetist = {
 		graphical_culture = westerngfx
 		color = { 46 138 92 }
 		icon = 335
->>>>>>> Stashed changes
 		heresy_icon = 47
 		
 		parent = nestorian
@@ -9933,281 +8584,6 @@ christian = {
 		religious_clothing_head = 2
 		religious_clothing_priest = 2
 	}
-<<<<<<< Updated upstream
-	iconoclast = {
-		crusade_name = CRUSADE
-		graphical_culture = westerngfx
-		color = { 153 204 102 }
-		icon = 46 #No Icon maybe???
-		heresy_icon = 47
-		
-		parent = nestorian
-		
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN
-		}
-		evil_god_names = {
-			SATAN IDOLATERS
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.02
-			general_opinion = -20
-			same_religion_opinion = 40
-			church_opinion = 20
-#			dynasty_opinion = -5
-			castle_vassal_tax_modifier = 0.30
-			city_vassal_tax_modifier = -0.05
-			temple_vassal_tax_modifier = -0.35
-			castle_vassal_min_levy = 0.10
-			castle_vassal_max_levy = 0.10
-			temple_vassal_min_levy = -0.15
-			temple_vassal_max_levy = -0.15
-#			monthly_character_piety = 1.00
-			assassinate_chance_modifier = 0.10
-			arrest_chance_modifier = 0.10
-			diplomacy = -1
-			martial = 1
-			stewardship = -2
-			intrigue = 3
-			learning = 3
-			fertility = -0.10
-#			ai_ambition = 50
-#			ai_zeal = 70
-#			ai_honor = -20
-#			ai_greed = 50
-#			ai_rationality = -40
-		}
-		unit_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_offensive = 0.15
-			light_infantry_offensive = 0.15
-			archers_offensive = 0.15
-			land_morale = 0.20
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_defensive = 0.20
-			light_infantry_defensive = 0.20
-			archers_defensive = 0.20
-			land_morale = 0.30
-		}
-		
-		can_call_crusade = yes
-		short_reign_opinion_year_mult = 4 # The default in LI is 5
-		
-		religious_clothing_head = 2
-		religious_clothing_priest = 2
-	}
-	
-	monophysite = {
-		crusade_name = CRUSADE
-		graphical_culture = westerngfx
-		color = { 51 138 225 }
-		icon = 11
-		heresy_icon = 13
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.04
-			general_opinion = 10
-			church_opinion = 20
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.65
-			land_organisation = 0.05
-			temple_vassal_min_levy = -0.35
-			temple_vassal_max_levy = -0.35
-#			monthly_character_prestige = 1.00
-#			monthly_character_piety = 0.50
-			diplomacy = 2
-			martial = -1
-			stewardship = -1
-			intrigue = 1
-			fertility = -0.10
-#			ai_zeal = 20
-#			ai_honor = 20
-#			ai_greed = 50
-#			ai_rationality = -20
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_defensive = 0.20
-			light_infantry_defensive = 0.20
-			archers_defensive = 0.20
-			land_morale = 0.30
-		}
-		
-		pentarchy = yes
-		investiture = no
-		can_call_crusade = yes
-		can_excommunicate = yes
-		can_grant_claim = yes
-		can_grant_divorce = yes
-		can_grant_invasion_cb = invasion
-		short_reign_opinion_year_mult = 4 # The default in LI is 5
-
-		# Christian open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = adoptionist
-		intermarry = apollinarist
-		intermarry = arian
-		intermarry = audianist 
-		intermarry = catholic
-		intermarry = docetist
-		intermarry = mari_christ
-		intermarry = monothelite
-		intermarry = nasrani
-		intermarry = orthodox
-		intermarry = sabellianist 
-		intermarry = semipelagian
-		intermarry = slavic_christian
-		intermarry = unctionist
-		intermarry = cathar_reformed
-		intermarry = mari_christ_reformed
-		intermarry = montanist_reformed
-		intermarry = slavic_christian_reformed
-		# ! Not in Christian civilization  but in Christian group: not to be married from sectarian 1 Christian faiths
-		intermarry = celtic_christ
-		intermarry = norse_christ
-		intermarry = nasrani_reformed
-
-		# Christian restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = donatist 
-		intermarry = fraticelli
-		intermarry = iconoclast
-		intermarry = marcionist 
-		intermarry = melkite
-		intermarry = montanist
-		intermarry = nestorian
-		intermarry = pelagian
-		intermarry = solomonic_christ
-		intermarry = valentinian 
-		intermarry = waldensian
-		intermarry = christian_populist_reformed
-		intermarry = priscillian_reformed
-		
-		religious_clothing_head = 2
-		religious_clothing_priest = 2
-	}
-	monothelite = {
-		crusade_name = CRUSADE
-		graphical_culture = westerngfx
-		color = { 51 225 225 }
-		icon = 236
-		heresy_icon = 237
-		
-		parent = monophysite
-		
-		high_god_name = GOD_GOD
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_BIBLE
-		god_names = {
-			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN
-		}
-		evil_god_names = {
-			SATAN LUCIFER THE_DEVIL
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.03
-			church_opinion = 15
-			castle_vassal_tax_modifier = 0.20
-			temple_vassal_tax_modifier = -0.55
-			temple_vassal_min_levy = -0.30
-			temple_vassal_max_levy = -0.35
-#			monthly_character_piety = 0.30
-			diplomacy = 1
-			martial = -1
-			intrigue = 1
-			learning = 1
-			fertility = -0.10
-#			ai_ambition = 20
-#			ai_zeal = 20
-#			ai_greed = 50
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_defensive = 0.20
-			light_infantry_defensive = 0.20
-			archers_defensive = 0.20
-			land_morale = 0.30
-		}
-		
-		pentarchy = yes
-		can_call_crusade = yes
-		can_excommunicate = yes
-		can_grant_claim = yes
-		can_grant_divorce = yes
-		can_grant_invasion_cb = invasion
-		investiture = no
-		short_reign_opinion_year_mult = 4 # The default in LI is 5
-
-		# Christian open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = adoptionist
-		intermarry = apollinarist
-		intermarry = arian
-		intermarry = audianist 
-		intermarry = catholic
-		intermarry = docetist
-		intermarry = mari_christ
-		intermarry = monophysite
-		intermarry = nasrani
-		intermarry = orthodox
-		intermarry = sabellianist 
-		intermarry = semipelagian
-		intermarry = slavic_christian
-		intermarry = unctionist
-		intermarry = cathar_reformed
-		intermarry = mari_christ_reformed
-		intermarry = montanist_reformed
-		intermarry = slavic_christian_reformed
-		# ! Not in Christian civilization  but in Christian group: not to be married from sectarian 1 Christian faiths
-		intermarry = celtic_christ
-		intermarry = norse_christ
-		intermarry = nasrani_reformed
-
-		# Christian restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = donatist 
-		intermarry = fraticelli
-		intermarry = iconoclast
-		intermarry = marcionist 
-		intermarry = melkite
-		intermarry = montanist
-		intermarry = nestorian
-		intermarry = pelagian
-		intermarry = solomonic_christ
-		intermarry = valentinian 
-		intermarry = waldensian
-		intermarry = christian_populist_reformed
-		intermarry = priscillian_reformed
-		
-		religious_clothing_head = 2
-		religious_clothing_priest = 2
-	}
-=======
->>>>>>> Stashed changes
 	apollinarist = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
@@ -10311,13 +8687,8 @@ christian = {
 	solomonic_christ = {
 		graphical_culture = westerngfx
 		color = { 150 110 110 }
-<<<<<<< Updated upstream
-		icon = 394
-		heresy_icon = 395
-=======
 		icon = 683
 		heresy_icon = 684
->>>>>>> Stashed changes
 		
 		
 		
@@ -10416,13 +8787,8 @@ christian = {
 	audianist = {
 		graphical_culture = westerngfx
 		color = { 198 95 148 }
-<<<<<<< Updated upstream
-		icon = 344
-		heresy_icon = 344
-=======
 		icon = 633
 		heresy_icon = 633
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		
@@ -10482,13 +8848,8 @@ christian = {
 	celtic_christ = {
 		graphical_culture = westerngfx
 		color = { 121 210 129 }
-<<<<<<< Updated upstream
-		icon = 84
-		heresy_icon = 86
-=======
 		icon = 373
 		heresy_icon = 375
->>>>>>> Stashed changes
 		
 		reformed = celtic_christ_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -10601,13 +8962,8 @@ christian = {
 	marcionist = {
 		graphical_culture = westerngfx
 		color = { 251 255 71 }
-<<<<<<< Updated upstream
-		icon = 345
-		heresy_icon = 345
-=======
 		icon = 634
 		heresy_icon = 634
->>>>>>> Stashed changes
 		
 		
 		
@@ -10698,13 +9054,8 @@ christian = {
 	nasrani = {
 		graphical_culture = westerngfx
 		color = { 75 90 30 }
-<<<<<<< Updated upstream
-		icon = 346
-		heresy_icon = 346
-=======
 		icon = 635
 		heresy_icon = 635
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		
@@ -10810,13 +9161,8 @@ christian = {
 	norse_christ = {
 		graphical_culture = westerngfx
 		color = { 201 201 156 }
-<<<<<<< Updated upstream
-		icon = 238
-		heresy_icon = 239
-=======
 		icon = 327
 		heresy_icon = 328
->>>>>>> Stashed changes
 		
 		reformed = norse_christ_reformed
 		#reformer_head_of_religion = yes
@@ -10927,13 +9273,8 @@ christian = {
 	pelagian = {
 		graphical_culture = westerngfx
 		color = { 166 101 230 }
-<<<<<<< Updated upstream
-		icon = 233
-		heresy_icon = 233
-=======
 		icon = 522
 		heresy_icon = 522
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		
@@ -11010,13 +9351,8 @@ christian = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
 		color = { 230 101 230 }
-<<<<<<< Updated upstream
-		icon = 234
-		heresy_icon = 234
-=======
 		icon = 523
 		heresy_icon = 523
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_GOD
 		
@@ -11113,13 +9449,8 @@ christian = {
 	sethian = {
 		graphical_culture = westerngfx
 		color = { 25 0 0 }
-<<<<<<< Updated upstream
-		icon = 227
-		heresy_icon = 228
-=======
 		icon = 516
 		heresy_icon = 517
->>>>>>> Stashed changes
 		
 		reformed = sethian_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -11181,13 +9512,8 @@ christian = {
 	slavic_christian = {
 		graphical_culture = westerngfx
 		color = { 155 180 93 }
-<<<<<<< Updated upstream
-		icon = 242
-		heresy_icon = 243
-=======
 		icon = 531
 		heresy_icon = 532
->>>>>>> Stashed changes
 		
 		reformed = slavic_christian_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -11298,13 +9624,8 @@ christian = {
 	unctionist = {
 		graphical_culture = westerngfx
 		color = { 0 0 255 }
-<<<<<<< Updated upstream
-		icon = 235
-		heresy_icon = 235
-=======
 		icon = 524
 		heresy_icon = 524
->>>>>>> Stashed changes
 		
 		
 		
@@ -11413,13 +9734,8 @@ egyptian_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = egyptiangfx
 		color = { 236 190 51 }
-<<<<<<< Updated upstream
-		icon = 250
-		heresy_icon = 251
-=======
 		icon = 539
 		heresy_icon = 540
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_AMONRA
 		reformer_head_of_religion = no
@@ -11506,13 +9822,8 @@ egyptian_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = egyptiangfx
 		color = { 250 211 111 }
-<<<<<<< Updated upstream
-		icon = 252
-		heresy_icon = 253
-=======
 		icon = 541
 		heresy_icon = 542
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ATEN
 		reformer_head_of_religion = yes
@@ -11588,13 +9899,8 @@ egyptian_group = {
 		crusade_name = CRUSADE
 		graphical_culture = egyptiangfx
 		color = { 168 18 93 }
-<<<<<<< Updated upstream
-		icon = 112
-		heresy_icon = 113
-=======
 		icon = 401
 		heresy_icon = 402
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_OSIRIS
 		reformer_head_of_religion = no
@@ -11682,13 +9988,8 @@ egyptian_group = {
 		crusade_name = CRUSADE
 		graphical_culture = egyptiangfx
 		color = { 45 30 30 }
-<<<<<<< Updated upstream
-		icon = 248
-		heresy_icon = 249
-=======
 		icon = 537
 		heresy_icon = 538
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_SET
@@ -11762,13 +10063,8 @@ egyptian_group = {
 	amun = {
 		graphical_culture = egyptiangfx
 		color = { 236 190 51 }
-<<<<<<< Updated upstream
-		icon = 185
-		heresy_icon = 186
-=======
 		icon = 474
 		heresy_icon = 475
->>>>>>> Stashed changes
 		
 		reformed = amun_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -11852,13 +10148,8 @@ egyptian_group = {
 	aten = {
 		graphical_culture = egyptiangfx
 		color = { 255 216 116 }
-<<<<<<< Updated upstream
-		icon = 185
-		heresy_icon = 186
-=======
 		icon = 474
 		heresy_icon = 475
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ATEN
 		
@@ -11933,13 +10224,8 @@ egyptian_group = {
 	horus_re = {
 		graphical_culture = egyptiangfx
 		color = { 196 110 60 }
-<<<<<<< Updated upstream
-		icon = 185
-		heresy_icon = 186
-=======
 		icon = 474
 		heresy_icon = 475
->>>>>>> Stashed changes
 		
 		parent = amun
 		reformed = amun_reformed
@@ -12015,13 +10301,8 @@ egyptian_group = {
 	isis = {
 		graphical_culture = egyptiangfx
 		color = { 173 113 98 }
-<<<<<<< Updated upstream
-		icon = 110
-		heresy_icon = 111
-=======
 		icon = 399
 		heresy_icon = 400
->>>>>>> Stashed changes
 		
 		reformed = isis_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -12108,13 +10389,8 @@ egyptian_group = {
 	set = {
 		graphical_culture = egyptiangfx
 		color = { 86 26 50 }
-<<<<<<< Updated upstream
-		icon = 246
-		heresy_icon = 247
-=======
 		icon = 535
 		heresy_icon = 536
->>>>>>> Stashed changes
 		
 		reformed = set_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -12206,11 +10482,7 @@ finnish_group = {
 	ai_convert_other_group = 2 # always try to convert
 	
 	# Reformed
-<<<<<<< Updated upstream
-	finnish_pagan_reformed = {
-=======
 	suomenusko_pagan_reformed = {
->>>>>>> Stashed changes
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 122 122 0 }
@@ -12290,11 +10562,7 @@ finnish_group = {
 
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-=======
 		intermarry = suomenusko_pagan
->>>>>>> Stashed changes
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
@@ -12326,13 +10594,8 @@ finnish_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 182 182 114 }
-<<<<<<< Updated upstream
-		icon = 115
-		heresy_icon = 116
-=======
 		icon = 404
 		heresy_icon = 405
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_KUBRAT
 		reformer_head_of_religion = yes
@@ -12406,17 +10669,10 @@ finnish_group = {
 		
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 
 		# Finnic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = voipel
@@ -12446,13 +10702,8 @@ finnish_group = {
 		crusade_name = CRUSADE
 		graphical_culture = norsegfx
 		color = { 9 33 57 }
-<<<<<<< Updated upstream
-		icon = 118
-		heresy_icon = 119
-=======
 		icon = 407
 		heresy_icon = 408
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_VOIPEL
@@ -12529,15 +10780,6 @@ finnish_group = {
 		religious_clothing_priest = 3
 	}
 	######################
-<<<<<<< Updated upstream
-	finnish_pagan = {
-		graphical_culture = norsegfx
-		color = { 0 122 61 }
-		icon = 25
-		heresy_icon = 167
-		
-		reformed = finnish_pagan_reformed
-=======
 	suomenusko_pagan = {
 		graphical_culture = norsegfx
 		color = { 0 122 61 }
@@ -12545,7 +10787,6 @@ finnish_group = {
 		heresy_icon = 456
 		
 		reformed = suomenusko_pagan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = yes
 		
 		high_god_name = GOD_UKKO
@@ -12614,11 +10855,7 @@ finnish_group = {
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 
 		# Finnic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = voipel
@@ -12647,17 +10884,10 @@ finnish_group = {
 	ilmatar = {
 		graphical_culture = norsegfx
 		color = { 122 0 61 }
-<<<<<<< Updated upstream
-		icon = 286
-		heresy_icon = 286
-		
-		reformed = finnish_pagan_reformed
-=======
 		icon = 575
 		heresy_icon = 575
 		
 		reformed = suomenusko_pagan_reformed
->>>>>>> Stashed changes
 		#reformer_head_of_religion = yes
 		
 		high_god_name = GOD_ILMATAR
@@ -12724,17 +10954,10 @@ finnish_group = {
 		
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 
 		# Finnic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = voipel
@@ -12763,13 +10986,8 @@ finnish_group = {
 	jumala = {
 		graphical_culture = norsegfx
 		color = { 55 200 255 }
-<<<<<<< Updated upstream
-		icon = 287
-		heresy_icon = 287
-=======
 		icon = 576
 		heresy_icon = 576
->>>>>>> Stashed changes
 		
 		reformed = northern_sun_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -12842,17 +11060,10 @@ finnish_group = {
 		
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 
 		# Finnic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = voipel
@@ -12881,13 +11092,8 @@ finnish_group = {
 	chumbylat = {
 		graphical_culture = norsegfx
 		color = { 114 114 59 }
-<<<<<<< Updated upstream
-		icon = 114
-		heresy_icon = 116
-=======
 		icon = 403
 		heresy_icon = 405
->>>>>>> Stashed changes
 		
 		reformed = chumbylat_reformed
 		#reformer_head_of_religion = yes
@@ -12956,19 +11162,11 @@ finnish_group = {
 		hard_to_convert = yes
 		
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 
 		# Finnic restrictive (sectarian 1), can be married from the same group or civilization or related ones
 		intermarry = voipel
@@ -12997,13 +11195,8 @@ finnish_group = {
 	voipel = {
 		graphical_culture = norsegfx
 		color = { 73 73 49 }
-<<<<<<< Updated upstream
-		icon = 117
-		heresy_icon = 119
-=======
 		icon = 406
 		heresy_icon = 408
->>>>>>> Stashed changes
 		
 		reformed = voipel_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -13102,13 +11295,8 @@ graecoroman_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = hellengfx
 		color = { 153 133 153 }
-<<<<<<< Updated upstream
-		icon = 121
-		heresy_icon = 122
-=======
 		icon = 410
 		heresy_icon = 411
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_ZEUS
@@ -13193,11 +11381,7 @@ graecoroman_group = {
 		graphical_culture = hellengfx
 		color = { 153 133 133 }
 		icon = 37
-<<<<<<< Updated upstream
-		heresy_icon = 120
-=======
 		heresy_icon = 409
->>>>>>> Stashed changes
 		
 		reformed = graeco_roman_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -13303,11 +11487,7 @@ graecoroman_group = {
 		graphical_culture = hellengfx
 		color = { 169 106 126 }
 		icon = 37
-<<<<<<< Updated upstream
-		heresy_icon = 120
-=======
 		heresy_icon = 409
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_JUPITEROPTIMUSMAXIMUS
 		
@@ -13419,11 +11599,7 @@ graecoroman_group = {
 		graphical_culture = westerngfx
 		color = { 190 150 180 }
 		icon = 37
-<<<<<<< Updated upstream
-		heresy_icon = 120
-=======
 		heresy_icon = 409
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_DIONYSUS
 		
@@ -13502,13 +11678,8 @@ graecoroman_group = {
 		crusade_name = CRUSADE
 		graphical_culture = hellengfx
 		color = { 212 212 115 }
-<<<<<<< Updated upstream
-		icon = 189
-		heresy_icon = 190
-=======
 		icon = 478
 		heresy_icon = 479
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ALEXAMON
 		
@@ -13589,13 +11760,8 @@ graecoroman_group = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
 		color = { 66 73 0 }
-<<<<<<< Updated upstream
-		icon = 374
-		heresy_icon = 374
-=======
 		icon = 663
 		heresy_icon = 663
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ALEXANDROS
 		
@@ -13671,13 +11837,8 @@ graecoroman_group = {
 	roman_imperial = {
 		graphical_culture = hellengfx
 		color = { 151 94 114 }
-<<<<<<< Updated upstream
-		icon = 221
-		heresy_icon = 221
-=======
 		icon = 510
 		heresy_icon = 510
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_JUPITER
 		
@@ -13786,13 +11947,8 @@ graecoroman_group = {
 	cybele = {
 		graphical_culture = hellengfx
 		color = { 179 128 144 }
-<<<<<<< Updated upstream
-		icon = 64
-		heresy_icon = 66
-=======
 		icon = 353
 		heresy_icon = 355
->>>>>>> Stashed changes
 		
 		reformed = cybele_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -13909,13 +12065,8 @@ indian_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = hindugfx
 		color = { 0.7 0.4 0.35 }
-<<<<<<< Updated upstream
-		icon = 322
-		heresy_icon = 323
-=======
 		icon = 611
 		heresy_icon = 612
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_KUBERA
@@ -13993,13 +12144,8 @@ indian_group = {
 		crusade_name = CRUSADE
 		graphical_culture = hindugfx
 		color = { 0.8 0.4 0.35 }
-<<<<<<< Updated upstream
-		icon = 325
-		heresy_icon = 326
-=======
 		icon = 614
 		heresy_icon = 615
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_KARTIKEYA
@@ -14074,13 +12220,8 @@ indian_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = hindugfx
 		color = { 0.6 0.3 0.6 }
-<<<<<<< Updated upstream
-		icon = 319
-		heresy_icon = 320
-=======
 		icon = 608
 		heresy_icon = 609
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_SURYA
@@ -14158,13 +12299,8 @@ indian_group = {
 		crusade_name = CRUSADE
 		graphical_culture = hindugfx
 		color = { 0.4 0.3 0.6 }
-<<<<<<< Updated upstream
-		icon = 123
-		heresy_icon = 124
-=======
 		icon = 412
 		heresy_icon = 413
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_BRAHMA
 		reformer_head_of_religion = no
@@ -14244,91 +12380,6 @@ indian_group = {
 		religious_clothing_priest = 8
 	}
 	######################
-<<<<<<< Updated upstream
-	hindu = {
-		graphical_culture = hindugfx
-		color = { 1.0 0.0 0.0 }
-		icon = 44
-		heresy_icon = 45
-		
-		high_god_name = GOD_BRAHMA
-		
-		piety_name = KARMA
-		priest_title = PUJARI
-		scripture_name = THE_MAHABHARATA
-		god_names = {
-			GOD_SHIVA GOD_THE_LORD GOD_THE_SUPREME
-		}
-		evil_god_names = {
-			THE_VINAYAKAS
-		}
-		
-		character_modifier = {
-			global_revolt_risk = 0.03
-			general_opinion = 10
-			church_opinion = 5
-			sex_appeal_opinion = 10
-			temple_vassal_tax_modifier = 0.30
-			land_organisation = -0.05
-			castle_vassal_min_levy = 0.10
-			castle_vassal_max_levy = 0.10
-			city_vassal_min_levy = -0.10
-			city_vassal_max_levy = -0.10
-			temple_vassal_min_levy = -0.20
-			temple_vassal_max_levy = -0.20
-#			monthly_character_prestige = 0.80
-			diplomacy = 1
-			martial = 1
-			stewardship = -1
-			learning = -1
-			fertility = 0.20
-#			ai_ambition = -20
-#			ai_zeal = 30
-#			ai_honor = 40
-#			ai_rationality = -20
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION"
-			
-			levy_size = 0.20
-			land_morale = -0.10
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION"
-			
-			light_cavalry_defensive = 1.20
-			light_infantry_defensive = 1.20
-			archers_defensive = 1.20
-			heavy_infantry_defensive = 0.20
-			knights_defensive = 0.20
-			pikemen_defensive = 0.20
-			land_morale = 1.90
-		}
-		
-		can_call_crusade = no
-		can_grant_divorce = yes
-		independence_war_score_bonus = 20
-		priests_can_inherit = no
-		priests_can_marry = yes
-		hard_to_convert = yes
-		
-		# Indian open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = kubera
-		intermarry = murugan
-		intermarry = kubera_reformed
-		intermarry = murugan_reformed
-		intermarry = saura_reformed
-		intermarry = vidharma_reformed
-
-		# Indian restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = saura
-		intermarry = vidharma
-		
-		religious_clothing_head = 8
-		religious_clothing_priest = 8
-	}
-=======
->>>>>>> Stashed changes
 	vidharma = {
 		graphical_culture = hindugfx
 		color = { 187 56 145 }
@@ -14418,97 +12469,11 @@ indian_group = {
 		religious_clothing_priest = 10
 	}
 	
-<<<<<<< Updated upstream
-	jain = {
-		graphical_culture = jaingfx
-		color = { 1.0 1.0 0.4 }
-		icon = 42
-		heresy_icon = 43
-		
-		high_god_name = GOD_THE_TIRTHANKARAS
-		
-		piety_name = PURITY
-		priest_title = NIRGRANTHA
-		scripture_name = THE_MAHABHARATA
-		god_names = {
-			GOD_THE_TIRTHANKARAS GOD_RISHABH GOD_AJINATH GOD_SAMBHAVANATH # Add more Tirthankaras
-		}
-		evil_god_names = {
-			THE_PUNISHERS
-		}
-		
-		character_modifier = {
-			general_opinion = -30
-			same_religion_opinion = 60
-			church_opinion = 5
-			sex_appeal_opinion = 10
-			city_vassal_tax_modifier = -0.10
-			temple_vassal_tax_modifier = 0.70
-			land_organisation = -0.15
-			city_vassal_min_levy = -0.20
-			city_vassal_max_levy = -0.20
-			temple_vassal_min_levy = 0.35
-			temple_vassal_max_levy = 0.30
-#			monthly_character_piety = 0.90
-			assassinate_chance_modifier = 0.40
-			arrest_chance_modifier = 0.40
-			diplomacy = -4
-			martial = 2
-			stewardship = -1
-			intrigue = 1
-			learning = 3
-			fertility = 0.20
-#			ai_ambition = 70
-#			ai_zeal = 90
-#			ai_honor = -50
-#			ai_rationality = -30
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION"
-			
-			levy_size = 0.20
-			land_morale = 0.45
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION"
-			
-			light_cavalry_defensive = 1.20
-			light_infantry_defensive = 1.20
-			archers_defensive = 1.20
-			heavy_infantry_defensive = 0.20
-			knights_defensive = 0.20
-			pikemen_defensive = 0.20
-			land_morale = 2.40
-		}
-		
-		allow_viking_invasion = yes
-		can_grant_divorce = yes
-		defensive_attrition = yes
-		pacifist = yes
-		peace_piety_gain = 1.0 # Gains 1 piety each month while at peace
-		priests_can_marry = yes
-		priests_can_inherit = no
-		short_reign_opinion_year_mult = 6 # The default in LI is 5
-		hard_to_convert = yes
-		
-		intermarry = hindu
-		
-		religious_clothing_head = 9
-		religious_clothing_priest = 9
-	}
-	
-	saura = {
-		graphical_culture = hindugfx
-		color = { 165 70 85 }
-		icon = 318
-		heresy_icon = 318
-=======
 	saura = {
 		graphical_culture = hindugfx
 		color = { 165 70 85 }
 		icon = 607
 		heresy_icon = 607
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_SURYA
 		
@@ -14582,13 +12547,8 @@ indian_group = {
 	kubera = {
 		graphical_culture = hindugfx
 		color = { 160 170 88 }
-<<<<<<< Updated upstream
-		icon = 321
-		heresy_icon = 321
-=======
 		icon = 610
 		heresy_icon = 610
->>>>>>> Stashed changes
 		
 		reformed = kubera_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -14668,13 +12628,8 @@ indian_group = {
 	murugan = {
 		graphical_culture = hindugfx
 		color = { 47 68 60 }
-<<<<<<< Updated upstream
-		icon = 324
-		heresy_icon = 324
-=======
 		icon = 613
 		heresy_icon = 613
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_KARTIKEYA
 		
@@ -14763,13 +12718,8 @@ indohelen_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = hindugfx
 		color = { 175 194 213 }
-<<<<<<< Updated upstream
-		icon = 156
-		heresy_icon = 157
-=======
 		icon = 445
 		heresy_icon = 446
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_ZEUSOROMASDES
@@ -14890,17 +12840,10 @@ indohelen_group = {
 		intermarry = zurvanism_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 		
 		religious_clothing_head = 14
@@ -14910,13 +12853,8 @@ indohelen_group = {
 	indohelen = {
 		graphical_culture = hindugfx
 		color = { 95 134 171 }
-<<<<<<< Updated upstream
-		icon = 155
-		heresy_icon = 157
-=======
 		icon = 444
 		heresy_icon = 446
->>>>>>> Stashed changes
 		
 		reformed = indohelen_reformed
 		#reformer_head_of_religion = yes
@@ -15028,17 +12966,10 @@ indohelen_group = {
 		intermarry = zurvanism_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 		
 		religious_clothing_head = 14
@@ -15048,13 +12979,8 @@ indohelen_group = {
 	indoh_bud = {
 		graphical_culture = buddhistgfx
 		color = { 190 215 225 }
-<<<<<<< Updated upstream
-		icon = 371
-		heresy_icon = 371
-=======
 		icon = 660
 		heresy_icon = 660
->>>>>>> Stashed changes
 		
 		high_god_name = PROPHET_MEGAPROSTATISDAMAS
 		
@@ -15169,13 +13095,8 @@ indohelen_group = {
 	indoh_confucian = {
 		graphical_culture = mongolgfx
 		color = { 140 145 65 }
-<<<<<<< Updated upstream
-		icon = 372
-		heresy_icon = 372
-=======
 		icon = 661
 		heresy_icon = 661
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_HELEN
 		
@@ -15272,17 +13193,10 @@ indohelen_group = {
 		intermarry = zal_christ
 		
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 		
 		religious_clothing_head = 6
@@ -15292,13 +13206,8 @@ indohelen_group = {
 	indoh_hindu = {
 		graphical_culture = hindugfx
 		color = { 195 133 107 }
-<<<<<<< Updated upstream
-		icon = 373
-		heresy_icon = 373
-=======
 		icon = 662
 		heresy_icon = 662
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ZEUSINDRA
 		
@@ -15414,13 +13323,8 @@ indohelen_group = {
 	indoh_zor = {
 		graphical_culture = persiangfx
 		color = { 0.8 0 0 }
-<<<<<<< Updated upstream
-		icon = 231
-		heresy_icon = 231
-=======
 		icon = 520
 		heresy_icon = 520
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_OROMASDES
 		
@@ -15550,13 +13454,8 @@ inuit_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 0.6 0.3 0.3 }
-<<<<<<< Updated upstream
-		icon = 126
-		heresy_icon = 127
-=======
 		icon = 415
 		heresy_icon = 416
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_IGALUK
@@ -15625,19 +13524,11 @@ inuit_group = {
 		intermarry = inuit_pagan_reformed
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		
 		religious_clothing_head = 4
 		religious_clothing_priest = 4
@@ -15646,13 +13537,8 @@ inuit_group = {
 	inuit_pagan = {
 		graphical_culture = norsegfx
 		color = { 40 67 103 }
-<<<<<<< Updated upstream
-		icon = 125
-		heresy_icon = 128
-=======
 		icon = 414
 		heresy_icon = 417
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_IGALUK
 		
@@ -15722,19 +13608,11 @@ inuit_group = {
 		intermarry = inuit_pagan_reformed
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		
 		religious_clothing_head = 4
 		religious_clothing_priest = 4
@@ -15756,13 +13634,8 @@ jewish_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = jewishgfx
 		color = { 63 49 32 }
-<<<<<<< Updated upstream
-		icon = 260
-		heresy_icon = 261
-=======
 		icon = 549
 		heresy_icon = 550
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = ADONAI
@@ -15955,13 +13828,8 @@ jewish_group = {
 	jud_ark = {
 		graphical_culture = jewishgfx
 		color = { 68 54 37 }
-<<<<<<< Updated upstream
-		icon = 258
-		heresy_icon = 259
-=======
 		icon = 547
 		heresy_icon = 548
->>>>>>> Stashed changes
 		
 		parent = judaism
 		reformed = jud_ark_reformed
@@ -16025,13 +13893,8 @@ jewish_group = {
 	jud_zion = {
 		graphical_culture = jewishgfx
 		color = { 140 178 155 }
-<<<<<<< Updated upstream
-		icon = 262
-		heresy_icon = 262
-=======
 		icon = 551
 		heresy_icon = 551
->>>>>>> Stashed changes
 		
 		
 		
@@ -16114,13 +13977,8 @@ luwian_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = desertgfx
 		color = { 37 0 184 }
-<<<<<<< Updated upstream
-		icon = 359
-		heresy_icon = 360
-=======
 		icon = 648
 		heresy_icon = 649
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_ILLUYANKATYPHON
@@ -16200,13 +14058,8 @@ luwian_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = desertgfx
 		color = { 255 51 0 }
-<<<<<<< Updated upstream
-		icon = 356
-		heresy_icon = 357
-=======
 		icon = 645
 		heresy_icon = 646
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_TARHUNT
@@ -16284,13 +14137,8 @@ luwian_group = {
 	luwian = {
 		graphical_culture = desertgfx
 		color = { 255 195 112 }
-<<<<<<< Updated upstream
-		icon = 128
-		heresy_icon = 129
-=======
 		icon = 417
 		heresy_icon = 418
->>>>>>> Stashed changes
 		
 		
 		
@@ -16370,13 +14218,8 @@ luwian_group = {
 	illuyanka = {
 		graphical_culture = desertgfx
 		color = { 92 51 255 }
-<<<<<<< Updated upstream
-		icon = 358
-		heresy_icon = 360
-=======
 		icon = 647
 		heresy_icon = 649
->>>>>>> Stashed changes
 		
 		parent = luwian
 		reformed = illuyanka_reformed
@@ -16452,13 +14295,8 @@ luwian_group = {
 	tarhunt = {
 		graphical_culture = desertgfx
 		color = { 194 39 0 }
-<<<<<<< Updated upstream
-		icon = 355
-		heresy_icon = 355
-=======
 		icon = 644
 		heresy_icon = 644
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_TARHUNT
 		
@@ -16543,13 +14381,8 @@ mand_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = persiangfx
 		color = { 169 25 145 }
-<<<<<<< Updated upstream
-		icon = 363
-		heresy_icon = 364
-=======
 		icon = 652
 		heresy_icon = 653
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_RUHA
@@ -16630,13 +14463,8 @@ mand_group = {
 		crusade_name = CRUSADE
 		graphical_culture = persiangfx
 		color = { 130 219 237 }
-<<<<<<< Updated upstream
-		icon = 134
-		heresy_icon = 135
-=======
 		icon = 423
 		heresy_icon = 424
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_GOD
@@ -16704,103 +14532,11 @@ mand_group = {
 		religious_clothing_priest = 5
 	}
 	######################
-<<<<<<< Updated upstream
-	mandaean = {
-		graphical_culture = persiangfx
-		color = { 31 214 61 }
-		icon = 132
-		heresy_icon = 133
-		
-		high_god_name = GOD_GOD
-		
-		reformed = mandaean_reformed
-		#reformer_head_of_religion = no #Reformer is NOT a ruler head
-		
-		piety_name = PIETY
-		priest_title = PRIEST
-		scripture_name = THE_MAND
-		god_names = {
-			GOD_GOD GOD_ABATUR
-		}
-		
-		evil_god_names = {
-			GOD_RUHA PTAHIL DEMONS_OF_DARKNESS
-		}
-		
-		character_modifier = {
-			global_revolt_risk = -0.02
-			general_opinion = -10
-			same_religion_opinion = 40
-			church_opinion = 25
-			temple_vassal_tax_modifier = -0.10
-			land_organisation = -0.05
-			castle_vassal_min_levy = 0.10
-			castle_vassal_max_levy = 0.10
-			city_vassal_min_levy = -0.10
-			city_vassal_max_levy = -0.10
-			temple_vassal_min_levy = -0.20
-			temple_vassal_max_levy = -0.20
-#			monthly_character_prestige = 0.80
-#			monthly_character_piety = 0.20
-			diplomacy = 1
-			martial = 1
-			stewardship = -1
-			learning = -1
-#			ai_ambition = -20
-#			ai_zeal = 20
-#			ai_honor = 40
-#			ai_rationality = -20
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			land_morale = 0.10
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-			land_morale = 0.50
-		}
-		
-		can_call_crusade = no
-		can_grant_divorce = yes
-		independence_war_score_bonus = 20
-		has_heir_designation = yes
-		hard_to_convert = yes
-
-		# Kurdish/Mandean restrictive (sectarian 1), can be married only from the same group or civilization
-		intermarry = yazdanism
-		intermarry = yazidism
-		intermarry = yazdanism_reformed
-
-		# Abrahamic civilization (Christian, Jewish and Islamic) with Gnostic Ascendant restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = marcionist 
-		intermarry = priscillian_reformed
-
-		# Abrahamic group (Christian, Jewish and Islamic) with Gnostic Civilization restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = valentinian 
-
-		# Abrahamic Ascendant (Christian, Jewish and Islamic) with Gnostic Civilization restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = mithra_christ
-		
-		religious_clothing_head = 5
-		religious_clothing_priest = 5
-	}
-	mand_ruha = {
-		graphical_culture = persiangfx
-		color = { 116 17 99 }
-		icon = 362
-		heresy_icon = 364
-=======
 	mand_ruha = {
 		graphical_culture = persiangfx
 		color = { 116 17 99 }
 		icon = 651
 		heresy_icon = 653
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_RUHA
 		
@@ -16873,13 +14609,8 @@ mand_group = {
 	yahyanism = {
 		graphical_culture = persiangfx
 		color = { 161 115 23 }
-<<<<<<< Updated upstream
-		icon = 361
-		heresy_icon = 361
-=======
 		icon = 650
 		heresy_icon = 650
->>>>>>> Stashed changes
 		
 		reformed = mandaean_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -16976,13 +14707,8 @@ mani_group = {
 		crusade_name = CRUSADE
 		graphical_culture = persiangfx
 		color = { 69 22 22 }
-<<<<<<< Updated upstream
-		icon = 336
-		heresy_icon = 337
-=======
 		icon = 625
 		heresy_icon = 626
->>>>>>> Stashed changes
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_AHRIMAN
@@ -17061,13 +14787,8 @@ mani_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = persiangfx
 		color = { 193 128 62 }
-<<<<<<< Updated upstream
-		icon = 333
-		heresy_icon = 334
-=======
 		icon = 622
 		heresy_icon = 623
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_AUZAWANDILAZ
@@ -17149,20 +14870,12 @@ mani_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		religious_clothing_head = 3
@@ -17172,13 +14885,8 @@ mani_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = persiangfx
 		color = { 47 146 146 }
-<<<<<<< Updated upstream
-		icon = 330
-		heresy_icon = 331
-=======
 		icon = 619
 		heresy_icon = 620
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_ROD
@@ -17275,13 +14983,8 @@ mani_group = {
 		crusade_name = CRUSADE
 		graphical_culture = persiangfx
 		color = { 146 146 47 }
-<<<<<<< Updated upstream
-		icon = 58
-		heresy_icon = 59
-=======
 		icon = 347
 		heresy_icon = 348
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_MANI
 		
@@ -17356,13 +15059,8 @@ mani_group = {
 	mani_ahriman = {
 		graphical_culture = persiangfx
 		color = { 146 47 47 }
-<<<<<<< Updated upstream
-		icon = 335
-		heresy_icon = 337
-=======
 		icon = 624
 		heresy_icon = 626
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_AHRIMAN
 		
@@ -17445,13 +15143,8 @@ mani_group = {
 		crusade_name = CRUSADE
 		graphical_culture = persiangfx
 		color = { 109 109 208 }
-<<<<<<< Updated upstream
-		icon = 328
-		heresy_icon = 328
-=======
 		icon = 617
 		heresy_icon = 617
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_OHRMAZD
 		
@@ -17528,13 +15221,8 @@ mani_group = {
 	mani_slavic = {
 		graphical_culture = norsegfx
 		color = { 47 146 97 }
-<<<<<<< Updated upstream
-		icon = 329
-		heresy_icon = 329
-=======
 		icon = 618
 		heresy_icon = 618
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_ROD
 		
@@ -17615,13 +15303,8 @@ mani_group = {
 	mani_germanic = {
 		graphical_culture = norsegfx
 		color = { 146 97 47 }
-<<<<<<< Updated upstream
-		icon = 332
-		heresy_icon = 332
-=======
 		icon = 621
 		heresy_icon = 621
->>>>>>> Stashed changes
 		
 		reformed = mani_germanic_reformed
 		#reformer_head_of_religion = yes
@@ -17692,20 +15375,12 @@ mani_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 
 		# Manichaean Group with Gnostic Civilization restrictive (sectarian 1), can be married from the same group or civilization or related ones
@@ -17736,13 +15411,8 @@ mithra_group = {
 	mithra = {
 		graphical_culture = westerngfx
 		color = { 204 0 0 }
-<<<<<<< Updated upstream
-		icon = 169
-		heresy_icon = 170
-=======
 		icon = 458
 		heresy_icon = 459
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_MITHRA
 		
@@ -17818,13 +15488,8 @@ mithra_group = {
 	mithra_christ = {
 		graphical_culture = westerngfx
 		color = { 230 128 77 }
-<<<<<<< Updated upstream
-		icon = 169
-		heresy_icon = 170
-=======
 		icon = 458
 		heresy_icon = 459
->>>>>>> Stashed changes
 		
 		parent = mithra
 		
@@ -17907,13 +15572,8 @@ mithra_group = {
 		crusade_name = CRUSADE
 		graphical_culture = westerngfx
 		color = { 179 89 0 }
-<<<<<<< Updated upstream
-		icon = 220
-		heresy_icon = 220
-=======
 		icon = 509
 		heresy_icon = 509
->>>>>>> Stashed changes
 		
 		high_god_name = GOD_EOSPHOROS
 		
@@ -18011,13 +15671,8 @@ muslim = {
 		crusade_name = JIHAD
 		graphical_culture = muslimgfx
 		color = { 0 255 0 }
-<<<<<<< Updated upstream
-		icon = 138
-		heresy_icon = 139
-=======
 		icon = 427
 		heresy_icon = 428
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_ALLAH
@@ -18087,13 +15742,8 @@ muslim = {
 		crusade_name = JIHAD
 		graphical_culture = muslimgfx
 		color = { 97 209 16 }
-<<<<<<< Updated upstream
-		icon = 142
-		heresy_icon = 143
-=======
 		icon = 431
 		heresy_icon = 432
->>>>>>> Stashed changes
 		reformer_head_of_religion = yes
 		
 		piety_name = PIETY
@@ -18154,101 +15804,6 @@ muslim = {
 		uses_jizya_tax = yes
 	}
 	######################
-<<<<<<< Updated upstream
-	sunni = {
-		graphical_culture = muslimgfx
-		color = { 0 204 0 }
-		icon = 3
-		heresy_icon = 8
-		
-		crusade_name = "JIHAD"
-		piety_name = PIETY
-		priest_title = IMAM_PRIEST
-		scripture_name = THE_KORAN
-		god_names = {
-			GOD_ALLAH GOD_THE_GREATEST PROHPET_MUHAMMAD 
-		}
-		evil_god_names = {
-			IBLIS SHAYTAN
-		}
-	
-		high_god_name = GOD_ALLAH
-		character_modifier = {
-			global_revolt_risk = -0.02
-			general_opinion = 10
-			church_opinion = -10
-#			dynasty_opinion = -10
-			city_vassal_tax_modifier = 0.10
-			temple_vassal_tax_modifier = 0.10
-			build_cost_modifier = -0.10
-			land_organisation = 0.25
-			city_vassal_min_levy = 0.20
-			city_vassal_max_levy = 0.20
-#			monthly_character_prestige = 1.20
-			diplomacy = 1
-			martial = 1
-			stewardship = 1
-			learning = -3
-#			ai_ambition = 20
-#			ai_zeal = 20
-#			ai_honor = 60
-#			ai_rationality = 50
-		}
-		unit_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_offensive = 0.10
-			light_infantry_offensive = 0.10
-			archers_offensive = 0.10
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			knights_defensive = 0.50
-			heavy_infantry_defensive = 0.50
-			pikemen_defensive = 0.50
-			land_morale = 0.50
-		}
-		
-		can_call_crusade = no
-		can_grant_claim = yes
-#		can_hold_temples = yes
-		matrilineal_marriages = no
-		max_wives = 4
-		priests_can_marry = yes
-		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
-		raised_vassal_opinion_loss = no
-		short_reign_opinion_year_mult = 2 # The default in LI is 5
-		has_heir_designation = yes
-
-		# Islamic open-minded (sectarian 0), can be married from the same group or civilization or related ones
-		intermarry = ashari
-		intermarry = athari
-		intermarry = ghazi_islam
-		intermarry = ilm_islam
-		intermarry = marabout
-		intermarry = maturidi
-		intermarry = murjiah
-		intermarry = mutazil
-		intermarry = zahiri
-		intermarry = muslim_domination_reformed
-		# ! Not in Islamic group  but in Islamic civilization: not to be married from sectarian 1 Islamic faiths
-		intermarry = sol_islam
-		intermarry = druze_reformed
-		intermarry = muslim_sufi_reformed
-
-		# Islamic restrictive (sectarian 1), can be married from the same group or civilization or related ones
-		intermarry = haruri
-		intermarry = hurufi
-		intermarry = ibadi
-		intermarry = shiite
-		intermarry = muslim_aliite_reformed
-		attacking_same_religion_piety_loss = yes
-		uses_decadence = yes
-		uses_jizya_tax = yes
-	}
-=======
->>>>>>> Stashed changes
 	ashari = {
 		crusade_name = JIHAD
 		graphical_culture = muslimgfx
@@ -18702,248 +16257,8 @@ muslim = {
 		intermarry = ibadi
 		intermarry = shiite
 		intermarry = muslim_aliite_reformed
-<<<<<<< Updated upstream
-		}
-	
-	shiite = {
-		graphical_culture = muslimgfx
-		color = { 10 255 10 }
-		icon = 4
-		heresy_icon = 9
-		
-		crusade_name = "JIHAD"
-		piety_name = PIETY
-		priest_title = IMAM_PRIEST
-		scripture_name = THE_KORAN
-		god_names = {
-			GOD_ALLAH GOD_THE_GREATEST PROHPET_MUHAMMAD 
-		}
-		
-			evil_god_names = {
-			IBLIS SHAYTAN
-		}
-	
-		high_god_name = GOD_ALLAH
-		character_modifier = {
-			general_opinion = -10
-			same_religion_opinion = 40
-#			dynasty_opinion = -10
-			temple_vassal_tax_modifier = 0.20
-			land_organisation = -0.10
-			temple_vassal_min_levy = 0.30
-			temple_vassal_max_levy = 0.30
-#			monthly_character_prestige = 1.00
-#			monthly_character_piety = 1.00
-			assassinate_chance_modifier = 0.40
-			arrest_chance_modifier = 0.40
-			diplomacy = -2
-			martial = 3
-			stewardship = -2
-			intrigue = 1
-#			ai_ambition = 50
-#			ai_zeal = 80
-#			ai_honor = -30
-#			ai_rationality = -50
-		}
-		unit_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_offensive = 0.10
-			light_infantry_offensive = 0.10
-			archers_offensive = 0.10
-			land_morale = 0.50
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-			land_morale = 1.00
-		}
-		
-		allow_viking_invasion = yes
-		can_call_crusade = yes
-		can_grant_claim = yes
-#		can_hold_temples = yes
-		defensive_attrition = yes
-		matrilineal_marriages = no
-		max_wives = 4
-		priests_can_marry = yes
-		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
-		short_reign_opinion_year_mult = 6 # The default in LI is 5
-		attacking_same_religion_piety_loss = yes
-		uses_decadence = yes
-		uses_jizya_tax = yes
-	}
-	kharijite = {
-		graphical_culture = muslimgfx
-		color = { 0 163 0 }
-		icon = 4
-		heresy_icon = 9
-
-		parent = shiite
-		reformed = muslim_aliite_reformed
-		
-		piety_name = PIETY
-		priest_title = IMAM_PRIEST
-		scripture_name = THE_KORAN
-		god_names = {
-			GOD_ALLAH GOD_THE_GREATEST PROHPET_MUHAMMAD 
-		}
-		
-			evil_god_names = {
-			IBLIS SHAYTAN
-		}
-	
-		high_god_name = GOD_ALLAH
-		character_modifier = {
-			global_revolt_risk = 0.02
-			general_opinion = -40
-			same_religion_opinion = 80
-#			dynasty_opinion = -10
-			castle_vassal_tax_modifier = 0.10
-			temple_vassal_tax_modifier = 0.20
-			land_organisation = -0.25
-			castle_vassal_min_levy = 0.10
-			castle_vassal_max_levy = 0.10
-			city_vassal_min_levy = 0.10
-			city_vassal_max_levy = 0.10
-			temple_vassal_min_levy = 0.20
-			temple_vassal_max_levy = 0.20
-##			monthly_character_prestige = -2.00
-##			monthly_character_piety = 0.50
-			assassinate_chance_modifier = -0.10
-			arrest_chance_modifier = -0.10
-			diplomacy = -4
-			martial = 2
-			stewardship = -2
-			intrigue = 3
-			learning = 4
-#			ai_ambition = 50
-#			ai_zeal = 50
-#			ai_honor = -50
-#			ai_greed = -20
-#			ai_rationality = -40
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_offensive = 0.70
-			light_infantry_offensive = 0.70
-			archers_offensive = 0.70
-			heavy_infantry_offensive = -0.50
-			knights_offensive = -0.50
-			pikemen_offensive = -0.50
-			land_morale = 1.00
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-		}
-		
-		allow_viking_invasion = yes
-		can_call_crusade = no
-#		can_hold_temples = yes
-		max_wives = 4
-		priests_can_marry = yes
-		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
-		short_reign_opinion_year_mult = 8 # The default in LI is 5
-		attacking_same_religion_piety_loss = yes
-		uses_decadence = yes
-		uses_jizya_tax = yes
-		hard_to_convert = yes
-	}
-	qarmatian = {
-		graphical_culture = muslimgfx
-		color = { 31 255 31 }
-		icon = 4
-		heresy_icon = 9
-
-		parent = shiite
-		reformed = muslim_domination_reformed
-		#reformer_head_of_religion = yes
-		
-		piety_name = PIETY
-		priest_title = IMAM_PRIEST
-		scripture_name = THE_KORAN
-		god_names = {
-			GOD_ALLAH GOD_THE_GREATEST PROHPET_MUHAMMAD 
-		}
-		
-			evil_god_names = {
-			IBLIS SHAYTAN
-		}
-	
-		high_god_name = GOD_ALLAH
-		character_modifier = {
-			global_revolt_risk = 0.02
-			general_opinion = -40
-			same_religion_opinion = 80
-			castle_vassal_tax_modifier = 0.10
-			city_vassal_tax_modifier = -0.10
-			temple_vassal_tax_modifier = 0.50
-			land_organisation = -0.10
-			castle_vassal_min_levy = 0.10
-			castle_vassal_max_levy = 0.10
-			city_vassal_min_levy = -0.10
-			city_vassal_max_levy = -0.10
-			temple_vassal_min_levy = 0.50
-			temple_vassal_max_levy = 0.50
-#			monthly_character_piety = 1.50
-			assassinate_chance_modifier = 0.50
-			arrest_chance_modifier = 0.50
-			diplomacy = -4
-			martial = 4
-			stewardship = -3
-			intrigue = 3
-			learning = 3
-#			ai_ambition = 100
-#			ai_zeal = 130
-#			ai_honor = -70
-#			ai_rationality = -70
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			levy_size = 0.15
-			light_cavalry_offensive = 0.10
-			light_infantry_offensive = 0.10
-			archers_offensive = 0.10
-			knights_offensive = 0.10
-			heavy_infantry_offensive = 0.10
-			pikemen_offensive = 0.10
-			land_morale = 0.55
-		}
-		unit_home_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-			land_morale = 1.25
-		}
-		
-		allow_viking_invasion = yes
-		can_call_crusade = no
-#		can_hold_temples = yes
-		defensive_attrition = yes
-		max_wives = 4
-		priests_can_marry = yes
-		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
-		short_reign_opinion_year_mult = 7 # The default in LI is 5
-		attacking_same_religion_piety_loss = yes
-		uses_decadence = yes
-		uses_jizya_tax = yes
-		hard_to_convert = yes
-	}
-=======
 	}
 
->>>>>>> Stashed changes
 	sufi = {
 		graphical_culture = muslimgfx
 		color = { 65 200 55 }
@@ -19021,13 +16336,8 @@ muslim = {
 	ilm_islam = {
 		graphical_culture = muslimgfx
 		color = { 82 163 0 }
-<<<<<<< Updated upstream
-		icon = 187
-		heresy_icon = 188
-=======
 		icon = 476
 		heresy_icon = 477
->>>>>>> Stashed changes
 		
 		piety_name = PIETY
 		priest_title = IMAM_PRIEST
@@ -19120,13 +16430,8 @@ muslim = {
 	ghazi_islam = {
 		graphical_culture = muslimgfx
 		color = { 163 163 0 }
-<<<<<<< Updated upstream
-		icon = 140
-		heresy_icon = 141
-=======
 		icon = 429
 		heresy_icon = 430
->>>>>>> Stashed changes
 		
 		parent = ilm_islam
 		#reformed = muslim_domination_reformed
@@ -19192,97 +16497,12 @@ muslim = {
 		uses_jizya_tax = yes
 		hard_to_convert = yes
 	}
-<<<<<<< Updated upstream
-	hurufi = {
-		graphical_culture = muslimgfx
-		color = { 0 163 163 }
-		icon = 187
-		heresy_icon = 188
-
-		parent = ilm_islam
-		
-		piety_name = PIETY
-		priest_title = IMAM_PRIEST
-		scripture_name = THE_KORAN
-		god_names = {
-			GOD_ALLAH GOD_THE_GREATEST PROHPET_MUHAMMAD 
-		}
-		
-			evil_god_names = {
-			IBLIS SHAYTAN
-		}
-	
-		high_god_name = GOD_ALLAH
-		character_modifier = {
-			global_revolt_risk = 0.04
-			general_opinion = -20
-			same_religion_opinion = 40
-			church_opinion = 5
-			sex_appeal_opinion = -5
-#			dynasty_opinion = -10
-			city_vassal_tax_modifier = 0.10
-			temple_vassal_tax_modifier = 0.20
-			build_cost_modifier = -0.10
-			land_organisation = 0.10
-			city_vassal_min_levy = 0.20
-			city_vassal_max_levy = 0.20
-			temple_vassal_min_levy = 0.20
-			temple_vassal_max_levy = 0.20
-#			monthly_character_prestige = -0.50
-#			monthly_character_piety = 0.50
-			assassinate_chance_modifier = -0.10
-			arrest_chance_modifier = -0.10
-			diplomacy = -2
-			martial = 1
-			stewardship = -1
-			learning = 6
-			fertility = -0.10
-#			ai_ambition = 50
-#			ai_zeal = 50
-#			ai_honor = 30
-#			ai_rationality = 60
-		}
-		unit_modifier = {
-			key = "OFF_RELIGION"
-			
-			light_cavalry_offensive = 0.20
-			light_infantry_offensive = 0.20
-			archers_offensive = 0.20
-			land_morale = 0.10
-		}
-		unit_home_modifier = {
-			key = "OFF_RELIGION"
-			
-			heavy_infantry_defensive = 0.30
-			knights_defensive = 0.30
-			pikemen_defensive = 0.30
-			land_morale = 0.30
-		}
-		
-		can_call_crusade = no
-#		can_hold_temples = yes
-		matrilineal_marriages = no
-		max_wives = 4
-		priests_can_marry = yes
-		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
-		short_reign_opinion_year_mult = 4 # The default in LI is 5
-		attacking_same_religion_piety_loss = yes
-		uses_decadence = yes
-		uses_jizya_tax = yes
-	}
-=======
->>>>>>> Stashed changes
 	mutazil = {
 		crusade_name = JIHAD
 		graphical_culture = muslimgfx
 		color = { 42 255 5 }
-<<<<<<< Updated upstream
-		icon = 187
-		heresy_icon = 188
-=======
 		icon = 476
 		heresy_icon = 477
->>>>>>> Stashed changes
 		
 		parent = ilm_islam
 		
@@ -19367,84 +16587,6 @@ muslim = {
 		intermarry = ibadi
 		intermarry = shiite
 		intermarry = muslim_aliite_reformed
-<<<<<<< Updated upstream
-		}
-
-	ibadi = {
-		graphical_culture = muslimgfx
-		color = { 31 255 143 }
-		icon = 136
-		heresy_icon = 137
-		
-		reformed = muslim_aliite_reformed
-		#reformer_head_of_religion = yes
-		
-		piety_name = PIETY
-		priest_title = IMAM_PRIEST
-		scripture_name = THE_KORAN
-		god_names = {
-			GOD_ALLAH GOD_THE_GREATEST PROHPET_MUHAMMAD 
-		}
-		
-			evil_god_names = {
-			IBLIS SHAYTAN
-		}
-	
-		high_god_name = GOD_ALLAH
-		character_modifier = {
-			general_opinion = -20
-			same_religion_opinion = 40
-			church_opinion = 5
-#			dynasty_opinion = -10
-			castle_vassal_tax_modifier = 0.10
-			temple_vassal_tax_modifier = 0.20
-			land_organisation = -0.10
-			castle_vassal_min_levy = 0.20
-			castle_vassal_max_levy = 0.20
-#			monthly_character_prestige = -0.20
-#			monthly_character_piety = 0.50
-			assassinate_chance_modifier = 0.10
-			arrest_chance_modifier = 0.10
-			diplomacy = -1
-			martial = 3
-			stewardship = -2
-			intrigue = 2
-			learning = 1
-#			ai_ambition = 30
-#			ai_zeal = 70
-#			ai_rationality = -40
-		}
-		unit_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-			
-			light_cavalry_offensive = 0.20
-			light_infantry_offensive = 0.20
-			archers_offensive = 0.20
-			land_morale = 0.20
-		}
-		
-		unit_home_modifier = {
-			key = "DEF_RELIGION_HOME_TERRITORY"
-	
-			light_cavalry_defensive = 0.50
-			light_infantry_defensive = 0.50
-			archers_defensive = 0.50
-			land_morale = 0.50
-		}
-		
-		can_call_crusade = no
-#		can_hold_temples = yes
-		independence_war_score_bonus = 20
-		matrilineal_marriages = no
-		max_wives = 4
-		priests_can_marry = yes
-		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
-		attacking_same_religion_piety_loss = yes
-		uses_decadence = yes
-		uses_jizya_tax = yes
-		hard_to_convert = yes
-=======
->>>>>>> Stashed changes
 	}
 
 	marabout = {
@@ -21363,20 +18505,12 @@ slavic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -21546,20 +18680,12 @@ slavic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -21655,20 +18781,12 @@ slavic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -21764,20 +18882,12 @@ slavic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -21879,20 +18989,12 @@ slavic_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 		
 		# Baltic open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -22177,19 +19279,11 @@ sol_group = {
 
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		
 		religious_clothing_head = 14
 		religious_clothing_priest = 14
@@ -23009,19 +20103,11 @@ sol_group = {
 
 		# Finnic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = chumbylat
-<<<<<<< Updated upstream
-		intermarry = finnish_pagan
-		intermarry = ilmatar
-		intermarry = jumala
-		intermarry = chumbylat_reformed
-		intermarry = finnish_pagan_reformed 
-=======
 		intermarry = suomenusko_pagan
 		intermarry = ilmatar
 		intermarry = jumala
 		intermarry = chumbylat_reformed
 		intermarry = suomenusko_pagan_reformed 
->>>>>>> Stashed changes
 		
 		religious_clothing_head = 14
 		religious_clothing_priest = 14
@@ -23242,20 +20328,12 @@ sol_group = {
 		# Germanic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = allfather
 		intermarry = german_pagan
-<<<<<<< Updated upstream
-		intermarry = norse_pagan
-=======
 		intermarry = odin_pagan
->>>>>>> Stashed changes
 		intermarry = sowilo
 		intermarry = teiwaz
 		intermarry = german_pagan_reformed
 		intermarry = norse_christ_reformed
-<<<<<<< Updated upstream
-		intermarry = norse_pagan_reformed
-=======
 		intermarry = odin_pagan_reformed
->>>>>>> Stashed changes
 		intermarry = teiwaz_reformed
 
 		# Graeco-Roman open-minded (sectarian 0), can be married from the same group or civilization or related ones
@@ -23882,17 +20960,10 @@ tengri_group = {
 		intermarry = tengri_mani_reformed
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 		
 		religious_clothing_head = 6
@@ -24631,17 +21702,10 @@ tengri_group = {
 		hard_to_convert = yes
 
 		# Chinese open-minded (sectarian 0), can be married from the same group or civilization or related ones
-<<<<<<< Updated upstream
-		intermarry = bon
-		intermarry = confucian
-		intermarry = lubu
-		intermarry = bon_reformed
-=======
 		intermarry = tibetan
 		intermarry = confucian
 		intermarry = lubu
 		intermarry = tibetan_reformed
->>>>>>> Stashed changes
 		intermarry = lubu_reformed
 
 		# Turkic open-minded (sectarian 0), can be married from the same group or civilization or related ones
