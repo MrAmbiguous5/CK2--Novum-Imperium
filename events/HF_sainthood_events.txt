@@ -465,6 +465,9 @@ province_event = {
 					event_target:saint_person = {
 						has_religion_feature = religion_syncretic_christian
 					}
+					event_target:saint_person = {
+						has_religion_feature = religion_feature_egyptian
+					}
 				}
 			}
 			province_event = { id = HF.40015 days = 5 }
@@ -497,6 +500,7 @@ province_event = {
 				has_religion_feature = religion_feature_baltic
 				has_religion_feature = religion_feature_slavic
 				has_religion_feature = religion_syncretic_christian
+				has_religion_feature = religion_feature_egyptian
 			}
 			NOT = {
 				has_character_flag = blessed_ancestor_prestige
@@ -546,10 +550,19 @@ character_event = {
 		trigger = {
 			event_target:saint_person = {
 				religion_group = pagan_group
+				NOT = { religion = egyptian_pagan_reformed }
 			}
 		}
 		text = EVTDESC_HF_40020_B
 	}
+	desc = {
+        trigger = {
+            event_target:saint_person = {
+                religion = egyptian_pagan_reformed
+            }
+        }
+        text = hf.40020.egyptian
+    }
 	picture = GFX_evt_council
 	is_triggered_only = yes
 	has_dlc = "Holy Fury"
@@ -572,11 +585,20 @@ character_event = {
 		else_if = {
 			limit = {
 				religion_group = pagan_group
+				NOT = { religion = egyptian_pagan_reformed }
 			}
 			custom_tooltip = {
 				text = pagan_pope_cannonize_choice_TT
 			}
 		}
+		else_if = {
+            limit = {
+                religion = egyptian_pagan_reformed
+            }
+            custom_tooltip = {
+                text = egyptian_pharaoh_cannonize_choice_TT
+            }
+        }
 
 		hidden_tooltip = {
 			# Find Miracle - Christian only
@@ -872,10 +894,18 @@ character_event = {
 				else_if = {
 					limit = {
 						religion_group = pagan_group
+						NOT = { religion = egyptian_pagan_reformed }
 					}
 					add_trait = blessed_ancestor
 					set_special_character_title = BLESSED_TITLE
 				}
+				else = {
+                    limit = {
+                        religion = egyptian_pagan_reformed
+                    }
+                    add_trait = blessed_ancestor_egyptian
+                    set_special_character_title = BLESSED_TITLE
+                }
 			}
 			# Burial Site setting - Christian only
 			if = {
@@ -1234,6 +1264,69 @@ character_event = {
 								}
 							}
 						}
+						else_if = {
+                            limit = {
+                                religion = celtic_pagan_reformed
+                            }
+                            if = {
+                                limit = {
+                                    is_female = yes
+                                }
+                                create_bloodline = {
+                                    type = saintly_bloodline_celtic_01
+                                    religion = celtic_pagan_reformed
+                                    inheritance = matrilineal
+                                }
+                            }
+                            else = {
+                                create_bloodline = {
+                                    type = saintly_bloodline_celtic_01
+                                    religion = celtic_pagan_reformed
+                                }
+                            }
+                        }
+                        else_if = {
+                            limit = {
+                                religion = britannic_pagan
+                            }
+                            if = {
+                                limit = {
+                                    is_female = no
+                                }
+                                create_bloodline = {
+                                    type = saintly_bloodline_britannic_01
+                                    religion = britannic_pagan
+                                    inheritance = patrilineal
+                                }
+                            }
+                            else = {
+                                create_bloodline = {
+                                    type = saintly_bloodline_britannic_01
+                                    religion = britannic_pagan
+                                }
+                            }
+                        }
+                        else_if = {
+                            limit = {
+                                religion = egyptian_pagan_reformed
+                            }
+                            if = {
+                                limit = {
+                                    is_female = yes
+                                }
+                                create_bloodline = {
+                                    type = saintly_bloodline_egyptian_01
+                                    religion = egyptian_pagan_reformed
+                                    inheritance = matrilineal
+                                }
+                            }
+                            else = {
+                                create_bloodline = {
+                                    type = saintly_bloodline_egyptian_01
+                                    religion = egyptian_pagan_reformed
+                                }
+                            }
+                        }
 						else = {
 							create_bloodline = {
 								type = saintly_bloodline_catholic_01

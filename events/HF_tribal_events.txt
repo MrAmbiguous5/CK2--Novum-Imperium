@@ -6948,7 +6948,10 @@ character_event = {
 	desc = { 
 		text = EVTDESCHFA23910
 		trigger = { 
-			emf_unreformed_pagan = no
+			NOT = { 
+				religion_group = pagan_group 
+				is_organized_religion_trigger = no
+			}
 			NOT = { 
 				religion_group = christian
 			}
@@ -6958,7 +6961,10 @@ character_event = {
 	desc = { 
 		text = EVTDESCHFB23910
 		trigger = { 
-			emf_unreformed_pagan = no
+			NOT = { 
+				religion_group = pagan_group 
+				is_organized_religion_trigger = no
+			}
 			religion_group = christian
 		}
 		picture = GFX_evt_icon
@@ -6966,7 +6972,8 @@ character_event = {
 	desc = { 
 		text = EVTDESCHFC23910
 		trigger = { 
-			emf_unreformed_pagan = yes
+			religion_group = pagan_group 
+			is_organized_religion_trigger = no
 		}
 		picture = GFX_evt_irminsul_shrine
 	}
@@ -7051,7 +7058,10 @@ character_event = {
 		#Then piety for non-unreformed pagans.
 		if = {
 			limit = {		
-				emf_unreformed_pagan = yes
+				NOT = { 
+					religion_group = pagan_group 
+					is_organized_religion_trigger = no
+				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 1 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 2 } }
 			}
@@ -7059,7 +7069,10 @@ character_event = {
 		}
 		if = {
 			limit = {		
-				emf_unreformed_pagan = yes
+				NOT = { 
+					religion_group = pagan_group 
+					is_organized_religion_trigger = no
+				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 2 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 4 } }
 			}
@@ -7067,7 +7080,10 @@ character_event = {
 		}
 		if = {
 			limit = {		
-				emf_unreformed_pagan = yes
+				NOT = { 
+					religion_group = pagan_group 
+					is_organized_religion_trigger = no
+				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 4 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 6 } }
 			}
@@ -7075,7 +7091,10 @@ character_event = {
 		}
 		if = {
 			limit = {		
-				emf_unreformed_pagan = yes
+				NOT = { 
+					religion_group = pagan_group 
+					is_organized_religion_trigger = no
+				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 6 }
 			}
 			piety = 60
@@ -7084,7 +7103,8 @@ character_event = {
 		#And Moral Authority for unreformed pagans.
 		if = {
 			limit = {		
-				emf_unreformed_pagan = yes
+				religion_group = pagan_group 
+				is_organized_religion_trigger = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 1 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 2 } }
 			}
@@ -7095,7 +7115,8 @@ character_event = {
 		}
 		if = {
 			limit = {		
-				emf_unreformed_pagan = yes
+				religion_group = pagan_group 
+				is_organized_religion_trigger = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 2 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 4 } }
 			}
@@ -7106,7 +7127,8 @@ character_event = {
 		}
 		if = {
 			limit = {		
-				emf_unreformed_pagan = yes
+				religion_group = pagan_group 
+				is_organized_religion_trigger = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 4 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 6 } }
 			}
@@ -7117,7 +7139,8 @@ character_event = {
 		}
 		if = {
 			limit = {	
-				emf_unreformed_pagan = yes
+				religion_group = pagan_group 
+				is_organized_religion_trigger = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 6 }
 			}
 			religion_authority = {
@@ -7155,7 +7178,10 @@ character_event = {
 		text = EVTDESCHFA23911
 		trigger = { 
 			FROM = { 
-				emf_unreformed_pagan = no
+				NOT = { 
+					religion_group = pagan_group 
+					is_organized_religion_trigger = no
+				}
 				NOT = { 
 					religion_group = christian
 				}
@@ -7167,7 +7193,10 @@ character_event = {
 		text = EVTDESCHFB23911
 		trigger = { 
 			FROM = { 
-				emf_unreformed_pagan = no
+				NOT = { 
+					religion_group = pagan_group 
+					is_organized_religion_trigger = no
+				}
 				religion_group = christian
 			}
 		}
@@ -7177,7 +7206,8 @@ character_event = {
 		text = EVTDESCHFC23911
 		trigger = { 
 			FROM = { 
-				emf_unreformed_pagan = yes
+				religion_group = pagan_group 
+				is_organized_religion_trigger = no
 			}
 		}
 		picture = GFX_evt_irminsul_shrine
