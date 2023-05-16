@@ -28,7 +28,29 @@ feudal_governments = {
 		potential = {
 			OR = {
 				controls_religion = no
-				religion_group = muslim
+				OR = {
+					religion_group = muslim
+					religion = aten_pagan
+					AND = {
+						OR = {
+							culture_group = arabic
+							culture_group = altaic
+							culture_group = iranian
+							culture_group = indo_aryan_group
+							culture_group = dravidian_group
+						}
+						OR = {
+							religion = west_african_pagan
+							religion = west_african_pagan_reformed
+							AND = {
+								NOT = { religion_group = pagan_group }
+								NOT = { religion_group = zoroastrian_group }
+								NOT = { religion_group = indian_group }
+								NOT = { religion_group = christian }
+							}
+						}
+					}
+				}
 				has_religion_feature = religion_temporal_head
 				AND = {
 					OR = {
@@ -42,18 +64,64 @@ feudal_governments = {
 				religion = yazidi
 				religion = hip_religion # Keep e_hip playable
 			}
-			NOT = { religion_group = muslim }
+			NOT = {
+				OR = {
+					religion_group = muslim
+					religion = aten_pagan
+					AND = {
+						OR = {
+							culture_group = arabic
+							culture_group = altaic
+							culture_group = iranian
+							culture_group = indo_aryan_group
+							culture_group = dravidian_group
+						}
+						OR = {
+							religion = west_african_pagan
+							religion = west_african_pagan_reformed
+							AND = {
+								NOT = { religion_group = pagan_group }
+								NOT = { religion_group = zoroastrian_group }
+								NOT = { religion_group = indian_group }
+								NOT = { religion_group = christian }
+							}
+						}
+					}
+				}
+			}
 			OR = {
 				NOT = { religion = bogomilist }
 				d_bogomilist = { has_flag = bogomilist_formalized }
 			}
 			NOT = { is_government_potential = order_government }
 			NAND = {
-				culture_group = tibetan_group
 				OR = {
+					culture_group = tibetan_group
 					religion = bon
 					religion = bon_reformed
 					religion = buddhist
+					religion = celtic_pagan
+					religion = celtic_pagan_reformed
+					AND = {
+						OR = {
+							culture_group = dravidian_group
+							culture_group = indo_aryan_group
+						}
+						religion_group = indian_group
+						OR = {
+							learning = 10
+							trait = zealous
+							trait = brahmin
+							trait = indian_pilgrim
+							trait = muni
+							trait = aryika
+							trait = bhikkhu
+							trait = bhikkhuni
+							trait = sanyasi
+							trait = sanyasini
+							trait = reincarnation
+						}
+					}
 				}
 				higher_tier_than = BARON
 			}
@@ -132,7 +200,29 @@ feudal_governments = {
 		potential = {
 			OR = {
 				controls_religion = no
-				religion_group = muslim
+				OR = {
+					religion_group = muslim
+					religion = aten_pagan
+					AND = {
+						OR = {
+							culture_group = arabic
+							culture_group = altaic
+							culture_group = iranian
+							culture_group = indo_aryan_group
+							culture_group = dravidian_group
+						}
+						OR = {
+							religion = west_african_pagan
+							religion = west_african_pagan_reformed
+							AND = {
+								NOT = { religion_group = pagan_group }
+								NOT = { religion_group = zoroastrian_group }
+								NOT = { religion_group = indian_group }
+								NOT = { religion_group = christian }
+							}
+						}
+					}
+				}
 				has_religion_feature = religion_temporal_head
 				AND = {
 					OR = {
@@ -146,17 +236,61 @@ feudal_governments = {
 				religion = yazidi
 			}
 			NOT = { is_government_potential = order_government }
-			religion_group = muslim
+			OR = {
+				religion_group = muslim
+				religion = aten_pagan
+				AND = {
+					OR = {
+						culture_group = arabic
+						culture_group = altaic
+						culture_group = iranian
+						culture_group = indo_aryan_group
+						culture_group = dravidian_group
+					}
+					OR = {
+						religion = west_african_pagan
+						religion = west_african_pagan_reformed
+						AND = {
+							NOT = { religion_group = pagan_group }
+							NOT = { religion_group = zoroastrian_group }
+							NOT = { religion_group = indian_group }
+							NOT = { religion_group = christian }
+						}
+					}
+				}
+			}
 			OR = {
 				NOT = { religion = bogomilist }
 				d_bogomilist = { has_flag = bogomilist_formalized }
 			}
 			NAND = { 
-				culture_group = tibetan_group
 				OR = {
+					culture_group = tibetan_group
 					religion = bon
 					religion = bon_reformed
 					religion = buddhist
+					religion = celtic_pagan
+					religion = celtic_pagan_reformed
+					AND = {
+						OR = {
+							culture_group = dravidian_group
+							culture_group = indo_aryan_group
+						}
+						religion_group = indian_group
+						OR = {
+							learning = 10
+							trait = zealous
+							trait = brahmin
+							trait = indian_pilgrim
+							trait = muni
+							trait = aryika
+							trait = bhikkhu
+							trait = bhikkhuni
+							trait = sanyasi
+							trait = sanyasini
+							trait = reincarnation
+						}
+					}
 				}
 				higher_tier_than = BARON
 			}
@@ -338,7 +472,30 @@ feudal_governments = {
 		potential = {
 			OR = {
 				controls_religion = no
-				religion_group = muslim
+				OR = {
+					religion_group = muslim
+					religion = aten_pagan
+					AND = {
+						OR = {
+							culture_group = arabic
+							culture_group = altaic
+							culture_group = iranian
+							culture_group = indo_aryan_group
+							culture_group = dravidian_group
+						}
+						OR = {
+							religion = hellenic_pagan
+							religion = hellenic_pagan_reformed
+							religion = promethean_pagan
+							religion = titan_pagan
+							AND = {
+								NOT = { religion_group = pagan_group }
+								NOT = { religion_group = zoroastrian_group }
+								NOT = { religion_group = indian_group }
+							}
+						}
+					}
+				}
 				has_religion_feature = religion_temporal_head
 				AND = {
 					OR = {
@@ -351,6 +508,32 @@ feudal_governments = {
 				religion = waldensian
 				religion = yazidi
 			}
+			NOT = {
+				OR = {
+					religion_group = muslim
+					religion = aten_pagan
+					AND = {
+						OR = {
+							culture_group = arabic
+							culture_group = altaic
+							culture_group = iranian
+							culture_group = indo_aryan_group
+							culture_group = dravidian_group
+						}
+						OR = {
+							religion = hellenic_pagan
+							religion = hellenic_pagan_reformed
+							religion = promethean_pagan
+							religion = titan_pagan
+							AND = {
+								NOT = { religion_group = pagan_group }
+								NOT = { religion_group = zoroastrian_group }
+								NOT = { religion_group = indian_group }
+							}
+						}
+					}
+				}
+			}
 			NOT = { is_government_potential = order_government }
 			NOT = { religion_group = muslim }
 			OR = {
@@ -358,11 +541,33 @@ feudal_governments = {
 				d_bogomilist = { has_flag = bogomilist_formalized }
 			}
 			AND = { 
-				culture_group = tibetan_group
 				OR = {
+					culture_group = tibetan_group
 					religion = bon
 					religion = bon_reformed
 					religion = buddhist
+					religion = celtic_pagan
+					religion = celtic_pagan_reformed
+					AND = {
+						OR = {
+							culture_group = dravidian_group
+							culture_group = indo_aryan_group
+						}
+						religion_group = indian_group
+						OR = {
+							learning = 10
+							trait = zealous
+							trait = brahmin
+							trait = indian_pilgrim
+							trait = muni
+							trait = aryika
+							trait = bhikkhu
+							trait = bhikkhuni
+							trait = sanyasi
+							trait = sanyasini
+							trait = reincarnation
+						}
+					}
 				}
 				higher_tier_than = BARON
 			}

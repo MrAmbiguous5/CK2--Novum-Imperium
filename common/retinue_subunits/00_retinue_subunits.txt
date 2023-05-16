@@ -191,6 +191,7 @@ TRIBAL_RET_5 = {
 			culture_group = byzantine
 			culture_group = iranian
 			culture = romanian
+			culture = alan
 		}
 		NOR = {
 			culture = jurchen

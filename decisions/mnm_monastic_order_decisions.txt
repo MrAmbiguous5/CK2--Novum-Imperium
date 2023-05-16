@@ -61,9 +61,15 @@ targetted_decisions = {
 		from_potential = {
 			has_dlc = "Mystics"
 			society_rank >= 2
-			is_monastic_member_trigger = yes
+			OR = {
+				is_monastic_member_trigger = yes
+				AND {
+					is_member_of_any_warrior_lodge_trigger = yes
+					religion = taoist
+				}
+			}
 			is_adult = yes
-			is_incapable = no
+			NOT = { trait = incapable }
 		}
 
 		potential = {
@@ -255,9 +261,16 @@ targetted_decisions = {
 		from_potential = {
 			has_dlc = "Mystics"
 			society_rank >= 3
-			is_monastic_member_trigger = yes
+			OR = {
+				is_monastic_member_trigger = yes
+				AND {
+					is_member_of_any_warrior_lodge_trigger = yes
+					religion = taoist
+				}
+			}
 			is_adult = yes
-			is_incapable = no
+			NOT = { trait = incapable }
+			religion = ROOT
 		}
 
 		potential = {
@@ -453,7 +466,7 @@ title_decisions = {
 		from_potential = {
 			has_dlc = "Mystics"
 			is_monastic_member_trigger = yes
-			NOT = { society_member_of = monastic_order_stoics }
+			is_hellenic_monastic_order_member_trigger = no
 			society_rank == 4
 		}
 
