@@ -234,6 +234,68 @@ deciding_upon_saint_effect = {
                 }     
             }
         }
+		#Having the bloodline of a Pope increase your chance of becoming a Saint
+        modifier = {
+            factor = 3
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline2
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline3
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline4
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline5
+                }
+            }
+        }
+
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                religion_head = {
+					dynasty = PREV
+				}
+            }
+        }
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                religion_head = {
+					dynasty = PREV
+				}
+            }
+        }
         #Positive traits increase your chances of becoming a Saint
         modifier = {
             factor = 1.5

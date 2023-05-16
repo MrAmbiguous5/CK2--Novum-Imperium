@@ -5527,6 +5527,15 @@ new_crusade = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				ROOT = { religion = christian }
+			}
+			most_participating_defender = {
+				character_event = { id = IB.170 }
+				
+			}
+		}
 		any_defender = {
 			limit = { NOT = { character = FROM } }
 			hidden_tooltip = { 
