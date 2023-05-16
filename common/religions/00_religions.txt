@@ -2325,15 +2325,62 @@ muslim = {
 
 		color = { 0.5 0.8 0.6 }
 		parent = ibadi
+
+		character_modifier = {
+			global_revolt_risk = -0.02
+			general_opinion = -20
+			same_religion_opinion = 40
+			church_opinion = 20
+#			dynasty_opinion = -10
+			castle_vassal_tax_modifier = 0.10
+			temple_vassal_tax_modifier = -0.15
+			castle_vassal_min_levy = 0.10
+			castle_vassal_max_levy = 0.10
+			city_vassal_min_levy = 0.10
+			city_vassal_max_levy = 0.10
+			temple_vassal_min_levy = -0.15
+			temple_vassal_max_levy = -0.15
+#			monthly_character_piety = 1.00
+			assassinate_chance_modifier = 0.10
+			arrest_chance_modifier = 0.10
+			diplomacy = -2
+			martial = 1
+			stewardship = -2
+			intrigue = 3
+			learning = 3
+#			ai_ambition = 50
+#			ai_zeal = 70
+#			ai_honor = -20
+#			ai_greed = 50
+#			ai_rationality = -40
+		}
+		unit_modifier = {
+			key = "OFF_RELIGION"
+			
+			light_cavalry_offensive = 0.20
+			light_infantry_offensive = 0.20
+			archers_offensive = 0.20
+			land_morale = 0.20
+			retinuesize_perc = 1.0
+		}
+		unit_home_modifier = {
+			key = "OFF_RELIGION"
+			
+			light_cavalry_defensive = 0.20
+			light_infantry_defensive = 0.20
+			archers_defensive = 0.20
+			land_morale = 0.30
+		}
+		
 		can_call_crusade = yes
 		priests_can_marry = yes
 		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
 		max_wives = 4
 		matrilineal_marriages = no
 
-		unit_modifier = {
-			retinuesize_perc = 1.0
-		}
+#		can_hold_temples = yes
+		short_reign_opinion_year_mult = 4 # The default in LI is 5
+		uses_decadence = yes
 
 		landed_kin_prestige_bonus = yes
 		attacking_same_religion_piety_loss = yes
@@ -2703,6 +2750,8 @@ muslim = {
 		icon = 73
 		heresy_icon = 73
 
+		reformed = druze_reformed
+
 		crusade_name = JIHAD
 		scripture_name = THE_EPISTLES_OF_WISDOM
 		priest_title = UQQAL
@@ -2714,15 +2763,58 @@ muslim = {
 			SHAYTAN
 		}
 
-		unit_modifier = {
-			land_morale = 0.2
-			retinuesize_perc = 1.0
-			key = "OFF_RELIGION"
-		}
-
 		character_modifier = {
+			general_opinion = -30
+			same_religion_opinion = 60
+			church_opinion = 5
+#			dynasty_opinion = -10
+			castle_vassal_tax_modifier = 0.20
+			city_vassal_tax_modifier = -0.10
+			temple_vassal_tax_modifier = 0.20
+			build_cost_modifier = 0.10
+			land_organisation = -0.20
+			castle_vassal_min_levy = 0.30
+			castle_vassal_max_levy = 0.30
+			city_vassal_min_levy = -0.10
+			city_vassal_max_levy = -0.25
+#			monthly_character_prestige = -0.20
+#			monthly_character_piety = 0.50
+			assassinate_chance_modifier = 0.10
+			arrest_chance_modifier = 0.10
+			diplomacy = -2
+			martial = 5
+			stewardship = -3
 			intrigue = 2
+			learning = 1
+#			ai_ambition = 30
+#			ai_zeal = 70
+#			ai_rationality = -40
 		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.05
+			light_cavalry_offensive = 0.35
+			light_infantry_offensive = 0.35
+			archers_offensive = 0.35
+			land_morale = 0.20
+			retinuesize_perc = 1.0
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.50
+			light_infantry_defensive = 0.50
+			archers_defensive = 0.50
+			land_morale = 0.50
+		}
+		
+		aggression = 1.5
+		independence_war_score_bonus = 30
+		hard_to_convert = yes
+		short_reign_opinion_year_mult = 6 # The default in LI is 5
+		attacking_same_religion_piety_loss = yes
+		uses_decadence = yes
 
 		color = { 0.0 0.9 0.4 }
 		can_call_crusade = no
@@ -4106,17 +4198,57 @@ zoroastrian_group = {
 		heresy_icon = 12
 
 		color = { 0.5 0.7 0.2 }
-		crusade_name = GREAT_HOLY_WAR
+		crusade_name = FRASHOKERETI
 		scripture_name = THE_GATHAS
 		priest_title = HERBAD
 
 		high_god_name = GOD_AHURA_MAZDA
 
 		god_names = {
-			GOD_AHURA_MAZDA GOD_ZURVAN GOD_OHRMAZD GOD_MANAH PROPHET_ZOROASTER
+			GOD_AHURA_MAZDA GOD_ZURVAN GOD_OHRMAZD GOD_MANAH GOD_SPENTA_MAINYU PROPHET_ZOROASTER
 		}
 		evil_god_names = {
 			AHRIMAN ANGRA_MAINYU
+		}
+
+		character_modifier = {
+			global_revolt_risk = -0.04
+			general_opinion = 10
+			church_opinion = 20
+#			dynasty_opinion = 20
+			temple_vassal_tax_modifier = -0.45 
+			land_organisation = 0.15
+			temple_vassal_min_levy = -0.35
+			temple_vassal_max_levy = -0.35
+#			monthly_character_prestige = 1.00
+#			monthly_character_piety = 0.50
+			diplomacy = 1
+			martial = -2
+			intrigue = -1
+#			ai_zeal = 20	
+#			ai_honor = 20
+#			ai_greed = 50
+#			ai_rationality = -20
+		}
+		unit_modifier = {
+			key = "OFF_RELIGION"
+			
+			levy_size = 0.30
+			light_cavalry_offensive = -0.20
+			light_infantry_offensive = -0.20
+			archers_offensive = -0.20
+			knights_offensive = 0.20
+			heavy_infantry_offensive = 0.20
+			pikemen_offensive = 0.20
+			land_morale = -0.30
+		}
+		unit_home_modifier = {
+			key = "OFF_RELIGION"
+			
+			light_cavalry_defensive = 0.20
+			light_infantry_defensive = 0.20
+			archers_defensive = 0.20
+			land_morale = 0.80
 		}
 
 		can_grant_divorce = yes
@@ -4131,9 +4263,7 @@ zoroastrian_group = {
 		pc_marriage = yes # Parent/child marriage allowed
 		bs_marriage = yes # Brother/sister marriage allowed
 
-		character_modifier = {
-			intrigue = -1
-		}
+		short_reign_opinion_year_mult = 4 # The default in LI is 5
 
 		religious_clothing_head = 5
 		religious_clothing_priest = 5
@@ -4156,6 +4286,15 @@ zoroastrian_group = {
 		intermarry = tengri_pagan_reformed
 		intermarry = jewish_group
 		intermarry = indian_group
+
+		# Persian open-minded (sectarian 0), can be married from the same group or civilization or related ones
+		intermarry = zor_hindu
+		intermarry = zurvanism
+		intermarry = zurvanism_reformed
+
+		# Persian restrictive (sectarian 1), can be married only from the same group or civilization
+		intermarry = mazdakism_reformed
+		intermarry = zor_angra_reformed
 	}
 
 	mazdaki = {
@@ -4169,6 +4308,7 @@ zoroastrian_group = {
 		color = { 0.3 0.65 0.25 }
 
 		parent = zoroastrian
+		reformed = mazdakism_reformed
 
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_GREAT_SECRET
@@ -4176,20 +4316,60 @@ zoroastrian_group = {
 		god_names = {
 			GOD_ZURVAN GOD_AHURA_MAZDA GOD_MANAH PROPHET_MAZDAK
 		}
-		
-		unit_modifier = {
-			garrison_size = 0.2
-			key = "DEF_RELIGION"
-		}
-		unit_home_modifier = {
-			land_morale = 0.6
-			garrison_size = 0.4
-			key = "DEF_RELIGION_HOME_TERRITORY"
-		}
+
 		character_modifier = {
+			global_revolt_risk = 0.02
+			general_opinion = -40
+			same_religion_opinion = 80
+#			dynasty_opinion = 20
+			castle_vassal_tax_modifier = 0.10
+			city_vassal_tax_modifier = -0.10
+			temple_vassal_tax_modifier = 0.20
 			castle_tax_modifier = -0.25
 			city_tax_modifier = -0.25
 			temple_tax_modifier = -0.25
+			land_organisation = -0.15
+			castle_vassal_min_levy = 0.10
+			castle_vassal_max_levy = 0.10
+			city_vassal_min_levy = -0.10
+			city_vassal_max_levy = -0.10
+			temple_vassal_min_levy = 0.20
+			temple_vassal_max_levy = 0.20
+##			monthly_character_prestige = -2.00
+##			monthly_character_piety = 0.50
+			assassinate_chance_modifier = -0.10
+			arrest_chance_modifier = -0.10
+			diplomacy = -3
+			stewardship = -1
+			intrigue = 3
+			learning = 4
+#			ai_ambition = 50
+#			ai_zeal = 50
+#			ai_honor = -50
+#			ai_greed = -20
+#			ai_rationality = -40
+		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.30
+			light_cavalry_offensive = 0.40
+			light_infantry_offensive = 0.40
+			archers_offensive = 0.40
+			knights_offensive = -0.30
+			heavy_infantry_offensive = -0.30
+			pikemen_offensive = -0.30
+			land_morale = 0.70
+			garrison_size = 0.2
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.50
+			light_infantry_defensive = 0.50
+			archers_defensive = 0.50
+			land_morale = 0.6
+			garrison_size = 0.4
 		}
 
 		can_grant_divorce = yes
@@ -4206,6 +4386,12 @@ zoroastrian_group = {
 		matrilineal_marriages = yes
 		castes = yes
 		aggression = 0.6 # AI aggression factor
+
+		allow_viking_invasion = yes
+		max_consorts = 3
+		priests_can_marry = yes
+		short_reign_opinion_year_mult = 8 # The default in LI is 5
+		hard_to_convert = yes
 
 		intermarry = khurmazta
 		intermarry = mandaean
@@ -4238,6 +4424,8 @@ zoroastrian_group = {
 		icon = 10
 		heresy_icon = 12
 
+		reformed = zurvanism_reformed
+
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_GATHAS
 		high_god_name = GOD_ZURVAN
@@ -4249,6 +4437,44 @@ zoroastrian_group = {
 			AHRIMAN ANGRA_MAINYU
 		}
 
+		character_modifier = {
+			global_revolt_risk = -0.03
+			church_opinion = 15
+#			dynasty_opinion = 20
+			temple_vassal_tax_modifier = -0.35
+			land_organisation = 0.1
+			temple_vassal_min_levy = -0.30
+			temple_vassal_max_levy = -0.35
+#			monthly_character_piety = 0.30
+			martial = -2
+			stewardship = 1
+			intrigue = 1
+			learning = 1
+#			ai_ambition = 20
+#			ai_zeal = 20
+#			ai_greed = 50
+		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.30
+			light_cavalry_offensive = -0.20
+			light_infantry_offensive = -0.20
+			archers_offensive = -0.20
+			heavy_infantry_offensive = 0.20
+			knights_offensive = 0.20
+			pikemen_offensive = 0.20
+			land_morale = -0.30
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.20
+			light_infantry_defensive = 0.20
+			archers_defensive = 0.20
+			land_morale = 0.80
+		}
+
 		can_grant_divorce = yes
 		can_call_crusade = yes
 		join_crusade_if_bordering_hostile = yes
@@ -4256,6 +4482,12 @@ zoroastrian_group = {
 		allow_in_ruler_designer = no
 		castes = yes
 		aggression = 1.2 # AI aggression factor
+
+		bs_marriage = yes
+		divine_blood = yes # Sacred Xwedodah close-kin marriage mechanics
+		max_consorts = 3
+		pc_marriage = yes
+		hard_to_convert = yes
 
 		intermarry = khurmazta
 		intermarry = mandaean
@@ -4275,6 +4507,14 @@ zoroastrian_group = {
 		intermarry = tengri_pagan_reformed
 		intermarry = jewish_group
 		intermarry = indian_group
+
+		# Persian open-minded (sectarian 0), can be married from the same group or civilization or related ones
+		intermarry = zor_hindu
+		intermarry = zurvanism_reformed
+
+		# Persian restrictive (sectarian 1), can be married only from the same group or civilization
+		intermarry = mazdakism_reformed
+		intermarry = zor_angra_reformed
 	}
 
 
@@ -4452,6 +4692,8 @@ zoroastrian_group = {
 		icon = 72
 		heresy_icon = 72
 
+		reformed = yazdanism_reformed
+
 		color = { 0.2 0.2 0.7 }
 
 		crusade_name = GREAT_HOLY_WAR
@@ -4459,10 +4701,58 @@ zoroastrian_group = {
 		priest_title = SHEIKH_PRIEST
 		high_god_name = GOD_TAWUSE_MELEK
 		god_names = {
-			GOD_THE_PEACOCK_ANGEL GOD_TAWUSE_MELEK GOD_SHAYTAN
+			GOD_THE_PEACOCK_ANGEL GOD_TAWUSE_MELEK GOD_SHAYTAN GOD_THE_YAZDANI GOD_THE_HEPTAD GOD_XWA
 		}
 		evil_god_names = {
 			THE_DARK_SPIRITS
+		}
+		
+		character_modifier = {
+			global_revolt_risk = -0.02
+			general_opinion = -20
+			same_religion_opinion = 40
+			church_opinion = 10
+#			dynasty_opinion = 10
+			castle_vassal_tax_modifier = -0.20
+			city_vassal_tax_modifier = 0.10
+			temple_vassal_tax_modifier = 0.30
+			build_cost_modifier = -0.30
+			land_organisation = -0.05
+			castle_vassal_min_levy = -0.10
+			castle_vassal_max_levy = -0.10
+			city_vassal_min_levy = 0.10
+			temple_vassal_min_levy = 0.15
+			temple_vassal_max_levy = 0.10
+#			monthly_character_prestige = -0.40
+			diplomacy = -1
+			martial = 1
+			stewardship = 2
+			learning = 1
+			fertility = -0.10
+#			ai_ambition = -50
+#			ai_zeal = 40
+#			ai_honor = 70
+#			ai_rationality = 20
+		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.15
+			light_cavalry_offensive = 0.10
+			light_infantry_offensive = 0.10
+			archers_offensive = 0.10
+			heavy_infantry_offensive = 0.10
+			knights_offensive = 0.10
+			pikemen_offensive = 0.10
+			land_morale = -0.25
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.50
+			light_infantry_defensive = 0.50
+			archers_defensive = 0.50
+			land_morale = 0.95
 		}
 
 		can_call_crusade = yes
@@ -4474,6 +4764,10 @@ zoroastrian_group = {
 		attacking_same_religion_piety_loss = yes
 		uses_jizya_tax = no
 		castes = yes
+
+		independence_war_score_bonus = 20
+		short_reign_opinion_year_mult = 3 # The default in LI is 5
+		hard_to_convert = yes
 
 		religious_clothing_head = 5
 		religious_clothing_priest = 5
@@ -4496,6 +4790,10 @@ zoroastrian_group = {
 		intermarry = tengri_pagan_reformed
 		intermarry = jewish_group
 		intermarry = indian_group
+
+		# Kurdish/Mandean restrictive (sectarian 1), can be married only from the same group or civilization
+		intermarry = yazdanism
+		intermarry = yazdanism_reformed
 	}
 	
 	khurmazta = {

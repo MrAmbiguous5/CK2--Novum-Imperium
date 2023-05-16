@@ -149,10 +149,15 @@ is_organized_religion_trigger = {
 			religion = vidharma
 			religion = indohelen
 			religion_group = inuit_group
-			religion = illuyanka
-			religion = tarhunt
+			religion_group = luwian_group
 			religion_group = mand_group
 			religion_group = mani_group
+			religion_group = palmyranpagan_group
+			religion_group = serer_group
+			religion_group = slavic_group
+			religion_group = sol_group
+			religion_group = tengri_group
+			religion_group = yazd_group
 		}
 		is_reformed_religion = yes
 		religion = britannic_pagan
