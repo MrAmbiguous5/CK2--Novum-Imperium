@@ -2901,6 +2901,13 @@ character_event = {
 			event_target:teacher = { is_adult = yes }
         	OR = {
 				AND = {
+					OR = {
+						ROOT = { has_religion_feature = religion_holy_family }
+						ROOT = { religion_openly_in_egyptian_subgroup_trigger = yes }
+						ROOT = { religion = messalian }
+						ROOT = { religion = zoroastrian }
+						NOT = { is_close_relative = ROOT }
+					}
 					NOR = {
 						trait = celibate
 						trait = eunuch
@@ -3618,6 +3625,7 @@ character_event = {
     				has_minor_title = title_lawspeaker
     				has_minor_title = title_court_skald
     				has_minor_title = title_venerable_elder
+					has_minor_title = title_lawspeaker
     				learning = 18
     			}
     		}
@@ -3677,6 +3685,7 @@ character_event = {
     				has_minor_title = title_lawspeaker
     				has_minor_title = title_court_skald
     				has_minor_title = title_venerable_elder
+					has_minor_title = title_lawspeaker
     				learning = 18
     			}
     		}
@@ -3964,6 +3973,7 @@ character_event = {
     				has_minor_title = title_lawspeaker
     				has_minor_title = title_court_skald
     				has_minor_title = title_venerable_elder
+					has_minor_title = title_lawspeaker
     				learning = 18
     			}
     		}
@@ -4099,6 +4109,7 @@ character_event = {
 	    				has_minor_title = title_lawspeaker
 	    				has_minor_title = title_court_skald
 	    				has_minor_title = title_venerable_elder
+						has_minor_title = title_lawspeaker
 	    				learning = 18
 	    			}
 	    		}
@@ -4180,6 +4191,7 @@ character_event = {
 	    				has_minor_title = title_lawspeaker
 	    				has_minor_title = title_court_skald
 	    				has_minor_title = title_venerable_elder
+						has_minor_title = title_lawspeaker
 	    				learning = 18
 	    			}
 	    		}
@@ -4319,6 +4331,7 @@ character_event = {
 	    				has_minor_title = title_lawspeaker
 	    				has_minor_title = title_court_skald
 	    				has_minor_title = title_venerable_elder
+						has_minor_title = title_lawspeaker
 	    				learning = 18
 	    			}
 	    		}
@@ -4412,6 +4425,7 @@ character_event = {
 	    				has_minor_title = title_lawspeaker
 	    				has_minor_title = title_court_skald
 	    				has_minor_title = title_venerable_elder
+						has_minor_title = title_lawspeaker
 	    				learning = 18
 	    			}
 	    		}
@@ -4509,6 +4523,7 @@ character_event = {
 	    				has_minor_title = title_lawspeaker
 	    				has_minor_title = title_court_skald
 	    				has_minor_title = title_venerable_elder
+						has_minor_title = title_lawspeaker
 	    				learning = 18
 	    			}
 	    		}
@@ -4591,6 +4606,7 @@ character_event = {
 	    				has_minor_title = title_lawspeaker
 	    				has_minor_title = title_court_skald
 	    				has_minor_title = title_venerable_elder
+						has_minor_title = title_lawspeaker
 	    				learning = 18
 	    			}
 	    		}

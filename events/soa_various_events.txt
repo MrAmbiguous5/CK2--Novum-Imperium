@@ -2294,7 +2294,7 @@ character_event = {
 				}
 				create_character = {
 					dynasty = none
-					religion = zun_pagan
+					religion = egyptian_pagan
 					culture = levantine_arabic
 					female = yes
 					name = Jezebel
@@ -2395,7 +2395,7 @@ character_event = {
 				}
 				create_character = {
 					dynasty = none
-					religion = norse_pagan
+					religion = celtic_pagan
 					culture = welsh
 					female = yes
 					name = Morgana

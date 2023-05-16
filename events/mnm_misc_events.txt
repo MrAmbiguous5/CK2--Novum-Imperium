@@ -119,6 +119,11 @@ character_event = {
 			interested_in_society = the_bacchants
 			interested_in_society = followers_of_ahuiateteo
 			interested_in_society = secret_religious_cult
+			
+			### ACR ###
+			interested_in_society = unseelie_petitioners
+			interested_in_society = the_coven
+			interested_in_society = the_sand_snakes
 		}
 	}
 
@@ -146,6 +151,11 @@ character_event = {
 			interested_in_society = the_bacchants
 			interested_in_society = followers_of_ahuiateteo
 			interested_in_society = secret_religious_cult
+			
+			### ACR ###
+			interested_in_society = unseelie_petitioners
+			interested_in_society = the_coven
+			interested_in_society = the_sand_snakes
 		}
 	}
 
@@ -298,6 +308,55 @@ character_event = {
 				}
 				save_event_target_as = satanists_recruiter
 				character_event = { id = MNM.10028 }
+			}
+		}
+		### ACR ###
+		# Unseelie
+		if = {
+			limit = {
+				interested_in_society = unseelie_petitioners
+				NOT = { has_character_flag = being_recruited_by_the_unseelie }
+			}
+			random_society_member = {
+				limit = {
+					society_member_of = unseelie_petitioners
+					#is_within_diplo_range = ROOT
+					is_society_grandmaster = no
+				}
+				save_event_target_as = satanists_recruiter
+				character_event = { id = ancrel.9900 }
+			}
+		}
+		# Coven
+		if = {
+			limit = {
+				interested_in_society = the_coven
+				NOT = { has_character_flag = being_recruited_by_the_coven }
+			}
+			random_society_member = {
+				limit = {
+					society_member_of = the_coven
+					#is_within_diplo_range = ROOT
+					is_society_grandmaster = no
+				}
+				save_event_target_as = satanists_recruiter
+				character_event = { id = ancrel.9901 }
+			}
+		}
+		# Fangs
+		if = {
+			limit = {
+				interested_in_society = the_sand_snakes
+				NOT = { has_character_flag = being_recruited_by_the_sand_snakes }
+			}
+			random_society_member = {
+				limit = {
+					society_member_of = the_sand_snakes
+					#is_within_diplo_range = ROOT
+					is_society_grandmaster = no
+				}
+				save_event_target_as = satanists_recruiter
+				character_event = { id = ancrel.9902 }
 			}
 		}
 		#Secret religious society
@@ -463,7 +522,53 @@ character_event = {
 	}
 }
 
+### ACR ###
+namespace = ancrel
 
+character_event = {
+	id = ancrel.9900
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = { 
+		FROM = {
+			set_character_flag = unseelie_attempted_recruitment
+			set_character_flag = being_recruited_by_the_unseelie
+			character_event = { id = MNM.7001 }
+		}
+	}
+}
+
+character_event = {
+	id = ancrel.9901
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = { 
+		FROM = {
+			set_character_flag = coven_attempted_recruitment
+			set_character_flag = being_recruited_by_the_coven
+			character_event = { id = MNM.7001 }
+		}
+	}
+}
+
+character_event = {
+	id = ancrel.9902
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = { 
+		FROM = {
+			set_character_flag = sand_snakes_attempted_recruitment
+			set_character_flag = being_recruited_by_the_sand_snakes
+			character_event = { id = MNM.7001 }
+		}
+	}
+}
 
 #Becoming stressed about keeping a secret
 character_event = {
@@ -743,9 +848,9 @@ character_event = {
 
 	immediate = {
 		random_list = {
-			95 = { # do nothing
+			80 = { # do nothing
 			}
-			5 = {
+			20 = { # try to join a society
 				modifier = {
 					factor = 2
 					higher_tier_than = BARON

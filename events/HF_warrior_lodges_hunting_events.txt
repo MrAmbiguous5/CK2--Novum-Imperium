@@ -13,6 +13,7 @@
 #Hellenics: Hunting Werewolf.
 #Christians: Hunting Werewolf.
 #Jewish: Hunting Werewolf.
+#Celtic: Hunting Wolf.
 
 #Slavic: Hunting Eagle (Perun).
 #Tengri: Hunting Eagle.
@@ -25,6 +26,7 @@
 #Zunists: Hunting Lion (Fire Warriors)
 #Mazdan: Hunting Lion
 #Eastern: Hunting Lion
+#Egyptian: Hunting Lion.
 
 #############################################
 
@@ -146,12 +148,25 @@ character_event = {
 		}
 		text = EVTDESCJHF25600
 	}
+	desc = {
+        trigger = {
+            has_character_flag = flag_hunting_wolf_celtic
+        }
+        text = hf.25600.desc.celtic
+    }
+    desc = {
+        trigger = {
+            has_character_flag = flag_hunting_lion_egyptian
+        }
+        text = hf.25600.desc.egyptian
+    }
 	picture = { 
 		trigger = { 
 			OR = { 
 				has_character_flag = flag_hunting_wolf_norse
 				has_character_flag = flag_hunting_wolf_baltic
 				has_character_flag = flag_hunting_wolf_hellenic
+				has_character_flag = flag_hunting_wolf_celtic
 			} 
 		} 
 		picture = GFX_evt_mysterious_forest
@@ -178,6 +193,7 @@ character_event = {
 			OR = { 
 				has_character_flag = flag_hunting_lion_west_african
 				has_character_flag = flag_hunting_lion_zun
+				has_character_flag = flag_hunting_lion_egyptian
 			} 
 		} 
 		picture = GFX_evt_bandits
@@ -230,7 +246,11 @@ character_event = {
 				set_character_flag = flag_hunting_wolf_baltic
 			}
 			else_if = { 
-				limit = { society_member_of = warrior_lodge_hellenic } 
+				limit = 
+					OR = {
+                        society_member_of = warrior_lodge_hellenic
+                        society_member_of = warrior_lodge_titan
+                    }
 				set_character_flag = flag_hunting_wolf_hellenic
 			}
 			else_if = { 
@@ -281,6 +301,19 @@ character_event = {
 				limit = { society_member_of = warrior_lodge_aztec } 
 				set_character_flag = flag_hunting_eagle_aztec
 			}
+			else_if = {
+                limit = {
+                    OR = {
+                        society_member_of = warrior_lodge_celtic
+                        society_member_of = warrior_lodge_britannic
+                    }
+                }
+                set_character_flag = flag_hunting_wolf_celtic
+            }
+            else_if = {
+                limit = { society_member_of = warrior_lodge_egyptian }
+                set_character_flag = flag_hunting_lion_egyptian
+            }
 
 			random_list = { 
 				33 = { sound_effect = pagan_cheering_01 } 
@@ -667,8 +700,12 @@ character_event = {
 			#Tattoos and Warpaint.
 			add_blood_splatter_effect = yes
 			if = { 
-				limit = { 
-					society_member_of = warrior_lodge_norse
+				limit = {
+					OR = {
+    					society_member_of = warrior_lodge_norse
+                        society_member_of = warrior_lodge_celtic
+                        society_member_of = warrior_lodge_titan
+                    }
 					NOR = { 
 						trait = african_tattoo_1
 						trait = african_tattoo_2
@@ -5179,6 +5216,7 @@ character_event = {
 					has_character_flag = flag_hunting_wolf_norse
 					has_character_flag = flag_hunting_wolf_baltic
 					has_character_flag = flag_hunting_wolf_hellenic
+					has_character_modifier = flag_hunting_wolf_celtic
 				} 
 			} 
 			add_character_modifier = { 
@@ -5214,6 +5252,7 @@ character_event = {
 				OR = { 
 					has_character_flag = flag_hunting_lion_west_african
 					has_character_flag = flag_hunting_lion_zun
+					has_character_flag = flag_hunting_lion_egyptian
 				} 
 			} 
 			add_character_modifier = { 

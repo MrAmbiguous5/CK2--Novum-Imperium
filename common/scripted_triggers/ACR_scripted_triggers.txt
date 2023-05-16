@@ -133,6 +133,8 @@ is_organized_religion_trigger = {
 	OR = {
 		NOR = { 
 			religion_group = pagan_group
+			religion = a_tag_roog
+			religion = amazigh
 			religion_group = aztec_group
 			religion_group = arabpagan_group
 			religion_group = baltic_group
@@ -163,8 +165,6 @@ is_organized_religion_trigger = {
 		religion = britannic_pagan
 		religion = aten_pagan
 		religion = promethean_pagan
-		religion = a_tag_roog
-        religion = amazigh
 	}
 }
 

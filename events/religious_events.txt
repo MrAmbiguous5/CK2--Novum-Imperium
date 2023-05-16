@@ -4475,7 +4475,7 @@ character_event = {
 			}
 			modifier = {
 				factor = 5
-				is_reformed_religion = no
+				is_organized_religion_trigger = no
 				primary_title = { has_law = tribal_organization_4 }  # Need it to reform government
 				capital_holding = {
 					OR = {
@@ -4501,7 +4501,7 @@ character_event = {
 			}
 			modifier = {
 				factor = 0.2
-				is_reformed_religion = no
+				is_organized_religion_trigger = no
 				OR = {
 					AND = {
 						any_realm_title = {
@@ -4536,7 +4536,10 @@ character_event = {
 						any_neighbor_province = {
 							owner = {
 								top_liege = {
-									emf_unreformed_pagan = no
+									NAND = {
+										religion_group = pagan_group
+										is_organized_religion_trigger = no
+									}
 									any_realm_province = { TECH_RECRUITMENT = 4 } # More cocky when pagan homeland attrition effect is active against neighbors
 								}
 							}
@@ -4816,7 +4819,7 @@ character_event = {
 			}
 			modifier = {
 				factor = 5
-				is_reformed_religion = no
+				is_organized_religion_trigger = no
 				primary_title = { has_law = tribal_organization_4 }  # Need it to reform government
 				capital_holding = {
 					OR = {
@@ -4842,11 +4845,11 @@ character_event = {
 			}
 			modifier = {
 				factor = 0
-				is_reformed_religion = yes
+				is_organized_religion_trigger = yes
 			}
 			modifier = {
 				factor = 0.3
-				is_reformed_religion = no
+				is_organized_religion_trigger = no
 				OR = {
 					AND = {
 						any_realm_title = {
@@ -4881,7 +4884,7 @@ character_event = {
 						any_neighbor_province = {
 							owner = {
 								top_liege = {
-									emf_unreformed_pagan = no
+									is_organized_religion_trigger = no
 									any_realm_province = { TECH_RECRUITMENT = 4 } # More cocky when pagan homeland attrition effect is active against neighbors
 								}
 							}
@@ -4970,7 +4973,7 @@ character_event = {
 					is_feudal = yes
 					is_merchant_republic = yes
 				}
-				emf_unreformed_pagan = yes
+				is_organized_religion_trigger = no
 				is_incapable = no
 				has_regent = no
 				higher_tier_than = COUNT
@@ -4991,7 +4994,7 @@ character_event = {
 						NOT = { religion = ROOT }
 						NOT = { pays_tribute_to = ROOT }
 						NOT = { has_character_flag = flag_sponsoring_baptism }
-						emf_unreformed_pagan = no
+						is_organized_religion_trigger = yes
 						prisoner = no
 						has_regent = no
 					}

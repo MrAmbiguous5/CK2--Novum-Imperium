@@ -109,6 +109,11 @@ character_event = {
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 	}
 
 	#Approving of heretics
@@ -124,7 +129,9 @@ character_event = {
 		name = {
 			text = EVTOPTA_7001_B
 			trigger = {
-				has_character_flag = being_recruited_by_the_bacchants
+				NOT = {
+					has_character_flag = being_recruited_by_the_bacchants
+				}
 			}
 		}
 		
@@ -239,13 +246,26 @@ character_event = {
 					}
 					AND = {
 						has_character_flag = being_recruited_by_the_bacchants
-						true_religion_hellenic_pagan_trigger = no
-						true_religion_hellenic_pagan_reformed_trigger = no
+						true_religion_hellenic_or_reformed_trigger = no
 					}
 					AND = {
 						has_character_flag = being_recruited_by_followers_of_ahuiateteo
 						true_religion_aztec_reformed_trigger = no
 						true_religion_aztec_trigger = no
+					}
+					
+					### ACR ###
+					AND = {
+						has_character_flag = being_recruited_by_the_unseelie
+						true_religion_in_celtic_subgroup_trigger = yes
+					}
+					AND = {
+						has_character_flag = being_recruited_by_the_coven
+						true_religion_in_hellenic_subgroup_trigger = yes
+					}
+					AND = {
+						has_character_flag = being_recruited_by_the_sand_snakes
+						true_religion_in_egyptian_subgroup_trigger = yes
 					}
 				}
 			}
@@ -276,6 +296,11 @@ character_event = {
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 
 		hidden_effect = { 
 			event_target:satanists_recruiter = { 
@@ -475,6 +500,11 @@ character_event = { # event notifying recruitee that "Something must've gone wro
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
 		clr_character_flag = dw_recruitment_end_unable
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 	}
 }
 
@@ -663,7 +693,11 @@ character_event = {
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
-
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 		
 		hidden_effect = { character_event = { id = MNM.6998 } }  #to recruiter - via ping: recruit said no
 		
@@ -847,6 +881,11 @@ character_event = {
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 
 		hidden_effect = { character_event = { id = MNM.6996 days = 1 } } # turn down the satanists
 
@@ -1492,6 +1531,101 @@ letter_event = {
 						character_event = { id = MNM.7013 }
 					}
 				}
+				
+				### ACR ###
+				else_if = {
+					limit = {
+						has_character_flag = being_recruited_by_the_unseelie
+						any_society_member = {
+							society_member_of = unseelie_petitioners
+							is_female = no
+							is_attractive_trigger = yes
+							attacted_to_root_trigger = yes
+							ROOT = { character_knows_prev_trigger = no }
+						}
+					}
+					random_society_member = {
+						limit = {
+							society_member_of = unseelie_petitioners
+							is_female = no
+							is_attractive_trigger = yes
+							attacted_to_root_trigger = yes
+							ROOT = { character_knows_prev_trigger = no }
+						}
+						preferred_limit = {
+							trait = fair
+						}
+						preferred_limit = {
+							trait = comely
+						}
+					}
+					save_event_target_as = satanists_inductor
+					set_character_flag = event_MNM_7015
+					character_event = { id = MNM.7013 }
+					break = yes
+				}
+				else_if = {
+					limit = {
+						has_character_flag = being_recruited_by_the_coven
+						any_society_member = {
+							society_member_of = the_coven
+							is_female = no
+							is_attractive_trigger = yes
+							attacted_to_root_trigger = yes
+							ROOT = { character_knows_prev_trigger = no }
+						}
+					}
+					random_society_member = {
+						limit = {
+							society_member_of = the_coven
+							is_female = no
+							is_attractive_trigger = yes
+							attacted_to_root_trigger = yes
+							ROOT = { character_knows_prev_trigger = no }
+						}
+						preferred_limit = {
+							trait = fair
+						}
+						preferred_limit = {
+							trait = comely
+						}
+					}
+					save_event_target_as = satanists_inductor
+					set_character_flag = event_MNM_7015
+					character_event = { id = MNM.7013 }
+					break = yes
+				}
+				else_if = {
+					limit = {
+						has_character_flag = being_recruited_by_the_sand_snakes
+						any_society_member = {
+							society_member_of = the_sand_snakes
+							is_female = no
+							is_attractive_trigger = yes
+							attacted_to_root_trigger = yes
+							ROOT = { character_knows_prev_trigger = no }
+						}
+					}
+					random_society_member = {
+						limit = {
+							society_member_of = the_sand_snakes
+							is_female = no
+							is_attractive_trigger = yes
+							attacted_to_root_trigger = yes
+							ROOT = { character_knows_prev_trigger = no }
+						}
+						preferred_limit = {
+							trait = fair
+						}
+						preferred_limit = {
+							trait = comely
+						}
+					}
+					save_event_target_as = satanists_inductor
+					set_character_flag = event_MNM_7015
+					character_event = { id = MNM.7013 }
+					break = yes
+				}
 				else = { #back up if there is no eligible society member
 					create_character = {
 						random_traits = yes
@@ -1526,6 +1660,11 @@ letter_event = {
 								being_recruited_by_the_vodouns = { PREV = { join_society = the_vodouns } }
 								being_recruited_by_the_bacchants = { PREV = { join_society = the_bacchants } }
 								being_recruited_by_followers_of_ahuiateteo = { PREV = { join_society = followers_of_ahuiateteo } }
+								
+								### ACR ###
+								being_recruited_by_the_unseelie = { PREV = { join_society = unseelie_petitioners } }
+								being_recruited_by_the_coven = { PREV = { join_society = the_coven } }
+								being_recruited_by_the_sand_snakes = { PREV = { join_society = the_sand_snakes } }
 							}
 						}
 						emf_new_character_noble = yes
@@ -1775,6 +1914,97 @@ letter_event = {
 					character_event = { id = MNM.7013 }
 				}
 			}
+			### ACR ###
+			else_if = {
+				limit = {
+					has_character_flag = being_recruited_by_the_unseelie
+					any_society_member = {
+						society_member_of = unseelie_petitioners
+						is_female = yes
+						is_attractive_trigger = yes
+						attacted_to_root_trigger = yes
+						ROOT = { character_knows_prev_trigger = no }
+					}
+				}
+				random_society_member = {
+					limit = {
+						society_member_of = unseelie_petitioners
+						is_female = yes
+						is_attractive_trigger = yes
+						attacted_to_root_trigger = yes
+						ROOT = { character_knows_prev_trigger = no }
+					}
+					preferred_limit = {
+						trait = fair
+					}
+					preferred_limit = {
+						trait = comely
+					}
+					save_event_target_as = satanists_inductor
+					set_character_flag = event_MNM_7015
+					character_event = { id = MNM.7013 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_character_flag = being_recruited_by_the_coven
+					any_society_member = {
+						society_member_of = the_coven
+						is_female = yes
+						is_attractive_trigger = yes
+						attacted_to_root_trigger = yes
+						ROOT = { character_knows_prev_trigger = no }
+					}
+				}
+				random_society_member = {
+					limit = {
+						society_member_of = the_coven
+						is_female = yes
+						is_attractive_trigger = yes
+						attacted_to_root_trigger = yes
+						ROOT = { character_knows_prev_trigger = no }
+					}
+					preferred_limit = {
+						trait = fair
+					}
+					preferred_limit = {
+						trait = comely
+					}
+					save_event_target_as = satanists_inductor
+					set_character_flag = event_MNM_7015
+					character_event = { id = MNM.7013 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_character_flag = being_recruited_by_the_sand_snakes
+					any_society_member = {
+						society_member_of = the_sand_snakes
+						is_female = yes
+						is_attractive_trigger = yes
+						attacted_to_root_trigger = yes
+						ROOT = { character_knows_prev_trigger = no }
+					}
+				}
+				random_society_member = {
+					limit = {
+						society_member_of = the_sand_snakes
+						is_female = yes
+						is_attractive_trigger = yes
+						attacted_to_root_trigger = yes
+						ROOT = { character_knows_prev_trigger = no }
+					}
+					preferred_limit = {
+						trait = fair
+					}
+					preferred_limit = {
+						trait = comely
+					}
+					save_event_target_as = satanists_inductor
+					set_character_flag = event_MNM_7015
+					character_event = { id = MNM.7013 }
+				}
+			}
 			else = { #back up if there is no eligible society member
 				create_character = {
 					random_traits = yes
@@ -1809,6 +2039,11 @@ letter_event = {
 							being_recruited_by_the_vodouns = { PREV = { join_society = the_vodouns } }
 							being_recruited_by_the_bacchants = { PREV = { join_society = the_bacchants } }
 							being_recruited_by_followers_of_ahuiateteo = { PREV = { join_society = followers_of_ahuiateteo } }
+							
+							### ACR ###
+							being_recruited_by_the_unseelie = { PREV = { join_society = unseelie_petitioners } }
+							#being_recruited_by_the_coven = { PREV = { join_society = the_coven } }
+							being_recruited_by_the_sand_snakes = { PREV = { join_society = the_sand_snakes } }
 						}
 					}
 					emf_new_character_noble = yes
@@ -2055,6 +2290,11 @@ character_event = {
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
 		clr_character_flag = dw_recruitment_end_unable
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 	}
 }
 
@@ -2355,6 +2595,41 @@ character_event = {
 						save_event_target_as = grand_master
 					}
 				}
+				
+				### ACR ###
+				if = { limit = { has_character_flag = being_recruited_by_the_unseelie }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = unseelie_petitioners
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_coven }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_coven
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_sand_snakes }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_sand_snakes
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
 				event_target:grand_master = { character_event = { id = MNM.7021 } }
 			}
 		}
@@ -2395,6 +2670,20 @@ character_event = {
 			limit = { has_character_flag = being_recruited_by_followers_of_ahuiateteo }
 			join_society = followers_of_ahuiateteo
 		}
+		
+		### ACR ###
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_unseelie }
+			join_society = unseelie_petitioners
+		}
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_coven }
+			join_society = the_coven
+		}
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_sand_snakes }
+			join_society = the_sand_snakes
+		}
 
 		if = { 
 			limit = { ai = no }
@@ -2421,6 +2710,11 @@ character_event = {
 			clr_character_flag = being_recruited_by_the_vodouns
 			clr_character_flag = being_recruited_by_the_bacchants
 			clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+			
+			### ACR ###
+			clr_character_flag = being_recruited_by_the_unseelie
+			clr_character_flag = being_recruited_by_the_coven
+			clr_character_flag = being_recruited_by_the_sand_snakes
 		}
 	}
 	option = {
@@ -2457,6 +2751,20 @@ character_event = {
 		if = {
 			limit = { has_character_flag = being_recruited_by_followers_of_ahuiateteo }
 			join_society = followers_of_ahuiateteo
+		}
+		
+		### ACR ###
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_unseelie }
+			join_society = unseelie_petitioners
+		}
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_coven }
+			join_society = the_coven
+		}
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_sand_snakes }
+			join_society = the_sand_snakes
 		}
 
 		event_target:satanists_inductor = {
@@ -2558,6 +2866,41 @@ character_event = {
 						save_event_target_as = grand_master
 					}
 				}
+				
+				### ACR ###
+				if = { limit = { has_character_flag = being_recruited_by_the_unseelie }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = unseelie_petitioners
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_coven }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_coven
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_sand_snakes }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_sand_snakes
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
 				event_target:grand_master = { character_event = { id = MNM.7021 } }
 			}
 			clr_character_flag = being_recruited_by_the_satanists
@@ -2568,6 +2911,11 @@ character_event = {
 			clr_character_flag = being_recruited_by_the_vodouns
 			clr_character_flag = being_recruited_by_the_bacchants
 			clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+			
+			### ACR ###
+			clr_character_flag = being_recruited_by_the_unseelie
+			clr_character_flag = being_recruited_by_the_coven
+			clr_character_flag = being_recruited_by_the_sand_snakes
 		}
 	}
 }
@@ -2688,6 +3036,41 @@ character_event = {
 						save_event_target_as = grand_master
 					}
 				}
+				
+				### ACR ###
+				if = { limit = { has_character_flag = being_recruited_by_the_unseelie }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = unseelie_petitioners
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_coven }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_coven
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_sand_snakes }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_sand_snakes
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
 				event_target:grand_master = { character_event = { id = MNM.7021 } }
 			}
 		}
@@ -2700,6 +3083,11 @@ character_event = {
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 	}
 
 	#Escape successfully
@@ -2754,6 +3142,11 @@ character_event = {
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 	}
 }
 
@@ -2825,6 +3218,11 @@ character_event = {
 							has_character_flag = being_recruited_by_the_bacchants
 							has_character_flag = being_recruited_by_followers_of_ahuiateteo
 							has_character_flag = assassins_attempted_recruitment
+							
+							### ACR ###
+							has_character_flag = being_recruited_by_the_unseelie
+							has_character_flag = being_recruited_by_the_coven
+							has_character_flag = being_recruited_by_the_sand_snakes
 						}
 					}
 				}
@@ -2927,6 +3325,41 @@ character_event = {
 						save_event_target_as = grand_master
 					}
 				}
+				
+				### ACR ###
+				if = { limit = { has_character_flag = being_recruited_by_the_unseelie }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = unseelie_petitioners
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_coven }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_coven
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
+				if = { limit = { has_character_flag = being_recruited_by_the_sand_snakes }
+					random_society_member = {
+						limit = {
+							society_rank = {
+								rank == 4
+								society = the_sand_snakes
+							}
+						}
+						save_event_target_as = grand_master
+					}
+				}
 				event_target:grand_master = { character_event = { id = MNM.7031 } }
 			}
 			#Assassins
@@ -3022,6 +3455,20 @@ letter_event = {
 			limit = { has_character_flag = assassins_attempted_recruitment }
 			join_society = the_assassins
 		}
+		
+		### ACR ###
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_unseelie }
+			join_society = unseelie_petitioners
+		}
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_coven }
+			join_society = the_coven
+		}
+		if = {
+			limit = { has_character_flag = being_recruited_by_the_sand_snakes }
+			join_society = the_sand_snakes
+		}
 
 		hidden_effect = {
 			clr_character_flag = being_recruited_by_the_satanists
@@ -3033,6 +3480,11 @@ letter_event = {
 			clr_character_flag = being_recruited_by_the_bacchants
 			clr_character_flag = being_recruited_by_followers_of_ahuiateteo
 			clr_character_flag = assassins_attempted_recruitment
+			
+			### ACR ###
+			clr_character_flag = being_recruited_by_the_unseelie
+			clr_character_flag = being_recruited_by_the_coven
+			clr_character_flag = being_recruited_by_the_sand_snakes
 		}
 	}
 
@@ -3054,6 +3506,11 @@ letter_event = {
 			clr_character_flag = being_recruited_by_the_bacchants
 			clr_character_flag = being_recruited_by_followers_of_ahuiateteo
 			clr_character_flag = assassins_attempted_recruitment
+			
+			### ACR ###
+			clr_character_flag = being_recruited_by_the_unseelie
+			clr_character_flag = being_recruited_by_the_coven
+			clr_character_flag = being_recruited_by_the_sand_snakes
 		}
 		ai_chance = { factor = 0 }
 	}
@@ -5644,6 +6101,20 @@ character_event = {
 			if = {
 				limit = { ROOT = { society_member_of = followers_of_ahuiateteo } }
 				join_society = followers_of_ahuiateteo
+			}
+			
+			### ACR ###
+			if = {
+				limit = { ROOT = { society_member_of = unseelie_petitioners } }
+				join_society = unseelie_petitioners
+			}
+			if = {
+				limit = { ROOT = { society_member_of = the_coven } }
+				join_society = the_coven
+			}
+			if = {
+				limit = { ROOT = { society_member_of = the_sand_snakes } }
+				join_society = the_sand_snakes
 			}
 		}
 		

@@ -3824,6 +3824,7 @@ character_event = {
 		}
 		OR = {
 			emf_divine_blood_religion = no
+			NOT = { religion_openly_in_egyptian_subgroup_trigger = yes }
 			NOT = { new_character = { is_close_relative = FROM } }
 		}
 		OR = {
@@ -5075,7 +5076,28 @@ narrative_event = {
 						years = 20
 					}
 				}
-			} 
+			}
+			if = { 
+				limit = { ROOT = { NOT = { religion = celtic_pagan_reformed } } }
+					random_playable_ruler = { 
+						limit = { religion = celtic_pagan }	
+						religion_authority = {
+							modifier = pagan_revival
+							years = 20
+						}
+					}
+				}
+				if = {
+					limit = { ROOT = { NOT = { religion = egyptian_pagan_reformed } } }
+					random_playable_ruler = { 
+						limit = { religion = egyptian_pagan }
+						religion_authority = {
+							modifier = pagan_revival
+							years = 20
+						}
+					}
+				}
+			}
 		}
 		if = {
 			limit = { #Modifier not applied correctly by pagan reformation screen.
@@ -5168,6 +5190,8 @@ narrative_event = {
 					OR = { 
 						has_religion_feature = religion_equal 
 						has_religion_feature = religion_feature_bon
+						has_religion_feature = religion_feature_celtic
+						has_religion_feature = religion_feature_egyptian
 					}
 				}
 			}
@@ -5425,6 +5449,78 @@ narrative_event = {
 						}
 						apply_cosmopolitan_on_start_effect = yes
 					}
+					celtic_pagan_reformed = {
+						celtic_pagan_reformed = {
+							set_allows_matrilineal_marriage = yes
+							set_feminist = yes
+							set_women_can_take_consorts = yes
+							set_men_can_take_consorts = yes
+							set_female_temple_holders = yes
+							set_male_temple_holders = yes
+							set_allow_looting = yes
+
+							set_unit_modifier = { 
+								levy_size = 0.15
+						
+								retinuesize_perc = 0.3	
+								garrison_size = 0.2
+						
+								key = "HERO_RELIGION"
+							}
+							set_unit_home_modifier = {
+								land_morale = 0.6
+								light_infantry_defensive = 0.6
+								heavy_infantry_defensive = 0.6
+								pikemen_defensive = 0.6
+								light_cavalry_defensive = 0.6
+								knights_defensive = 0.6
+								archers_defensive = 0.6
+								horse_archers_defensive = 0.6
+								camel_cavalry_defensive = 0.6
+								war_elephants_defensive = 0.6
+						
+								garrison_size = 0.2
+						
+								key = "HERO_RELIGION_HOME_TERRITORY"
+							}
+						}
+					}
+					egyptian_pagan_reformed = {
+						egyptian_pagan_reformed = {
+							set_max_consorts = 3
+							set_max_wives = 1
+							set_allows_matrilineal_marriage = yes
+							set_feminist = yes
+							set_women_can_take_consorts = yes
+							set_men_can_take_consorts = yes
+							set_female_temple_holders = yes
+							set_male_temple_holders = yes
+							set_short_reign_opinion_year_mult = 0
+
+							set_unit_modifier = {		
+								garrison_size = 0.2
+								levy_size = 0.2
+						
+								key = "DEF_RELIGION"
+							}
+							set_unit_home_modifier = {
+								land_morale = 0.8
+								light_infantry_defensive = 0.8
+								heavy_infantry_defensive = 0.8
+								pikemen_defensive = 0.8
+								light_cavalry_defensive = 0.8
+								knights_defensive = 0.8
+								archers_defensive = 0.8
+								horse_archers_defensive = 0.8
+								camel_cavalry_defensive = 0.8
+								war_elephants_defensive = 0.8
+						
+								garrison_size = 0.4
+						
+								key = "DEF_RELIGION_HOME_TERRITORY"
+							}
+						}
+					}
 				}
 			}
 		}
@@ -5547,6 +5643,21 @@ narrative_event = {
 			}
 			add_artifact = scepter_hellenic_fylkir
 		}
+		if = {
+			limit = {
+				has_religion_feature = religion_temporal_head
+				religion = celtic_pagan_reformed
+			}
+			add_artifact = crown_celtic_fylkir
+		}
+		if = {
+			limit = {
+				has_religion_feature = religion_temporal_head
+				religion = egyptian_pagan_reformed
+			}
+			add_artifact = crown_egyptian_fylkir
+			set_global_flag = acr_aai_pharaoh
+		}
 		set_character_flag = religious_reformer
 		religion_scope = {
 			save_persistent_event_target = { name = reformer scope = PREV }
@@ -5619,8 +5730,40 @@ narrative_event = {
 		if = {
 			limit = { religion = hellenic_pagan_reformed }
 			set_global_flag = hellenic_reformation
+			d_sacred_band = {
+					religion = hellenic_pagan_reformed
+				}
+				d_legio_hellenica = {
+					religion = hellenic_pagan_reformed
+				}
+			}
+			if = {
+				limit = { religion = celtic_pagan_reformed }
+				set_global_flag = celtic_reformation
+				d_wolftails = {
+					religion = celtic_pagan_reformed
+				}
+				d_gwydion = {
+					religion = celtic_pagan_reformed
+				}
+				d_red_dragons = {
+					religion = celtic_pagan_reformed
+				}
+				d_fianna = {
+					religion = celtic_pagan_reformed
+				}
+			}
+			if = {
+				limit = { religion = egyptian_pagan_reformed }
+				set_global_flag = egyptian_reformation
+				d_anubis = {
+					religion = egyptian_pagan_reformed
+				}
+				d_horus = {
+					religion = egyptian_pagan_reformed
+				}
+			}
 		}
-	}
 	}
 
 	option = {
@@ -5716,6 +5859,8 @@ narrative_event = {
 					OR = { 
 						has_religion_feature = religion_equal 
 						has_religion_feature = religion_feature_bon
+						has_religion_feature = religion_feature_celtic
+						has_religion_feature = religion_feature_egyptian
 					}
 				}
 			}
