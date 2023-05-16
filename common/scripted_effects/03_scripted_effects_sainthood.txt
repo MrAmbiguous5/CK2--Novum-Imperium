@@ -117,7 +117,10 @@ deciding_upon_saint_effect = {
                         religion = tondrakian
                     }
                     event_target:saint_person = {
-                        has_religion_feature = religion_beatification
+                        OR = {
+                            has_religion_feature = religion_beatification
+                            has_religion_feature = religion_feature_egyptian
+                        }
                     }
 					event_target:saint_person = {
 						has_religion_feature = religion_feature_baltic
@@ -134,7 +137,10 @@ deciding_upon_saint_effect = {
                         has_character_flag = beatified
                     }
                     event_target:saint_person = {
-                        has_religion_feature = religion_beatification
+                        OR = {
+                            has_religion_feature = religion_beatification
+                            has_religion_feature = religion_feature_egyptian
+                        }
                     }
 					event_target:saint_person = {
 						has_religion_feature = religion_feature_baltic
@@ -226,6 +232,68 @@ deciding_upon_saint_effect = {
                         }
                     }
                 }     
+            }
+        }
+		#Having the bloodline of a Pope increase your chance of becoming a Saint
+        modifier = {
+            factor = 3
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline2
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline3
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline4
+                }
+            }
+        }
+		
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                any_owned_bloodline = {
+                        has_bloodline_flag = IB_Popely_bloodline5
+                }
+            }
+        }
+
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                religion_head = {
+					dynasty = PREV
+				}
+            }
+        }
+		modifier = {
+            factor = 2
+            event_target:saint_person = {
+                religion_head = {
+					dynasty = PREV
+				}
             }
         }
         #Positive traits increase your chances of becoming a Saint
@@ -1142,6 +1210,8 @@ check_if_ancestor_worship_worthy_effect = {
 			OR = {
 				has_religion_feature = religion_holy_family
 				has_religion_feature = religion_syncretic_zoroastrian
+				religion = egyptian_pagan_reformed
+				religion = aten_pagan
 			}
             NOT = {
                 any_spouse_even_if_dead = {
@@ -1156,6 +1226,8 @@ check_if_ancestor_worship_worthy_effect = {
 			OR = {
 				has_religion_feature = religion_holy_family
 				has_religion_feature = religion_syncretic_zoroastrian
+				religion = egyptian_pagan_reformed
+				religion = aten_pagan
 			}
             NOT = {
                 any_child_even_if_dead = {
@@ -1169,6 +1241,8 @@ check_if_ancestor_worship_worthy_effect = {
 			OR = {
 				has_religion_feature = religion_holy_family
 				has_religion_feature = religion_syncretic_zoroastrian
+				religion = egyptian_pagan_reformed
+				religion = aten_pagan
 			}
 			NOT = {
 				any_spouse_even_if_dead = {
@@ -1181,6 +1255,8 @@ check_if_ancestor_worship_worthy_effect = {
 			OR = {
 				has_religion_feature = religion_holy_family
 				has_religion_feature = religion_syncretic_zoroastrian
+				religion = egyptian_pagan_reformed
+				religion = aten_pagan
 			}
             any_child_even_if_dead = {
                 trait = inbred
@@ -1205,12 +1281,28 @@ check_if_ancestor_worship_worthy_effect = {
                 }
             }
         }
+		## Meritocratic ##
+        # Positive
+        modifier = {
+            factor = 1.5
+            has_religion_feature = religion_meritocratic
+            NOT = {
+                is_foe = current_heir
+            }
+        }
+        #
+        modifier = {
+            factor = 0.65
+            has_religion_feature = religion_meritocratic
+            is_foe = current_heir
+        }
         ## Stable ##
         # Positive
         modifier = {
             factor = 1.5
 			OR = {
 				has_religion_feature = religion_stable
+				has_religion_feature = religion_feature_egyptian
 				has_religion_feature = religion_feature_slavic
 				has_religion_feature = religion_feature_finnish
 				has_religion_feature = religion_syncretic_indian
@@ -1221,6 +1313,7 @@ check_if_ancestor_worship_worthy_effect = {
             factor = 1.5
 			OR = {
 				has_religion_feature = religion_stable
+				has_religion_feature = religion_feature_egyptian
 				has_religion_feature = religion_feature_slavic
 				has_religion_feature = religion_feature_finnish
 				has_religion_feature = religion_syncretic_indian
@@ -1231,6 +1324,7 @@ check_if_ancestor_worship_worthy_effect = {
             factor = 1.5
 			OR = {
 				has_religion_feature = religion_stable
+				has_religion_feature = religion_feature_egyptian
 				has_religion_feature = religion_feature_slavic
 				has_religion_feature = religion_feature_finnish
 				has_religion_feature = religion_syncretic_indian
@@ -1242,6 +1336,7 @@ check_if_ancestor_worship_worthy_effect = {
             factor = 0.65
 			OR = {
 				has_religion_feature = religion_stable
+				has_religion_feature = religion_feature_egyptian
 				has_religion_feature = religion_feature_slavic
 				has_religion_feature = religion_feature_finnish
 				has_religion_feature = religion_syncretic_indian
@@ -1252,6 +1347,7 @@ check_if_ancestor_worship_worthy_effect = {
             factor = 0.65
 			OR = {
 				has_religion_feature = religion_stable
+				has_religion_feature = religion_feature_egyptian
 				has_religion_feature = religion_feature_slavic
 				has_religion_feature = religion_feature_finnish
 				has_religion_feature = religion_syncretic_indian
@@ -1392,7 +1488,10 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            emf_seafaring_religion = yes
+            OR = {
+                has_religion_feature = religion_adventuring
+                emf_seafaring_religion = yes
+            }
             OR = { 
                 trait = pirate
                 trait = viking
@@ -1404,7 +1503,10 @@ check_if_ancestor_worship_worthy_effect = {
         # Negative
         modifier = {
             factor = 0.65
-            emf_seafaring_religion = yes
+            OR = {
+                has_religion_feature = religion_adventuring
+                emf_seafaring_religion = yes
+            }
             NOR = {
                 trait = pirate
                 trait = viking

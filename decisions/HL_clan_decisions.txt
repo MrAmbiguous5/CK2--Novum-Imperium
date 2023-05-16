@@ -171,20 +171,20 @@ targetted_decisions = {
 			modifier = {
 				factor = 0
 				FROM = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 				ROOT = {
-					emf_unreformed_pagan = yes
+					is_organized_religion_trigger = no
 				}
 			}
 
 			modifier = {
 				factor = 1.5
 				FROM = {
-					emf_unreformed_pagan = yes
+					is_organized_religion_trigger = no
 				}
 				ROOT = {
-					emf_unreformed_pagan = no
+					is_organized_religion_trigger = yes
 				}
 			}
 

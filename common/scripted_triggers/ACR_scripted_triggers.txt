@@ -131,13 +131,38 @@ is_ancient_religion_trigger = {
 
 is_organized_religion_trigger = {
 	OR = {
-		NOT = { religion_group = pagan_group }
+		NOR = { 
+			religion_group = pagan_group
+			religion_group = aztec_group
+			religion_group = arabpagan_group
+			religion_group = baltic_group
+			religion_group = bantu_group
+			religion_group = celtic_group
+			religion_group = chinese_group
+			religion_group = norsegerman_group
+			religion_group = egyptian_group
+			religion_group = finnish_group
+			religion_group = graecoroman_group
+			religion = kubera
+			religion = murugan
+			religion = saura
+			religion = vidharma
+			religion = indohelen
+			religion_group = inuit_group
+			religion = illuyanka
+			religion = tarhunt
+			religion_group = mand_group
+			religion_group = mani_group
+		}
 		is_reformed_religion = yes
 		religion = britannic_pagan
 		religion = aten_pagan
 		religion = promethean_pagan
+		religion = a_tag_roog
+        religion = amazigh
 	}
 }
+
 
 supernatural_events_trigger = {
 	OR = {

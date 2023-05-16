@@ -110,6 +110,12 @@ targetted_decisions = {
 		ai_check_interval = 30
 
 		from_potential = {
+			#ai = no
+			OR = {
+				trait = dryad
+				trait = bad_dryad
+				is_playable = yes
+			}
 			has_children = yes
 			has_polygamy = no
 		}
@@ -154,7 +160,17 @@ targetted_decisions = {
 			}
 			dynasty = FROM
 			remove_trait = bastard
-			add_trait = legit_bastard
+			if = {
+				limit = { 
+					FROM = {
+						NAND = {
+							religion = britannic_pagan
+							is_celtic_clergy_trigger = yes
+						}
+					}
+				}
+				add_trait = legit_bastard
+			}
 			hidden_effect = {
 				character_event = { id = emf_cadet.0 } # Inherit cadet dynasty PET if applicable
 				any_child_even_if_dead = {
@@ -175,7 +191,9 @@ targetted_decisions = {
 				show_scope_change = no
 				if = {
 					limit = {
-						NOT = {
+						NOR = {
+							trait = dryad
+							trait = bad_dryad
 							any_owned_bloodline = {
 								has_bloodline_flag = bloodline_legitimize
 								bloodline_is_active_for = PREV
