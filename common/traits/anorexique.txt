@@ -16,12 +16,14 @@ birth = 25
   diplomacy = -3
   martial = -5
   
-  opposites = {
-    trait = obese
-            surpoids
-            strong
-            robust                                 
-  }
+	opposites = {
+		trait = {
+			obese
+			surpoids
+			strong
+			robust
+		}
+	}
   
   
   same_opinion = 20

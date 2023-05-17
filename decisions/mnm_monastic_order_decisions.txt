@@ -63,7 +63,7 @@ targetted_decisions = {
 			society_rank >= 2
 			OR = {
 				is_monastic_member_trigger = yes
-				AND {
+				AND = {
 					is_member_of_any_warrior_lodge_trigger = yes
 					religion = taoist
 				}
@@ -263,7 +263,7 @@ targetted_decisions = {
 			society_rank >= 3
 			OR = {
 				is_monastic_member_trigger = yes
-				AND {
+				AND = {
 					is_member_of_any_warrior_lodge_trigger = yes
 					religion = taoist
 				}

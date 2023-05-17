@@ -14,9 +14,10 @@ birth = 25
   
   
   opposites = {
-    trait = 
+    trait = {
            
   }
+}
    
   same_opinion = 50
   general_opinion = -20

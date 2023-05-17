@@ -11,11 +11,13 @@ birth = 100
   martial = 8
   combat_rating = 3
 
-  opposites = {
-    trait = nonviolent
-            content
-            temperate
-  }
+	opposites = {
+		trait = {
+			nonviolent
+			content
+			temperate
+		}
+	}
   
 
   general_opinion = -20

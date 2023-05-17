@@ -11,13 +11,15 @@ birth = 100
   
   diplomacy = 3
   intrigue = -2
-  
-  opposites = {
-    trait = raciste
+
+	opposites = {
+		trait = {
+			raciste
             arbitrary
             zealous
             cruel
-  }
+		}
+	}
   
   opposite_opinion = -30
   same_opinion = 30

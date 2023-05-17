@@ -13,9 +13,10 @@ birth = 100
   diplomacy = 2
   intrigue = 1
 
-  opposites = {
-    trait = 
-  }
+	opposites = {
+		trait = {
+		}
+	}
   
   same_opinion = 10
   vassal_opinion = 10

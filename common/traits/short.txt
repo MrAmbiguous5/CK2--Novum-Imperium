@@ -16,9 +16,10 @@ sex_appeal_opinion = -5
         intrigue = 2
         martial = -1
 
-    opposites = {
-    trait = tall
-            dwarf           
-  }
-
+	opposites = {
+		trait = {
+			tall
+            dwarf
+		}
+	}
 }

@@ -12,12 +12,14 @@ birth = 100
   
   diplomacy = -3
   intrigue = -3
-  
-  opposites = {
-    trait = influencable
+
+	opposites = {
+		trait = {
+			influencable
             arbitrary
-            just           
-  }
+            just  
+		}
+	}
   
   same_opinion = 10
   general_opinion = -20

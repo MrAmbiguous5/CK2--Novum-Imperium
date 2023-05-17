@@ -300,5 +300,3 @@ character_event = {
 		set_secret_religion = trex_the_heretics
     }
 }
-
-}

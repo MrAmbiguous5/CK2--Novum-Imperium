@@ -5087,18 +5087,17 @@ narrative_event = {
 						}
 					}
 				}
-				if = {
-					limit = { ROOT = { NOT = { religion = egyptian_pagan_reformed } } }
-					random_playable_ruler = { 
-						limit = { religion = egyptian_pagan }
-						religion_authority = {
-							modifier = pagan_revival
-							years = 20
-						}
+			if = {
+				limit = { ROOT = { NOT = { religion = egyptian_pagan_reformed } } }
+				random_playable_ruler = { 
+					limit = { religion = egyptian_pagan }
+					religion_authority = {
+						modifier = pagan_revival
+						years = 20
 					}
 				}
 			}
-		}
+		}	
 		if = {
 			limit = { #Modifier not applied correctly by pagan reformation screen.
 				ROOT = { has_religion_feature = religion_cosmopolitan }

@@ -12,11 +12,13 @@ birth = 100
   
   diplomacy = -3
   intrigue = 3
-  
-  opposites = {
-    trait = bavard 
-            gregarious      
-  }
+
+	opposites = {
+		trait = {
+			bavard 
+            gregarious
+		}
+	}
   
   opposite_opinion = -5
   same_opinion = 10

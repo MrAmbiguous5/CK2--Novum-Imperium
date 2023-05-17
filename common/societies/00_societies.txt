@@ -1865,7 +1865,7 @@ monastic_order_buddhist = {
 	}
 
 	potential = { 
-		OR {
+		OR = {
 			religion = buddhist  
 			religion = taoist
 		}

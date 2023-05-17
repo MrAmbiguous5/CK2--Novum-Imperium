@@ -13,11 +13,13 @@ birth = 50
   diplomacy = -2
   intrigue = -2
 
-  opposites = {
-    trait = hypersensible
+	opposites = {
+		trait = {
+			hypersensible
             wroth
-            patient 
-  }
+            patient
+		}
+	}
 
   same_opinion = 5
   vassal_opinion = -5

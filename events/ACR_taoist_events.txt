@@ -125,7 +125,7 @@ narrative_event = {
 	option = {
 		name = ACRtaoist.2.b  # In the grand scheme of things, my life isn't so bad after all...
 		trigger = {
-			OR {
+			OR = {
 				trait = stressed
 				trait = depressed
 			}
@@ -169,7 +169,7 @@ character_event = {
 	id = ACRtaoist.3     # Travelling martial artists
 #	title = taoist.3.title
 	desc = ACRtaoist.3.desc
-	picture = picture = GFX_evt_monk
+	picture = GFX_evt_monk
     border = GFX_event_normal_frame_religion
 	
 	trigger = {

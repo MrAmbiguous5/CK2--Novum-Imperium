@@ -1938,7 +1938,7 @@ title_decisions = {
 			is_ruler = yes
 			OR = {
 				is_hellenic_monastic_order_member_trigger = yes
-				AND {
+				AND = {
 					is_member_of_any_warrior_lodge_trigger = yes
 					religion = taoist
 				}

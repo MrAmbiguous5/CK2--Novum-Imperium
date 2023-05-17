@@ -1,4 +1,4 @@
-# This file contains (hopefully) all artifacts tagged with "book", as they were becoming quite a few. Consider this THE LIBRARY. It's a thing now.
+# This file contains (hopefully) all artifacts tagged with book, as they were becoming quite a few. Consider this THE LIBRARY. It's a thing now.
 
 #########################################################################################################################################
 ##### Hisotrical Artifacts ##                                                        ####                                            ####
@@ -41,7 +41,7 @@ bayeux_tapestry = {
 	
 	quality = 3
 	flags = { unique textile }
-	picture = "GFX_bayeux_tapestry"
+	picture = GFX_bayeux_tapestry
 }
 
 
@@ -66,7 +66,7 @@ roman_helmet = {
 	
 	quality = 3
 	flags = { crown jewelry crown_jewel }
-	picture = "GFX_roman_helmet"
+	picture = GFX_roman_helmet
 }
 
 #### BISHOP CROZIERS #### ------------------------------------------
@@ -95,7 +95,7 @@ bishop_crozier1 = {  #YE OLDE CROZIER OF EARLY STARTS, ARR
 	slot = scepter		
 	quality = 3
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_early"
+	picture = GFX_bishop_crozier_early
 }
 
 
@@ -121,7 +121,7 @@ bishop_crozier2 = {  #YE FANCY CROZIER
 	slot = scepter		
 	quality = 3
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_fancy"
+	picture = GFX_bishop_crozier_fancy
 }
 
 bishop_crozier_ormond = {  #LISMORE, 1100
@@ -146,7 +146,7 @@ bishop_crozier_ormond = {  #LISMORE, 1100
 	slot = scepter		
 	quality = 4
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_ormond"
+	picture = GFX_bishop_crozier_ormond
 }
 
 bishop_crozier_desmond = {  #DESMOND, 1100
@@ -171,7 +171,7 @@ bishop_crozier_desmond = {  #DESMOND, 1100
 	slot = scepter		
 	quality = 5
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_desmond"
+	picture = GFX_bishop_crozier_desmond
 }
 
 
@@ -204,7 +204,7 @@ bishop_crozier_orthodox = {  #ORTHODOX GENERIC CROZIER
 	slot = scepter		
 	quality = 3
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_orthodox"
+	picture = GFX_bishop_crozier_orthodox
 }
 
 bishop_crozier3 = {  #SHITTY CROZIER
@@ -227,7 +227,7 @@ bishop_crozier3 = {  #SHITTY CROZIER
 	slot = scepter		
 	quality = 1
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_basic"
+	picture = GFX_bishop_crozier_basic
 }
 
 bishop_crozier_saint_anno = {  #SAINT ANNO
@@ -252,7 +252,7 @@ bishop_crozier_saint_anno = {  #SAINT ANNO
 	slot = scepter		
 	quality = 5
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_st_anno"
+	picture = GFX_bishop_crozier_st_anno
 }
 
 bishop_crozier_twelfth = {  #1100s
@@ -277,7 +277,7 @@ bishop_crozier_twelfth = {  #1100s
 	slot = scepter		
 	quality = 3
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_1100"
+	picture = GFX_bishop_crozier_1100
 }
 
 bishop_crozier_thirteenth = {  #1200s
@@ -302,7 +302,7 @@ bishop_crozier_thirteenth = {  #1200s
 	slot = scepter		
 	quality = 3
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_1200"
+	picture = GFX_bishop_crozier_1200
 }
 
 bishop_crozier_celtic = {  #1200s
@@ -327,7 +327,7 @@ bishop_crozier_celtic = {  #1200s
 	slot = scepter		
 	quality = 3
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_celtic"
+	picture = GFX_bishop_crozier_celtic
 }
 
 bishop_crozier_coptic = {  #COPTIC GENERIC CROZIER
@@ -355,7 +355,7 @@ bishop_crozier_coptic = {  #COPTIC GENERIC CROZIER
 	slot = scepter		
 	quality = 3
 	flags = { scepter jewelry crown_jewel }
-	picture = "GFX_bishop_crozier_coptic"
+	picture = GFX_bishop_crozier_coptic
 }
 
 ##############ASSASSINS BLADE
@@ -382,7 +382,7 @@ blade_of_an_assassin = {  #BLADE OF AN ASSASSIN
 	slot = ceremonial_weapon	
 	quality = 2
 	flags = { dagger jewelry crown_jewel }
-	picture = "GFX_dagger_of_an_assassin"
+	picture = GFX_dagger_of_an_assassin
 }
 
 
@@ -415,7 +415,7 @@ horn_of_lehel = {
 	quality = 4
 	flags = { combat_weapon mace }
 	stacking = no
-	picture = "GFX_horn_of_lehel"
+	picture = GFX_horn_of_lehel
 	slot = weapon
 }
 
@@ -451,7 +451,7 @@ aegean_standard = {
 	quality = 2
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_aegean"
+	picture = GFX_battle_standard_aegean
 	slot = battle_standard
 }
 
@@ -481,7 +481,7 @@ athens_crusader_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_athens"
+	picture = GFX_battle_standard_athens
 	slot = battle_standard
 }
 
@@ -507,7 +507,7 @@ ulster_standard = {
 	quality = 2
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_ulster"
+	picture = GFX_battle_standard_ulster
 	slot = battle_standard
 }
 
@@ -535,7 +535,7 @@ connacht_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_connacht"
+	picture = GFX_battle_standard_connacht
 	slot = battle_standard
 }
 
@@ -563,7 +563,7 @@ desmond_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_desmond"
+	picture = GFX_battle_standard_desmond
 	slot = battle_standard
 }
 
@@ -591,7 +591,7 @@ breton_standard = {
 	quality = 1
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_brittany"
+	picture = GFX_battle_standard_brittany
 	slot = battle_standard
 }
 
@@ -621,7 +621,7 @@ cornwall_standard = {
 	quality = 1
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_cornwall"
+	picture = GFX_battle_standard_cornwall
 	slot = battle_standard
 }
 
@@ -642,7 +642,7 @@ motley_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_in_motley"
+	picture = GFX_battle_standard_in_motley
 	slot = battle_standard
 }
 
@@ -673,7 +673,7 @@ welsh_standard = {
 	quality = 4
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_wales"
+	picture = GFX_battle_standard_wales
 	slot = battle_standard
 }
 
@@ -701,7 +701,7 @@ gwynedd_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_gwynedd"
+	picture = GFX_battle_standard_gwynedd
 	slot = battle_standard
 }
 
@@ -726,7 +726,7 @@ georgian_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_georgia"
+	picture = GFX_battle_standard_georgia
 	slot = battle_standard
 }
 
@@ -749,7 +749,7 @@ roman_aquila = {
 	quality = 4
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_aquila"
+	picture = GFX_battle_standard_aquila
 	slot = battle_standard
 }
 
@@ -772,7 +772,7 @@ roman_labarum = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_labarum"
+	picture = GFX_battle_standard_labarum
 	slot = battle_standard
 }
 
@@ -796,7 +796,7 @@ denmark_standard = {
 	quality = 2
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_danish"
+	picture = GFX_battle_standard_danish
 	slot = battle_standard
 }
 
@@ -823,7 +823,7 @@ megenzer_standard = {
 	quality = 2
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_german_generic"
+	picture = GFX_battle_standard_german_generic
 	slot = battle_standard
 }
 
@@ -851,7 +851,7 @@ oriflamme_standard = {
 	quality = 4
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_oriflamme"
+	picture = GFX_battle_standard_oriflamme
 	slot = battle_standard
 }
 
@@ -878,7 +878,7 @@ scotland_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_k_scotland"
+	picture = GFX_battle_standard_k_scotland
 	slot = battle_standard
 }
 
@@ -903,7 +903,7 @@ mongol_standard = {
 	quality = 4
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_o_mongolian_thou_art_mongol"
+	picture = GFX_battle_standard_o_mongolian_thou_art_mongol
 	slot = battle_standard
 }
 
@@ -940,7 +940,7 @@ henry_ii_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_henry2"
+	picture = GFX_battle_standard_henry2
 	slot = battle_standard
 }
 
@@ -975,7 +975,7 @@ dragon_standard = {
 	quality = 3
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_anglo_saxon"
+	picture = GFX_battle_standard_anglo_saxon
 	slot = battle_standard
 }
 
@@ -1001,7 +1001,7 @@ moorish_standard = {
 	quality = 2
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_fah_dah_prophet_boyz"
+	picture = GFX_battle_standard_fah_dah_prophet_boyz
 	slot = battle_standard
 }
 
@@ -1028,7 +1028,7 @@ mierce_standard = {
 	quality = 2
 	flags = { blazon }
 	stacking = no
-	picture = "GFX_battle_standard_mierce"
+	picture = GFX_battle_standard_mierce
 	slot = battle_standard
 }
 
@@ -1063,7 +1063,7 @@ cedar_of_god_sapling  = {
 	stacking = no
 	quality = 1
 	flags = { tree_sapling }
-	picture = "GFX_cedar_of_god_sapling"
+	picture = GFX_cedar_of_god_sapling
 }
 
 #Add Events to kill or mature into capital bonus
@@ -1098,7 +1098,7 @@ altar_of_campodonum  = {
 	stacking = no
 	quality = 1
 	flags = { unique }
-	picture = "GFX_altar_stone"
+	picture = GFX_altar_stone
 }
 
 cross_of_aethlburh  = {  
@@ -1132,7 +1132,7 @@ cross_of_aethlburh  = {
 	stacking = no
 	quality = 2
 	flags = { unique }
-	picture = "GFX_cross_anglosaxon5"
+	picture = GFX_cross_anglosaxon5
 }
 
 ##
@@ -1162,7 +1162,7 @@ st_peters_chair = {
 	stacking = no
 	quality = 4
 	flags = { unique throne }
-	picture = "GFX_chair_st_peter"
+	picture = GFX_chair_st_peter
 }
 
 stone_of_scone = {  #1296
@@ -1189,7 +1189,7 @@ stone_of_scone = {  #1296
 	stacking = no
 	quality = 4
 	flags = { unique }
-	picture = "GFX_stone_of_scone"
+	picture = GFX_stone_of_scone
 }
 
 
@@ -1217,7 +1217,7 @@ king_edwards_chair = {
 	stacking = no
 	quality = 3
 	flags = { unique throne }
-	picture = "GFX_chair_king_edwards"
+	picture = GFX_chair_king_edwards
 }
 
 
@@ -1251,7 +1251,7 @@ throne_of_northumbria = {
 	stacking = no
 	quality = 3
 	flags = { unique throne }
-	picture = "GFX_chair_northumbria"
+	picture = GFX_chair_northumbria
 }
 
 throne_of_man = {  
@@ -1281,7 +1281,7 @@ throne_of_man = {
 	stacking = no
 	quality = 1
 	flags = { unique throne }
-	picture = "GFX_chair_man"
+	picture = GFX_chair_man
 }
 
 throne_of_charlemagne = {  
@@ -1313,7 +1313,7 @@ throne_of_charlemagne = {
 	stacking = no
 	quality = 3
 	flags = { unique throne }
-	picture = "GFX_chair_throne_of_charlemagne"
+	picture = GFX_chair_throne_of_charlemagne
 }
 
 ##
@@ -1370,7 +1370,7 @@ nikephoros_cup = {
 	
 	quality = 4
 	flags = { unique }
-	picture = "GFX_skull_cup"
+	picture = GFX_skull_cup
 }
 
 

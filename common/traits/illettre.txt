@@ -12,15 +12,17 @@ birth = 50
   diplomacy = -8
   learning = -8
   stewardship = -8
-  
-  opposites = {
-    trait = quick
+
+	opposites = {
+		trait = {
+			quick
             scholar
             administrator
             architect
             poet            
-            erudite  
-  }
+            erudite   
+		}
+	}
   
   opposite_opinion = -30
   same_opinion = 30

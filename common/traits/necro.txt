@@ -12,10 +12,10 @@ birth = 100
   
   diplomacy = -8
   
-  opposites = {
-    trait = 
-           
-  }
+	opposites = {
+		trait = {
+		}
+	}
 
   same_opinion = 30
   general_opinion = -30

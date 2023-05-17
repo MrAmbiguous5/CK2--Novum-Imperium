@@ -12,12 +12,13 @@ birth = 100
   
   diplomacy = -3
   intrigue = 3
-  
-  opposites = {
-    trait = indulgent
+
+	opposites = {
+		trait = {
+			indulgent
             nonviolent
-                  
-  }
+		}
+	}
   
   opposite_opinion = -5
   same_opinion = 5

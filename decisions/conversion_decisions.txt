@@ -1198,29 +1198,27 @@ targetted_decisions = {
 		effect = {
 			piety = -50
 			emf_character_set_religion_to_reformed = yes
-
-            }
+        }
 			
-			hidden_tooltip = {
-				any_courtier = {
-					limit = {
-						is_heresy_of = ROOT
-						employer = { character = ROOT }
-					}
-					religion = ROOT
+		hidden_tooltip = {
+			any_courtier = {
+				limit = {
+					is_heresy_of = ROOT
+					employer = { character = ROOT }
 				}
-				any_vassal = {
-					limit = {
-						is_playable = no
-						is_heresy_of = ROOT
-					}
-					religion = ROOT
+				religion = ROOT
+			}
+			any_vassal = {
+				limit = {
+					is_playable = no
+					is_heresy_of = ROOT
 				}
-				capital_scope = {
-					if = {
-						limit = { is_heresy_of = ROOT }
-						religion = ROOT
-					}
+				religion = ROOT
+			}
+			capital_scope = {
+				if = {
+					limit = { is_heresy_of = ROOT }
+					religion = ROOT
 				}
 			}
 		}
@@ -2710,7 +2708,7 @@ targetted_decisions = {
 		}
 	}
 
-	convert_to_spouse_religion= {
+	convert_to_spouse_religion = {
 		only_playable = yes
 		filter = home_court
 		ai_target_filter = home_court

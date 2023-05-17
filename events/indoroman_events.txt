@@ -3662,12 +3662,12 @@ character_event = {
 	adjective = "Walakrios' Legions"
 	}
 	hidden_tooltip = {
-	add_piety 100
-	set_preferred_capital = c_esfahan
-	random_independent_ruler = {
-	limit = {
-	has_landed_title = e_indo_roman_empire
-	}
+		add_piety 100
+		set_preferred_capital = c_esfahan
+		random_independent_ruler = {
+		limit = {
+			has_landed_title = e_indo_roman_empire
+		}
 	save_event_target_as = red_indo_emperor
 	}
 	spawn_unit = {

@@ -14,3 +14,4 @@ character_event = {
 		name = optaexpandedtraits.36
 		scaled_wealth = -2
 	}
+}

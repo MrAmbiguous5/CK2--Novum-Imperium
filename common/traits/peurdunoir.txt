@@ -14,12 +14,12 @@ birth = 100
   intrigue = -1
 
   
-  
-  opposites = {
-    trait = brave
+	opposites = {
+		trait = {
+			brave
             blinded
-           
-  }
+		}
+	}
    
   vassal_opinion = -5
   opposite_opinion = -5

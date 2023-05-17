@@ -12,11 +12,13 @@ birth = 100
   
   stewardship = -3
     
-  opposites = {
-    trait = goodwithnumbers
+	opposites = {
+		trait = {
+			goodwithnumbers
             architect
             scientifique
-            genius           
+            genius
+		}
   }
   
   opposite_opinion = -5

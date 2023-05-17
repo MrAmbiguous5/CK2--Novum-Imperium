@@ -10,12 +10,13 @@ random = yes
 birth = 100
   
   diplomacy = -2
-  
-  opposites = {
-    trait = funny
+
+	opposites = {
+		trait = {
+			funny
             sanshumour
-           
-  }
+		}
+	}
   
   opposite_opinion = -10
   same_opinion = 10

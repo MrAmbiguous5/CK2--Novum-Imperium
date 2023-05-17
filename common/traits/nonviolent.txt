@@ -15,9 +15,10 @@ birth = 100
   intrigue = -8
   learning = 8
   combat_rating = -10
-  
-  opposites = {
-    trait = soifdesang
+
+	opposites = {
+		trait = {
+			soifdesang
             impaler
             duelist
             hunter
@@ -25,8 +26,8 @@ birth = 100
             wroth
             zealous
             cruel
-       
-  }
+		}
+	}
   
   opposite_opinion = -30
   general_opinion = 30

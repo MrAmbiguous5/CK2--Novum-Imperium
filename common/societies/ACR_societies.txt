@@ -3775,6 +3775,7 @@ warrior_lodge_taoist = {
 			is_adult = yes
 			is_in_society = no
 			NOT = { has_landed_title = e_china
+			}
 			OR = {
 				trait = zealous
 				martial = 12

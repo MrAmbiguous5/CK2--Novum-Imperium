@@ -1,24 +1,25 @@
 aimelire = {
 
-      ruler_designer_cost = 5
+	ruler_designer_cost = 5
 
-potential = {
-     age = 16
-}
+	potential = {
+		age = 16
+	}
 
-random = yes
-birth = 100
+	random = yes
+	birth = 100
   
-  learning = 2
+	learning = 2
 
-  opposites = {
-    trait = detestelire
-            illettre
-            imbecile
-            blinded            
-           
-  }
+	opposites = {
+		trait = {
+			detestelire
+			illettre
+			imbecile
+			blinded            
+		}
+	}
   
-  same_opinion = 5
+	same_opinion = 5
 
 }

@@ -11,14 +11,16 @@ random = yes
 birth = 100
   
   stewardship = 3
-    
-  opposites = {
-    trait = goodwithnumbers
+
+	opposites = {
+		trait = {
+			goodwithnumbers
             architect
             nonscientifique 
             slow
-            imbecile                      
-  }
+            imbecile  
+		}
+	}
   
   opposite_opinion = -5
   same_opinion = 10

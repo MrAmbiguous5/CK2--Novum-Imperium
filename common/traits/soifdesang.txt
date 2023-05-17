@@ -13,12 +13,14 @@ birth = 100
   martial = 5
   intrigue = 3
   combat_rating = 4
-  
-  opposites = {
-    trait = kind
+
+	opposites = {
+		trait = {
+			kind
             nonviolent
-            craven           
-  }
+            craven
+		}
+	}
   
   opposite_opinion = -30
   general_opinion = -30

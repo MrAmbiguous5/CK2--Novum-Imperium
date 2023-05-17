@@ -16,9 +16,10 @@ birth = 25
   intrigue = -2
   learning = -2
   
-  opposites = {
-    trait =            
-  }
+	opposites = {
+		trait = {
+		}
+	}
   
   same_opinion = 20
   vassal_opinion = -10

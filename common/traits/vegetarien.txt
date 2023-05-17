@@ -13,10 +13,12 @@ birth = 100
   diplomacy = -1
   martial = -2
   
-  opposites = {
-    trait = hunter
+	opposites = {
+		trait = {
+			hunter
             meatlover
-  }
+		}
+	}
   
   opposite_opinion = -10
   same_opinion = 10

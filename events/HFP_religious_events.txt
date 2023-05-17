@@ -1444,7 +1444,7 @@ character_event = {
 		}
 	}
 	option = {
-		name NO_AI
+		name = NO_AI
 		trigger = {
 			ai = no
 			always = no

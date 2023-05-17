@@ -12,12 +12,13 @@ birth = 100
   
   diplomacy = 3
   intrigue = 1
-  
-  opposites = {
-    trait = sanshumour
-            unfunny
-           
-  }
+
+	opposites = {
+		trait = {
+			sanshumour
+            unfunny        
+        }   
+	}
   
   opposite_opinion = -10
   same_opinion = 20

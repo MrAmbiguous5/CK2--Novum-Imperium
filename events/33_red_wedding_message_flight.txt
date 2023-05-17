@@ -21,3 +21,4 @@ character_event = {
 			}
 		}
 	}
+}

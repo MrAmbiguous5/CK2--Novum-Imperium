@@ -154,5 +154,6 @@ character_event = {
 					tooltip = tooltipexpandedtraits.50c
 				}
 			}
+		}
 	}
 }

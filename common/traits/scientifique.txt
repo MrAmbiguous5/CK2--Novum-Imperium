@@ -12,13 +12,14 @@ birth = 100
   
   stewardship = 3
   learning = 3
-    
-  opposites = {
-    trait = nonscientifique  
+
+	opposites = {
+		trait = {
+			nonscientifique  
             slow
             imbecile
-                
-  }
+		}
+	}
   
   opposite_opinion = -5
   same_opinion = 10

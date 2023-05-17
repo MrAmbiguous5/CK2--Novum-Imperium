@@ -13,12 +13,13 @@ birth = 50
   diplomacy = -2
   intrigue = -1
   martial = -1
-  
-  opposites = {
-    trait = cruel
-            soifdesang
-           
-  }
+
+	opposites = {
+		trait = {
+			cruel
+            soifdesang 
+		}
+	}
   
   opposite_opinion = -5
   same_opinion = 10

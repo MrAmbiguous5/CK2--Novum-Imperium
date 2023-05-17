@@ -12,9 +12,11 @@ birth = 100
   combat_rating = 3
 
   opposites = {
-    trait = nonviolent
-            craven         
-  }
+    trait = {
+		nonviolent
+        craven
+	}
+}
   
   general_opinion = -20
   same_opinion = 20

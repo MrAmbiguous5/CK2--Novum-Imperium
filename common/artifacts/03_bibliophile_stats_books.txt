@@ -1,4 +1,4 @@
-# This file contains (hopefully) all artifacts tagged with "book", as they were becoming quite a few. Consider this THE LIBRARY. It's a thing now.
+# This file contains (hopefully) all artifacts tagged with book, as they were becoming quite a few. Consider this THE LIBRARY. It's a thing now.
 #########################################################################################################################################
 ##### Hisotrical Books ##                                                            ####                                            ####
 #########################################################################################################################################
@@ -45,7 +45,7 @@ dangerous_diseases = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_treatment_of_dangerous_diseases"
+	picture = GFX_treatment_of_dangerous_diseases
 	
 	slot = library	
 }
@@ -69,7 +69,7 @@ pandects1 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -90,7 +90,7 @@ pandects2 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -111,7 +111,7 @@ pandects3 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -132,7 +132,7 @@ pandects4 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -153,7 +153,7 @@ pandects5 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -174,7 +174,7 @@ pandects6 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -195,7 +195,7 @@ pandects7 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -216,7 +216,7 @@ pandects8 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -237,7 +237,7 @@ pandects9 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -258,7 +258,7 @@ pandects10 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -279,7 +279,7 @@ pandects11 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -300,7 +300,7 @@ pandects12 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -321,7 +321,7 @@ pandects13 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -342,7 +342,7 @@ pandects14 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -363,7 +363,7 @@ pandects15 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -384,7 +384,7 @@ pandects16 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -405,7 +405,7 @@ pandects17 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -426,7 +426,7 @@ pandects18 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -447,7 +447,7 @@ pandects19 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -468,7 +468,7 @@ pandects20 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -489,7 +489,7 @@ pandects21 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -510,7 +510,7 @@ pandects22 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -531,7 +531,7 @@ pandects23 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -552,7 +552,7 @@ pandects24 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -573,7 +573,7 @@ pandects25 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -594,7 +594,7 @@ pandects26 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -615,7 +615,7 @@ pandects27 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects3"
+	picture = GFX_pandects3
 	
 	slot = library	
 }
@@ -636,7 +636,7 @@ pandects28 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects4"
+	picture = GFX_pandects4
 	
 	slot = library	
 }
@@ -657,7 +657,7 @@ pandects29 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects"
+	picture = GFX_pandects
 	
 	slot = library	
 }
@@ -678,7 +678,7 @@ pandects30 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_pandects2"
+	picture = GFX_pandects2
 	
 	slot = library	
 }
@@ -718,7 +718,7 @@ book_pastoral_office = {
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_pastoral_office"
+	picture = GFX_pastoral_office
 	
 	slot = library	
 }
@@ -757,7 +757,7 @@ book_pastoral_office_freds_copy = {
 	stacking = no			
 	quality = 4
 	flags = { book }
-	picture = "GFX_pastoral_office_fred"
+	picture = GFX_pastoral_office_fred
 	
 	slot = library	
 }
@@ -791,7 +791,7 @@ letter_to_aethelbert = { #Æthelberht I
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_anglo_saxon_looseleaf"
+	picture = GFX_anglo_saxon_looseleaf
 	
 	slot = library	
 }
@@ -823,7 +823,7 @@ book_consulate = {
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_book_consulate_sea"
+	picture = GFX_book_consulate_sea
 	
 	slot = library	
 }
@@ -854,7 +854,7 @@ magna_carta_libertatum = {
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_magna_carta_libertatum"
+	picture = GFX_magna_carta_libertatum
 	
 	slot = library	
 }
@@ -880,7 +880,7 @@ papal_bull_1059 = {  #IN THE NAME OF THE LORD
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_papal_bull"
+	picture = GFX_papal_bull
 	
 	slot = library	
 }
@@ -903,7 +903,7 @@ papal_bull_1120 = {  #THUS TO THE JEWS
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_papal_bull"
+	picture = GFX_papal_bull
 	
 	slot = library	
 }
@@ -929,7 +929,7 @@ papal_bull_1144 = {  #SOLDIERS OF THE TEMPLE
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_papal_bull"
+	picture = GFX_papal_bull
 	
 	slot = library	
 }
@@ -959,7 +959,7 @@ papal_bull_1155 = {  #LAUDABLY
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_papal_bull"
+	picture = GFX_papal_bull
 	
 	slot = library	
 }
@@ -983,7 +983,7 @@ papal_bull_1235 = {  #SINCE THE ELEVENTH HOUR
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_papal_bull"
+	picture = GFX_papal_bull
 	
 	slot = library	
 }
@@ -1006,7 +1006,7 @@ papal_bull_1252 = {  #FOR THE ELIMINATION
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_papal_bull"
+	picture = GFX_papal_bull
 	
 	slot = library	
 }
@@ -1067,7 +1067,7 @@ plans_tower = {
 	stacking = no		
 	quality = 4
 	flags = { book }
-	picture = "GFX_blueprints_castle2"
+	picture = GFX_blueprints_castle2
 	
 	slot = library	
 }
@@ -1100,7 +1100,7 @@ plans_chepstow = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_blueprints_castle"
+	picture = GFX_blueprints_castle
 	
 	slot = library	
 }
@@ -1133,7 +1133,7 @@ blueprints_siege_engine = {
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_blueprints_siege_engine"
+	picture = GFX_blueprints_siege_engine
 	
 	slot = library	
 }
@@ -1165,7 +1165,7 @@ on_the_things_of_wars = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1192,7 +1192,7 @@ phaedrus = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1213,7 +1213,7 @@ gorgias = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1236,7 +1236,7 @@ cratylus = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1257,7 +1257,7 @@ statesman = {
 	stacking = no		
 	quality = 4
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1277,7 +1277,7 @@ apology = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1298,7 +1298,7 @@ symposium = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1318,7 +1318,7 @@ critias = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1345,7 +1345,7 @@ republic1 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book1"
+	picture = GFX_fantastic_book1
 	
 	slot = library	
 }
@@ -1370,7 +1370,7 @@ republic2 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book1"
+	picture = GFX_fantastic_book1
 	
 	slot = library	
 }
@@ -1395,7 +1395,7 @@ republic3 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book2"
+	picture = GFX_fantastic_book2
 	
 	slot = library	
 }
@@ -1420,7 +1420,7 @@ republic4 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book1"
+	picture = GFX_fantastic_book1
 	
 	slot = library	
 }
@@ -1445,7 +1445,7 @@ republic5 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book2"
+	picture = GFX_fantastic_book2
 	
 	slot = library	
 }
@@ -1470,7 +1470,7 @@ republic6 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book1"
+	picture = GFX_fantastic_book1
 	
 	slot = library	
 }
@@ -1495,7 +1495,7 @@ republic7 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book2"
+	picture = GFX_fantastic_book2
 	
 	slot = library	
 }
@@ -1520,7 +1520,7 @@ republic8 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book2"
+	picture = GFX_fantastic_book2
 	
 	slot = library	
 }
@@ -1545,7 +1545,7 @@ republic9 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book1"
+	picture = GFX_fantastic_book1
 	
 	slot = library	
 }
@@ -1570,7 +1570,7 @@ republic10 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_fantastic_book2"
+	picture = GFX_fantastic_book2
 	
 	slot = library	
 }
@@ -1589,7 +1589,7 @@ lysis = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_roman_scroll"
+	picture = GFX_roman_scroll
 	
 	slot = library	
 }
@@ -1620,7 +1620,7 @@ sum_of_logic = {
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_ockham_sum_of_logic"
+	picture = GFX_ockham_sum_of_logic
 	
 	slot = library	
 }
@@ -1643,7 +1643,7 @@ consolation_of_philosphy = {
 	stacking = no		
 	quality = 4
 	flags = { book }
-	picture = "GFX_consolation_of_philosphy"
+	picture = GFX_consolation_of_philosphy
 	
 	slot = library	
 }
@@ -1665,7 +1665,7 @@ consolation_of_philosphy2 = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_consolation_of_philosphy2"
+	picture = GFX_consolation_of_philosphy2
 	
 	slot = library	
 }
@@ -1687,7 +1687,7 @@ consolation_of_philosphy_girdle = {
 	slot = girdle_book	
 	quality = 3
 	flags = { book }
-	picture = "GFX_girdlebook"
+	picture = GFX_girdlebook
 }
 
 ##
@@ -1723,7 +1723,7 @@ letter_to_irish_bishops = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_anglo_saxon_looseleaf"
+	picture = GFX_anglo_saxon_looseleaf
 	
 	slot = library	
 }
@@ -1749,7 +1749,7 @@ city_of_god = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_book_title_spqr"
+	picture = GFX_book_title_spqr
 	
 	slot = library	
 }
@@ -1775,7 +1775,7 @@ gospel_of_henry_the_lion = {
 	stacking = no		
 	quality = 3
 	flags = { unique book religious christian }
-	picture = "GFX_gospel_of_henry_the_lion"
+	picture = GFX_gospel_of_henry_the_lion
 	
 	slot = library	
 }
@@ -1818,7 +1818,7 @@ benedictional_aethelwold = {
 	stacking = no		
 	quality = 5
 	flags = { book }
-	picture = "GFX_benedictional_aethelwold"
+	picture = GFX_benedictional_aethelwold
 	
 	slot = library	
 }
@@ -1863,7 +1863,7 @@ chronica_prophetica = {
 	stacking = no		
 	quality = 4
 	flags = { book }
-	picture = "GFX_chronica_prophetica"
+	picture = GFX_chronica_prophetica
 	
 	slot = library	
 }
@@ -1915,7 +1915,7 @@ deeds_done = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_deeds_done"
+	picture = GFX_deeds_done
 	
 	slot = library	
 }
@@ -1950,7 +1950,7 @@ deeds_done_book = {
 	stacking = no		
 	quality = 4
 	flags = { book }
-	picture = "GFX_deed_done_beyond"
+	picture = GFX_deed_done_beyond
 	
 	slot = library	
 }
@@ -1986,7 +1986,7 @@ man_chronicle = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_annals_man"
+	picture = GFX_annals_man
 	
 	slot = library	
 }
@@ -2021,7 +2021,7 @@ melrose_chronicle = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_annals_of_winchcombe"
+	picture = GFX_annals_of_winchcombe
 	
 	slot = library	
 }
@@ -2067,7 +2067,7 @@ iona_chronicle = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_annals_of_ulster"
+	picture = GFX_annals_of_ulster
 	
 	slot = library	
 }
@@ -2109,7 +2109,7 @@ osraige_chronicle = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_anglo_chronicle"
+	picture = GFX_anglo_chronicle
 	
 	slot = library	
 }
@@ -2143,7 +2143,7 @@ annals_of_inisfallen = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_coventry_chronicle"
+	picture = GFX_coventry_chronicle
 	
 	slot = library	
 }
@@ -2176,7 +2176,7 @@ annals_of_clonmacnoise = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_annals_of_ulster"
+	picture = GFX_annals_of_ulster
 	
 	slot = library	
 }
@@ -2209,7 +2209,7 @@ annals_of_armagh = {   #PROTO-ANNALS OF ULSTER/BRANCH OF THE CHRONICLE OF IRELAN
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_annals_of_ulster"
+	picture = GFX_annals_of_ulster
 	
 	slot = library	
 }
@@ -2245,7 +2245,7 @@ anglo_chronicle = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_anglo_chronicle"
+	picture = GFX_anglo_chronicle
 	
 	slot = library	
 }
@@ -2278,7 +2278,7 @@ winchcombe_annals = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_winchcombe_annals"
+	picture = GFX_winchcombe_annals
 	
 	slot = library	
 }
@@ -2309,7 +2309,7 @@ annals_of_winchcombe = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_annals_of_winchcombe"
+	picture = GFX_annals_of_winchcombe
 	
 	slot = library	
 }
@@ -2344,7 +2344,7 @@ tewkesbury_annals = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_tewkesbury_annals"
+	picture = GFX_tewkesbury_annals
 	
 	slot = library	
 }
@@ -2379,7 +2379,7 @@ margan_annals = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_margan_annals"
+	picture = GFX_margan_annals
 	
 	slot = library	
 }
@@ -2412,7 +2412,7 @@ coventry_chronicle = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_coventry_chronicle"
+	picture = GFX_coventry_chronicle
 	
 	slot = library	
 }
@@ -2454,7 +2454,7 @@ annales_cambriae = {
 	stacking = no		
 	quality = 4
 	flags = { book }
-	picture = "GFX_annales_cambriae"
+	picture = GFX_annales_cambriae
 	
 	slot = library	
 }
@@ -2494,7 +2494,7 @@ annales_cambriae2 = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_annales_cambriae2"
+	picture = GFX_annales_cambriae2
 	
 	slot = library	
 }
@@ -2534,7 +2534,7 @@ chronicle_of_the_princes = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_anglo_saxon_looseleaf"
+	picture = GFX_anglo_saxon_looseleaf
 	
 	slot = library	
 }
@@ -2582,7 +2582,7 @@ antiquities_of_the_jews_a_1 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews"
+	picture = GFX_antiquities_of_the_jews
 	
 	slot = library	
 }
@@ -2611,7 +2611,7 @@ antiquities_of_the_jews_a_2 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews"
+	picture = GFX_antiquities_of_the_jews
 	
 	slot = library	
 }
@@ -2640,7 +2640,7 @@ antiquities_of_the_jews_a_3 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews2
+	picture = GFX_antiquities_of_the_jews2
 	
 	slot = library	
 }
@@ -2669,7 +2669,7 @@ antiquities_of_the_jews_a_4 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews3"
+	picture = GFX_antiquities_of_the_jews3
 	
 	slot = library	
 }
@@ -2698,7 +2698,7 @@ antiquities_of_the_jews_a_5 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews4"
+	picture = GFX_antiquities_of_the_jews4
 	
 	slot = library	
 }
@@ -2727,7 +2727,7 @@ antiquities_of_the_jews_a_6 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews"
+	picture = GFX_antiquities_of_the_jews
 	
 	slot = library	
 }
@@ -2756,7 +2756,7 @@ antiquities_of_the_jews_a_7 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews4"
+	picture = GFX_antiquities_of_the_jews4
 	
 	slot = library	
 }
@@ -2785,7 +2785,7 @@ antiquities_of_the_jews_a_8 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews5"
+	picture = GFX_antiquities_of_the_jews5
 	
 	slot = library	
 }
@@ -2814,7 +2814,7 @@ antiquities_of_the_jews_a_9 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews2"
+	picture = GFX_antiquities_of_the_jews2
 	
 	slot = library	
 }
@@ -2843,7 +2843,7 @@ antiquities_of_the_jews_a_10 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews6"
+	picture = GFX_antiquities_of_the_jews6
 	
 	slot = library	
 }
@@ -2874,7 +2874,7 @@ antiquities_of_the_jews_a_11 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews3"
+	picture = GFX_antiquities_of_the_jews3
 	
 	slot = library	
 }
@@ -2903,7 +2903,7 @@ antiquities_of_the_jews_a_12 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews"
+	picture = GFX_antiquities_of_the_jews
 	
 	slot = library	
 }
@@ -2932,7 +2932,7 @@ antiquities_of_the_jews_a_13 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews"
+	picture = GFX_antiquities_of_the_jews
 	
 	slot = library	
 }
@@ -2961,7 +2961,7 @@ antiquities_of_the_jews_a_14 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews6"
+	picture = GFX_antiquities_of_the_jews6
 	
 	slot = library	
 }
@@ -2990,7 +2990,7 @@ antiquities_of_the_jews_a_15 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews6"
+	picture = GFX_antiquities_of_the_jews6
 	
 	slot = library	
 }
@@ -3019,7 +3019,7 @@ antiquities_of_the_jews_a_16 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews"
+	picture = GFX_antiquities_of_the_jews
 	
 	slot = library	
 }
@@ -3048,7 +3048,7 @@ antiquities_of_the_jews_a_17 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews4"
+	picture = GFX_antiquities_of_the_jews4
 	
 	slot = library	
 }
@@ -3077,7 +3077,7 @@ antiquities_of_the_jews_a_18 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews5"
+	picture = GFX_antiquities_of_the_jews5
 	
 	slot = library	
 }
@@ -3106,7 +3106,7 @@ antiquities_of_the_jews_a_19 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews"
+	picture = GFX_antiquities_of_the_jews
 	
 	slot = library	
 }
@@ -3135,7 +3135,7 @@ antiquities_of_the_jews_a_20 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_antiquities_of_the_jews3"
+	picture = GFX_antiquities_of_the_jews3
 	
 	slot = library	
 }
@@ -3164,7 +3164,7 @@ book_of_pontiffs = {
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_book_of_pontiffs"
+	picture = GFX_book_of_pontiffs
 	
 	slot = library	
 }
@@ -3192,7 +3192,7 @@ in_praise_of_the_new_knighthood = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_in_praise_of_the_new_knighthood"
+	picture = GFX_in_praise_of_the_new_knighthood
 	
 	slot = library	
 }
@@ -3229,7 +3229,7 @@ tale_of_danishmend = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_islamic_work_orange2"
+	picture = GFX_islamic_work_orange2
 	
 	slot = library	
 }
@@ -3285,7 +3285,7 @@ the_garden_of_pages = {
 	stacking = no			
 	quality = 3
 	flags = { book }
-	picture = "GFX_garden_of_pages"
+	picture = GFX_garden_of_pages
 	
 	slot = library	
 }
@@ -3329,7 +3329,7 @@ ystrad_clud = {
 	stacking = no			
 	quality = 5
 	flags = { book }
-	picture = "GFX_ystrad_clud"
+	picture = GFX_ystrad_clud
 	
 	slot = library	
 }
@@ -3369,7 +3369,7 @@ ecclesiatical_history1 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_ecclesiastical_history1"
+	picture = GFX_ecclesiastical_history1
 	
 	slot = library	
 }
@@ -3406,7 +3406,7 @@ ecclesiatical_history2 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_ecclesiastical_history2"
+	picture = GFX_ecclesiastical_history2
 	
 	slot = library	
 }
@@ -3443,7 +3443,7 @@ ecclesiatical_history3 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_ecclesiastical_history3"
+	picture = GFX_ecclesiastical_history3
 	
 	slot = library	
 }
@@ -3480,7 +3480,7 @@ ecclesiatical_history4 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_ecclesiastical_history4"
+	picture = GFX_ecclesiastical_history4
 	
 	slot = library	
 }
@@ -3517,7 +3517,7 @@ ecclesiatical_history5 = {
 	stacking = no			
 	quality = 2
 	flags = { book }
-	picture = "GFX_ecclesiastical_history5"
+	picture = GFX_ecclesiastical_history5
 	
 	slot = library	
 }
@@ -3562,7 +3562,7 @@ ecclesiatical_history_girdle1 = {
 	slot = girdle_book		
 	quality = 1
 	flags = { book }
-	picture = "GFX_ecclesiastical_history_girdle"
+	picture = GFX_ecclesiastical_history_girdle
 }
 
 ecclesiatical_history_girdle2 = {
@@ -3603,7 +3603,7 @@ ecclesiatical_history_girdle2 = {
 	slot = girdle_book	
 	quality = 1
 	flags = { book }
-	picture = "GFX_ecclesiastical_history_girdle"
+	picture = GFX_ecclesiastical_history_girdle
 }
 
 ecclesiatical_history_girdle3 = {
@@ -3644,7 +3644,7 @@ ecclesiatical_history_girdle3 = {
 	slot = girdle_book	
 	quality = 1
 	flags = { book }
-	picture = "GFX_ecclesiastical_history_girdle"
+	picture = GFX_ecclesiastical_history_girdle
 }
 
 ecclesiatical_history_girdle4 = {
@@ -3685,7 +3685,7 @@ ecclesiatical_history_girdle4 = {
 	slot = girdle_book	
 	quality = 1
 	flags = { book }
-	picture = "GFX_ecclesiastical_history_girdle"
+	picture = GFX_ecclesiastical_history_girdle
 }
 
 ecclesiatical_history_girdle5 = {
@@ -3726,7 +3726,7 @@ ecclesiatical_history_girdle5 = {
 	slot = girdle_book	
 	quality = 1
 	flags = { book }
-	picture = "GFX_ecclesiastical_history_girdle"
+	picture = GFX_ecclesiastical_history_girdle
 }
 
 
@@ -3759,7 +3759,7 @@ deeds_of_the_danes1 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -3792,7 +3792,7 @@ deeds_of_the_danes2 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -3825,7 +3825,7 @@ deeds_of_the_danes3 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes"
+	picture = GFX_deeds_of_the_danes
 	
 	slot = library	
 }
@@ -3858,7 +3858,7 @@ deeds_of_the_danes4 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes"
+	picture = GFX_deeds_of_the_danes
 	
 	slot = library	
 }
@@ -3891,7 +3891,7 @@ deeds_of_the_danes5 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -3924,7 +3924,7 @@ deeds_of_the_danes6 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes"
+	picture = GFX_deeds_of_the_danes
 	
 	slot = library	
 }
@@ -3956,7 +3956,7 @@ deeds_of_the_danes7 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes"
+	picture = GFX_deeds_of_the_danes
 	
 	slot = library	
 }
@@ -3989,7 +3989,7 @@ deeds_of_the_danes8 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -4022,7 +4022,7 @@ deeds_of_the_danes9 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -4049,7 +4049,7 @@ deeds_of_the_danes10 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes"
+	picture = GFX_deeds_of_the_danes
 	
 	slot = library	
 }
@@ -4074,7 +4074,7 @@ deeds_of_the_danes11 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes"
+	picture = GFX_deeds_of_the_danes
 }
 deeds_of_the_danes12 = {
 	learning = 1
@@ -4097,7 +4097,7 @@ deeds_of_the_danes12 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -4122,7 +4122,7 @@ deeds_of_the_danes13 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -4148,7 +4148,7 @@ deeds_of_the_danes14 = {  ###BIGGEST VOLUME, covers Baltic Crusades
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes14"
+	picture = GFX_deeds_of_the_danes14
 	
 	slot = library	
 }
@@ -4174,7 +4174,7 @@ deeds_of_the_danes15 = { ###covers Baltic Crusades
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes"
+	picture = GFX_deeds_of_the_danes
 	
 	slot = library	
 }
@@ -4200,7 +4200,7 @@ deeds_of_the_danes16 = { ###covers Baltic Crusades
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_deeds_of_the_danes5"
+	picture = GFX_deeds_of_the_danes5
 	
 	slot = library	
 }
@@ -4242,7 +4242,7 @@ crenellate_rochester = {
 	stacking = no		
 	quality = 2
 	flags = { book licence }
-	picture = "GFX_licence_to_crenellate"
+	picture = GFX_licence_to_crenellate
 	
 	slot = library	
 }
@@ -4269,7 +4269,7 @@ crenellate_colchester = {
 	stacking = no		
 	quality = 3
 	flags = { book licence }
-	picture = "GFX_licence_to_crenellate"
+	picture = GFX_licence_to_crenellate
 	
 	slot = library	
 }
@@ -4296,7 +4296,7 @@ crenellate_gainsborough = {
 	stacking = no		
 	quality = 2
 	flags = { book licence }
-	picture = "GFX_licence_to_crenellate"
+	picture = GFX_licence_to_crenellate
 	
 	slot = library	
 }
@@ -4323,7 +4323,7 @@ crenellate_devon = {
 	stacking = no		
 	quality = 2
 	flags = { book licence }
-	picture = "GFX_licence_to_crenellate"
+	picture = GFX_licence_to_crenellate
 	
 	slot = library	
 }
@@ -4349,7 +4349,7 @@ crenellate_coventry = {
 	stacking = no		
 	quality = 3
 	flags = { book licence }
-	picture = "GFX_licence_to_crenellate"
+	picture = GFX_licence_to_crenellate
 	
 	slot = library	
 }
@@ -4374,7 +4374,7 @@ crenellate_norwich = {
 	stacking = no		
 	quality = 1
 	flags = { book licence }
-	picture = "GFX_licence_to_crenellate"
+	picture = GFX_licence_to_crenellate
 	
 	slot = library	
 }
@@ -4420,7 +4420,7 @@ armorial_of_king_henry = {
 	stacking = no		
 	quality = 3
 	flags = { book armorial }
-	picture = "GFX_armorial_roll"
+	picture = GFX_armorial_roll
 	
 	slot = library	
 }
@@ -4453,7 +4453,7 @@ armorial_of_wales = {
 	stacking = no		
 	quality = 2
 	flags = { book armorial }
-	picture = "GFX_armorial_roll"
+	picture = GFX_armorial_roll
 	
 	slot = library	
 }
@@ -4483,7 +4483,7 @@ armorial_of_savoy = {
 	stacking = no		
 	quality = 3
 	flags = { book armorial }
-	picture = "GFX_armorial_roll"
+	picture = GFX_armorial_roll
 	
 	slot = library	
 }
@@ -4508,7 +4508,7 @@ armorial_girdle = {
 	slot = girdle_book	
 	quality = 3
 	flags = { book armorial }
-	picture = "GFX_girdle_book_armorial"
+	picture = GFX_girdle_book_armorial
 	
 	slot = library	
 }
@@ -4578,7 +4578,7 @@ book_of_monsters = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_book_of_monsters"
+	picture = GFX_book_of_monsters
 	
 	slot = library	
 }
@@ -4620,7 +4620,7 @@ testament_solomon = {
 	stacking = no		
 	quality = 4
 	flags = { book grimoire occult }
-	picture = "GFX_testament_solomon"
+	picture = GFX_testament_solomon
 	
 	slot = library	
 }
@@ -4658,7 +4658,7 @@ book_of_kings = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_islamic_work_mughal"
+	picture = GFX_islamic_work_mughal
 	
 	slot = library	
 }
@@ -4684,7 +4684,7 @@ ring_of_the_dove = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_islamic_work_red"
+	picture = GFX_islamic_work_red
 	
 	slot = library	
 }
@@ -4705,7 +4705,7 @@ aesops_fables = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_aesopfables"
+	picture = GFX_aesopfables
 	
 	slot = library	
 }
@@ -4724,7 +4724,7 @@ lais_marie_de_france = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_lais"
+	picture = GFX_lais
 	
 	slot = library	
 }
@@ -4759,7 +4759,7 @@ song_of_william = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_song_of_william"
+	picture = GFX_song_of_william
 	
 	slot = library	
 }
@@ -4792,7 +4792,7 @@ song_of_william2 = {
 	stacking = no		
 	quality = 1
 	flags = { book }
-	picture = "GFX_song_of_william2"
+	picture = GFX_song_of_william2
 	
 	slot = library	
 }
@@ -4837,7 +4837,7 @@ cattle_raid_of_cooley = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_cattle_raid_of_cooley"
+	picture = GFX_cattle_raid_of_cooley
 	
 	slot = library	
 }
@@ -4878,7 +4878,7 @@ knight_in_the_panther_skin = {
 	stacking = no		
 	quality = 2
 	flags = { book }
-	picture = "GFX_knight_in_panther_skin"
+	picture = GFX_knight_in_panther_skin
 	
 	slot = library	
 }
@@ -4915,7 +4915,7 @@ knight_in_the_panther_skin2 = {
 	stacking = no		
 	quality = 3
 	flags = { book }
-	picture = "GFX_knight_in_panther_skin2"
+	picture = GFX_knight_in_panther_skin2
 	
 	slot = library	
 }
@@ -4951,7 +4951,7 @@ knight_in_the_panther_skin3 = {
 	stacking = no		
 	quality = 5
 	flags = { book }
-	picture = "GFX_knight_in_panther_skin3"
+	picture = GFX_knight_in_panther_skin3
 	
 	slot = library	
 }

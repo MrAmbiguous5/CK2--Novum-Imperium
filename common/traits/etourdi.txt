@@ -14,12 +14,13 @@ birth = 100
   intrigue = -2
   stewardship = -2
   learning = -2
-  
-  opposites = {
-    trait = genius
-            concentre    
-                  
- }
+
+	opposites = {
+		trait = {
+			genius
+            concentre          
+        }   
+	}
   
   vassal_opinion = -5
   opposite_opinion = -5

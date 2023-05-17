@@ -11,11 +11,13 @@ random = yes
 birth = 100
   
   diplomacy = -3
-  
-  opposites = {
-    trait = mature
-            kind            
-}
+
+	opposites = {
+		trait = {
+			mature
+            kind
+		}
+	}
   
   opposite_opinion = -20
   same_opinion = 20

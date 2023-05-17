@@ -10,9 +10,10 @@ personality = yes
 random = yes
 birth = 100
       
-  opposites = {
-    trait =          
- }
+	opposites = {
+		trait = {
+		}
+	}
   
   same_opinion = 10
   sex_appeal_opinion = -1

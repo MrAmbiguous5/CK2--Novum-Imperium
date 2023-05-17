@@ -246,11 +246,12 @@ character_event = {
 				set_character_flag = flag_hunting_wolf_baltic
 			}
 			else_if = { 
-				limit = 
+				limit = {
 					OR = {
                         society_member_of = warrior_lodge_hellenic
                         society_member_of = warrior_lodge_titan
                     }
+				}
 				set_character_flag = flag_hunting_wolf_hellenic
 			}
 			else_if = { 
