@@ -1499,6 +1499,7 @@ zealot_pattern_against = {
 	tribal_organization_0 = {
 		NOR = {
 			is_organized_religion_trigger = no
+			religion = amazigh
 			is_tribal = yes
 		}
 	}
@@ -1508,7 +1509,10 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					is_organized_religion_trigger = yes
+					OR = {
+						is_organized_religion_trigger = yes
+						religion = amazigh
+					}
 				}
 			}
 			is_tribal = no
@@ -1520,7 +1524,10 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					is_organized_religion_trigger = yes
+					OR = {
+						is_organized_religion_trigger = yes
+						religion = amazigh
+					}
 				}
 			}
 			is_tribal = no
@@ -1532,7 +1539,10 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					is_organized_religion_trigger = yes
+					OR = {
+						is_organized_religion_trigger = yes
+						religion = amazigh
+					}
 				}
 			}
 			is_tribal = no
@@ -1543,7 +1553,10 @@ zealot_pattern_against = {
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
-					is_organized_religion_trigger = yes
+					OR = {
+						is_organized_religion_trigger = yes
+						religion = amazigh
+					}
 				}
 			}
 			is_tribal = no

@@ -26,6 +26,8 @@ emf_cb_pagan_subjugation_basic_can_use = {
 		# Unreformed pagan sans Hellenism:
 		emf_unreformed_pagan = yes
 		NOT = { religion = hellenic_pagan }
+		religion = a_tag_roog
+        religion = amazigh
 		mercenary = no
 		# Prefer other CBs potentially:
 		OR = {

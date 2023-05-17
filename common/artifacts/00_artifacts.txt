@@ -5661,10 +5661,16 @@ crown_african_mask_1 = { #Top tier Mask - Inspiring
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish }
 	stacking = no
@@ -5683,10 +5689,16 @@ crown_african_mask_2 = { #Top tier Mask - Terrifying
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish troops_morale }
 	stacking = no
@@ -5707,10 +5719,16 @@ crown_african_mask_3 = { #Middle tier Mask - Unyielding
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish troops_morale }
 	stacking = no
@@ -5729,10 +5747,16 @@ crown_african_mask_4 = { #Middle tier Mask - Ruthless
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish troops_morale }
 	stacking = no
@@ -5751,10 +5775,16 @@ crown_african_mask_5 = { #Middle tier Mask - Trickster
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish }
 	stacking = no
@@ -5774,10 +5804,16 @@ crown_african_mask_6 = { #Low tier Mask - Angry
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish troops_morale }
 	stacking = no
@@ -5793,10 +5829,16 @@ crown_african_mask_7 = { #Low tier Mask - Staunch
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish troops_morale }
 	stacking = no
@@ -5812,10 +5854,16 @@ crown_african_mask_8 = { #Low tier Mask - Fleeting
 	}
 	active = {
 		is_adult = yes
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { mask african_fetish }
 	stacking = no
@@ -5833,10 +5881,16 @@ scepter_african_1 = { #Mid tier Totem - Trickster
 		random = 0.05
 	}
 	active = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { scepter totem african_fetish troops_morale }
 	stacking = no
@@ -5851,10 +5905,16 @@ scepter_african_2 = { #Mid tier Totem - Howler
 		morale_defence = 0.1
 	}
 	active = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { scepter totem african_fetish troops_morale }
 	stacking = yes
@@ -5868,10 +5928,16 @@ scepter_african_3 = { #Low tier Totem - Rainstick
 	west_african_pagan_reformed_opinion = 5
 	quality = 1
 	active = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	allowed_gift = {
-		religion_openly_west_african_or_reformed_trigger = yes
+		OR = {
+            religion_openly_west_african_or_reformed_trigger = yes
+            religion_group = african_group
+        }
 	}
 	flags = { scepter totem african_fetish }
 	stacking = no

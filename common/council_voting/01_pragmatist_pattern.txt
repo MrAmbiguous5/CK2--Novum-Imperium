@@ -1411,6 +1411,7 @@ pragmatist_pattern_against = {
 	tribal_organization_0 = {
 		NOR = {
 			is_organized_religion_trigger = no
+			religion = amazigh
 			is_tribal = yes
 		}
 	}

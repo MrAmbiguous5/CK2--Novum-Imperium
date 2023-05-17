@@ -588,6 +588,8 @@ emf_cb_can_use_religious = {
 			mercenary = yes
 			pacifist = yes
 			religion = taoist
+			religion = a_tag_roog
+			religion = amazigh
 		}
 		NAND = {
 			OR = {

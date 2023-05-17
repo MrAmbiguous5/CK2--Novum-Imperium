@@ -3444,6 +3444,13 @@ crusade = {
 					has_global_flag = muslim_jihads_unlocked
 				}
 			}
+			AND = {
+                religion_group = african_group
+				custom_tooltip = {
+					text = CTT_AFRICAN_GHWS_UNLOCKED
+					has_global_flag = african_ghws_unlocked
+				}
+			}
 		}
 	}
 
@@ -10938,7 +10945,10 @@ pagan_county_conquest = {
 	can_use = {
 		emf_cb_can_use = yes
 		ROOT = {
-			religion_group = pagan_group
+			OR = {
+				religion_group = pagan_group
+				religion_group = african_group
+            }
 			OR = {
 				AND = {
 					is_nomadic = yes
@@ -10982,7 +10992,10 @@ pagan_county_conquest = {
 			ROOT = { is_nomadic = yes }
 			AND = {
 				ROOT = {
-					religion_group = pagan_group
+					OR = {
+                        religion_group = pagan_group
+                        religion_group = african_group
+                    }
 					NOT = { same_realm = FROM }
 					NOT = { emf_syncretized_religion_with_FROM = yes }
 				}
@@ -23475,7 +23488,10 @@ flower_war_cb = {
 		emf_cb_can_use = yes
 		ROOT = {
 			has_dlc = "Holy Fury"
-			emf_ritual_sacrifice_religion = yes
+			OR = {
+				emf_ritual_sacrifice_religion = yes
+				has_religion_feature = religion_feature_amazigh
+			}
 			NOT = { has_religion_feature = religion_peaceful } #Aztecs could reform as Peaceful.
 			NOT = { same_realm = FROM }
 			NOT = { is_liege_or_above = FROM }
