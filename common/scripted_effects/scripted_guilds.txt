@@ -465,19 +465,3 @@ add_guilds_mission_fail_influence_effect = {
 		years = 5
 	}
 }
-
-add_mission_succeed_influence_effect = {  #vanilla influence effect, adding counter for league
-	# add_society_modifier = 	{
-		# modifier = successful_mission
-		# years = 10
-	# }
-	if = {
-		limit = {
-			society_member_of = the_guilds
-		}
-		add_society_modifier = 	{
-			modifier = failed_guilds_mission_counter
-			years = 10
-		}
-	}
-}
