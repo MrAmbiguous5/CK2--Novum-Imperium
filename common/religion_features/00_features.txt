@@ -13,6 +13,8 @@ religion_nature = {
 				has_selected_religion_feature = religion_feature_norse
 				has_selected_religion_feature = religion_feature_aztec
 				has_selected_religion_feature = religion_feature_tengri
+				has_selected_religion_feature = religion_feature_amazigh
+                has_selected_religion_feature = religion_feature_a_tag_roog
 			}
 		}
 		effect = {
@@ -267,6 +269,7 @@ religion_nature = {
 				has_selected_religion_feature = religion_relentless
 				has_selected_religion_feature = religion_feature_aztec
 				has_selected_religion_feature = religion_feature_tengri
+				has_selected_religion_feature = religion_feature_a_tag_roog
 			}
 		}
 		effect = {
@@ -765,6 +768,7 @@ religion_doctrine = {
 				has_selected_religion_feature = religion_feature_zun #Redundant
 				has_selected_religion_feature = religion_feature_tengri
 				has_selected_religion_feature = religion_syncretic_muslim
+				has_selected_religion_feature = religion_feature_a_tag_roog
 			} 
 		}
 		effect = {
@@ -1062,8 +1066,9 @@ religion_doctrine = {
 	religion_haruspicy = { #Gives option to divinate the future before waging a war.
 		picture = GFX_religion_feature_haruspicy
 		potential = {
-			NOT = {
+			NOR = {
 				has_selected_religion_feature = religion_feature_hellenic
+				has_selected_religion_feature = religion_feature_a_tag_roog
 			}
 			NOT = { religion = celtic_pagan_reformed }
 		}
@@ -1098,8 +1103,16 @@ religion_doctrine = {
 						religion = tengri_pagan
 						religion = finnish_pagan
 					}
+					
 				}
 			}
+			modifier = {
+                factor = 1.5
+                FROM = {
+                    character = yes
+                    religion = a_tag_roog
+                }
+            }
 		}
 
 	}
@@ -1287,6 +1300,7 @@ religion_doctrine = {
 				has_selected_religion_feature = religion_syncretic_muslim
 				has_selected_religion_feature = religion_syncretic_zoroastrian
 				has_selected_religion_feature = religion_syncretic_indian
+				has_selected_religion_feature = religion_feature_amazigh
 			}
 		}
 		effect = {
@@ -1313,6 +1327,7 @@ religion_doctrine = {
 			NOT = {
 				has_selected_religion_feature = religion_peaceful
 				has_selected_religion_feature = religion_feature_norse
+				has_selected_religion_feature = religion_feature_amazigh
 			}
 		}
 		effect = {
@@ -1345,6 +1360,7 @@ religion_doctrine = {
 				has_selected_religion_feature = religion_peaceful
 				has_selected_religion_feature = religion_feature_norse #Redundant
 				has_selected_religion_feature = religion_feature_aztec
+				has_selected_religion_feature = religion_feature_amazigh
 			}
 		}
 		effect = {
@@ -1424,6 +1440,7 @@ religion_doctrine = {
 				has_selected_religion_feature = religion_defensive
 				has_selected_religion_feature = religion_feature_aztec #Redundant
 				has_selected_religion_feature = religion_feature_tengri
+				has_selected_religion_feature = religion_feature_a_tag_roog
 			}
 		}
 		effect = {
@@ -1541,6 +1558,13 @@ religion_doctrine = {
 				has_game_started = no
 				religion_group = pagan_group
 			}
+			modifier = {
+                factor = 1.5
+                FROM = {
+                    character = yes
+                    religion = amazigh
+                }
+            }
 		}
 	}
 	religion_commercial = {
@@ -2543,86 +2567,6 @@ religion_doctrine = {
 			factor = 0
 		}
 	}
-	### ACR ###
-
-    religion_feature_celtic = {
-        picture = GFX_religion_feature_celtic
-        potential = {
-            has_game_started = yes
-            religion = celtic_pagan_reformed
-            NOT = {
-                has_alternate_start_parameter = { key = religion_names value = random }
-            }
-        }
-        trigger = {
-            NOR = {
-                has_selected_religion_feature = religion_haruspicy
-                has_selected_religion_feature = religion_animistic
-                has_selected_religion_feature = religion_equal
-                has_selected_religion_feature = religion_matriarchal
-                has_selected_religion_feature = religion_patriarchal
-            }
-        }
-        effect = {
-			custom_tooltip = { text = tooltip_religion_feature_feminist }
-			custom_tooltip = { text = tooltip_religion_feature_adulthood_rite }
-            custom_tooltip = { text = tooltip_religion_feature_haruspicy }
-
-			hidden_tooltip = {
-                set_allows_matrilineal_marriage = yes
-                set_feminist = yes
-                set_women_can_take_consorts = yes
-                set_men_can_take_consorts = yes
-                set_female_temple_holders = yes
-                set_male_temple_holders = yes
-                set_allow_looting = yes
-			}
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
-    religion_feature_egyptian = {
-        picture = GFX_religion_feature_egyptian
-        potential = {
-            has_game_started = yes
-            religion = egyptian_pagan_reformed
-            NOT = {
-                has_alternate_start_parameter = { key = religion_names value = random }
-            }
-        }
-        trigger = {
-            NOR = {
-                has_selected_religion_feature = religion_matriarchal
-                has_selected_religion_feature = religion_patriarchal
-                has_selected_religion_feature = religion_equal
-                has_selected_religion_feature = religion_beatification
-                has_selected_religion_feature = religion_stable
-                trigger_if = {
-                    limit = { has_game_started = yes }
-                    FROM = {
-                        character = yes
-                        government = merchant_republic_government
-                    }
-                }
-            }
-        }
-        effect = {
-			custom_tooltip = { text = tooltip_religion_feature_cognatic }
-			custom_tooltip = { text = tooltip_religion_feature_feminist }
-            custom_tooltip = { text = tooltip_religion_feature_beatification }
-			custom_tooltip = { text = tooltip_religion_feature_stable }
-			hidden_tooltip = {
-				set_short_reign_opinion_year_mult = 0
-				set_allows_matrilineal_marriage = yes
-				set_feminist = yes
-				set_women_can_take_consorts = yes
-			}
-        }
-        ai_will_do = {
-            factor = 50
-        }
-    }
 }
 
 religion_leadership = {
@@ -2766,6 +2710,7 @@ religion_leadership = {
 							religion = norse_pagan
 							religion = tengri_pagan
 							religion = aztec
+							religion = amazigh
 						}
 					}
 				}
@@ -2965,6 +2910,14 @@ religion_leadership = {
 							intrigue_penalty = 1
 							learning_penalty = 1
 							health_penalty = 1
+						}
+					}
+					else_if = {
+						limit = {
+							has_selected_religion_feature = religion_feature_amazigh
+						}
+						set_character_modifier = {
+							martial = 2
 						}
 					}
 					else = {
@@ -3585,6 +3538,7 @@ religion_leadership = {
 						OR = { 
 							religion = west_african_pagan
 							religion = zun_pagan
+							religion = a_tag_roog
 						}
 					}
 				}
@@ -4043,6 +3997,15 @@ religion_leadership = {
 							intrigue_penalty = 1
 							learning_penalty = 1
 							health_penalty = 1
+						}
+					}
+					else_if = {
+						limit = {
+							has_selected_religion_feature = religion_feature_a_tag_roog
+						}
+						set_character_modifier = {
+							stewardship = 2
+							learning = 2
 						}
 					}
 					else = {
