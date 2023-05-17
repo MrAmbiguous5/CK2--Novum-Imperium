@@ -258,11 +258,22 @@ character_event = {
 			has_job_action = action_inquisition
             OR = {
                 religion_group = pagan_group
+                religion = a_tag_roog
+                religion = amazigh
+            }
+            OR = {
+                is_reformed_religion = no
                 religion_group = african_group
             }
-            is_organized_religion_trigger = no
 			location = {
-				is_organized_religion_trigger = yes
+				OR = {
+					NOR = {
+                        religion_group = pagan_group
+                        religion = a_tag_roog
+                        religion = amazigh
+                    }
+					is_reformed_religion = yes
+				}
 			}
 		}
 		modifier = {
@@ -448,12 +459,13 @@ character_event = {
 		}
 		modifier = {
 			factor = 3.0
-            AND = {
-                OR = {
+            OR = {
+                AND = {
                     religion_group = pagan_group
-                    religion_group = african_group
+                    is_reformed_religion = no
                 }
-                is_organized_religion_trigger = no
+                religion = a_tag_roog
+                religion = amazigh
             }
 		}
 	}
@@ -1257,12 +1269,13 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-                AND = {
-                    OR = {
+                OR = {
+                    AND = {
                         religion_group = pagan_group
-                        religion_group = african_group
+                        is_reformed_religion = no
                     }
-                    is_organized_religion_trigger = no
+                    religion = a_tag_roog
+                    religion = amazigh
                 }
 				NOT = { same_realm = ROOT }
 				controls_religion = no
@@ -1368,12 +1381,13 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-                AND = {
-                    OR = {
+                OR = {
+                    AND = {
                         religion_group = pagan_group
-                        religion_group = african_group
+                        is_reformed_religion = no
                     }
-                    is_organized_religion_trigger = no
+                    religion = a_tag_roog
+                    religion = amazigh
                 }
 				NOT = { same_realm = ROOT }
 			}

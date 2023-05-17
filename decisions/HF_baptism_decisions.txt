@@ -8,10 +8,14 @@ targetted_decisions = {
 		from_potential = {
 			has_dlc = "Holy Fury"
 			is_tribal = yes
-            religion_group = pagan_group
+            OR = {
+                religion_group = pagan_group
+                religion = a_tag_roog
+                religion = amazigh
+            }
 			#higher_real_tier_than = count 		#condition only for ai to avoid single counts spamming Kings
 			NOT = { trait = incapable }
-			NOT = { is_organized_religion_trigger = yes }
+			NOT = { is_reformed_religion = yes }
 			#NOT = { has_character_modifier = baptism_request_cooldown }
 			NOT = { has_character_flag = flag_converting_baptism }
 			independent = yes
@@ -29,8 +33,12 @@ targetted_decisions = {
 			NOT = { pays_tribute_to = FROM }
 			NOT = { has_character_flag = flag_sponsoring_baptism }
 			OR = {
-				NOT = { religion_group = pagan_group }
-				is_organized_religion_trigger = yes
+				NOR = {
+                    religion_group = pagan_group
+                    religion = a_tag_roog
+                    religion = amazigh
+                }
+				is_reformed_religion = yes
 			}
 		}
 		allow = {
@@ -547,7 +555,7 @@ decisions = {
             OR = {
                 AND = {
                     religion_group = pagan_group
-                    NOT = { is_organized_religion_trigger = yes }
+                    NOT = { is_reformed_religion = yes }
                 }
                 religion = a_tag_roog
                 religion = amazigh
@@ -581,7 +589,7 @@ decisions = {
                         religion = a_tag_roog
                         religion = amazigh
                     }
-					is_organized_religion_trigger = yes
+					is_reformed_religion = yes
 				}
 				wealth = 0 
 				relative_power = { who = ROOT power = 1 }
@@ -594,7 +602,7 @@ decisions = {
                     OR = {
                         AND = {
                             religion_group = pagan_group
-                            NOT = { is_organized_religion_trigger = yes }
+                            NOT = { is_reformed_religion = yes }
                         }
                         religion = a_tag_roog
                         religion = amazigh
@@ -641,7 +649,7 @@ decisions = {
                                     religion = a_tag_roog
                                     religion = amazigh
                                 }
-								is_organized_religion_trigger = yes
+								is_reformed_religion = yes
 							}
 							wealth = 0 
 							relative_power = { who = ROOT power = 1 }
@@ -676,7 +684,7 @@ decisions = {
                                         religion = a_tag_roog
                                         religion = amazigh
                                     }
-									is_organized_religion_trigger = yes
+									is_reformed_religion = yes
 								}
 								wealth = 0 
 								relative_power = { who = ROOT power = 1 }
@@ -732,7 +740,7 @@ decisions = {
                                     religion = a_tag_roog
                                     religion = amazigh
                                 }
-								is_organized_religion_trigger = yes
+								is_reformed_religion = yes
 							}
 							wealth = 0 
 							relative_power = { who = ROOT power = 1 }
@@ -760,7 +768,7 @@ decisions = {
                                     religion = a_tag_roog
                                     religion = amazigh
                                 }
-								is_organized_religion_trigger = yes
+								is_reformed_religion = yes
 							}
 							wealth = 0 
 							relative_power = { who = ROOT power = 1 }
@@ -816,7 +824,7 @@ decisions = {
                                     religion = a_tag_roog
                                     religion = amazigh
                                 }
-								is_organized_religion_trigger = yes
+								is_reformed_religion = yes
 							}
 							wealth = 0 
 							relative_power = { who = ROOT power = 1 }
@@ -851,7 +859,7 @@ decisions = {
                                         religion = a_tag_roog
                                         religion = amazigh
                                     }
-									is_organized_religion_trigger = yes
+									is_reformed_religion = yes
 								}
 								wealth = 0 
 								relative_power = { who = ROOT power = 1 }
@@ -907,7 +915,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					wealth = 0 
 					relative_power = { who = ROOT power = 1 }
@@ -968,7 +976,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					NOT = { lower_tier_than = ROOT } 
 					relative_power = { who = ROOT power = 1.5 }
@@ -989,7 +997,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					NOT = { lower_tier_than = ROOT } 
 					relative_power = { who = ROOT power = 2 }
@@ -1010,7 +1018,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					NOT = { lower_tier_than = ROOT } 
 					relative_power = { who = ROOT power = 3 }
@@ -1031,7 +1039,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					NOT = { lower_tier_than = ROOT } 
 					relative_power = { who = ROOT power = 4 }
@@ -1052,7 +1060,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					NOT = { lower_tier_than = ROOT } 
 					relative_power = { who = ROOT power = 5 }
@@ -1073,7 +1081,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					NOT = { lower_tier_than = ROOT } 
 					relative_power = { who = ROOT power = 10 }
@@ -1094,7 +1102,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					NOT = { lower_tier_than = ROOT } 
 					relative_power = { who = ROOT power = 20 }
@@ -1141,7 +1149,7 @@ decisions = {
                         religion_group = pagan_group
                         religion_group = african_group
                     }
-					is_organized_religion_trigger = yes
+					is_reformed_religion = yes
 					has_religion_feature = religion_proselytizing
 					NOT = { lower_tier_than = ROOT } 
 				}
@@ -1171,7 +1179,7 @@ decisions = {
 					higher_real_tier_than = DUKE
 					is_within_diplo_range = ROOT
 					religion_group = jewish_group
-					is_organized_religion_trigger = yes
+					is_reformed_religion = yes
 					NOT = { lower_tier_than = ROOT } 
 				}
 			}
@@ -1361,7 +1369,7 @@ decisions = {
                                 religion = a_tag_roog
                                 religion = amazigh
                             }
-							is_organized_religion_trigger = yes
+							is_reformed_religion = yes
 						}
 					}
 				}
@@ -1372,7 +1380,7 @@ decisions = {
 				any_neighbor_independent_ruler = { 
 					religion_group = ROOT
                     OR = {
-                        is_organized_religion_trigger = no
+                        is_reformed_religion = no
                         religion = a_tag_roog
                         religion = amazigh
                     }
@@ -1390,7 +1398,7 @@ decisions = {
                             religion = a_tag_roog
                             religion = amazigh
                         }
-						is_organized_religion_trigger = yes
+						is_reformed_religion = yes
 					}
 					count = 4
 				}
@@ -1426,7 +1434,7 @@ decisions = {
                                     religion = a_tag_roog
                                     religion = amazigh
                                 }
-								is_organized_religion_trigger = yes
+								is_reformed_religion = yes
 							}
 						}
 						OR = {
@@ -1461,7 +1469,7 @@ decisions = {
                                 religion = a_tag_roog
                                 religion = amazigh
                             }
-							is_organized_religion_trigger = yes
+							is_reformed_religion = yes
 						}
 					}
 					OR = {
