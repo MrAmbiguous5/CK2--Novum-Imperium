@@ -7074,7 +7074,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Moon_hellenic
@@ -7125,7 +7125,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes 
 			culture_group = byzantine
 		}
 		localisation_key = String_Mars_hellenic
@@ -7151,7 +7151,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7175,7 +7175,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Jupiter_hellenic
@@ -7201,7 +7201,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes 
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7225,7 +7225,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Saturn_hellenic
@@ -7251,7 +7251,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7275,7 +7275,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Uranus_hellenic
@@ -7301,7 +7301,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7325,7 +7325,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Neptune_hellenic
@@ -7351,7 +7351,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7375,7 +7375,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Pluto_hellenic
@@ -7401,7 +7401,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes 
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7425,7 +7425,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Mercury_hellenic
@@ -7446,7 +7446,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes 
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7470,7 +7470,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes 
 			culture_group = byzantine
 		}
 		localisation_key = String_Venus_hellenic
@@ -7491,7 +7491,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes 
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7515,7 +7515,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Mars_hellenic
@@ -7536,7 +7536,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7560,7 +7560,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes
 			culture_group = byzantine
 		}
 		localisation_key = String_Jupiter_hellenic
@@ -7581,7 +7581,7 @@ defined_text = {
 				religion_group = muslim
 				culture = nahuatl
 				AND = { #"English" names are the ones Latins would use, only Greek Hellenics would use the greek gods names.
-					OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+					religion_openly_in_hellenic_subgroup_trigger = yes
 					culture_group = byzantine
 				}
 				religion = zun_pagan
@@ -7605,7 +7605,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } 
+			religion_openly_in_hellenic_subgroup_trigger = yes 
 			culture_group = byzantine
 		}
 		localisation_key = String_Saturn_hellenic
@@ -18886,8 +18886,15 @@ defined_text = {
 	text = {
 		trigger = {
 			religion_group = pagan_group
+			religion_openly_egyptian_or_reformed_trigger = no
 		}
 		localisation_key = string_blessed_ancestor
+	}
+	text = {
+		trigger = {
+			religion_openly_egyptian_or_reformed_trigger = yes
+		}
+		localisation_key = string_deified_ancestor
 	}
 }
 

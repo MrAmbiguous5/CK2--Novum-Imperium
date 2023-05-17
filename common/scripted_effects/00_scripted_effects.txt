@@ -5462,7 +5462,6 @@ join_prev_devil_worshiper_society_effect = {
 		join_society = the_sand_snakes
 	}
 }
-}
 
 join_prev_warrior_lodge_society_effect = {
 	if = {
@@ -40020,410 +40019,383 @@ reformation_god_names_changes_effect = { #Reforming religion with certain Doctri
 		}
 		
 		### ACR ###
-			if = { #A ruler reforms Celtic Paganism
-				limit = {
-					has_dlc = "Holy Fury"
-					religion = celtic_pagan_reformed
-					OR = {
-						has_religion_feature = religion_matriarchal
-						has_religion_feature = religion_patriarchal
-						has_religion_feature = religion_dogmatic
-					}
-				}
-				remove_god_names = yes
-				remove_evil_god_names = yes
-				if = { # Just Dogmatic?
-					limit = {
-						has_religion_feature = religion_dogmatic
-						NOR = {
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_patriarchal
-						}
-					}
-					set_high_god_name = GOD_LUGH
-					add_god_name = GOD_LUGH
-					add_evil_god_name = THE_FOMORIANS
-					add_evil_god_name = EVIL_BALOR
-					add_evil_god_name = EVIL_BRES
-					add_evil_god_name = GOD_CAILLEACH
-				}
-				if = { # matriarchal
-					limit = {
-						has_religion_feature = religion_matriarchal
-					}
-					set_high_god_name = GOD_DANA
-					if = {
-						limit = {
-							NOT = { has_religion_feature = religion_dogmatic }
-						}
-						add_god_name = GOD_MACHA
-						add_god_name = GOD_RHIANNON
-						add_god_name = GOD_SEQUANA
-					}
-					add_evil_god_name = THE_FOMORIANS
-					add_evil_god_name = EVIL_BALOR
-					add_evil_god_name = EVIL_BRES
-					add_evil_god_name = GOD_CAILLEACH
-				}
-				if = {
-					limit = {
-						has_religion_feature = religion_patriarchal
-					}
-					set_high_god_name = GOD_LUGH
-					if = {
-						limit = {
-							NOT = { has_religion_feature = religion_dogmatic }
-						}
-						add_god_name = GOD_MANANNAN
-						add_god_name = GOD_DAGHDA
-						add_god_name = GOD_LUGH
-						add_god_name = GOD_NUADA
-						add_god_name = GOD_CERNNUNOS
-					}
-					add_evil_god_name = GOD_RHIANNON
-					add_evil_god_name = GOD_MACHA
-					add_evil_god_name = GOD_DANA
-					add_evil_god_name = GOD_SEQUANA
-				}
-			}
-			if = { #A ruler reforms Egyptian Paganism
-				limit = {
-					has_dlc = "Holy Fury"
-					religion = egyptian_pagan_reformed
-					OR = {
-						has_religion_feature = religion_matriarchal
-						has_religion_feature = religion_patriarchal
-						has_religion_feature = religion_dogmatic
-					}
-				}
-				remove_god_names = yes
-				remove_evil_god_names = yes
-				if = { # Just Dogmatic?
-					limit = {
-						has_religion_feature = religion_dogmatic
-						NOR = {
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_patriarchal
-						}
-					}
-					set_high_god_name = GOD_AMON
-					add_god_name = GOD_AMON
-					add_evil_god_name = GOD_APEP
-					add_evil_god_name = GOD_SET
-				}
-				if = { # matriarchal
-					limit = {
-						has_religion_feature = religion_matriarchal
-					}
-					set_high_god_name = GOD_AMAUNET
-					add_god_name = GOD_AMAUNET
-					if = {
-						limit = {
-							NOT = { has_religion_feature = religion_dogmatic }
-						}
-						add_god_name = GOD_HAUHET
-						add_god_name = GOD_KAUKET
-						add_god_name = GOD_NAUNET
-						add_god_name = GOD_ISIS
-					}
-					add_evil_god_name = GOD_AMON
-					add_evil_god_name = GOD_APEP
-					add_evil_god_name = GOD_SET
-				}
-				if = {
-					limit = {
-						has_religion_feature = religion_patriarchal
-					}
-					set_high_god_name = GOD_AMON
-					add_god_name = GOD_AMON
-					if = {
-						limit = {
-							NOT = { has_religion_feature = religion_dogmatic }
-						}
-						add_god_name = GOD_HEH
-						add_god_name = GOD_KEK
-						add_god_name = GOD_NUN
-						add_god_name = GOD_RA
-						add_god_name = GOD_OSIRIS
-						add_god_name = GOD_ANUBIS
-					}
-					add_evil_god_name = GOD_AMAUNET
-					add_evil_god_name = GOD_APEP
-					add_evil_god_name = GOD_SET
-				}
-			}
-		}
-		
-		if = {
+		if = { #A ruler reforms Celtic Paganism
 			limit = {
-				persistent_event_target:reformer = { has_character_flag = religious_reformer }
+				has_dlc = "Holy Fury"
+				religion = celtic_pagan_reformed
+				OR = {
+					has_religion_feature = religion_matriarchal
+					has_religion_feature = religion_patriarchal
+					has_religion_feature = religion_dogmatic
+				}
 			}
-			if = {
-				# Appropriate gender to become the (high) god
+			remove_god_names = yes
+			remove_evil_god_names = yes
+			if = { # Just Dogmatic?
 				limit = {
-					trigger_if = {
-						limit = { persistent_event_target:reformer = { is_female = yes } }
-						NOT = { has_religion_feature = religion_patriarchal }
-					}
-					trigger_else = {
-						NOT = { has_religion_feature = religion_matriarchal }
+					has_religion_feature = religion_dogmatic
+					NOR = {
+						has_religion_feature = religion_matriarchal
+						has_religion_feature = religion_patriarchal
 					}
 				}
+				set_high_god_name = GOD_LUGH
+				add_god_name = GOD_LUGH
+				add_evil_god_name = THE_FOMORIANS
+				add_evil_god_name = EVIL_BALOR
+				add_evil_god_name = EVIL_BRES
+				add_evil_god_name = GOD_CAILLEACH
+			}
+			if = { # matriarchal
+				limit = {
+					has_religion_feature = religion_matriarchal
+				}
+				set_high_god_name = GOD_DANA
 				if = {
-					limit = {
-						has_religion_feature = religion_dogmatic
-						has_religion_feature = religion_temporal_head
-					}
-					remove_god_names = yes
-					set_high_god_name = string_reformer_god
-					add_god_name = string_reformer_god_2
-				}
-				else_if = {
 					limit = {
 						NOT = { has_religion_feature = religion_dogmatic }
 					}
-					add_god_name = string_reformer_god
+					add_god_name = GOD_MACHA
+					add_god_name = GOD_RHIANNON
+					add_god_name = GOD_SEQUANA
+				}
+				add_evil_god_name = THE_FOMORIANS
+				add_evil_god_name = EVIL_BALOR
+				add_evil_god_name = EVIL_BRES
+				add_evil_god_name = GOD_CAILLEACH
+			}
+			if = {
+				limit = {
+					has_religion_feature = religion_patriarchal
+				}
+				set_high_god_name = GOD_LUGH
+				if = {
+					limit = {
+						NOT = { has_religion_feature = religion_dogmatic }
+					}
+					add_god_name = GOD_MANANNAN
+					add_god_name = GOD_DAGHDA
+					add_god_name = GOD_LUGH
+					add_god_name = GOD_NUADA
+					add_god_name = GOD_CERNNUNOS
+				}
+				add_evil_god_name = GOD_RHIANNON
+				add_evil_god_name = GOD_MACHA
+				add_evil_god_name = GOD_DANA
+				add_evil_god_name = GOD_SEQUANA
+			}
+		}
+		if = { #A ruler reforms Egyptian Paganism
+			limit = {
+				has_dlc = "Holy Fury"
+				religion = egyptian_pagan_reformed
+				OR = {
+					has_religion_feature = religion_matriarchal
+					has_religion_feature = religion_patriarchal
+					has_religion_feature = religion_dogmatic
+				}
+			}
+			remove_god_names = yes
+			remove_evil_god_names = yes
+			if = { # Just Dogmatic?
+				limit = {
+					has_religion_feature = religion_dogmatic
+					NOR = {
+						has_religion_feature = religion_matriarchal
+						has_religion_feature = religion_patriarchal
+					}
+				}
+				set_high_god_name = GOD_AMON
+				add_god_name = GOD_AMON
+				add_evil_god_name = GOD_APEP
+				add_evil_god_name = GOD_SET
+			}
+			if = { # matriarchal
+				limit = {
+					has_religion_feature = religion_matriarchal
+				}
+				set_high_god_name = GOD_AMAUNET
+				add_god_name = GOD_AMAUNET
+				if = {
+					limit = {
+						NOT = { has_religion_feature = religion_dogmatic }
+					}
+					add_god_name = GOD_HAUHET
+					add_god_name = GOD_KAUKET
+					add_god_name = GOD_NAUNET
+					add_god_name = GOD_ISIS
+				}
+				add_evil_god_name = GOD_AMON
+				add_evil_god_name = GOD_APEP
+				add_evil_god_name = GOD_SET
+			}
+			if = {
+				limit = {
+					has_religion_feature = religion_patriarchal
+				}
+				set_high_god_name = GOD_AMON
+				add_god_name = GOD_AMON
+				if = {
+					limit = {
+						NOT = { has_religion_feature = religion_dogmatic }
+					}
+					add_god_name = GOD_HEH
+					add_god_name = GOD_KEK
+					add_god_name = GOD_NUN
+					add_god_name = GOD_RA
+					add_god_name = GOD_OSIRIS
+					add_god_name = GOD_ANUBIS
+				}
+				add_evil_god_name = GOD_AMAUNET
+				add_evil_god_name = GOD_APEP
+				add_evil_god_name = GOD_SET
+			}
+		}
+	}
+		
+	if = {
+		limit = {
+			persistent_event_target:reformer = { has_character_flag = religious_reformer }
+		}
+		if = {
+			# Appropriate gender to become the (high) god
+			limit = {
+				trigger_if = {
+					limit = { persistent_event_target:reformer = { is_female = yes } }
+					NOT = { has_religion_feature = religion_patriarchal }
+				}
+				trigger_else = {
+					NOT = { has_religion_feature = religion_matriarchal }
 				}
 			}
 			if = {
 				limit = {
+					has_religion_feature = religion_dogmatic
+					has_religion_feature = religion_temporal_head
+				}
+				remove_god_names = yes
+				set_high_god_name = string_reformer_god
+				add_god_name = string_reformer_god_2
+			}
+			else_if = {
+				limit = {
 					NOT = { has_religion_feature = religion_dogmatic }
 				}
+				add_god_name = string_reformer_god
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_religion_feature = religion_dogmatic }
+			}
+			if = {
+				limit = {
+					has_flag = holy_family_gods_saved
+				}
 				if = {
-					limit = {
-						has_flag = holy_family_gods_saved
+					limit = { #Spouse.
+						persistent_event_target:reformer_spouse_god = { always = yes }
 					}
-					if = {
-						limit = { #Spouse.
-							persistent_event_target:reformer_spouse_god = { always = yes }
-						}
-						persistent_event_target:reformer_spouse_god = {
-							save_event_target_as = target_character
-						}
-						add_god_name = string_target_character_firstname
+					persistent_event_target:reformer_spouse_god = {
+						save_event_target_as = target_character
 					}
+					add_god_name = string_target_character_firstname
+				}
+				if = {
+					limit = { #Child.
+						persistent_event_target:reformer_child_god = { always = yes }
+					}						persistent_event_target:reformer_child_god = {
+						save_event_target_as = target_character
+					}
+					add_god_name = string_target_character_firstname
+					
+					# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
 					if = {
-						limit = { #Child.
-							persistent_event_target:reformer_child_god = { always = yes }
+						limit = {
+							persistent_event_target:reformer_child_parent_god = { always = yes }
 						}
-						persistent_event_target:reformer_child_god = {
-							save_event_target_as = target_character
-						}
-						add_god_name = string_target_character_firstname
-						
-						# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
-						if = {
-							limit = {
-								persistent_event_target:reformer_child_parent_god = { always = yes }
-							}
-							persistent_event_target:reformer_child_parent_god = {
+						persistent_event_target:reformer_child_parent_god = {
 								save_event_target_as = target_character
-							}
-							add_god_name = string_target_character_firstname
-						}
-					}
-					if = {
-						limit = { #Sibling.
-							persistent_event_target:reformer_sibling_god = { always = yes }
-						}
-						persistent_event_target:reformer_sibling_god = {
-							save_event_target_as = target_character
 						}
 						add_god_name = string_target_character_firstname
 					}
 				}
-				else = {
-					set_flag = holy_family_gods_saved
-					if = {
-						limit = { #Spouse.
-							persistent_event_target:reformer = {
-								is_married = yes
+				if = {
+					limit = { #Sibling.
+						persistent_event_target:reformer_sibling_god = { always = yes }
+					}
+					persistent_event_target:reformer_sibling_god = {
+						save_event_target_as = target_character
+					}
+					add_god_name = string_target_character_firstname
+				}
+			}
+			else = {
+				set_flag = holy_family_gods_saved
+				if = {
+					limit = { #Spouse.
+						persistent_event_target:reformer = {
+							is_married = yes
+							trigger_if = {
+								limit = { is_female = yes }
+								NOT = { PREV = { has_religion_feature = religion_patriarchal } }
+							}
+							trigger_else = {
+								NOT = { PREV = { has_religion_feature = religion_matriarchal } }
+							}
+							any_spouse = {
+								OR = {
+									religion = PREVPREV
+									PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
+								}
+							}
+						}
+					}
+					persistent_event_target:reformer = {
+						random_spouse = {
+							limit = {
+								OR = {
+									religion = PREVPREV
+									PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
+								}
+							}
+							preferred_limit = { is_main_spouse = yes } 
+							save_event_target_as = target_character
+						}
+					}
+					save_persistent_event_target = {
+						name = reformer_spouse_god
+						scope = event_target:target_character
+					}
+					add_god_name = string_target_character_firstname
+				}
+				if = {
+					limit = { #Child.
+						persistent_event_target:reformer = {
+							any_child = {
+								NOT = { character = persistent_event_target:reformer_spouse_god }
 								trigger_if = {
 									limit = { is_female = yes }
-									NOT = { PREV = { has_religion_feature = religion_patriarchal } }
+									NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
 								}
 								trigger_else = {
-									NOT = { PREV = { has_religion_feature = religion_matriarchal } }
-								}
-								any_spouse = {
-									OR = {
-										religion = PREVPREV
-										PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
-									}
+									NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
 								}
 							}
 						}
-						persistent_event_target:reformer = {
-							random_spouse = {
-								limit = {
-									OR = {
-										religion = PREVPREV
-										PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
-									}
-								}
-								preferred_limit = { is_main_spouse = yes } 
-								save_event_target_as = target_character
-							}
-						}
-						save_persistent_event_target = {
-							name = reformer_spouse_god
-							scope = event_target:target_character
-						}
-						add_god_name = string_target_character_firstname
 					}
-					if = {
-						limit = { #Child.
-							persistent_event_target:reformer = {
-								any_child = {
-									NOT = { character = persistent_event_target:reformer_spouse_god }
-									trigger_if = {
-										limit = { is_female = yes }
-										NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-									}
-									trigger_else = {
-										NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-									}
-								}
-							}
-						}
-						persistent_event_target:reformer = {
-							random_child = {
-								limit = {
-									NOT = { character = persistent_event_target:reformer_spouse_god }
-									trigger_if = {
-										limit = { is_female = yes }
-										NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-									}
-									trigger_else = {
-										NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-									}
-								}
-								preferred_limit = {
-									is_primary_heir = PREV
-								}
-								preferred_limit = {
-									NOR = {
-										trait = legit_bastard
-										trait = bastard
-									}
-								}
-								preferred_limit = {
-									NOT = { trait = bastard }
-								}
-								save_event_target_as = target_character
-							}
-						}
-						save_persistent_event_target = {
-							name = reformer_child_god
-							scope = event_target:target_character
-						}
-						add_god_name = string_target_character_firstname
-						
-						# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
-						if = {
+					persistent_event_target:reformer = {
+						random_child = {
 							limit = {
-								NOT = { has_religion_feature = religion_matriarchal }
-								event_target:scoped_god_child = {
-									father_even_if_dead = {
-										NOR = {
-											character = persistent_event_target:reformer
-											character = persistent_event_target:reformer_spouse_god
-										}
-									}
+								NOT = { character = persistent_event_target:reformer_spouse_god }
+								trigger_if = {
+									limit = { is_female = yes }
+									NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
+								}
+								trigger_else = {
+									NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
 								}
 							}
+							preferred_limit = {
+								is_primary_heir = PREV
+							}
+							preferred_limit = {
+								NOR = {
+									trait = legit_bastard
+									trait = bastard
+								}
+							}
+							preferred_limit = {
+								NOT = { trait = bastard }
+							}
+							save_event_target_as = target_character
+						}
+					}
+					save_persistent_event_target = {
+						name = reformer_child_god
+						scope = event_target:target_character
+					}
+					add_god_name = string_target_character_firstname
+					
+					# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
+					if = {
+						limit = {
+							NOT = { has_religion_feature = religion_matriarchal }
 							event_target:scoped_god_child = {
 								father_even_if_dead = {
-									save_event_target_as = target_character
-								}
-							}
-							save_persistent_event_target = {
-								name = reformer_child_parent_god
-								scope = event_target:target_character
-							}
-							add_god_name = string_target_character_firstname
-						}
-						else_if = {
-							limit = {
-								NOT = { has_religion_feature = religion_patriarchal }
-								event_target:scoped_god_child = {
-									mother_even_if_dead = {
-										NOR = {
-											character = persistent_event_target:reformer
-											character = persistent_event_target:reformer_spouse_god
-										}
+									NOR = {
+										character = persistent_event_target:reformer
+										character = persistent_event_target:reformer_spouse_god
 									}
 								}
 							}
+						}
+						event_target:scoped_god_child = {
+							father_even_if_dead = {
+								save_event_target_as = target_character
+							}
+						}
+						save_persistent_event_target = {
+							name = reformer_child_parent_god
+							scope = event_target:target_character
+						}
+						add_god_name = string_target_character_firstname
+					}
+					else_if = {
+						limit = {
+							NOT = { has_religion_feature = religion_patriarchal }
 							event_target:scoped_god_child = {
 								mother_even_if_dead = {
-									save_event_target_as = target_character
+									NOR = {
+										character = persistent_event_target:reformer
+										character = persistent_event_target:reformer_spouse_god
+									}
 								}
 							}
-							save_persistent_event_target = {
-								name = reformer_child_parent_god
-								scope = event_target:target_character
+						}
+						event_target:scoped_god_child = {
+							mother_even_if_dead = {
+								save_event_target_as = target_character
 							}
-							add_god_name = string_target_character_firstname
+						}
+						save_persistent_event_target = {
+							name = reformer_child_parent_god
+							scope = event_target:target_character
+						}
+						add_god_name = string_target_character_firstname
+					}
+				}
+				if = {
+					limit = { #Sibling.
+						persistent_event_target:reformer = {
+							any_sibling = {
+								NOR = {
+									character = persistent_event_target:reformer_spouse_god
+									character = persistent_event_target:reformer_child_god
+									character = persistent_event_target:reformer_child_parent_god
+								}
+								trigger_if = {
+									limit = { is_female = yes }
+									NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
+								}
+								trigger_else = {
+									NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
+								}
+							}
 						}
 					}
-					if = {
-						limit = { #Sibling.
-							persistent_event_target:reformer = {
-								any_sibling = {
-									NOR = {
-										character = persistent_event_target:reformer_spouse_god
-										character = persistent_event_target:reformer_child_god
-										character = persistent_event_target:reformer_child_parent_god
-									}
-									trigger_if = {
-										limit = { is_female = yes }
-										NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-									}
-									trigger_else = {
-										NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-									}
+					persistent_event_target:reformer = {
+						random_sibling = { 
+							limit = {
+								NOR = {
+									character = persistent_event_target:reformer_spouse_god
+									character = persistent_event_target:reformer_child_god
+									character = persistent_event_target:reformer_child_parent_god
 								}
-							}
-						}
-						persistent_event_target:reformer = {
-							random_sibling = { 
-								limit = {
-									NOR = {
-										character = persistent_event_target:reformer_spouse_god
-										character = persistent_event_target:reformer_child_god
-										character = persistent_event_target:reformer_child_parent_god
-									}
-									trigger_if = {
-										limit = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-										is_female = no
-										# Only consanguine or full siblings count if patriarchal
-										OR = {
-											NOR = {
-												father_even_if_dead = { always = yes }
-												PREV = { father_even_if_dead = { always = yes } }
-											}
-											father_even_if_dead = { is_parent_of = persistent_event_target:reformer }
-										}
-									}
-									trigger_else_if = {
-										limit = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-										is_female = yes
-										# Only uteral or full siblings count if matriarchal
-										OR = {
-											NOR = {
-												mother_even_if_dead = { always = yes }
-												PREV = { mother_even_if_dead = { always = yes } }
-											}
-											mother_even_if_dead = { is_parent_of = persistent_event_target:reformer }
-										}
-									}
-								}
-								preferred_limit = {
-									is_primary_heir = PREV
-								}
-								preferred_limit = {
-									# Full siblings preferred
+								trigger_if = {
+									limit = { PREVPREV = { has_religion_feature = religion_patriarchal } }
+									is_female = no
+									# Only consanguine or full siblings count if patriarchal
 									OR = {
 										NOR = {
 											father_even_if_dead = { always = yes }
@@ -40431,6 +40403,11 @@ reformation_god_names_changes_effect = { #Reforming religion with certain Doctri
 										}
 										father_even_if_dead = { is_parent_of = persistent_event_target:reformer }
 									}
+								}
+								trigger_else_if = {
+									limit = { PREVPREV = { has_religion_feature = religion_matriarchal } }
+									is_female = yes
+									# Only uteral or full siblings count if matriarchal
 									OR = {
 										NOR = {
 											mother_even_if_dead = { always = yes }
@@ -40439,15 +40416,35 @@ reformation_god_names_changes_effect = { #Reforming religion with certain Doctri
 										mother_even_if_dead = { is_parent_of = persistent_event_target:reformer }
 									}
 								}
-								save_event_target_as = target_character
 							}
+							preferred_limit = {
+								is_primary_heir = PREV
+							}
+							preferred_limit = {
+								# Full siblings preferred
+								OR = {
+									NOR = {
+										father_even_if_dead = { always = yes }
+										PREV = { father_even_if_dead = { always = yes } }
+									}
+									father_even_if_dead = { is_parent_of = persistent_event_target:reformer }
+								}
+								OR = {
+									NOR = {
+										mother_even_if_dead = { always = yes }
+										PREV = { mother_even_if_dead = { always = yes } }
+									}
+									mother_even_if_dead = { is_parent_of = persistent_event_target:reformer }
+								}
+							}
+							save_event_target_as = target_character
 						}
-						save_persistent_event_target = {
-							name = reformer_sibling_god
-							scope = event_target:target_character
-						}
-						add_god_name = string_target_character_firstname
 					}
+					save_persistent_event_target = {
+						name = reformer_sibling_god
+						scope = event_target:target_character
+					}
+					add_god_name = string_target_character_firstname
 				}
 			}
 		}

@@ -1,4 +1,0 @@
-Might need to check for Ancient Religions Reborn and Expanded:
-
-At events\hf_warrior_lodge_events.txt
-
