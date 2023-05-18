@@ -5665,11 +5665,8 @@ give_this_warrior_lodge_religion_effect = { #Mostly for spawned characters.
                 else = {
                     religion = amazigh
                 }
-            }
-        }
-			has_global_flag = west_african_reformation
+			}
 		}
-		religion = west_african_pagan_reformed
 	}
 	if = {
 		limit = { 

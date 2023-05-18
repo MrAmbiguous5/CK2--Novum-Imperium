@@ -1009,8 +1009,6 @@ can_be_chancellor_trigger = {
 						liege = { has_religion_feature = religion_feature_amazigh }
                     }
                     NOT = { has_religion_feature = religion_patriarchal }
-                }
-					} 
 				}
 				trait = horse # So we can have female glitterhoofs! :D
 				AND = {
