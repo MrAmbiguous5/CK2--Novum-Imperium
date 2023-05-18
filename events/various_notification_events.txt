@@ -1,0 +1,106 @@
+# -*- ck2.events -*-
+
+namespace = NE
+
+# Notification event for invited character
+character_event = {
+	id = NE.1
+	picture = GFX_evt_emissary
+
+	is_triggered_only = yes
+
+	desc = {
+		text = EVTDESC_NE_1_debutant
+		trigger = { event_target:invited_character = { has_character_flag = debutante } }
+	}
+	desc = {
+		text = EVTDESC_NE_1 #Not debutantes
+		trigger = { event_target:invited_character = { NOT = { has_character_flag = debutante } } }
+	}
+
+	option = {
+		name = EVTOPTA_NE_1
+
+		trigger = {
+			event_target:invited_character = {
+				has_character_flag = invited_soldier
+				can_hold_title = title_commander
+			}
+			OR = {
+				can_grant_title = title_commander
+				any_courtier_or_vassal = {
+					NOT = { higher_tier_than = BARON }
+					has_minor_title = title_commander
+					NOT = { martial = event_target:invited_character }
+				}
+			}
+		}
+		
+		if = {
+			limit = { NOT = { can_grant_title = title_commander } }
+			random_courtier_or_vassal = {
+				limit = {
+					NOT = { higher_tier_than = BARON }
+					has_minor_title = title_commander
+					NOT = { martial = event_target:invited_character }
+				}
+				preferred_limit = { NOT = { martial = 1 } }
+				preferred_limit = { NOT = { martial = 2 } }
+				preferred_limit = { NOT = { martial = 3 } }
+				preferred_limit = { NOT = { martial = 4 } }
+				preferred_limit = { NOT = { martial = 5 } }
+				preferred_limit = { NOT = { martial = 6 } }
+				preferred_limit = { NOT = { martial = 7 } }
+				preferred_limit = { NOT = { martial = 8 } }
+				preferred_limit = { NOT = { martial = 9 } }
+				preferred_limit = { NOT = { martial = 10 } }
+				preferred_limit = { NOT = { martial = 11 } }
+				preferred_limit = { NOT = { martial = 12 } }
+				preferred_limit = { NOT = { martial = 13 } }
+				preferred_limit = { NOT = { martial = 14 } }
+				preferred_limit = { NOT = { martial = 15 } }
+				preferred_limit = { NOT = { martial = 16 } }
+				preferred_limit = { NOT = { martial = 17 } }
+				preferred_limit = { NOT = { martial = 18 } }
+				preferred_limit = { NOT = { martial = 19 } }
+				preferred_limit = { NOT = { martial = 20 } }
+				preferred_limit = { NOT = { martial = 21 } }
+				preferred_limit = { NOT = { martial = 22 } }
+				preferred_limit = { NOT = { martial = 23 } }
+				preferred_limit = { NOT = { martial = 24 } }
+				preferred_limit = { NOT = { martial = 25 } }
+				preferred_limit = { NOT = { martial = 26 } }
+				preferred_limit = { NOT = { martial = 27 } }
+				preferred_limit = { NOT = { martial = 28 } }
+				preferred_limit = { NOT = { martial = 29 } }
+				preferred_limit = { NOT = { martial = 30 } }
+				remove_title = title_commander
+				opinion = {
+					modifier = insulted
+					who = ROOT
+					years = 2
+				}
+			}
+		}
+		event_target:invited_character = {
+			give_minor_title = title_commander
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+
+	option = {
+		name = EVTOPTB_NE_1
+
+		hidden_tooltip = {
+			event_target:invited_character = {
+				any_artifact = { destroy_artifact = yes }
+				death = {
+					death_reason = death_missing
+				}
+			}
+		}
+	}
+}

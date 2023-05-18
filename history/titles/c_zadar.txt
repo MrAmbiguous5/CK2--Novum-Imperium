@@ -1,0 +1,58 @@
+# -*- ck2.history.titles -*-
+
+864.1.1 = {
+	liege = d_dalmatia
+	holder = 1232106
+}
+936.1.1 = {
+	liege = k_croatia
+	holder = 1600257 # Grigori Madii
+}
+967.1.1 = {
+	holder = 1600256 # Andro Madii
+}
+993.1.1 = {
+	holder = 1600250 # Grigori Madii
+}
+1035.1.1 = {
+	holder = 1600251 # Andro Madii
+}
+1066.1.1 = {
+	holder = 1600252 # Dragos Madii
+}
+1102.1.1 = {
+	holder = 1229200 # Vinihi Lapcanu
+}
+1110.1.1 = {
+	holder = 93542
+}
+# Frankopan dynasty
+1131.4.2 = {
+	holder = 219990
+}
+1163.1.1 = {
+	holder = 219991
+}
+# Subic dynasty
+1164.1.1 = {
+	holder = 219999
+}
+1183.9.24 = {
+	liege = d_dalmatia
+	holder = 32604
+}
+1235.1.1 = {
+	holder = 32605
+}
+1238.1.1 = {
+	holder = 32610
+}
+1274.1.1 = {
+	holder = 470001
+}
+1312.5.1 = {
+	holder = 32625
+}
+1322.10.8 = {
+	holder = 470021
+}
