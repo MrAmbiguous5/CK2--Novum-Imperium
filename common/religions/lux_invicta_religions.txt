@@ -1322,7 +1322,7 @@ aztec_group = {
 		religious_clothing_priest = 4
 	}
 }
-pagan_group = {
+indoeurope_group = {
 	graphical_culture = norsegfx
 	playable = yes
 	has_coa_on_barony_only = yes
