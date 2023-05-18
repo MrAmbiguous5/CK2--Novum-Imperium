@@ -138,6 +138,7 @@ succession_laws = {
 					has_religion_feature = religion_feature_west_african
 					has_religion_feature = religion_feature_slavic
 				}
+				NOT = { government = confucian_bureaucracy }
 			}
 			rebel = no
 		}
@@ -231,6 +232,7 @@ succession_laws = {
 				NOT = { government = confucian_bureaucracy }
 				NOT = { government = bureaucratic_government }
 				NOT = { government = chinese_imperial_government }
+				NOT = { government = playable_theocracy_government }
 			}
 		}
 		allow = {
@@ -821,6 +823,7 @@ succession_laws = {
 							has_religion_feature = religion_matriarchal
 						}
 						is_theocracy = no
+						NOT = { government = playable_theocracy_government }
 					}
 				}
 				is_republic = no
@@ -917,7 +920,10 @@ succession_laws = {
 					OR = {
 						is_republic = yes
 						AND = {
-							is_theocracy = yes
+							OR = {
+								is_theocracy = yes
+								government = playable_theocracy_government
+							}
 							NOT = { holder_scope = { religion_group = muslim } }
 						}
 					}
@@ -926,7 +932,10 @@ succession_laws = {
 					OR = {
 						is_republic = yes
 						AND = {
-							is_theocracy = yes
+							OR = {
+								is_theocracy = yes
+								government = playable_theocracy_government
+							}
 							NOT = { religion_group = muslim }
 						}
 					}
@@ -935,8 +944,9 @@ succession_laws = {
 			OR = {
 				is_landless_type_title = yes
 				holder_scope = {
-					OR = {
+					AND = {
 						is_theocracy = no
+						NOT = { government = playable_theocracy_government }
 						NOR = {
 							religion = catholic
 							religion = cathar
@@ -972,9 +982,15 @@ succession_laws = {
 			OR = {
 				AND = {
 					tier = BARON
-					is_theocracy = yes
+					OR = {
+						is_theocracy = yes
+						government = playable_theocracy_government
+					}
 				}
-				holder_scope = { is_theocracy = yes }
+				OR = {
+					holder_scope = { is_theocracy = yes }
+					holder_scope = { government = playable_theocracy_government}
+				}
 			}
 			holder_scope = {
 				OR = {
@@ -1056,7 +1072,10 @@ gender_laws = {
 			holder_scope = {
 				OR = {
 					NOT = { tier = BARON }
-					is_theocracy = yes
+					OR = {
+						is_theocracy = yes
+						government = playable_theocracy_government
+					}
 					is_republic = yes
 				}
 				NOR = {
@@ -1133,10 +1152,12 @@ gender_laws = {
 				AND = {
 					tier = BARON
 					is_theocracy = no
+					NOT = { government = playable_theocracy_government }
 					is_republic = no
 				}
 				holder_scope = {
 					is_theocracy = no
+					NOT = { government = playable_theocracy_government }
 					OR = {
 						is_republic = no
 						is_patrician = yes
@@ -1458,6 +1479,7 @@ gender_laws = {
 					OR = {
 						AND = {
 							is_theocracy = no
+							NOT = { government = playable_theocracy_government }
 							OR = {
 								is_republic = no
 								is_patrician = yes

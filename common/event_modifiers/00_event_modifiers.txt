@@ -103,10 +103,10 @@ truce_breaker = {
 }
 nomad_agitation = {
 	local_revolt_risk = 0.04
-	icon = 57	
+	icon = 57
 }
 negative_money = {
-	#land_morale = -0.25
+	land_morale = -0.25
 	icon = 24
 }
 
@@ -483,7 +483,7 @@ no_shackles = {
 	icon = 18
 }
 master_builder = {
-	local_build_time_modifier = -0.05
+	build_time_modifier = -0.05
 	icon = 12
 }
 sabotaged_building = {
@@ -638,7 +638,7 @@ father_son = {
 mother_son = {
 	intrigue = 2
 	icon = 18
-}	
+}
 father_daughter = {
 	intrigue = 2
 	icon = 18
@@ -723,11 +723,13 @@ religious_tension = {
 
 force_converting = {
 	local_revolt_risk = 0.1
+	province_religion_conversion_speed = 0.33
 	icon = 35
 }
 
 heretic_stronghold = {
 	local_revolt_risk = 0.1
+	province_religion_conversion_speed = -0.67
 	icon = 35
 }
 
@@ -738,7 +740,7 @@ high_taxes = {
 
 incompetent_rule = {
 	local_revolt_risk = 0.05
-	icon = 32	
+	icon = 32
 }
 
 thieves_guild = {
@@ -1261,13 +1263,13 @@ populist_unrest = {
 	local_tax_modifier = -0.5
 	icon = 31
 }
-religious_unrest = { 
+religious_unrest = {
 	icon = 35
 	local_revolt_risk = 0.2
 	local_tax_modifier = -0.5
 }
 
-cultural_unrest = { 
+cultural_unrest = {
 	icon = 31
 	local_revolt_risk = 0.1
 	local_tax_modifier = -0.5
@@ -1354,8 +1356,8 @@ military_jesus = {
 }
 
 speaking_in_tounges = {
-	diplomacy = -20 
-	icon = 26 
+	diplomacy = -20
+	icon = 26
 }
 
 town_appreciate = {
@@ -2551,22 +2553,22 @@ strategic_innovation = {
 rampaging_nomads = {
 	local_revolt_risk = 0.30
 	levy_reinforce_rate = -1
-	icon = 57	
+	icon = 57
 }
 stop_burning_land = {
-	icon = 57	
+	icon = 57
 }
 pillage_cooldown = {
-	icon = 57	
+	icon = 57
 }
 burnt_the_land = {
 	levy_size = -0.25
 	local_tax_modifier = -0.5
-	icon = 19	
+	icon = 19
 }
 recently_burnt_the_land = {
 	garrison_size = 3
-	icon = 57	
+	icon = 57
 }
 recently_burnt_the_land_not_owner = {
 	levy_size = -0.025
@@ -2586,13 +2588,11 @@ nomads_exploited_land = {
 	icon = 32
 }
 nomad_population_boom = {
-	population_growth = 0.08
-	manpower_growth = 0.10
+	population_growth = 0.0125
 	icon = 56
 }
 nomad_population_boom_spillover = {
-	population_growth = 0.03
-	manpower_growth = 0.05
+	population_growth = 0.00625
 	icon = 56
 }
 wolf_child = {
@@ -2751,6 +2751,7 @@ depopulated_1 = {
 	icon = 1
 	major = yes
 	disease_defence = 0.05
+	province_religion_conversion_speed = 0.33
 }
 depopulated_2 = {
 	city_tax_modifier = -0.40
@@ -2763,6 +2764,7 @@ depopulated_2 = {
 	icon = 2
 	major = yes
 	disease_defence = 0.1
+	province_religion_conversion_speed = 1.00
 }
 depopulated_3 = {
 	city_tax_modifier = -0.60
@@ -2775,6 +2777,7 @@ depopulated_3 = {
 	icon = 3
 	major = yes
 	disease_defence = 0.25
+	province_religion_conversion_speed = 3.00
 }
 mystic_treatment_decent = {
 	diplomacy_penalty = 1
@@ -2881,7 +2884,7 @@ in_seclusion = {
 }
 commoners_abandoned = {
 	local_revolt_risk = 0.05
-	icon = 36	
+	icon = 36
 }
 
 alliance_breaker = {
@@ -3112,7 +3115,7 @@ blessing_of_health = {
 }
 
 deaths_gift = {
-	is_visible = { 
+	is_visible = {
 		character = FROM
 	}
 	health = 2
@@ -3175,7 +3178,7 @@ glorious_monument_province = {
 }
 
 merchant_harbor_province = {
-	galleys_perc = 0.5 
+	galleys_perc = 0.5
 	icon = 61
 }
 
@@ -3421,6 +3424,10 @@ prosper_ambition_timer = { icon = 1 }
 
 prosperity_5_year = { icon = 6 }
 
+inspired_peasantry_ruler = {
+	build_time_modifier = -0.15
+	icon = 18
+}
 crazy_cat_lady = {
 	general_opinion = -10
 	diplomacy = -2
@@ -3513,7 +3520,7 @@ follower_of_veles = {
 	icon = 48
 	intrigue = 2
 	martial = -1
-} 
+}
 
 follower_of_jarilo = {
 	icon = 48
@@ -3527,11 +3534,47 @@ follower_of_morana = {
 	stewardship = -1
 }
 
+follower_of_ayyur = {
+	icon = 79
+	diplomacy = 2
+	intrigue = -1
+}
+
+follower_of_bida = {
+	icon = 50
+	stewardship = 2
+	learning = -1
+}
+
+follower_of_tsumburbura = {
+	icon = 113
+	dynasty_opinion = 10
+	defensive_plot_power_modifier = -0.15
+}
+
+follower_of_dongo = {
+	icon = 13
+	combat_rating = 10
+	diplomacy = -1
+}
+
+follower_of_anansi = {
+	icon = 14
+	plot_power_modifier	 = 0.2
+	defensive_plot_power_modifier = -0.15
+}
+
+follower_of_dan = {
+	icon = 50
+	learning = 2
+	martial = -1
+}
+
 follower_of_yemoja = {
 	icon = 61
 	diplomacy = 2
 	intrigue = -1
-} 
+}
 
 follower_of_ekwensu = {
 	icon = 4
@@ -3609,6 +3652,11 @@ zemynas_blessing = {
 	fertility = 0.2
 }
 
+tsumburburas_blessing = {
+	icon = 39
+	fertility = 0.2
+}
+
 yemojas_blessing = {
 	icon = 39
 	fertility = 0.2
@@ -3620,6 +3668,11 @@ akkas_blessing = {
 }
 
 voice_of_akka = {
+	icon = 3
+	general_opinion = 10
+}
+
+voice_of_ayyur = {
 	icon = 3
 	general_opinion = 10
 }
@@ -3675,9 +3728,9 @@ assassins_debt = {
 }
 
 astounding_visions = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -3698,9 +3751,9 @@ astounding_visions = {
 }
 
 uplifting_visions = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -3721,9 +3774,9 @@ uplifting_visions = {
 }
 
 frightening_visions = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -3744,7 +3797,7 @@ frightening_visions = {
 }
 
 hashish_addict = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
@@ -3763,9 +3816,9 @@ hashish_addict = {
 }
 
 withdrawal_symptoms = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -3802,7 +3855,7 @@ bandaged_arm = {
 	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	icon = 40
@@ -3810,10 +3863,10 @@ bandaged_arm = {
 }
 
 cat_familiar = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	intrigue = 3
@@ -3821,10 +3874,10 @@ cat_familiar = {
 }
 
 wolf_familiar = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	martial = 2
@@ -3833,10 +3886,10 @@ wolf_familiar = {
 }
 
 raven_familiar = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	stewardship = 2
@@ -3845,7 +3898,7 @@ raven_familiar = {
 }
 
 owl_familiar = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
 			character = FROM
@@ -3866,10 +3919,10 @@ corrupting_magic_minor = {
 	combat_rating = -10
 	fertility = -0.15
 	icon = 76
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 }
@@ -3881,17 +3934,17 @@ corrupting_magic_major = {
 	combat_rating = -20
 	fertility = -0.50
 	icon = 76
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 }
 
 
 recently_did_dark_divorce = {
-	is_visible = { 
+	is_visible = {
 		character = FROM
 	}
 	icon = 40
@@ -3911,10 +3964,10 @@ known_secret_society_member = {
 }
 
 dark_healing_recent = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	health = -0.5
@@ -3922,10 +3975,10 @@ dark_healing_recent = {
 }
 
 recent_induction_attempt = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	health = -0.5
@@ -3947,10 +4000,10 @@ desecrated_temple = {
 }
 
 stolen_life_minor = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	health = 1
@@ -3958,10 +4011,10 @@ stolen_life_minor = {
 }
 
 stolen_life_medium = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	health = 2
@@ -3969,10 +4022,10 @@ stolen_life_medium = {
 }
 
 stolen_life_major = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			is_devil_worshiper_trigger = yes
-            character = FROM
+			character = FROM
 		}
 	}
 	health = 3
@@ -3983,13 +4036,13 @@ doing_penance = {
 	icon = 17
 	diplomacy = -1
 	monthly_character_piety = 0.1
-} 
+}
 
 in_meditation = {
 	icon = 43
 	diplomacy = -1
 	monthly_character_piety = 0.1
-} 
+}
 
 rampant_sinner_christian = {
 	icon = 35
@@ -4031,6 +4084,7 @@ treasure_hunting_diplomats = {
 treasure_hunting_soldiers = {
 	icon = 31
 	global_levy_size = -0.25
+	max_manpower_mult = -0.125
 }
 
 treasure_hunting_stewards = {
@@ -4080,248 +4134,9 @@ published_poet = {
 }
 
 
-### secret_religious_society modifiers - for heretical status religions
-
-secret_antinomian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_antinomian
-	}
-}
-secret_aten_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_aten
-	}
-}
-secret_batembuzi_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_batembuzi
-	}
-}
-secret_bud_bahusrutiya_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_bud_bahusrutiya
-	}
-}
-secret_bud_mahayana_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_bud_mahayana
-	}
-}
-secret_cathar_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_cathar
-	}
-}
-secret_dionysos_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_dionysos
-	}
-}
-secret_donatist_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_donatist
-	}
-}
-secret_druze_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_druze
-	}
-}
-secret_erlik_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_erlik
-	}
-}
-secret_haruri_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_haruri
-	}
-}
-secret_hubal_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_hubal
-	}
-}
-secret_hurufi_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_hurufi
-	}
-}
-secret_ibadi_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_ibadi
-	}
-}
-secret_iconoclast_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_iconoclast
-	}
-}
-secret_illuyanka_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_illuyanka
-	}
-}
-secret_irminsul_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_irminsul
-	}
-}
-secret_jud_sabaoth_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_jud_sabaoth
-	}
-}
-secret_kharijite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_kharijite
-	}
-}
-secret_mand_ruha_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_mand_ruha
-	}
-}
-secret_mani_ahriman_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_mani_ahriman
-	}
-}
-secret_mazdakism_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_mazdakism
-	}
-}
-secret_melkite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_melkite
-	}
-}
-secret_montanist_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_montanist
-	}
-}
-secret_norse_war_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_norse_war
-	}
-}
-secret_pelagian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_pelagian
-	}
-}
-secret_plato_christ_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_plato_christ
-	}
-}
-secret_plato_islam_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_plato_islam
-	}
-}
-secret_priscillian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_priscillian 
-	}
-}
-secret_qarmatian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_qarmatian
-	}
-}
-secret_ragnarok_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_ragnarok
-	}
-}
-secret_saule_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_saule
-	}
-}
-secret_saura_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_saura
-	}
-}
-secret_set_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_set
-	}
-}
-secret_sol_christ_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_sol_christ
-	}
-}
-secret_sufi_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_sufi
-	}
-}
-secret_tengri_ahriman_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_tengri_ahriman
-	}
-}
-secret_vidharma_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_vidharma
-	}
-}
-secret_yahyanism_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_yahyanism
-	}
-}
-secret_zor_angra_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_zor_angra
-	}
-}
+### secret_religious_society modifiers
+#
+# EMF: the secret_<religion>_community modifiers are contained within emf_sr_codegen_modifiers.txt
 
 attempting_to_blend_in = {
 	icon = 81
@@ -4532,13 +4347,13 @@ under_suspicion = {
 	}
 	monthly_character_prestige = -0.5
 	icon = 82
-} 
+}
 
 highly_suspect = {
 	monthly_character_prestige = -1
 	monthly_character_piety = -1
 	icon = 82
-} 
+}
 
 played_strategy_game = {
 	martial = 2
@@ -4604,10 +4419,10 @@ rose_gardens = {
 }
 
 bruised_knuckles = {
-	is_visible = { 
+	is_visible = {
 		OR = {
 			same_society_as = FROM
-            character = FROM
+			character = FROM
 		}
 	}
 	diplomacy = -1
@@ -4779,12 +4594,12 @@ alchemy_good_ste_bonus = {
 
 alchemy_ste_bonus = {
 	icon = 4
-	stewardship = 1	
+	stewardship = 1
 }
 
 alchemy_ste_penalty = {
 	icon = 22
-	stewardship = -1	
+	stewardship = -1
 }
 
 alchemy_bad_ste_penalty = {
@@ -4799,12 +4614,12 @@ astrology_good_dip_bonus = {
 
 astrology_dip_bonus = {
 	icon = 3
-	diplomacy = 1	
+	diplomacy = 1
 }
 
 astrology_dip_penalty = {
 	icon = 21
-	diplomacy = -1	
+	diplomacy = -1
 }
 
 astrology_bad_dip_penalty = {
@@ -4819,7 +4634,7 @@ open_mind_good_lea_bonus = {
 
 open_mind_lea_bonus = {
 	icon = 2
-	learning = 1		
+	learning = 1
 }
 
 open_mind_lea_penalty = {
@@ -4839,17 +4654,17 @@ hidden_truth_good_int_bonus = {
 
 hidden_truth_int_bonus = {
 	icon = 5
-	intrigue = 1	
+	intrigue = 1
 }
 
 hidden_truth_int_penalty = {
 	icon = 23
-	intrigue = -1	
+	intrigue = -1
 }
 
 hidden_truth_bad_int_penalty = {
 	icon = 23
-	intrigue = -3	
+	intrigue = -3
 }
 
 divine_summoning_failed = {
@@ -5136,9 +4951,9 @@ tarnished_reputation = {
 
 # The Assassins Insights
 diplomatic_insight = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -5154,9 +4969,9 @@ diplomatic_insight = {
 	diplomacy = 2
 }
 martial_insight = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -5172,9 +4987,9 @@ martial_insight = {
 	martial = 2
 }
 intrigue_insight = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -5190,9 +5005,9 @@ intrigue_insight = {
 	intrigue = 2
 }
 learning_insight = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -5208,9 +5023,9 @@ learning_insight = {
 	learning = 2
 }
 stewardship_insight = {
-	is_visible = { 
+	is_visible = {
 		OR = {
-			society_member_of = the_assassins 
+			society_member_of = the_assassins
 			society_member_of = the_assassins_bud_mahayana
 			society_member_of = the_assassins_mani_ahriman
 			society_member_of = the_assassins_priscillian
@@ -5333,14 +5148,14 @@ employing_jd_administrator = {
 	#inherit = yes
 	build_time_modifier = -0.15
 	build_cost_modifier = -0.15
-}	
+}
 
 employing_jd_administrator_golden_age = {
 	icon = 99
 	#inherit = yes
 	build_time_modifier = -0.3
 	build_cost_modifier = -0.3
-}	
+}
 
 peace_deal_with_china = {
 	icon = 95
@@ -5469,8 +5284,8 @@ trade_competition_in_progress = {
 school_zhengyi = {
 	icon = 95
 	intrigue = 1
-    martial = 1
-    global_revolt_risk = -0.02
+	martial = 1
+	global_revolt_risk = -0.02
 	diplomacy = -2
 }
 
@@ -5486,7 +5301,7 @@ school_quanzhen = {
 school_shangqing = {
 	icon = 95
 	learning = 3
-    diplomacy = 1
+	diplomacy = 1
 	stewardship = -2
 }
 
@@ -5519,6 +5334,7 @@ china_raid_active = {
 	manpower_growth = -0.15
 	levy_reinforce_rate = -0.15
 	global_levy_size = -0.10
+	max_manpower_mult = -0.05
 	multiplicative_trade_post_income_modifier = -0.25
 	monthly_grace = -5
 	icon = 105
@@ -6621,6 +6437,7 @@ ruthless_commander = {
 	combat_rating = 10
 	martial = 4
 	global_levy_size = 0.1
+	max_manpower_mult = 0.05
 	
 	icon = 105
 }
@@ -7263,6 +7080,7 @@ forging_legend_searching_philosophers_1 = {
 	global_tax_modifier = -0.15
 	monthly_character_prestige = -0.5
 	global_levy_size = -0.15
+	max_manpower_mult = -0.075
 }
 
 forging_legend_searching_philosophers_2 = {
@@ -7270,6 +7088,7 @@ forging_legend_searching_philosophers_2 = {
 	global_tax_modifier = -0.15
 	plot_power_modifier = -0.15
 	global_levy_size = -0.05
+	max_manpower_mult = -0.025
 }
 forging_legend_searching_philosophers_3 = {
 	icon = 23
@@ -7282,6 +7101,7 @@ forging_legend_building_infrastructure_1 = {
 	icon = 22
 	global_tax_modifier = -0.5
 	global_levy_size = -0.25
+	max_manpower_mult = -0.125
 	build_time_modifier = 0.1
 }
 
@@ -7289,6 +7109,7 @@ forging_legend_building_infrastructure_2 = {
 	icon = 22
 	global_tax_modifier = -0.5
 	global_levy_size = -0.25
+	max_manpower_mult = -0.125
 	build_time_modifier = 0.1
 }
 
@@ -7304,6 +7125,7 @@ forging_legend_building_zealotry_1 = {
 	intrigue = -3
 	monthly_character_piety = -0.5
 	global_levy_size = -0.05
+	max_manpower_mult = -0.025
 }
 forging_legend_building_zealotry_2 = {
 	icon = 26
