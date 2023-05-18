@@ -343,6 +343,18 @@ warrior_lodge_amazonian = {
 			trait = tengri_warrior
 			value = 1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
 		#NEGATIVE modifiers
 		has_trait = {
 			trait = craven

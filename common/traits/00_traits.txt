@@ -838,6 +838,7 @@ possessed = { # Highly event driven
 
 	sex_appeal_opinion = -10
 	same_opinion = 5
+	bori_opinion = 10
 
 	ai_rationality = -40
 	
@@ -1189,6 +1190,9 @@ crusader = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 
 
@@ -2474,6 +2478,7 @@ zealous = {
 		sympathy_zoroastrianism
 		sympathy_judaism
 		sympathy_indian
+		sympathy_african
 		alexandrine
 	}
 

@@ -817,6 +817,24 @@ has_crusade_trait_trigger = {
 			trait = shaddai
 		}
 		AND = {
+            religion = bori
+            trait = child_of_garki_baba
+        }
+        AND = {
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+            trait = shield_of_roog
+        }
+        AND = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+            trait = heir_of_dihya
+        }
+		AND = {
 			religion_openly_egyptian_or_reformed_trigger = yes
 			trait = montu
 		}
@@ -859,9 +877,9 @@ can_be_mercenary_leader_potential_trigger = {
 	OR = {
 		is_female = no
 		AND = {
-			is_feminist_religion_trigger = yes
+			emf_feminist_religion = yes
 			FROM = {
-				is_feminist_religion_trigger = yes
+				emf_feminist_religion = yes
 			}
 		}
 		FROM = {
@@ -987,11 +1005,16 @@ can_be_chancellor_trigger = {
 						liege = { has_religion_feature = religion_feature_bon }
 						liege = { has_religion_feature = religion_feature_celtic }
 						liege = { has_religion_feature = religion_feature_egyptian }
+						liege = { religion = bori }
+						liege = { has_religion_feature = religion_feature_amazigh }
+                    }
+                    NOT = { has_religion_feature = religion_patriarchal }
+                }
 					} 
 				}
 				trait = horse # So we can have female glitterhoofs! :D
 				AND = {
-					is_feminist_religion_trigger = yes
+					emf_feminist_religion = yes
 					liege = { religion = PREV }
 				}
 				AND = {
@@ -1068,7 +1091,7 @@ can_be_marshal_trigger = {
 				}
 				trait = horse # So we can have female glitterhoofs! :D
 				AND = {
-					is_feminist_religion_trigger = yes
+					emf_feminist_religion = yes
 					liege = { religion = ROOT }
 				}
 				AND = {
@@ -1148,7 +1171,7 @@ can_be_treasurer_trigger = {
 				}
 				trait = horse # So we can have female glitterhoofs! :D
 				AND = {
-					is_feminist_religion_trigger = yes
+					emf_feminist_religion = yes
 					liege = { religion = PREV }
 				}
 				AND = {
@@ -1246,6 +1269,16 @@ can_be_spymaster_trigger = {
 					}
 				}
 				AND = {
+                    religion_group = african_group
+                    liege = {
+                        religion_group = african_group
+                        NOR = {
+                            liege = { has_religion_feature = religion_matriarchal }
+                            liege = { has_religion_feature = religion_patriarchal }
+                        }
+                    }
+                }
+				AND = {
 					religion = cathar
 					liege = { 
 						religion = cathar 
@@ -1256,7 +1289,7 @@ can_be_spymaster_trigger = {
 					}
 				}
 				AND = {
-					is_feminist_religion_trigger = yes
+					emf_feminist_religion = yes
 					liege = { religion = PREV }
 				}
 				AND = {
@@ -1423,7 +1456,7 @@ can_be_councilmember_king_trigger = {
 			}
 			AND = {
 				OR = {
-					is_feminist_religion_trigger = yes
+					emf_feminist_religion = yes
 				}
 				liege = { religion = ROOT }
 			}
@@ -1494,6 +1527,23 @@ can_be_councilmember_emperor_trigger = {
 					religion = messalian
 					liege = { religion = messalian }
 				}
+				AND = {
+                    religion = bori
+                    liege = { religion = bori }
+                }
+                AND = {
+                    OR = {
+                        religion = amazigh
+                        religion = amazigh_reformed
+                    }
+                    liege = {
+                        OR = {
+                            religion = amazigh
+                            religion = amazigh_reformed
+                        }
+                    }
+                    NOT = { has_religion_feature = religion_patriarchal }
+                }
 				AND = {
 					is_female = yes
 					liege = {
@@ -1863,7 +1913,7 @@ block_general_event_trigger = {
 
 gender_equality_trigger = {
 	OR = {
-		is_feminist_religion_trigger = yes
+		emf_feminist_religion = yes
 		AND = {
 			is_landed = yes
 			primary_title = { 
@@ -1928,6 +1978,9 @@ female_can_hold_minor_title_trigger = {
 						religion = messalian
 						religion = bogomilist
 						religion = mazdaki
+						religion = bori
+                        religion = amazigh
+                        religion = amazigh_reformed
 						religion = celtic_pagan
 						religion = egyptian_pagan
 						religion = promethean_pagan
@@ -2000,6 +2053,9 @@ female_can_hold_minor_commander_title_trigger = {
 						religion = messalian
 						religion = bogomilist
 						religion = mazdaki
+						religion = bori
+                        religion = amazigh
+                        religion = amazigh_reformed
 						religion = celtic_pagan
 						religion = egyptian_pagan
 						religion = promethean_pagan
@@ -2057,6 +2113,17 @@ has_minor_deity_trigger = {
 		has_character_modifier = follower_of_velnias
 		has_character_modifier = follower_of_perkunas
 		has_character_modifier = follower_of_zemyna
+		has_character_modifier = follower_of_yan_riga
+		has_character_modifier = follower_of_babbaku
+		has_character_modifier = follower_of_tan_garki
+		has_character_modifier = follower_of_samari
+		has_character_modifier = follower_of_yayan_zanzanna
+		has_character_modifier = follower_of_tan_dowa
+		has_character_modifier = follower_of_tanit
+		has_character_modifier = follower_of_anti
+		has_character_modifier = follower_of_gurzil
+		has_character_modifier = follower_of_magec
+		has_character_modifier = follower_of_set
 	}
 }
 
@@ -2604,6 +2671,7 @@ ROOTs_secret_religion_is_playable_trigger = {
 	hidden_tooltip = {
 		OR = {
 			secret_religion_group  = christian
+			secret_religion_group = african_group
 			AND = {
 				secret_religion_group  = jewish_group
 				has_dlc = "Sons of Abraham"
@@ -3206,6 +3274,10 @@ has_sympathy_for_true_religion_of_prev_trigger = {
 			trait = sympathy_indian
 			PREV = { true_religion_group_indian_group_trigger = yes }
 		}
+		AND = {
+			trait = sympathy_african
+			PREV = { true_religion_group = african_group }
+		}
 	}
 }
 
@@ -3234,6 +3306,10 @@ has_sympathy_for_true_religion_of_root_trigger = {
 		AND = {
 			trait = sympathy_indian
 			ROOT = { true_religion_group_indian_group_trigger = yes }
+		}
+		AND = {
+			trait = sympathy_african
+			ROOT = { true_religion_group = african_group }
 		}
 	}
 }
@@ -3280,6 +3356,10 @@ ok_sr_sympathy_mission_target_trigger = {
 			AND = {
 				true_religion_group = indian_group
 				PREV = { trait = sympathy_indian }
+			}
+			AND = {
+				trait = sympathy_african
+				PREV = { true_religion_group = african_group }
 			}
 		}
 	}
@@ -7289,6 +7369,11 @@ pagan_baptism_trigger = {
 	custom_tooltip = {
 		text = TT_UNREFORMED_PAGAN
 		hidden_tooltip = {
+			OR = {
+                religion_group = pagan_group
+                religion = a_tag_roog
+                religion = amazigh
+            }
 			is_organized_religion_trigger = no
 		}
 	}
@@ -8299,6 +8384,7 @@ this_has_average_nickname_trigger = {
 		has_nickname = nick_the_festive
 		has_nickname = nick_the_burden
 		has_nickname = nick_the_snake
+		has_nickname = nick_the_beloved
 	}
 }
 this_has_cool_nickname_trigger = {
@@ -8388,6 +8474,8 @@ this_has_cool_nickname_trigger = {
 		has_nickname = nick_the_ladder_legs
 		has_nickname = nick_the_peacock
 		has_nickname = nick_the_bellower
+		has_nickname = nick_the_thunderbolt
+        has_nickname = nick_africanus
 	}
 }
 this_has_super_cool_nickname_trigger = {
@@ -8809,6 +8897,7 @@ has_any_sympathy_trait_trigger = {
 		trait = sympathy_zoroastrianism
 		trait = sympathy_judaism
 		trait = sympathy_indian
+		trait = sympathy_african
 	}
 }
 
@@ -9011,6 +9100,7 @@ has_any_astrology_trait_trigger = {
 dlc_religion_check_trigger = {
 	OR = {
 		religion_group = christian
+		religion_group = african_group
 		AND = {
 			religion_group = muslim
 			has_dlc = "The Sword of Islam"

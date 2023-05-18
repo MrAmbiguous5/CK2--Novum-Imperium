@@ -17,6 +17,9 @@ kailash_guardian  = {
 		shaddai
 		gondi_shahansha
 		valhalla_bound
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2

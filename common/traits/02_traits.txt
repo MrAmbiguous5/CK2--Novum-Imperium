@@ -2008,6 +2008,9 @@ valhalla_bound  = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2073,6 +2076,7 @@ seaking = {
 				has_religion_feature = religion_seafaring
 			}
 		}
+		has_religion_feature = religion_feature_amazigh
 	}
 	opposites =  {
 		pirate
@@ -2213,6 +2217,7 @@ sea_queen = {
 				has_religion_feature = religion_adventuring
 				has_religion_feature = religion_seafaring
 			}
+			has_religion_feature = religion_feature_amazigh
 		}
 	}
 	opposites =  {
@@ -2253,6 +2258,9 @@ eagle_warrior = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2287,6 +2295,9 @@ sun_warrior = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2321,6 +2332,9 @@ ukkos_shield = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2355,6 +2369,9 @@ nyames_shield = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2389,6 +2406,9 @@ peruns_chosen = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2423,6 +2443,9 @@ romuvas_own = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2457,6 +2480,9 @@ ares_own = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2491,6 +2517,9 @@ tengri_warrior = {
 		shaddai
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2525,6 +2554,9 @@ shaddai = {
 		tengri_warrior
 		gondi_shahansha
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -2559,6 +2591,9 @@ gondi_shahansha = {
 		tengri_warrior
 		shaddai
 		kailash_guardian
+		child_of_garki_baba
+        shield_of_roog
+        heir_of_dihya
 	}
 	
 	martial = 2
@@ -6862,7 +6897,10 @@ pagan_branch_1 = {
 	
 	ai_zeal = -30
 
-	potential = { has_religion_feature = religion_no_leader }
+	potential = {
+		has_religion_feature = religion_no_leader
+		NOT = { religion = a_tag_roog_reformed }
+	}
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -6882,7 +6920,10 @@ pagan_branch_2 = {
 	
 	ai_zeal = 30
 	
-	potential = { has_religion_feature = religion_no_leader }
+	potential = {
+		has_religion_feature = religion_no_leader
+		NOT = { religion = a_tag_roog_reformed }
+	}
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -6902,7 +6943,10 @@ pagan_branch_3 = {
 	
 	ai_ambition = 20
 	
-	potential = { has_religion_feature = religion_no_leader }
+	potential = {
+		has_religion_feature = religion_no_leader
+		NOT = { religion = a_tag_roog_reformed }
+	}
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -6922,7 +6966,10 @@ pagan_branch_4 = {
 	
 	ai_honor = 10
 	
-	potential = { has_religion_feature = religion_no_leader }
+	potential = {
+		has_religion_feature = religion_no_leader
+		NOT = { religion = a_tag_roog_reformed }
+	}
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -7544,6 +7591,7 @@ bloodthirsty_gods_1 = { #10 burned_hearts_points
 			has_religion_feature = religion_ritual_sacrifice
 			religion = aztec
 			religion = aztec_reformed
+			has_religion_feature = religion_feature_amazigh
 		}
 	}
 	opposites =  {
@@ -7580,6 +7628,7 @@ bloodthirsty_gods_2 = { #50 burned_hearts_points
 			has_religion_feature = religion_ritual_sacrifice
 			religion = aztec
 			religion = aztec_reformed
+			has_religion_feature = religion_feature_amazigh
 		}
 	}
 	opposites =  {
@@ -7616,6 +7665,7 @@ bloodthirsty_gods_3 = { #100 burned_hearts_points
 			has_religion_feature = religion_ritual_sacrifice
 			religion = aztec
 			religion = aztec_reformed
+			has_religion_feature = religion_feature_amazigh
 		}
 	}
 	opposites =  {

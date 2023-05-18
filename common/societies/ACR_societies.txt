@@ -345,6 +345,18 @@ warrior_lodge_celtic = {
 			value = 1
 		}
 		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
 			trait = lughs_own
 			value = 1
 		}

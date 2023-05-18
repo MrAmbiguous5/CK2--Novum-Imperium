@@ -244,7 +244,10 @@ has_religion_matching_joined_warrior_lodge_trigger = {
 				society_member_of = warrior_lodge_slavic
 			}
 			AND = {
-				religion_openly_west_african_or_reformed_trigger = yes
+				OR = {
+                    religion_openly_west_african_or_reformed_trigger = yes
+                    religion_group = african_group
+                }
 				society_member_of = warrior_lodge_west_african
 			}
 			AND = {
@@ -336,7 +339,10 @@ has_religion_matching_available_warrior_lodge_trigger = {
 			warrior_lodge_slavic = { society_has_members = yes }
 		}
 		AND = {
-			religion_openly_west_african_or_reformed_trigger = yes
+			OR = {
+				religion_openly_west_african_or_reformed_trigger = yes
+                religion_group = african_group
+            }
 			warrior_lodge_west_african = { society_has_members = yes }
 		}
 		AND = {
@@ -423,7 +429,10 @@ has_religion_matching_warrior_lodge_in_need_of_members_trigger = {
 			warrior_lodge_slavic = { num_of_society_members < 30 }
 		}
 		AND = {
-			religion_openly_west_african_or_reformed_trigger = yes
+			OR = {
+				religion_openly_west_african_or_reformed_trigger = yes
+                religion_group = african_group
+            }
 			warrior_lodge_west_african = { num_of_society_members < 30 }
 		}
 		AND = {
@@ -520,7 +529,10 @@ has_religion_matching_empty_warrior_lodge_trigger = {
 			NOT = { warrior_lodge_slavic = { society_has_members = yes } }
 		}
 		AND = {
-			religion_openly_west_african_or_reformed_trigger = yes
+			OR = {
+				religion_openly_west_african_or_reformed_trigger = yes
+                religion_group = african_group
+            }
 			NOT = { warrior_lodge_west_african = { society_has_members = yes } }
 		}
 		AND = {
@@ -685,7 +697,10 @@ has_religion_matching_warrior_lodge_to_revive_trigger = {
 			}
 		}
 		AND = {
-			religion_openly_west_african_or_reformed_trigger = yes
+			OR = {
+                religion_openly_west_african_or_reformed_trigger = yes
+                religion_group = african_group
+            }
 			event_target:warrior_lodge_to_revive = {
 				is_society = warrior_lodge_west_african
 			}
@@ -858,9 +873,24 @@ special_join_warrior_lodge_trigger = {
 					text = has_liege_vassal_or_neighbor_of_west_african_religion_tt
 					hidden_trigger = {
 						OR = {
-							any_vassal = { religion_openly_west_african_or_reformed_trigger = yes }
-							any_liege = { religion_openly_west_african_or_reformed_trigger = yes }
-							any_neighbor_independent_ruler = { religion_openly_west_african_or_reformed_trigger = yes }
+							any_vassal = {
+                                OR = {
+                                    religion_openly_west_african_or_reformed_trigger = yes
+                                    religion_group = african_group
+                                }
+                            }
+							any_liege = {
+                                OR = {
+                                    religion_openly_west_african_or_reformed_trigger = yes
+                                    religion_group = african_group
+                                }
+                            }
+							any_neighbor_independent_ruler = {
+                                OR = {
+                                    religion_openly_west_african_or_reformed_trigger = yes
+                                    religion_group = african_group
+                                }
+                            }
 						}
 					}
 				}
