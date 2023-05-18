@@ -8,8 +8,8 @@ random = yes
 birth = 100
 
   opposites = {
-    trait = sangchaud
-  }
+    sangchaud
+}
   
 
   same_opinion = 5

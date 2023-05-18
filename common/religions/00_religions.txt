@@ -2667,7 +2667,6 @@ muslim = {
 		can_call_crusade = yes
 		max_wives = 4
 		matrilineal_marriages = no
-		can_hold_temples = yes
 		short_reign_opinion_year_mult = 4 # The default in LI is 5
 		uses_decadence = yes
 

@@ -14,9 +14,8 @@ birth = 100
   intrigue = -3
   
   opposites = {
-    trait = rancunier
-                  
-  }
+    rancunier
+}
   
   opposite_opinion = -5
   same_opinion = 5

@@ -15,8 +15,6 @@ birth = 25
   stewardship = 2
 
   opposites = {
-    trait = {           
-  }
 }  
   same_opinion = 20
   vassal_opinion = -10

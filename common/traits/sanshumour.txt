@@ -11,13 +11,11 @@ birth = 100
   
   diplomacy = -2
 
-	opposites = {
-		trait = {
-			unfunny
-            funny
-            humournoir
-		}
-	}
+  opposites = {
+	unfunny
+    funny
+    humournoir
+}
   
   opposite_opinion = -10
   same_opinion = 10

@@ -13,6 +13,7 @@ potential = {
         sex_appeal_opinion = 15
         opposite_opinion = -10
 	
-	opposites = { meager }
-
+  opposites = {
+	meager
+}
 }

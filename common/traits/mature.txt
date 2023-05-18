@@ -15,8 +15,8 @@ birth = 100
   learning = 1
   
   opposites = {
-    trait = immature           
-  }
+    immature           
+}
   
   opposite_opinion = -20
   same_opinion = 30

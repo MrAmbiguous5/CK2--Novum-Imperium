@@ -12,8 +12,6 @@ agoraphobie = {
 	diplomacy = -2
 
 	opposites = {
-		trait = {           
-	}
   }
   same_opinion = 20
   vassal_opinion = -5

@@ -14,8 +14,8 @@ birth = 100
   intrigue = 3
   
   opposites = {
-    trait = tolerant
-  }
+	tolerant
+}
   
   opposite_opinion = -30
   same_opinion = 30

@@ -13,20 +13,18 @@ birth = 100
   diplomacy = 5
   intrigue = 5
 
-	opposites = {
-		trait = {
-			imbecile
-            autiste
-            influencable
-            mauvaismenteur
-            silencieux
-            stutter
-            slow
-            dull
-            honest
-            shy
-		}
-	}
+  opposites = {
+	imbecile
+    autiste
+    influencable
+    mauvaismenteur
+    silencieux
+    stutter
+    slow
+    dull
+    honest
+    shy
+}
   
   opposite_opinion = -20
   same_opinion = -30

@@ -5,14 +5,14 @@ melodious = {
 potential = {
      age = 6
 }
-        random = yes
-        birth = 100
-	inherit_chance = 15
-	both_parent_has_trait_inherit_chance = 60
-	sex_appeal_opinion = 15
+  random = yes
+  birth = 100
+  inherit_chance = 15
+  both_parent_has_trait_inherit_chance = 60
+  sex_appeal_opinion = 15
 	
-        diplomacy = 2
+  diplomacy = 2
 	
-	opposites = { lisp stutter }
+  opposites = { lisp stutter }
 
 }

@@ -12,12 +12,10 @@ aimelire = {
 	learning = 2
 
 	opposites = {
-		trait = {
-			detestelire
-			illettre
-			imbecile
-			blinded            
-		}
+		detestelire
+		illettre
+		imbecile
+		blinded
 	}
   
 	same_opinion = 5

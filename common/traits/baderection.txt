@@ -9,12 +9,10 @@ potential = {
 random = yes
 birth = 50
 
-	opposites = {
-		trait = {
-			gooderection
-			eunuch
-		}
-	}
+  opposites = {
+	gooderection
+	eunuch
+}
   
  same_opinion = 20
  opposite_opinion = -10

@@ -14,8 +14,8 @@ health = -1
   martial = -3
   
   opposites = {
-    trait = slightlimp                             
-  }
+    slightlimp                             
+}
   
   
   same_opinion = 20

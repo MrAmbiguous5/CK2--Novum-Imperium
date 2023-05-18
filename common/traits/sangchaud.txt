@@ -10,8 +10,8 @@ birth = 100
   martial = 2
 
   opposites = {
-    trait = frileux
-  }
+    frileux
+}
   
 
   same_opinion = 5

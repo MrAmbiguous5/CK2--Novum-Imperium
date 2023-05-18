@@ -15,13 +15,11 @@ birth = 100
   stewardship = 3
   learning = 3
   
-	opposites = {
-		trait = {
-			etourdi
-            imbecile
-            slow   
-        }         
-	}
+  opposites = {
+	etourdi
+    imbecile
+    slow            
+}
   
   vassal_opinion = 5
   opposite_opinion = -5

@@ -13,16 +13,14 @@ birth = 50
   learning = -8
   stewardship = -8
 
-	opposites = {
-		trait = {
-			quick
-            scholar
-            administrator
-            architect
-            poet            
-            erudite   
-		}
-	}
+  opposites = {
+	quick
+    scholar
+    administrator
+    architect
+    poet            
+    erudite
+}
   
   opposite_opinion = -30
   same_opinion = 30

@@ -12,14 +12,12 @@ birth = 50
 
   martial = 1
 
-	opposites = {
-		trait = {
-			celibate
-            chaste
-            monk
-            nun
-		}
-	}
+  opposites = {
+	celibate
+    chaste
+    monk
+    nun
+}
   
  same_opinion = 10
  opposite_opinion = -10
