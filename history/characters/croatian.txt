@@ -158,12 +158,6 @@
 	852.1.1={
 		birth="852.1.1"
 	}
-	925.1.1={
-		create_bloodline = {
-			type = croatia
-			has_dlc = "Holy Fury"
-		}
-	}
 	928.1.1={
 		death="928.1.1"
 	}

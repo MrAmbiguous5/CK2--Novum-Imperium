@@ -1997,10 +1997,6 @@
 	820.1.1={
 		birth="820.1.1"
 		remove_claim = d_the_isles
-		create_bloodline = {
-			type = rhodri
-			has_dlc = "Holy Fury"
-		}
 	}
 	840.1.1={
 		add_spouse=159802

@@ -6,5 +6,4 @@
 	set_global_flag = SED
 	set_global_flag = ArkoCoA
 	set_global_flag = LTM
-	set_global_flag = CPR
 }

@@ -505,10 +505,6 @@
 	father=472352
 	1270.1.2={
 		birth="1270.1.2"
-		create_bloodline = {
-			type = lithuania
-			has_dlc = "Holy Fury"
-		}
 	}
 	1287.1.2={
 	add_spouse = 473501

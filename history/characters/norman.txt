@@ -441,11 +441,7 @@
 	}
 	1057.1.1 = {
 		remove_spouse=10003
-		give_nickname = nick_the_fox
-		create_bloodline = {
-			type = robert
-			has_dlc = "Holy Fury"
-		}	
+		give_nickname = nick_the_fox		
 	}
 	1058.1.1 = {
 		add_spouse=1123

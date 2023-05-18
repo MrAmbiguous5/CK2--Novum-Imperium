@@ -637,13 +637,6 @@
 	810.1.2={
 		birth="810.1.2"
 	}
-	848.1.1={
-		culture="scottish"
-		create_bloodline = {
-			type = cinaed
-			has_dlc = "Holy Fury"
-		}
-	}
 	858.1.2={
 		death="858.1.2"
 	}

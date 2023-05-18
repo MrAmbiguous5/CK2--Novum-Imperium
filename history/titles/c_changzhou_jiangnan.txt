@@ -22,7 +22,7 @@
 875.1.1 = { holder = 1407387 } #Zhao Yin
 875.5.9 = { holder = 1407292 } #Pei Xuan
 878.1.1 = { holder = 1407984 } #Sun Hui - prefect until sometime before 880.11.25
-880.10.1 = { holder = 1404250 } #Zhou Bao
+880.10.1 = [ holder = 1404250 } #Zhou Bao
 886.2.8 = { holder = 1408091 liege = e_tang } #Zhang You - mutinied
 886.7.6 = { holder = 1408092 liege = d_zhexi } #Ding Congshi
 887.11.3 = { holder = 1408094 liege = e_tang } #Du Leng - Qian Liu's subordinate

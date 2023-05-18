@@ -4202,10 +4202,6 @@
 	give_nickname = nick_the_stranger # Oskyldr -> Askold
 	845.1.1={
 		birth = yes	
-		create_bloodline = {
-			type = dyre
-			has_dlc = "Holy Fury"
-		}
 	}
 	863.1.1={
 		add_spouse=6872

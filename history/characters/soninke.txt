@@ -1,24 +1,24 @@
-# from Elvain's work on SWMH
+# -*- ck2.history.characters -*-
 
 #161000 - 161010
 #161094 - 161102
 #184010 - 183501
-#251130-251 199
 
-#1000144500 - 1000144520
-#1000144680
+#1144500 - 1144520
+#1144680
 
 
 161000 = {
 	name="Bassi"
 	dynasty=1030000
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
-	father=184019
-    trait = foro
-    trait = sarakole
+	father=184019 #?
 	1010.1.1={
 		birth="1010.1.1"
+	}
+	1040.1.1 = {
+		trait="sympathy_islam" #Islam likely influential before 1076
 	}
 	1062.1.1={
 		death="1062.1.1"
@@ -26,22 +26,17 @@
 }
 
 161001 = {
-	name="Tunka Manin"
+	name="Tunka Menin"
 	dynasty=1030000
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father=161000
-    trait = foro
-    trait = sarakole
 	1030.1.1={
 		birth="1030.1.1"
 	}
-    1062.1.1 = {
-        create_bloodline = {
-            type = tunka_manin
-            has_dlc = "Holy Fury"
-        }
-    }
+	1040.1.1 = {
+		trait="sympathy_islam" #Islam likely influential before 1076
+	}
 	1068.1.1={
 		death="1068.1.1"
 	}
@@ -50,15 +45,15 @@
 161002 = {
 	name="Kambine Diaresso"
 	dynasty=1030000
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father=161001
-    trait = foro
-    trait = sarakole
+	trait=sympathy_islam
 	1050.1.1={
 		birth="1050.1.1"
 	}
 	1076.1.1={
+		remove_trait="sympathy_islam"
 		religion="sunni"
 	}
 	1090.1.1={
@@ -69,16 +64,11 @@
 161003 = {
 	name="Sulayman"
 	dynasty=1030000
-	religion="a_tag_roog"
+	religion="sunni"
 	culture="soninke"
 	father=161002
-    trait = foro
-    trait = sarakole
 	1070.1.1={
 		birth="1070.1.1"
-	}
-	1076.1.1={
-		religion="sunni"
 	}
 	1100.1.1={
 		death="1100.1.1"
@@ -158,10 +148,8 @@
 161009 = {
 	name="Diara"
 	dynasty=1030001
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
-    trait = foro
-    trait = serer
 	1145.1.1={
 		birth="1145.1.1"
 	}
@@ -173,30 +161,22 @@
 161010 = {
 	name="Soumaoro"
 	dynasty=1030001
-	religion="a_tag_roog"
+	martial=8
+	diplomacy=3
+	stewardship=4
+	religion="west_african_pagan"
 	culture="soninke"
 	father=161009
-    trait = foro
-    trait = serer
+	trait="skilled_tactician"
+	trait="zealous"
 	1180.1.1={
 		birth="1180.1.1"
 	}
 	1234.1.1={
-		death="1234.1.1"
-	}
-}
-
-161023 = {
-	name="Soumaba"
-	dynasty=1030000
-	religion="sunni"
-	culture="soninke"
-	father=161008
-	1170.1.1={
-		birth="1170.1.1"
-	}
-	1240.1.1={
-		death="1240.1.1"
+		death={
+			death_reason=death_battle
+			killer=161022
+		}
 	}
 }
 
@@ -206,6 +186,7 @@
 	dynasty=1030011
 	religion="sunni"
 	culture="soninke"
+	father=1228266
 	1050.1.1={
 		birth="1050.1.1"
 	}
@@ -345,34 +326,24 @@
 
 #####TOG
 184010 = {
-	name="Dinga"
+	name="Dramane"
 	dynasty=1030000
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
-    trait = foro
-    trait = sarakole
 	695.1.1={
 		birth="695.1.1"
 	}
-    740.1.1 = {
-        create_bloodline = {
-            type = dinga_cisse
-            has_dlc = "Holy Fury"
-        }
-    }
 	745.1.1={
 		death = yes
 	}
 }
 
 184011 = {
-	name="Khine"
+	name="Seydou"
 	dynasty=1030000
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father=184010
-    trait = foro
-    trait = sarakole
 	725.1.1={
 		birth="725.1.1"
 	}
@@ -382,15 +353,17 @@
 }
 
 184012 = {
-	name="Dyabe"
+	name="Kaya Maghan" #first Cisse king (tunka) of the Soninke who drove away the "whites" northward towards the end of the 8th century
 	dynasty=1030000
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father=184010
-    trait = foro
-    trait = sarakole
 	730.1.1={
 		birth="730.1.1"
+		create_bloodline = {
+			type = cisse
+			has_dlc = "Holy Fury"
+		}
 	}
 	780.1.1={
 		death="780.1.1"
@@ -398,13 +371,11 @@
 }
 
 184013 = { 
-	name="Mamadi" #First historical contact with islam
+	name="Mayan Dyabe" #First historical contact with islam
 	dynasty=1030000
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
 	father=184012
-    trait = foro
-    trait = sarakole
 	770.1.1={
 		birth = yes
 	}
@@ -416,11 +387,9 @@
 184014 = {
 	name="Konaté"
 	dynasty=1030000
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
 	father=184013
-    trait = foro
-    trait = sarakole
 	805.1.1={
 		birth = yes
 	}
@@ -432,11 +401,9 @@
 184015 = {
 	name=Zoumana
 	dynasty=1030000
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
 	father=184014
-    trait = foro
-    trait = sarakole
 	830.1.1={
 		birth = yes
 	}
@@ -448,11 +415,9 @@
 184016 = {
 	name="Iasine"
 	dynasty=1030000
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
 	father=184015
-    trait = foro
-    trait = sarakole
 	875.1.1={
 		birth="875.1.1"
 	}
@@ -464,11 +429,9 @@
 184017 = {
 	name="Djibril"
 	dynasty=1030000
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
 	father=184016
-    trait = foro
-    trait = sarakole
 	905.1.1={
 		birth="905.1.1"
 	}
@@ -480,11 +443,9 @@
 184018 = {
 	name="Adama"
 	dynasty=1030000
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
 	father=184017
-    trait = foro
-    trait = sarakole
 	925.1.1={
 		birth="925.1.1"
 	}
@@ -496,11 +457,9 @@
 184019 = {
 	name="Ousmane"
 	dynasty=1030000
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
 	father=184018
-    trait = foro
-    trait = sarakole
 	970.1.1={
 		birth="970.1.1"
 	}
@@ -512,10 +471,8 @@
 183501 = {
 	name="Hargani"
 	dynasty=1042631
-	religion=a_tag_roog
+	religion=west_african_pagan
 	culture=soninke
-    trait = foro
-    trait = serer
 	825.1.1={
 		birth="825.1.1"
 	}
@@ -524,325 +481,13 @@
 	}
 }
 
-
-#Original characters for CM
-188752 = {
-	name="Dankaran" # fictitious holder of Djenne
-	dynasty=1042173
-	religion="a_tag_roog"
-	culture="soninke"
-    trait = foro
-    trait = dogon
-	730.1.1={
-		birth=yes
-	}
-	780.1.1={
-		death=yes
-	}
-}
-
-188754 = {
-	name="Demba" # fictitious holder of Aoudaghost
-	dynasty=1042175
-	religion="a_tag_roog"
-	culture="soninke"
-    trait = foro
-    trait = serer
-	745.1.1={
-		birth=yes
-	}
-	795.1.1={
-		death=yes
-	}
-}
-
-188755 = {
-	name="Kodama" # fictitious holder of Oualata
-	dynasty=1042176
-	religion="a_tag_roog"
-	culture="soninke"
-    trait = foro
-    trait = serer
-	742.1.1={
-		birth=yes
-	}
-	795.1.1={
-		death=yes
-	}
-}
-
-################ Characters for reworked West Africa
-
-#Niakhate rulers of Kingui-Diafunu
-251130 = {
-	name="Sirman Mesane"
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251170
-    trait = foro
-    trait = sarakole
-	1042.1.1={
-		birth=yes
-	}
-	1086.1.11={
-		death=yes
-	}
-}
-251131 = {
-	name="Mana"
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father=251130
-    trait = foro
-    trait = sarakole
-	1073.1.1={
-		birth = yes
-	}
-	1117.1.1={
-		death = yes
-	}
-}
-251132 = {
-	name="Sirman"
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father=251131
-    trait = foro
-    trait = sarakole
-	1100.1.1={
-		birth = yes
-	}
-	1149.1.1={
-		death = yes
-	}
-}
-251133 = {
-	name="Mana Maghan"
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father=251132
-    trait = foro
-    trait = sarakole
-	1124.1.1={
-		birth=yes
-	}
-	1173.1.1={
-		death=yes
-	}
-}
-251134 = {
-	name="Niakhata"
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-    trait = foro
-    trait = sarakole
-	745.1.1={
-		birth=yes
-	}
-	786.1.11={
-		death=yes
-	}
-}
-251135 = {
-	name="Sirman"
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251165
-    trait = foro
-    trait = sarakole
-	845.1.1={
-		birth=yes
-	}
-	886.1.11={
-		death=yes
-	}
-}
-
-#Kiffa rulers of Awdaghust(c_aoudaghost)
-251136 = {
-	name="Niaware"
-	dynasty=1060013
-	religion="a_tag_roog"
-	culture="soninke"
-	father=251140
-    trait = foro
-    trait = serer
-	832.1.1={
-		birth=yes
-	}
-	886.1.11={
-		death=yes
-	}
-}
-251137 = {
-	name="Sogolon"
-	female=yes
-	dynasty=1060013
-	religion="a_tag_roog"
-	culture="soninke"
-	father=251136
-    trait = foro
-    trait = serer
-	849.1.1={
-		birth=yes
-	}
-	906.1.11={
-		death=yes
-	}
-}
-251138 = {
-	name="Kiffa"
-	dynasty=1060013
-	religion="a_tag_roog"
-	culture="soninke"
-    trait = foro
-    trait = serer
-	740.1.1={
-		birth=yes
-	}
-	800.1.11={
-		death=yes
-	}
-}
-251139 = {
-	name="Niaware"
-	dynasty=1060013
-	religion="a_tag_roog"
-	culture="soninke"
-	father=251138
-    trait = foro
-    trait = serer
-	790.1.1={
-		birth=yes
-	}
-	844.1.11={
-		death=yes
-	}
-}
-251140 = {
-	name="Kiffa"
-	dynasty=1060013
-	religion="a_tag_roog"
-	culture="soninke"
-	father=251139
-    trait = foro
-    trait = serer
-	810.1.1={
-		birth=yes
-	}
-	863.1.11={
-		death=yes
-	}
-}
-#Tunkara rulers of Mema
-251141 = {
-	name="Biranin"
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251153
-    trait = foro
-    trait = dogon
-	1034.1.1={
-		birth=yes
-	}
-	1083.1.1={
-		death=yes
-	}
-}
-
-251142 = {
-	name="Niakhata"		#placeholder
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251141
-    trait = foro
-    trait = dogon
-	1059.1.1={
-		birth = yes
-	}
-	1110.1.1={
-		death = yes
-	}
-}
-
-251143 = {
-	name="Fare Birama"
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251142
-    trait = foro
-    trait = dogon
-	1094.1.1={
-		birth=yes
-	}
-	1140.1.1={
-		death=yes
-	}
-}
-251144 = {
-	name="Biranin"		#placeholder
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251143
-    trait = foro
-    trait = dogon
-	1120.1.1={
-		birth = yes
-	}
-	1174.1.1={
-		death = yes
-	}
-}
-251145 = {
-	name="Birama"		#placeholder
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251144
-    trait = foro
-    trait = dogon
-	1153.1.1={
-		birth = yes
-	}
-	1199.1.1={
-		death = yes
-	}
-}
-
-251146 = {
-	name="Musa"
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251145
-    trait = foro
-    trait = dogon
-	1180.1.1={
-		birth=yes
-	}
-	1235.1.1={
-		death=yes
-	}
-}
 #placeholder ancestors for Tunkara rulers of Mema
 
 251147 = {
 	name="Biranin"
 	dynasty=1060011
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
-    trait = foro
-    trait = dogon
 	748.1.1={
 		birth = yes
 	}
@@ -853,11 +498,9 @@
 251148 = {
 	name="Biranin"
 	dynasty=1060011
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251176
-    trait = foro
-    trait = dogon
 	848.1.1={
 		birth = yes
 	}
@@ -868,11 +511,9 @@
 251149 = {
 	name="Mamadi"
 	dynasty=1060011
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251148
-    trait = foro
-    trait = dogon
 	880.1.1={
 		birth = yes
 	}
@@ -883,11 +524,9 @@
 251150 = {
 	name="Hargani"
 	dynasty=1060011
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251149
-    trait = foro
-    trait = dogon
 	912.1.1={
 		birth = yes
 	}
@@ -898,11 +537,9 @@
 251151 = {
 	name="Mamadi"
 	dynasty=1060011
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251150
-    trait = foro
-    trait = dogon
 	939.1.1={
 		birth = yes
 	}
@@ -910,108 +547,12 @@
 		death = yes
 	}
 }
-251152 = {
-	name="Hargani"
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251151
-    trait = foro
-    trait = dogon
-	977.1.1={
-		birth = yes
-	}
-	1030.1.1={
-		death = yes
-	}
-}
-251153 = {
-	name="Tunka"
-	dynasty=1060011
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251152
-    trait = foro
-    trait = dogon
-	1000.1.1={
-		birth = yes
-	}
-	1053.1.1={
-		death = yes
-	}
-}
 
-#Kante rulers of Soso
-251154 = {
-	name="Mamadi"
-	dynasty=1060015
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251174
-    trait = foro
-    trait = dogon
-	1050.1.1={
-		birth=yes
-	}
-	1066.1.1={
-		add_claim = c_soso
-	}
-	1114.1.1={
-		death=yes
-	}
-}
-251155 = {
-	name="Soumaoro"	#placeholder
-	dynasty=1060015
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251154
-    trait = foro
-    trait = dogon
-	1073.1.1={
-		birth=yes
-	}
-	1130.1.1={
-		death=yes
-	}
-}
-251156 = {
-	name="Mamadi"	#placeholder
-	dynasty=1060015
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251155
-    trait = foro
-    trait = dogon
-	1090.1.1={
-		birth=yes
-	}
-	1156.1.1={
-		death=yes
-	}
-}
-251157 = {
-	name="Mamadi"	#placeholder
-	dynasty=1060015
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251156
-    trait = foro
-    trait = dogon
-	1118.1.1={
-		birth=yes
-	}
-	1170.1.1={
-		death=yes
-	}
-}
 251158 = {
 	name="Kanté"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
-    trait = foro
-    trait = dogon
 	700.1.1={
 		birth=yes
 	}
@@ -1022,11 +563,9 @@
 251159 = {
 	name="Mamadi"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251158
-    trait = foro
-    trait = dogon
 	738.1.1={
 		birth=yes
 	}
@@ -1037,11 +576,9 @@
 251160 = {
 	name="Fakoli"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251159
-    trait = foro
-    trait = dogon
 	780.1.1={
 		birth=yes
 	}
@@ -1052,11 +589,9 @@
 251161 = {
 	name="Yerelenko"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251160
-    trait = foro
-    trait = dogon
 	815.1.1={
 		birth=yes
 	}
@@ -1067,11 +602,9 @@
 251162 = {
 	name="Fakoli"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251161
-    trait = foro
-    trait = dogon
 	850.1.1={
 		birth=yes
 	}
@@ -1080,153 +613,12 @@
 	}
 }
 
-#Placeholder rulers to fill the gaps
-
-251163 = {
-	name="Daffi"
-	#placeholder
-	dynasty=1060010 #Niakhate of Diafunu
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251134
-    trait = foro
-    trait = sarakole
-	770.1.1={
-		birth=yes
-	}
-	
-	822.1.1={
-		death=yes
-	}
-}
-251164 = {
-	name="Sirman"
-	#placeholder
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251163
-    trait = foro
-    trait = sarakole
-	790.1.1={
-		birth=yes
-	}
-	
-	844.1.1={
-		death=yes
-	}
-}
-251165 = {
-	name="Niakhata"
-	#placeholder
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251164
-    trait = foro
-    trait = sarakole
-	819.1.1={
-		birth=yes
-	}
-	
-	866.1.1={
-		death=yes
-	}
-}
-251166 = {
-	name="Mana"
-	#placeholder
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251135
-    trait = foro
-    trait = sarakole
-	870.1.1={
-		birth=yes
-	}
-	
-	933.1.1={
-		death=yes
-	}
-}
-251167 = {
-	name="Daffi"
-	#placeholder
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251166
-    trait = foro
-    trait = sarakole
-	903.1.1={
-		birth=yes
-	}
-	
-	953.1.1={
-		death=yes
-	}
-}
-251168 = {
-	name="Niakhata"
-	#placeholder
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251167
-    trait = foro
-    trait = sarakole
-	937.1.1={
-		birth=yes
-	}
-	
-	989.1.1={
-		death=yes
-	}
-}
-251169 = {
-	name="Sirman"
-	#placeholder
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251168
-    trait = foro
-    trait = sarakole
-	970.1.1={
-		birth=yes
-	}
-	
-	1020.1.1={
-		death=yes
-	}
-}
-251170 = {
-	name="Daffi"
-	#placeholder
-	dynasty=1060010
-	religion="a_tag_roog"
-	culture="soninke"
-	father = 251169
-    trait = foro
-    trait = sarakole
-	1008.1.1={
-		birth=yes
-	}
-	
-	1053.1.1={
-		death=yes
-	}
-}
-
 251171 = {
 	name="Mamadi"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251162
-    trait = foro
-    trait = dogon
 	890.1.1={
 		birth=yes
 	}
@@ -1237,11 +629,9 @@
 251172 = {
 	name="Soumaoro"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251171
-    trait = foro
-    trait = dogon
 	935.1.1={
 		birth=yes
 	}
@@ -1252,11 +642,9 @@
 251173 = {
 	name="Fakoli"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251172
-    trait = foro
-    trait = dogon
 	980.1.1={
 		birth=yes
 	}
@@ -1267,11 +655,9 @@
 251174 = {
 	name="Yerelenko"	#placeholder
 	dynasty=1060015
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251173
-    trait = foro
-    trait = dogon
 	1020.1.1={
 		birth=yes
 	}
@@ -1284,11 +670,9 @@
 251175 = {
 	name="Mamadi"
 	dynasty=1060011
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251147
-    trait = foro
-    trait = dogon
 	780.1.1={
 		birth = yes
 	}
@@ -1299,11 +683,9 @@
 251176 = {
 	name="Hargani"
 	dynasty=1060011
-	religion="a_tag_roog"
+	religion="west_african_pagan"
 	culture="soninke"
 	father = 251175
-    trait = foro
-    trait = dogon
 	813.1.1={
 		birth = yes
 	}
@@ -1313,4 +695,346 @@
 }
 
 
-# 1000228270 - 1000228278 free Soninke characters
+#############################################################
+################ SWMH NEW CHARACTERS ########################
+#############################################################
+
+#Niakhate rulers of Kingui
+1144500 = {
+	name="Sirman Mesane"
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228263
+	1042.1.1={
+		birth="1042.1.1"
+	}
+	1086.1.11={
+		death="1086.1.11"
+	}
+}
+1144501 = {
+	name="Mana Maghan"
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+  father=1144504
+	1124.1.1={
+		birth="1124.1.1"
+	}
+	1173.1.1={
+		death="1173.1.1"
+	}
+}
+1144502 = {
+	name="Niakhata"
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+	845.1.1={
+		birth="845.1.1"
+	}
+	886.1.11={
+		death="886.1.11"
+	}
+}
+1144503 = {
+	name="Mana"
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+  father=1144500
+	1073.1.1={
+		birth = yes
+	}
+	1117.1.1={
+		death = yes
+	}
+}
+1144504 = {
+	name="Sirman"
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+  father=1144503
+	1100.1.1={
+		birth = yes
+	}
+	1149.1.1={
+		death = yes
+	}
+}
+
+#Kiffa rulers of Awdaghust(c_aoudaghost)
+1144508 = {
+	name="Niaware"
+	dynasty=1060013
+	religion="west_african_pagan"
+	culture="soninke"
+	832.1.1={
+		birth="832.1.1"
+	}
+	886.1.11={
+		death="886.1.11"
+	}
+}
+1144509 = {
+	name="Sogolon"
+	female=yes
+	dynasty=1060013
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1144508
+	849.1.1={
+		birth="849.1.1"
+	}
+	906.1.11={
+		death="906.1.11"
+	}
+}
+#Tunkara rulers of Mema
+1144510 = {
+	name="Biranin"
+	dynasty=1060011
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228269
+	1034.1.1={
+		birth="1034.1.1"
+	}
+	1083.1.1={
+		death="1083.1.1"
+	}
+}
+
+1144511 = {
+	name="Fare Birama"
+	dynasty=1060011
+	religion="west_african_pagan"
+	culture="soninke"
+	1094.1.1={
+		birth="1094.1.1"
+	}
+	1140.1.1={
+		death="1140.1.1"
+	}
+}
+
+1144520 = {
+	name="Musa"
+	dynasty=1060011
+	religion="west_african_pagan"
+	culture="soninke"
+	1180.1.1={
+		birth="1180.1.1"
+	}
+	1235.1.1={
+		death="1235.1.1"
+	}
+}
+
+#Kante rulers of Soso
+1144690 = {
+	name="Gane"
+	dynasty=1030001
+	religion="west_african_pagan"
+	culture="soninke"
+	967.1.1={
+		birth="967.1.1"
+	}
+	1018.1.1={
+		death="1018.1.1"
+	}
+}
+1144691 = {
+	name="Biyu"
+	dynasty=1030001
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1144690
+	991.1.1={
+		birth="991.1.1"
+	}
+	1047.1.1={
+		death="1047.1.1"
+	}
+}
+1144692 = {
+	name="Seydou"
+	dynasty=1030001
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1144691
+	1015.1.1={
+		birth="1015.1.1"
+	}
+	1065.1.1={
+		death="1065.1.1"
+	}
+}
+1144680 = {
+	name="Mamadi"
+	dynasty=1030001
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1144692
+	1050.1.1={
+		birth="1050.1.1"
+	}
+	1114.1.1={
+		death="1114.1.1"
+	}
+}
+
+#Placeholder tribal rulers for 867
+1228260 = {
+	name="Daffi"
+	#placeholder
+	dynasty=1060014 #Soninke tribe
+	religion="west_african_pagan"
+	culture="soninke"
+	838.1.1={
+		birth="838.1.1"
+	}
+	
+	879.1.1={
+		death="879.1.1"
+	}
+}
+
+1228261 = {
+	name="Kusoy"
+	#placeholder
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+	969.1.1={
+		birth="969.1.1"
+	}
+	
+	1023.1.1={
+		death="1023.1.1"
+	}
+}
+1228262 = {
+	name="Gao"
+	#placeholder
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228261
+	998.1.1={
+		birth="998.1.1"
+	}
+	
+	1051.1.1={
+		death="1051.1.1"
+	}
+}
+1228263 = {
+	name="Zenku"
+	#placeholder
+	dynasty=1060010
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228262
+	1019.1.1={
+		birth="1019.1.1"
+	}
+	
+	1060.1.1={
+		death="1060.1.1"
+	}
+}
+
+1228264 = {
+	name="Fadiga"
+	#placeholder
+	dynasty=1030011
+	religion="west_african_pagan"
+	culture="soninke"
+	962.1.1={
+		birth="962.1.1"
+	}
+	
+	1016.1.1={
+		death="1016.1.1"
+	}
+}
+1228265 = {
+	name="Mamoudou"
+	#placeholder
+	dynasty=1030011
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228264
+	987.1.1={
+		birth="987.1.1"
+	}
+	
+	1035.1.1={
+		death="1035.1.1"
+	}
+}
+1228266 = {
+	name="Abubakar"
+	#placeholder
+	dynasty=1030011
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228265
+	1017.1.1={
+		birth="1017.1.1"
+	}
+	1040.1.1 = {
+		religion="sunni"
+	}
+	1066.1.1={
+		death="1066.1.1"
+	}
+}
+
+1228267 = {
+	name="Wati"
+	#placeholder
+	dynasty=1060011
+	religion="west_african_pagan"
+	culture="soninke"
+	father=251151
+	971.1.1={
+		birth="971.1.1"
+	}
+	1023.1.1={
+		death="1023.1.1"
+	}
+}
+1228268 = {
+	name="Bisi"
+	#placeholder
+	dynasty=1060011
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228267
+	999.1.1={
+		birth="999.1.1"
+	}
+	1045.1.1={
+		death="1045.1.1"
+	}
+}
+1228269 = {
+	name="Kassa"
+	#placeholder
+	dynasty=1060011
+	religion="west_african_pagan"
+	culture="soninke"
+	father=1228268
+	1018.1.1={
+		birth="1018.1.1"
+	}
+	1050.1.1={
+		death="1050.1.1"
+	}
+}
+
+# 1228261 - 1228279 free Soninke characters

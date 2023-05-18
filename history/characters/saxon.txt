@@ -1734,12 +1734,6 @@
 	893.1.1={
 		birth="893.1.1"
 	}
-	927.1.1 = {
-		create_bloodline = {
-			type = athelstan
-			has_dlc = "Holy Fury"
-		}
-	}
 	939.10.27={
 		death="939.10.27"
 	}
@@ -3235,10 +3229,6 @@
 	father=205000
 	520.1.1={
 		birth="520.1.1"
-		create_bloodline = {
-			type = wuffa
-			has_dlc = "Holy Fury"
-		}
 	}
 	578.1.1={
 		death="578.1.1"
@@ -3560,10 +3550,6 @@
 	father=205051
 	480.1.1={
 		birth="480.1.1"
-		create_bloodline = {
-			type = icel
-			has_dlc = "Holy Fury"
-		}
 	}
 	536.1.1={
 		death="536.1.1"

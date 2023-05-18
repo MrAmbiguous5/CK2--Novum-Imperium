@@ -343,10 +343,6 @@
 	}
 	1027.1.1={
 			give_nickname = nick_the_great
-			create_bloodline = {
-				type = santso
-				has_dlc = "Holy Fury"
-			}
 	}
 	1035.10.18={
 		death="1035.10.18"

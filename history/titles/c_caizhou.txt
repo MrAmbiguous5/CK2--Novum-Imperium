@@ -71,7 +71,7 @@
 945.6.7 = { holder = 1412427 } #An Shenqi
 946.2.23 = { holder = 1412387 } #Shi Chongrui
 #Liao
-947.2.20 = { holder = 1404125 } #Liu Yanseng
+947.2.20 { holder = 1404125 } #Liu Yanseng
 #Later Han
 947.4.27 = { holder = 1404852 } #Shi Hongzhao
 948.1.12 = { holder = 1412399 } #Liu Xin

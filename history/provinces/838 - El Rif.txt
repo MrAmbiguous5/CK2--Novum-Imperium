@@ -1,4 +1,6 @@
-# 838 - El Rif
+# -*- ck2.history.provinces -*-
+
+# 838 - El Rif (Taza)
 
 # County Title
 title = c_el_rif
@@ -6,24 +8,19 @@ title = c_el_rif
 # Settlements
 max_settlements = 4
 
-b_melilla = castle
-b_alhoceima = city
-b_midar = temple
+b_taza = castle
+#b_sa = castle
+b_guercif = city
+b_debdou = city
 
-#b_ketama = castle
-#b_nador = castle
-#b_driouch = castle
-#b_saka = castle
-
+#b_ketama = city
+#b_saka = city
 
 # Misc
-culture = maghreb_arabic
-religion = amazigh
-
+culture = zanata
+religion = sunni
 
 # History
-947.1.1 = {
-	religion = sunni
-	b_ketama = castle
-}
-1175.1.1 = { trade_post = b_embriaco }
+#1084.1.1 = { remove_settlement = b_guercif }
+1140.1.1 = { religion = mahdiyya }
+1230.1.1 = { religion = sunni }

@@ -22080,10 +22080,6 @@
 	}
 	862.1.1 = {
 		give_nickname=nick_the_strong
-		create_bloodline = {
-			type = capet
-			has_dlc = "Holy Fury"
-		}
 	}
 	866.7.2 = {
 		death = {

@@ -994,10 +994,6 @@
 	}
 	1187.1.1 = {
 		give_nickname=nick_the_great
-		create_bloodline = {
-			type = tamari
-			has_dlc = "Holy Fury"
-		}
 	}
 	1212.1.8={
 		death="1212.1.8"

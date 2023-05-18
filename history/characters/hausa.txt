@@ -4,25 +4,24 @@
 # Katsina and Hausa fathers founders
 # but first their placeholder ancestors.
 251177 = {
-	name="Khadijah"  #placeholder ancestor
-	dynasty=1000101153
-	religion="bori"
+	name="Durbawa"  #placeholder ancestor
+	dynasty=1060027 #Durbawa
+	religion="west_african_pagan"
 	culture="hausa"
-    female=yes
 	750.1.1 = {
 		birth=yes
+		culture=hausa
 	}
 	825.1.1 = {
 		death=yes
 	}
 }
 251178 = {
-	name="Nadia" #placeholder ancestor
-	dynasty=1000101153
-	religion="bori"
+	name="Kumayo" #placeholder ancestor
+	dynasty=1060027 #Durbawa
+	religion="west_african_pagan"
 	culture="hausa"
-	mother=251177
-    female=yes
+	father=251177
 	793.1.1 = {
 		birth=yes
 	}
@@ -31,12 +30,11 @@
 	}
 }
 251179 = {
-	name="Rashida" #placeholder ancestor
-	dynasty=1000101153
-	religion="bori"
+	name="Bauwo" #placeholder ancestor
+	dynasty=1060027 #Durbawa
+	religion="west_african_pagan"
 	culture="hausa"
-	mother=251178
-    female=yes
+	father=251178
 	820.1.1 = {
 		birth=yes
 	}
@@ -49,8 +47,9 @@
 251180 = {
 	name="Bayajidda"  #grandfather of founders of Hausa city states 
 	dynasty=1060027 #Durbawa
-	religion="bori"
-	culture="levantine_arabic"
+	religion="west_african_pagan"
+	culture="hausa"
+	father = 251179
 	845.1.1 = {
 		birth=yes
 	}
@@ -64,12 +63,6 @@
 	866.2.2={
 		add_matrilineal_spouse=251187
 	}
-    867.1.1 = {
-        create_bloodline = {
-            type = bayajidda
-            has_dlc = "Holy Fury"
-        }
-    }
 	910.1.1 = {
 		death=yes
 	}
@@ -77,7 +70,7 @@
 251181 = {
 	name="Bawo" # father of founders of Hausa city states
 	dynasty=1060027 #Durbawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251180
 	mother=251187
@@ -91,7 +84,7 @@
 251188 = {
 	name="Durbawa"  #placeholder Katsina to 1015
 	dynasty=1060027 #Durbawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251186
 	910.1.1 = {
@@ -101,70 +94,70 @@
 		death=yes
 	}
 }
-251204 = {
-	name="Biram" #placeholder Katsina to 1015
-	dynasty=1060027 #Durbawa
-	religion="bori"
-	culture="hausa"
-	father=251188
-	960.1.1 = {
-		birth=yes
-	}
-	1015.1.1 = {
-		death=yes
-	}
-}
-251182 = {
-	name="Kumayo" #Katsina 1015 - 1066
-	dynasty=1060027 #Durbawa
-	religion="bori"
-	culture="hausa"
-	father=251204
-	1005.1.1 = {
-		birth=yes
-	}
-	1067.1.1 = {
-		death=yes
-	}
-}
-251183 = {
-	name="Janzama"   #Katsina 1067 - 1109
-	dynasty=1060027 #Durbawa
-	religion="bori"
-	culture="hausa"
-	father=251182
-	1045.1.1 = {
-		birth=yes
-	}
-	1082.1.1={
-		add_spouse=251184
-	}
-	1109.1.1 = {
-		death=yes
-	}
-}
-251184 = {
-	name="Kacinna" #wife of Janzama, city of Katsina bears her name, princess of Daura
-	female=yes
-	dynasty=1060028 #Daura
-	religion="bori"
-	culture="hausa"
-	father=1228658
-	1066.1.1 = {
-		birth=yes
-	}
-	1082.1.1={
-		add_spouse=251183
-	}
-	1128.1.1 = {
-		death=yes
-	}
-}
+#251204 = {
+#	name="Biram" #placeholder Katsina to 1015
+#	dynasty=1060027 #Durbawa
+#	religion="west_african_pagan"
+#	culture="hausa"
+#	father=251188
+#	960.1.1 = {
+#		birth=yes
+#	}
+#	1015.1.1 = {
+#		death=yes
+#	}
+#}
+#251182 = {
+#	name="Kumayo" #Katsina 1015 - 1066
+#	dynasty=1060027 #Durbawa
+#	religion="west_african_pagan"
+#	culture="hausa"
+#	father=251204
+#	1005.1.1 = {
+#		birth=yes
+#	}
+#	1067.1.1 = {
+#		death=yes
+#	}
+#}
+#251183 = {
+#	name="Janzama"   #Katsina 1067 - 1109
+#	dynasty=1060027 #Durbawa
+#	religion="west_african_pagan"
+#	culture="hausa"
+#	father=251182
+#	1045.1.1 = {
+#		birth=yes
+#	}
+#	1082.1.1={
+#		add_spouse=251184
+#	}
+#	1109.1.1 = {
+#		death=yes
+#	}
+#}
+#251184 = {
+#	name="Kacinna" #wife of Janzama, city of Katsina bears her name, princess of Daura
+#	female=yes
+#	dynasty=1060028 #Daura
+#	religion="west_african_pagan"
+#	culture="hausa"
+#	father=1228658
+#	1066.1.1 = {
+#		birth=yes
+#	}
+#	1082.1.1={
+#		add_spouse=251183
+#	}
+#	1128.1.1 = {
+#		death=yes
+#	}
+#}
 
 251185 = {
 	name="Magira" #first wife of Bayajiddah
 	female=yes
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	840.1.1 = {
 		birth=yes
@@ -182,7 +175,7 @@
 251186 = {
 	name="Biram" #son of Bayajiddah and his first wife Magira
 	dynasty=1060027 #Durbawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251180
 	mother=251185
@@ -194,10 +187,10 @@
 	}
 }
 251187 = {
-	name="Daurama" #Queen of Daura and second wife of Bayajiddah
+	name="Magajiva" #Queen of Daura and second wife of Bayajiddah
 	female=yes
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	mother = 251203
 	846.1.1 = {
@@ -208,7 +201,7 @@
 	}
 	867.1.1 = {
 		create_bloodline = {
-			type = daurama
+			type = bayajidda_and_magajiva
 			has_dlc = "Holy Fury"
 		}
 	}
@@ -222,7 +215,7 @@
 251189 = {
 	name="Daura"  #son of Bauwo, semi-mythical "founder of Daura"
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251181
 	mother=251254
@@ -236,7 +229,7 @@
 251190 = {
 	name="Kazuru" #Daura after 1000
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251189
 	990.1.1 = {
@@ -252,7 +245,7 @@
 251191 = {
 	name="Bulu" #Daura 1005 - 1025
 	female=yes
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	992.1.1 = {
 		birth=yes
@@ -267,7 +260,7 @@
 251192 = {
 	name="Kazuru" #Daura 1025 - 1070
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251190
 	mother=251191
@@ -281,7 +274,7 @@
 251193 = {
 	name="Atuma" #Daura 1070 - 1109 placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251192
 	1043.1.1 = {
@@ -294,7 +287,7 @@
 251194 = {
 	name="Nawata" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251193
 	1076.1.1 = {
@@ -307,7 +300,7 @@
 251195 = {
 	name="Kazuru" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251194
 	1118.1.1 = {
@@ -320,7 +313,7 @@
 251196 = {
 	name="Bauwo" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251195
 	1146.1.1 = {
@@ -333,7 +326,7 @@
 251197 = {
 	name="Faizu" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251196
 	1180.1.1 = {
@@ -346,7 +339,7 @@
 251198 = {
 	name="Danjuma" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251197
 	1216.1.1 = {
@@ -359,7 +352,7 @@
 251199 = {
 	name="Warisi" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251198
 	1253.1.1 = {
@@ -372,7 +365,7 @@
 251200 = {
 	name="Atuma" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251199
 	1286.1.1 = {
@@ -385,7 +378,7 @@
 251201 = {
 	name="Rumfa" #Daura placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251200
 	1313.1.1 = {
@@ -395,70 +388,26 @@
 		death=yes
 	}
 }
-# Queens of Daura pre-867
 251202 = {
-	name="Kurfuru"
+	name="Najibu" #Legendary first king of Daura 2000 BC
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
-    female=yes
-	740.1.1 = {
+	750.1.1 = {
 		birth=yes
 	}
-	775.1.1 = {
+	812.1.1 = {
 		death=yes
 	}
-}
-1060000 = {
-    name="Shata"
-    dynasty=1060028
-    religion="bori"
-    culture="hausa"
-    female=yes
-    mother=251202
-    758.1.1 = {
-        birth=yes
-    }
-    792.1.1 = {
-        death=yes
-    }
-}
-1060001 = {
-    name="Gino"
-    dynasty=1060028
-    religion="bori"
-    culture="hausa"
-    female=yes
-    mother=1060000
-    779.1.1 = {
-        birth=yes
-    }
-    810.1.1 = {
-        death=yes
-    }
-}
-1060002 = {
-    name="Walzama"
-    dynasty=1060028
-    religion="bori"
-    culture="hausa"
-    female=yes
-    mother=1060001
-    799.1.1 = {
-        birth=yes
-    }
-    827.1.1 = {
-        death=yes
-    }
 }
 251203 = {
 	name="Shawata" #Queen of Daura
 	female=yes
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
-	mother = 1060002
-	816.1.1 = {
+	father = 251202
+	810.1.1 = {
 		birth=yes
 	}
 	863.1.1 = {
@@ -470,7 +419,7 @@
 251205 = {
 	name="Korau"   #Katsina placeholder 1109 - 1138
 	dynasty=1060027 #Durbawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251183
 	mother = 251184
@@ -484,7 +433,7 @@
 251206 = {
 	name="Barau"   #Katsina placeholder 1138 - 1183
 	dynasty=1060027 #Durbawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251205
 	1120.1.1 = {
@@ -497,7 +446,7 @@
 251207 = {
 	name="Malam"   #Katsina placeholder 1183 - 1218
 	dynasty=1060027 #Durbawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251206
 	1157.1.1 = {
@@ -510,213 +459,13 @@
 
 
 # Kano
-251208 = {
-	name="Dala" #Kano 866 - 890 - founder
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251181
-	950.1.1 = {
-		birth=yes
-	}
-	999.1.1 = {
-		death=yes
-	}
-}
-251209 = {
-	name="Bagauda" #Kano 999 - 1063
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251208
-	983.1.1 = {
-		birth=yes
-	}
-	1063.1.1 = {
-		death=yes
-	}
-}
-251210 = {
-	name="Warisi" #Kano 1063 - 1095
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251209
-	1040.1.1 = {
-		birth=yes
-	}
-	1095.1.1 = {
-		death=yes
-	}
-}
-251211 = {
-	name="Gijimasu" #Kano 1095 - 1134
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251210
-	1080.1.1 = {
-		birth=yes
-	}
-	1134.1.1 = {
-		death=yes
-	}
-}
-251212 = {
-	name="Nawata" #Kano 1134 - 1136
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251211
-	1102.1.1 = {
-		birth=yes
-	}
-	1136.1.1 = {
-		death=yes
-	}
-}
-251213 = {
-	name="Tsaraki" #Kano 1136 - 1194
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251211
-	1116.1.1 = {
-		birth=yes
-	}
-	1194.1.1 = {
-		death=yes
-	}
-}
-251214 = {
-	name="Yusa"
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251213
-	1140.1.1 = {
-		birth=yes
-	}
-	1190.1.1 = {
-		death=yes
-	}
-}
-251215 = {
-	name="Naguji" #Kano 1194 - 1247
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251214
-	1170.1.1 = {
-		birth=yes
-	}
-	1247.1.1 = {
-		death=yes
-	}
-}
-251216 = {
-	name="Gugwa" #Kano 1247 - 1290
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251215
-	1220.1.1 = {
-		birth=yes
-	}
-	1290.1.1 = {
-		death=yes
-	}
-}
-251217 = {
-	name="Shekarau" #Kano 1290 - 1307
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251216
-	1260.1.1 = {
-		birth=yes
-	}
-	1307.1.1 = {
-		death=yes
-	}
-}
-251218 = {
-	name="Tsamiya" #Kano 1307 - 1343
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251217
-	1288.1.1 = {
-		birth=yes
-	}
-	1343.1.1 = {
-		death=yes
-	}
-}
-251219 = {
-	name="Usman Zamnagawa" #Kano 1343 - 1349
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251218
-	1306.1.1 = {
-		birth=yes
-	}
-	1337.1.1 = {
-		religion="sunni"
-	}
-	1349.1.1 = {
-		death=yes
-	}
-}
-251220 = {
-	name="Yaji" #Kano 1349 - 1385
-	dynasty=1060029 #Habe
-	religion="bori"
-	culture="hausa"
-	father=251219
-	1330.1.1 = {
-		birth=yes
-	}
-	1337.1.1 = {
-		religion="sunni"
-	}
-	1385.1.1 = {
-		death=yes
-	}
-}
-251221 = {
-	name="Bugaya" #Kano 1385 - 1390
-	dynasty=1060029 #Habe
-	religion="sunni"
-	culture="hausa"
-	father=251220
-	1355.1.1 = {
-		birth=yes
-	}
-	1390.1.1 = {
-		death=yes
-	}
-}
-251222 = {
-	name="Kanajeji" #Kano 1390 - 1410
-	dynasty=1060029 #Habe
-	religion="sunni"
-	culture="hausa"
-	father=251221
-	1374.1.1 = {
-		birth=yes
-	}
-	1410.1.1 = {
-		death=yes
-	}
-}
+#251208-251222 removed
 
 # Zamfara
 251223 = {
 	name="Karbo" #A.K.A. Karbogari father of founders of Zamfara, Gobir and Kebbi
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251180
 	mother=251224
@@ -730,7 +479,7 @@
 251224 = {
 	name="Bagwariya" #concubine of Bayajiddah
 	female=yes
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	850.1.1 = {
 		birth=yes
@@ -742,7 +491,7 @@
 251225 = {
 	name="Fodio" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251223
 	940.1.1 = {
@@ -755,7 +504,7 @@
 251226 = {
 	name="Abarshi" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251225
 	990.1.1 = {
@@ -768,7 +517,7 @@
 251227 = {
 	name="Yerima" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251226
 	1040.1.1 = {
@@ -781,7 +530,7 @@
 251228 = {
 	name="Abarshi" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251227
 	1065.1.1 = {
@@ -794,7 +543,7 @@
 251229 = {
 	name="Fodio" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251228
 	1097.1.1 = {
@@ -807,7 +556,7 @@
 251230 = {
 	name="Yerima" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251229
 	1130.1.1 = {
@@ -820,7 +569,7 @@
 251231 = {
 	name="Abarshi" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251230
 	1162.1.1 = {
@@ -834,11 +583,10 @@
 
 # Gobir
 251232 = {
-	name="Dikwa" #Placeholder
+	name="Dala" #Placeholder
 	dynasty=1060032 #Gabas
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
-    female=yes
 	741.1.1 = {
 		birth=yes
 	}
@@ -847,12 +595,11 @@
 	}
 }
 251233 = {
-	name="Aisha" #Placeholder
+	name="Garin" #Placeholder
 	dynasty=1060032 #Gabas
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
-	mother=251232
-    female=yes
+	father=251232
 	786.1.1 = {
 		birth=yes
 	}
@@ -861,12 +608,11 @@
 	}
 }
 251234 = {
-	name="Cinta" #Placeholder
+	name="Dala" #Placeholder
 	dynasty=1060032 #Gabas
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
-	mother=251233
-    female=yes
+	father=251233
 	827.1.1 = {
 		birth=yes
 	}
@@ -875,12 +621,11 @@
 	}
 }
 251235 = {
-	name="Wahida" #Gobir 866 - 900
+	name="Garin Gabas" #Gobir 866 - 900
 	dynasty=1060032 #Gabas
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
-	mother=251234
-    female=yes
+	father=251234
 	850.1.1 = {
 		birth=yes
 	}
@@ -892,7 +637,7 @@
 251236 = {
 	name="Yerima" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251231
 	1196.1.1 = {
@@ -905,7 +650,7 @@
 251237 = {
 	name="Jatau" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251236
 	1230.1.1 = {
@@ -920,7 +665,7 @@
 251238 = {
 	name="Dala" #Gobir placeholder 951 - 1011
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251223
 	940.1.1 = {
@@ -933,7 +678,7 @@
 251239 = {
 	name="Garin" #Gobir placeholder 1011 - 1064
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251238
 	993.1.1 = {
@@ -946,7 +691,7 @@
 251240 = {
 	name="Dala" #Gobir 1064 - 1090
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251239
 	1044.1.1 = {
@@ -959,7 +704,7 @@
 251241 = {
 	name="Bawo" #Gobir 1090 - 1130
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251240
 	1063.1.1 = {
@@ -975,7 +720,7 @@
 251242 = {
 	name="Abdullahi" #Gobir 1130 - 1159
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251241
     trait=sympathy_islam
@@ -989,7 +734,7 @@
 251243 = {
 	name="Yakubu" #Gobir 1159 - 1180
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251242
     trait=sympathy_islam
@@ -1003,9 +748,9 @@
 251244 = {
 	name="Jalil" #Gobir 1180 - 1213
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
-	father=251243
+	father=251241
     trait=sympathy_islam
 	1160.1.1 = {
 		birth=yes
@@ -1017,7 +762,7 @@
 251245 = {
 	name="Abdullahi" #Gobir 1213 - 1250
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251244
     trait=sympathy_islam
@@ -1031,7 +776,7 @@
 251246 = {
 	name="Yakubu" #Gobir 1250 - 1289
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251245
     trait=sympathy_islam
@@ -1045,7 +790,7 @@
 251247 = {
 	name="Abdullahi" #Gobir 1289 - 1306
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251246
     trait=sympathy_islam
@@ -1059,7 +804,7 @@
 251248 = {
 	name="Abdullahi" #Gobir 1303 - 1309
 	dynasty=1060034 #Gobirawa
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251247
 	1295.1.1 = {
@@ -1075,7 +820,7 @@
 251249 = {
 	name="Kumbari" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251237
 	1263.1.1 = {
@@ -1088,7 +833,7 @@
 251250 = {
 	name="Yerima" # placeholder
 	dynasty=1060030 #Karbo
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251249
 	1297.1.1 = {
@@ -1104,13 +849,12 @@
 	name="Shawata"  #fantasy daughter of queen Magajiva, to enable this dynasty to survive in 867
 	female=yes
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father=251180
 	mother=251187
 	865.1.1 = {
 		birth=yes
-        employer = 251187
 	}
 	912.1.1 = {
 		death=yes
@@ -1120,7 +864,7 @@
 	name="Shawata" #fantasy placeholder
 	female=yes
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	mother = 251203
 	848.1.1 = {
@@ -1133,7 +877,7 @@
 251253 = {
 	name="Najibu" #fantasy placeholder
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	mother = 251252
 	882.1.1 = {
@@ -1147,7 +891,7 @@
 	name="Magajiva" #fantasy placeholder
 	female=yes
 	dynasty=1060028 #Daura
-	religion="bori"
+	religion="west_african_pagan"
 	culture="hausa"
 	father = 251253
 	918.1.1 = {

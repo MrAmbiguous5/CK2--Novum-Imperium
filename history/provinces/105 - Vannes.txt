@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 105 - Vannes
 
 # County Title
@@ -20,20 +22,3 @@ religion = catholic
 
 # History
 
-1.1.1 = {
-	build_wonder = wonder_vannes_stones
-	set_wonder_stage = 1
-}
-1.1.1 = {
-	set_wonder_stage = 2
-}
-1.1.1 = {
-	set_wonder_stage = 3
-}
-1.1.1 = {
-	set_wonder_stage = 4
-}
-1.1.1 = {
-	set_wonder_stage = 3
-	set_wonder_damaged = yes
-}
