@@ -11,15 +11,13 @@ birth = 50
   diplomacy = -2
   martial = 1
 
-	opposites = {
-		trait = {
-			maigre
-            anorexique
-            weak
-            feeble
-            temperatE
-		}
-	}
+  opposites = {
+	maigre
+    anorexique
+    weak
+    feeble
+    temperate
+}
   
   opposite_opinion = -5
   same_opinion = 10

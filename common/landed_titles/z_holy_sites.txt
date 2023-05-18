@@ -13,10 +13,12 @@ c_karnten = { # Kärnten (456)
 c_napoli = { # Acerra (334)
 	holy_site = hellenic_pagan
 	holy_site = hellenic_pagan_reformed
+	holy_site = adoptionist
 }
 
 c_byzantion = { # Konstantinoupolis (496)
 	holy_site = orthodox
+	holy_site = iconoclast
 	holy_site = waldensian
 	holy_site = maronite
 	holy_site = bogomilist
@@ -24,12 +26,12 @@ c_byzantion = { # Konstantinoupolis (496)
 
 b_hagiasophia = {
 	pentarchy = orthodox
-	pentarchy = monothelite
 	pentarchy = iconoclast
 }
 
 c_chalkidike = { # Chalkidike (491)
 	holy_site = orthodox
+	holy_site = iconoclast
 }
 
 c_achaia = { # Achaía (476)
@@ -45,6 +47,7 @@ c_atheniai = { # Attika (482)
 
 c_ephesos = { # Ionía (746)
 	holy_site = orthodox
+	holy_site = iconoclast
 }
 
 c_tephrike = { # Tephrike (944)
@@ -153,6 +156,7 @@ c_alexandria = { # Iskandaríya (802)
 	holy_site = syriac
 	holy_site = miaphysite
 	holy_site = monophysite
+	holy_site = monothelite
 	holy_site = nestorian
 	holy_site = paulician
 	holy_site = apostolic
@@ -169,6 +173,7 @@ c_quattara = { # Santariya (803), aka Siwa
 
 c_cairo = { # Cairo (796)
 	holy_site = druze
+	holy_site = adoptionist
 }
 
 c_eilat = { # Jabal Katrina (786)
@@ -193,11 +198,13 @@ c_baalbek = { # Bekaa (768)
 c_aksum = { # Aksum (875)
 	holy_site = miaphysite
 	holy_site = monophysite
+	holy_site = monothelite
 }
 
 c_makuria = { # Dongola (1230)
 	holy_site = miaphysite
 	holy_site = monophysite
+	holy_site = monothelite
 }
 
 c_kent = { # Kent (73)
@@ -243,6 +250,7 @@ c_ferrara = { # Rovigo (353)
 c_lyon = { # Lyon (227)
 	holy_site = cathar
 	holy_site = waldensian
+	holy_site = adoptionist
 }
 
 c_brugge = { # Brugge (78)
@@ -253,6 +261,7 @@ c_brugge = { # Brugge (78)
 c_ile_de_france = { # Paris (112)
 	holy_site = aztec
 	holy_site = aztec_reformed
+	holy_site = adoptionist
 }
 
 c_carcassonne = { # Carcassona (213)
@@ -261,6 +270,7 @@ c_carcassonne = { # Carcassona (213)
 
 c_santiago = { # Santiago (157)
 	holy_site = catholic
+	holy_site = adoptionist
 }
 
 c_cordoba = { # Cordoba (181)
@@ -417,10 +427,12 @@ c_varazhnunik = { # Varazhnunik (1531)
 c_jerusalem = { # Jérusalem (774)
 	holy_site = catholic
 	holy_site = orthodox
+	holy_site = iconoclast
 	holy_site = sunni
 	holy_site = shiite
 	holy_site = miaphysite
 	holy_site = monophysite
+	holy_site = monothelite
 	holy_site = nestorian
 	holy_site = syriac
 	holy_site = pagan
@@ -443,7 +455,6 @@ c_jerusalem = { # Jérusalem (774)
 
 b_jerusalem = {
 	pentarchy = orthodox
-	pentarchy = monothelite
 	pentarchy = iconoclast
 }
 
@@ -455,8 +466,10 @@ c_beirut = { # Beirut (770)
 c_antiocheia = { # Antioch (764)
 	holy_site = syriac
 	holy_site = orthodox
+	holy_site = iconoclast
 	holy_site = miaphysite
 	holy_site = monophysite
+	holy_site = monothelite
 	holy_site = nestorian
 	holy_site = paulician
 	holy_site = apostolic

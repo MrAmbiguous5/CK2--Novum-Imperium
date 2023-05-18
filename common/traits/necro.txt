@@ -3,7 +3,7 @@ necro = {
       ruler_designer_cost = -90
 
 potential = {
-     age = 16
+	age = 16
 }
 
 personality = yes
@@ -12,10 +12,8 @@ birth = 100
   
   diplomacy = -8
   
-	opposites = {
-		trait = {
-		}
-	}
+  opposites = {
+}
 
   same_opinion = 30
   general_opinion = -30

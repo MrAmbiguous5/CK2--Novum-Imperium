@@ -14,13 +14,11 @@ birth = 100
   intrigue = 3
   combat_rating = 4
 
-	opposites = {
-		trait = {
-			kind
-            nonviolent
-            craven
-		}
-	}
+  opposites = {
+	kind
+    nonviolent
+    craven
+}
   
   opposite_opinion = -30
   general_opinion = -30

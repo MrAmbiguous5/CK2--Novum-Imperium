@@ -14,7 +14,7 @@ birth = 100
   intrigue = -3
   
   opposites = {
-    trait = cruel           
+	cruel           
   }
   
   opposite_opinion = -10

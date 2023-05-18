@@ -14,10 +14,10 @@ stewardship = -1
 martial = -1
 
 opposites = {
-      trait = concentre
-      trait = content
-      trait = cynical
-      trait = mature
+	concentre
+	content
+	cynical
+	mature
 }
 
 ai_ambition = 10

@@ -16,18 +16,16 @@ birth = 100
   learning = 8
   combat_rating = -10
 
-	opposites = {
-		trait = {
-			soifdesang
-            impaler
-            duelist
-            hunter
-            schemer
-            wroth
-            zealous
-            cruel
-		}
-	}
+  opposites = {
+	soifdesang
+    impaler
+    duelist
+    hunter
+    schemer
+    wroth
+    zealous
+    cruel
+}
   
   opposite_opinion = -30
   general_opinion = 30

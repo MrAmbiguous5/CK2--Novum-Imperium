@@ -7,12 +7,10 @@ both_parent_has_trait_inherit_chance = 70
 random = yes
 birth = 50
 
-	opposites = {
-		trait = {
-			baderection
-            eunuch
-		}
-	}
+  opposites = {
+	baderection
+    eunuch
+}
 
 
  sex_appeal_opinion = 10

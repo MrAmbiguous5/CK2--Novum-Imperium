@@ -16,9 +16,7 @@ birth = 25
   intrigue = -2
   learning = -2
   
-	opposites = {
-		trait = {
-		}
+opposites = {
 	}
   
   same_opinion = 20

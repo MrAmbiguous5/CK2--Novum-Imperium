@@ -14,9 +14,8 @@ birth = 100
   stewardship = 3
   
   opposites = {
-    trait = charitable
-           
-  }
+	charitable       
+}
   
   opposite_opinion = -10
   same_opinion = 20

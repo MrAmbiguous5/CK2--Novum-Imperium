@@ -11,14 +11,12 @@ birth = 100
   
   learning = -2
 
-	opposites = {
-		trait = {
-			aimelire
-            illettre
-            imbecile
-            blinded            
-        }   
-	}
+  opposites = {
+	aimelire
+    illettre
+    imbecile
+    blinded               
+}
   
   same_opinion = 5
 

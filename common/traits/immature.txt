@@ -13,8 +13,8 @@ birth = 100
   diplomacy = -3
   
   opposites = {
-    trait = mature           
-  }
+    mature           
+}
   
   opposite_opinion = -20
   same_opinion = 30

@@ -13,12 +13,10 @@ birth = 100
   diplomacy = 3
   intrigue = -5
   
-	opposites = {
-		trait = { 
-			silencieux
-			shy
-		}
-	}
+  opposites = {
+	silencieux
+	shy
+}
   
   opposite_opinion = 5
   same_opinion = -10

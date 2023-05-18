@@ -15,8 +15,8 @@ birth = 50
   intrigue = -5
  
   opposites = {
-    trait = albinos          
-  }
+	albinos          
+}
    
   same_opinion = 30
   general_opinion = -20

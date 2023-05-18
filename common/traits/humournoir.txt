@@ -13,9 +13,8 @@ birth = 100
   diplomacy = -2
   
   opposites = {
-    trait = sanshumour
-            
-  }
+	sanshumour
+}
   
   opposite_opinion = -20
   same_opinion = 20

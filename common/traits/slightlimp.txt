@@ -13,8 +13,8 @@ birth = 25
   martial = -3
   
   opposites = {
-    trait = heavylimp                               
-  }
+    heavylimp                               
+}
   
   
   same_opinion = 5

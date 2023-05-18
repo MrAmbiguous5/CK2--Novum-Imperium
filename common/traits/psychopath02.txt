@@ -21,10 +21,10 @@ general_opinion = -15
 opposite_opinion = -10
 
 
-    opposites = {
-		sociopath
-		psychopath
-	 }
+  opposites = {
+	sociopath
+	psychopath
+}
 
 ai_ambition = 100
 ai_rationality = 30
