@@ -370,6 +370,7 @@ republic_governments = {
 				is_government_potential = merchant_republic_government
 				is_government_potential = muslim_merchant_republic_government
 				is_government_potential = bogomilist_merchant_republic_government
+				is_government_potential = bureaucratic_government
 			}
 			holy_order = no
 		}

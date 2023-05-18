@@ -1,0 +1,49 @@
+#Liu Song
+400.1.1 = { holder = 1406137 liege = d_eyue } #Yan Tengzhi - administrator at some point
+405.1.1 = { holder = 0 }
+#Tang
+625.1.1 = { holder = 1408881 } #Wang Wuxuan - prefect at some point
+630.1.1 = { holder = 0 }
+746.8.17 = { holder = 1406455 } #Wei Yun - made administrator
+750.1.1 = { holder = 0 }
+866.1.1 = { holder = 1403075 } #Cui Liao
+868.1.1 = { holder = 1408583 } #Cui Yunqing - prefect around this time
+870.1.1 = { holder = 1408198 } #Chen Yong
+873.1.1 = { holder = 1416264 } #Yu Cong - prefect until 873.9.26
+873.9.26 = { holder = 1408198 } #Chen Yong
+874.1.1 = { holder = 1408200 } #Wei Chan
+877.1.1 = { holder = 1408201 } #Cui Shao
+884.4.2 = { holder = 1408203 } #Du Hong - took over
+886.1.1 = { holder = 1408460 liege = e_tang } #Du Jinsi - took over the prefecture
+902.1.1 = { holder = 1408461 } #Du Jinzhong - made prefect
+#Southern Chu
+903.6.10 = { holder = 1408467 liege = d_hunan } #Xu Dexun - made prefect
+#Southern Wu
+906.4.8 = { holder = 1408470 liege = d_eyue } #Chen Zhixin - made prefect
+#Southern Chu
+907.7.13 = { holder = 1408469 liege = d_hunan } #Yuan Mei - prefect until 912.12.21
+#Southern Wu
+912.12.21 = { holder = 1407634 liege = d_eyue } #Chen Zhang - took over the prefecture
+#Southern Chu
+913.2.1 = { holder = 1408467 liege = d_hunan } #Xu Dexun
+920.1.1 = { holder = 1408471 } #Li Tinggui - prefect until 928.10.25
+928.10.25 = { holder = 1408473 } #Wang Yun - prefect in 949.9.8
+947.5.30 = { holder = 1406572 } #Ma Xiguang
+951.1.21 = { holder = 1406687 } #Ma Xi'e
+951.10.16 = { holder = 1406682 } #Ma Xichong
+#Southern Tang
+951.11.26 = { holder = 1408474 liege = d_eyue } #Song Dequan - made prefect
+#Later Zhou
+952.11.4 = { holder = 1408475 liege = d_hunan } #Pu Gongyi - made prefect
+954.6.4 = { holder = 1408458 liege = d_hunan } #Pan Shusi
+956.6.1 = { holder = 1408462 } #Zhou Xingfeng
+#Song
+962.10.10 = { holder = 1408463 } #Zhou Baoquan
+963.4.4 = { holder = 217721 liege = e_song }
+976.11.14 = { holder = 217722 }
+997.5.8 = { holder = 217723 }
+1022.3.23 = { holder = 217724 }
+1063.3.30 = { holder = 217725 }
+1067.1.25 = { holder = 217726 }
+1085.4.1 = { holder = 217727 }
+1100.2.23 = { holder = 217728 }

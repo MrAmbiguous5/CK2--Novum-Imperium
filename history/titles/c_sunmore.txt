@@ -10,9 +10,11 @@
 877.1.1 = {
 	liege = 0
 }
+#Warial's Patchup
 878.1.1 = {
-	holder = 0
+	liege = k_norway
 }
+#End of Warial's patchup
 936.1.1 = {
 	liege = k_norway
 	holder = 1290123 # Arnvid, placeholder

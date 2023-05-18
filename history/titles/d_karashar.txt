@@ -16,10 +16,13 @@
 	de_jure_liege = k_turkestan_east
 }
 1010.1.1 = {
-	holder = 1229810
+	holder = 1410732 # fictional
 }
-1050.1.1 = {
-	holder = 1229811
+1040.1.1 = {
+	holder = 1410731 # date fictional, but a recorded ruler of Kucha Uyghurs
+}
+1063.1.1 = {
+	holder = 1410730 # date fictional, but a recorded ruler of Kucha Uyghurs
 }
 1092.1.1 = {
 	holder = 1229805
@@ -27,7 +30,7 @@
 1130.1.1 = {
 	holder = 1229806
 }
-1132.1.1 = {
+1126.1.1 = {
 	liege = e_khitan # actually 1126, but the Khitans are not on the map at this point
 }
 1150.1.1 = {
@@ -39,14 +42,11 @@
 1210.1.1 = {
 	liege = 0
 }
-1217.1.1 = {
+1211.1.1 = {
 	liege = e_mongol_empire # actually 1211, but the Mongols are not on the map at this point
 }
 1234.2.10 = {
-	set_tribute_suzerain = {
-		who = e_china_west_governor
-		type = offmap
-	}
+	
 }
 1235.1.1 = {
 	holder = 1229814

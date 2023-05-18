@@ -1,0 +1,26 @@
+#Prince of Hongnong/Wu
+906.1.1 = { holder = 1408008 liege = k_huainan name = "Luzhou" effect = { set_coa = c_luzhou_huainan } } #Liu Wei
+907.7.5 = { holder = 0 }
+908.1.1 = { holder = 1408010 } #Zhang Chong
+919.1.1 = { name = "Desheng" effect = { reset_coa = THIS } }
+#Southern Wu
+927.11.29 = { liege = e_southern_wu }
+932.1.1 = { holder = 1408011 } #Chai Zaiyong
+935.7.4 = { holder = 1408013 } #Zhou Ben
+#Southern Tang
+937.10.11 = { liege = e_southern_tang }
+938.2.3 = { holder = 1408031 } #Li Zhang
+940.9.5 = { holder = 1408032 } #Ma Renyu
+942.3.28 = { holder = 1408014 } #Zhou Ye
+948.5.12 = { holder = 0 } #No Jiedushi
+949.8.27 = { holder = 1408021 } #Wang Chongwen
+954.1.1 = { holder = 1408022 } #Sun Hanwei
+#Later Zhou
+958.4.14 = { holder = 1400363 liege = e_later_zhou name = "Baoxin" effect = { set_coa = d_baoxin } } #Zhao Zan
+#Song
+960.2.4 = { liege = e_song }
+960.8.1 = { holder = 1401098 } #Song Yanwo
+964.1.1 = { holder = 1401660 } #Chen Derang
+969.1.1 = { holder = 0 } #No Jiedushi
+971.6.10 = { holder = 1408025 } #Yin Chongke
+973.7.9 = { holder = 0 }

@@ -13,7 +13,7 @@
 	holder = 7908
 }
 880.1.1 = {
-	liege = e_hre
+	liege = k_germany #was e_hre - Warial
 }
 912.11.12 = {
 	holder = 1280
@@ -23,6 +23,9 @@
 }
 961.1.1 = {
 	holder = 1410
+}
+962.2.2 = {
+	liege = e_hre
 }
 963.3.27 = {
 	holder = 1412

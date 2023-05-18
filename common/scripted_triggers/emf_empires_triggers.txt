@@ -15,6 +15,7 @@ emf_empires_aed_valid_title = {
 		title = e_timurids
 		title = e_mexikha
 		title = e_mongol_empire
+		has_title_flag = pretender_chinese_empire
 	}
 	trigger_if = {
 		limit = {

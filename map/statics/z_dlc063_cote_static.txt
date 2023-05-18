@@ -3,7 +3,7 @@
 
     object = {
         type = "cote_palace_of_aachen"
-        position = { 697.000 22.900 1167.000 }
+        position = { 697.000 22.900 1423.000 }
         rotation = { 0.000 0.000 0.000 }
         scale = 0.9
     }
@@ -11,15 +11,15 @@
     
     object = {
         type = "cote_petra"
-        position = { 1395.000 28.000 542.000 }
+        position = { 1395.000 28.000 798.000 }
         rotation = { 0.000 0.000 0.000 }
         scale = 0.16
     }
-
-    
+	
+	
     object = {
         type = "cote_visby_ringmur"
-        position = { 974.000 19.300 1382.000 }
+        position = { 974.000 19.300 1638.000 }
         rotation = { 0.000 0.000 0.000 }
         scale = 3.0
     }
@@ -35,13 +35,13 @@
 
     object = {
         type = cote_giza_pyramids
-        position = { 1276.000 21.000 529.900 }
+        position = { 1276.000 21.000 782.900 }
         rotation = { 0.000 0.000 0.000 }
         scale = 0.6
     }
     object = {
         type = cote_khajuraho
-        position = { 2522.000 23.000 486.000 }
+        position = { 2522.000 23.000 742.000 }
         rotation = { 0.000 0.000 0.000 }
         scale = 0.7
     }   

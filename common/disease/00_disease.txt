@@ -1103,7 +1103,7 @@ bubonic_plague = {
 		outbreak_scenario = { # Classic plague, misses India and respects the HPFZ
 			chance = 0.30
 			start_provinces = {
-				1570 # SWMH Qarashahr for vanilla Jiuquan
+				1579
 			}
 			excluded_regions = {
 				world_india_rajastan custom_historical_plague_free_zone world_himalayas
@@ -1113,7 +1113,7 @@ bubonic_plague = {
 		outbreak_scenario = { # Classic plague, misses India but does not respect the HPFZ
 			chance = 0.20
 			start_provinces = {
-				1570 # SWMH Qarashahr for vanilla Jiuquan
+				1579
 			}
 			excluded_regions = {
 				world_india_rajastan world_himalayas
@@ -1123,7 +1123,7 @@ bubonic_plague = {
 		outbreak_scenario = { # Classic plague, misses Africa rather than India and respects the HPFZ
 			chance = 0.10
 			start_provinces = {
-				1570 # SWMH Qarashahr for vanilla Jiuquan
+				1579
 			}
 			excluded_regions = {
 				world_africa custom_historical_plague_free_zone
@@ -1133,7 +1133,7 @@ bubonic_plague = {
 		outbreak_scenario = { # Classic plague, misses Africa rather than India but does not respect the HPFZ
 			chance = 0.10
 			start_provinces = {
-				1570 # SWMH Qarashahr for vanilla Jiuquan
+				1579
 			}
 			excluded_regions = {
 				world_africa
