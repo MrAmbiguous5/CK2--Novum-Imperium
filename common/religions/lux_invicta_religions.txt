@@ -1642,8 +1642,6 @@ baltic_group = {
 		religious_clothing_head = 14
 		religious_clothing_priest = 6
 	}
-	
-	######################
 	dievas = {
 		graphical_culture = norsegfx
 		color = { 31 150 220 }
