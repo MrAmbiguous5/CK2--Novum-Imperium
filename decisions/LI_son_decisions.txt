@@ -1,0 +1,208 @@
+# Targetted decisions are possible vs _all_ other characters and shown are in the Diplomacy View, not the Intrigue View. The taker is in the FROM scope.
+#
+# ai_target_filter = [self/court/home_court/vassals/sub_realm/realm/dynasty/all] (which characters for which the AI evaluates the decision.)
+#	court: all characters in the AI's host court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	home_court: all characters in the AI's home court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	vassals: direct vassal rulers of the AI's employer
+#	sub_realm: all characters below the AI's employer
+#	realm: all characters in the same top realm as the AI
+#	dynasty: all members of the same dynasty (including the dead!)
+#	all: all living characters (Avoid if possible. VERY CPU-HEAVY!)
+#	
+
+targetted_decisions = {
+
+	LI_son_merc_company_dec = {
+		filter = dynasty
+		ai_target_filter = dynasty
+		is_high_prio = yes
+		from_potential = {
+			ai = no
+			is_ruler = yes
+			prisoner = no
+			NOT = {
+				trait = incapable
+			}
+		}
+		potential = {
+			age = 16
+			has_dlc = "The Old Gods"
+			is_landed = no
+			in_command = no	
+			is_female = no
+			prisoner = no
+			father = {
+				character = FROM
+			}
+			NOR = {
+				has_character_flag = wants_scholar
+				has_character_flag = wants_varangian
+				has_character_flag = denied_varangian
+				has_character_flag = wants_druidic_training
+				trait = varangian
+			}
+			NOR = { #Scholarly religions send their sons to the Akademia instead.
+				religion = bud_bahusrutiya
+				religion = confucian
+				religion = docetist
+				religion = hurufi
+				religion = ilm_islam
+				religion = kothar
+				religion = marcionist 
+				religion = neoplato
+				religion = plato_christ
+				religion = plato_islam
+				religion = plato_pythagorean
+				religion = porphyryan
+				religion = tengri_confucian
+				religion = valentinian
+			}
+		}
+		allow = {
+			host = { character = FROM }
+			father = {
+				is_liege_of = ROOT
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = li_sonevents.0 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+			# modifier = {
+				# factor = 0.005 # Slow it down
+			# }
+		}
+	}
+	
+	LI_son_academy_dec = {
+		filter = dynasty
+		ai_target_filter = dynasty
+		is_high_prio = yes
+		from_potential = {
+			ai = no
+			is_ruler = yes
+			prisoner = no
+			NOT = {
+				trait = incapable
+			}
+		}
+		potential = {
+			age = 16
+			has_dlc = "The Old Gods"
+			is_landed = no
+			in_command = no	
+			is_female = no
+			prisoner = no
+			father = {
+				character = FROM
+			}
+			NOR = {
+				has_character_flag = wants_scholar
+				has_character_flag = denied_scholar
+				has_character_flag = wants_varangian
+				has_character_flag = wants_druidic_training
+				trait = scholarlystudent
+			}
+			OR = { 
+				religion = bud_bahusrutiya
+				religion = confucian
+				religion = docetist
+				religion = hurufi
+				religion = ilm_islam
+				religion = kothar
+				religion = marcionist 
+				religion = neoplato
+				religion = plato_christ
+				religion = plato_islam
+				religion = plato_pythagorean
+				religion = porphyryan
+				religion = tengri_confucian
+				religion = valentinian
+			}
+		}
+		allow = {
+			host = {
+				character = FROM
+			}
+			father = {
+				is_liege_of = ROOT
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = li_sonevents.2 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+			# modifier = {
+				# factor = 0.005 # Slow it down
+			# }
+		}
+	}
+	
+	LI_son_druids_dec = {
+		filter = dynasty
+		ai_target_filter = dynasty
+		is_high_prio = yes
+		from_potential = {
+			ai = no
+			is_ruler = yes
+			NOT = { trait = incapable }
+			prisoner = no
+		}
+		potential = {
+			age = 16
+			has_dlc = "The Old Gods"
+			is_landed = no
+			in_command = no	
+			is_female = no
+			prisoner = no
+			NOT = { trait = druid }
+			father = {
+				character = FROM
+			}
+			NOR = {
+				has_character_flag = wants_scholar
+				has_character_flag = wants_varangian
+				has_character_flag = wants_druidic_training
+			}
+			OR = {
+				religion = celtic_pagan
+				religion = celtic_pagan_reformed
+				religion = lugh
+			}
+		}
+		allow = {
+			host = {
+				character = FROM
+			}
+			father = {
+				is_liege_of = ROOT
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = li_sonevents.4 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+			# modifier = {
+				# factor = 0.005 # Slow it down
+			# }
+		}
+	}
+}

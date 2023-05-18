@@ -66,13 +66,6 @@ k_burgundy = {
 	aten_pagan = 25
 }
 
-k_frisia = {
-	celtic_pagan_reformed = 600
-	hellenic_pagan_reformed = 25
-	egyptian_pagan_reformed = 0
-	aten_pagan = 0
-}
-
 ################################
 #
 # Central Europe and Italia

@@ -1,0 +1,170 @@
+decisions = {
+
+	martial_decision.30 = {
+		is_high_prio = yes
+		potential = {
+			is_playable = yes
+			higher_tier_than = count
+			is_landed = yes
+			is_tribal = no
+			is_inaccessible_trigger = no
+			martial_religion_trigger = yes
+			NOR = {
+				has_law = army_control_3
+				has_law = army_control_4
+			}
+		}
+		allow = {
+			is_adult = yes
+			war = no
+			prisoner = no
+			has_law = army_control_2
+			prestige = 250
+			piety = 500
+			martial = 14
+		}
+		effect = {
+			piety = -250
+			primary_title = { 
+				add_law_w_cooldown = army_control_3
+			}
+		}
+		revoke_allowed = {
+			always = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.005 # Slow it down
+			}
+			modifier = {
+				factor = 1.5
+				trait = diligent
+			}
+			modifier = {
+				factor = 3
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.4
+				trait = gregarious
+			}
+			modifier = {
+				factor = 0.7
+				trait = just
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.2
+				trait = shy
+			}
+			modifier = {
+				factor = 0.7
+				trait = content
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 3
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.7
+				NOT = { age = 25 }
+			}
+			modifier = {
+				factor = 0.5
+				age = 60
+			}
+		}
+	}
+
+	martial_decision.40 = {
+		is_high_prio = yes
+		potential = {
+			has_law = army_control_3
+			is_playable = yes
+			higher_tier_than = count
+			is_landed = yes
+			is_tribal = no
+			is_inaccessible_trigger = no
+		}
+		allow = {
+			is_adult = yes
+			war = no
+			prisoner = no
+			has_law = army_control_3
+			piety = 1000
+			prestige = 500
+			martial = 16
+		}
+		effect = {
+			piety = -500
+			primary_title = { 
+				add_law_w_cooldown = army_control_4
+			}
+		}
+		revoke_allowed = {
+			always = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.005 # Slow it down
+			}
+			modifier = {
+				factor = 0
+				NOT = { scaled_wealth = 0.3 }
+			}
+			modifier = {
+				factor = 1.5
+				trait = diligent
+			}
+			modifier = {
+				factor = 3
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.4
+				trait = gregarious
+			}
+			modifier = {
+				factor = 0.7
+				trait = just
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.2
+				trait = shy
+			}
+			modifier = {
+				factor = 0.7
+				trait = content
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 3
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.7
+				NOT = { age = 25 }
+			}
+			modifier = {
+				factor = 0.5
+				age = 60
+			}
+		}
+	}
+}

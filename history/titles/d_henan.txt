@@ -1,0 +1,66 @@
+#Tang
+787.1.1 = { holder = 0 name = "Xiasui" effect = { set_coa = d_xiasui } liege = e_tang } #Han Tan
+798.1.1 = { holder = 0 } #Han Quanyi
+805.1.1 = { holder = 0 } #Yang Huibin
+806.1.1 = { holder = 1404963 } #Li Yuan
+811.1.1 = { holder = 0 } #Zhang Xu
+813.1.1 = { holder = 0 } #Tian Jin
+819.1.1 = { holder = 1404974 } #Li Ting
+820.1.1 = { holder = 0 } #Li You
+824.1.1 = { holder = 0 } #Fu Liangbi
+828.1.1 = { holder = 0 } #Li Huan
+830.1.1 = { holder = 0 } #Dong Zhongzhi
+832.1.1 = { holder = 0 } #Li Changyan
+836.1.1 = { holder = 0 } #Liu Yuan
+838.1.1 = { holder = 0 }
+844.1.1 = { holder = 0 } #Mi Ji
+847.1.1 = [ holder = 1401544 } #Li Ye
+849.1.1 = { holder = 0 } #Cui Mou
+851.1.1 = { holder = 1404103 } #Li Fu
+854.1.1 = { holder = 0 } #Zheng Zhu
+857.1.1 = { holder = 0 } #Tian Zaibin
+862.1.1 = { holder = 0 } #A son-in-law of Chuguo Furen
+865.1.1 = { holder = 1401450 } #Li Yanyuan
+869.1.1 = { holder = 1401451 } #Hu Mou
+874.1.1 = { holder = 1401593 } #Li Xuanli
+880.11.6 = { holder = 1400617 } #Zhuge Shuang
+881.1.16 = { holder = 1415030 } #Li Sigong - 881.5.2 made Jiedushi
+881.12.25 = { name = "Dingnan" effect = { set_coa = d_dingnan } }
+886.1.1 = { holder = 1415033 } #Li Sijian
+896.1.1 = { holder = 1415036 } #Li Chengqing
+900.1.1 = { holder = 1415033 } #Li Sijian
+#Later Liang
+907.6.1 = { liege = e_later_liang }
+908.12.2 = { holder = 1415039 } #Li Yichang
+909.5.5 = { holder = 1415037 } #Li Renfu
+#Later Tang
+923.11.19 = { liege = e_later_tang }
+933.3.10 = { holder = 1415046 } #Li Yichao
+935.3.19 = { holder = 1415045 } #Li Yiyin
+#Later Jin
+937.1.11 = { liege = e_later_jin }
+#Later Han
+947.7.1 = { liege = e_later_han }
+#Later Zhou, Song
+951.2.5 = { liege = e_later_zhou }
+960.2.3 = { liege = e_song }
+967.1.1 = { holder = 1415047 } #Li Guangrui
+978.1.1 = { holder = 1415048 } #Li Jiyun
+980.1.1 = { holder = 1415049 } #Li Jipeng
+#Xi Xia
+982.1.1 = { holder = 206643 name = "Henan" effect = { reset_coa = THIS } liege = 0 } #Wuzong, Li Jiqian
+1004.1.26 = { holder = 206644 } #Taizong, Li Deming
+1032.12.26 = { holder=206650 } #Jingzong, Li Yuanhao
+1038.11.10 = { liege = e_xixia }
+1048.1.19 = { holder=206651 } #Yizong, Li Liangzuo
+1067.1.27 = { holder=206653 } #Huizong, Li Bingchang
+1086.8.21 = { holder=206654 } #Chongzong, Li Qianshun
+1139.7.8 = { holder=206657 } #Renzong, Li Renxiao
+1193.10.16 = { holder=206659 } #Huanzong, Li Chunyou
+1206.3.1 = { holder=206660 } #Xiangzong, Li Anquan
+1210.1.1 = { set_tribute_suzerain = { who = e_mongol_empire type = nomadic } }#Subjugated by the Mongols
+1211.8.12 = { holder=206666 } #Shenzong, Li Zunxu
+1223.1.1 = { holder=206668 } #Xianzong, Li Dewang
+1226.1.1 = { holder=206670 } #Li Xian
+1227.1.1 = { clear_tribute_suzerain = e_mongol_empire }
+1227.8.28 = { holder=0 }#destroyed by the Mongols and emperor killed shortly afterwards

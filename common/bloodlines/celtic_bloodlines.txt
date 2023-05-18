@@ -96,7 +96,6 @@ saintly_bloodline_britannic_01 = {
 
 The_New_Vercingetorix = {
     GFX_bloodlines_symbol_bucephalus
-    inheritance = patrilineal
     matrilineal_override = yes
     allow_bastards = no
     flags = {  bloodline_better_inquisition bloodline_religious_liberation }

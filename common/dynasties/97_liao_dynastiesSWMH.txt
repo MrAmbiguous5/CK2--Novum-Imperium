@@ -9,7 +9,7 @@
 ######################################
 
 1000102400 = {
-	name="Yærud" #Yelü
+	name="Yarud" #Yelü
 	culture = khitan
 	coat_of_arms=
 	{
@@ -41,7 +41,7 @@
 	religion="taoist"
 }
 1000102404 = {
-	name="Dærqa"
+	name="Darqa"
 	culture="khitan"
 	religion="taoist"
 }
@@ -61,7 +61,7 @@
 	religion="taoist"
 }
 1000102408 = {
-	name="Yærud" #Non-Abaoji line
+	name="Yarud" #Non-Abaoji line
 	culture = khitan
 	coat_of_arms=
 	{

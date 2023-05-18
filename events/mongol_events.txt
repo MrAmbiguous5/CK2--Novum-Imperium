@@ -2906,7 +2906,7 @@ narrative_event = {
 
 	immediate = {
 		log = "60500: spawning Temujin for invasion"
-		1571 = { save_event_target_as = emf_target_province } # SWMH: Almaliq
+		2422 = { save_event_target_as = emf_target_province } # SWMH: Hulun
 
 		set_global_flag = mongol_empire_arrival
 		activate_title = { title = e_mongol_empire status = yes }

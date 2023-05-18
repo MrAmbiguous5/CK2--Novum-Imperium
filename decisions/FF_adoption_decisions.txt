@@ -1,0 +1,70 @@
+decisions = {
+	adopt_orphan_boy = {
+		potential = {
+			is_ruler = yes
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+				is_nomadic = yes
+				is_patrician = yes
+			}
+			is_married = yes
+			NOR = {
+				spouse = {
+					same_sex = ROOT
+				}
+				num_of_children = 1
+			}
+			age = 50
+		}
+		
+		allow = {
+			prestige = 10
+			scaled_wealth = 0.20
+		}
+		
+		effect = {
+			piety = 25
+			prestige = -10
+			scaled_wealth = -0.20
+			spouse = {
+                create_character = {
+					random_traits = yes
+					dynasty = ROOT
+					religion = ROOT
+					culture = ROOT
+					age = 5
+					trait = legit_bastard
+				}
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					new_character = {
+						set_father = ROOT
+						set_mother = PREV
+						set_character_flag = adopted_check
+					}
+					recalc_succession = yes
+					break = yes
+				}
+				new_character = {
+					set_father = PREV
+					set_mother = ROOT
+					set_character_flag = adopted_check
+				}
+				recalc_succession = yes
+           }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

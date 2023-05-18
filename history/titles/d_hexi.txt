@@ -1,0 +1,35 @@
+#Tang
+848.1.1 = { holder = 1400001 name = "Guiyi" effect = { set_coa = d_guiyi } liege = e_tang } #Zhang Yichao
+867.3.10 = { holder = 1400003 } #Zhang Huaishen
+890.1.1 = { holder = 1400004 } #Zhang Huaiding
+892.1.1 = { holder = 1400007 } #Suo Xun
+894.1.1 = { holder = 1400012 } #Zhang Chengfeng
+#Later Liang
+907.6.1 = { liege = e_later_liang }
+911.1.1 = { set_tribute_suzerain = { who = c_ganzhou type = permanent } }
+#Independent
+912.7.18 = { name = "Jinshan" liege = 0 }
+#Later Liang
+914.1.1 = { holder = 1400013 name = "Guiyi" liege = e_later_liang } #Cao Yijin
+#Later Tang
+923.11.19 = { liege = e_later_tang }
+935.1.1 = { holder = 1400014 } #Cao Yuande
+#Later Jin
+937.1.11 = { liege = e_later_jin }
+939.1.1 = { holder = 1400015 } #Cao Yuanshen
+944.1.1 = { holder = 1400016 } #Cao Yuanzhong
+#Later Han, Later Zhou, Song
+947.1.11 = { liege = e_khitan }
+947.3.10 = { liege = e_later_han }
+951.2.5 = { liege = e_later_zhou }
+960.2.3 = { liege = e_song }
+974.1.1 = { holder = 1400017 } #Cao Yangong
+976.1.1 = { holder = 1400018 } #Cao Yanlu
+1002.1.1 = { holder = 1400023 } #Cao Zongshou
+1014.1.1 = { holder = 1400024 liege = 0 } #Cao Xianshun
+#Liao
+1019.1.1 = { set_tribute_suzerain = { who = e_khitan type = permanent } }
+#Song
+1020.1.1 = { set_tribute_suzerain = { who = e_china type = permanent } }
+#Xi Xia
+1035.1.1 = { holder = 0 name = "Hexi" effect = { reset_coa = THIS } liege=k_xixia }#Conquered by the Tangut Empire

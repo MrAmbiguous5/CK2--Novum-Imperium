@@ -1,0 +1,141 @@
+# Targetted decisions are possible vs _all_ other characters and shown are in the Diplomacy View, not the Intrigue View. The taker is in the FROM scope.
+#
+# ai_target_filter = [self/court/home_court/vassals/sub_realm/realm/dynasty/all] (which characters for which the AI evaluates the decision.)
+#	court: all characters in the AI's host court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	home_court: all characters in the AI's home court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	vassals: direct vassal rulers of the AI's employer
+#	sub_realm: all characters below the AI's employer
+#	realm: all characters in the same top realm as the AI
+#	dynasty: all members of the same dynasty (including the dead!)
+#	all: all living characters (Avoid if possible. VERY CPU-HEAVY!)
+#	
+
+targetted_decisions = {
+	nominate_vestalis_decision = {
+		ai_target_filter = home_court
+	
+		from_potential = {
+			culture_group = latin
+			OR = {
+				religion = graeco_roman
+				religion = graeco_roman_reformed
+				religion = roman_imperial
+			}
+			NOT = { has_landed_title = c_vesta_temple }
+			c_vesta_temple = { owner = { always = yes } } # The Vestal Virgins must exist
+		}
+		potential = {
+			culture_group = latin
+			OR = {
+				religion = graeco_roman
+				religion = graeco_roman_reformed
+				religion = roman_imperial
+			}
+			age = 6
+			NOT = { age = 10 }
+			is_female = yes
+			is_landed = no
+			is_betrothed = no
+			prisoner = no
+			host = { character = FROM }
+			NOT = { has_character_flag = flag_nominated_as_vestalis }
+		}
+		allow = {
+			age = 6
+			NOT = { age = 10 }
+			is_female = yes
+			NOT = { trait = bastard }
+			NOT = { trait = legit_bastard }
+			NOT = { trait = child_of_consort }
+			OR = {
+				religion = graeco_roman
+				religion = graeco_roman_reformed
+				religion = roman_imperial
+			}
+		}
+		effect = {
+			set_character_flag = flag_nominated_as_vestalis
+			c_vesta_temple = { owner = { character_event = { id = ancrel.2124 days = 1 } } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FROM = { OR = { is_primary_heir = yes is_pretender = yes } }
+			}
+			modifier = {
+				factor = 0.8
+				FROM = { trait = cynical }
+			}
+			modifier = {
+				factor = 1.25
+				FROM = { trait = zealous }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { c_vesta_temple = { owner = { reverse_opinion = { who = FROM value = -40 } } } }
+			}
+			modifier = {
+				factor = 1.25
+				c_vesta_temple = { owner = { reverse_opinion = { who = FROM value = 40 } } }
+			}
+		}
+	}
+	appoint_pontifex_maximus = {
+		filter = realm
+		ai_target_filter = realm
+		from_potential = {
+			religion = roman_imperial
+			any_realm_province = {
+				province = 275
+			}
+			any_realm_province = {
+				province = 517
+			}
+			OR = {
+				trait = hist_augustus
+				trait = hist_chlorus
+				piety = 1000
+			}
+		}
+		potential = {
+			NOT = {
+				d_roman_imperial = {
+					holder_scope = {
+						always = yes
+					}
+				}
+			}
+			is_ruler = yes
+			OR = {
+				is_feudal = yes
+				is_theocracy = yes
+			}
+		}
+		allow = {
+			religion = roman_imperial
+		}
+		effect = {
+			d_roman_imperial = {
+				activate_title = {
+					title = THIS
+					status = yes
+				}
+				grant_title = ROOT
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					character = FROM
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,6 @@
+#Later Zhou
+954.6.17 = { holder = 1400309 name = "Ninghua" effect = { set_coa = d_ninghua } liege = e_later_zhou } #Li Tinghui
+#Northern Han
+954.7.5 = { holder = 1400310 name = "Fenzhou" effect = { reset_coa = THIS } liege = e_later_han } #Wei Jin
+979.5.1 = { holder = 0 }
+

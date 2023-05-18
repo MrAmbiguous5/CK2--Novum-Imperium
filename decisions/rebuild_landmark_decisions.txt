@@ -1,0 +1,443 @@
+decisions = {
+#####Rebuild Hattshushash
+	rebuild_chattousa = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			is_adult = yes
+			religion_group = luwian_group
+			NOR = {
+				has_global_flag = chattousa_rebuilt
+				has_global_flag = rebuilding_chattousa
+			}
+		}
+		allow = {
+			wealth = 500
+			capital_holding = {
+				title = b_mikissos
+			}
+			is_feudal = yes
+			primary_title = {
+				higher_tier_than = duke
+			}
+			calc_true_if = {
+				amount = 4
+				b_hagiasophia = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_lisdra = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_jerusalem = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_tavia = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_tella = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+			}
+			war = no
+			prisoner = no
+			NOT = { trait = incapable }
+		}
+		effect = {
+			capital_scope = {
+				province_event = { id = rebuild_chattousa.1 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+	rebuild_chattousa_city = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			is_adult = yes
+			religion_group = luwian_group
+			has_global_flag = chattousa_rebuilt
+			capital_scope = {
+				has_province_modifier = chattousa_palace
+			}
+			NOR = {
+				has_character_flag = rebuilt_chattousa_palace
+				has_global_flag = rebuilding_chattousa
+			}
+		}
+		allow = {
+			wealth = 500
+			is_feudal = yes
+			primary_title = {
+				higher_tier_than = duke
+			}
+			calc_true_if = {
+				amount = 4
+				b_hagiasophia = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_lisdra = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_jerusalem = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_tavia = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_tella = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+			}
+			war = no
+			prisoner = no		
+			NOT = { trait = incapable }
+		}
+		effect = {
+			capital_scope = {
+				province_event = {
+					id = rebuild_chattousa.5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+	rebuild_chattousa_temple = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			is_adult = yes
+			religion_group = luwian_group
+			has_global_flag = chattousa_rebuilt
+			capital_scope = {
+				has_province_modifier = chattousa_city
+			}
+			NOR = {
+				has_character_flag = rebuilt_chattousa_city
+				has_global_flag = rebuilding_chattousa
+			}
+		}
+		allow = {
+			wealth = 500
+			piety = 500
+			is_feudal = yes
+			primary_title = {
+				higher_tier_than = duke
+			}
+			calc_true_if = {
+				amount = 4
+				b_hagiasophia = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_lisdra = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_jerusalem = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_tavia = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+				b_tella = {
+					holder_scope = {
+						any_liege = {
+							character = ROOT
+						}
+						religion = ROOT
+					}
+				}
+			}
+			war = no
+			prisoner = no		
+			NOT = { trait = incapable }
+		}
+		effect = {
+			capital_scope = {
+				province_event = {
+					id = rebuild_chattousa.7
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 5.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+			
+	#Go on retreat to improve chances to be accepted by Arinniti
+	go_on_luwian_retreat = {
+		is_high_prio = yes
+		potential = {
+			has_character_flag = arinniti_explanation_complete
+			NOR = {
+				has_character_flag = on_luwian_retreat
+				has_character_flag = awaiting_arinnitis_acceptance
+				has_character_flag = rejected_by_arinniti
+				trait = arinnitis_consort
+				trait = arinniti_in_flesh
+				has_character_flag = do_not_disturb
+			}
+		}
+		allow = {
+			prestige = 1000
+			piety = 1000
+			war = no
+			prisoner = no
+			NOR = {
+				trait = travelling
+				trait = incapable
+			}
+		}
+		effect = {
+			prestige = -500
+			piety = -500
+			set_character_flag = on_luwian_retreat
+			narrative_event = {
+				id = luwian_retreat.1
+			}
+		}
+	}
+	#Begin the ritual to become Arinniti's Consort
+	become_arinnitis_consort = {
+		is_high_prio = yes
+		potential = {
+			has_character_flag = arinniti_explanation_complete
+			is_female = no
+			religion_group = luwian_group
+			OR = {
+				religion = luwian
+				is_reformed_religion = yes
+			}
+			religion_head = {
+				always = yes
+			}
+			war = no
+			NOR = {
+				has_character_flag = rejected_by_arinniti
+				has_character_flag = awaiting_arinnitis_acceptance
+				trait = arinnitis_consort
+				has_character_flag = do_not_disturb
+			}
+		}
+		allow = {
+			NOR = {
+				has_character_flag = on_luwian_retreat
+				trait = travelling
+				trait = incapable
+			}
+		}
+		effect = {
+			set_character_flag = awaiting_arinnitis_acceptance
+			hidden_tooltip = {
+				rightful_religious_head_scope = {
+					character_event = {
+						id = become_arinnitis_consort.1
+					}
+				}
+			}
+		}
+	}
+	#Begin the ritual to become Arinniti in Flesh
+	become_arinniti_in_flesh = {
+		is_high_prio = yes
+		potential = {
+			has_character_flag = arinniti_explanation_complete
+			is_female = yes
+			religion_group = luwian_group
+			OR = {
+				religion = luwian
+				is_reformed_religion = yes
+			}
+			war = no
+			NOR = {
+				has_character_flag = rejected_by_arinniti
+				has_character_flag = awaiting_arinnitis_acceptance
+				trait = arinniti_in_flesh
+				has_character_flag = do_not_disturb
+			}
+		}
+		allow = {
+			NOR = {
+				has_character_flag = on_luwian_retreat
+				trait = travelling
+				trait = incapable
+			}
+		}
+		effect = {
+			set_character_flag = awaiting_arinnitis_acceptance
+			hidden_tooltip = {
+				rightful_religious_head_scope = {
+					character_event = {
+						id = become_arinniti_in_flesh.1
+					}
+				}
+			}
+		}
+	}
+##### Restore Memphis
+	restore_memphis = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			religion_group = egyptian_group
+			NOR = {
+				has_global_flag = memphis_restored
+				has_global_flag = memphis_restoring
+			}
+		}	
+		allow = {
+			wealth = 500
+			capital_holding = {
+				title = b_manusura
+			}
+			is_feudal = yes
+			primary_title = {
+				higher_tier_than = duke
+			}
+			OR = {
+				has_landed_title = k_egypt
+				has_landed_title = e_kush
+				has_landed_title = e_ptolemaic
+			}
+	
+		}
+		effect = {
+			set_global_flag = memphis_restoring
+			1001 = {
+			province_event = { id = rebuild_memphis.1 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 10.0
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					learning = 8
+				}
+			}
+		}
+	}
+}

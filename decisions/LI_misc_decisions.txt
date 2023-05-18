@@ -1,0 +1,949 @@
+decisions = {
+	hold_pagan_festival = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "The Old Gods"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			primary_title = { higher_tier_than = BARON }
+			holds_large_feast_trigger = no #christians
+			observes_ramadan_trigger = no #muslims
+			holds_nerge_trigger = no #tengri and altaics
+			LI_norse_pagan_trigger = no #holds blots or christ blots
+			holds_ukon_juhla_trigger = no #finnish
+			holds_uzgavenes_trigger = no #baltics
+			holds_jarilo_trigger = no #slavs
+			celebrates_passover_trigger = no #jews
+			celebrates_nowruz_trigger = no #iranians
+			holds_mithrasfeast_trigger = no #mithraics
+			holds_solar_procession_trigger = no #high ranking solar imperials
+			holds_tawusgeran_trigger = no #yazidis
+			NOR = {
+				religion_group = zoroastrian_group
+				religion_group = bud_group
+				religion_group = celtic_group
+				religion = indoh_bud
+				religion_group = indian_group
+				religion = mani
+				religion = mani_mithra
+				religion = mandaean
+				religion = mandaean_reformed
+				has_character_modifier = held_pagan_feast_timer
+				has_character_flag = holding_pagan_festival
+				trait = incapable
+			}
+			is_inaccessible_trigger = no
+		}
+		allow = {
+			war = no
+			# any_demesne_title = {
+				# is_occupied = no
+			# } 
+			# commented out due to being in the error log
+			scaled_wealth = 0.20
+			prisoner = no
+		}
+		effect = {
+			scaled_wealth = -0.20
+			set_character_flag = holding_pagan_festival
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = TOG.899 days = 150 } } # Safety catch flag clearing
+			custom_tooltip = {
+				text = prepare_pagan_festival
+				hidden_tooltip = { 
+					character_event = { id = TOG.900 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 3.0
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+	
+	# use_study = {
+		# is_high_prio = yes
+		# potential = {
+			# is_ruler = yes
+			# age = 16
+			# prisoner = no
+			# primary_title = { higher_tier_than = BARON }
+			# OR = {
+					# religion = docetist
+					# religion = hurufi
+					# religion = ilm_islam
+					# religion = marcionist 
+					# religion = neoplato
+					# religion = plato_christ
+					# religion = plato_islam
+					# religion = plato_pythagorean
+					# religion = porphyryan
+					# religion = valentinian
+			# }
+			# NOT = {	has_character_flag = do_not_disturb }
+			# NOT = {	has_character_modifier = used_study }
+		# }
+		# allow = {
+			# has_regent = no
+			# in_command = no
+		# }
+		
+		# effect = {
+			# set_character_flag = do_not_disturb
+			# custom_tooltip = {
+				# text = study_usage
+				# hidden_tooltip = {
+					# character_event = { id = percas.2 } 
+					# add_character_modifier = {
+						# name = used_study
+						# duration = 1100
+					# }
+				# }
+			# }
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0.2
+			# }
+			# modifier = {
+				# factor = 1.5
+				# trait = scholar
+			# }
+			# modifier = {
+				# factor = 0
+				# NOT = { learning = 6 }
+			# }
+			# modifier = {
+				# factor = 1.2
+				# learning = 8
+			# }
+			# modifier = {
+				# factor = 1.2
+				# learning = 10
+			# }
+			# modifier = {
+				# factor = 1.2
+				# learning = 12
+			# }
+			# modifier = {
+				# factor = 1.2
+				# learning = 16
+			# }
+		# }
+	# }
+
+
+
+	invite_shaman_to_court = { #Invite a Shaman to court
+		potential = {
+			is_ruler = yes
+			NOT = { tier = baron }
+			shamanic_trigger = yes
+		}
+		allow = {
+			NOT = { has_character_flag = inviting_shaman_over }
+			war = no
+			piety = 20
+			NOR = {
+				any_vassal = {
+					trait = shaman
+				}
+				any_courtier = {
+					trait = shaman
+				}
+			}
+		}
+		effect = {
+			piety = -10
+			
+			set_character_flag = inviting_shaman_over
+
+			hidden_tooltip = {
+				character_event = {
+					id = shaman.34
+					days = 3
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					any_vassal = {
+						trait = shaman
+					}
+					any_courtier = {
+						trait = shaman
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}	
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}	
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}	
+			modifier = {
+				factor = 0.5
+				trait = imbecile
+			}		
+			modifier = {
+				factor = 2
+				trait = zealous
+			}	
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}			
+			modifier = {
+				factor = 2
+				primary_title = { higher_tier_than = DUKE }
+			}	
+			modifier = {
+				factor = 0.5
+				trait = slow
+			}	
+		}
+	}	
+
+	
+	ask_ancestors_for_advice = { # Start Shaman journey event chain
+		potential = {
+			shamanic_trigger = yes
+			NOR = {
+				has_character_modifier = ask_ancestors_for_advice_timer
+				has_character_flag = asking_ancestors_for_advice
+			}
+		}
+		allow = {
+			war = no
+			primary_title = { higher_tier_than = BARON }
+			OR = {
+				any_vassal = {
+					trait = shaman
+				}
+				any_courtier = {
+					trait = shaman
+				}
+			}
+			scaled_wealth = 0.1
+		}
+		effect = {
+			scaled_wealth = -0.1
+
+			hidden_tooltip = {
+				character_event = {
+					id = shaman.1
+					days = 3
+				}
+			}
+			
+			set_character_flag = asking_ancestors_for_advice
+			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5 #Decrease chance AI will do this
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}	
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}	
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}	
+			modifier = {
+				factor = 0.5
+				trait = imbecile
+			}		
+			modifier = {
+				factor = 2
+				trait = zealous
+			}	
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}							
+			modifier = {
+				factor = 2
+				trait = gregarious
+			}	
+			modifier = {
+				factor = 0.5
+				trait = shy
+			}									
+			modifier = {
+				factor = 2
+				trait = humble
+			}	
+			modifier = {
+				factor = 0.5
+				trait = proud
+			}							
+			modifier = {
+				factor = 2
+				trait = depressed
+			}	
+			modifier = {
+				factor = 2
+				trait = stressed
+			}	
+		}
+	}
+	
+	#Mithraic Rituals
+	hold_mithrasfeast = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			primary_title = { higher_tier_than = COUNT }
+			holds_mithrasfeast_trigger = yes
+			NOR = {
+				has_character_modifier = held_mithras_timer
+				has_character_flag = attending_mithras
+				has_character_flag = do_not_disturb
+			}
+		}
+		allow = {
+			war = no
+			# any_demesne_title = {
+				# is_occupied = no
+			# }
+			scaled_wealth = 0.20
+			prisoner = no
+		}
+		effect = {
+			scaled_wealth = -0.20
+			set_character_flag = attending_mithras
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = TOG.899 days = 150 } } # Safety catch flag clearing
+			custom_tooltip = {
+				text = prepare_mithras
+				hidden_tooltip = { 
+					character_event = { id = li_mithrasfeast.800 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 3.0
+				}
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+	
+	#Raise an Irminsul
+	raise_irminsul = {
+		potential = {
+			is_ruler = yes
+			primary_title = { higher_tier_than = DUKE }
+			age = 16
+			prisoner = no
+			OR = {
+				religion = german_pagan
+				religion = german_pagan_reformed
+				religion = allfather
+				religion = teiwaz
+				religion = irminsul
+			}
+			NOR = {
+				any_demesne_province = {
+					OR = {
+						has_province_modifier = irminsul_wodanaz
+						has_province_modifier = irminsul_teiwaz
+						has_province_modifier = irminsul_thunraz
+						has_province_modifier = irminsul_frijjo
+						has_province_modifier = irminsul_tree
+					}
+				} 
+				has_character_flag = raised_irminsul
+			}
+		}
+		allow = {
+			wealth = 200
+			prisoner = no
+		}
+		effect = {
+			wealth = -200
+			hidden_tooltip = { 
+				if = {
+					limit = {
+						OR = {
+							religion = german_pagan
+							religion = german_pagan_reformed
+							religion = allfather
+							religion = teiwaz
+						}
+					}
+					character_event = { id = li_irminsul.500 }
+				}
+				if = {
+					limit = {
+						religion = irminsul
+					}
+					character_event = { id = li_irminsul.501 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 300 }
+			}
+			modifier = {
+				factor = 0
+				trait = cynical
+			}			
+		}
+	}
+	
+	
+	#Blot to Christ (Scandinavist, Kristatru)
+	hold_christ_blot = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "The Old Gods"
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			holds_christ_blot_trigger = yes
+			NOR = {
+				has_character_modifier = held_christblot_timer
+				has_character_flag = holding_christ_blot
+				has_character_flag = do_not_disturb
+			}
+		}
+		allow = {
+			war = no
+			# any_demesne_title = {
+				# is_occupied = no
+			# }
+			OR = {
+				NOT = { month = 2 }
+				month = 10
+			}
+			scaled_wealth = 0.20
+			prisoner = no
+		}
+		effect = {
+			scaled_wealth = -0.20
+			set_character_flag = holding_christ_blot
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			# hidden_tooltip = { character_event = { id = TOG.699 days = 150 } } # Safety catch flag clearing
+			custom_tooltip = {
+				text = prepare_christ_blot
+				hidden_tooltip = { 
+					character_event = { id = li_christblot.600 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 3.0
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+	
+	#Support the Silk Route Merchants
+	#Disabled due to addition of Silk Route mechanics in Horse Lords
+#	support_silk_road = {
+#		is_high_prio = yes
+#		potential = {
+#			NOT = { has_character_modifier = supporting_silkroad }
+#			NOT = { has_global_flag = silk_road_level_0 }
+#			capital_scope = {
+#				OR = {
+#					region = persia
+#					region = steppes
+#				}
+#			}
+#		}
+#		allow = {
+#			independent = yes
+#		}
+#		effect = {
+#			custom_tooltip = {
+#				text = support_silkroad_on
+#					hidden_tooltip = {
+#						add_character_modifier = {
+#								name = supporting_silkroad
+#								duration = -1
+#						}
+#					}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				factor = 0.1
+#			}
+#		}
+#	}
+	
+	#Stop supporting the Silk Route Merchants
+#	stop_support_silk_road = {
+#		is_high_prio = yes
+#		potential = {
+#			has_character_modifier = supporting_silkroad
+#			NOT = { has_global_flag = silk_road_level_0 }
+#			capital_scope = {
+#				OR = {
+#					region = persia
+#					region = steppes
+#				}
+#			}
+#		}
+#		allow = {
+#			independent = yes
+#		}
+#		effect = {
+#			custom_tooltip = {
+#				text = support_silkroad_off
+#					hidden_tooltip = {
+#						remove_character_modifier = supporting_silkroad
+#					}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 0
+#		}
+#	}
+	
+	#Solar procession/triumph ( Solar-Imperials )
+	hold_solar_procession = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			age = 16
+			prisoner = no
+			primary_title = { higher_tier_than = DUKE }
+			religion = sol
+			NOR = {
+				has_character_modifier = held_solar_procession
+				has_character_flag = do_not_disturb
+			}
+		}
+		allow = {
+			war = no
+			# any_demesne_title = {
+				# is_occupied = no
+			# }
+			prisoner = no
+		}
+		effect = {
+			set_character_flag = do_not_disturb
+			custom_tooltip = {
+				text = prepare_solar_procession
+				hidden_tooltip = { 
+					character_event = { id = li_solarprocession.1 } 
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					scaled_wealth = 2.0
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+	
+	# #Sacrifice to Sol Invictus ( Solar-Imperials )
+	# sacrifice_sol_invictus = {
+		# is_high_prio = yes
+		# potential = {
+			# is_ruler = yes
+			# age = 16
+			# prisoner = no
+			# primary_title = { higher_tier_than = DUKE }
+			# religion = sol
+		# }
+		# allow = {
+			# war = no
+			# any_demesne_title = {
+				# is_occupied = no
+			# }
+			# prisoner = no
+		# }
+		# effect = {
+			# custom_tooltip = {
+				# text = prepare_sacrifices
+				# hidden_tooltip = { 
+					# character_event = { id = li_solinvsacrifice.199 } 
+				# }
+			# }
+		# }
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 1
+			
+			# modifier = {
+				# factor = 0
+				# trait = cynical
+			# }
+			# modifier = {
+				# factor = 0
+				# NOT = { learning = 10 }
+			# }	
+		# }
+	# }
+	
+	#Hold a Tawusgeran festival ( "Circulation of the Peacock" ) - Yazidi group religions
+	hold_tawusgeran = {
+		potential = {
+			is_ruler = yes
+			age = 16
+			prisoner = no
+            holds_tawusgeran_trigger = yes
+			NOR = {
+				has_character_modifier = held_tawusgeran_timer
+				has_character_flag = holding_tawusgeran
+				has_character_flag = do_not_disturb
+			}
+		}
+		allow = {
+			war = no
+			# any_demesne_title = {
+				# is_occupied = no
+			# }
+#			AND = {
+				NOT = { month = 11 }
+				month = 8
+#			}
+			wealth = 50
+			prisoner = no
+			is_inaccessible_trigger = no
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = holding_tawusgeran
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = TOG.899 days = 150 } } # Safety catch flag clearing
+			hidden_tooltip = { 
+				character_event = { id = luxyazd.10124 } 
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}	
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+	
+	#Pilgrimage to Sheik Adi's Tomb - Yazidi group religions
+    yazidi_pilgrimage = {
+		potential = {
+			is_ruler = yes
+			religion_group = yazd_group
+			NOR = {
+				trait = pilgrim
+				has_character_flag = do_not_disturb
+				is_inaccessible_trigger = yes
+			}
+		}
+		allow = {
+			war = no
+			in_command = no
+			# any_demesne_title = {
+				# is_occupied = no
+			# }
+			prisoner = no
+			scaled_wealth = 0.2
+			age = 16
+			custom_tooltip = {
+				text = health_travel_condition
+				hidden_tooltip = {
+					NOR = {
+						trait = pregnant
+						trait = incapable
+						trait = blinded
+						trait = has_tuberculosis
+						trait = has_typhoid_fever
+						trait = has_typhus
+						trait = has_bubonic_plague
+						trait = has_measles
+						trait = has_small_pox
+						trait = has_aztec_disease
+					}
+				}
+			}
+		}
+		effect = {
+			scaled_wealth = -0.2
+			set_character_flag = activated_pilgrimage
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = { id = luxyazd.10163 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.001             # Only a small minority of Yazidis ever go on a pilgrimage
+			}
+			modifier = {
+				factor = 3
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 200 }
+			}			
+			modifier = {
+				factor = 0
+				NOT = { age = 30 }
+			}
+		}
+	}
+	
+}
+
+targetted_decisions = {
+	#Sacrifice prisoner at local sacred grove ( Germanic Pagans )
+	sacrifice_irminsul = {
+		ai_target_filter = home_court
+		from_potential = {
+			is_playable = yes
+			OR = {
+				religion = german_pagan
+				religion = german_pagan_reformed
+				religion = allfather
+				religion = teiwaz
+				religion = irminsul
+			}
+		}
+	
+		potential = {
+			prisoner = yes
+			is_adult = yes
+			host = { character = FROM }
+		}
+		
+		allow = {
+			prisoner = yes
+		}
+		
+
+		effect = {
+			hidden_tooltip = {
+				FROM = {
+					if = {
+						limit = {
+							OR = {
+								religion = german_pagan
+								religion = german_pagan_reformed
+								religion = allfather
+								religion = teiwaz
+							}
+						}
+						narrative_event = { id = li_irminsul.60 }
+					}
+					if = {
+						limit = {
+							religion = irminsul
+						}
+						narrative_event = { id = li_irminsul.61 }
+					}
+				}
+			}
+			death = {
+				death_reason = death_sacrificed
+				killer = FROM
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	grant_estate = {
+		filter = sub_realm
+		ai_target_filter = sub_realm
+		
+		from_potential = {
+			ai = no
+			wealth = 50
+		}
+		potential = {
+			is_adult = yes
+			is_ruler = no
+			is_liege_or_above = FROM
+			NOT = { has_character_modifier = estates_5 }
+		}
+		allow = {
+			ROOT = {
+				prisoner = no
+				NOT = { trait = incapable }
+			}
+			FROM = {
+				war = no
+			}
+		}
+		effect = {
+			FROM = { character_event = { id = liestates.1 tooltip = CONSIDER_MINOR_ESTATE } }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+}

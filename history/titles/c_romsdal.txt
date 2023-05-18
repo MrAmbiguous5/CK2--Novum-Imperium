@@ -8,6 +8,11 @@
 	liege = d_ostlandet
 	holder = 0 # goes to the Mørejarls after the first battle of Solskjell
 }
+#Warial's Patchup
+877.1.1 = {
+	liege = k_norway
+}
+#End of Warial's patchup
 936.1.1 = {
 	liege = k_norway
 	holder = 1290123 # Arnvid, placeholder

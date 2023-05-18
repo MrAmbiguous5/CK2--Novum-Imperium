@@ -1,0 +1,10 @@
+#Former Shu
+905.10.21 = { holder = 1401261 name = "Baqu" effect = { set_coa = d_baqu } liege = k_xichuan } #Quan Shilang
+907.11.3 = { liege = e_former_shu }
+908.1.1 = { name = "Xiongwu" effect = { set_coa = d_xiongwu } }
+920.1.28 = { holder = 0 } #No Jiedushi, merged into Shannan Xi
+#Later Jin
+939.6.4 = { holder = 1401263 name = "Huaide" effect = { reset_coa = THIS } liege = e_later_jin } #Pan Gui
+940.1.1 = { holder = 1400290 } #Tian Wu
+944.1.1 = { holder = 0 }
+

@@ -1,0 +1,623 @@
+namespace = li_zoroastrian
+
+# Help in fighting the local bandits
+character_event = {
+	id = li_zoroastrian.200
+	desc = "EVTDESC_li_zoroastrian_200"
+	picture = "GFX_evt_bandits"
+	
+	min_age = 16
+	prisoner = no
+	only_playable = yes
+	capable_only = yes
+	only_men = yes
+	war = no
+	is_sick = no
+	religion_group = zoroastrian_group
+	
+	trigger = {
+		any_demesne_province = {
+			OR = {
+				has_province_modifier = highway_robber_band
+				has_province_modifier = smugglers_ring
+				has_province_modifier = thieves_guild
+				revolt_risk = 3
+			}
+		}
+		is_inaccessible_trigger = no
+	}
+	
+	mean_time_to_happen = {
+		months = 36	
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.6
+			realm_learning = 30
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA_li_zoroastrian_200" #Hunt them down yourself
+		piety = 10
+		random = {
+			chance = 15
+			add_trait = wounded
+		}
+	}
+	option = {
+		name = "EVTOPTB_li_zoroastrian_200" #Send a squad of guards
+		trigger = {
+			scaled_wealth = 0.15
+		}
+		scaled_wealth = -0.15
+		prestige = 20
+	}
+	option = {
+		name = "EVTOPTC_li_zoroastrian_200" #Let the locals handle it
+		prestige = -10
+		piety = -10
+	}
+}
+namespace = rebuild_shrine
+#Following event chain is rewritten from VIETnam.8 single event
+#People request that local shrine be rebuilt.
+province_event = {
+	id = rebuild_shrine.1
+	hide_window = yes
+	
+	trigger = {
+		owner = {
+			religion_group = zoroastrian_group
+		}
+		OR = {
+			rebuild_shrine_various_trigger = yes
+			rebuild_shrine_christian_trigger = yes
+			rebuild_shrine_muslim_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.8
+			owner = {
+				trait = kind
+			}
+		}
+		modifier = {
+			factor = 0.7
+			owner = {
+				trait = charitable
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				trait = tolerant
+			}
+		}
+		modifier = {
+			factor = 1.4
+			owner = {
+				trait = zealous
+			}
+		}
+	}
+	#Rebuild shrine (non-Christian, non_Muslim)
+	option = {
+		trigger = {
+			rebuild_shrine_various_trigger = yes
+		}
+		owner = {
+			narrative_event = {
+				id = rebuild_shrine.2
+			}
+		}
+	}
+	#Rebuild church
+	option = {
+		trigger = {
+			rebuild_shrine_christian_trigger = yes
+		}
+		owner = {
+			narrative_event = {
+				id = rebuild_shrine.3
+			}
+		}
+	}
+	#Rebuild mosque
+	option = {
+		trigger = {
+			rebuild_shrine_muslim_trigger = yes
+		}
+		owner = {
+			narrative_event = {
+				id = rebuild_shrine.4
+			}
+		}
+	}
+}
+###Rebuild a local shrine?
+narrative_event = {
+	id = rebuild_shrine.2
+	title = EVTNAMErs2
+	desc = EVTDESCrs2
+	picture = GFX_evt_burning_house_zoroastrian_group
+	
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA1000094002"
+		wealth = -75
+		piety = 20
+		add_character_modifier = {
+			name = zoroastrian_tolerance
+			duration = 365
+			}
+	}
+	option = {
+		name = "EVTOPTB1000094002"
+		random = {
+			chance = 20
+			add_trait = cruel
+		}
+	}
+}
+###Rebuild a local church?
+narrative_event = {
+	id = rebuild_shrine.3
+	title = EVTNAMErs3
+	desc = EVTDESCrs3
+	picture = GFX_evt_burning_house
+	
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA1000094002"
+		wealth = -75
+		piety = 20
+		add_character_modifier = {
+			name = zoroastrian_tolerance
+			duration = 365
+			}
+	}
+	option = {
+		name = "EVTOPTB1000094002"
+		random = {
+			chance = 20
+			add_trait = cruel
+		}
+	}
+}
+#####Rebuild a local mosque?
+narrative_event = {
+	id = rebuild_shrine.4
+	title = EVTNAMErs4
+	desc = EVTDESCrs4
+	picture = GFX_evt_burning_house_muslim
+	
+	is_triggered_only = yes
+	option = {
+		name = "EVTOPTA1000094002"
+		wealth = -75
+		piety = 20
+		add_character_modifier = {
+			name = zoroastrian_tolerance
+			duration = 365
+		}
+	}
+	option = {
+		name = "EVTOPTB1000094002"
+		random = {
+			chance = 20
+			add_trait = cruel
+		}
+	}
+}
+
+
+# Sedreh Pushi ritual - child's event
+character_event = {
+	id = li_zoroastrian.202
+	desc = "EVTDESC_li_zoroastrian_202"
+	picture = GFX_evt_child_bully
+	
+	min_age = 7
+	max_age = 15
+	prisoner = no
+	capable_only = yes
+	religion_group = zoroastrian_group
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			religion = zor_angra
+			religion = zor_angra_reformed
+			has_character_flag = had_sedreh_pushi
+		}
+		is_inaccessible_trigger = no
+		father = {
+			is_alive = yes
+			NOT = {
+				trait = incapable
+			}
+			is_inaccessible_trigger = no
+			prisoner = no
+			war = no
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			age = 11
+		}
+		modifier = {
+			factor = 2.0
+			age = 12
+		}
+		modifier = {
+			factor = 2.0
+			age = 13
+		}
+		modifier = {
+			factor = 10.0
+			age = 14
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA_li_zoroastrian_202" #Ask my father for advice
+		set_character_flag = had_sedreh_pushi
+		hidden_tooltip = {
+			if = {
+				limit = { 
+					father = {
+						is_alive = yes
+						any_child = {
+							character = ROOT
+							mother_even_if_dead = { 
+								OR = {
+									is_alive = no
+									NOT = { higher_tier_than = PREVPREV } 
+								}
+							}
+						}
+					}
+				}
+			father = { character_event = { id = li_zoroastrian.203 days = 3 } }			
+			}
+			if = {
+				limit = { 
+					mother = { 
+						is_alive = yes
+						any_child = {
+							character = ROOT
+							father_even_if_dead = { 
+								OR = {
+									is_alive = no
+									lower_tier_than = PREVPREV 
+								}
+							}
+						}
+					}
+				}
+				mother = { character_event = { id = li_zoroastrian.203 days = 3 } }			
+			}
+		}
+	}
+}
+
+# Sedreh Pushi ritual - father's event
+character_event = {
+	id = li_zoroastrian.203
+	desc = "EVTDESC_li_zoroastrian_203"
+	picture = GFX_evt_guardian
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA_li_zoroastrian_203" # Talk to him about Asha – righteousness
+		trigger = {
+			OR = {
+				trait = just
+				trait = kind
+			}
+		}
+		FROM = {
+			piety = 10
+			change_intrigue = -1
+			change_learning = 2
+		}
+	}
+	option = {
+		name = "EVTOPTB_li_zoroastrian_203" # Talk to him about Khshatr – divine power.
+		trigger = {
+			OR = {
+				trait = brave
+				trait = strong
+			}
+		}
+		FROM = {
+			prestige = 20
+			change_intrigue = -1
+			change_martial = 1
+		}
+	}
+	option = {
+		name = "EVTOPTC_li_zoroastrian_203" # Talk to him about  Armaiti – devotion.
+		trigger = {
+			OR = {
+				trait = zealous
+				piety = 400
+			}
+		}
+		FROM = {
+			piety = 30
+			change_intrigue = -1
+			change_diplomacy = 1
+		}
+	}
+	option = {
+		name = "EVTOPTD_li_zoroastrian_203" # Talk to him about Vohu Manah – holy spirit.
+		trigger = {
+			OR = {
+				trait = diligent
+				piety = 800
+			}
+		}
+		FROM = {
+			piety = 10	prestige = 10
+			change_intrigue = -1
+			change_stewardship = 1
+		}
+	}
+	option = {
+		name = "EVTOPTE_li_zoroastrian_203" # I have nothing to teach him.
+		FROM = {
+			random_list = {
+				50 = { change_learning = 1 }
+				50 = { change_learning = -1 }
+			}
+		}
+	}
+}
+
+### Rebuilding Persepolis
+
+# Rebuild Persepolis Phase 1 - Laying the foundation
+character_event = {
+	id = li_zoroastrian.205 #formerly 1000182065
+	desc = "EVTDESC_li_zoroastrian_205"
+	picture = "GFX_persepolis_ruin"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTC_li_zoroastrian_205" # Make it the greatest city there ever was!
+		add_character_modifier = {
+			name = is_rebuilding_persepolis
+			duration = -1
+			hidden = yes
+			inherit = yes
+		}
+	}
+}
+
+# Rebuild Persepolis Phase 2 - Add Spahan bonus modifier ~3 years
+province_event = {
+	id = li_zoroastrian.206 #formerly 1000182066
+	title = "EVTNAME_li_zoroastrian_206"
+	desc = "EVTDESC_li_zoroastrian_206"
+	picture = "GFX_persepolis_built"
+
+	trigger = {
+		province_id = 666 # Spahan
+		has_global_flag = rebuilding_persepolis
+		NOR = {
+			has_global_flag = persepolis_rebuilt
+			has_province_flag = reb_pers_2
+		}
+		had_province_flag = { flag = reb_pers_1 days = 1095 }
+	}
+
+	immediate = {
+		set_province_flag = reb_pers_2
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = "EVTOPTA_li_zoroastrian_206" #Library
+		add_province_modifier = { name = persepolis_library duration = -1 }
+	}
+	option = {
+		name = "EVTOPTB_li_zoroastrian_206" #Irrigation system
+		add_province_modifier = { name = persepolis_irrigation duration = -1 }
+	}
+	option = {
+		name = "EVTOPTC_li_zoroastrian_206" #Gate of all nations
+		add_province_modifier = { name = persepolis_gate duration = -1 }
+	}
+}
+
+# Rebuild Persepolis Phase 3
+province_event = {
+	id = li_zoroastrian.207 #formerly 1000182067
+	title = "EVTNAME_li_zoroastrian_207"
+	desc = "EVTDESC_li_zoroastrian_207"
+	picture = "GFX_persepolis_built"
+	
+	trigger = {
+		province_id = 666 # Spahan
+		has_global_flag = rebuilding_persepolis
+		NOT = { has_global_flag = persepolis_rebuilt }
+		had_province_flag = { flag = reb_pers_2 days = 638 }		
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	immediate = {
+		owner = { remove_character_modifier = is_rebuilding_persepolis }
+		clr_global_flag = rebuilding_persepolis
+		set_global_flag = persepolis_rebuilt
+		clr_province_flag = reb_pers_1
+		clr_province_flag = reb_pers_2
+	}
+
+	option = {
+		name = "EVTOPTA_li_zoroastrian_207"
+		owner = {
+			prestige = 500
+			666 = {
+				b_esfahan = {
+					set_name = "New Persepolis"
+				}
+			}
+		}
+		hidden_tooltip = {
+			owner = {
+				set_character_flag = event_1000182067
+				narrative_event = { id = li_zoroastrian.210 days = 7 }
+			}
+		}
+	}
+}
+
+# Spahan owned by someone else before Persepolis is rebuilt
+province_event = {
+	id = li_zoroastrian.208
+	
+	hide_window = yes
+	has_global_flag = rebuilding_persepolis
+	
+	trigger = {
+		province_id = 666 # Spahan
+		NOT = { has_global_flag = persepolis_rebuilt }
+		owner = {
+			NOT = { has_character_modifier = is_rebuilding_persepolis }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_global_flag = rebuilding_persepolis
+		clr_province_flag = reb_pers_1
+		clr_province_flag = reb_pers_2
+		remove_province_modifier = persepolis_library
+		remove_province_modifier = persepolis_irrigation
+		remove_province_modifier = persepolis_gate
+		any_independent_ruler = {
+			remove_character_modifier = is_rebuilding_persepolis
+			any_realm_character = {
+				remove_character_modifier = is_rebuilding_persepolis
+			}
+		}
+	}
+}
+
+# News spread about New Persepolis
+narrative_event = {
+	id = li_zoroastrian.210 #formerly 1000182068
+	title = "EVTNAME_li_zoroastrian_210"
+	desc = "EVTDESC_li_zoroastrian_210"
+	picture = "GFX_persepolis_built"
+	border = "GFX_event_narrative_frame_religion"
+	
+	major = yes
+	only_playable = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "EXCELLENT"
+		trigger = {
+			has_character_flag = event_1000182067
+		}
+		clr_character_flag = event_1000182067
+	}
+	
+	option = {
+		name = "EVTOPTA_li_zoroastrian_210"
+		trigger = {
+			NOT = { has_character_flag = event_1000182067 }
+		}
+	}
+}
+
+# Great Sacrifice event
+narrative_event = {
+	id = li_zoroastrian.220 #formerly 1000182159
+	title = "EVTNAME_li_zoroastrian_220"
+	desc = "EVTDESC_li_zoroastrian_220"
+	picture = "GFX_evt_zoroastrian_fire"
+	
+	is_triggered_only = yes
+	hide_from = yes	
+	
+	option = {
+		name = "EVTOPTA_li_zoroastrian_220" #To Mithra (War)
+		scaled_wealth = -0.3
+		piety = -30
+		add_character_modifier = {
+			name = zoroastrian_sacrifice_mithra
+			duration = 365
+		}
+	}
+	option = {
+		name = "EVTOPTB_li_zoroastrian_220" #To Parendi (Riches)
+		scaled_wealth = -0.3
+		piety = -30
+		add_character_modifier = {
+			name = zoroastrian_sacrifice_parendi
+			duration = 365
+		}
+	}
+	option = {
+		name = "EVTOPTC_li_zoroastrian_220" #To Chisti (Wisdom)
+		scaled_wealth = -0.3
+		piety = -30
+		add_character_modifier = {
+			name = zoroastrian_sacrifice_chisti
+			duration = 365
+		}
+	}
+	option = {
+		name = "EVTOPTD_li_zoroastrian_220" #To none of them
+		trigger = {
+			ai = no
+		}
+		hidden_tooltip = {
+			clr_character_flag = made_sacrifice_1
+		}
+	}
+}
+
+# Cleansing Ritual event
+narrative_event = {
+	id = li_zoroastrian.225 #formerly 1000182160
+	title = "EVTNAME_li_zoroastrian_225"
+	desc = "EVTDESC_li_zoroastrian_225"
+	picture = "GFX_evt_holy_light_zoroastrian_group"
+	
+	is_triggered_only = yes
+	hide_from = yes	
+	
+	option = {
+		name = "EVTOPTA_li_zoroastrian_225"
+		piety = 25
+		add_character_modifier = {
+			name = zoroastrian_cleansing
+			duration = 365
+		}
+	}
+}

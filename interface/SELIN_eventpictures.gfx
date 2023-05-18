@@ -1,0 +1,108 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_holy_light"
+		texturefile = "gfx/event_pictures/holy_light.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_books"
+		texturefile = "gfx/event_pictures/sawolf04.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_army_control"
+		texturefile = "gfx/event_pictures/grand_army.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_leader"
+		texturefile = "gfx/event_pictures/leader.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_noble"
+		texturefile = "gfx/event_pictures/noble.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_warlord"
+		texturefile = "gfx/event_pictures/orlando.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_king_listening"
+		texturefile = "gfx/event_pictures/royalcourt.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_classical"
+		texturefile = "gfx/event_pictures/gov_classical.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_oriental_monarchy"
+		texturefile = "gfx/event_pictures/gov_oriental_monarchy.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_anarchist"
+		texturefile = "gfx/event_pictures/gov_anarchist.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_demagogic"
+		texturefile = "gfx/event_pictures/gov_demagogic.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_messianic"
+		texturefile = "gfx/event_pictures/gov_messianic.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_mystic"
+		texturefile = "gfx/event_pictures/gov_mystic.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_absolutist"
+		texturefile = "gfx/event_pictures/gov_absolutist.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gov_hegemonic"
+		texturefile = "gfx/event_pictures/gov_hegemonic.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_trait_messianic_savior"
+		texturefile = "gfx/traits/chosen_messianic.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_tribal_war"
+		texturefile = "gfx/event_pictures/battle_gaul.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_trait_clanic_defense_1_commander"
+		texturefile = "gfx/traits/chosen_messianic.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_clanic_defense_2_commander"
+		texturefile = "gfx/traits/chosen_messianic.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_tribal_shrine"
+		texturefile = "gfx/event_pictures/tribal_shrine_cm.dds"
+		allwaystransparent = yes
+	}
+}

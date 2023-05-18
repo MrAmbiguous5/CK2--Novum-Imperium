@@ -1,0 +1,1353 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_battle_tengri_group"
+		texturefile = "gfx\\event_pictures\\Mongol_horseman_horde.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_throne_room_tengri_group"
+		texturefile = "gfx\\event_pictures\tengri_throneroom_oldgods.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_emissary_tengri_group"
+		texturefile = "gfx\\event_pictures\tengri_throneroom_oldgods.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_bishop_tengri_group"
+		texturefile = "gfx\\event_pictures\\mongol2.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_death_norsegerman_group"
+		texturefile = "gfx\\event_pictures\viking_funeral_oldgods.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_battle_norsegerman_group"
+		texturefile = "gfx\\event_pictures\viking_battle_oldgods.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_throne_room_norsegerman_group"
+		texturefile = "gfx\\event_pictures\viking_throneroom_oldgods.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_emissary_norsegerman_group"
+		texturefile = "gfx\\event_pictures\viking_throneroom_oldgods.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_feast_norsegerman_group"
+		texturefile = "gfx\\event_pictures\\viking_throneroom_oldgods.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_bishop_graecoroman_group"
+		texturefile = "gfx\\event_pictures\roman_rites.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_bishop_sol_group"
+		texturefile = "gfx\\event_pictures\roman_rites.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_bishop_mithras_group"
+		texturefile = "gfx\\event_pictures\roman_rites.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_battle_roman"
+		texturefile = "gfx\\event_pictures\roman_legion_marching.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_battle_romanogothic"
+		texturefile = "gfx\\event_pictures\roman_legion_marching.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_battle_romanobrython"
+		texturefile = "gfx\\event_pictures\roman_legion_marching.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_battle_hellenistic"
+		texturefile = "gfx\\event_pictures\lux_hoplite.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_battle_indohellenic"
+		texturefile = "gfx\\event_pictures\lux_hoplite.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_battle_west_germanic"
+		texturefile = "gfx\\event_pictures\saxon_army.tga"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_evt_zaratustra"
+		texturefile = "gfx\\event_pictures\zaratustra.tga"
+		allwaystransparent = yes
+	}
+	##No hassles vassals decision gfx
+	spriteType = {
+		name = "GFX_vassalize_all"
+		texturefile = "gfx\\interface\\decision_icon_vassalize_all.dds"
+	}
+	spriteType = {
+		name = "GFX_vassalize_enatic"
+		texturefile = "gfx\\interface\\decision_icon_vassalize_all.dds"
+	}
+	spriteType = {
+		name = "GFX_flag_province"
+		texturefile = "gfx\\interface\\decision_icon_raise_banner.dds"
+	}
+	spriteType = {
+		name = "GFX_unflag_province"
+		texturefile = "gfx\\interface\\decision_icon_lower_banner.dds"
+	}
+	spriteType = {
+		name = "GFX_flag_province_marshal"
+		texturefile = "gfx\\interface\\decision_icon_raise_banner.dds"
+	}
+	spriteType = {
+		name = "GFX_unflag_province_marshal"
+		texturefile = "gfx\\interface\\decision_icon_lower_banner.dds"
+	}
+	spriteType = {
+		name = "GFX_evt_slave_market"
+		texturefile = "gfx\\event_pictures\\slave_market.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_slavery"
+		texturefile = "gfx\\event_pictures\\slavery.tga"
+		allwaystransparent = yes
+	}
+	#slavery_decisions
+	spriteType = {
+		name = "GFX_toggle_slavery_decisions"
+		texturefile = "gfx\\interface\\decision_icon_slave_schakles.dds"
+	}
+	spriteType = {
+		name = "GFX_close_slave_management_menu"
+		texturefile = "gfx\\interface\\decision_icon_slave_schakles.dds"
+	}
+	spriteType = {
+		name = "GFX_enter_slave_trade"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_leave_slave_trade"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_enslave_prisoner"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_sell_prisoner"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_sell_slave"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_buy_slave"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_buy_bulk_slaves"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_sell_bulk_slaves"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_free_bulk_slaves"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_manage_slave"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	spriteType = {
+		name = "GFX_lash_slave"
+		texturefile = "gfx\\interface\\decision_icon_slave_whip.dds"
+	}
+	spriteType = {
+		name = "GFX_breed_slave"
+		texturefile = "gfx\\interface\\decision_icon_slave_breed.dds"
+	}
+	#Titular empires
+	spriteType = {
+		name = "GFX_toggle_titular_empires"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+
+	spriteType = {
+		name = "GFX_create_e_carthage"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_celtic"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_greatmoravia"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_egoth"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_berber"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_jews"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_rashidun"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_palmyra"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_archeseleukeia"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_archemakedonia"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_hellenic"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_huns"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_create_e_ptolemaic"
+		texturefile = "gfx\\decisions\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_nm_gode"
+		texturefile = "gfx/traits/sympathy_pagans.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_nm_seidmann"
+		texturefile = "gfx/traits/scholar.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_nm_volva"
+		texturefile = "gfx/traits/scholar.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_nm_niding"
+		texturefile = "gfx/traits/craven.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_action_divine"
+		texturefile = "gfx\\interface\\job_inquisition.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_trait_honorable"
+		texturefile = "gfx/traits/honorable.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_ruthless"
+		texturefile = "gfx/traits/ruthless.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_crippled"
+		texturefile = "gfx/traits/crippled.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_five_children"
+		texturefile = "gfx/ambitions/obj_five_children.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_sad_aria"
+		texturefile = "gfx\\event_pictures\\sad_aria.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_sansa"
+		texturefile = "gfx\\event_pictures\\sansa.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_oil_rik"
+		texturefile = "gfx\\event_pictures\\oil_rik.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_familyperson"
+		texturefile = "gfx\\event_pictures\\familyperson.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_selfish"
+		texturefile = "gfx\\event_pictures\\selfish.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_indian_group"
+		texturefile = "gfx\\event_pictures\\roi_meditating_in_temple.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_bud_group"
+		texturefile = "gfx\\event_pictures\\roi_meditating_in_temple.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_indohelen_group"
+		texturefile = "gfx\\event_pictures\\roi_meditating_in_temple.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_hold_divination"
+		texturefile = "gfx\\interface\\decision_icon_hold_divination.dds"
+	}
+	spriteType = {
+		name = "GFX_invite_druid_to_court"
+		texturefile = "gfx\\interface\\decision_icon_invite_druid_to_court.dds"
+	}
+	spriteType = {
+		name = "GFX_give_offerings_sidhe"
+		texturefile = "gfx\\interface\\decision_icon_give_offerings_sidhe.dds"
+	}
+	spriteType = {
+		name = "GFX_organize_fianna"
+		texturefile = "gfx\\interface\\decision_icon_organize_fianna.dds"
+	}
+	spriteType = {
+		name = "GFX_vassalize_fianna"
+		texturefile = "gfx\\interface\\decision_icon_vassalize_holy_order.dds"
+	}
+	spriteType = {
+		name = "GFX_hold_an_aonach_tailteann"
+		texturefile = "gfx\\interface\\decision_icon_hold_an_aonach_tailteann.dds"
+	}
+	spriteType = {
+		name = "GFX_LI_son_merc_company_dec"
+		texturefile = "gfx\\CK2plus\\decision_icon_employmarshal.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_varangian_trait"
+		texturefile = "gfx/traits/varangian.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_LI_son_academy_dec"
+		texturefile = "gfx\\CK2plus\\decision_icon_employspiritual.dds"
+	}
+	spriteType = {
+		name = "GFX_trait_chosen_messianic"
+		texturefile = "gfx/traits/chosen_messianic.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+			name = "GFX_evt_chosenone_messianic"
+			texturefile = "gfx\\event_pictures\chosenone.tga"
+			allwaystransparent = yes
+	}
+		spriteType = {
+		name = "GFX_plot_kidnap_character"
+		texturefile = "gfx/ambitions/plot_kidnap_character.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_kidnap_liege"
+		texturefile = "gfx/ambitions/plot_kidnap_liege.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_fabricate_treason"
+		texturefile = "gfx/ambitions/plot_fabricate_treason.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_evt_hastings"
+		texturefile = "gfx\\event_pictures\hastings.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_orlando"
+		texturefile = "gfx\\event_pictures\orlando.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_event_personal_library"
+		texturefile = "gfx/event_pictures/event_personal_library.tga"
+		allwaystransparent = yes
+	}		
+	spriteType = {
+		name = "GFX_event_poem"
+		texturefile = "gfx/event_pictures/event_poem.tga"
+		allwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_event_write"
+		texturefile = "gfx/event_pictures/event_write.tga"
+		allwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_study_window"
+		texturefile = "gfx/event_pictures/study_window.tga"
+		allwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_flying_machine"
+		texturefile = "gfx/event_pictures/flying_machine.tga"
+		allwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_use_study"
+		texturefile = "gfx/interface/decision_icon_use_study.tga"
+	}
+	spriteType = {
+		name = "GFX_evt_memphis"
+		texturefile = "gfx/event_pictures/memphis.tga"
+	}
+	spriteType = {
+		name = "GFX_restore_memphis"
+		texturefile = "gfx/interface/decision_icon_restore_memphis.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_altaic_camp"
+		texturefile = "gfx\\event_pictures\\altaic_camp.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_altaic_struggling"
+		texturefile = "gfx\\event_pictures\\altaic_bad_day.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_altaic_charge"
+		texturefile = "gfx\\event_pictures\\altaic_charge.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_trait_changeling"
+		texturefile = "gfx/traits/changeling.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_dream_china"
+		texturefile = "gfx\\event_pictures\dream_china.tga"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_priest_china"
+		texturefile = "gfx\\event_pictures\taoist_priest_china.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_taoist_sorcerer"
+		texturefile = "gfx\\event_pictures\taoist_sorcerer.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_astrology_china"
+		texturefile = "gfx\\event_pictures\china_astrology.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_lubu"
+		texturefile = "gfx\\event_pictures\lubu.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_lubu_battle"
+		texturefile = "gfx\\event_pictures\lubu_battle.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_mithras"
+		texturefile = "gfx\\event_pictures\mithras.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_mithraeum"
+		texturefile = "gfx\\event_pictures\mithraeum.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_mithraic_ritual"
+		texturefile = "gfx\\event_pictures\mithraic_ritual.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_hold_mithrasfeast"
+		texturefile = "gfx/interface/decision_icon_mithrasfeast.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_oak_forest"
+		texturefile = "gfx\\event_pictures\oak_forest.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_irminsul"
+		texturefile = "gfx\\event_pictures\irminsul.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_germanicpriests"
+		texturefile = "gfx\\event_pictures\germanic_priest_delegation.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_human_sacrifice"
+		texturefile = "gfx\\event_pictures\human_sacrifice.tga"
+	}
+	spriteType = {
+		name = "GFX_evt_bishop_norsegerman_group"
+		texturefile = "gfx\event_pictures\germanicpriest.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_raise_irminsul"
+		texturefile = "gfx/interface/decision_icon_raiseirminsul.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_sacrifice_irminsul"
+		texturefile = "gfx/interface/decision_icon_raiseirminsul.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_slavic_group"
+		texturefile = "gfx\\event_pictures\\Heretic_monk.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_baltic_group"
+		texturefile = "gfx\\event_pictures\\Heretic_monk.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_finnish_group"
+		texturefile = "gfx\\event_pictures\\Heretic_monk.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_trait_cult_of_orpheus"
+		texturefile = "gfx/traits/cult_of_orpheus.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_cult_of_serapis"
+		texturefile = "gfx/traits/cult_of_serapis.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+		spriteType = {
+		name = "GFX_trait_cult_eleusinian"
+		texturefile = "gfx/traits/cult_eleusinian.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_trait_cult_of_trophonius"
+		texturefile = "gfx/traits/cult_of_trophonius.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_orpheus"
+		texturefile = "gfx\\event_pictures\orpheus.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_serapis"
+		texturefile = "gfx\\event_pictures\serapis.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_demeter"
+		texturefile = "gfx\\event_pictures\demeter.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_trophonius"
+		texturefile = "gfx\\event_pictures\trophonius.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_escape_siege"
+		texturefile = "gfx\\event_pictures\escape_siege.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_toggle_employment"
+		texturefile = "gfx/interface/decision_icon_toggle_employment.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_LI_son_druids_dec"
+		texturefile = "gfx\\interface\\decision_icon_invite_druid_to_court.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_mani_group"
+		texturefile = "gfx\\event_pictures\manichean_elects.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_bishop_mand_group"
+		texturefile = "gfx\\event_pictures\manichean_elects.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_obj_five_children"
+		texturefile = "gfx/CK2Plus/obj_have_five_kids.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_ten_children"
+		texturefile = "gfx/CK2Plus/obj_have_ten_kids.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_fifteen_children"
+		texturefile = "gfx/CK2Plus/obj_have_fifteen_kids.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_twenty_children"
+		texturefile = "gfx/CK2Plus/obj_have_twenty_kids.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_increase_demesne_1"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_increase_demesne_2"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_increase_demesne_3"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_increase_demesne_4"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_increase_demesne_5"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_increase_demesne_6"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_increase_demesne_7"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_increase_demesne_8"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_increase_demesne_9"
+		texturefile = "gfx/CK2Plus/obj_expand_demesne.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_become_duke"
+		texturefile = "gfx/CK2Plus/obj_get_duchy.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_go_crusade"
+		texturefile = "gfx/CK2Plus/obj_take_cross.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_go_jihad"
+		texturefile = "gfx/CK2Plus/obj_jihad.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_find_lover"
+		texturefile = "gfx/CK2Plus/obj_get_lover.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_become_independent"
+		texturefile = "gfx/CK2Plus/obj_independance.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_break_out_of_prison"
+		texturefile = "gfx/CK2Plus/obj_escape.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_become_king"
+		texturefile = "gfx/CK2Plus/obj_be_king.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}		
+	spriteType = {
+		name = "GFX_obj_become_emperor"
+		texturefile = "gfx/CK2Plus/obj_be_emperor.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}		
+	spriteType = {
+		name = "GFX_plot_kidnap_liege"
+		texturefile = "gfx/CK2Plus/obj_kidnap.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}		
+	spriteType = {
+		name = "GFX_obj_convert_a_province"
+		texturefile = "gfx/CK2Plus/obj_convert_province.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}			
+	spriteType = {
+		name = "GFX_obj_win_a_war"
+		texturefile = "gfx/CK2Plus/obj_win_war.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_adopt_a_lifestyle"
+		texturefile = "gfx/CK2Plus/obj_get_lifestyle.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_gain_honorary_title"
+		texturefile = "gfx/CK2Plus/obj_minor_title.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_status_quo"
+		texturefile = "gfx/CK2Plus/obj_status_quo.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_befriend_liege"
+		texturefile = "gfx/CK2Plus/obj_love_liege.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_befriend_top_liege"
+		texturefile = "gfx/CK2Plus/obj_love_liege.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_befriend_relhead"
+		texturefile = "gfx/CK2Plus/obj_befriend_relhead.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_obj_gain_estates_1"
+		texturefile = "gfx/CK2Plus/obj_estates.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_gain_estates_2"
+		texturefile = "gfx/CK2Plus/obj_estates.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_gain_estates_3"
+		texturefile = "gfx/CK2Plus/obj_estates.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_gain_estates_4"
+		texturefile = "gfx/CK2Plus/obj_estates.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_gain_estates_5"
+		texturefile = "gfx/CK2Plus/obj_estates.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_discredit_councillor"
+		texturefile = "gfx/CK2Plus/obj_discredit.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_embezzle_from_liege"
+		texturefile = "gfx/CK2Plus/obj_embezzle.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_kidnap_character"
+		texturefile = "gfx/CK2Plus/obj_kidnap.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_instigate_revolt"
+		texturefile = "gfx/CK2Plus/obj_incite_revolt.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_fabricate_treason"
+		texturefile = "gfx/CK2Plus/obj_treason.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_fabricate_treason_liege"
+		texturefile = "gfx/CK2Plus/obj_treason.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	
+		spriteType = {
+		name = "GFX_obj_become_exalted_2"
+		texturefile = "gfx/ambitions/obj_become_exalted.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_become_exalted_3"
+		texturefile = "gfx/ambitions/obj_become_exalted.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_become_exalted_4"
+		texturefile = "gfx/ambitions/obj_become_exalted.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	
+		spriteType = {
+		name = "GFX_plot_gain_vassal_title"
+		texturefile = "gfx/ambitions/plot_gain_vassal_title.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_plot_weaken_fellow_vassal"
+		texturefile = "gfx/ambitions/plot_gain_vassal_title.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+		spriteType = {
+		name = "GFX_obj_amass_wealth_2"
+		texturefile = "gfx/ambitions/obj_amass_wealth.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_amass_wealth_3"
+		texturefile = "gfx/ambitions/obj_amass_wealth.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_obj_amass_wealth_4"
+		texturefile = "gfx/ambitions/obj_amass_wealth.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	
+		spriteType = {
+		name = "GFX_feast_1"
+		texturefile = "gfx\\interface\\decision_icon_feast.dds"
+	}
+	spriteType = {
+		name = "GFX_feast_2"
+		texturefile = "gfx\\interface\\decision_icon_feast.dds"
+	}	
+	
+		spriteType = {
+		name = "GFX_summer_fair_1"
+		texturefile = "gfx\\interface\\decision_icon_summerfair.dds"
+	}	
+	spriteType = {
+		name = "GFX_summer_fair_2"
+		texturefile = "gfx\\interface\\decision_icon_summerfair.dds"
+	}	
+	
+		spriteType = {
+		name = "GFX_hold_grand_hunt_1"
+		texturefile = "gfx\\interface\\decision_icon_hunting.dds"
+	}	
+	spriteType = {
+		name = "GFX_hold_grand_hunt_2"
+		texturefile = "gfx\\interface\\decision_icon_hunting.dds"
+	}	
+	
+		spriteType = {
+		name = "GFX_go_on_hajj_1"
+		texturefile = "gfx\\interface\\decision_icon_go_on_hajj.dds"
+	}
+	spriteType = {
+		name = "GFX_go_on_hajj_2"
+		texturefile = "gfx\\interface\\decision_icon_go_on_hajj.dds"
+	}	
+	
+		spriteType = {
+		name = "GFX_convert_to_capital_culture"
+		texturefile = "gfx\\interface\\decision_icon_convert_to_liege_culture.dds"
+	}
+	spriteType = {
+		name = "GFX_convert_to_capital_religion"
+		texturefile = "gfx\\interface\\decision_icon_convert_to_liege_religion.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_repay_huge_loan"
+		texturefile = "gfx\\CK2Plus\\decision_icon_loan.dds"
+	}			
+	spriteType = {
+		name = "GFX_coronation"
+		texturefile = "gfx\\CK2Plus\\decision_icon_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_request_holy_war_sanction"
+		texturefile = "gfx\\CK2Plus\\decision_icon_approveholywar.dds"
+	}	
+	spriteType = {
+		name = "GFX_employ_eunuch"
+		texturefile = "gfx\\CK2Plus\\decision_icon_employ_diplomat.dds"
+	}
+	spriteType = {
+		name = "GFX_employ_chancellor"
+		texturefile = "gfx\\PB\\decision_icon_employ_diplomat.tga"
+	}	
+	spriteType = {
+		name = "GFX_employ_marshal"
+		texturefile = "gfx\\PB\\decision_icon_employ_soldier.tga"
+	}
+	spriteType = {
+		name = "GFX_employ_spymaster"
+		texturefile = "gfx\\PB\\decision_icon_employ_spy.tga"
+	}
+	spriteType = {
+		name = "GFX_employ_priest"
+		texturefile = "gfx\\PB\\decision_icon_employ_priest.dds"
+	}
+	spriteType = {
+		name = "GFX_employ_steward"
+		texturefile = "gfx\\PB\\decision_icon_employ_steward.dds"
+	}	
+	spriteType = {
+		name = "GFX_nm_employ_volva"
+		texturefile = "gfx\\PB\\decision_icon_employ_priest.dds"
+	}
+	spriteType = {
+		name = "GFX_give_to_charity"
+		texturefile = "gfx\\CK2Plus\\decision_icon_charity.dds"
+	}
+	spriteType = {
+		name = "GFX_faction_separatist_war"
+		texturefile = "gfx\\CK2Plus\\decision_revolt.dds"
+	}
+	spriteType = {
+		name = "GFX_faction_pretender_war"
+		texturefile = "gfx\\CK2Plus\\decision_revolt.dds"
+	}
+	spriteType = {
+		name = "GFX_plot_gain_vassal_title_decision"
+		texturefile = "gfx\\CK2Plus\\decision_plot.dds"
+	}
+	spriteType = {
+		name = "GFX_plot_weaken_fellow_vassal_decision"
+		texturefile = "gfx\\CK2Plus\\decision_plot.dds"
+	}	
+	spriteType = {
+		name = "GFX_plot_weaken_fellow_vassal_decision_liege"
+		texturefile = "gfx\\CK2Plus\\decision_plot.dds"
+	}	
+	spriteType = {
+		name = "GFX_plot_gain_liege_title_decision_100"
+		texturefile = "gfx\\CK2Plus\\decision_plot.dds"
+	}	
+	spriteType = {
+		name = "GFX_plot_gain_liege_title_decision_75"
+		texturefile = "gfx\\CK2Plus\\decision_plot.dds"
+	}	
+	spriteType = {
+		name = "GFX_plot_gain_fellow_vassal_title_decision_100"
+		texturefile = "gfx\\CK2Plus\\decision_plot.dds"
+	}	
+	spriteType = {
+		name = "GFX_plot_gain_fellow_vassal_title_decision_75"
+		texturefile = "gfx\\CK2Plus\\decision_plot.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_petition_doge_for_tp"
+		texturefile = "gfx\\interface\\decision_icon_petition_doge_for_tp.dds"
+	}
+	spriteType = {
+		name = "GFX_usurp_tp"
+		texturefile = "gfx\\interface\\decision_icon_usurp_tp.dds"
+	}
+	
+		spriteType = {	#### FROM ADDITIONAL OBJECTIVES
+		name = "GFX_reveal_plots_dec"
+		texturefile = "gfx\\decisions\\decision_icon_exposeplot.dds"
+	}
+	#spriteType = {	#### FROM ADDITIONAL OBJECTIVES
+	#	name = "GFX_request_legit_for_son"
+	#	texturefile = "gfx\\decisions\\decision_icon_bastardlegit.dds"
+	#}
+	spriteType = {	#### FROM ADDITIONAL OBJECTIVES
+		name = "GFX_get_married_help"
+		texturefile = "gfx\\ambitions\\obj_get_married.tga"
+	}
+	spriteType = {	#### FROM ADDITIONAL OBJECTIVES
+		name = "GFX_church_career_help"
+		texturefile = "gfx\\ambitions\\obj_church_career.dds"
+	}
+	spriteType = {		#### FROM ADDITIONAL OBJECTIVES
+		name = "GFX_mentor_child_help"
+		texturefile = "gfx\\decisions\\decision_icon_wardchild.dds"
+	}
+	spriteType = {	#### FROM ADDITIONAL OBJECTIVES
+		name = "GFX_amass_wealth_help"
+		texturefile = "gfx\\decisions\\decision_icon_amass_help.dds"
+	}
+	spriteType = {	#### FROM ADDITIONAL OBJECTIVES
+		name = "GFX_forced_peace_help"
+		texturefile = "gfx\\decisions\\decision_icon_peace_request.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_silkroad_han_traders"
+		texturefile = "gfx\\event_pictures\silkroad_han_traders.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_silkroad_sogdian_traders"
+		texturefile = "gfx\\event_pictures\silkroad_sogdian_traders.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_stop_support_silk_road"
+		texturefile = "gfx\\interface\\decision_icon_stop_support_silk_road.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_make_sacrifice"
+		texturefile = "gfx\\interface\\decision_icon_make_sacrifice.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_close_slave_markets"
+		texturefile = "gfx\\interface\\decision_icon_slave_gray.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_open_slave_markets"
+		texturefile = "gfx\\interface\\decision_icon_slave.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_evt_sol_chariot"
+		texturefile = "gfx\\event_pictures\sol_chariot.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_roman_emperor_salute"
+		texturefile = "gfx\\event_pictures\roman_emperor_salute.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_icon_yazd_group"
+		texturefile = "gfx\\event_pictures\icon_yazd_group.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_hold_tawusgeran"
+		texturefile = "gfx\\interface\\decision_icon_hold_tawusgeran.dds"
+	}
+
+	spriteType = {
+		name = "GFX_yazidi_pilgrimage"
+		texturefile = "gfx\\interface\\decision_icon_go_on_hajj.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_icon_classical_government"
+		texturefile = "gfx\\interface\\government_icon_classical.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_oriental_monarchy_government"
+		texturefile = "gfx\\interface\\government_icon_oriental.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_anarchist_government"
+		texturefile = "gfx\\interface\\government_icon_anarchy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_demagogic_government"
+		texturefile = "gfx\\interface\\government_icon_demagogic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_mystic_government"
+		texturefile = "gfx\\interface\\government_icon_mystic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_absolutist_government"
+		texturefile = "gfx\\interface\\government_icon_absolutist.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_hegemonic_government"
+		texturefile = "gfx\\interface\\government_icon_hegemonic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_messianic_government"
+		texturefile = "gfx\\interface\\government_icon_messianic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_obj_gain_virtue"
+		texturefile = "gfx/ambitions/obj_gain_virtue.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_obj_find_hobby"
+		texturefile = "gfx/ambitions/obj_find_hobby.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_obj_find_love"
+		texturefile = "gfx/ambitions/obj_find_love.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_obj_wage_holy_war"
+		texturefile = "gfx/ambitions/obj_wage_holy_war.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_obj_go_traveling"
+		texturefile = "gfx/ambitions/obj_go_traveling.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}
+
+

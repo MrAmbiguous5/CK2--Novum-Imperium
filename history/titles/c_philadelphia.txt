@@ -7,6 +7,11 @@
 	liege = d_thracesia
 	holder = 1232130
 }
+#Warial's patchup
+882.1.1 = {
+	liege = e_byzantium
+}
+#End of Warial's patchup
 936.1.1 = {
 	liege = d_samos
 	holder = 145154 # Pantherios (Skleros), Strategos of Thrakesion

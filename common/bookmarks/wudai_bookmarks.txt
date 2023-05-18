@@ -1,0 +1,33 @@
+# -*- ck2.bookmarks -*-
+
+bm_later_liang = {
+	name = "BM_LATER_LIANG"
+	desc = "BM_LATER_LIANG_DESC"
+	date = 907.6.1
+
+	selectable_character = {
+		id = 1400469 # Emperor Taizu of Later Liang
+	}
+	selectable_character = {
+		id = 1412310 # Emperor Zhuangzong of Later Tang
+	}
+	selectable_character = {
+		id = 1400635 # Li Maozhen, Prince of Qi
+	}
+	selectable_character = {
+		id = 1400667 # Emperor Gaozu of Former Shu
+	}
+	selectable_character = {
+		id = 1401188 # Liu Shouguang, future Emperor of Yan
+	}
+	selectable_character = {
+		id = 1400012 # Zhang Chengfeng, Guiyi Jiedushi
+	}
+	selectable_character = {
+		id = 1415033 # Li Sijian, Dingnan Jiedushi
+	}
+	selectable_character = {
+		id = 194325 # Emperor Taizu of Liao
+	}
+}
+

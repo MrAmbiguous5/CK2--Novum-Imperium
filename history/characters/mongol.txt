@@ -68,16 +68,12 @@
 	}
 	1181.1.1={
 		#add_spouse=172004
-		effect = {
-			add_consort = 166864
-			add_lover = 166864
-		}
+		effect = { add_consort=166864 }
+		effect = { add_lover=166864 }
 	}#recaptures Börte and marries Khulan Khatun
 	1202.1.1={
-		effect = {
-			add_consort = 166869
-			add_consort = 166870
-		}
+		effect = { add_consort=166869 }
+		effect = { add_consort=166870 }
 	}
     1206.1.1 = {
 		create_bloodline = {
@@ -85,6 +81,7 @@
 			has_dlc = "Holy Fury"
 		}
     }	
+	1209.1.1 = { add_consort = 1412116 }
 	1217.1.1 = {
 		effect = {
 			prestige = 5000
@@ -616,13 +613,16 @@
 	}
 	1201.1.1={
 		effect = {add_friend = 172005} #close bond with Ögedei
-   }
+    }
 	1208.1.1={
 		add_spouse=172010
 	}
+	1218.5.5={
+     effect={add_consort=1410767}
+    }
 	1226.1.1={
      effect={add_consort=166927}
-   }
+    }
 	1227.12.2={
 		dynasty=101916
 	}
@@ -1076,18 +1076,17 @@
 478007 = {
 	name="Nicholas"
 	dynasty=101916
-	religion="nestorian" #he may have been named after Pope Nicholas, but his mother was a Nestorian
+	religion="catholic"
 	culture="mongol"
 	father=478008
 	mother=166950
 	add_trait="child_of_consort"
 	1280.1.2={
 		birth="1280.1.2"
-		name="Öljeitü" # so that Nicholas shows up as birth name
 	}
 	1290.1.2={
-		religion="buddhist" #Buddhism
-		add_trait="sympathy_pagans"
+		religion="tengri_pagan" #Buddhism
+		name="Öljeitü"
 	}
 	1295.6.16={
 		religion="sunni"
@@ -2535,7 +2534,7 @@
 		birth="1260.1.1"
 	}
 	1301.1.1={
-		add_claim = d_bolgar
+		add_claim = d_tyumen
 	} 
 	1302.1.1={
 		death="1302.1.1"
@@ -2644,7 +2643,9 @@
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
-	1110.1.1={
+	father=1417421
+	#birth date unknown
+	1130.1.1={
 		birth="1110.1.1"
 	}
 	1155.1.1={
@@ -3619,13 +3620,14 @@
 }
 172010 = {
 	name="Sorkhaghatani"
-	dynasty=1041002
+	dynasty=1041002 #Kereyid
 	religion="nestorian"
 	culture="mongol"
+	father = 1410737
 	female=yes
 	trait="ambitious"
 	add_trait="grey_eminence"
-   add_trait="fair"
+	add_trait="fair"
 	1192.1.1={
 		birth="1192.1.1"
 	}
@@ -4009,34 +4011,6 @@
 		death = { death_reason = death_offmap }
 	}
 }
-188914 = {
-	name="Küchlüg" #the Naiman usurper
-	dynasty=1041001
-	religion="nestorian"
-	culture="mongol"
-	martial=6
-	trait="tough_soldier"
-	trait="ambitious"
-	trait="zealous"
-	#father = 1231515
-	1180.5.5={
-		birth = yes
-		employer = 0
-	}
-	1208.5.5={
-		religion="buddhist"
-		trait="mahayana_buddhist"
-		add_spouse = 188913
-		employer = 188912
-	}
-	1211.1.1={
-		employer = 0
-	}
-	1218.6.6={
-		death = yes
-	}
-}
-
 217213 = {
    name = "Bogen" # fictional
    dynasty = 1000054560 # Suldus
@@ -5011,6 +4985,7 @@
 	religion = "tengri_pagan"
 	culture = "mongol"
 	father = 125520
+	mother = 1410767
 	add_trait="child_of_consort"
 	1214.1.1 = {
 		birth = yes
@@ -5270,10 +5245,10 @@
 166940 = {
 	name="Doquz" #Doquz Khatun, wife of Hulagu
 	female=yes
-	dynasty=1041002
+	dynasty=1041002 #Kereyid
 	religion="nestorian"
 	culture="mongol"
-	#father=166895
+	father = 1410740
 	add_trait="fair"
 	add_trait="kind"
 	add_trait="just"
@@ -5357,9 +5332,10 @@
 166950 = {
 	name="Uruk" #concubine of Arghun
 	female = yes
-	dynasty=1041002
+	dynasty=1041002 #Kereyid
 	religion="nestorian"
 	culture="mongol"
+	father = 1410743
 	1260.1.1={
 		birth=yes
 	}

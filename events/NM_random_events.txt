@@ -1,0 +1,3570 @@
+namespace = nm_random
+character_event = {
+	id = nm_random.0
+	desc = "EVTDESC340000"
+	picture = GFX_evt_bandits
+
+	min_age = 16
+	only_men = yes
+	capable_only = yes
+	prisoner = no
+	religion_group = norsegerman_group
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		nm_trigger = yes
+		independent = no
+		martial = 10
+		NOR = {
+			trait = craven
+			trait = infirm
+		}
+		is_weak_trigger = no
+	}
+	
+	weight_multiplier	= {
+		days = 1
+		
+		modifier = {
+			factor = 2.0
+			trait = wroth
+		}
+		modifier = {
+			factor = 2.0
+			trait = proud
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.0
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 0.2
+			trait = content
+		}
+		modifier = {
+			factor = 0.2
+			trait = humble
+		}
+		modifier = {
+			factor = 0.33
+			trait = wounded
+		}
+		modifier = {
+			factor = 0.17
+			is_maimed_trigger = yes
+		}
+		modifier = {
+			factor = 1.25
+			martial = 14
+		}
+		modifier = {
+			factor = 1.25
+			martial = 18
+		}
+		modifier = {
+			factor = 1.25
+			prestige = 300
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340000"
+		liege = { character_event = { id = nm_random.1 days = 2 tooltip = EVTTOOLTIP340001 } }
+	}
+	option = {
+		name = "EVTOPTB340000"
+		prestige = -25
+		random = {
+			chance = 5
+			add_trait = craven
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.1
+	desc = "EVTDESC340001"
+	picture = GFX_evt_emissary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340001"
+		FROM = { character_event = { id = nm_random.2 days = 2  tooltip = EVTTOOLTIP340002 } }
+		random = {
+			chance = 25
+			add_trait = brave
+			remove_trait = craven
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB340001"
+		FROM = { character_event = { id = nm_random.3 days = 2  tooltip = EVTTOOLTIP340003 } }
+		prestige = -25
+		random = {
+			chance = 10
+			add_trait = craven
+			remove_trait = brave
+		}
+	}
+	
+	option = {
+		name = "EVTOPTC340001"
+		trigger = {
+			diplomacy = 14
+		}
+		FROM = { character_event = { id = nm_random.4 days = 2  tooltip = EVTTOOLTIP340004 } }
+		prestige = 10
+	}
+}
+
+character_event = {
+	id = nm_random.2
+	desc = "EVTDESC340002"
+	picture = GFX_evt_emissary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340002"
+		random_list = {
+			5 = {
+				prestige = 25
+				liege = { character_event = { id = nm_random.7 days = 2 tooltip = EVTTOOLTIP340007 } }
+			}
+			5 = {
+				prestige = 25
+				liege = { character_event = { id = nm_random.6 days = 2 tooltip = EVTTOOLTIP340006 } }
+			}
+			10 = {
+				prestige = 25
+				liege = { character_event = { id = nm_random.5 days = 2 tooltip = EVTTOOLTIP340005 } }
+			}
+			30 = {
+				prestige = 25
+				liege = { character_event = { id = nm_random.9 days = 2 tooltip = EVTTOOLTIP340009 } }
+			}
+			30 = {
+				prestige = -25
+				liege = { character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				add_trait = wounded
+				prestige = -25
+				liege = { character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				add_maimed_trait_effect = yes
+				prestige = -25
+				liege = { character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } }
+			}
+			5 = {
+				death = { death_reason = death_battle }
+				liege = { character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.3
+	desc = "EVTDESC340003"
+	picture = GFX_evt_emissary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340003"
+		prestige = 25
+	}
+}
+
+character_event = {
+	id = nm_random.4
+	desc = "EVTDESC340004"
+	picture = GFX_evt_emissary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340004"
+		prestige = 10
+	}
+}
+
+character_event = {
+	id = nm_random.5
+	desc = "EVTDESC340005"
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340005"
+		prestige = -25
+		add_trait = wounded
+	}
+}
+
+character_event = {
+	id = nm_random.6
+	desc = "EVTDESC340006"
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340006"
+		prestige = -25
+		add_maimed_trait_effect = yes
+	}
+}
+
+character_event = {
+	id = nm_random.7
+	desc = "EVTDESC340007"
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340007"
+		prestige = -25
+		death = { death_reason = death_battle }
+	}
+}
+
+character_event = {
+	id = nm_random.8
+	desc = "EVTDESC340008"
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340008"
+		prestige = 25
+	}
+}
+
+character_event = {
+	id = nm_random.9
+	desc = "EVTDESC340009"
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340009"
+		prestige = -25
+	}
+}
+
+character_event = {
+	id = nm_random.10
+	desc = "EVTDESC340010"
+	picture = GFX_evt_pope
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_women = yes
+	is_married = yes
+	religion = catholic
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		spouse = {
+			is_abroad = no
+			prisoner = no
+			is_alive = yes
+			is_ruler = yes
+			nm_trigger = yes
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.25
+			trait = proud
+		}
+		modifier = {
+			factor = 5.0
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.67
+			trait = cynical
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340010"
+		spouse = { character_event = { id = nm_random.11 tooltip = EVTTOOLTIP340011 } }
+	}
+	option = {
+		name = "EVTOPTB340010"
+	}
+}
+
+character_event = {
+	id = nm_random.11
+	desc = "EVTDESC340011"
+	picture = GFX_evt_pope
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340011"
+		prestige = -25
+		piety = -10
+		spouse = {
+			opinion = {
+				modifier = opinion_whipped
+				who = ROOT
+				years = 1
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340011"
+		spouse = {
+			opinion = {
+				modifier = insulted
+				who = ROOT
+			}
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.12
+	desc = "EVTDESC340012"
+	picture = GFX_evt_quarrel
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_men = yes
+	only_rulers = yes
+	religion_group = norsegerman_group
+	
+	trigger = {
+		nm_trigger = yes
+		spouse = {
+			is_abroad = no
+			prisoner = no
+			is_alive = yes
+			is_ruler = yes
+			NOT = { stewardship = 10 }
+		}
+		NOT = { has_character_flag = nm_husband_running_household }
+	}
+	
+	mean_time_to_happen = {
+		months = 4800
+		modifier = {
+			factor = 0.8
+			spouse = {
+				NOT = { stewardship = 8 }
+			}
+		}
+		modifier = {
+			factor = 0.7
+			spouse = {
+				NOT = { stewardship = 6 }
+			}
+		}
+		modifier = {
+			factor = 0.4
+			spouse = {
+				NOT = { stewardship = 4 }
+			}
+		}
+		modifier = {
+			factor = 0.2
+			spouse = {
+				NOT = { stewardship = 2 }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340012"
+		prestige = -50
+		location = {
+			add_province_modifier = {
+				name = nm_peasant_resistance
+				duration = 60
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340012"
+		spouse = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		remove_spouse = spouse
+	}
+	option = {
+		name = "EVTOPTC340012"
+		spouse = { character_event = { id = nm_random.14 tooltip = EVTTOOLTIP340014 } }
+		add_trait = wroth
+		random = {
+			chance = 75
+			add_trait = cruel
+		}
+	}
+	option = {
+		name = "EVTOPTD340012"
+		trigger = {
+			NOT = { stewardship = 8 }
+		}
+		set_character_flag = nm_husband_running_household
+		prestige = -10
+		random = {
+			chance = 75
+			add_trait = stressed
+		}
+	}
+	option = {
+		name = "EVTOPTD340012"
+		trigger = {
+			stewardship = 8
+			NOT = { stewardship = 16 }
+		}
+		set_character_flag = nm_husband_running_household
+		prestige = -10
+		random = {
+			chance = 50
+			add_trait = stressed
+		}
+	}
+	option = {
+		name = "EVTOPTD340012"
+		trigger = {
+			stewardship = 16
+		}
+		set_character_flag = nm_husband_running_household
+		prestige = -10
+		random = {
+			chance = 25
+			add_trait = stressed
+		}
+	}
+}
+
+
+character_event = {
+	id = nm_random.13
+	desc = "EVTDESC340013"
+	picture = GFX_evt_quarrel
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340013"
+		prestige = -50
+		scaled_wealth = -0.5
+		liege = {
+			opinion = {
+				modifier = opinion_insulted
+				who = ROOT
+				years = 100
+			}
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.14
+	desc = "EVTDESC340014"
+	picture = GFX_evt_quarrel
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340014"
+		spouse = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		remove_spouse = spouse
+		if = {
+			limit = {
+				NOT = {
+					trait = wounded
+				}
+			}
+			random = {
+				chance = 15
+				add_trait = wounded
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340014"
+		if = {
+			limit = {
+				NOT = {
+					trait = wounded
+				}
+			}
+			random = {
+				chance = 15
+				add_trait = wounded
+			}
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.15
+	desc = "EVTDESC340015"
+	picture = GFX_evt_peasants
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_men = yes
+	only_playable = yes
+	religion_group = norsegerman_group
+	has_character_flag = nm_husband_running_household
+	
+	trigger = {
+		nm_trigger = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 1.5
+			martial = 12
+		}
+		modifier = {
+			factor = 1.5
+			martial = 18
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 50
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 150
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 250
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 350
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 450
+		}
+		modifier = {
+			factor = 1.2
+			prestige = 500
+		}
+		modifier = {
+			factor = 1.2
+			prestige = 600
+		}
+		modifier = {
+			factor = 1.2
+			prestige = 700
+		}
+		modifier = {
+			factor = 1.2
+			prestige = 800
+		}
+		modifier = {
+			factor = 1.2
+			prestige = 900
+		}
+		modifier = {
+			factor = 1.5
+			prestige = 1000
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340015"
+		prestige = -50
+	}
+	option = {
+		name = "EVTOPTB340015"
+		tooltip_info = wroth
+		trigger = {
+			trait = wroth
+			NOT = { trait = slothful }
+		}
+		prestige = 25
+		clr_character_flag = nm_husband_running_household
+	}
+	option = {
+		name = "EVTOPTB340015"
+		tooltip_info = slothful
+		trigger = {
+			trait = slothful
+			NOT = { trait = wroth }
+		}
+		prestige = 25
+		clr_character_flag = nm_husband_running_household
+	}
+}
+
+province_event = {
+	id = nm_random.16
+	desc = "EVTDESC340016"
+	picture = GFX_evt_peasants
+	
+	trigger = {
+		nm_trigger = no
+		owner = {
+			nm_trigger = yes
+		}
+		culture_group = north_germanic
+		NOT = {
+			culture = varangian
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+
+		modifier = {
+			factor = 0.8
+			owner = { trait = zealous }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { trait = nm_seidmann }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { trait = nm_volva }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { trait = nm_gode }
+		}
+		modifier = {
+			factor = 0.3
+			any_neighbor_province = {
+				religion = norse_pagan
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340016"
+		religion = norse_pagan
+		owner = {
+			piety = 25
+			prestige = 25
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.17
+	desc = "EVTDESC340017"
+	picture = GFX_evt_monk
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_playable = yes
+	religion_group = norsegerman_group
+	
+	trigger = {
+		nm_trigger = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+
+		modifier = {
+			factor = 3.0
+			trait = paranoid
+		}
+
+		modifier = {
+			factor = 0.5
+			trait = trusting
+		}
+
+		modifier = {
+			factor = 3.0
+			spouse = { trait = paranoid }
+		}
+
+		modifier = {
+			factor = 1.2
+			trait = zealous
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340017"
+		prestige = -100
+	}
+	option = {
+		name = "EVTOPTB340017"
+		trigger = {
+			NOT = { martial = 6 }
+		}
+		add_trait = wroth
+		random_list = {
+			90 = {
+				prestige = -125
+			}
+			10 = {
+				prestige = -10
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340017"
+		trigger = {
+			martial = 6
+			NOT = { martial = 9 }
+		}
+		add_trait = wroth
+		random_list = {
+			80 = {
+				prestige = -125
+			}
+			20 = {
+				prestige = -10
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340017"
+		trigger = {
+			martial = 9
+			NOT = { martial = 13 }
+		}
+		add_trait = wroth
+		random_list = {
+			70 = {
+				prestige = -125
+			}
+			30 = {
+				prestige = -10
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340017"
+		trigger = {
+			martial = 13
+			NOT = { martial = 16 }
+		}
+		add_trait = wroth
+		random_list = {
+			60 = {
+				prestige = -125
+			}
+			40 = {
+				prestige = -10
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340017"
+		trigger = {
+			martial = 16
+			NOT = { martial = 19 }
+		}
+		add_trait = wroth
+		random_list = {
+			40 = {
+				prestige = -125
+			}
+			60 = {
+				prestige = -10
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340017"
+		trigger = {
+			martial = 19
+		}
+		add_trait = wroth
+		random_list = {
+			20 = {
+				prestige = -125
+			}
+			80 = {
+				prestige = -10
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC340017"
+		tooltip_info = intrigue
+		trigger = {
+			intrigue = 12
+			NOT = { intrigue = 18 }
+		}
+		random = {
+			chance = 70
+			prestige = -200
+		}
+	}
+	option = {
+		name = "EVTOPTC340017"
+		tooltip_info = intrigue
+		trigger = {
+			intrigue = 18
+		}
+		random = {
+			chance = 30
+			prestige = -200
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.19
+	desc = "EVTDESC340019"
+	picture = GFX_evt_court
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_men = yes
+	only_playable = yes
+	is_married = yes
+	religion_group = norsegerman_group
+	
+	trigger = {
+		nm_trigger = yes
+		trait = viking
+		spouse = {
+			is_alive = yes
+			NOR = {
+				opinion = { who = ROOT value = 50 }
+				trait = celibate
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+
+		modifier = {
+			factor = 0.1
+			spouse = { trait = lustful }
+		}
+
+		modifier = {
+			factor = 0.1
+			spouse = { trait = hedonist }
+		}
+
+		modifier = {
+			factor = 5.0
+			spouse = { trait = chaste }
+		}
+		modifier = {
+			factor = 2.5
+			spouse = { trait = ambitious }
+		}
+		modifier = {
+			factor = 2.5
+			spouse = { trait = content }
+		}
+		modifier = {
+			factor = 2.5
+			spouse = { trait = patient }
+		}
+		modifier = {
+			factor = 1.3
+			spouse = { trait = slothful }
+		}
+		modifier = {
+			factor = 0.9
+			spouse = { trait = deceitful }
+		}
+		modifier = {
+			factor = 1.1
+			spouse = { trait = honest }
+		}
+		modifier = {
+			factor = 0.8
+			trait = craven
+		}
+		modifier = {
+			factor = 1.5
+			trait = kind
+		}
+		modifier = {
+			factor = 0.7
+			is_weak_trigger = yes
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340019"
+		prestige = -50
+		add_trait = trusting
+	}
+	option = {
+		name = "EVTOPTB340019"
+		trigger = {
+			trait = lustful
+		}
+		prestige = -10
+		spouse = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		remove_spouse = spouse
+		random = {
+			chance = 25
+			add_trait = paranoid
+		}
+		random = {
+			chance = 10
+			add_trait = depressed
+		}
+	}
+	option = {
+		name = "EVTOPTC340019"
+		trigger = {
+			NOT = { trait = lustful }
+		}
+		prestige = -10
+		spouse = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		random = {
+			chance = 25
+			add_trait = paranoid
+		}
+		random = {
+			chance = 10
+			add_trait = depressed
+		}
+	}
+	option = {
+		name = "EVTOPTD340019"
+		prestige = -10
+	}
+}
+
+character_event = {
+	id = nm_random.20
+	desc = "EVTDESC340020"
+	picture = GFX_evt_lunatic
+
+	min_age = 16
+	only_men = yes
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			trait = possessed
+			trait = lunatic
+			AND = {
+				trait = proud
+				trait = ambitious
+				prestige = 200
+			}
+		}
+		nm_trigger = yes
+		NOR = {
+			has_character_modifier = nm_possessed_odin
+			has_character_modifier = nm_possessed_loke
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+
+		modifier = {
+			factor = 0.33
+			trait = cynical
+		}
+
+		modifier = {
+			factor = 2.0
+			trait = nm_seidmann
+		}
+
+		modifier = {
+			factor = 1.25
+			trait = mystic
+		}
+
+		modifier = {
+			factor = 2.0
+			religion = norse_war
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340020"
+		add_character_modifier = {
+			name = nm_possessed_odin
+			duration = 1000
+		}
+		set_character_flag = possessed_odin
+		remove_trait = humble
+		remove_trait = content
+		remove_trait = temperate
+		remove_trait = slothful
+		remove_trait = patient
+		remove_trait = cynical
+		remove_trait = lunatic
+		add_trait = proud
+		add_trait = ambitious
+		add_trait = greedy
+		add_trait = diligent
+		add_trait = wroth
+		add_trait = zealous
+		add_trait = possessed
+	}
+}
+
+character_event = {
+	id = nm_random.200
+	hide_window = yes
+	
+	has_character_flag = possessed_odin
+	
+	trigger = {
+		NAND = {
+			has_character_modifier = nm_possessed_odin
+			trait = possessed
+			nm_trigger = yes
+			is_playable = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_character_flag = possessed_odin
+		remove_character_modifier = nm_possessed_odin
+		remove_trait = possessed
+	}
+}
+
+character_event = {
+	id = nm_random.21
+	desc = "EVTDESC340021"
+	picture = GFX_evt_lunatic
+
+	min_age = 16
+	only_men = yes
+	has_character_flag = possessed_odin
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		has_character_modifier = nm_possessed_odin
+		NOT = { has_character_modifier = nm_one_eyed }
+		NAND = {
+			has_dlc = "Reapers"
+			trait = one_eyed
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "EVTOPTA340021"
+		add_character_modifier = {
+			name = nm_one_eyed
+			duration = 1000
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_dlc = "Reapers"
+				}
+			}
+			add_trait = wounded
+			break = yes
+		}
+		add_trait = one_eyed
+	}
+	option = {
+		name = "EVTOPTB340021"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_odin
+			remove_trait = possessed
+			clr_character_flag = possessed_odin
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.220
+	hide_window = yes
+	
+	only_men = yes
+	has_character_flag = possessed_odin
+	is_married = yes
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		has_character_modifier = nm_possessed_odin
+		spouse = {
+			NOT = {
+				has_character_flag = nm_spouse_believes_odin
+			}
+			nm_trigger = yes
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			spouse = {
+				trait = cynical
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			spouse = {
+				trait = honest
+			}
+		}
+
+		modifier = {
+			factor = 0.7
+			spouse = {
+				trait = zealous
+			}
+		}
+	}
+	immediate = {
+		spouse = {
+			character_event = {
+				id = nm_random.22
+			}
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.22
+	desc = "EVTDESC340022"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340022"
+		set_character_flag = nm_spouse_believes_odin
+		FROM = { character_event = { id = nm_random.23 tooltip = EVTTOOLTIP340023 } }
+	}
+	option = {
+		name = "EVTOPTB340022"
+		trigger = {
+			NOT = { trait = ambitious }
+		}
+		FROM = { character_event = { id = nm_random.24 tooltip = EVTTOOLTIP340024 } }
+	}
+}
+
+character_event = {
+	id = nm_random.23
+	desc = "EVTDESC340023"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340023"
+		prestige = 10
+	}
+}
+
+character_event = {
+	id = nm_random.24
+	desc = "EVTDESC340024"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340024"
+		FROM = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		remove_spouse = FROM
+	}
+	option = {
+		name = "EVTOPTB340024"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_odin
+			remove_trait = possessed
+			clr_character_flag = possessed_odin
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.25
+	desc = "EVTDESC340025"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_odin
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { has_character_flag = nm_has_two_ravens }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340025"
+		scaled_wealth = -0.1
+		set_character_flag = nm_has_two_ravens
+	}
+	option = {
+		name = "EVTOPTB340025"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_odin
+			remove_trait = possessed
+			clr_character_flag = possessed_odin
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.26
+	desc = "EVTDESC340026"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_odin
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { has_character_flag = nm_odin_convinced_farmers }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340026"
+		trigger = {
+			prestige = 1000
+		}
+		set_character_flag = nm_odin_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTB340026"
+		trigger = {
+			piety = 500
+		}
+		set_character_flag = nm_odin_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTC340026"
+		scaled_wealth = -5.0
+		set_character_flag = nm_odin_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTD340026"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_odin
+			remove_trait = possessed
+			clr_character_flag = possessed_odin
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.27
+	desc = "EVTDESC340027"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_odin
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { trait = nm_seidmann }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340027"
+		scaled_wealth = -0.3
+		add_trait = nm_seidmann
+	}
+	option = {
+		name = "EVTOPTB340027"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_odin
+			remove_trait = possessed
+			clr_character_flag = possessed_odin
+		}
+	}
+}
+character_event = {
+	id = nm_random.28
+	desc = "EVTDESC340028"
+	picture = GFX_evt_whispers
+
+	has_character_flag = possessed_odin
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		trait = nm_seidmann
+		has_character_modifier = nm_possessed_odin
+		OR = {
+			has_character_modifier = nm_one_eyed
+			trait = one_eyed
+		}
+		has_character_flag = nm_odin_convinced_farmers
+		has_character_flag = nm_has_two_ravens
+		spouse = { has_character_flag = nm_spouse_believes_odin }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+
+		modifier = {
+			factor = 0.8
+			prestige = 500
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 1000
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 1500
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 2500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 1000
+		}
+		modifier = {
+			factor = 0.8
+			piety= 1500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 2500
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340028"
+		prestige = 100
+		piety = 100
+		give_nickname = nick_the_divine
+		add_trait = nm_divine_blood_odin
+		remove_character_modifier = nm_possessed_odin
+		clr_character_flag = possessed_odin
+		add_character_modifier = {
+			name = nm_possessed_odin_recognised
+			duration = -1
+		}
+		set_character_flag = divine_blood_odin
+	}
+}
+
+character_event = {
+	id = nm_random.29
+	desc = "EVTDESC340029"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+
+	min_age = 16
+	only_men = yes
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		OR = {
+			trait = possessed
+			trait = lunatic
+			AND = {
+				trait = proud
+				trait = ambitious
+				prestige = 200
+			}
+		}
+		nm_trigger = yes
+		NOR = {
+			has_character_modifier = nm_possessed_odin
+			has_character_modifier = nm_possessed_loke
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+
+		modifier = {
+			factor = 0.33
+			trait = cynical
+		}
+		modifier = {
+			factor = 2.0
+			trait = deceitful
+		}
+		modifier = {
+			factor = 1.25
+			trait = mystic
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340029"
+		add_character_modifier = {
+			name = nm_possessed_loke
+			duration = 1000
+		}
+		remove_trait = trusting
+		remove_trait = shy
+		remove_trait = honest
+		remove_trait = charitable
+		remove_trait = celibate
+		remove_trait = humble
+		remove_trait = lunatic
+		add_trait = paranoid
+		add_trait = gregarious
+		add_trait = deceitful	
+		add_trait = greedy
+		add_trait = hedonist
+		add_trait = proud
+		add_trait = possessed
+		set_character_flag = possessed_loke
+	}
+}
+
+character_event = {
+	id = nm_random.290
+	hide_window = yes
+	
+	has_character_flag = possessed_loke
+	
+	trigger = {
+		NAND = {
+			has_character_modifier = nm_possessed_loke
+			trait = possessed
+			nm_trigger = yes
+			is_playable = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_character_flag = possessed_loke
+		remove_character_modifier = nm_possessed_loke
+		remove_trait = possessed
+	}
+}
+
+character_event = {
+	id = nm_random.30
+	desc = "EVTDESC340030"
+	picture = GFX_evt_lunatic
+	
+	has_character_flag = possessed_loke
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		has_character_modifier = nm_possessed_loke
+		NOT = { has_character_flag = nm_loke_eating_comp  }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "EVTOPTA340030"
+		set_character_flag = nm_loke_eating_comp
+		random = {
+			chance = 20
+			add_trait = wounded
+		}
+	}
+	option = {
+		name = "EVTOPTB340030"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_loke
+			remove_trait = possessed
+			clr_character_flag = possessed_loke
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.310
+	hide_window = yes
+	
+	has_character_flag = possessed_loke
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		is_married = yes
+		spouse = {
+			NOT = {
+				has_character_flag = nm_spouse_believes_loke
+			}
+			nm_trigger = yes
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			spouse = {
+				trait = cynical
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			spouse = {
+				trait = honest
+			}
+		}
+
+		modifier = {
+			factor = 0.7
+			spouse = {
+				trait = zealous
+			}
+		}
+	}
+	
+	immediate = {
+		spouse = {
+			character_event = {
+				id = nm_random.31
+			}
+		}
+	}
+}
+	
+
+character_event = {
+	id = nm_random.31
+	desc = "EVTDESC340031"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340031"
+		set_character_flag = nm_spouse_believes_loke
+		FROM = { character_event = { id = nm_random.32 tooltip = EVTTOOLTIP340023 } }
+	}
+	option = {
+		name = "EVTOPTB340031"
+		trigger = {
+			NOT = { trait = ambitious }
+		}
+		FROM = { character_event = { id = nm_random.33 tooltip = EVTTOOLTIP340024 } }
+	}
+}
+
+character_event = {
+	id = nm_random.32
+	desc = "EVTDESC340032"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340032"
+		prestige = 10
+	}
+}
+
+character_event = {
+	id = nm_random.33
+	desc = "EVTDESC340033"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340033"
+		FROM = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		remove_spouse = FROM
+	}
+	option = {
+		name = "EVTOPTB340033"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_loke
+			remove_trait = possessed
+			clr_character_flag = possessed_loke
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.34
+	desc = "EVTDESC340034"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_loke
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { has_character_flag = nm_has_swindled }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340034"
+		scaled_wealth = 0.1
+		set_character_flag = nm_has_swindled
+	}
+	option = {
+		name = "EVTOPTB340034"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_loke
+			remove_trait = possessed
+			clr_character_flag = possessed_loke
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.35
+	desc = "EVTDESC340035"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_loke
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { has_character_flag = nm_loke_convinced_farmers }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340035"
+		trigger = {
+			intrigue = 20
+		}
+		set_character_flag = nm_loke_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTB340035"
+		scaled_wealth = 2.0
+		location = {
+			add_province_modifier = {
+				name = nm_peasant_resistance
+				duration = 90
+			}
+		}
+		set_character_flag = nm_loke_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTC340035"
+		scaled_wealth = -5.0
+		set_character_flag = nm_loke_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTD340035"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_loke
+			remove_trait = possessed
+			clr_character_flag = possessed_loke
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.36
+	desc = "EVTDESC340036"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_loke
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { trait = nm_seidmann }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340036"
+		scaled_wealth = -0.3
+		add_trait = nm_seidmann
+	}
+	option = {
+		name = "EVTOPTB340027"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_loke
+			remove_trait = possessed
+			clr_character_flag = possessed_loke
+		}
+	}
+}
+character_event = {
+	id = nm_random.37
+	desc = "EVTDESC340037"
+	picture = GFX_evt_whispers
+
+	has_character_flag = possessed_loke
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		trait = nm_seidmann
+		has_character_modifier = nm_possessed_loke
+		has_character_flag = nm_loke_eating_comp
+		has_character_flag = nm_loke_convinced_farmers
+		has_character_flag = nm_has_swindled
+		spouse = { has_character_flag = nm_spouse_believes_loke }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+
+		modifier = {
+			factor = 0.8
+			prestige = 500
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 1000
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 1500
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 2500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 1000
+		}
+		modifier = {
+			factor = 0.8
+			piety= 1500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 2500
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340037"
+		prestige = 100
+		piety = 100
+		give_nickname = nick_the_divine
+		add_trait = nm_divine_blood_loke
+		remove_character_modifier = nm_possessed_loke
+		clr_character_flag = possessed_loke
+		add_character_modifier = {
+			name = nm_possessed_loke_recognised
+			duration = -1
+		}
+		set_character_flag = divine_blood_loke
+	}
+}
+
+character_event = {
+	id = nm_random.38
+	desc = "EVTDESC340038"
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+
+	min_age = 16
+	only_women = yes
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		OR = {
+			trait = possessed
+			trait = lunatic
+			AND = {
+				trait = proud
+				trait = ambitious
+				prestige = 200
+			}
+		}
+		nm_trigger = yes
+		NOT = { has_character_modifier = nm_possessed_freya }
+	}
+	
+	weight_multiplier = {
+		days = 1
+
+		modifier = {
+			factor = 0.3
+			trait = cynical
+		}
+		modifier = {
+			factor = 2.0
+			trait = lustful
+		}
+		modifier = {
+			factor = 1.25
+			trait = mystic
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340038"
+		add_character_modifier = {
+			name = nm_possessed_freya
+			duration = 1000
+		}
+		set_character_flag = possessed_freya
+		remove_trait = celibate
+		remove_trait = chaste
+		remove_trait = humble
+		remove_trait = lunatic
+		remove_trait = greedy
+		remove_trait = shy
+		remove_trait = cynical
+		remove_trait = kind
+		add_trait = gregarious
+		add_trait = charitable
+		add_trait = hedonist
+		add_trait = lustful
+		add_trait = proud
+		add_trait = possessed
+		add_trait = zealous
+	}
+}
+
+character_event = {
+	id = nm_random.380
+	hide_window = yes
+	
+	has_character_flag = possessed_freya
+	
+	trigger = {
+		NAND = {
+			has_character_modifier = nm_possessed_freya
+			trait = possessed
+			nm_trigger = yes
+			is_playable = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_character_flag = possessed_freya
+		remove_character_modifier = nm_possessed_freya
+		remove_trait = possessed
+	}
+}
+
+character_event = {
+	id = nm_random.39
+	desc = "EVTDESC340039"
+	picture = GFX_evt_lunatic
+
+	min_age = 16
+	only_women = yes
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		has_character_modifier = nm_possessed_freya
+		NOT = { trait = fair  }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = "EVTOPTA340039"
+		remove_trait = ugly
+		add_trait = fair
+		if = {
+			limit = {
+				NOR = {
+					trait = wounded
+					is_maimed_trigger = yes
+				}
+			}
+			add_trait = wounded
+			random = {
+				chance = 10
+				remove_trait = wounded
+				add_maimed_trait_effect = yes
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340039"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_freya
+			remove_trait = possessed
+			clr_character_flag = possessed_freya
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.400
+	hide_window = yes
+	
+	has_character_flag = possessed_freya
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		is_married = yes
+		spouse = {
+			NOT = {
+				has_character_flag = nm_spouse_believes_odin
+			}
+			nm_trigger = yes
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			spouse = {
+				trait = cynical
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			spouse = {
+				trait = honest
+			}
+		}
+
+		modifier = {
+			factor = 0.7
+			spouse = {
+				trait = zealous
+			}
+		}
+	}
+	immediate = {
+		spouse = {
+			character_event = {
+				id = nm_random.40
+			}
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.40
+	desc = "EVTDESC340040"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340040"
+		set_character_flag = nm_spouse_believes_freya
+		FROM = { character_event = { id = nm_random.41 tooltip = EVTTOOLTIP340023 } }
+	}
+	option = {
+		name = "EVTOPTB340040"
+		trigger = {
+			NOT = { trait = ambitious }
+		}
+		FROM = { character_event = { id = nm_random.42 tooltip = EVTTOOLTIP340042 } }
+	}
+}
+
+character_event = {
+	id = nm_random.41
+	desc = "EVTDESC340041"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340041"
+		prestige = 10
+	}
+}
+
+character_event = {
+	id = nm_random.42
+	desc = "EVTDESC340042"
+	picture = GFX_evt_lunatic
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA340042"
+		FROM = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		remove_spouse = FROM
+	}
+	option = {
+		name = "EVTOPTB340042"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_freya
+			remove_trait = possessed
+			clr_character_flag = possessed_freya
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.43
+	desc = "EVTDESC340043"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_freya
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { has_character_flag = nm_has_fucked }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340043"
+		set_character_flag = nm_has_fucked
+	}
+	option = {
+		name = "EVTOPTB340043"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_freya
+			remove_trait = possessed
+			clr_character_flag = possessed_freya
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.44
+	desc = "EVTDESC340044"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_freya
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { has_character_flag = nm_freya_convinced_farmers }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340044"
+		trigger = {
+			trait = fair
+		}
+		set_character_flag = nm_freya_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTB340044"
+		trigger = {
+			diplomacy = 20
+		}
+		set_character_flag = nm_freya_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTC340044"
+		scaled_wealth = -5.0
+		set_character_flag = nm_freya_convinced_farmers
+	}
+	option = {
+		name = "EVTOPTD340044"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_freya
+			remove_trait = possessed
+			clr_character_flag = possessed_freya
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.45
+	desc = "EVTDESC340045"
+	picture = GFX_evt_lunatic
+
+	has_character_flag = possessed_freya
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		NOT = { trait = nm_volva }
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "EVTOPTA340045"
+		scaled_wealth = -0.3
+		add_trait = nm_volva
+	}
+	option = {
+		name = "EVTOPTB340045"
+		prestige = -20
+		random = {
+			chance = 30
+			remove_character_modifier = nm_possessed_freya
+			remove_trait = possessed
+			clr_character_flag = possessed_freya
+		}
+	}
+}
+character_event = {
+	id = nm_random.46
+	desc = "EVTDESC340046"
+	picture = GFX_evt_whispers
+
+	has_character_flag = possessed_freya
+	religion_group = norsegerman_group
+	only_playable = yes
+	
+	trigger = {
+		trait = nm_volva
+		trait = fair
+		has_character_modifier = nm_possessed_freya
+		has_character_flag = nm_freya_convinced_farmers
+		has_character_flag = nm_has_fucked
+		spouse = { has_character_flag = nm_spouse_believes_freya }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+
+		modifier = {
+			factor = 0.8
+			prestige = 500
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 1000
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 1500
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 2500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 1000
+		}
+		modifier = {
+			factor = 0.8
+			piety= 1500
+		}
+		modifier = {
+			factor = 0.8
+			piety= 2500
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340046"
+		prestige = 100
+		piety = 100
+		remove_character_modifier = nm_possessed_freya
+		clr_character_flag = possessed_freya
+		add_trait = nm_divine_blood_freya
+		give_nickname = nick_the_divine
+		add_character_modifier = {
+			name = nm_possessed_freya_recognised
+			duration = -1
+		}
+		set_character_flag = divine_blood_freya
+	}
+}
+
+character_event = {
+	id = nm_random.47
+	desc = "EVTDESC340047"
+	picture = GFX_evt_battle
+	
+	is_triggered_only = yes
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_playable = yes
+	religion_group = norsegerman_group
+	
+	trigger = {
+		prestige = 500
+		nm_trigger = yes
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			trait = proud
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340047"
+		trigger = {
+			NOT = { martial = 5 }
+		}
+		random_list = {
+			10 = {
+				character_event = { id = nm_random.7 days = 2 tooltip = EVTTOOLTIP340007 } # Death
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				character_event = { id = nm_random.6 days = 2 tooltip = EVTTOOLTIP340006 } # Maimed
+			}
+			30 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				character_event = { id = nm_random.5 days = 2 tooltip = EVTTOOLTIP340005 } # Wounded
+			}
+			30 = {
+				character_event = { id = nm_random.9 days = 2 tooltip = EVTTOOLTIP340009 } # Lose
+			}
+			20 = {
+				character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } # Win
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA340047"
+		trigger = {
+			martial = 5
+			NOT = { martial = 10 }
+		}
+		random_list = {
+			5 = {
+				character_event = { id = nm_random.7 days = 2 tooltip = EVTTOOLTIP340007 } # Death
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = yes
+				}
+				character_event = { id = nm_random.6 days = 2 tooltip = EVTTOOLTIP340006 } # Maimed
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				character_event = { id = nm_random.5 days = 2 tooltip = EVTTOOLTIP340005 } # Wounded
+			}
+			30 = {
+				character_event = { id = nm_random.9 days = 2 tooltip = EVTTOOLTIP340009 } # Lose
+			}
+			35 = {
+				character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } # Win
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA340047"
+		trigger = {
+			martial = 10
+			NOT = { martial = 13 }
+		}
+		random_list = {
+			5 = {
+				character_event = { id = nm_random.7 days = 2 tooltip = EVTTOOLTIP340007 } # Death
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = yes
+				}
+				character_event = { id = nm_random.6 days = 2 tooltip = EVTTOOLTIP340006 } # Maimed
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				character_event = { id = nm_random.5 days = 2 tooltip = EVTTOOLTIP340005 } # Wounded
+			}
+			30 = {
+				character_event = { id = nm_random.9 days = 2 tooltip = EVTTOOLTIP340009 } # Lose
+			}
+			50 = {
+				character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } # Win
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA340047"
+		trigger = {
+			martial = 13
+			NOT = { martial = 16 }
+		}
+		random_list = {
+			5 = {
+				character_event = { id = nm_random.7 days = 2 tooltip = EVTTOOLTIP340007 } # Death
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				character_event = { id = nm_random.6 days = 2 tooltip = EVTTOOLTIP340006 } # Maimed
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				character_event = { id = nm_random.5 days = 2 tooltip = EVTTOOLTIP340005 } # Wounded
+			}
+			20 = {
+				character_event = { id = nm_random.9 days = 2 tooltip = EVTTOOLTIP340009 } # Lose
+			}
+			60 = {
+				character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } # Win
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA340047"
+		trigger = {
+			martial = 16
+			NOT = { martial = 20 }
+		}
+		random_list = {
+			2 = {
+				character_event = { id = nm_random.7 days = 2 tooltip = EVTTOOLTIP340007 } # Death
+			}
+			3 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				character_event = { id = nm_random.6 days = 2 tooltip = EVTTOOLTIP340006 } # Maimed
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				character_event = { id = nm_random.5 days = 2 tooltip = EVTTOOLTIP340005 } # Wounded
+			}
+			20 = {
+				character_event = { id = nm_random.9 days = 2 tooltip = EVTTOOLTIP340009 } # Lose
+			}
+			70 = {
+				character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } # Win
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA340047"
+		trigger = {
+			martial = 20
+		}
+		random_list = {
+			1 = {
+				character_event = { id = nm_random.7 days = 2 tooltip = EVTTOOLTIP340007 } # Death
+			}
+			2 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				character_event = { id = nm_random.6 days = 2 tooltip = EVTTOOLTIP340006 } # Maimed
+			}
+			3 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				character_event = { id = nm_random.5 days = 2 tooltip = EVTTOOLTIP340005 } # Wounded
+			}
+			9 = {
+				character_event = { id = nm_random.9 days = 2 tooltip = EVTTOOLTIP340009 } # Lose
+			}
+			85 = {
+				character_event = { id = nm_random.8 days = 2 tooltip = EVTTOOLTIP340008 } # Win
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340047"
+		prestige = -50
+		scaled_wealth = -0.2
+		remove_trait = brave
+		random = {
+			chance = 10
+			add_trait = craven
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.48
+	desc = "EVTDESC340048"
+	picture = GFX_evt_whispers
+	
+	is_triggered_only = yes
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	religion_group = norsegerman_group
+	
+	trigger = {
+		trait = craven
+		nm_trigger = yes
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 5.0
+			trait = proud
+		}
+		modifier = {
+			factor = 1.25
+			prestige = 200
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340048"
+		random_list = {
+			5 = {
+				add_trait = brave
+				remove_trait = craven
+				remove_character_modifier = nm_norse_craven
+			}
+			35 = {
+				remove_trait = craven
+				remove_character_modifier = nm_norse_craven
+			}
+			30 = {
+			}
+			20 = {
+				add_trait = stressed
+			}
+			10 = {
+				add_trait = depressed
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340048"
+		prestige = -10
+		random = {
+			chance = 10
+			add_trait = honest
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.49
+	desc = "EVTDESC340049"
+	picture = GFX_evt_peasants
+	
+	is_triggered_only = yes
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_men = yes
+	religion_group = norsegerman_group
+	
+	trigger = {
+		trait = nm_seidmann
+		nm_trigger = yes
+		NOR = {
+			has_character_modifier = nm_possessed_odin_recognised
+			has_character_modifier = nm_possessed_loke_recognised
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.1
+			trait = homosexual
+		}
+		modifier = {
+			factor = 2.0
+			trait = craven
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 0.67
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 0.67
+			trait = brave
+		}
+		modifier = {
+			factor = 0.83
+			prestige = 200
+		}
+		modifier = {
+			factor = 0.83
+			prestige = 400
+		}
+		modifier = {
+			factor = 0.83
+			prestige = 600
+		}
+		modifier = {
+			factor = 0.83
+			prestige = 800
+		}
+		modifier = {
+			factor = 0.83
+			prestige = 1000
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340049"
+		prestige = 25
+		random_list = {
+			10 = {
+				death = { death_reason = death_battle }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				add_maimed_trait_effect = yes
+			}
+			30 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				add_trait = wounded
+			}
+			50 = {
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340049"
+		prestige = -25
+		random = {
+			chance = 3
+			add_trait = craven
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.50
+	desc = "EVTDESC340050"
+	picture = GFX_evt_whispers
+	
+	has_character_flag = divine_blood_loke
+	min_age = 16
+	religion_group = norsegerman_group
+	
+	trigger = {
+		trait = nm_divine_blood_loke
+		nm_trigger = yes
+		any_child = {
+			NOT = { trait = nm_divine_blood_loke }
+			nm_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA340050"
+		any_child = {
+			limit = {
+				nm_trigger = yes
+				NOT = { trait = nm_divine_blood_loke }
+			}
+			add_trait = nm_divine_blood_loke
+			set_character_flag = divine_blood_loke
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.51
+	desc = "EVTDESC340051"
+	picture = GFX_evt_whispers
+
+	min_age = 16
+	has_character_flag = divine_blood_odin
+	religion_group = norsegerman_group
+	
+	trigger = {
+		trait = nm_divine_blood_odin
+		nm_trigger = yes
+		any_child = {
+			NOT = { trait = nm_divine_blood_odin }
+			nm_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA340051"
+		any_child = {
+			limit = {
+				nm_trigger = yes
+				NOT = { trait = nm_divine_blood_odin }
+			}
+			add_trait = nm_divine_blood_odin
+			set_character_flag = divine_blood_odin
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.52
+	desc = "EVTDESC340052"
+	picture = GFX_evt_whispers
+
+	min_age = 16
+	has_character_flag = divine_blood_freya
+	religion_group = norsegerman_group
+	
+	trigger = {
+		trait = nm_divine_blood_freya
+		nm_trigger = yes
+		any_child = {
+			NOT = { trait = nm_divine_blood_freya }
+			nm_trigger = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA340052"
+		any_child = {
+			limit = {
+				nm_trigger = yes
+				NOT = { trait = nm_divine_blood_freya }
+			}
+			add_trait = nm_divine_blood_freya
+			set_character_flag = divine_blood_freya
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.53
+	desc = "EVTDESC340053"
+	picture = GFX_evt_whispers
+	
+	has_character_flag = divine_blood_freya
+	
+	trigger = {
+		nm_trigger = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA340053"
+		remove_trait = nm_divine_blood_freya
+		clr_character_flag = divine_blood_freya
+	}
+	option = {
+		name = "EVTOPTB340053"
+		religion = norse_pagan
+	}
+}
+
+character_event = {
+	id = nm_random.530
+	desc = "EVTDESC340053"
+	picture = GFX_evt_whispers
+	
+	has_character_flag = divine_blood_odin
+	
+	trigger = {
+		nm_trigger = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA340053"
+		remove_trait = nm_divine_blood_odin
+		clr_character_flag = divine_blood_odin
+	}
+	option = {
+		name = "EVTOPTB340053"
+		religion = norse_pagan
+	}
+}
+
+character_event = {
+	id = nm_random.531
+	desc = "EVTDESC340053"
+	picture = GFX_evt_whispers
+	
+	has_character_flag = divine_blood_loke
+	
+	trigger = {
+		nm_trigger = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = "EVTOPTA340053"
+		remove_trait = nm_divine_blood_loke
+		clr_character_flag = divine_blood_loke
+	}
+	option = {
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 10
+				trait = zealous
+			}
+			modifier = {
+				factor = 10
+				trait = stubborn
+			}
+			modifier = {
+				factor = 2
+				piety = 1000
+			}
+			modifier = {
+				factor = 2
+				piety = 2000
+			}
+			modifier = {
+				factor = 2
+				piety = 4000
+			}
+			modifier = {
+				factor = 2
+				piety = 8000
+			}
+		}
+		name = "EVTOPTB340053"
+		religion = norse_pagan
+	}
+}
+
+character_event = {
+	id = nm_random.54
+	desc = "EVTDESC340054"
+	picture = GFX_evt_peasants
+	
+	is_triggered_only = yes
+	religion_group = norsegerman_group
+	
+	trigger = {
+		nm_trigger = yes
+		OR = {
+			trait = kinslayer
+			AND = {
+				num_of_rivals = 2
+				trait = cruel
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.9
+			num_of_friends = 2
+		}
+		modifier = {
+			factor = 0.9
+			num_of_friends = 3
+		}
+		modifier = {
+			factor = 0.9
+			num_of_friends = 4
+		}
+		modifier = {
+			factor = 0.9
+			num_of_friends = 5
+		}
+		modifier = {
+			factor = 1.1
+			num_of_rivals = 2
+		}
+		modifier = {
+			factor = 1.1
+			num_of_rivals = 3
+		}
+		modifier = {
+			factor = 1.1
+			num_of_rivals = 4
+		}
+		modifier = {
+			factor = 1.1
+			num_of_rivals = 5
+		}
+		modifier = {
+			factor = 10.0
+			trait = kinslayer
+		}
+		modifier = {
+			factor = 0.875
+			prestige = 200
+		}
+		modifier = {
+			factor = 0.875
+			prestige = 400
+		}
+		modifier = {
+			factor = 0.875
+			prestige = 600
+		}
+		modifier = {
+			factor = 0.875
+			prestige = 800
+		}
+		modifier = {
+			factor = 0.875
+			prestige = 1000
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340054"
+		random = {
+			chance = 85
+			add_trait = nm_niding
+			prestige = -100
+		}
+	}
+	option = {
+		name = "EVTOPTB340054"
+		scaled_wealth = -1.5
+		random = {
+			chance = 50
+			add_trait = nm_niding
+			prestige = -100
+		}
+	}
+	option = {
+		name = "EVTOPTC340054"
+		trigger = {
+			num_of_friends = 2
+		}
+		random = {
+			chance = 33
+			add_trait = nm_niding
+			prestige = -100
+		}
+	}
+	option = {
+		name = "EVTOPTD340054"
+		scaled_wealth = -0.5
+		location = {
+			add_province_modifier = {
+				name = nm_peasant_resistance
+				duration = 365
+			}
+		}
+		random = {
+			chance = 10
+			add_trait = nm_niding
+			prestige = -100
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.55
+	desc = "EVTDESC340055"
+	picture = GFX_evt_peasants
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = nm_niding
+		prestige = 200
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			diplomacy = 8
+		}
+		modifier = {
+			factor = 1.1
+			diplomacy = 12
+		}
+		modifier = {
+			factor = 1.25
+			diplomacy = 16
+		}
+		modifier = {
+			factor = 1.25
+			diplomacy = 20
+		}
+		modifier = {
+			factor = 1.25
+			num_of_friends = 3
+		}
+		modifier = {
+			factor = 1.25
+			prestige = 100
+		}
+		modifier = {
+			factor = 1.25
+			prestige = 200
+		}
+		modifier = {
+			factor = 1.25
+			prestige = 300
+		}
+		modifier = {
+			factor = 1.25
+			prestige = 400
+		}
+		modifier = {
+			factor = 2.0
+			prestige = 500
+		}
+		modifier = {
+			factor = 0.67
+			trait = kinslayer
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340055"
+		random = {
+			chance = 33
+			remove_trait = nm_niding
+		}
+	}
+	option = {
+		name = "EVTOPTB340055"
+		remove_trait = nm_niding
+		scaled_wealth = -2.0
+	}
+}
+
+character_event = {
+	id = nm_random.56
+	desc = "EVTDESC340056"
+	picture = GFX_evt_battle
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = nm_niding
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTA340056"
+		trigger = {
+			is_strong_trigger = yes
+		}
+		random_list = {
+			5 = {
+				death = { death_reason = death_battle }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				add_maimed_trait_effect = yes
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				add_trait = wounded
+			}
+			65 = {
+				prestige = 100
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA340056"
+		trigger = {
+			is_strong_trigger = no
+			is_weak_trigger = no
+		}
+		random_list = {
+			10 = {
+				death = { death_reason = death_battle }
+			}
+			15 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				add_maimed_trait_effect = yes
+			}
+			25 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				add_trait = wounded
+			}
+			50 = {
+				prestige = 100
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA340056"
+		trigger = {
+			is_weak_trigger = yes
+		}
+		random_list = {
+			15 = {
+				death = { death_reason = death_battle }
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				add_maimed_trait_effect = yes
+			}
+			30 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				add_trait = wounded
+			}
+			35 = {
+				prestige = 100
+			}
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.57
+	desc = "EVTDESC340057"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	only_women = yes
+	is_married = yes
+	religion_group = norsegerman_group
+	
+	trigger = {
+		nm_trigger = yes
+		NOR = {
+			trait = content
+			trait = craven
+		}
+		spouse = {
+			nm_trigger = yes
+			OR = {
+				trait = kinslayer
+				trait = cruel
+				trait = wroth
+				trait = greedy
+				trait = lustful
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.25
+			spouse = {
+				trait = kinslayer
+			}
+		}
+		modifier = {
+			factor = 0.67
+			spouse = {
+				trait = fair
+			}
+		}
+		modifier = {
+			factor = 0.5
+			spouse = {
+				is_strong_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			spouse = {
+				trait = ugly
+			}
+		}
+		modifier = {
+			factor = 2.0
+			spouse = {
+				is_weak_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 1.1
+			spouse = {
+				NOT = { wealth = 25 }
+			}
+		}
+		modifier = {
+			factor = 1.1
+			spouse = {
+				NOT = { diplomacy = 4 }
+			}
+		}
+		modifier = {
+			factor = 1.25
+			spouse = {
+				NOT = { prestige = 100 }
+			}
+		}
+		modifier = {
+			factor = 3.0
+			spouse = {
+				NOT = { prestige = 0 }
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				wealth = 50
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				wealth = 100
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				wealth = 200
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				diplomacy = 8
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				diplomacy = 16
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				diplomacy = 20
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 100
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 200
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 300
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 400
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 500
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 600
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 700
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 800
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 900
+			}
+		}
+		modifier = {
+			factor = 0.9
+			spouse = {
+				prestige = 1000
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340057"
+		scaled_wealth = 0.5
+		spouse = { character_event = { id = nm_random.13 tooltip = EVTTOOLTIP340013 } }
+		remove_spouse = spouse
+		random = {
+			chance = 10
+			add_trait = stressed
+		}
+	}
+	option = {
+		name = "EVTOPTB340057"
+		prestige = 50
+		random = {
+			chance = 5
+			add_trait = stressed
+		}
+	}
+}
+
+character_event = {
+	id = nm_random.58
+	desc = "EVTDESC340058"
+	picture = GFX_evt_battle
+	
+	is_triggered_only = yes
+
+	min_age = 40
+	only_men = yes
+	prisoner = no
+	religion_group = norsegerman_group
+	
+	trigger = {
+		nm_trigger = yes
+		NOT = { trait = cynical }
+		OR = {
+			is_ill = yes
+			is_maimed_trigger = yes
+			trait = infirm
+			trait = incapable
+			age = 50
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+
+		modifier = {
+			factor = 0.1
+			is_female = yes
+		}
+		modifier = {
+			factor = 1.25
+			religion = norse_war
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			factor = 5.0
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.25
+			trait = brave
+		}
+		modifier = {
+			factor = 1.1
+			age = 55
+		}
+		modifier = {
+			factor = 1.4
+			age = 60
+		}
+		modifier = {
+			factor = 2.0
+			age = 65
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA340058"
+		random_list = {
+			60 = {
+				death = { death_reason = death_battle }
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				add_maimed_trait_effect = yes
+			}
+			15 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				add_trait = wounded
+			}
+			5 = {
+				prestige = 50
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB340058"
+		random_list = {
+			25 = {
+				prestige = 50
+				death = { death_reason = death_battle }
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					can_be_maimed_trigger = no
+				}
+				add_maimed_trait_effect = yes
+				prestige = 50
+			}
+			15 = {
+				modifier = {
+					factor = 0
+					OR = {
+						trait = wounded
+						is_maimed_trigger = yes
+					}
+				}
+				add_trait = wounded
+				prestige = 50
+			}
+			20 = {
+				prestige = 50
+			}
+			30 = {
+				scaled_wealth = 1.0
+				prestige = 50
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC340058"
+		random = {
+			chance = 15
+			add_trait = stressed
+		}
+	}
+}

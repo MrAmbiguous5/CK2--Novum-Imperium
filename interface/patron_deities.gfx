@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_patrons_azt"
+		texturefile = "gfx/interface/decision_icon_patrons_azt.dds"
+	}
+}

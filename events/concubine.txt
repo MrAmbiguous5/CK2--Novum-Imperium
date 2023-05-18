@@ -1,0 +1,2268 @@
+namespace = concubines
+# A concubine falls in love with her man
+character_event = {
+	id = concubines.0
+	desc = "EVTDESC1000150000"
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+
+	only_women = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		prisoner = no
+		has_lover = no
+		is_consort = yes
+		NOR = {
+			trait = homosexual
+			trait = infirm
+			trait = incapable
+			trait = celibate
+		}
+		consort = {
+			has_lover = no
+			prisoner = no
+			NOR = {
+				trait = homosexual
+				trait = infirm
+				trait = incapable
+				trait = celibate
+				trait = eunuch
+			}
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+
+		modifier = {
+			factor = 2.0
+			NOT = { age = 20 }
+		}
+		modifier = {
+			factor = 0.5
+			liege = {
+				spouse = {
+					NOT = { age = 30 }
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			liege = {
+				spouse = {
+					age = 40
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			age = 30
+		}
+		modifier = {
+			factor = 0.5
+			trait = lustful
+		}
+		modifier = {
+			factor = 0.5
+			trait = hedonist
+		}					# Concubinage is meant to be a monogamous relationship (at least for the woman)
+		modifier = {
+			factor = 2.0
+			trait = fair
+		}
+		modifier = {
+			factor = 2.0
+			consort = { trait = fair }
+		}
+		modifier = {
+			factor = 0.1
+			trait = ugly
+		}
+		modifier = {
+			factor = 0.1
+			consort = { trait = ugly }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { opinion = { who = ROOT value = 0 } }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { reverse_opinion = { who = ROOT value = 0 } }
+		}
+		modifier = {
+			factor = 0.5
+			consort = {
+				opinion = { who = ROOT value = 25 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			consort = {
+				reverse_opinion = { who = ROOT value = 25 }
+			}
+		}
+		modifier = {
+			factor = 2.0
+			consort = {
+				opinion = { who = ROOT value = 50 }
+			}
+		}
+		modifier = {
+			factor = 2.0
+			consort = {
+				reverse_opinion = { who = ROOT value = 50 }
+			}
+		}
+		modifier = {
+			factor = 2.0
+			consort = {
+				opinion = { who = ROOT value = 75 }
+			}
+		}
+		modifier = {
+			factor = 2.0
+			consort = {
+				reverse_opinion = { who = ROOT value = 75 }
+			}
+		}
+		modifier = {
+			factor = 2.0
+			trait = chaste
+		}					# Concubinage is meant to be a monogamous relationship (at least for the woman)
+		modifier = {
+			factor = 0.2
+			consort = {
+				is_married = yes
+				trait = chaste
+			} 
+		}
+		modifier = {
+			factor = 2.0
+			consort = {
+				is_married = yes
+				trait = lustful
+			}
+		}
+		modifier = {
+			factor = 2.0
+			consort = {
+				is_married = yes
+				trait = hedonist
+			}
+		}
+		modifier = {
+			factor = 0.5 # Christian women should not see concubinage as being more acceptable than fornication/adultery
+			religion_group = christian
+			NOT = { trait = cynical }
+		}
+		modifier = {
+			factor = 2.0 # Concubinage is a more established norm in these faiths
+#			OR = {
+				religion_group = zoroastrian_group
+#			}
+		}
+		modifier = {
+			factor = 2.0
+			trait = gregarious
+		}
+		modifier = {
+			factor = 2.0
+			consort = { trait = gregarious }
+		}
+		modifier = {
+			factor = 2.0
+			consort = { trait = charitable }
+		}
+		modifier = {
+			factor = 4.0
+			consort = { trait = kind }
+		}
+		modifier = {
+			factor = 0.1
+			consort = { trait = wroth }
+		}
+		modifier = {
+			factor = 0.1
+			consort = { trait = cruel } # As concubines are at the mercy of the man, the concubine should be more likely to fall in love if he treats her well regardless, and resent him if he uses his power to mistreat her
+		}
+		modifier = {
+			factor = 2.0
+			has_ambition = obj_get_married
+			consort = { is_married = no }
+		}
+	}
+
+
+	option = {
+		name = "EVTOPTA1000150000" # Consort decides to ask him
+		ai_chance = { factor = 90 }
+		consort = { character_event = { id = concubines.1 tooltip = EVTTOOLTIP1000150000 } }
+	}
+
+	option = {
+		name = "EVTOPTB1000150000" # Consort decides not to ask him
+		ai_chance = { factor = 10 }
+	}
+}
+
+#Man falls for his concubine
+character_event = {
+	id = concubines.1
+	desc = "EVTDESC1000150001"
+	picture = GFX_evt_lovers
+
+	is_triggered_only = yes
+
+	option = { # Man falls in love
+		name = "EVTOPTA1000150001"
+		ai_chance = { factor = 90 }
+		FROM = {
+			fertility = 0.2
+			add_lover = ROOT
+		}
+	}
+
+	option = { # Man does not fall in love
+		name = "EVTOPTB1000150001"
+		ai_chance = { factor = 10 }
+	}
+}
+
+#Concubine wishes to become her man's wife
+character_event = {
+	id = concubines.2
+	desc = "EVTDESC1000150002"
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+
+	only_women = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		prisoner = no
+		NOR = {
+			trait = homosexual
+			trait = infirm
+			trait = incapable
+			trait = celibate
+			has_character_modifier = concubine_marriage_timer
+		}
+		consort = {
+			prisoner = no
+			NOR = {
+				trait = homosexual
+				trait = infirm
+				trait = incapable
+				trait = celibate
+				trait = eunuch
+			}
+			opinion = { who = ROOT value = 0 }
+			reverse_opinion = { who = ROOT value = 0 }			
+			is_married = no
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+
+		modifier = {
+			factor = 1.3
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.3
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.25
+			trait = content
+		}
+		modifier = {
+			factor = 0.5
+			trait = lustful
+		}
+
+		modifier = {
+			factor = 0.5
+			trait = hedonist
+		}
+		
+		modifier = {
+			factor = 2.0
+			trait = proud
+		}
+		
+		modifier = {
+			factor = 0.5
+			trait = humble
+		}
+
+		modifier = {
+			factor = 0.9
+			trait = patient
+		}
+
+		modifier = {
+			factor = 0.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.1
+			religion_group = christian
+			NOT = { trait = cynical }
+		}
+		modifier = {
+			factor = 1.1
+			religion_group = christian
+			trait = zealous
+		}		# Concubine would most likely not be too pleased about being unequally yoked with a pagan, but would prefer marriage over concubinage
+		modifier = {
+			factor = 1.3
+			has_ambition = obj_get_married
+		}
+		modifier = {
+			factor = 0.9
+			OR = {
+				religion_group = pagan_group
+				religion_group = zoroastrian_group
+			}
+		}
+		modifier = {
+			factor = 4.0
+			any_lover= {
+				is_consort = ROOT # Should trigger in the majority of cases because concubine is lover of man
+			}
+		}
+	}
+
+	immediate = {
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = concubine_marriage_timer
+				duration = 1825
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA1000150002"
+		ai_chance = { factor = 90 }
+		consort = { character_event = { id = concubines.3  } }
+	}
+
+	option = {
+		name = "EVTOPTB1000150002"
+		ai_chance = { factor = 10 }
+	}
+}
+
+#Man decides whether to marry concubine
+character_event = {
+	id = concubines.3
+	desc = "EVTDESC1000150003"
+	picture = GFX_evt_lovers
+
+	is_triggered_only = yes
+	
+	option = { #Man accepts
+		name = "EVTOPTA1000150003"
+		FROM = {
+			add_spouse = ROOT
+			opinion = {
+				who = ROOT
+				modifier = opinion_happy
+				years = 10
+			}
+		}
+	}
+	option = { #Man refuses
+		name = "EVTOPTB1000150003"
+		FROM = {
+			if = {
+				limit = {
+					any_lover = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				opinion = {
+					who = ROOT
+					modifier = opinion_disappointed
+					years = 2
+				}
+			}
+			if = {
+				limit = {
+					any_lover = {
+						character = ROOT
+					}
+				}
+				opinion = {
+					who = ROOT
+					modifier = opinion_angry
+					years = 10
+				}
+			}
+		}
+	}
+}
+
+#Being with your beloved concubine is a blissful state
+character_event = {
+	id = concubines.4
+	desc = "EVTDESC1000150004"
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+	
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		is_abroad = no
+		any_lover = {
+			is_consort = ROOT
+			is_alive = yes
+			is_abroad = no
+			prisoner = no
+			NOT = { trait = incapable }
+		}
+		war = no
+		in_command = no
+		NOT = {
+			has_character_modifier = blissful_timer
+		}
+	}
+	immediate = {
+		random_lover = {
+			limit = {
+				is_consort = ROOT
+				is_alive = yes
+				is_abroad = no
+				prisoner = no
+				NOT = {
+					trait = incapable
+				}
+			}
+			save_event_target_as = beloved_consort
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = blissful_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 2.0
+			trait = kind
+		}
+		modifier = {
+			factor = 2.0
+			trait = charitable
+		}
+		modifier = {
+			factor = 0.67
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.67
+			trait = cruel
+		}
+		modifier = {
+			factor = 0.4
+			trait = depressed
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA1000150004" #It's such a stress-relief
+		trigger = {
+			OR = {
+				trait = stressed
+				event_target:beloved_consort = {
+					trait = stressed
+				}
+			}
+		}
+		if = {
+			limit = {
+				trait = stressed
+			}
+			remove_trait = stressed
+		}
+		if = {
+			limit = {
+				event_target:beloved_consort = {
+					trait = stressed
+				}
+			}
+			event_target:beloved_consort = {
+				remove_trait = stressed
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB1000150004" #It makes me feel so healthy
+		trigger = {
+			OR = {
+				is_ill = yes
+				event_target:beloved_consort = {
+					is_ill = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_ill = yes
+			}
+			remove_disease_trait_effect = yes
+		}
+		if = {
+			limit = {
+				event_target:beloved_consort = {
+					is_ill = yes
+				}
+			}
+			event_target:beloved_consort = {
+				remove_disease_trait_effect = yes
+			}
+		}
+	}
+	option = {
+		name = {
+			text = EVTOPTC1000150004 #It makes me feel so virile
+			trigger = {
+				is_female = no
+			}
+		}
+		name = {
+			text = EVTOPTD1000150004	#It makes me feel so feminine
+			trigger = {
+				is_female = yes
+			}
+		}
+		fertility = 0.05
+		any_lover = {
+			limit = { is_consort = ROOT }
+			fertility = 0.05
+		}
+	}
+}
+
+character_event = { #Wife is jealous of consort, considers course of action
+	id = concubines.5
+	desc = "EVTDESC1000150005"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+
+	only_women = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		is_married = yes
+		NOR = {
+			trait = homosexual
+			has_character_flag = concubine_killer
+			has_character_modifier = sleep_on_the_couch
+			has_character_modifier = show_appreciation
+		}
+		spouse = {
+			any_lover = {
+				NOT = { reverse_opinion = { who = ROOT value = 0 } }
+				is_consort = PREV
+			}
+		}
+	}
+	
+	immediate = {
+		spouse = {
+			random_lover = {
+				limit = {
+					NOT = {
+						reverse_opinion = {
+							who = ROOT
+							value = 0
+						}
+					}
+					is_consort = PREV
+				}
+				save_event_target_as = target_consort
+			}
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 2.0
+			trait = envious
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA1000150005" # Asks husband to put her away
+		ai_chance = { factor = 60 }
+		spouse = {
+			character_event = { id = concubines.6 days = 4
+				tooltip = EVTTOOLTIPA1000150005
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB1000150005" # Decides to murder consort
+		ai_chance = { factor = 20 }
+		trigger = {
+			OR = {
+				trait = cruel
+				trait = deceitful
+				trait = lunatic
+				trait = wroth
+			}
+		}
+		set_character_flag = concubine_killer
+		event_target:target_consort = {
+			character_event = { id = concubines.7 days = 4 
+				tooltip = EVTTOOLTIPB1000150005
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTC1000150005" # Tries to live with it
+		ai_chance = { factor = 20 }
+		random = {
+			chance = 33
+			character_event = { id = 38282 }
+			add_trait = stressed
+		}
+		
+		random = {
+			chance = 10
+			character_event = { id = 38288 }
+			add_trait = depressed
+		}
+		
+		random = {
+			chance = 1
+			character_event = { id = 38304 }
+			add_trait = lunatic
+		}
+	}
+}
+
+character_event = { # Jealous wife tries to convince husband to set beloved concubine aside
+	id = concubines.6
+	desc = "EVTDESC1000150006"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+
+	option = { # Yes, yes, of course dear
+		name = "EVTOPTA1000150006"
+		prestige = -10
+		event_target:target_consort = {
+			remove_consort = ROOT
+			banish = yes
+		}
+		hidden_tooltip = {
+			set_character_flag = lost_loving_feeling
+		}
+		character_event = {
+			id = 64045
+				tooltip = "EVTTOOLTIP64045"
+		}
+		spouse = {
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = show_appreciation
+					duration = 1825
+				}
+				set_character_flag = show_appreciation
+			}
+			character_event = { id = concubines.25
+				tooltip = EVTTOOLTIPA1000150006
+			}
+		}			
+	}	
+	
+	option = { # I will not give up the woman I love, not for you
+		name = "EVTOPTB1000150006"
+		spouse = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_angry
+				years = 10
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = sleep_on_the_couch
+					duration = 1825
+				}
+				set_character_flag = sleep_on_the_couch
+			}
+			character_event = { id = concubines.26 
+			tooltip = EVTTOOLTIPB1000150006
+			}
+		}
+	}				
+}
+
+character_event = { # Jealous wife tries to off beloved concubine
+	id = concubines.7
+	desc = "EVTDESC1000150007"
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = { # Murder attempt
+		name = "EVTOPTA1000150007"
+		random_list = {
+			50 = {
+				death = {
+					death_reason = death_murder
+					killer = FROM
+				}
+				event_target:target_consort = {
+					character_event = { id = concubines.8 days = 4 }
+				}
+				character_event = { id = concubines.30 days = 2 }
+			}
+			50 = {
+				event_target:target_consort = {
+					character_event = { id = concubines.9 days = 4 }
+				}
+				character_event = { id = concubines.31 days = 2 }
+			}
+		}
+	}
+}
+
+character_event = { # Man discovers beloved concubine has been murdered by wife
+	id = concubines.8
+	desc = "EVTDESC1000150008"
+	picture = GFX_evt_death
+
+	is_triggered_only = yes
+	
+	option = { # Send killer to prison
+		name = "EVTOPTA1000150008"
+		trigger = {
+			spouse = {
+				has_character_flag = concubine_killer
+				any_liege = { character = ROOT }
+			}
+		}
+		random = {
+			chance = 66
+			add_trait = depressed
+			character_event = { id = 38288 }
+		}
+		spouse = {
+			imprison = yes
+		}
+	}
+	option = { # Have killer executed
+		name = "EVTOPTB1000150008"
+		trigger = {
+			spouse = {
+				has_character_flag = concubine_killer
+				any_liege = { character = ROOT }
+			}
+		}
+		random = {
+			chance = 33
+			add_trait = depressed
+			character_event = { id = 38288 }
+		}
+		spouse = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+	}
+	option = { # There is nothing I can do
+		name = "EVTOPTC1000150008"
+		add_trait = depressed
+		character_event = { id = 38288 }
+		spouse = {
+			if = {
+				limit = {
+					has_character_flag = concubine_killer
+				}
+			}
+			hidden_tooltip = {
+				character_event = { id = concubines.32 }
+			}
+		}
+	}
+}
+	
+character_event = { # Man is informed of attempted murder of beloved concubine
+	id = concubines.9
+	desc = "EVTDESC1000150009"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = { # Send killer to prison
+		name = "EVTOPTA1000150009"
+		trigger = {
+			spouse = {
+				any_liege = { character = ROOT }
+				has_character_flag = concubine_killer
+			}
+		}
+		spouse = {
+			imprison = yes
+		}
+	}
+	option = { # Have killer executed
+		name = "EVTOPTB1000150009"
+		trigger = {
+			spouse = {
+				any_liege = { character = ROOT }
+				has_character_flag = concubine_killer
+			}
+		}
+		spouse = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+	}
+	option = { # I will not do anything
+		name = "EVTOPTC1000150009"
+		trigger = {
+			spouse = {
+				any_liege = { character = ROOT }
+				has_character_flag = concubine_killer
+			}
+		}
+		hidden_tooltip = {
+			set_character_flag = lost_loving_feeling
+		}
+		character_event = {
+			id = 64045
+				tooltip = "EVTTOOLTIP64045"
+		}
+		spouse = {
+			character_event = { id = concubines.32
+				tooltip = "EVTTOOLTIPC1000150009"
+			}
+		}
+	}
+	option = { # How horrible! (Murderous spouse is already divorced, dead, or not a vassal; punishment is moot)
+		name = "EVTOPTD1000150009"
+		trigger = {
+			spouse = {
+				OR = {
+					NOT = {
+						has_character_flag = concubine_killer
+					}
+					NOT = {
+						any_liege = { character = ROOT }
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = { # Wife is insecure about husband's attention to concubines
+	id = concubines.10
+	desc = "EVTDESC1000150010"
+	picture = GFX_evt_quarrel
+
+	only_men = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+	only_rulers = yes
+	
+	trigger = {
+		is_married = yes
+		NOT = { trait = homosexual }
+		spouse = {
+			has_lover = no
+		}	
+		OR = {
+			AND = {
+				spouse = {
+					prisoner = no
+					NOR = {
+						trait = infirm
+						trait = incapable
+						trait = fair
+						trait = homosexual
+					}
+				}
+				any_consort = { trait = fair }
+			}
+			AND = {
+				spouse = { trait = ugly }
+				spouse = { 
+					NOR = {
+						trait = homosexual
+						trait = infirm
+						trait = incapable
+					}
+					prisoner = no
+				}
+				any_consort = {
+					NOT = { trait = ugly }
+				}
+			}	
+		}
+	}
+	
+	mean_time_to_happen = {
+	months = 600
+		
+		modifier = {
+			factor = 0.9
+			spouse = {
+				trait = envious
+			}
+		}
+		
+		modifier = {
+			factor = 0.9
+			spouse = { 
+				trait = shy
+			}
+		}
+		
+		modifier = {
+			factor = 0.9
+			any_consort = {
+				trait = gregarious
+			}
+		}
+		
+		modifier = {
+			factor = 0.9
+			trait = lustful
+		}
+		
+		modifier = {
+			factor = 0.9
+			spouse = {
+				age = 30
+			}
+		}
+			
+		modifier = {
+			factor = 0.9
+			spouse = {
+				trait = paranoid
+			}
+		}
+		
+		modifier = {
+			factor = 0.9
+			spouse = {
+				trait = gluttonous
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			spouse = {
+				trait = ugly
+			}
+		}
+		
+		modifier = {
+			factor = 0.75
+			any_consort = {
+				trait = fair
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			trait = chaste
+		}
+		
+		modifier = {
+			factor = 1.1
+			spouse = {
+				trait = gregarious
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			spouse = {
+				trait = trusting
+			}
+		}
+	}
+	
+	option = { # Tell her it's nothing
+		name = "EVTOPTA1000150010"
+		spouse = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_angry
+				years = 2
+			}
+		}
+	}
+		
+	
+	option = { # Spend more time with her
+		name = "EVTOPTB1000150010"
+
+		random = {
+			chance = 33
+			character_event = { id = concubines.11 days = 4
+				tooltip = EVTTOOLTIP1000150010B
+			}
+		}
+	}
+	
+	option = { # Well, maybe if I could stand to look at you...
+		name = "EVTOPTC1000150010"
+		trigger = {
+			spouse = { trait = ugly }
+		}
+		spouse = {
+			character_event = { id = concubines.27 }
+			opinion = {
+				who = ROOT
+				modifier = opinion_angry
+				years = 10
+			}
+			random_list ={
+				50 = {
+					add_character_modifier = {
+						name = sleep_on_the_couch
+						duration = 1825
+					}
+					set_character_flag = sleep_on_the_couch
+				}
+				50 = {
+					add_trait = depressed
+					character_event = { id = 38288 }
+				}
+			}
+		}
+	}
+}
+
+character_event = { # Man falls out of love with concubine, and into love with spouse
+	id = concubines.11
+	desc = "EVTDESC1000150011"
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150011"
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_lover = yes
+				}
+				character_event = {
+					id = 64045
+						tooltip = "EVTTOOLTIP64045"
+				}
+			}
+			character_event = { id = 64201 days = 4 }
+		}
+	}
+}
+
+character_event = { # Forced concubine attempts to escape
+	id = concubines.12
+	desc = "EVTDESC1000150012"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+	
+	only_women = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		is_consort = yes
+		liege = {
+			reverse_has_opinion_modifier = { who = ROOT modifier = opinion_forced_consort }
+		}
+		NOR = {
+			opinion = { who = liege value = -25 }
+			liege = {
+				any_child = {
+					is_alive = yes
+					mother = { character = ROOT }
+				}
+			}
+		}
+	}
+	
+	weight_multiplier = {
+	days = 1
+		
+		modifier = {
+			factor = 1.3
+			trait = brave
+		}
+		
+		modifier = {
+			factor = 0.75
+			trait = craven
+		}
+	}
+	
+	#Character decides to try and escape
+	option = {
+		name = "EVTOPTA1000150012"
+		random_list = {
+			50 = {
+				liege = { character_event = { id = concubines.13 } }
+			}
+			50 = {
+				liege = { character_event = { id = concubines.14 } }
+			}
+		}
+	}
+		
+	#Character decides not to risk it
+	option = {
+		name = "EVTOPTB1000150012"
+	}
+}
+
+character_event = { # Forced concubine escapes!
+	id = concubines.13
+	desc = "EVTDESC1000150013"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = { # Nothing to do
+		name = "EVTOPTA1000150013"
+		remove_consort = FROM
+		FROM = {
+			banish = yes
+		}
+	}
+}
+
+character_event = { # Forced concubine caught trying to escape; decide her fate
+	id = concubines.14
+	desc = "EVTDESC1000150014"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = { # I cannot abide my own cruelty any longer
+		name = "EVTOPTA1000150014"
+		remove_consort = FROM
+		FROM = {
+			banish = yes
+		}
+		random_list = {
+			50 = {
+				add_trait = just
+				character_event = { id = 38267 }
+			}
+			50 = {
+				add_trait = kind
+				character_event = { id = 38268 }
+			}
+		}
+	}
+		
+	option = { # How fortunate!
+		name = "EVTOPTB1000150014"
+		FROM = {
+			add_trait = depressed
+			character_event = { id = 38288 }
+		}
+		random = {
+			chance = 33
+			add_trait = cruel
+			character_event = { id = 38259 }
+		}
+	}
+		
+	option = { # She'll have the escape she wants, courtesy of an axe...
+		name = "EVTOPTC1000150014"
+		trigger = { 
+			FROM = {
+				NOT = { trait = immortal }
+			}
+		}
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		random_list = {
+			50 = {
+				add_trait = cruel
+				character_event = { id = 38259 }
+			}
+			50 = {
+				add_trait = wroth
+				character_event = { id = 38254 }
+			}
+		}
+		random = {
+			chance = 33	
+			add_trait = proud
+			character_event = { id = 38261 }
+		}
+	}
+}
+
+character_event = { # Wife unhappy that primary heir is the child of a concubine, wants to guarantee her child will have something
+	id = concubines.15
+	desc = "EVTDESC1000150015"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+	
+	capable_only = yes
+	prisoner = no
+	only_women = yes
+	min_age = 16
+	
+	trigger = {
+		is_married = yes
+		is_ruler = no
+		spouse = { demesne_size = 5 }
+		any_child = {
+			always = yes
+		}
+		spouse = {
+			any_child = {
+				is_primary_heir = yes
+				trait = child_of_consort
+			}
+			NOT = {
+				trait = incapable
+			}
+		}
+		NOR = {
+			any_child = { has_character_flag = trueborn_son }
+			has_character_flag = jealous_wife
+		}
+		spouse = {
+			ROOT = {
+				any_child = {
+					is_female = no
+					is_primary_heir = no
+					father = {
+						character = PREVPREVPREV
+					}
+					is_alive = yes
+					age = 14
+					NOT = {
+						trait = incapable
+					}
+				}
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 4.0
+			trait = envious
+		}
+		modifier = {
+			factor = 2.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.25
+			trait = content
+		}
+	}
+	
+	option = { # Speak to husband
+		name = "EVTOPTA1000150015"
+		ai_chance = { factor = 100 }
+		set_character_flag = jealous_wife
+		spouse = {
+			ROOT = {
+				random_child = {
+					limit = { 
+						is_female = no
+						age = 14
+						is_primary_heir = no
+						father = {
+							character = PREVPREVPREV
+						}
+						is_alive = yes
+						NOT = {
+							trait = incapable
+						}
+					}
+					save_event_target_as = trueborn_son
+					set_character_flag = trueborn_son
+					character_event = { id = concubines.16 days = 2 tooltip = "EVTTOOLTIPA1000150015" }
+				}
+			}
+		}
+	}
+	option = { # Do nothing
+		ai_chance = { factor = 0 }
+		name = "EVTOPTB1000150015"
+	}
+}
+
+character_event = { # Son informed of mother's attempt to gain him land
+
+	id = concubines.16
+	desc = "EVTDESC1000150016"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+	
+	option = { # Hope for the best
+		name = "EVTOPTA1000150016"
+		father = { character_event = { id = concubines.17 days = 2 tooltip = "EVTTOOLTIP1000150016" } }
+	}
+}
+	
+character_event = { # Father decides on disposal of land
+
+	id = concubines.17
+	desc = "EVTDESC1000150016"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+	
+	option = { # Grant county
+		name = "EVTOPTA1000150016"
+		random_demesne_title = {
+			limit = {
+				lower_tier_than = duke
+				NOT = {	location = { is_capital = yes }	}
+			}
+			event_target:trueborn_son = {
+				grant_title = PREV
+			}
+		}
+	}
+	option = { # Say no
+		name = "EVTOPTB1000150016"
+		FROM = {
+			mother = {
+				opinion = {
+					who = ROOT
+					modifier = opinion_very_disappointed
+					years = 2
+				}
+			}
+		}
+		hidden_tooltip = {
+			event_target:trueborn_son = {
+				character_event = { id = concubines.18 days = 2 }
+			}
+		}
+	}
+}
+
+# Son informed he is not getting county
+character_event = {
+	id = concubines.18
+	desc = "EVTDESC1000150017"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150017"
+		FROM = {
+			reverse_opinion = {
+				who = ROOT
+				modifier = opinion_disappointed
+				years = 2
+			}
+		}
+		mother = {
+			character_event = { id = concubines.33 days = 2 }
+		}
+	}
+}
+
+# Concubine has had it with mistress
+character_event = {
+	id = concubines.19
+	desc = "EVTDESC1000150018"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+	
+	only_women = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		is_consort = yes
+		NOR = {
+			has_character_flag = first_concubine_killer
+			has_character_flag = second_concubine_killer
+			has_character_flag = third_concubine_killer
+			has_character_flag = second_concubine_prospective
+			has_character_flag = third_concubine_prospective
+		}
+		liege = {
+			spouse = {
+				NOR = {
+					trait = immortal
+					trait = incapable
+					has_character_flag = concubine_target
+				}
+				OR = {
+					AND = {
+						trait = cruel
+						NOT = { reverse_opinion = { who = ROOT value = -25 } }
+					}
+					AND = {
+						trait = wroth
+						NOT = { reverse_opinion = { who = ROOT value = -25 } }
+					}
+					AND = {
+						trait = proud
+						NOT = { reverse_opinion = { who = ROOT value = -50 }}
+					}
+					NOT = { reverse_opinion = { who = ROOT value = -75 } }
+				}
+			}
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.1
+			trait = kind
+		}
+		modifier = {
+			factor = 0.1
+			trait = content
+		}
+		modifier = {
+			factor = 0.1
+			trait = honest
+		}
+		modifier = {
+			factor = 1.1
+			trait = deceitful
+		}
+		modifier = {
+			factor = 1.1
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.1
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					trait = cruel
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					trait = wroth
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					trait = proud
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					NOT = { reverse_opinion = { who = ROOT value = -25 } }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					NOT = { reverse_opinion = { who = ROOT value = -50 } }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					NOT = { reverse_opinion = { who = ROOT value = -75 } }
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		set_character_flag = first_concubine_killer
+	}
+	
+	option = { #Looks like my man will be a widower...
+		name = "EVTOPTA1000150019"
+		character_event = {
+			id = concubines.21
+			days = 6
+		}
+		liege = {
+			spouse = {
+				set_character_flag = concubine_target
+			}
+			random_courtier = {
+				limit = {
+					NOR = {
+						has_character_flag = first_concubine_killer
+						has_character_flag = second_concubine_killer
+						has_character_flag = third_concubine_killer
+					}
+					is_consort = PREV
+				}
+				set_character_flag = prospective_second_concubine
+				character_event = {
+					id = concubines.20 
+					days = 2
+				}
+			}
+		}			
+	}
+}
+
+ # Concubine joins plot to kill mistress
+character_event = {
+	id = concubines.20
+	desc = "EVTDESC1000150019"
+	picture = GFX_evt_quarrel
+	
+	only_women = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		is_consort = yes
+		NOT = { has_character_flag = second_concubine_killer }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = prospective_second_concubine
+			}
+			random_list = {
+				50 = {
+					set_character_flag = second_concubine_killer
+				}
+				50 = {
+					set_character_flag = not_a_killer
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_character_flag = prospective_second_concubine }
+			}
+			random_list = {
+				50 = {
+					set_character_flag = third_concubine_killer
+				}
+				50 = {
+					set_character_flag = not_a_killer
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA1000150019"
+		liege = {
+			any_consort = {
+				if = {
+					limit = {
+						NOR = {
+							has_character_flag = first_concubine_killer
+							has_character_flag = not_a_killer
+							has_character_flag = second_concubine_killer
+							has_character_flag = third_concubine_killer
+						}
+					}		
+					character_event = {
+						id = concubines.20 
+						days = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+ # Concubine decides to kill mistress	
+character_event = {
+	id = concubines.21
+	desc = "EVTDESC1000150020"
+	picture = GFX_evt_quarrel
+	
+	only_women = yes
+	max_age = 40
+	capable_only = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	option = { # Farewell to my sow of a mistress!
+		name = "EVTOPTA1000150020"
+		if = {
+			limit = {
+				liege = {
+					spouse = {
+						has_character_flag = concubine_target
+					}
+					any_consort = { has_character_flag = second_concubine_killer }
+					any_consort = { has_character_flag = third_concubine_killer }
+				}
+			}
+			liege = {
+				spouse = {
+					character_event = {
+						id = concubines.22
+						days = 4
+						tooltip = "EVTTOOLTIP1000150022"
+					}
+				}
+				character_event = {
+					id = concubines.23
+					days = 4
+					tooltip = "EVTTOOLTIP1000150023"
+				}
+			}
+		}
+		if = {
+			limit = {
+				liege = {
+					spouse = {
+						has_character_flag = concubine_target
+					}
+					OR = {
+						AND = {
+							NOT = { any_consort = { has_character_flag = second_concubine_killer } }
+							any_consort = { has_character_flag = third_concubine_killer }
+						}
+						AND = {
+							NOT = { any_consort = { has_character_flag = third_concubine_killer } }
+							any_consort = { has_character_flag = second_concubine_killer }
+						}
+					}
+				}
+			}
+			random_list = {
+				66 = {
+					liege = {
+						spouse = {
+							character_event = {
+								id = concubines.22
+								tooltip = "EVTTOOLTIP1000150022"
+							}
+						}
+						character_event = {
+							id = concubines.23
+							days = 4
+							tooltip = "EVTTOOLTIP1000150022"
+						}
+					}
+				}
+				34 = {
+					liege = {
+						character_event = {
+							id = concubines.24
+							days = 4
+							tooltip = "EVTTOOLTIP1000150022"
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				liege = {
+					spouse = {
+						has_character_flag = concubine_target
+					}
+					NOR = {
+						any_consort = { has_character_flag = second_concubine_killer }
+						any_consort = { has_character_flag = third_concubine_killer }
+					}
+				}
+			}
+			random_list = {
+				34 = {
+					liege = {
+						spouse = {
+							character_event = {
+								id = concubines.22
+								tooltip = "EVTTOOLTIP1000150022"
+							}
+						}
+						character_event = {
+							id = concubines.23
+							days = 4
+							tooltip = "EVTTOOLTIP1000150023"
+						}
+					}
+				}
+				66 = {
+					liege = {
+						character_event = {
+							id = concubines.24
+							days = 4
+							tooltip = "EVTTOOLTIP1000150022"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+ # Death by concubine
+character_event = {
+	id = concubines.22
+	desc = "EVTDESC1000150022"
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150022"
+		death = {
+			death_reason = death_murder
+		}
+	}
+}
+
+#Husband informed of wife's death under suspicious circumstances
+character_event = {
+	id = concubines.23
+	desc = "EVTDESC1000150023"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150023"
+	}
+}
+
+# Concubine caught trying to kill mistress; what to do?
+character_event = {
+	id = concubines.24
+	desc = "EVTDESC1000150024"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = { # Send killer to prison
+		name = "EVTOPTA1000150024"
+		FROM = {
+			imprison = yes
+		}
+	}
+	option = { # Have killer executed
+		name = "EVTOPTB1000150024"
+		from = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+	}
+	option = { # I will not do anything
+		name = "EVTOPTC1000150024"
+		add_trait = arbitrary
+		spouse = {
+			opinion = {
+				who = ROOT
+				modifier = opinion_angry
+				years = 10
+			}
+		}
+		if = {
+			limit = {
+				spouse = {
+					any_lover = { character = ROOT }
+				}
+			}
+			set_character_flag = lost_loving_feeling
+			character_event = {
+				id = 64045
+					tooltip = "EVTTOOLTIP64045"
+			}
+		}
+	}
+	option = { # How horrible! (Murderous concubine is already gone; punishment is moot)
+		name = "EVTOPTD1000150024"
+		trigger = {
+			NOT = {
+				any_consort = {
+					has_character_flag = first_concubine_killer
+				}
+			}
+		}
+	}
+}
+
+character_event = { # Husband graciously accepts your request
+	id = concubines.25
+	desc = "EVTDESC1000150025"
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150025"
+	}
+}
+	
+character_event = { # Husband cares not for me
+	id = concubines.26
+	desc = "EVTDESC1000150026"
+	picture = GFX_evt_quarrel
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150026"
+	}
+}
+	
+character_event = { # Husband insulted me
+	id = concubines.27
+	desc = "EVTDESC1000150027"
+	picture = GFX_evt_quarrel
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150027"
+	}
+}
+	
+character_event = { # Husband is no longer a couch potato
+	id = concubines.28
+	desc = "EVTDESC1000150028"
+	picture = GFX_evt_lovers
+	
+	has_character_flag = sleep_on_the_couch
+	only_women = yes
+	max_age = 45
+	
+	trigger = {
+		is_married = no
+	}
+
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVTOPTA1000150028"
+		if = {
+			limit = {
+				has_character_modifier = sleep_on_the_couch
+			}
+			remove_character_modifier = sleep_on_the_couch
+		}
+		clr_character_flag = sleep_on_the_couch
+	}
+}
+
+character_event = { #No need to appreciate
+
+	id = concubines.29
+	desc = "EVTDESC1000150029"
+	picture = GFX_evt_lovers
+
+	has_character_flag = show_appreciation
+	only_women = yes
+	max_age = 45
+	
+	trigger = {
+		is_married = no
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVTOPTA1000150029"
+		if = {
+			limit = {
+				has_character_modifier = show_appreciation
+			}
+			remove_character_modifier = show_appreciation
+		}
+		clr_character_flag = show_appreciation
+	}
+}
+
+character_event = { #Wife succeeds in killing concubine, hopes for the best
+
+	id = concubines.30
+	desc = "EVTDESC1000150030"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150030A"
+	}
+}
+
+character_event = { #Wife fails to kill concubine, awaits reprisal
+
+	id = concubines.31
+	desc = "EVTDESC1000150031"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150031"
+	}
+}
+
+character_event = { #Husband does nothing in response
+
+	id = concubines.32
+	desc = "EVTDESC1000150032"
+	picture = GFX_evt_courtiers_looking_scandalized
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150032"
+	}
+}
+
+character_event = { #Son will not be getting any land
+
+	id = concubines.33
+	desc = "EVTDESC1000150033"
+	picture = GFX_evt_quarrel
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA1000150033"
+	}
+}
+
+character_event = { #Courtier 'helps out'  liege's spiteful wife
+
+	id = concubines.34
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	only_men = yes
+	
+	trigger = {
+		NOR = {
+			trait = homosexual
+			trait = infirm
+			trait = incapable
+			trait = celibate
+		}
+		is_ruler = no
+		has_lover = no
+		liege = {
+			is_married = yes
+			opinion = { who = ROOT value = -25 }
+			spouse = {
+				opinion = { who = ROOT value = 25 }
+				reverse_opinion = { who = ROOT value = 25 }
+				has_lover = no
+				NOR = {
+					trait = homosexual
+					trait = infirm
+					trait = incapable
+					trait = celibate
+					age = 41
+				}
+			}
+			spouse = {
+				NOT = { opinion = { who = PREV value = -25 } }
+			}
+			any_consort = {
+				is_alive = yes
+			}
+			religion_group = pagan_group
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					NOT = { opinion = { who = PREV value = -50 } }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					NOT = { opinion = { who = PREV value = -75 } }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				any_lover = {
+					is_consort = PREV
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					has_character_modifier = sleep_on_the_couch
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					trait = fair
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = fair
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					opinion = { who = ROOT value = 50 }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					opinion = { who = ROOT value = 75 }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					reverse_opinion = { who = ROOT value = 50 }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					reverse_opinion = { who = ROOT value = 75 }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					trait = lustful
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = lustful
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				NOT = { reverse_opinion = { who = ROOT value = -50 } }
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				NOT = { reverse_opinion = { who = ROOT value = -75 } }
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					trait = wroth
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			liege = {
+				spouse = {
+					trait = deceitful
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = deceitful
+		}
+		modifier = {
+			factor = 0.5
+			liege = {
+				spouse = {
+					trait = chaste
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.5
+			trait = kind
+		}
+		modifier = {
+			factor = 0.5
+			liege = {
+				spouse = {
+					trait = kind
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = honest
+		}
+		modifier = {
+			factor = 0.5
+			liege = {
+				spouse = {
+					trait = honest
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			liege = {
+				spouse = {
+					trait = ugly
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = ugly
+		}
+	}
+	
+	option = { #How could I refuse a woman in need?
+		liege = {
+			spouse = {
+				character_event = {
+					id = concubines.35
+					days = 4
+				}
+			}
+		}
+	}
+	
+	option = { #I'm not losing my head over a night of fun!
+	}
+}
+
+character_event = { #Spiteful wife notices courtier's advances
+
+	id = concubines.35
+	desc = "EVTDESC1000150035"
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+	
+	option = { #Let's see how much my husband likes sharing.
+		name = "EVTOPTA1000150035A"
+		add_lover = FROM
+		if = {
+			limit = {
+				NOT = { trait = lustful }
+			}
+			random = {
+				chance = 50
+				add_trait = lustful
+				hidden_tooltip = {
+					character_event = {
+						id = 38272
+					}
+				}
+			}
+		}
+	}
+	
+	option = { #This won't fix how I feel.
+		name = "EVTOPTA1000150035B"
+	}
+}

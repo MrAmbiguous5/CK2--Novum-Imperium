@@ -1,0 +1,47 @@
+namespace = religion_opinion_tweaking
+#Adds positive opinion to Tarhuntites toward Luwian lieges, and Ghazi toward Sunni lieges.
+#Should be added to on_yearly_pulse, and on_startup when it becomes available.
+character_event = {
+	id = religion_opinion_tweaking.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		independent = no
+		OR = {
+			AND = {
+				religion = tarhunt
+				liege = {
+					religion = luwian
+					NOT = {
+						reverse_has_opinion_modifier = {
+							who = ROOT
+							modifier = religious_ties
+						}
+					}
+				}
+			}
+			AND = {
+				religion = ghazi_islam
+				liege = {
+					religion = sunni
+					NOT = {
+						reverse_has_opinion_modifier = {
+							who = ROOT
+							modifier = religious_ties
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		liege = {
+			reverse_opinion = {
+				modifier = religious_ties
+				who = ROOT
+				years = 100
+			}
+		}
+	}
+}

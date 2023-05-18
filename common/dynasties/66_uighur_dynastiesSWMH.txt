@@ -11,10 +11,10 @@
 #Characters: 1229800 - 1229899
 ######################################
 
-#1000101601 = {
-#	name="Yaghlaqar"
-#	culture = uyghur
-#}
+1000101601 = {
+	name="Yaghlaqar"
+	culture = uyghur
+}
 1000101602 = {
 	name="Uturqar"
 	culture = uyghur

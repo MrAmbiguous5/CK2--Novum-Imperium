@@ -1,0 +1,214 @@
+decisions = {
+
+	traditional_decision.30 = {
+		is_high_prio = yes
+		potential = {
+			NOR = {
+				has_law = tradition_control_3
+				has_law = tradition_control_4
+			}
+			is_playable = yes
+			higher_tier_than = count
+			is_landed = yes
+			is_tribal = no
+			is_inaccessible_trigger = no
+			traditional_soul_trigger = yes
+		}
+		allow = {
+			is_adult = yes
+			war = no
+			prisoner = no
+			has_law = tradition_control_2
+			piety = 500
+			learning = 8
+			intrigue = 8
+		}
+		effect = {
+			piety = -250
+			primary_title = { 
+				add_law_w_cooldown = tradition_control_3
+			}
+		}
+		revoke_allowed = {
+			always = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.005 # Slow it down
+			}
+			modifier = {
+				factor = 1.5
+				trait = diligent
+			}
+			modifier = {
+				factor = 3
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.4
+				trait = gregarious
+			}
+			modifier = {
+				factor = 0.7
+				trait = just
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.2
+				trait = shy
+			}
+			modifier = {
+				factor = 0.7
+				trait = content
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 3
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.7
+				NOT = { age = 25 }
+			}
+			modifier = {
+				factor = 0.5
+				age = 60
+			}
+		}
+	}
+
+	traditional_decision.40 = {
+		is_high_prio = yes
+		potential = {
+			has_law = tradition_control_3
+			is_playable = yes
+			higher_tier_than = count
+			is_landed = yes
+			is_tribal = no
+			is_inaccessible_trigger = no
+		}
+		allow = {
+			is_adult = yes
+			war = no
+			prisoner = no
+			has_law = tradition_control_3
+			piety = 1000
+			intrigue = 8
+			learning = 8
+			NOR = {
+				trait = on_hajj
+				has_character_flag = preparing_hajj
+				has_character_flag = ramadan
+				has_character_flag = activated_hajj			
+				trait = travelling
+				has_character_modifier = holding_large_feast
+				has_character_modifier = holding_summer_fair
+					has_character_flag = holding_grand_hunt
+			#NOT = { has_character_flag = epic_tournament }		
+				has_character_flag = performing_sacrifice
+			}
+		}
+		effect = {
+			piety = -500
+			primary_title = { 
+				add_law_w_cooldown = tradition_control_4
+			}
+		}
+		revoke_allowed = {
+			always = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.005 # Slow it down
+			}
+			modifier = {
+				factor = 0
+				NOT = { scaled_wealth = 0.3 }
+			}
+			modifier = {
+				factor = 1.5
+				trait = diligent
+			}
+			modifier = {
+				factor = 3
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.4
+				trait = gregarious
+			}
+			modifier = {
+				factor = 0.7
+				trait = just
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.2
+				trait = shy
+			}
+			modifier = {
+				factor = 0.7
+				trait = content
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 3
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.7
+				NOT = { age = 25 }
+			}
+			modifier = {
+				factor = 0.5
+				age = 60
+			}
+		}
+	}
+	
+# Re-invented Lore Decision
+	use.lore = {
+		is_high_prio = yes
+		potential = {
+			has_character_modifier = reinvented_lore
+			is_playable = yes
+			higher_tier_than = count
+			is_landed = yes
+			is_inaccessible_trigger = no
+		}
+		allow = {
+			has_character_modifier = reinvented_lore
+			is_adult = yes
+			prisoner = no
+			OR = {
+				has_law = tradition_control_3
+				has_law = tradition_control_4
+			}
+			piety = 200
+			learning = 8
+		}
+		effect = {
+			piety = -200
+			custom_tooltip = {
+				text = use.lore_tooltip
+				hidden_tooltip = { narrative_event = { id = traditionallore.3 days = 1 } }
+			}
+		}
+	}
+}
+
+# 

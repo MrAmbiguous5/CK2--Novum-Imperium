@@ -1,0 +1,103 @@
+unholy_king_deposed = {
+	icon = 36
+}
+
+faction_depose_liege_leader= {
+	icon = 36
+}
+
+faction_depose_liege_member = {
+	icon = 36
+}
+
+dictator = {
+	icon = 25
+	general_opinion = -50
+}
+
+deposed = {
+	general_opinion = -10
+	diplomacy = -5
+	icon = 36
+}
+
+held_mithras_timer = {
+	monthly_character_prestige = 0.3
+	monthly_character_piety = 0.3
+	icon = 8
+}
+
+mithras_defense = {
+	health = 0.5
+	intrigue = 1
+	icon = 8
+}
+
+mithras_offense = {
+	land_morale = 0.5
+	martial = 1
+	icon = 8
+}
+
+mithras_sovereignty = {
+	monthly_character_prestige = 0.5
+	diplomacy = 1
+	icon = 8
+}
+
+christ_blot_sttyr = {
+	monthly_character_piety = 0.2
+	martial = 1
+	land_morale = 0.1
+	icon = 25
+}
+
+christ_blot_stthor = {
+	monthly_character_piety = 0.2
+	martial = 1
+	global_revolt_risk = -0.02
+	icon = 25
+}
+
+christ_blot_stfreyja = {
+	monthly_character_piety = 0.2
+	diplomacy = 1
+	fertility = 0.3
+	icon = 25
+}
+
+christ_blot_stfrey = {
+	monthly_character_piety = 0.2
+	stewardship = 1
+	global_tax_modifier = 0.1
+	icon = 25
+}
+held_christblot_timer = {}
+
+held_christblot_modifier = {
+	monthly_character_prestige = 0.3
+	monthly_character_piety = 0.3
+	icon = 8
+}
+
+supporting_silkroad = {
+	monthly_character_wealth = -1.00
+	icon = 6
+}
+
+held_solar_procession = {
+	monthly_character_prestige = 0.3
+	monthly_character_piety = 0.3
+	icon = 8
+}
+
+held_tawusgeran_timer = {
+	monthly_character_prestige = 0.3
+	monthly_character_piety = 0.3
+	icon = 8
+}
+syrian_desert = {
+	icon = 31
+	supply_limit = -5
+	max_attrition = 0.5
+}

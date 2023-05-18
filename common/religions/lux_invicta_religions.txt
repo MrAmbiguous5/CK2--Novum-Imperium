@@ -1,4 +1,5 @@
 abrahamic_group = {
+	alternate_start = { always = no }	
 	graphical_culture = muslimgfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -12,6 +13,7 @@ abrahamic_group = {
 	# Reformed
 	druze_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 153 255 153 }
 		icon = 343
@@ -96,6 +98,7 @@ abrahamic_group = {
 	}
 	judaism_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = jewishgfx
 		color = { 122 255 215 }
 		icon = 345
@@ -161,6 +164,7 @@ abrahamic_group = {
 	}	
 	sethian_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 25 0 0 }
 		icon = 518
@@ -232,6 +236,7 @@ abrahamic_group = {
 	}
 	muslim_sufi_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 0 255 0 }
 		icon = 351
@@ -302,11 +307,13 @@ abrahamic_group = {
 	}
 }
 anatolian_group = {
+	alternate_start = { always = no }	
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
 	has_coa_on_barony_only = yes
 	hostile_within_group = yes
+	
 	
 	color = { 255 102 156 }
 	
@@ -317,6 +324,7 @@ anatolian_group = {
 	cybele_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 255 102 156 }
 		icon = 354
@@ -394,7 +402,7 @@ anatolian_group = {
 	}
 }
 east_african_group = {
-	crusade_cb = crusade
+	alternate_start = { always = no }	
 	graphical_culture = muslimgfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -409,6 +417,7 @@ east_african_group = {
 	ethiopian_war_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		reformer_head_of_religion = no #Reformer is NOT a ruler head
 		color = { 205 43 39 }
@@ -490,6 +499,7 @@ east_african_group = {
 	}
 	######################
 	waaq = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 162 45 76 }
 		icon = 561
@@ -584,6 +594,7 @@ east_african_group = {
 	}
 }
 arabpagan_group = {
+	alternate_start = { always = no }	
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -598,6 +609,7 @@ arabpagan_group = {
 	# Reformed
 	arab_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 255 206 10 }
 		icon = 497
@@ -661,7 +673,7 @@ arabpagan_group = {
 			land_morale = 1.70
 		}
 		
-		can_call_crusade = no
+		can_call_crusade = yes
 		has_heir_designation = yes
 		female_temple_holders = yes
 		feminist = yes
@@ -684,6 +696,7 @@ arabpagan_group = {
 	######################
 	almaqah = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 255 165 20 }
 		icon = 360
@@ -769,6 +782,8 @@ arabpagan_group = {
 		religious_clothing_priest = 5
 	}
 	talab = {
+
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 82 148 255 }
 		icon = 360
@@ -846,6 +861,8 @@ arabpagan_group = {
 	}
 	
 	shams = {
+
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 255 255 143 }
 		icon = 495
@@ -930,6 +947,8 @@ arabpagan_group = {
 		religious_clothing_priest = 5
 	}
 	allat = {
+
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 61 83 148 }
 		icon = 495
@@ -1015,6 +1034,8 @@ arabpagan_group = {
 	}
 	
 	hubal = {
+
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 255 102 82 }
 		icon = 494
@@ -1093,6 +1114,8 @@ arabpagan_group = {
 	}
 	
 	attar = {
+
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 214 25 0 }
 		icon = 492
@@ -1166,6 +1189,8 @@ arabpagan_group = {
 	}
 	
 	maher = {
+
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 138 16 0 }
 		icon = 543
@@ -1245,6 +1270,7 @@ arabpagan_group = {
 	}
 }
 aztec_group = {
+	alternate_start = { always = no }	
 	crusade_cb = crusade
 	graphical_culture = mesoamericangfx
 	playable = yes
@@ -1258,6 +1284,7 @@ aztec_group = {
 	
 	tlateotocani = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = mesoamericangfx
 		color = { 255 100 25 }
 		icon = 15
@@ -1323,6 +1350,7 @@ aztec_group = {
 	}
 }
 pagan_group = {
+	alternate_start = { always = no }	
 	graphical_culture = norsegfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -1336,6 +1364,7 @@ pagan_group = {
 	# Reformed
 	northern_sun_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 235 255 135 }
 		icon = 484
@@ -1458,6 +1487,7 @@ pagan_group = {
 	}
 }
 baltic_group = {
+	alternate_start = { always = no }
 	graphical_culture = norsegfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -1472,6 +1502,7 @@ baltic_group = {
 	romuva_pagan_reformed = {
 		allow_in_ruler_designer = no
 		reformer_head_of_religion = yes
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 28 51 233 }
 		icon = 32
@@ -1584,66 +1615,10 @@ baltic_group = {
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 	}
-	
-	baltic_pagan = {
-		graphical_culture = pagangfx
-
-		icon = 31
-		heresy_icon = 33
-
-		color = { 0.6 0.4 0.3 }
-		crusade_name = GREAT_HOLY_WAR
-		scripture_name = THE_LEGENDS
-		priest_title = VOLHV
-
-		high_god_name = GOD_DIEVAS
-
-		god_names = {
-			GOD_DIEVAS GOD_GABIJA GOD_PERKUNAS GOD_LAIMA
-		}
-		evil_god_names = {
-			VELNIAS
-		}
-
-		unit_modifier = {
-			garrison_size = 0.2
-			key = "DEF_RELIGION"
-		}
-		unit_home_modifier = {
-			land_morale = 0.6
-			garrison_size = 0.4
-			key = "DEF_RELIGION_HOME_TERRITORY"
-		}
-
-		priests_can_marry = yes
-		female_temple_holders = yes
-		defensive_attrition = yes
-		allow_looting = yes
-		max_consorts = 3
-		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
-		reformed = baltic_pagan_reformed
-		short_reign_opinion_year_mult = 2
-		hard_to_convert = yes
-		dislike_tribal_organization = yes
-		can_demand_religious_conversion = no
-		castes = yes
-		aggression = 0.5
-
-		intermarry = odin_pagan
-		intermarry = rodnoveric_pagan
-		intermarry = suomenusko_pagan
-		intermarry = dievas
-		intermarry = peckols
-		intermarry = perkunas
-		intermarry = saule
-		intermarry = baltic_pagan_reformed
-		intermarry = christian
-
-		religious_clothing_head = 14
-		religious_clothing_priest = 6
-	}
 	dievas = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
+		
 		color = { 31 150 220 }
 		icon = 31
 		heresy_icon = 454
@@ -1757,6 +1732,7 @@ baltic_group = {
 		religious_clothing_priest = 3
 	}
 	saule = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 200 150 150 }
 		icon = 31
@@ -1848,6 +1824,7 @@ baltic_group = {
 	}
 	
 	perkunas = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 78 120 162 }
 		icon = 597
@@ -1958,6 +1935,7 @@ baltic_group = {
 	}
 	
 	peckols = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 10 20 100 }
 		icon = 498
@@ -2067,6 +2045,7 @@ baltic_group = {
 	}
 }
 bantu_group = {
+	alternate_start = { always = no }	
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -2081,6 +2060,7 @@ bantu_group = {
 	# Reformed
 	bantu_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.3 0.5 0.6 }
 		icon = 558
@@ -2182,6 +2162,7 @@ bantu_group = {
 	}
 	nyakalagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.3 0.45 0.3 }
 		icon = 563
@@ -2285,6 +2266,7 @@ bantu_group = {
 	zande_pagan_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 69 19 0 }
 		icon = 630
@@ -2367,6 +2349,7 @@ bantu_group = {
 	zulu_pagan_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.1 0.15 0.2 }
 		icon = 358
@@ -2447,6 +2430,7 @@ bantu_group = {
 	}
 	######################
 	kintu = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.6 0.35 0.0 }
 		icon = 557
@@ -2544,6 +2528,7 @@ bantu_group = {
 	}
 	
 	batembuzi = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.2 0.05 0.65 }
 		icon = 627
@@ -2629,6 +2614,7 @@ bantu_group = {
 	}
 	
 	imana = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.45 0.1 0.25 }
 		icon = 628
@@ -2722,6 +2708,7 @@ bantu_group = {
 	}
 	
 	nyasaye = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.3 0.3 0.9 }
 		icon = 562
@@ -2819,6 +2806,7 @@ bantu_group = {
 	
 	nyau = {
 		crusade_name = CRUSADE_NYAU
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.5 0.4 0.75 }
 		icon = 556
@@ -2901,6 +2889,7 @@ bantu_group = {
 	}
 	
 	makonde_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.1 0.2 0.15 }
 		icon = 560
@@ -2995,6 +2984,7 @@ bantu_group = {
 	}
 	
 	mwari = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.4 0.8 0.1 }
 		icon = 555
@@ -3086,6 +3076,7 @@ bantu_group = {
 	}
 	
 	zande_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 74 24 0 }
 		icon = 629
@@ -3157,6 +3148,7 @@ bantu_group = {
 	}
 	
 	zulu_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.0 0.1 0.15 }
 		icon = 356
@@ -3230,6 +3222,7 @@ bantu_group = {
 	}
 }
 berberpagan_group = {
+	alternate_start = { always = no }	
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -3245,6 +3238,7 @@ berberpagan_group = {
 	berber_pagan_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 255 128 206 }
 		icon = 369
@@ -3324,6 +3318,7 @@ berberpagan_group = {
 	}
 	######################
 	berber_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 255 175 125 }
 		icon = 368
@@ -3411,6 +3406,7 @@ berberpagan_group = {
 	}
 	
 	gurzil = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 255 75 93 }
 		icon = 511
@@ -3488,6 +3484,7 @@ berberpagan_group = {
 	}
 	
 	amanai = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 255 148 77 }
 		icon = 512
@@ -3569,6 +3566,7 @@ berberpagan_group = {
 	}
 }
 bud_group = {
+	alternate_start = { always = no }	
 	crusade_cb = crusade
 	graphical_culture = indiangfx
 	playable = yes
@@ -3585,6 +3583,7 @@ bud_group = {
 	bud_zen_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 130 155 164 }
 		icon = 602
@@ -3696,6 +3695,7 @@ bud_group = {
 	}
 	bud_zor_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 0 245 94 }
 		icon = 605
@@ -3800,6 +3800,7 @@ bud_group = {
 	}
 	######################
 	bud_sthaviravada = {
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 0.8 0.4 0.0 }
 		icon = 40
@@ -3893,6 +3894,7 @@ bud_group = {
 		religious_clothing_priest = 10
 	}
 	bud_bahusrutiya = {
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 14 35 100 }
 		icon = 40
@@ -3972,6 +3974,7 @@ bud_group = {
 		religious_clothing_priest = 10
 	}
 	bud_mahayana = {
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 0.4 0.5 0.3 }
 		icon = 486
@@ -4048,6 +4051,7 @@ bud_group = {
 	}
 	bud_pureland = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 135 16 200 }
 		icon = 40
@@ -4124,6 +4128,7 @@ bud_group = {
 	}
 	
 	bud_pratyeka = {
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 180 76 67 }
 		icon = 521
@@ -4219,6 +4224,7 @@ bud_group = {
 	}
 	
 	bud_vajrayana = {
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 150 85 175 }
 		icon = 490
@@ -4287,6 +4293,7 @@ bud_group = {
 	
 	bud_zen = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 125 125 135 }
 		icon = 601
@@ -4395,6 +4402,7 @@ bud_group = {
 	}
 	
 	bud_zor = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 92 255 154 }
 		icon = 604
@@ -4493,6 +4501,7 @@ bud_group = {
 	}
 }
 celtic_group = {
+	alternate_start = { always = no }	
 	graphical_culture = norsegfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -4506,6 +4515,7 @@ celtic_group = {
 	# Reformed
 	celtic_christ_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 127 195 77 }
 		icon = 374
@@ -4619,6 +4629,7 @@ celtic_group = {
 	}
 	stonehenge_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 0 255 0 }
 		icon = 378
@@ -4709,6 +4720,7 @@ celtic_group = {
 	}
 	iberian_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 0.55 0.7 0.4 }
 		icon = 553
@@ -4798,6 +4810,7 @@ celtic_group = {
 	}
 	######################
 	stonehenge_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 0 135 0 }
 		icon = 376
@@ -4884,6 +4897,7 @@ celtic_group = {
 		religious_clothing_priest = 12
 	}
 	lugh = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 133 133 0 }
 		icon = 376
@@ -4968,6 +4982,7 @@ celtic_group = {
 	}
 	
 	endovellico = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 40 155 61 }
 		icon = 552
@@ -5040,6 +5055,7 @@ celtic_group = {
 	}
 }
 chinese_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = mongolgfx
 	playable = yes
@@ -5055,6 +5071,7 @@ chinese_group = {
 	tibetan_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.75 0.5 0.35 }
 		icon = 381
@@ -5153,8 +5170,10 @@ chinese_group = {
 		religious_clothing_priest = 6
 	}
 	lubu_reformed = {
+		alternate_start = { always = no }
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.55 0.65 0.95 }
 		icon = 384
@@ -5232,6 +5251,7 @@ chinese_group = {
 	tao_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.4 0.35 0.65 }
 		icon = 387
@@ -5310,6 +5330,7 @@ chinese_group = {
 	}
 	######################
 	confucian = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.9 0.7 0.0 }
 		icon = 451
@@ -5408,6 +5429,7 @@ chinese_group = {
 	}
 	
 	lubu = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 143 86 60 }
 		icon = 383
@@ -5484,6 +5506,7 @@ chinese_group = {
 	}
 	
 	tibetan = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.6 0.5 0.4 }
 		icon = 380
@@ -5586,6 +5609,7 @@ chinese_group = {
 	}
 	
 	tao = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.4 0.1 0.1 }
 		icon = 386
@@ -5674,6 +5698,7 @@ chinese_group = {
 	}
 }
 norsegerman_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = norsegfx
 	playable = yes
@@ -5698,6 +5723,7 @@ norsegerman_group = {
 	# Reformed
 	german_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 154 130 106 }
 		icon = 391
@@ -5809,6 +5835,7 @@ norsegerman_group = {
 	}
 	norse_christ_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 154 154 106 }
 		icon = 529
@@ -5915,6 +5942,7 @@ norsegerman_group = {
 	}
 	odin_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 186 186 186 }
 		icon = 20
@@ -6021,6 +6049,7 @@ norsegerman_group = {
 	ragnarok_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 25 25 25 }
 		icon = 567
@@ -6102,6 +6131,7 @@ norsegerman_group = {
 	teiwaz_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 158 172 189 }
 		icon = 506
@@ -6183,6 +6213,7 @@ norsegerman_group = {
 	}
 	######################
 	odin_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 182 182 182 }
 		icon = 19
@@ -6287,6 +6318,7 @@ norsegerman_group = {
 		religious_clothing_priest = 3
 	}
 	norse_war = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 206 186 186 }
 		icon = 19
@@ -6367,6 +6399,7 @@ norsegerman_group = {
 		religious_clothing_priest = 3
 	}
 	ragnarok = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 50 50 50 }
 		icon = 19
@@ -6454,6 +6487,7 @@ norsegerman_group = {
 	}
 	
 	sowilo = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 255 255 209 }
 		icon = 565
@@ -6556,6 +6590,7 @@ norsegerman_group = {
 	}
 
 	nott = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 15 20 20 }
 		icon = 566
@@ -6638,6 +6673,7 @@ norsegerman_group = {
 	}
 	
 	german_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 189 173 158 }
 		icon = 389
@@ -6748,6 +6784,7 @@ norsegerman_group = {
 		religious_clothing_priest = 3
 	}
 	irminsul = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 189 158 158 }
 		icon = 389
@@ -6832,6 +6869,7 @@ norsegerman_group = {
 	}
 	
 	allfather = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 91 134 134 }
 		icon = 502
@@ -6941,6 +6979,7 @@ norsegerman_group = {
 	}
 	
 	teiwaz = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 91 111 134 }
 		icon = 504
@@ -7042,6 +7081,7 @@ christian = {
 	cathar_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 143 31 255 }
 		icon = 466
@@ -7138,6 +7178,7 @@ christian = {
 	christian_populist_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 255 255 }
 		icon = 595
@@ -7204,6 +7245,7 @@ christian = {
 	mari_christ_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 75 138 0 }
 		icon = 676
@@ -7317,6 +7359,7 @@ christian = {
 	}
 	montanist_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 66 129 }
 		icon = 639
@@ -7395,6 +7438,7 @@ christian = {
 	}
 	nasrani_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = indiangfx
 		color = { 0.7 0.4 0.6 }
 		icon = 636
@@ -7502,6 +7546,7 @@ christian = {
 	}
 	priscillian_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 174 0 184 }
 		icon = 679
@@ -7588,6 +7633,7 @@ christian = {
 	slavic_christian_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 94 181 119 }
 		icon = 533
@@ -7700,6 +7746,7 @@ christian = {
 	}
 	######################
 	antinomian = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 152 255 189 }
 		icon = 395
@@ -7783,6 +7830,7 @@ christian = {
 		religious_clothing_priest = 2
 	}
 	cathar = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 189 152 255 }
 		icon = 175
@@ -7862,6 +7910,7 @@ christian = {
 		religious_clothing_priest = 1
 	}
 	donatist = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 211 211 105 }
 		icon = 393
@@ -7934,6 +7983,7 @@ christian = {
 	}
 	melkite = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 192 66 }
 		icon = 2
@@ -8012,6 +8062,7 @@ christian = {
 		religious_clothing_priest = 2
 	}
 	montanist = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 128 170 }
 		icon = 638
@@ -8089,6 +8140,7 @@ christian = {
 	}
 	sabellianist = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 128 255 212 }
 		icon = 2
@@ -8188,6 +8240,7 @@ christian = {
 		religious_clothing_priest = 2
 	}
 	valentinian = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 149 128 }
 		icon = 2
@@ -8278,6 +8331,7 @@ christian = {
 		religious_clothing_priest = 2
 	}
 	mari_christ = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 61 255 51 }
 		icon = 675
@@ -8392,6 +8446,7 @@ christian = {
 		religious_clothing_priest = 12
 	}
 	priscillian = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 245 51 255 }
 		icon = 678
@@ -8469,6 +8524,7 @@ christian = {
 		religious_clothing_priest = 1
 	}
 	docetist = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 46 138 92 }
 		icon = 335
@@ -8584,6 +8640,7 @@ christian = {
 	}
 	apollinarist = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 0 184 174 }
 		icon = 11
@@ -8683,6 +8740,7 @@ christian = {
 	}
 	
 	solomonic_christ = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 150 110 110 }
 		icon = 683
@@ -8783,6 +8841,7 @@ christian = {
 	}
 	
 	audianist = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 198 95 148 }
 		icon = 633
@@ -8844,6 +8903,7 @@ christian = {
 	}
 	
 	celtic_christ = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 121 210 129 }
 		icon = 373
@@ -8958,6 +9018,7 @@ christian = {
 	}
 	
 	marcionist = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 251 255 71 }
 		icon = 634
@@ -9050,6 +9111,7 @@ christian = {
 	}
 	
 	nasrani = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 75 90 30 }
 		icon = 635
@@ -9157,6 +9219,7 @@ christian = {
 	}
 	
 	norse_christ = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 201 201 156 }
 		icon = 327
@@ -9269,6 +9332,7 @@ christian = {
 	}
 	
 	pelagian = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 166 101 230 }
 		icon = 522
@@ -9347,6 +9411,7 @@ christian = {
 	
 	semipelagian = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 230 101 230 }
 		icon = 523
@@ -9445,6 +9510,7 @@ christian = {
 	}
 	
 	sethian = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 25 0 0 }
 		icon = 516
@@ -9508,6 +9574,7 @@ christian = {
 	}
 	
 	slavic_christian = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 155 180 93 }
 		icon = 531
@@ -9620,6 +9687,7 @@ christian = {
 	}
 	
 	unctionist = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 0 0 255 }
 		icon = 524
@@ -9716,6 +9784,7 @@ christian = {
 	}
 }
 egyptian_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -9730,6 +9799,7 @@ egyptian_group = {
 	# Reformed
 	amun_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 236 190 51 }
 		icon = 539
@@ -9818,6 +9888,7 @@ egyptian_group = {
 	aten_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 250 211 111 }
 		icon = 541
@@ -9895,6 +9966,7 @@ egyptian_group = {
 	isis_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 168 18 93 }
 		icon = 401
@@ -9984,6 +10056,7 @@ egyptian_group = {
 	set_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 45 30 30 }
 		icon = 537
@@ -10059,6 +10132,7 @@ egyptian_group = {
 	}
 	######################
 	amun = {
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 236 190 51 }
 		icon = 474
@@ -10144,6 +10218,7 @@ egyptian_group = {
 		religious_clothing_priest = 14
 	}
 	aten = {
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 255 216 116 }
 		icon = 474
@@ -10220,6 +10295,7 @@ egyptian_group = {
 		religious_clothing_priest = 14
 	}
 	horus_re = {
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 196 110 60 }
 		icon = 474
@@ -10297,6 +10373,7 @@ egyptian_group = {
 	}
 	
 	isis = {
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 173 113 98 }
 		icon = 399
@@ -10385,6 +10462,7 @@ egyptian_group = {
 	}
 	
 	set = {
+		alternate_start = { always = no }	
 		graphical_culture = egyptiangfx
 		color = { 86 26 50 }
 		icon = 535
@@ -10468,6 +10546,7 @@ egyptian_group = {
 	}
 }
 finnish_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = norsegfx
 	playable = yes
@@ -10482,6 +10561,7 @@ finnish_group = {
 	# Reformed
 	suomenusko_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 122 122 0 }
 		icon = 26
@@ -10590,6 +10670,7 @@ finnish_group = {
 	}
 	chumbylat_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 182 182 114 }
 		icon = 404
@@ -10698,6 +10779,7 @@ finnish_group = {
 	voipel_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 9 33 57 }
 		icon = 407
@@ -10779,6 +10861,7 @@ finnish_group = {
 	}
 	######################
 	suomenusko_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 0 122 61 }
 		icon = 25
@@ -10880,6 +10963,7 @@ finnish_group = {
 	}
 	
 	ilmatar = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 122 0 61 }
 		icon = 575
@@ -10982,6 +11066,7 @@ finnish_group = {
 	}
 	
 	jumala = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 55 200 255 }
 		icon = 576
@@ -11088,6 +11173,7 @@ finnish_group = {
 	}
 	
 	chumbylat = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 114 114 59 }
 		icon = 403
@@ -11191,6 +11277,7 @@ finnish_group = {
 	}
 	
 	voipel = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 73 73 49 }
 		icon = 406
@@ -11277,6 +11364,7 @@ finnish_group = {
 	}
 }
 graecoroman_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = westerngfx
 	playable = yes
@@ -11291,6 +11379,7 @@ graecoroman_group = {
 	# Reformed
 	graeco_roman_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 153 133 153 }
 		icon = 410
@@ -11376,6 +11465,7 @@ graecoroman_group = {
 	}
 	######################
 	graeco_roman = { 
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 153 133 133 }
 		icon = 37
@@ -11482,6 +11572,7 @@ graecoroman_group = {
 		religious_clothing_priest = 14
 	}
 	jupiter = {
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 169 106 126 }
 		icon = 37
@@ -11594,6 +11685,7 @@ graecoroman_group = {
 		religious_clothing_priest = 14
 	}
 	dionysos = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 190 150 180 }
 		icon = 37
@@ -11674,6 +11766,7 @@ graecoroman_group = {
 	
 	alexandros = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 212 212 115 }
 		icon = 478
@@ -11756,6 +11849,7 @@ graecoroman_group = {
 	
 	solomonic_alexandros = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 66 73 0 }
 		icon = 663
@@ -11833,6 +11927,7 @@ graecoroman_group = {
 	}
 	
 	roman_imperial = {
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 151 94 114 }
 		icon = 510
@@ -11943,6 +12038,7 @@ graecoroman_group = {
 	}
 	
 	cybele = {
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 179 128 144 }
 		icon = 353
@@ -12046,6 +12142,7 @@ graecoroman_group = {
 	}
 }
 indian_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = indiangfx
 	playable = yes
@@ -12061,6 +12158,7 @@ indian_group = {
 	# Reformed
 	kubera_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 0.7 0.4 0.35 }
 		icon = 611
@@ -12140,6 +12238,7 @@ indian_group = {
 	murugan_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 0.8 0.4 0.35 }
 		icon = 614
@@ -12216,6 +12315,7 @@ indian_group = {
 	}
 	saura_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 0.6 0.3 0.6 }
 		icon = 608
@@ -12295,6 +12395,7 @@ indian_group = {
 	vidharma_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 0.4 0.3 0.6 }
 		icon = 412
@@ -12379,6 +12480,7 @@ indian_group = {
 	}
 	######################
 	vidharma = {
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 187 56 145 }
 		icon = 44
@@ -12468,6 +12570,7 @@ indian_group = {
 	}
 	
 	saura = {
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 165 70 85 }
 		icon = 607
@@ -12543,6 +12646,7 @@ indian_group = {
 	}
 	
 	kubera = {
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 160 170 88 }
 		icon = 610
@@ -12624,6 +12728,7 @@ indian_group = {
 	}
 	
 	murugan = {
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 47 68 60 }
 		icon = 613
@@ -12701,6 +12806,7 @@ indian_group = {
 	}
 }
 indohelen_group = {
+	alternate_start = { always = no }
 	graphical_culture = indiangfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -12714,6 +12820,7 @@ indohelen_group = {
 	# Reformed
 	indohelen_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 175 194 213 }
 		icon = 445
@@ -12849,6 +12956,7 @@ indohelen_group = {
 	}
 	######################
 	indohelen = {
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 95 134 171 }
 		icon = 444
@@ -12975,6 +13083,7 @@ indohelen_group = {
 	}
 	
 	indoh_bud = {
+		alternate_start = { always = no }	
 		graphical_culture = buddhistgfx
 		color = { 190 215 225 }
 		icon = 660
@@ -13091,6 +13200,7 @@ indohelen_group = {
 	}
 	
 	indoh_confucian = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 140 145 65 }
 		icon = 661
@@ -13202,6 +13312,7 @@ indohelen_group = {
 	}
 	
 	indoh_hindu = {
+		alternate_start = { always = no }	
 		graphical_culture = hindugfx
 		color = { 195 133 107 }
 		icon = 662
@@ -13319,6 +13430,7 @@ indohelen_group = {
 	}
 	
 	indoh_zor = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 0.8 0 0 }
 		icon = 520
@@ -13435,6 +13547,7 @@ indohelen_group = {
 	}
 }
 inuit_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = norsegfx
 	playable = yes
@@ -13450,6 +13563,7 @@ inuit_group = {
 	inuit_pagan_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 0.6 0.3 0.3 }
 		icon = 415
@@ -13533,6 +13647,7 @@ inuit_group = {
 	}
 	######################
 	inuit_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 40 67 103 }
 		icon = 414
@@ -13617,6 +13732,7 @@ inuit_group = {
 	}
 }
 jewish_group = {
+	alternate_start = { always = no }
 	graphical_culture = jewishgfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -13630,6 +13746,7 @@ jewish_group = {
 	# Reformed
 	jud_ark_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = jewishgfx
 		color = { 63 49 32 }
 		icon = 549
@@ -13694,6 +13811,7 @@ jewish_group = {
 	}
 	######################
 	judaism = {
+		alternate_start = { always = no }	
 		graphical_culture = jewishgfx
 		color = { 0 204 255 }
 		icon = 38
@@ -13755,6 +13873,7 @@ jewish_group = {
 		religious_clothing_priest = 7
 	}
 	jud_sabaoth = {
+		alternate_start = { always = no }	
 		graphical_culture = jewishgfx
 		color = { 255 100 61 }
 		icon = 38
@@ -13824,6 +13943,7 @@ jewish_group = {
 		religious_clothing_priest = 7
 	}
 	jud_ark = {
+		alternate_start = { always = no }	
 		graphical_culture = jewishgfx
 		color = { 68 54 37 }
 		icon = 547
@@ -13889,6 +14009,7 @@ jewish_group = {
 	}
 	
 	jud_zion = {
+		alternate_start = { always = no }	
 		graphical_culture = jewishgfx
 		color = { 140 178 155 }
 		icon = 551
@@ -13958,6 +14079,7 @@ jewish_group = {
 	}
 }
 luwian_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -13973,6 +14095,7 @@ luwian_group = {
 	illuyanka_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 37 0 184 }
 		icon = 648
@@ -14054,6 +14177,7 @@ luwian_group = {
 	}
 	tarhunt_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 255 51 0 }
 		icon = 645
@@ -14133,6 +14257,7 @@ luwian_group = {
 	}
 	######################
 	luwian = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 255 195 112 }
 		icon = 417
@@ -14214,6 +14339,7 @@ luwian_group = {
 		religious_clothing_priest = 5
 	}
 	illuyanka = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 92 51 255 }
 		icon = 647
@@ -14291,6 +14417,7 @@ luwian_group = {
 	}
 	
 	tarhunt = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 194 39 0 }
 		icon = 644
@@ -14362,6 +14489,7 @@ luwian_group = {
 	}
 }
 mand_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -14377,6 +14505,7 @@ mand_group = {
 	mand_ruha_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 169 25 145 }
 		icon = 652
@@ -14459,6 +14588,7 @@ mand_group = {
 	mandaean_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 130 219 237 }
 		icon = 423
@@ -14531,6 +14661,7 @@ mand_group = {
 	}
 	######################
 	mand_ruha = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 116 17 99 }
 		icon = 651
@@ -14605,6 +14736,7 @@ mand_group = {
 	}
 	
 	yahyanism = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 161 115 23 }
 		icon = 650
@@ -14688,6 +14820,7 @@ mand_group = {
 	}
 }
 mani_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -14703,6 +14836,7 @@ mani_group = {
 	ahriman_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 69 22 22 }
 		icon = 625
@@ -14783,6 +14917,7 @@ mani_group = {
 	}
 	mani_germanic_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 193 128 62 }
 		icon = 622
@@ -14881,6 +15016,7 @@ mani_group = {
 	}
 	mani_slavic_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 47 146 146 }
 		icon = 619
@@ -14979,6 +15115,7 @@ mani_group = {
 	######################
 	mani = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 146 146 47 }
 		icon = 347
@@ -15055,6 +15192,7 @@ mani_group = {
 		religious_clothing_priest = 5
 	}
 	mani_ahriman = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 146 47 47 }
 		icon = 624
@@ -15139,6 +15277,7 @@ mani_group = {
 	
 	mani_mithra = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 109 109 208 }
 		icon = 617
@@ -15217,6 +15356,7 @@ mani_group = {
 	}
 	
 	mani_slavic = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 47 146 97 }
 		icon = 618
@@ -15299,6 +15439,7 @@ mani_group = {
 	}
 	
 	mani_germanic = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 146 97 47 }
 		icon = 621
@@ -15395,6 +15536,7 @@ mani_group = {
 	}
 }
 mithra_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = westerngfx
 	playable = yes
@@ -15407,6 +15549,7 @@ mithra_group = {
 	ai_convert_other_group = 2 # always try to convert
 	
 	mithra = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 204 0 0 }
 		icon = 458
@@ -15484,6 +15627,7 @@ mithra_group = {
 		religious_clothing_priest = 13
 	}
 	mithra_christ = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 230 128 77 }
 		icon = 458
@@ -15568,6 +15712,7 @@ mithra_group = {
 	
 	mithra_sol = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 179 89 0 }
 		icon = 509
@@ -15667,6 +15812,7 @@ muslim = {
 	muslim_aliite_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = JIHAD
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 0 255 0 }
 		icon = 427
@@ -15738,6 +15884,7 @@ muslim = {
 	muslim_domination_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = JIHAD
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 97 209 16 }
 		icon = 431
@@ -15804,6 +15951,7 @@ muslim = {
 	######################
 	ashari = {
 		crusade_name = JIHAD
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 0 204 102 }
 		icon = 3
@@ -15894,6 +16042,7 @@ muslim = {
 	}
 	athari = {
 		crusade_name = JIHAD
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 102 204 0 }
 		icon = 3
@@ -15983,6 +16132,7 @@ muslim = {
 		}
 	maturidi = {
 		crusade_name = JIHAD
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 71 255 71 }
 		icon = 3
@@ -16072,6 +16222,7 @@ muslim = {
 
 		}
 	murjiah = {
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 175 225 0 }
 		icon = 3
@@ -16168,6 +16319,7 @@ muslim = {
 		}
 	zahiri = {
 		crusade_name = JIHAD
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 0 225 175 }
 		icon = 3
@@ -16258,6 +16410,7 @@ muslim = {
 	}
 
 	sufi = {
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 65 200 55 }
 		icon = 4
@@ -16332,6 +16485,7 @@ muslim = {
 	}
 	
 	ilm_islam = {
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 82 163 0 }
 		icon = 476
@@ -16426,6 +16580,7 @@ muslim = {
 		uses_jizya_tax = yes
 	}
 	ghazi_islam = {
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 163 163 0 }
 		icon = 429
@@ -16497,6 +16652,7 @@ muslim = {
 	}
 	mutazil = {
 		crusade_name = JIHAD
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 42 255 5 }
 		icon = 476
@@ -16588,6 +16744,7 @@ muslim = {
 	}
 
 	marabout = {
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 143 255 31 }
 		icon = 616
@@ -16686,6 +16843,7 @@ muslim = {
 	}
 }
 neoplato_group = {
+	alternate_start = { always = no }
 	graphical_culture = westerngfx
 	playable = yes
 	ai_peaceful = yes
@@ -16698,6 +16856,7 @@ neoplato_group = {
 	ai_convert_other_group = 2 # always try to convert
 	
 	neoplato = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 153 255 204 }
 		icon = 460
@@ -16782,6 +16941,7 @@ neoplato_group = {
 		religious_clothing_priest = 14
 	}
 	plato_pythagorean = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 153 204 255 }
 		icon = 460
@@ -16866,6 +17026,7 @@ neoplato_group = {
 	}
 	
 	porphyryan = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 92 173 }
 		icon = 515
@@ -16944,6 +17105,7 @@ neoplato_group = {
 	}
 	
 	plato_christ = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 204 153 }
 		icon = 515
@@ -17018,6 +17180,7 @@ neoplato_group = {
 	}
 
 	plato_islam = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 153 255 153 }
 		icon = 513
@@ -17095,6 +17258,7 @@ neoplato_group = {
 		religious_clothing_priest = 5
 	}	
 	zz01_vedanta = {
+		alternate_start = { always = no }	
 		graphical_culture = indiangfx
 		color = { 8 88 8 }
 		icon = 685
@@ -17186,6 +17350,7 @@ neoplato_group = {
 	}
 }
 palmyranpagan_group = {
+	alternate_start = { always = no }
 	graphical_culture = muslimgfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -17199,6 +17364,7 @@ palmyranpagan_group = {
 	# Reformed
 	baal_monotheistic_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 77 166 255 }
 		icon = 435
@@ -17282,6 +17448,7 @@ palmyranpagan_group = {
 	}
 	######################
 	beelshamen = {
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 77 77 255 }
 		icon = 499
@@ -17363,6 +17530,7 @@ palmyranpagan_group = {
 		religious_clothing_priest = 5
 	}
 	aglibol = {
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 135 15 255 }
 		icon = 499
@@ -17442,6 +17610,7 @@ palmyranpagan_group = {
 		religious_clothing_priest = 5
 	}
 	malakbel = {
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 26 140 255 }
 		icon = 499
@@ -17525,6 +17694,7 @@ palmyranpagan_group = {
 	}
 	
 	palmyran_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 219 110 0 }
 		icon = 433
@@ -17609,6 +17779,7 @@ palmyranpagan_group = {
 	}
 	
 	hadad = {
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 150 163 45 }
 		icon = 437
@@ -17686,6 +17857,7 @@ palmyranpagan_group = {
 	}
 	
 	kothar = {
+		alternate_start = { always = no }	
 		graphical_culture = zigguratgfx
 		color = { 40 55 190 }
 		icon = 501
@@ -17772,6 +17944,7 @@ palmyranpagan_group = {
 	}
 }
 serer_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -17786,6 +17959,7 @@ serer_group = {
 	# Reformed
 	serer_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 110 207 110 }
 		icon = 35
@@ -17889,6 +18063,7 @@ serer_group = {
 	}
 	######################
 	mande_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 63 99 25 }
 		icon = 34
@@ -17990,6 +18165,7 @@ serer_group = {
 	
 	yoruba = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 107 4 98 }
 		icon = 472
@@ -18088,6 +18264,7 @@ serer_group = {
 	}
 	
 	nyame = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.5 0.6 0.35 }
 		icon = 599
@@ -18182,6 +18359,7 @@ serer_group = {
 	}
 	
 	anansi = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 0.3 0.1 0.1 }
 		icon = 600
@@ -18257,6 +18435,7 @@ serer_group = {
 	}
 }
 slavic_group = {
+	alternate_start = { always = no }
 	graphical_culture = norsegfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -18270,6 +18449,7 @@ slavic_group = {
 	# Reformed
 	rodnoveric_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 33 105 83 }
 		icon = 23
@@ -18376,6 +18556,7 @@ slavic_group = {
 	}
 	######################
 	perun = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 33 105 47 }
 		icon = 569
@@ -18450,6 +18631,7 @@ slavic_group = {
 		religious_clothing_priest = 3
 	}
 	veles = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 105 47 33 }
 		icon = 570
@@ -18551,6 +18733,7 @@ slavic_group = {
 	}
 	
 	rodnoveric_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 55 105 33 }
 		icon = 22
@@ -18653,6 +18836,7 @@ slavic_group = {
 	}
 	
 	rod = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 151 120 48 }
 		icon = 570
@@ -18753,6 +18937,7 @@ slavic_group = {
 	}
 	
 	svaroh = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 151 68 48 }
 		icon = 572
@@ -18860,6 +19045,7 @@ slavic_group = {
 	}
 	
 	dazhbog = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 151 48 79 }
 		icon = 573
@@ -18932,6 +19118,7 @@ slavic_group = {
 	}
 	
 	svetovid = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 48 130 151 }
 		icon = 574
@@ -19004,6 +19191,7 @@ slavic_group = {
 	}
 }
 sol_group = {
+	alternate_start = { always = no }
 	graphical_culture = westerngfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -19017,6 +19205,7 @@ sol_group = {
 	# Reformed
 	sol_boreas_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 149 208 208 }
 		icon = 665
@@ -19133,6 +19322,7 @@ sol_group = {
 	}
 	sol_islam_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 122 184 61 }
 		icon = 668
@@ -19259,6 +19449,7 @@ sol_group = {
 	}
 	sol_sahara_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 177 115 0 }
 		icon = 673
@@ -19394,6 +19585,7 @@ sol_group = {
 	}
 	######################
 	sol = {
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 209 209 0 }
 		icon = 480
@@ -19505,6 +19697,7 @@ sol_group = {
 		religious_clothing_priest = 14
 	}
 	sol_christ = {
+		alternate_start = { always = no }	
 		graphical_culture = westerngfx
 		color = { 255 255 77 }
 		icon = 681
@@ -19631,6 +19824,7 @@ sol_group = {
 		religious_clothing_priest = 1
 	}
 	sol_mani = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 209 105 0 }
 		icon = 482
@@ -19724,6 +19918,7 @@ sol_group = {
 	} 
 	
 	sol_apollo = {
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 209 209 150 }
 		icon = 508
@@ -19836,6 +20031,7 @@ sol_group = {
 	}
 	
 	sol_boreas = {
+		alternate_start = { always = no }	
 		graphical_culture = hellengfx
 		color = { 106 190 190 }
 		icon = 664
@@ -19957,6 +20153,7 @@ sol_group = {
 	}
 	
 	sol_islam = {
+		alternate_start = { always = no }	
 		graphical_culture = muslimgfx
 		color = { 184 219 148 }
 		icon = 667
@@ -20090,6 +20287,7 @@ sol_group = {
 	}
 	
 	sol_norse = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 208 208 149 }
 		icon = 670
@@ -20218,6 +20416,7 @@ sol_group = {
 	}
 	
 	sol_slav = {
+		alternate_start = { always = no }	
 		graphical_culture = norsegfx
 		color = { 149 208 179 }
 		icon = 671
@@ -20349,6 +20548,7 @@ sol_group = {
 	}
 	
 	sol_tsahay = {
+		alternate_start = { always = no }	
 		graphical_culture = africangfx
 		color = { 163 72 116 }
 		icon = 577
@@ -20432,6 +20632,7 @@ sol_group = {
 	}
 	
 	sol_sahara = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 182 120 0 }
 		icon = 672
@@ -20517,6 +20718,7 @@ sol_group = {
 	}
 }
 tengri_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = mongolgfx
 	playable = yes
@@ -20532,6 +20734,7 @@ tengri_group = {
 	erlik_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.1 0.05 0.1 }
 		icon = 595
@@ -20611,6 +20814,7 @@ tengri_group = {
 	tengri_bud_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 20 79 255 }
 		icon = 583
@@ -20708,6 +20912,7 @@ tengri_group = {
 	tengri_confucian_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 160 15 40 }
 		icon = 586
@@ -20815,6 +21020,7 @@ tengri_group = {
 	tengri_mani_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 255 148 112 }
 		icon = 489
@@ -20900,6 +21106,7 @@ tengri_group = {
 	}
 	tengrist_pagan_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 112 148 255 }
 		icon = 29
@@ -20994,6 +21201,7 @@ tengri_group = {
 	}
 	tengri_rod_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0 179 89 }
 		icon = 592
@@ -21091,6 +21299,7 @@ tengri_group = {
 	}
 	vattisenyaly_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 46 46 255 }
 		icon = 642
@@ -21183,6 +21392,7 @@ tengri_group = {
 	}
 	######################
 	tengrist_pagan = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0 61 245 }
 		icon = 28
@@ -21277,6 +21487,7 @@ tengri_group = {
 	}
 	
 	tengri_ahriman = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0 0 0 }
 		icon = 581
@@ -21363,6 +21574,7 @@ tengri_group = {
 	}
 	
 	tengri_bud = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 143 171 255 }
 		icon = 582
@@ -21462,6 +21674,7 @@ tengri_group = {
 	}
 	
 	tengri_confucian = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 56 177 80 }
 		icon = 585
@@ -21573,6 +21786,7 @@ tengri_group = {
 	}
 	
 	tengri_mani = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 73 104 123 }
 		icon = 588
@@ -21662,6 +21876,7 @@ tengri_group = {
 	}
 	
 	tengri_rod = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0 117 59 }
 		icon = 591
@@ -21772,6 +21987,7 @@ tengri_group = {
 	}
 	
 	vattisenyaly = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 107 107 255 }
 		icon = 641
@@ -21860,6 +22076,7 @@ tengri_group = {
 	}
 	
 	erlik = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 0.05 0.05 0.09 }
 		icon = 594
@@ -21943,6 +22160,7 @@ tengri_group = {
 	}
 }
 yazd_group = {
+	alternate_start = { always = no }
 	graphical_culture = muslimgfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -21956,6 +22174,7 @@ yazd_group = {
 	# Reformed
 	yazdanism_reformed = {
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 46 255 46 }
 		icon = 366
@@ -22034,6 +22253,7 @@ yazd_group = {
 	}
 	######################
 	yazdanism = {
+		alternate_start = { always = no }	
 		graphical_culture = desertgfx
 		color = { 107 255 107 }
 		icon = 364
@@ -22115,6 +22335,7 @@ yazd_group = {
 	}
 }
 zal_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = mongolgfx
 	playable = yes
@@ -22127,6 +22348,7 @@ zal_group = {
 	ai_convert_other_group = 2 # always try to convert
 
 	zal = {
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 204 153 51 }
 		icon = 462
@@ -22205,6 +22427,7 @@ zal_group = {
 	}
 	zal_christ = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 216 177 100 }
 		icon = 462
@@ -22281,6 +22504,7 @@ zal_group = {
 	}
 	zal_mani = {
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = mongolgfx
 		color = { 204 77 51 }
 		icon = 462
@@ -22354,6 +22578,7 @@ zal_group = {
 	}
 }
 zoroastrian_group = {
+	alternate_start = { always = no }
 	crusade_cb = crusade
 	graphical_culture = muslimgfx
 	playable = yes
@@ -22374,6 +22599,7 @@ zoroastrian_group = {
 	mazdakism_reformed = {
 		crusade_name = CRUSADE
 		allow_in_ruler_designer = no
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 200 60 50 }
 		icon = 655
@@ -22448,6 +22674,7 @@ zoroastrian_group = {
 	zor_angra_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 0 0 0 }
 		icon = 470
@@ -22523,6 +22750,7 @@ zoroastrian_group = {
 	zurvanism_reformed = {
 		allow_in_ruler_designer = no
 		crusade_name = CRUSADE
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 189 199 51 }
 		icon = 658
@@ -22599,6 +22827,7 @@ zoroastrian_group = {
 	}
 	######################
 	zor_angra = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 102 0 0 }
 		icon = 468
@@ -22681,6 +22910,7 @@ zoroastrian_group = {
 	}
 	
 	zor_hindu = {
+		alternate_start = { always = no }	
 		graphical_culture = persiangfx
 		color = { 153 102 0 }
 		icon = 580
