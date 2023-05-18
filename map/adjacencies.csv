@@ -125,3 +125,6 @@ From;To;Type;Through;Comment;;;;
 1875;1899;portage;1277;-1;-1;-1;-1;Oka E-Sejm A
 1880;1881;portage;577;-1;-1;-1;-1;Pronya-Don A
 1883;1869;portage;619;-1;-1;-1;-1;Don C-Volga K
+2060;2344;portage;2063;-1;-1;-1;-1;Coast of Malabar-Comorin Cape
+2344;2345;portage;2068;-1;-1;-1;-1;Comorin Cape-Rama
+2344;2342;portage;2063;-1;-1;-1;-1;Comorin Cape-Coast of Ceylon

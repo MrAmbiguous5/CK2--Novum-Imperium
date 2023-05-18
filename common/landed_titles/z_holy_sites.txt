@@ -326,8 +326,10 @@ c_vidisa = { # Vidisa (1675)
 	holy_site = buddhist
 }
 c_purushapura = { # Purushapura (1625)
-	holy_site = buddhist # Kanishka Vihara
-	holy_site = bon # placeholder
+	holy_site = buddhist # Kanishka Vihara	
+}
+c_lhasa = { # Lhasa (2167)
+	holy_site = bon
 	holy_site = bon_reformed
 }
 c_varazhnunik = { # Varazhnunik (1531)
@@ -458,22 +460,6 @@ c_zamfara = { # Zamfara (1323)
 	holy_site = west_african_pagan
 	holy_site = west_african_pagan_reformed
 }
-c_kashgar = { # Kashgar (1567)
-	holy_site = taoist # one of the four main bases of the Anxi Protectorate
-}
-c_kucha = { # Kucha (1569)
-	holy_site = taoist # one of the four main bases of the Anxi Protectorate
-}
-c_balasaghun = { # Balasaghun (1572)
-	holy_site = taoist # one of the four main bases of the Anxi Protectorate (transferred from Qarashahr)
-}
-c_khotan = { # Khotan (1580)
-	holy_site = taoist # one of the four main bases of the Anxi Protectorate
-}
-c_badakhshan = { # Badakhshan (1553)
-	holy_site = bon # placeholder
-	holy_site = bon_reformed
-}
 c_gilgit = { # Gilgit (1975)
 	holy_site = bon
 	holy_site = bon_reformed
@@ -484,8 +470,26 @@ c_purang = { # Purang (1985)
 	holy_site = bon
 	holy_site = bon_reformed
 }
-c_kunlun = { # Kunlun (1989)
-	holy_site = taoist # shares the same name as a mythical mountain in Chinese/Taoist mythology
-	holy_site = bon # placeholder
+c_garze = { # Garze (2182)
+	holy_site = bon
 	holy_site = bon_reformed
+}
+c_tsongkha = { # Tsongkha (2210)
+	holy_site = bon
+	holy_site = bon_reformed
+}
+c_henan = { # Henan (2257)
+	holy_site = taoist 
+}
+c_jingzhao = { # Jingzhao (2276)
+	holy_site = taoist 
+}
+c_bingzhou = { # Bingzhou (2265)
+	holy_site = taoist 
+}
+c_yanzhou_shandong = { # Yanzhou (2448)
+	holy_site = taoist 
+}
+c_chengdu = { # Chengdu (2401)
+	holy_site = taoist 
 }

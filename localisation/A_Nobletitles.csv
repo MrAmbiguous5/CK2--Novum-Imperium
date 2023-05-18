@@ -4691,28 +4691,28 @@ nomadic_empire_of_baloch;Khanate of;;;;;;;;;;;;;x
 ####################################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Khitan;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ####################################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-emperor_khitan;Huang Di;;;;;;;;;;;;;x
-emperor_female_khitan;Huang Ho;;;;;;;;;;;;;x
-nomadic_emperor_khitan;Huang Di;;;;;;;;;;;;;x
-nomadic_emperor_female_khitan;Huang Ho;;;;;;;;;;;;;x
+emperor_khitan;Hong Di;;;;;;;;;;;;;x
+emperor_female_khitan;Hong Ho;;;;;;;;;;;;;x
+nomadic_emperor_khitan;Qaghan;;;;;;;;;;;;;x
+nomadic_emperor_female_khitan;Neuemö;;;;;;;;;;;;;x
 king_khitan;Ong;;;;;;;;;;;;;x
-king_female_khitan;Ong-n Pi;;;;;;;;;;;;;x
-nomadic_king_khitan;Irkin;;;;;;;;;;;;;x
+king_female_khitan;Ilim;;;;;;;;;;;;;x
+nomadic_king_khitan;Irgën;;;;;;;;;;;;;x
 nomadic_king_female_khitan;Ilim;;;;;;;;;;;;;x
-tribal_emperor_khitan;Huang Di;;;;;;;;;;;;;x
-tribal_emperor_female_khitan;Huang Ho;;;;;;;;;;;;;x
-tribal_king_khitan;Irkin;;;;;;;;;;;;;x
+tribal_emperor_khitan;Qaghan;;;;;;;;;;;;;x
+tribal_emperor_female_khitan;Neuemö;;;;;;;;;;;;;x
+tribal_king_khitan;Irgën;;;;;;;;;;;;;x
 tribal_king_female_khitan;Ilim;;;;;;;;;;;;;x
-duke_khitan;Tqosi;;;;;;;;;;;;;x
+duke_khitan;Liu Sëu;;;;;;;;;;;;;x
 duke_female_khitan;Pushin;;;;;;;;;;;;;x
-duchy_of_khitan;Province of;;;;;;;;;;;;;x
-count_khitan;Tshisi;;;;;;;;;;;;;x
+duchy_of_khitan;Cricuit of;;;;;;;;;;;;;x
+count_khitan;Sï Shï;;;;;;;;;;;;;x
 count_female_khitan;Au'ui;;;;;;;;;;;;;x
-county_of_khitan;Commandery of;;;;;;;;;;;;;x
+county_of_khitan;Prefecture of;;;;;;;;;;;;;x
 baron_khitan;Basqaq;;;;;;;;;;;;;x
 baron_female_khitan;Aldun;;;;;;;;;;;;;x
 barony_of_khitan;County of;;;;;;;;;;;;;x
-title_prince_khitan;Taisi;;;;;;;;;;;;;x
+title_prince_khitan;Ong;;;;;;;;;;;;;x
 title_prince_female_khitan;Au'ui;;;;;;;;;;;;;x
 ####################################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Breton;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -4,10 +4,19 @@
 	liege = k_bulgaria
 	holder = 1501221 # Stazis the Ichirgu-boil
 }
-914.1.1 = {
-	holder = 168289 # Mostich, Ichirgu-Boil and most likely commander of the capital garrison, under both Simeon and Petar
+#Warial's Patchup
+889.1.1 = {
+	holder = 70383 # Vladimir
 }
-945.1.1 = {
+#892.1.1 = {
+#	holder = 70382 # Boris I
+#}
+893.1.1 = {
+	holder = 712 # Simeon
+}
+#End of Warial's patchup
+927.5.27 = {
+	liege = k_bulgaria
 	holder = 714 # Petar I
 }
 969.1.30 = {

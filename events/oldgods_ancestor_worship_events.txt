@@ -16,31 +16,23 @@ namespace = TOG
 #Make a request
 character_event = {
 	id = TOG.7000
-	desc = EVTDESC_TOG_7000
 	border = GFX_event_normal_frame_religion
 	picture = GFX_evt_tribal_shrine
 
 	is_triggered_only = yes
-
-	trigger = {
-		OR = {
-			religion = finnish_pagan
-			religion = finnish_pagan_reformed
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-			religion = baltic_pagan
-			religion = baltic_pagan_reformed
-			religion = slavic_pagan
-			religion = slavic_pagan_reformed
-			religion = tengri_pagan
-			religion = tengri_pagan_reformed
-			has_religion_feature = religion_beatification
-			has_religion_feature = religion_feature_baltic
-			has_religion_feature = religion_feature_slavic
-			has_religion_feature = religion_syncretic_christian
+	
+	desc = { 
+		text = EVTDESC_TOG_7000
+		trigger = { #The father is alive and a spouse
+			NOT = { religion = taoist }
 		}
 	}
-
+	desc = { 
+		text = EVTDESC_TOG_wudai
+		trigger = { #The father is alive and a spouse
+			religion = taoist
+		}
+	}
 	#Health
 	option = {
 		name = EVTOPTA_TOG_7000
@@ -298,6 +290,7 @@ character_event = {
 				}
 			}
 			NOT = { trait = maimed }
+			NOT = { religion = taoist } #Self-mutialtion was considered unfilial, as that was damaging the body your parents gave you
 		}
 
 		set_character_flag = ancestors_limb

@@ -1607,6 +1607,9 @@ emf_is_chinese_imperial_culture = {
 		culture = khitan
 		culture = tangut
 		culture = jurchen
+		culture = bohai
+		culture = korean
+		culture = vietnamese
 	}
 }
 

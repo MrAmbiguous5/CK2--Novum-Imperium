@@ -380,6 +380,7 @@ decisions = {
 			liege = {
 				real_tier = EMPEROR
 				emf_imperial_government = yes
+				NOT = { government = chinese_imperial_government }
 				primary_title = {
 					temporary = no
 					ROOT = { NOT = { has_strong_claim = PREV } }

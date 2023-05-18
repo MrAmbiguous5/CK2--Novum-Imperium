@@ -48,6 +48,7 @@ feudal_governments = {
 				d_bogomilist = { has_flag = bogomilist_formalized }
 			}
 			NOT = { is_government_potential = order_government }
+			NOT = { is_government_potential = bureaucratic_government }
 			NAND = {
 				culture_group = tibetan_group
 				OR = {
@@ -59,10 +60,9 @@ feudal_governments = {
 			}
 			NAND = { 
 				tier = EMPEROR
-				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -165,7 +165,7 @@ feudal_governments = {
 				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -270,7 +270,7 @@ feudal_governments = {
 				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -371,7 +371,7 @@ feudal_governments = {
 				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -475,7 +475,7 @@ feudal_governments = {
 				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -582,7 +582,7 @@ feudal_governments = {
 				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -696,7 +696,7 @@ feudal_governments = {
 				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -804,7 +804,7 @@ feudal_governments = {
 				primary_title = { has_title_flag = pretender_chinese_empire }
 				OR = {
 					emf_is_chinese_imperial_culture = yes
-					has_character_flag = chinese_imperial_government_preserve
+					primary_title = { has_title_flag = chinese_imperial_government_preserve }
 				}
 			}
 			is_patrician = no
@@ -877,10 +877,9 @@ feudal_governments = {
 		frame_suffix = "_chineseimperial"
 		potential = {
 			tier = EMPEROR
-			primary_title = { has_title_flag = pretender_chinese_empire }
 			OR = {
 				emf_is_chinese_imperial_culture = yes
-				has_character_flag = chinese_imperial_government_preserve #keeps government when player is given culture change option
+				primary_title = { has_title_flag = chinese_imperial_government_preserve }
 			}
 			is_patrician = no
 		}

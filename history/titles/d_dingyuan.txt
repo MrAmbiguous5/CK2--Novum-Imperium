@@ -1,0 +1,9 @@
+#Southern Tang
+943.4.8 = { holder = 1406072 liege = e_southern_tang }
+944.9.13 = { holder = 1408041 } #Liu Yanzhen
+946.1.1 = { holder = 1408044 } #Guo Quanyi
+951.1.1 = { holder = 1408051 } #He Jingzhu
+953.8.12 = { holder = 0 } #No Jiedushi
+957.7.1 = { holder = 1408046 } #Guo Tingwei
+958.1.2 = { holder = 0 } 
+

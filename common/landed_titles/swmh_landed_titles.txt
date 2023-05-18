@@ -42601,11 +42601,6 @@ e_italy = { # Italia
 	}
 	allow = {
 		trigger_if = {
-			limit = { NOT = { religion_group = christian } }
-			FROM = { is_de_jure_title = yes }
-		}
-		has_landed_title = k_italy
-		trigger_if = {
 			limit = { k_sicily = { is_de_jure_title = yes } }
 			has_landed_title = k_sicily
 		}
@@ -69676,22 +69671,6 @@ e_null = { #
 				saka = "Cadota"
 				b_niya = { saka = "Cadota" }
 				b_endere = { saka = "Saca" }
-				b_cherchen = {
-					saka = "Calmadana"
-					pecheneg = "Chärchän"
-					turkmen = "Chärchän"
-					turkish = "Chärchän"
-					oghuz = "Chärchän"
-					avar = "Chärchän"
-					bolghar = "Chärchän"
-					bashkir = "Chärchän"
-					karluk = "Chärchän"
-					cuman = "Chärchän"
-					kirghiz = "Chärchän"
-					uyghur = "Chärchän"
-					khazar = "Chärchän"
-					khavar = "Chärchän"
-				}
 			}
 			allow = { title_duke_basic_allow = yes }
 		} # end d_khotan

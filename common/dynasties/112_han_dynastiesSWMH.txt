@@ -1149,7 +1149,7 @@
 #	}
 
 1000102425 = {
-	name="Ts'ieu" #Zhao
+	name="Zhao" #Zhao
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1164,8 +1164,9 @@
 	}
 }
 1000102426 = {
-	name="Tsien" #Qian
+	name="Qian" #Qian
 	culture = han
+	religion="taoist"
 		coat_of_arms = {
 		template = 0
 		layer = {
@@ -1209,7 +1210,7 @@
 	}
 }
 1000102429 = {
-	name="Chiu" #Zhou
+	name="Zhou" #Zhou
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1224,7 +1225,7 @@
 	}
 }
 1000102430 = {
-	name = "Ngo" #Wu
+	name = "Wu" #Wu
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1239,7 +1240,7 @@
 	}
 }
 1000102431 = {
-	name = "Ts'ieng" #Zheng
+	name = "Zheng" #Zheng
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1269,7 +1270,7 @@
 	}
 }
 1000102433 = {
-	name = "Bêng" #Feng
+	name = "Feng" #Feng
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1284,7 +1285,7 @@
 	}
 }
 1000102434 = {
-	name = "Chên" #Chen
+	name = "Chen" #Chen
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1314,7 +1315,7 @@
 	}
 }
 1000102436 = {
-	name = "H'uei" #Wei
+	name = "Wei" #Wei
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1329,7 +1330,7 @@
 	}
 }
 1000102437 = {
-	name = "Tsing" #Jiang
+	name = "Jiang" #Jiang
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1344,7 +1345,7 @@
 	}
 }
 1000102438 = {
-	name = "Shim" #Shen
+	name = "Shen" #Shen
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1389,7 +1390,7 @@
 	}
 }
 1000102441 = {
-	name = "Ts'üeh" #Zhu
+	name = "Zhu" #Zhu
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1404,7 +1405,7 @@
 	}
 }
 1000102442 = {
-	name = "Ch'in" #Qin
+	name = "Qin" #Qin
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1419,7 +1420,7 @@
 	}
 }
 1000102443 = {
-	name = "Yu" #You
+	name = "You" #You
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1434,7 +1435,7 @@
 	}
 }
 1000102444 = {
-	name = "Hü" #Xu
+	name = "Xu" #Xu
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1449,7 +1450,7 @@
 	}
 }
 1000102445 = {
-	name = "Ha" #He
+	name = "He" #He
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1479,7 +1480,7 @@
 	}
 }
 1000102447 = {
-	name = "Shê" #Shi
+	name = "Shi" #Shi
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1494,7 +1495,7 @@
 	}
 }
 1000102448 = {
-	name = "Ts'ing" #Chang
+	name = "Chang" #Chang
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1509,7 +1510,7 @@
 	}
 }
 1000102449 = {
-	name = "K'ung" #Kong
+	name = "Kong" #Kong
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1524,7 +1525,7 @@
 	}
 }
 1000054525 = {
-	name = "Ts'ao" #Cao
+	name = "Cao" #Cao
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1539,7 +1540,7 @@
 	}
 }
 1000054526 = {
-	name = "Ngim" #Yan
+	name = "Yan" #Yan
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1569,7 +1570,7 @@
 	}
 }
 1000054528 = {
-	name = "Kim" #Jin
+	name = "Jin" #Jin
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1584,7 +1585,7 @@
 	}
 }
 1000054529 = {
-	name = "Ngui" #Wei
+	name = "Wei" #Wei
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1614,7 +1615,7 @@
 	}
 }
 1000054531 = {
-	name = "Kêng" #Jiang
+	name = "Jiang" #Jiang
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1629,7 +1630,7 @@
 	}
 }
 1000054532 = {
-	name = "Ts'ek" #Qi
+	name = "Qi" #Qi
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1644,7 +1645,7 @@
 	}
 }
 1000054533 = {
-	name = "Tsia" #Xie
+	name = "Xie" #Xie
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1659,7 +1660,7 @@
 	}
 }
 1000054534 = {
-	name = "Ju" #Zou
+	name = "Zou" #Zou
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1674,7 +1675,7 @@
 	}
 }
 1000054535 = {
-	name = "Yüeh" #Yu
+	name = "Yu" #Yu
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1689,7 +1690,7 @@
 	}
 }
 1000054536 = {
-	name = "Pêk" #Bai
+	name = "Bai" #Bai
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1704,7 +1705,7 @@
 	}
 }
 1000054537 = {
-	name = "Chui" #Shui
+	name = "Shui" #Shui
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1719,7 +1720,7 @@
 	}
 }
 1000054538 = {
-	name = "Tou" #Dou
+	name = "Dou" #Dou
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1734,7 +1735,7 @@
 	}
 }
 1000054539 = {
-	name = "Ching" #Zhang
+	name = "Zhang" #Zhang
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1749,7 +1750,7 @@
 	}
 }
 1000054540 = {
-	name = "Hun" #Yun
+	name = "Yun" #Yun
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1764,7 +1765,7 @@
 	}
 }
 1000054541 = {
-	name = "Suo" #Su
+	name = "Su" #Su
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1779,7 +1780,7 @@
 	}
 }
 1000054542 = {
-	name = "P'uan" #Pan
+	name = "Pan" #Pan
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1794,7 +1795,7 @@
 	}
 }
 1000054543 = {
-	name = "Kat" #Ge
+	name = "Ge" #Ge
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1809,7 +1810,7 @@
 	}
 }
 1000054544 = {
-	name = "Hei" #Xi
+	name = "Xi" #Xi
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1824,7 +1825,7 @@
 	}
 }
 1000054545 = {
-	name = "Pêm" #Fan
+	name = "Fan" #Fan
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1839,7 +1840,7 @@
 	}
 }
 1000054546 = {
-	name = "Pêng" #Peng
+	name = "Peng" #Peng
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1869,7 +1870,7 @@
 	}
 }
 1000054548 = {
-	name = "Luo" #Lu
+	name = "Lu" #Lu
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1884,7 +1885,7 @@
 	}
 }
 1000054549 = {
-	name = "Hui" #Wei
+	name = "Wei" #Wei
 	culture = han
 		coat_of_arms = {
 		template = 0
@@ -1899,16 +1900,16 @@
 	}
 }
 1000020550 = {
-	name = "Zhiek" #Shi
+	name = "Shi" #Shi
 	culture = han
 }
 1000020551 = {
-	name = "Kwak" #Guo
+	name = "Guo" #Guo
 	culture = han
 	religion = taoist
 }
 1000020552 = {
-	name = "Dzre" #Chai
+	name = "Chai" #Chai
 	culture = han
 	religion = taoist
 }
