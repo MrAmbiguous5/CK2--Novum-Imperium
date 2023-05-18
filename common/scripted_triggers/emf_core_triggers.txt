@@ -354,6 +354,8 @@ emf_haruspicy_religion = {
 					OR = {
 						has_religion_feature = religion_feature_hellenic
 						has_religion_feature = religion_astrology
+						has_religion_feature = religion_haruspicy 
+                        has_religion_feature = religion_feature_a_tag_roog
 					}
 				}
 				trigger_else = {

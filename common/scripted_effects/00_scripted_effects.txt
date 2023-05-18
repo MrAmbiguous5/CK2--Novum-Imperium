@@ -4226,7 +4226,34 @@ add_crusade_trait_effect = {
 			religion_group = jewish_group
 		}
 		add_trait = shaddai
+		break = yes
 	}
+    if = {
+        limit = {
+            religion = bori
+        }
+        add_trait = child_of_garki_baba
+        break = yes
+    }
+    if = {
+        limit = {
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+        }
+        add_trait = shield_of_roog
+        break = yes
+    }
+    if = {
+        limit = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        add_trait = heir_of_dihya
+    }
 	
 	### ACR ###
 	if = {
@@ -5605,8 +5632,41 @@ give_this_warrior_lodge_religion_effect = { #Mostly for spawned characters.
 		religion = west_african_pagan
 	}
 	if = {
-		limit = { 
-			society_member_of = warrior_lodge_west_african 
+		limit = {
+			society_member_of = warrior_lodge_west_african
+		}
+		random_list = {
+			10 = {
+                if = {
+                    limit = { has_global_flag = a_tag_roog_reformation }
+                    religion = west_african_pagan_reformed
+                }
+                else = {
+                    religion = west_african_pagan
+                }
+            }
+            10 = {
+                religion = bori
+            }
+            10 = {
+                if = {
+                    limit = { has_global_flag = a_tag_roog_reformation }
+                    religion = a_tag_roog_reformed
+                }
+                else = {
+                    religion = a_tag_roog
+                }
+            }
+            10 = {
+                if = {
+                    limit = { has_global_flag = amazigh_reformation }
+                    religion = amazigh_reformed
+                }
+                else = {
+                    religion = amazigh
+                }
+            }
+        }
 			has_global_flag = west_african_reformation
 		}
 		religion = west_african_pagan_reformed
@@ -25186,6 +25246,13 @@ add_sympathy_for_prevs_true_religion_effect = {
 		}
 		add_trait = sympathy_indian
 	}
+	if = {
+        limit = {
+            PREV = { true_religion_group = african_group }
+            NOT = { religion_group = african_group }
+        }
+        add_trait = sympathy_african
+    }
 }
 
 add_sympathy_for_prevs_open_religion_effect = {
@@ -25230,6 +25297,13 @@ add_sympathy_for_prevs_open_religion_effect = {
 			NOT = { religion_group = indian_group }
 		}
 		add_trait = sympathy_indian
+	}
+	if = {
+		limit = { 
+			PREV = { religion_group = african_group } 
+			NOT = { religion_group = african_group }
+		}
+		add_trait = sympathy_african
 	}
 }
 
@@ -38107,6 +38181,14 @@ add_sympathy_for_religion_effect = {
 			add_trait = sympathy_zoroastrianism
 		}
 	}
+	else_if = {
+        limit = {
+            religion_group = african_group
+        }
+        ROOT = {
+            add_trait = sympathy_african
+        }
+    }
 }
 
 add_random_commander_trait_effect = {
@@ -38644,7 +38726,17 @@ change_rain_effect = { # Needs a province scope...
 				modifier = {
 					factor = 2 # There is nearby dry weather...
 					any_neighbor_province_has_dry_weather_trigger = yes
-				}
+				}modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				if = {
 					limit = { has_province_modifier = africa_rain_dance_successful }
@@ -38713,6 +38805,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_dry_weather_trigger = yes
 				}
+                modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				if = {
 					limit = { has_province_modifier = africa_rain_dance_successful }
@@ -38761,6 +38864,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_heavy_rain_trigger = no
 				}
+                modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				if = {
 					limit = { has_province_modifier = africa_rain_dance_successful }
@@ -38785,6 +38899,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_light_rain_trigger = no
 				}
+                modifier = {
+                    factor = 3
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 0.1
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				add_province_modifier = {
 					name = africa_light_rain
@@ -38797,7 +38922,7 @@ change_rain_effect = { # Needs a province scope...
 			}
 		}
 	}
-	else_if = {
+	else = {
 		limit = { has_province_modifier = africa_drought }
 		random_list = {
 			10 = { # Make it better (heavy rain)...
@@ -38827,6 +38952,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_light_rain_trigger = no
 				}
+                modifier = {
+                    factor = 3
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 0.1
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				add_province_modifier = {
 					name = africa_heavy_rain
@@ -38885,6 +39021,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_dry_weather_trigger = yes
 				}
+                modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				set_rain_flag_drought_effect = yes
 			}
 		}

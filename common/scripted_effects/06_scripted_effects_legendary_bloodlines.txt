@@ -1092,7 +1092,10 @@ spawn_old_duelist_effect = {
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
-					religion_group = pagan_group
+					OR = {
+                        religion_group = pagan_group
+                        religion_group = african_group
+                    }
 				}
 				random_list = {  
 					5 = {
@@ -1343,7 +1346,10 @@ spawn_giant_duelist_effect = {
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
-					religion_group = pagan_group
+					OR = {
+                        religion_group = pagan_group
+                        religion_group = african_group
+                    }
 				}
 				random_list = {  
 					5 = {
@@ -1666,7 +1672,10 @@ spawn_creature_champion_effect = {
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
-					religion_group = pagan_group
+					OR = {
+                        religion_group = pagan_group
+                        religion_group = african_group
+                    }
 				}
 				random_list = {  
 					5 = {
@@ -1717,6 +1726,28 @@ set_bloodline_founder_religion_flag_effect = {
 		limit = { religion_openly_west_african_or_reformed_trigger = yes }
 		new_bloodline = { set_bloodline_flag = requires_west_african_pagan_religion }
 	}
+	else_if = {
+        limit = { religion = bori }
+        new_bloodline = { set_bloodline_flag = requires_bori_religion }
+    }
+    else_if = {
+        limit = {
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+        }
+        new_bloodline = { set_bloodline_flag = requires_a_tag_roog_religion }
+    }
+    else_if = {
+        limit = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        new_bloodline = { set_bloodline_flag = requires_amazigh_religion }
+    }
 	else_if = {
 		limit = { religion_openly_zun_or_reformed_trigger = yes }
 		new_bloodline = { set_bloodline_flag = requires_zun_pagan_religion }
