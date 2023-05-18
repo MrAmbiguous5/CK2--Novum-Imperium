@@ -131,6 +131,7 @@ bm_otto_the_first = {
 	name = "OTTO_THE_FIRST_ERA"
 	desc = "OTTO_THE_FIRST_ERA_INFO"
 	date = 936.8.7
+	custom_start = yes
 
 	era = yes
 	picture = GFX_pick_era_image_6
@@ -267,7 +268,6 @@ bm_age_of_kings = {
 	name = "BM_AGE_OF_KINGS"
 	desc = "BM_AGE_OF_KINGS_DESC"
 	date = 993.1.1
-	custom_start = yes
 
 	selectable_character = {
 		id = 200 # Hughes Capet

@@ -3,6 +3,11 @@
 867.1.1 = {
 	holder = 186011
 }
+#Warial's Patchup
+872.1.1 = {
+	liege = k_norway
+}
+#End of Warial's patchup
 927.1.1 = {
 	liege = k_norway
 	holder = 144006 # Gudrödr Björnsson, Petty-King in the Westfold, father of Harald Grenske

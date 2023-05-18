@@ -1,0 +1,6 @@
+#Tang
+881.4.1 = { holder = 1404227 liege = e_tang } #Qi Kejian
+884.7.24 = { holder = 0 }
+#Later Tang
+924.5.17 = { holder = 1400636 liege = e_later_tang } #Li Jiyan
+926.5.15 = { holder = 0 }

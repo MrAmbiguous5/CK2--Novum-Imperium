@@ -28,6 +28,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -75,6 +78,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -116,6 +122,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -154,6 +163,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -195,6 +207,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -240,6 +255,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -297,6 +315,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -357,6 +378,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -431,6 +455,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -484,6 +511,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -538,6 +568,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -581,6 +614,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -628,6 +664,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -670,6 +709,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian
@@ -752,12 +794,9 @@ narrative_event = {
 			any_playable_ruler = {
 				limit = {
 					NOT = { has_landed_title = e_byzantium }
-                    OR = {
-                        ai = no
-                        has_landed_title = e_carthage
-                    }
+					ai = no
 				}
-				narrative_event = { id = LoR.21 days = 2 }
+				narrative_event = { id = LoR.21 }
 			}
 			if = { #Hellenic Resurgence
 				limit = { 
@@ -840,25 +879,16 @@ narrative_event = {
 narrative_event = {
 	id = LoR.21
 	title = EVTNAMELoR.21
-
 	desc = {
 		text = EVTDESCLoR.21
 		trigger = { 
 			is_alternate_start = no
-            NOT = { has_landed_title = e_carthage }
 		}
 	}
-    desc = {
-        text = EVTDESCLoR21_CARTHAGE
-        trigger = {
-            has_landed_title = e_carthage
-        }
-    }
 	desc = {
 		text = EVTDESCLoR21_HF
 		trigger = { 
 			is_alternate_start = yes
-            NOT = { has_landed_title = e_carthage }
 		}
 	}
 	
@@ -869,10 +899,7 @@ narrative_event = {
 	option = {
 		name = EVTOPTALoR.21
 		trigger = {
-			NOR = {
-                has_landed_title = e_hre
-                has_landed_title = e_carthage
-            }
+			NOT = { has_landed_title = e_hre }
 		}
 	}
 	option = {
@@ -882,14 +909,6 @@ narrative_event = {
 		}
 		prestige = -500
 	}
-    option = {
-        name = EVTOPTCLoR.21
-        trigger = {
-            has_landed_title = e_carthage
-        }
-        FROM = { letter_event = { id = AFRREL.019 days = 3 random = 10 } }
-        add_rival = FROM
-    }
 }
 
 ### Victory Triumphs
@@ -914,6 +933,9 @@ character_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 	}
 	
@@ -1020,6 +1042,9 @@ narrative_event = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_western_roman_empire
+			has_landed_title = k_roman_republic
+			has_landed_title = k_regnum_romanum
 		}
 		OR = {
 			religion_group = christian

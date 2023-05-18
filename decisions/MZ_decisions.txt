@@ -1,0 +1,140 @@
+##########################################
+###Zoroastrian decisions by Maestro Ugo###
+##########################################
+#### Tweaked for LI ####
+
+decisions = {
+	make_sacrifice = {
+		potential = {
+			is_ruler = yes
+			has_regent = no
+			religion_group = zoroastrian_group
+			NOR = {
+				religion = zor_angra
+				religion = zor_angra_reformed
+			}
+			OR = {
+				NOT = { has_character_flag = made_sacrifice_1 }
+				had_character_flag = { flag = made_sacrifice_1 days = 365 }
+			}
+		}
+		allow = {
+			war = no
+			piety = 100
+			scaled_wealth = 0.3
+		}
+		effect = {
+			set_character_flag = made_sacrifice_1
+			narrative_event = { id = li_zoroastrian.220 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { scaled_wealth = 2.5 }
+			}
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
+			modifier = {
+				factor = 0
+				NOR = {
+					piety = 120
+					learning = 8
+				}
+			}
+		}
+	}
+
+	rebuild_persepolis = {
+		is_high_prio = yes
+		potential = {
+			is_ruler = yes
+			religion_group = zoroastrian_group
+			NOR = {
+				has_global_flag = persepolis_rebuilt
+				has_global_flag = rebuilding_persepolis
+			}
+			OR = {
+				has_landed_title = k_persia
+				has_landed_title = e_sassanid
+			}
+		}
+		allow = {
+			war = no
+			has_regent = no
+			wealth = 1000
+			has_landed_title = b_esfahan
+			capital_scope = { province_id = 666 }
+			# Maybe add Shaosyant trait as requirement? - DR
+		}
+		effect = {
+			set_global_flag = rebuilding_persepolis
+			wealth = -1000
+			hidden_tooltip = {
+				character_event = { id = li_zoroastrian.205 }
+				666 = { set_province_flag = reb_pers_1 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 1500 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { learning = 8 }
+			}
+		}
+	}
+
+	undergo_cleansing_ritual = {
+		potential = {
+			is_ruler = yes
+			has_regent = no
+			religion_group = zoroastrian_group
+			NOR = {
+				religion = zor_angra
+				religion = zor_angra_reformed
+			}
+			OR = {
+				NOT = { has_character_flag = undergoing_cleansing_ritual }
+				had_character_flag = { flag = undergoing_cleansing_ritual days = 365 }
+			}
+			# NOT = {
+				# any_demesne_title = { is_occupied = yes }
+			# }
+		}
+		allow = {
+			war = no
+			scaled_wealth = 0.3
+		}
+		effect = {
+			set_character_flag = undergoing_cleansing_ritual
+			scaled_wealth = -0.3
+			narrative_event = { id = li_zoroastrian.225 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { scaled_wealth = 2.5 }
+			}
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
+		}
+	}
+}

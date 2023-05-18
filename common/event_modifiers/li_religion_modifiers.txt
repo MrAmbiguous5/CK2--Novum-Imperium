@@ -1,0 +1,200 @@
+sacrifice_sol = {
+	diplomacy = 2
+	martial = 1
+	icon = 5
+}
+
+sacrificed = {}
+messianic_ruler = {}
+summoned_rel_authority_council = { icon = 1 }
+
+held_rel_authority_council = {
+	local_revolt_risk = -0.05
+	tech_growth_modifier_culture = 0.1
+	icon = 8
+}
+
+immoral_ruler = {
+	global_revolt_risk = 0.05
+	monthly_character_piety = -0.05
+	church_opinion = -30
+	icon = 8
+}
+
+moral_ruler = {
+	global_revolt_risk = -0.05
+	monthly_character_piety = 0.05
+	church_opinion = 30
+	icon = 8
+}
+academicians_in_disarray = {
+	tech_growth_modifier_culture = -0.05
+	tech_growth_modifier_economy = -0.05
+	tech_growth_modifier_military = -0.05
+	local_tax_modifier = -0.25
+	icon = 8
+}
+
+successful_state_rituals = {
+	icon = 8
+	local_tax_modifier = 0.25
+	local_revolt_risk = -0.05
+	build_time_modifier = -0.25
+	build_cost_modifier = -0.25	
+}
+
+unsuccessful_state_rituals = {
+	icon = 8
+	local_tax_modifier = -0.25
+	local_revolt_risk = 0.05
+	build_time_modifier = 0.25
+	build_cost_modifier = 0.25	
+}
+
+populist_out_of_conrol = {
+	icon = 8
+	local_tax_modifier = -0.30
+	local_revolt_risk = 0.15
+	build_time_modifier = 0.50
+	build_cost_modifier = 0.50	
+}
+
+populist_work_harder = {
+	icon = 8
+	local_tax_modifier = 0.30
+	local_revolt_risk = -0.15
+	build_time_modifier = -0.50
+	build_cost_modifier = -0.50	
+}
+
+studied_war = {
+	martial = 1
+	icon = 1
+}
+studied_art = {
+	diplomacy = 1
+	icon = 3
+}
+studied_economy = {
+	stewardship = 1
+	icon = 4
+}
+studying_hard = {
+	monthly_character_piety = 0.5
+	icon = 2
+	fertility = -0.05
+}
+studied_war_capital = {
+	tech_growth_modifier_military = 0.5
+	icon = 13
+}
+studied_art_capital = {
+	tech_growth_modifier_culture = 0.5
+	icon = 12
+}
+studied_economy_capital = {
+	tech_growth_modifier_economy = 0.5
+	icon = 12
+}
+1st_cure_failed = {
+	health = -1
+	icon = 40
+}
+2nd_cure_failed = {
+	health = -1
+	icon = 40
+}
+syphilitic_cure_failed = {
+	health = -1
+	icon = 40
+}
+plague_cure_failed = {
+	health = -1
+	icon = 40
+}
+pneumonic_cure_failed = {
+	health = -1
+	icon = 40
+}
+resistance_disease_lvl_1 = {
+disease_defence = 0.02
+icon = 39
+}
+resistance_disease_lvl_2 = {
+disease_defence = 0.05
+icon = 39
+}
+exotic_plant_ca_garden = {
+	icon = 7
+	monthly_character_prestige = 0.05
+	monthly_character_wealth = 0.05
+}
+exotic_plant_ca_garden_courtier = {
+	icon = 7
+	monthly_character_prestige = 0.05
+}
+used_study = {
+	icon = 8
+	monthly_character_piety = 0.05
+}
+
+holy_tree = {
+	local_revolt_risk = -0.03
+	tech_growth_modifier_culture = 0.2
+	icon = 8
+}
+
+pious_ruler = {
+	church_opinion = 15
+	monthly_character_piety = 0.05
+	icon = 15
+}
+
+irminsul_wodanaz = {
+	local_tax_modifier = 0.25
+	tech_growth_modifier_economy = 0.3
+	icon = 8
+}
+
+irminsul_teiwaz = {
+	garrison_size = 0.2
+	levy_size = 0.20
+	icon = 8
+}
+
+irminsul_frijjo = {
+	local_revolt_risk = -0.03
+	tech_growth_modifier_culture = 0.2
+	icon = 8
+}
+
+irminsul_thunraz = {
+	local_revolt_risk = -0.03
+	levy_size = 0.15
+	icon = 8
+}
+
+irminsul_tree = {
+	local_revolt_risk = -0.03
+	local_tax_modifier = 0.30
+	icon = 8
+}
+
+peacocks_feather = { #May make it into a trait
+	health = 1
+	diplomacy = 2
+	learning = 4
+	fertility = 0.20
+	church_opinion = 20
+	general_opinion = 10
+	monthly_character_piety = 0.5
+	icon = 17
+}
+desert_heat = {
+	health = -1
+	icon = 36
+}
+fresh_water = {
+	health = 1
+	icon = 18
+}

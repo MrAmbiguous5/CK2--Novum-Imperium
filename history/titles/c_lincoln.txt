@@ -16,6 +16,11 @@
 	liege = d_york # Danes take out the last Mercian king
 	holder = 0
 }
+#Warial's patchup
+879.1.1 = {
+	liege = d_norfolk
+}
+#End of Warial's patchup
 936.1.1 = {
 	liege = d_norfolk
 	holder = 252380 # Ælfwynn lady of the Mercians 12th june 918 - december 918

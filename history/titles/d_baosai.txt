@@ -1,0 +1,50 @@
+#Tang
+883.6.9 = { holder = 1404392 liege = e_tang } #Li Xiaogong
+895.1.1 = { holder = 1404368 } #Hu Jingzhang
+#Tang
+897.1.1 = { name = "Ningsai" effect = { set_coa = d_ningsai } }
+898.7.1 = { name = "Weiguo" effect = { set_coa = d_weiguo } }
+#Qi
+901.2.14 = { liege = k_qinfeng }
+#Tang
+908.12.21 = { holder = 1404369 } #Liu Wanzi
+909.2.23 = { holder = 1404370 } #Li Yanshi
+#Later Liang
+909.4.27 = { holder = 1401654 name = "Zhongyi" effect = { set_coa = d_zhongyi } liege = e_later_liang } #Gao Wanxing
+#Later Tang
+923.11.19 = { liege = e_later_tang }
+924.1.11 = { name = "Zhangwu" effect = { set_coa = d_zhangwu } }
+926.1.28 = { holder = 1401656 } #Gao Yuntao
+930.4.11 = { holder = 1400319 } #Liu Xun
+932.2.13 = { holder = 1412808 } #An Congjin
+933.4.9 = { holder = 1415046 } #Li Yichao
+934.3.5 = { holder = 1400259 } #Gao Xingzhou
+936.4.9 = { holder = 1404371 } #Yang Hanzhang
+936.11.28 = { holder = 1400935 } #Liu Jingyan
+#Later Jin
+937.1.11 = { liege = e_later_jin }
+941.5.29 = { holder = 1400298 } #Ding Shenqi
+942.2.26 = { holder = 1410703 } #He Jian
+943.11.7 = { holder = 1412499 } #Shi Wei - in Old History of Five Dynasties mixed up with Du Wei
+944.8.30 = { holder = 1401910 } #Wang Lingwen
+945.9.5 = { holder = 1404372 } #Xie Keyan
+946.9.11 = { holder = 1400329 } #Zhou Mi
+#Liao
+947.1.11 = { liege = e_khitan }
+#Rebellion
+947.3.22 = { holder = 1404366 liege = 0 } #Gao Yunquan
+#Later Han
+947.3.30 = { liege = e_later_han }
+#Later Zhou
+951.2.5 = { liege = e_later_zhou }
+953.3.14 = { holder = 1404367 } #Gao Shaoqi
+953.4.13 = { holder = 1401054 } #Xiang Xun
+953.4.16 = { holder = 1400450 } #Suo Wanjin
+954.2.18 = { holder = 1404390 } #Yuan Yi or Yuan Zhi
+955.5.6 = { holder = 1404391 } #Li Yanyun
+958.1.1 = { holder = 1404362 } #Li Wanjin
+#Song
+960.2.3 = { holder = 1401937 liege = e_song } #Juan Jixun
+962.1.1 = { holder = 1400363 } #Zhao Zan
+968.1.1 = { holder = 1400118 } #Yi Shenzheng
+975.1.1 = { holder = 0 }

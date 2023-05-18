@@ -10,6 +10,11 @@
 	liege = d_ostlandet
 	holder = 6844
 }
+#Warial's Patchup
+895.1.1 = {
+	liege = k_norway
+}
+#End of Warial's patchup
 936.1.1 = {
 	liege = k_norway
 	holder = 1290102 # Ring Haraldsson

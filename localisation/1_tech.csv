@@ -1,0 +1,34 @@
+TECH_INFANTRY;Tactical Knowledge & Development;;;;;;;;;;;;;x
+TECH_INFANTRY_DESC;Develop weapons and tactics to better harass and combat the enemy.;;;;;;;;;;;;;x
+TECH_CAVALRY;Cavalry Tactics;;;;;;;;;;;;;x
+TECH_CAVALRY_DESC;Develop weapons and tactics for all types and roles of horsemen to better decimate the enemy.;;;;;;;;;;;;;x
+TECH_SKIRMISH;Principles of Defense;;;;;;;;;;;;;x
+TECH_SKIRMISH_DESC;Improve the defense of the realm with more men to replace the guardians of the land as well as better defensive equipment for the men.;;;;;;;;;;;;;x
+TECH_NAVAL;Call of Adventure;;;;;;;;;;;;;x
+TECH_NAVAL_DESC;Encourage the men to join your host and march or sail to foreign lands to fight for glory and adventure.;;;;;;;;;;;;;x
+TECH_RECRUITMENT;Martial Professionalism;;;;;;;;;;;;;x
+TECH_RECRUITMENT_DESC;Study the exploits of the heroes of the past and apply lessons learned on combat tactics, and organization.;;;;;;;;;;;;;x
+TECH_CASTLE_CONSTRUCTION;Feudalism;;;;;;;;;;;;;x
+TECH_CASTLE_CONSTRUCTION_DESC;Push back the darkness of the past and modernize the nobility of your realm, and improve the agriculture of the land to support a larger population.;;;;;;;;;;;;;x
+TECH_CITY_CONSTRUCTION;Urbanism;;;;;;;;;;;;;x
+TECH_CITY_CONSTRUCTION_DESC;Push back the darkness of the past and modernize the merchant class of your realm like never before, and develop methods of improving your holdings more economically.;;;;;;;;;;;;;x
+TECH_CONSTRUCTION;Ecclesiasticism;;;;;;;;;;;;;x
+TECH_CONSTRUCTION_DESC;Push back the darkness of the past and modernize the clergy of your realm like never before, and benefit from their increased organization's wealth and education.;;;;;;;;;;;;;x
+TECH_FORTIFICATIONS_CONSTRUCTION;Fortifications;;;;;;;;;;;;;x
+TECH_FORTIFICATIONS_CONSTRUCTION_DESC;Build taller, deeper, stronger, and grander walls and castles to defend against the enemy, as well as better methods of resisting an enemy siege longer.;;;;;;;;;;;;;x
+TECH_TRADE_PRACTICES;Trade and Commerce;;;;;;;;;;;;;x
+TECH_TRADE_PRACTICES_DESC;Improve the flow of trade through your cities whether through land or sea, which also helps encourage the flow of coin within the realm.;;;;;;;;;;;;;x
+TECH_CONSTRUCTION;Engineering;;;;;;;;;;;;;x
+TECH_CONSTRUCTION_DESC;Discover new ways in the art of improving your holdings, and dismantling the enemy's walls, faster.;;;;;;;;;;;;;x
+TECH_NOBLE_CUSTOMS;Martial Code;;;;;;;;;;;;;x
+TECH_NOBLE_CUSTOMS_DESC;Build a chivalric tradition, glorifying the art of war, and rallying the men of the realm and the legitimacy of your rule.;;;;;;;;;;;;;x
+TECH_POPULAR_CUSTOMS;Mercantile Code;;;;;;;;;;;;;x
+TECH_POPULAR_CUSTOMS_DESC;Build a commercial tradition, praising the virtues of trade, and improving the wealth of the land.;;;;;;;;;;;;;x
+TECH_RELIGIOUS_CUSTOMS;Missionary Code;;;;;;;;;;;;;x
+TECH_RELIGIOUS_CUSTOMS_DESC;Build a clerical tradition, honoring the faith of the people and making the people content.;;;;;;;;;;;;;x
+TECH_MAJESTY;Humanism;;;;;;;;;;;;;x
+TECH_MAJESTY_DESC;Glorify the majesty of the people and embrace other cultures into the fold more, putting the land at peace;;;;;;;;;;;;;x
+TECH_CULTURE_FLEX;Pluralism;;;;;;;;;;;;;x
+TECH_CULTURE_FLEX_DESC;Sponsor the spiritual arts and accept the people of other faiths, putting the land at peace;;;;;;;;;;;;;x
+TECH_LEGALISM;Divine Right;;;;;;;;;;;;;x
+TECH_LEGALISM_DESC;Prove your right to the seat of the land, pacifying dissidents and managing more directly.;;;;;;;;;;;;;x

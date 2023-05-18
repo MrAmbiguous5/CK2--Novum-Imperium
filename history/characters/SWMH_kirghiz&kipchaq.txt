@@ -12,31 +12,31 @@
 ######################################
 #Placeholder Kirghiz chieftans 867
 
-#1229700 = {
-#	name="Menglig Tegin"
-#	dynasty=1000101570
-#	religion="tengri_pagan"
-#	culture="kirghiz"
-#	840.1.1={
-#		birth="840.1.1"
-#	}
-#	882.1.1={
-#		death="882.1.1"
-#	}
-#} 
-#1229701 = {
-#	name="Boko Tegin"
-#	dynasty=1000101570
-#	religion="tengri_pagan"
-#	culture="kirghiz"
-#	father = 1229700
-#  858.1.1={
-#		birth="858.1.1"
-#	}
-#	912.1.1={
-#		death="912.1.1"
-#	}
-#} 
+1229700 = {
+	name="Menglig Tegin"
+	dynasty=1000101570
+	religion="tengri_pagan"
+	culture="kirghiz"
+	840.1.1={
+		birth="840.1.1"
+	}
+	882.1.1={
+		death="882.1.1"
+	}
+} 
+1229701 = {
+	name="Boko Tegin"
+	dynasty=1000101570
+	religion="tengri_pagan"
+	culture="kirghiz"
+	father = 1229700
+  858.1.1={
+		birth="858.1.1"
+	}
+	912.1.1={
+		death="912.1.1"
+	}
+} 
 
 #1229702-1229705 in use for some Cuman characters
 

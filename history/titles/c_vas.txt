@@ -28,8 +28,9 @@
 861.1.1 = {
 	holder = 187012
 }
+#Warial's patchup
 876.1.1 = {
-	holder = 0
+	liege = k_hungary
 }
 907.7.4 = {
 	liege = k_hungary

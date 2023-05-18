@@ -13243,7 +13243,7 @@ used_for_random = no
 	culture ="andalusian_arabic"
 }
 12263 = {
-	name= "al-Zannúní"
+	name= "al-Zannuní"
 	culture ="andalusian_arabic"
 }
 12264 = {
@@ -15187,6 +15187,7 @@ used_for_random = no
 	name="Fuqi"
 	culture="tangut"
 	religion="buddhist"
+	used_for_random=no
 }
 
 19108=
@@ -15201,6 +15202,7 @@ used_for_random = no
 	name="Amdo"
 	culture="tangut"
 	religion="buddhist"
+	used_for_random=no
 }
 
 19110=
@@ -15208,6 +15210,7 @@ used_for_random = no
 	name="Pangong"
 	culture="tangut"
 	religion="buddhist"
+	used_for_random=no
 }
 
 19111=
@@ -15301,19 +15304,19 @@ used_for_random = no
 	religion="hindu"
 }
 
-19124=
-{
-	name="Tsongkha" # Rulers of Amdo/Samtho
-	culture="tangut"
-	religion="buddhist"
-}
+#19124=
+#{
+#	name="Tsongkha" # Rulers of Amdo/Samtho
+#	culture="tangut"
+#	religion="buddhist"
+#}
 
-19125=
-{
-	name="Jyekundo"
-	culture="tangut"
-	religion="buddhist"
-}
+#19125=
+#{
+#	name="Jyekundo"
+#	culture="tangut"
+#	religion="buddhist"
+#}
 
 19126=
 {
@@ -15336,12 +15339,12 @@ used_for_random = no
 	religion="bon"
 }
 
-19129=
-{
-	name="Doendrub"
-	culture="tangut"
-	religion="buddhist"
-}
+#19129=
+#{
+#	name="Doendrub"
+#	culture="tangut"
+#	religion="buddhist"
+#}
 
 19130=
 {
@@ -33886,7 +33889,7 @@ used_for_random = no
 
 1051153=
 {
-	name = "Wanyan"
+	name = "Onyan"
 	culture = jurchen
 	religion = taoist
 	#used_for_random = no
@@ -35607,11 +35610,11 @@ used_for_random = no
 	religion="bon"
 }
 
-1053030 = { # Fictional
-	name="Toompea"
-	culture="tangut"
-	religion="buddhist"
-}
+#1053030 = { # Fictional
+#	name="Toompea"
+#	culture="tangut"
+#	religion="buddhist"
+#}
 
 1059008 = {
 	name="Qiepantuo"
@@ -35772,31 +35775,31 @@ used_for_random = no
 
 1029300=
 {
-	name="Tuoba"
-	culture="khitan"
+	name="Taghbach"
+	culture="xianbei"
 	religion="tengri_pagan"
 }
 1029301=
 {
-	name="Helan"
-	culture="khitan"
+	name="Hinlan"
+	culture="tangut"
 	religion="tengri_pagan"
 }
 1029302=
 {
-	name="Weiming"
+	name="Ngwimi"
 	culture="tangut"
 	religion="taoist"
 }
 1029303=
 {
-	name="Weimu"
+	name="Vibu"
 	culture="tangut"
 	religion="taoist"
 }
 1029304=
 {
-	name="Yangmi"
+	name="Mimi"
 	culture="tangut"
 	religion="taoist"
 }
@@ -35808,46 +35811,46 @@ used_for_random = no
 }
 1029306=
 {
-	name="Ezangquhuai"
+	name="Ngwydzon"
 	culture="tangut"
 	religion="taoist"
 }
 1029307=
 {
-	name="Yeli"
+	name="Yrir"
 	culture="tangut"
 	religion="taoist"
 }
-1029308=
-{
-	name="Meiyi"
-	culture="tangut"
-	religion="taoist"
-}
+#1029308=
+#{
+#	name="Meiyi"
+#	culture="tangut"
+#	religion="taoist"
+#}
 1029309=
 {
-	name="Mozang"
+	name="Mydzon"
 	culture="tangut"
 	religion="taoist"
 }
-1029310=
-{
-	name="Duola"
-	culture="tangut"
-	religion="taoist"
-}
-1029311=
-{
-	name="Mikemote"
-	culture="tangut"
-	religion="taoist"
-}
-1029312=
-{
-	name="Momu"
-	culture="tangut"
-	religion="taoist"
-}
+#1029310=
+#{
+#	name="Duola"
+#	culture="tangut"
+#	religion="taoist"
+#}
+#1029311=
+#{
+#	name="Mikemote"
+#	culture="tangut"
+#	religion="taoist"
+#}
+#1029312=
+#{
+#	name="Momu"
+#	culture="tangut"
+#	religion="taoist"
+#}
 
 #1029313
 #1029314
@@ -35856,31 +35859,35 @@ used_for_random = no
 
 1029317=
 {
-	name="Tuoba"
+	name="Taghbach"
 	culture="tangut"
 	religion="taoist"
+	used_for_random=no
 }
 1029318=
 {
 	name="Xifeng"
 	culture="tangut"
 	religion="taoist"
+	used_for_random=no
 }
 1029319=
 {
 	name="Feiting"
 	culture="tangut"
 	religion="taoist"
+	used_for_random=no
 }
 1029320=
 {
 	name="Wangli"
 	culture="tangut"
 	religion="taoist"
+	used_for_random=no
 }
 1029321=
 {
-	name="Pochao"
+	name="Phocha"
 	culture="tangut"
 	religion="taoist"
 }
@@ -35889,45 +35896,48 @@ used_for_random = no
 	name="Yeci"
 	culture="tangut"
 	religion="taoist"
+	used_for_random=no
 }
 1029323=
 {
 	name="Fangdang"
 	culture="tangut"
 	religion="taoist"
+	used_for_random=no
 }
 1029324=
 {
 	name="Miqin"
 	culture="tangut"
 	religion="taoist"
+	used_for_random=no
 }
-1029325=
-{
-	name="Tangwu"
-	culture="tangut"
-	religion="taoist"
-}
+#1029325=
+#{
+#	name="Tangwu"
+#	culture="tangut"
+#	religion="taoist"
+#}
 1029326=
 {
-	name="Qitai"
+	name="Chhytan"
 	culture="tangut"
 	religion="taoist"
 }
-1029327=
-{
-	name="Wumi"
-	culture="tangut"
-	religion="taoist"
-}
+#1029327=
+#{
+#	name="Wumi"
+#	culture="tangut"
+#	religion="taoist"
+#}
 1029328=
 {
-	name="Pochou"
+	name="Phocha"
 	culture="tangut"
 	religion="taoist"
 }
 1029329={
-	name="Qibi"
+	name="Yabutqar"
 	culture="uyghur"
 	religion="tengri_pagan"
 }

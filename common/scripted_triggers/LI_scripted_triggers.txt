@@ -1,0 +1,5501 @@
+LI_pagan_trigger = {	#"Pagan" religions = Tribal Governments
+	OR = {
+		religion = allfather
+		religion = anansi
+		religion = batembuzi
+		religion = celtic_christ
+		religion = celtic_pagan
+		religion = chumbylat
+		religion = dazhbog
+		religion = dievas
+		religion = endovellico
+		religion = erlik
+		religion = finnish_pagan
+		religion = german_pagan
+		religion = ilmatar
+		religion = imana
+		religion = inuit_pagan
+		religion = irminsul
+		religion = jumala
+		religion = kintu
+		religion = lugh
+		religion = makonde_pagan
+		religion = mande_pagan
+		religion = norse_christ
+		religion = norse_pagan
+		religion = norse_war
+		religion = nott
+		religion = nyame
+		religion = nyasaye
+		religion = peckols
+		religion = perkunas
+		religion = perun
+		religion = ragnarok
+		religion = rod
+		religion = saule
+		religion = slavic_pagan
+		religion = sol_norse
+		religion = sol_slav
+		religion = sowilo
+		religion = svaroh
+		religion = svetovid
+		religion = teiwaz
+		religion = tengri_ahriman
+		religion = tengri_bud
+		religion = tengri_confucian
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = tengri_rod
+		religion = vattisenyaly
+		religion = veles
+		religion = voipel
+		religion = zande_pagan
+		religion = zulu_pagan
+	}
+}
+LI_norse_pagan_trigger = {
+	OR = {
+		religion = norse_christ
+		religion = norse_pagan
+		religion = norse_war
+		religion = nott
+		religion = ragnarok
+		religion = sol_norse
+		religion = sowilo
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = ragnarok_reformed
+	}
+}
+LI_traditional_trigger = {
+	OR = {
+		religion = aglibol
+		religion = allat
+		religion = allfather
+		religion = beelshamen
+		religion = berber_pagan
+		religion = bud_zor
+		religion = celtic_christ
+		religion = celtic_pagan
+		religion = chumbylat
+		religion = dievas
+		religion = druze
+		religion = finnish_pagan
+		religion = german_pagan
+		religion = graeco_roman
+		religion = hubal
+		religion = ibadi
+		religion = illuyanka
+		religion = indohelen
+		religion = jumala
+		religion = mand_ruha
+		religion = mandaean
+		religion = mande_pagan
+		religion = marabout
+		religion = mari_christ
+		religion = norse_pagan
+		religion = norse_war
+		religion = palmyran_pagan
+		religion = perkunas
+		religion = rod
+		religion = sethian
+		religion = slavic_pagan
+		religion = sufi
+		religion = talab
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = vattisenyaly
+		religion = veles
+		religion = yazdanism
+		religion = yazidism
+	}
+}
+
+LI_allows_gurus_trigger = {
+	OR = {
+		religion_group = indian_group
+		religion_group = bud_group
+		religion = indoh_bud
+		religion = tengri_bud
+		religion = tengri_bud_reformed
+		religion = tao
+		religion = tao_reformed
+		religion = confucian
+		religion = zz01_vedanta
+	}
+}
+
+LI_druidic_trigger = {
+	OR = {
+		religion = celtic_christ
+		religion_group = celtic_group
+	}
+}
+
+LI_mani_trigger = {
+	OR = {
+		religion_group = mani_group
+		religion_group = mand_group
+	}
+}
+
+LI_roman_imperial_trigger = {
+	OR = {
+		has_landed_title = e_byzantium
+		has_landed_title = e_roman
+		has_landed_title = e_roman_empire
+	}
+}
+
+LI_graeco_sol_trigger = {
+	OR = {
+		religion_group = graecoroman_group
+		religion_group = sol_group
+	}
+}
+
+LI_bud_trigger = {
+	OR = {
+		religion_group = bud_group
+		religion = indoh_bud
+		religion = tengri_bud
+		religion = tengri_bud_reformed
+	}
+}
+
+crusade_trigger = {
+	using_cb = crusade
+#	OR = {
+#		using_cb = crusade_christian
+#		using_cb = crusade_anatolian
+#		using_cb = crusade_east_african
+#		using_cb = crusade_arabpagan
+#		using_cb = crusade_aztec
+#		using_cb = crusade_bantu
+#		using_cb = crusade_berberpagan
+#		using_cb = crusade_bud
+#		using_cb = crusade_chinese
+#		using_cb = crusade_norsegerman
+#		using_cb = crusade_egyptian
+#		using_cb = crusade_finnish
+#		using_cb = crusade_graecoroman
+#		using_cb = crusade_indian
+#		using_cb = crusade_inuit
+#		using_cb = crusade_luwian
+#		using_cb = crusade_mand
+#		using_cb = crusade_mani
+#		using_cb = crusade_mithra
+#		using_cb = crusade_muslim
+#		using_cb = crusade_serer
+#		using_cb = crusade_tengri
+#		using_cb = crusade_zal
+#		using_cb = crusade_zoroastrian		
+#	}
+}
+
+clanic_trigger = {
+	OR = {
+		government = tribal_government
+		government = nomadic_government
+		culture = kurdish
+	}
+}
+pagan_traits_trigger = {
+	OR = {
+		government = tribal_government
+		government = nomadic_government
+	}
+}
+
+shamanic_trigger = {
+	OR = { #Traditional Steppe/Shamanic civ. Turkic/Finnic group religions + their reformed versions (the exceptions here are bon and inuit_pagan because they DO have a pseudo-shamanistic tradition)
+		religion = bon
+		religion = bon_reformed
+		religion = chumbylat
+		religion = chumbylat_reformed
+		religion = erlik
+		religion = erlik_reformed
+		religion = finnish_pagan
+		religion = finnish_pagan_reformed
+		religion = inuit_pagan
+		religion = inuit_pagan_reformed
+		religion = jumala
+		religion = tengri_mani
+		religion = tengri_mani_reformed
+		religion = tengri_pagan
+		religion = tengri_pagan_reformed
+		religion = vattisenyaly
+		religion = vattisenyaly_reformed
+	}
+}
+
+non_hunting_trigger = {
+	OR = {
+		religion_group = indian_group
+		religion_group = bud_group
+		religion_group = chinese_group
+		religion_group = neoplato_group
+		religion = zor_hindu
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = cathar
+		religion = cathar_reformed
+		religion = priscillian
+		religion = priscillian_reformed
+		religion = bogomilist
+		religion = christian_populist_reformed
+		religion = qarmatian
+		religion = mani
+		religion = marcionist
+		religion = neoplato
+		religion = plato_islam
+		religion = plato_christ
+		religion = valentinian
+	}
+}
+feminist_religions_trigger = {
+	OR = {
+		religion = allat
+		religion = almaqah
+		religion = amanai
+		religion = attar
+		religion = berber_pagan
+		religion = gurzil
+		religion = haruri
+		religion = hubal
+		religion = maher
+		religion = mari_christ
+		religion = mari_christ_reformed
+		religion = norse_pagan
+		religion = norse_war
+		religion = ragnarok
+		religion = shams
+		religion = sowilo
+		religion = talab
+		religion = arab_pagan_reformed
+		religion = berber_pagan_reformed
+		religion = norse_pagan_reformed
+		religion = ragnarok_reformed
+		religion = cathar
+		religion = cathar_reformed
+	}
+}
+ultra_feminist_religion_trigger = {
+	OR = {
+		religion = mari_christ
+		religion = mari_christ_reformed
+	}
+}
+
+feminism_0_religions_trigger = {
+	OR = {
+		religion = adoptionist
+		religion = almaqah
+		religion = amun
+		religion = apollinarist
+		religion = arian
+		religion = ashari
+		religion = athari
+		religion = audianist
+		religion = aztec
+		religion = beelshamen
+		religion = bud_pratyeka
+		religion = bud_sthaviravada
+		religion = bud_zen
+		religion = bud_zor
+		religion = catholic
+		religion = celtic_pagan
+		religion = confucian
+		religion = dievas
+		religion = docetist
+		religion = druze
+		religion = fraticelli
+		religion = german_pagan
+		religion = ghazi_islam
+		religion = graeco_roman
+		religion = hindu
+		religion = hurufi
+		religion = ibadi
+		religion = iconoclast
+		religion = ilm_islam
+		religion = isis
+		religion = judaism
+		religion = kothar
+		religion = kubera
+		religion = lubu
+		religion = luwian
+		religion = malakbel
+		religion = mandaean
+		religion = marabout
+		religion = marcionist
+		religion = maturidi
+		religion = melkite
+		religion = mithra
+		religion = monophysite
+		religion = monothelite
+		religion = murjiah
+		religion = murugan
+		religion = mutazil
+		religion = nasrani
+		religion = nestorian
+		religion = norse_pagan
+		religion = orthodox
+		religion = palmyran_pagan
+		religion = pelagian
+		religion = perun
+		religion = sabellianist
+		religion = semipelagian
+		religion = shams
+		religion = shiite
+		religion = slavic_christian
+		religion = sol
+		religion = sol_islam
+		religion = solomonic_christ
+		religion = sunni
+		religion = tarhunt
+		religion = unctionist
+		religion = waldensian
+		religion = yazdanism
+		religion = yazidism
+		religion = zahiri
+		religion = zal
+		religion = zor_hindu
+		religion = zoroastrian
+		religion = zurvanism
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = baltic_pagan_reformed
+		religion = bantu_pagan_reformed
+		religion = bon_reformed
+		religion = bud_zen_reformed
+		religion = bud_zor_reformed
+		religion = cathar_reformed
+		religion = celtic_christ_reformed
+		religion = celtic_pagan_reformed
+		religion = christian_populist_reformed
+		religion = chumbylat_reformed
+		religion = cybele_reformed
+		religion = druze_reformed
+		religion = ethiopian_war_reformed
+		religion = finnish_pagan_reformed
+		religion = german_pagan_reformed
+		religion = graeco_roman_reformed
+		religion = iberian_pagan_reformed
+		religion = indohelen_reformed
+		religion = inuit_pagan_reformed
+		religion = isis_reformed
+		religion = jud_ark_reformed
+		religion = judaism_reformed
+		religion = kubera_reformed
+		religion = lubu_reformed
+		religion = mazdakism_reformed
+		religion = montanist_reformed
+		religion = murugan_reformed
+		religion = muslim_aliite_reformed
+		religion = muslim_domination_reformed
+		religion = muslim_sufi_reformed
+		religion = nasrani_reformed
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = northern_sun_reformed
+		religion = nyakalagan_reformed
+		religion = priscillian_reformed
+		religion = saura_reformed
+		religion = serer_reformed
+		religion = set_reformed
+		religion = sethian_reformed
+		religion = slavic_christian_reformed
+		religion = slavic_pagan_reformed
+		religion = sol_islam_reformed
+		religion = tao_reformed
+		religion = tarhunt_reformed
+		religion = teiwaz_reformed
+		religion = vidharma_reformed
+		religion = yazdanism_reformed
+		religion = zande_pagan_reformed
+		religion = zor_angra_reformed
+		religion = zulu_pagan_reformed
+		religion = zurvanism_reformed
+	}
+}
+
+feminism_1_religions_trigger = {
+	OR = {
+		religion = alexandros
+		religion = allat
+		religion = anansi
+		religion = aten
+		religion = attar
+		religion = bon
+		religion = bud_bahusrutiya
+		religion = celtic_christ
+		religion = cybele
+		religion = dazhbog
+		religion = donatist
+		religion = finnish_pagan
+		religion = hadad
+		religion = horus_re
+		religion = illuyanka
+		religion = imana
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = indohelen
+		religion = inuit_pagan
+		religion = jud_ark
+		religion = jud_sabaoth
+		religion = jud_zion
+		religion = jupiter
+		religion = kharijite
+		religion = kintu
+		religion = makonde_pagan
+		religion = mande_pagan
+		religion = mani
+		religion = mani_mithra
+		religion = mazdakism
+		religion = mithra_christ
+		religion = montanist
+		religion = mwari
+		religion = neoplato
+		religion = norse_christ
+		religion = nyame
+		religion = peckols
+		religion = perkunas
+		religion = porphyryan
+		religion = qarmatian
+		religion = rod
+		religion = roman_imperial
+		religion = saura
+		religion = sethian
+		religion = slavic_pagan
+		religion = sol_apollo
+		religion = sol_mani
+		religion = sol_tsahay
+		religion = solomonic_alexandros
+		religion = sowilo
+		religion = sufi
+		religion = svetovid
+		religion = teiwaz
+		religion = valentinian
+		religion = veles
+		religion = vidharma
+		religion = waaq
+		religion = zal_christ
+		religion = zande_pagan
+		religion = zor_angra
+		religion = zulu_pagan
+		religion = ahriman_reformed
+		religion = erlik_reformed
+		religion = illuyanka_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = ragnarok_reformed
+		religion = sol_boreas_reformed
+		religion = sol_sahara_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = tengri_pagan_reformed
+		religion = vattisenyaly_reformed
+	}
+}
+
+feminism_2_religions_trigger = {
+	OR = {
+		religion = aglibol
+		religion = allfather
+		religion = antinomian
+		religion = batembuzi
+		religion = bogomilist
+		religion = bud_mahayana
+		religion = bud_pureland
+		religion = bud_vajrayana
+		religion = cathar
+		religion = chumbylat
+		religion = endovellico
+		religion = hubal
+		religion = ilmatar
+		religion = jain
+		religion = jumala
+		religion = lugh
+		religion = maher
+		religion = mand_ruha
+		religion = mani_germanic
+		religion = mithra_sol
+		religion = norse_war
+		religion = nott
+		religion = nyasaye
+		religion = nyau
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = priscillian 
+		religion = sol_boreas
+		religion = sol_christ
+		religion = sol_norse
+		religion = sol_slav
+		religion = svaroh
+		religion = talab
+		religion = tao
+		religion = tengri_bud
+		religion = tengri_confucian
+		religion = tengri_pagan
+		religion = vattisenyaly
+		religion = yoruba
+		religion = zal_mani
+		religion = berber_pagan_reformed
+		religion = tengri_mani_reformed
+		religion = tengri_rod_reformed
+		religion = voipel_reformed
+	}
+}
+
+feminism_3_religions_trigger = {
+	OR = {
+		religion = berber_pagan
+		religion = dionysos
+		religion = erlik
+		religion = gurzil
+		religion = irminsul
+		religion = mani_slavic
+		religion = mari_christ_reformed
+		religion = ragnarok
+		religion = saule
+		religion = set
+		religion = sol_sahara
+		religion = tengri_mani
+		religion = tengri_rod
+		religion = voipel
+		religion = yahyanism
+#		religion = shaytana
+	}
+}
+
+feminism_4_religions_trigger = {
+	OR = {
+		religion = amanai
+		religion = haruri
+		religion = mani_ahriman
+		religion = mari_christ
+		religion = tengri_ahriman
+	}
+}
+
+nm_trigger = {
+	OR = {
+		religion = norse_christ
+		religion = norse_pagan
+		religion = norse_war
+		religion = nott
+		religion = ragnarok
+		religion = sol_norse
+		religion = sowilo
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = ragnarok_reformed
+	}
+}
+
+proselyte_religion_trigger = {
+	OR = {
+		AND = {
+			religion_group = christian
+			NOR = {
+				religion = antinomian
+				religion = bogomilist
+				religion = cathar
+				religion = celtic_christ
+				religion = fraticelli
+				religion = mari_christ
+				religion = montanist
+				religion = nasrani
+				religion = norse_christ
+				religion = priscillian
+				religion = sethian
+				religion = slavic_christian
+				religion = valentinian
+				religion = waldensian
+				religion = nasrani_reformed
+			}
+		}
+		AND = {
+			religion_group = muslim
+			NOR = {
+				religion = druze
+				religion = ghazi_islam
+				religion = ibadi
+				religion = kharijite
+				religion = marabout
+				religion = qarmatian
+				religion = sufi
+			}
+		}
+		religion = aztec
+		AND = {
+			religion_group = bud_group
+			NOR = {
+				religion = bud_zen
+				religion = bud_zor
+			}
+		}
+		religion = zoroastrian
+		religion = mazdakism_reformed
+		religion = zor_angra_reformed
+		religion = zurvanism_reformed
+		religion = muslim_sufi_reformed
+		religion = sol_islam_reformed
+		religion = tengri_bud_reformed
+		religion = druze_reformed
+	}
+}
+
+ancestral_religion_trigger = {
+	OR = {
+		# Ancestral
+		religion = aglibol
+		religion = allat
+		religion = allfather
+		religion = amanai
+		religion = amun
+		religion = anansi
+		religion = antinomian
+		religion = aten
+		religion = attar
+		religion = batembuzi
+		religion = beelshamen
+		religion = berber_pagan
+		religion = bogomilist
+		religion = bon
+		religion = bud_zen
+		religion = bud_zor
+		religion = cathar
+		religion = celtic_christ
+		religion = celtic_pagan
+		religion = chumbylat
+		religion = cybele
+		religion = dazhbog
+		religion = dievas
+		religion = dionysos
+		religion = druze
+		religion = endovellico
+		religion = erlik
+		religion = finnish_pagan
+		religion = fraticelli
+		religion = german_pagan
+		religion = ghazi_islam
+		religion = graeco_roman
+		religion = gurzil
+		religion = hadad
+		religion = horus_re
+		religion = hubal
+		religion = ibadi
+		religion = illuyanka
+		religion = ilmatar
+		religion = imana
+		religion = indohelen
+		religion = inuit_pagan
+		religion = irminsul
+		religion = isis
+		religion = jud_ark
+		religion = jud_sabaoth
+		religion = judaism
+		religion = jumala
+		religion = kharijite
+		religion = kintu
+		religion = kothar
+		religion = kubera
+		religion = lubu
+		religion = lugh
+		religion = maher
+		religion = makonde_pagan
+		religion = malakbel
+		religion = mand_ruha
+		religion = mandaean
+		religion = mande_pagan
+		religion = mani_ahriman
+		religion = mani_germanic
+		religion = mani_slavic
+		religion = marabout
+		religion = mari_christ
+		religion = mazdakism
+		religion = montanist
+		religion = murugan
+		religion = nasrani
+		religion = norse_christ
+		religion = norse_pagan
+		religion = norse_war
+		religion = nott
+		religion = nyame
+		religion = nyasaye
+		religion = palmyran_pagan
+		religion = peckols
+		religion = perkunas
+		religion = perun
+		religion = priscillian
+		religion = qarmatian
+		religion = ragnarok
+		religion = rod
+		religion = saule
+		religion = saura
+		religion = set
+		religion = sethian
+		religion = shams
+		religion = slavic_christian
+		religion = slavic_pagan
+		religion = sol_boreas
+		religion = sol_islam
+		religion = sol_mani
+		religion = sol_norse
+		religion = sol_sahara
+		religion = sol_slav
+		religion = sol_tsahay
+		religion = sowilo
+		religion = sufi
+		religion = svaroh
+		religion = svetovid
+		religion = talab
+		religion = tao
+		religion = tarhunt
+		religion = teiwaz
+		religion = tengri_ahriman
+		religion = tengri_bud
+		religion = tengri_confucian
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = tengri_rod
+		religion = vattisenyaly
+		religion = veles
+		religion = voipel
+		religion = waaq
+		religion = waldensian
+		religion = yahyanism
+		religion = yazdanism
+		religion = yazidism
+		religion = zor_angra
+		religion = zurvanism
+	}
+}
+
+bastion_of_faith_religion_trigger = {
+	OR = {
+		#Bastion of faith
+		religion = alexandros
+		religion = almaqah
+		religion = confucian
+		religion = hindu
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = jain
+		religion = jud_zion
+		religion = jupiter
+		religion = luwian
+		religion = mani
+		religion = mani_mithra
+		religion = mithra
+		religion = mithra_christ
+		religion = mithra_sol
+		religion = mwari
+		religion = neoplato
+		religion = nyau
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = porphyryan
+		religion = roman_imperial
+		religion = sol
+		religion = sol_apollo
+		religion = sol_christ
+		religion = solomonic_alexandros
+		religion = valentinian
+		religion = yoruba
+		religion = zal
+		religion = zal_christ
+		religion = zal_mani
+		religion = zor_hindu
+		# Bastion of the faith religions created by reformation
+		religion = ahriman_reformed
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = baltic_pagan_reformed
+		religion = berber_pagan_reformed
+		religion = bon_reformed
+		religion = celtic_christ_reformed
+		religion = celtic_pagan_reformed
+		religion = chumbylat_reformed
+		religion = cybele_reformed
+		religion = erlik_reformed
+		religion = ethiopian_war_reformed
+		religion = finnish_pagan_reformed
+		religion = german_pagan_reformed
+		religion = graeco_roman_reformed
+		religion = iberian_pagan_reformed
+		religion = illuyanka_reformed
+		religion = indohelen_reformed
+		religion = inuit_pagan_reformed
+		religion = isis_reformed
+		religion = jud_ark_reformed
+		religion = judaism_reformed
+		religion = kubera_reformed
+		religion = lubu_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = murugan_reformed
+		religion = nasrani_reformed
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = northern_sun_reformed
+		religion = nyakalagan_reformed
+		religion = ragnarok_reformed
+		religion = saura_reformed
+		religion = serer_reformed
+		religion = set_reformed
+		religion = sethian_reformed
+		religion = slavic_pagan_reformed
+		religion = sol_boreas_reformed
+		religion = sol_sahara_reformed
+		religion = tao_reformed
+		religion = tarhunt_reformed
+		religion = teiwaz_reformed
+		religion = tengri_confucian_reformed
+		religion = tengri_mani_reformed
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+		religion = vidharma_reformed
+		religion = voipel_reformed
+		religion = yazdanism_reformed
+		religion = zande_pagan_reformed
+		religion = zulu_pagan_reformed
+	}
+}
+
+traditional_religion_trigger = {
+	OR = {
+		religion = allat
+		religion = allfather
+		religion = audianist
+		religion = berber_pagan
+		religion = bon
+		religion = bud_zor
+		religion = celtic_christ
+		religion = celtic_pagan
+		religion = chumbylat
+		religion = dievas
+		religion = donatist
+		religion = druze
+		religion = erlik
+		religion = finnish_pagan
+		religion = german_pagan
+		religion = graeco_roman
+		religion = hindu
+		religion = hubal
+		religion = ibadi
+		religion = illuyanka
+		religion = indohelen
+		religion = inuit_pagan
+		religion = jud_ark
+		religion = jumala
+		religion = makonde_pagan
+		religion = malakbel
+		religion = mand_ruha
+		religion = mandaean
+		religion = mande_pagan
+		religion = marabout
+		religion = mari_christ
+		religion = mwari
+		religion = nasrani
+		religion = norse_pagan
+		religion = nyame
+		religion = palmyran_pagan
+		religion = perkunas
+		religion = rod
+		religion = saura
+		religion = sethian
+		religion = slavic_pagan
+		religion = sufi
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = vattisenyaly
+		religion = veles
+		religion = waaq
+		religion = yazdanism
+		religion = yazidism
+		religion = jud_ark_reformed
+		religion = muslim_sufi_reformed
+		religion = yazdanism_reformed
+	}
+}
+
+proselyte_muslim_religion_trigger = {
+	OR = {
+		religion = ashari
+		religion = athari
+		religion = haruri
+		religion = hurufi
+		religion = ilm_islam
+		religion = maturidi
+		religion = murjiah
+		religion = mutazil
+		religion = shiite
+		religion = sunni
+		religion = zahiri
+		#Reformed proselyte muslim
+		religion = muslim_aliite_reformed
+		religion = muslim_domination_reformed
+	}
+}
+
+bastion_or_ancestral_muslim_religion_trigger = {
+	OR = {
+		religion = druze
+		religion = ghazi_islam
+		religion = ibadi
+		religion = kharijite
+		religion = marabout
+		religion = qarmatian
+		religion = sufi
+	}
+}
+organized_religion_trigger = {
+	OR = {
+		religion_group = abrahamic_group
+		religion_group = bud_group
+		AND = {
+			religion_group = christian
+			NOR = {
+				religion = sethian
+				religion = slavic_christian
+				religion = waldensian
+			}
+		}
+		AND = {
+			religion_group = indohelen_group
+			NOT = {
+				religion = indohelen
+			}
+		}
+		religion_group = jewish_group
+		religion_group = mithra_group
+		AND = {
+			religion_group = muslim
+			NOT = {
+				religion = sufi
+			}
+		}
+		religion_group = neoplato_group
+		religion_group = zal_group
+		religion = alexandros
+		religion = almaqah
+		religion = aztec
+		religion = confucian
+		religion = hindu
+		religion = jain
+		religion = jupiter
+		religion = luwian
+		religion = mani
+		religion = mani_mithra
+		religion = mwari
+		religion = nyau
+		religion = roman_imperial
+		religion = sol
+		religion = sol_apollo
+		religion = sol_mani
+		religion = solomonic_alexandros
+		religion = yoruba
+		religion = zor_hindu
+		religion = zoroastrian
+		religion = ahriman_reformed
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = baltic_pagan_reformed
+		religion = bantu_pagan_reformed
+		religion = berber_pagan_reformed
+		religion = bon_reformed
+		religion = celtic_christ_reformed
+		religion = celtic_pagan_reformed
+		religion = chumbylat_reformed
+		religion = cybele_reformed
+		religion = erlik_reformed
+		religion = ethiopian_war_reformed
+		religion = finnish_pagan_reformed
+		religion = german_pagan_reformed
+		religion = graeco_roman_reformed
+		religion = iberian_pagan_reformed
+		religion = illuyanka_reformed
+		religion = inuit_pagan_reformed
+		religion = isis_reformed
+		religion = kubera_reformed
+		religion = lubu_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = mazdakism_reformed
+		religion = murugan_reformed
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = northern_sun_reformed
+		religion = nyakalagan_reformed
+		religion = ragnarok_reformed
+		religion = saura_reformed
+		religion = serer_reformed
+		religion = set_reformed
+		religion = slavic_pagan_reformed
+		religion = sol_boreas_reformed
+		religion = sol_islam_reformed
+		religion = sol_sahara_reformed
+		religion = tao_reformed
+		religion = tarhunt_reformed
+		religion = teiwaz_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = tengri_mani_reformed
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+		religion = vidharma_reformed
+		religion = voipel_reformed
+		religion = yazdanism_reformed
+		religion = zande_pagan_reformed
+		religion = zor_angra_reformed
+		religion = zulu_pagan_reformed
+		religion = zurvanism_reformed
+	}
+}
+
+total_war_religion_trigger = {
+	OR = {
+		religion = mani_ahriman
+		religion = norse_war
+		religion = ragnarok
+		religion = tengri_ahriman
+		religion = zor_angra
+		has_character_modifier = traditionallore_totalwar
+		has_character_modifier = scholarly_totalwar
+		trait = messianic_savior
+	}
+}
+
+holy_war_trigger = {
+	OR = {
+		using_cb = religious_proselyte1
+		using_cb = religious_proselyte2
+		using_cb = religious_bastion1
+		using_cb = religious_bastion2
+		using_cb = religious_ancestral
+	}
+}
+
+messianic_soul_trigger = {
+	OR = {
+		religion = aglibol
+		religion = bud_mahayana
+		religion = bud_pureland
+		religion = bud_vajrayana
+		religion = horus_re
+		religion = jain
+		religion = lugh
+		religion = mani
+		religion = mani_ahriman
+		religion = nestorian
+		religion = nott
+		religion = nyau
+		religion = priscillian 
+		religion = qarmatian
+		religion = ragnarok
+		religion = set
+		religion = shiite
+		religion = sol_sahara
+		religion = talab
+		religion = tengri_ahriman
+		religion = voipel
+		religion = yahyanism
+		religion = zor_angra
+		religion = ahriman_reformed
+		religion = christian_populist_reformed
+		religion = illuyanka_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mazdakism_reformed
+		religion = muslim_aliite_reformed
+		religion = ragnarok_reformed
+		religion = tao_reformed
+		religion = voipel_reformed
+		religion = zor_angra_reformed
+#		religion = shaytana
+	}
+}
+
+populist_soul_trigger = {
+	OR = {
+		religion = antinomian 
+		religion = bogomilist
+		religion = cathar
+		religion = dionysos
+		religion = fraticelli
+		religion = jud_zion
+		religion = kharijite
+		religion = mani_slavic
+		religion = mazdakism
+		religion = tao
+		religion = waldensian
+	}
+}
+
+statist_soul_trigger = {
+	OR = {
+		religion = amun
+		religion = arian
+		religion = batembuzi
+		religion = beelshamen
+		religion = bud_pratyeka
+		religion = bud_zen
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = jupiter
+		religion = kintu
+		religion = kubera
+		religion = luwian
+		religion = mani_germanic
+		religion = murjiah
+		religion = norse_christ
+		religion = orthodox
+		religion = roman_imperial
+		religion = sol
+		religion = sol_apollo
+		religion = sol_boreas
+		religion = sol_christ
+		religion = sol_islam
+		religion = sol_mani
+		religion = sol_norse
+		religion = sol_slav
+		religion = solomonic_christ
+		religion = sowilo
+		religion = sunni
+		religion = svaroh
+		religion = tengri_rod
+		religion = unctionist
+		religion = vidharma
+		religion = zor_hindu
+		religion = amun_reformed
+		religion = aten_reformed
+		religion = arab_pagan_reformed
+		religion = baal_monotheistic_reformed
+		religion = baltic_pagan_reformed
+		religion = bantu_pagan_reformed
+		religion = bud_zor_reformed
+		religion = celtic_christ_reformed
+		religion = celtic_pagan_reformed
+		religion = chumbylat_reformed
+		religion = druze_reformed
+		religion = finnish_pagan_reformed
+		religion = german_pagan_reformed
+		religion = graeco_roman_reformed
+		religion = iberian_pagan_reformed
+		religion = indohelen_reformed
+		religion = judaism_reformed
+		religion = kubera_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = montanist_reformed
+		religion = nasrani_reformed
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = northern_sun_reformed
+		religion = nyakalagan_reformed
+		religion = saura_reformed
+		religion = serer_reformed
+		religion = sethian_reformed
+		religion = slavic_pagan_reformed
+		religion = sol_boreas_reformed
+		religion = sol_islam_reformed
+		religion = sol_sahara_reformed
+		religion = tarhunt_reformed
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+	}
+}
+
+traditional_soul_trigger = {
+	OR = {
+		religion = allat
+		religion = allfather
+		religion = audianist
+		religion = berber_pagan
+		religion = bon
+		religion = bud_zor
+		religion = celtic_christ
+		religion = celtic_pagan
+		religion = chumbylat
+		religion = dievas
+		religion = donatist
+		religion = druze
+		religion = erlik
+		religion = finnish_pagan
+		religion = german_pagan
+		religion = graeco_roman
+		religion = hindu
+		religion = hubal
+		religion = ibadi
+		religion = illuyanka
+		religion = indohelen
+		religion = inuit_pagan
+		religion = jud_ark
+		religion = jumala
+		religion = makonde_pagan
+		religion = malakbel
+		religion = mand_ruha
+		religion = mandaean
+		religion = mande_pagan
+		religion = marabout
+		religion = mari_christ
+		religion = mwari
+		religion = nasrani
+		religion = norse_pagan
+		religion = nyame
+		religion = palmyran_pagan
+		religion = perkunas
+		religion = rod
+		religion = saura
+		religion = sethian
+		religion = slavic_pagan
+		religion = sufi
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = vattisenyaly
+		religion = veles
+		religion = waaq
+		religion = yazdanism
+		religion = yazidism
+		# Reformed religions
+		religion = jud_ark_reformed
+		religion = muslim_sufi_reformed
+		religion = yazdanism_reformed
+	}
+}
+
+sectarian_light_trigger = {
+	OR = {
+		religion = alexandros
+		religion = allat
+		religion = almaqah
+		religion = amun
+		religion = attar
+		religion = batembuzi
+		religion = beelshamen
+		religion = bud_bahusrutiya
+		religion = bud_pureland
+		religion = donatist
+		religion = druze
+		religion = erlik
+		religion = fraticelli
+		religion = hadad
+		religion = haruri
+		religion = hurufi
+		religion = ibadi
+		religion = iconoclast
+		religion = irminsul
+		religion = isis
+		religion = judaism
+		religion = kothar
+		religion = lugh
+		religion = luwian
+		religion = maher
+		religion = malakbel
+		religion = mandaean
+		religion = mani_germanic
+		religion = mani_mithra
+		religion = marcionist
+		religion = melkite
+		religion = mithra
+		religion = mithra_christ
+		religion = mithra_sol
+		religion = montanist
+		religion = neoplato
+		religion = nestorian
+		religion = norse_war
+		religion = nott
+		religion = nyasaye
+		religion = nyau
+		religion = palmyran_pagan
+		religion = pelagian
+		religion = saule
+		religion = saura
+		religion = shams
+		religion = shiite
+		religion = sol_christ
+		religion = sol_mani
+		religion = sol_sahara
+		religion = sol_tsahay
+		religion = solomonic_alexandros
+		religion = solomonic_christ
+		religion = tao
+		religion = tarhunt
+		religion = tengri_mani
+		religion = valentinian
+		religion = vidharma
+		religion = voipel
+		religion = waaq
+		religion = waldensian
+		religion = yazdanism
+		religion = yazidism
+		religion = yoruba
+		religion = zal_mani
+		# Reformed religions
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = celtic_pagan_reformed
+		religion = christian_populist_reformed
+		religion = cybele_reformed
+		religion = ethiopian_war_reformed
+		religion = graeco_roman_reformed
+		religion = isis_reformed
+		religion = jud_ark_reformed
+		religion = judaism_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = mazdakism_reformed
+		religion = muslim_aliite_reformed
+		religion = priscillian_reformed
+		religion = ragnarok_reformed
+		religion = set_reformed
+		religion = tao_reformed
+		religion = tarhunt_reformed
+		religion = tengri_mani_reformed
+		religion = voipel_reformed
+		religion = yazdanism_reformed
+		religion = zor_angra_reformed
+	}
+}
+
+sectarian_heavy_trigger = {
+	OR = {
+		religion = aglibol
+		religion = antinomian
+		religion = aten
+		religion = aztec
+		religion = bogomilist
+		religion = bud_mahayana
+		religion = bud_vajrayana
+		religion = cathar
+		religion = dionysos
+		religion = horus_re
+		religion = hubal
+		religion = illuyanka
+		religion = jain
+		religion = jud_ark
+		religion = jud_sabaoth
+		religion = jud_zion
+		religion = kharijite
+		religion = mand_ruha
+		religion = mani
+		religion = mani_ahriman
+		religion = mani_slavic
+		religion = mazdakism
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = priscillian
+		religion = qarmatian
+		religion = ragnarok
+		religion = set
+		religion = sethian
+		religion = sufi
+		religion = talab
+		religion = tengri_ahriman
+		religion = yahyanism
+		religion = zor_angra
+		# Reformed religions
+		religion = ahriman_reformed
+		religion = illuyanka_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = sethian_reformed
+		# Custom religions
+#		religion = shaytana
+	}
+}
+
+rebuild_shrine_various_trigger = {
+	OR = {
+		religion_group = bud_group
+		religion_group = indian_group
+		religion_group = indohelen_group
+		religion_group = mand_group
+		religion_group = yazd_group
+		religion = confucian
+		religion = lubu
+		religion = tao
+		religion = mani
+		religion = zz01_vedanta
+	}
+}
+
+rebuild_shrine_christian_trigger = {
+	OR = {
+		religion = nestorian
+		religion = docetist
+		religion = iconoclast
+	}
+}
+
+rebuild_shrine_muslim_trigger = {
+	OR = {
+		religion = sunni
+		religion = ashari
+		religion = athari
+		religion = maturidi
+		religion = murjiah
+		religion = zahiri
+		religion = shiite
+		religion = kharijite
+		religion = qarmatian
+		religion = sufi
+	}
+}
+
+missionary_religions_trigger = {
+	OR = { # Religions that allow missionaries
+		religion = adoptionist
+		religion = alexandros
+		religion = almaqah
+		religion = apollinarist
+		religion = arian
+		religion = ashari
+		religion = athari
+		religion = audianist
+		religion = aztec
+		religion = bud_bahusrutiya
+		religion = bud_mahayana
+		religion = bud_pratyeka
+		religion = bud_pureland
+		religion = bud_sthaviravada
+		religion = bud_vajrayana
+		religion = catholic
+		religion = confucian
+		religion = docetist
+		religion = donatist
+		religion = haruri
+		religion = hindu
+		religion = hurufi
+		religion = iconoclast
+		religion = ilm_islam
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = jain
+		religion = jud_zion
+		religion = jupiter
+		religion = luwian
+		religion = mani
+		religion = mani_mithra
+		religion = marcionist
+		religion = maturidi
+		religion = melkite
+		religion = mithra
+		religion = mithra_christ
+		religion = mithra_sol
+		religion = monophysite
+		religion = monothelite
+		religion = murjiah
+		religion = mutazil
+		religion = mwari
+		religion = neoplato
+		religion = nestorian
+		religion = nyau
+		religion = orthodox
+		religion = pelagian
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = porphyryan
+		religion = roman_imperial
+		religion = sabellianist
+		religion = semipelagian
+		religion = shiite
+		religion = sol
+		religion = sol_apollo
+		religion = sol_christ
+		religion = solomonic_alexandros
+		religion = solomonic_christ
+		religion = sunni
+		religion = unctionist
+		religion = valentinian
+		religion = yoruba
+		religion = zahiri
+		religion = zal
+		religion = zal_christ
+		religion = zal_mani
+		religion = zor_hindu
+		religion = zoroastrian
+		# Reformed religions
+		religion = ahriman_reformed
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = baltic_pagan_reformed
+		religion = bantu_pagan_reformed
+		religion = berber_pagan_reformed
+		religion = bon_reformed
+		religion = bud_zen_reformed
+		religion = bud_zor_reformed
+		religion = cathar_reformed
+		religion = celtic_christ_reformed
+		religion = celtic_pagan_reformed
+		religion = christian_populist_reformed
+		religion = chumbylat_reformed
+		religion = cybele_reformed
+		religion = druze_reformed
+		religion = erlik_reformed
+		religion = ethiopian_war_reformed
+		religion = finnish_pagan_reformed
+		religion = german_pagan_reformed
+		religion = graeco_roman_reformed
+		religion = iberian_pagan_reformed
+		religion = illuyanka_reformed
+		religion = indohelen_reformed
+		religion = inuit_pagan_reformed
+		religion = isis_reformed
+		religion = jud_ark_reformed
+		religion = judaism_reformed
+		religion = kubera_reformed
+		religion = lubu_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = mari_christ_reformed
+		religion = mazdakism_reformed
+		religion = montanist_reformed
+		religion = murugan_reformed
+		religion = muslim_aliite_reformed
+		religion = muslim_domination_reformed
+		religion = muslim_sufi_reformed
+		religion = nasrani_reformed
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = northern_sun_reformed
+		religion = nyakalagan_reformed
+		religion = priscillian_reformed
+		religion = ragnarok_reformed
+		religion = saura_reformed
+		religion = serer_reformed
+		religion = set_reformed
+		religion = sethian_reformed
+		religion = slavic_christian_reformed
+		religion = slavic_pagan_reformed
+		religion = sol_boreas_reformed
+		religion = sol_islam_reformed
+		religion = sol_sahara_reformed
+		religion = tao_reformed
+		religion = tarhunt_reformed
+		religion = teiwaz_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = tengri_mani_reformed
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+		religion = vidharma_reformed
+		religion = voipel_reformed
+		religion = yazdanism_reformed
+		religion = zande_pagan_reformed
+		religion = zor_angra_reformed
+		religion = zulu_pagan_reformed
+		religion = zurvanism_reformed
+		# Custom religions
+#		religion = shaytana
+	}
+}
+
+accepts_missionaries_trigger = {
+	OR = { # Religions that can be proselytized to ("Pagans")
+		religion = allfather
+		religion = anansi
+		religion = batembuzi
+		religion = celtic_christ
+		religion = celtic_pagan
+		religion = chumbylat
+		religion = dazhbog
+		religion = dievas
+		religion = endovellico
+		religion = erlik
+		religion = finnish_pagan
+		religion = german_pagan
+		religion = ilmatar
+		religion = imana
+		religion = inuit_pagan
+		religion = irminsul
+		religion = jumala
+		religion = kintu
+		religion = lugh
+		religion = makonde_pagan
+		religion = mande_pagan
+		religion = norse_christ
+		religion = norse_pagan
+		religion = norse_war
+		religion = nott
+		religion = nyame
+		religion = nyasaye
+		religion = peckols
+		religion = perkunas
+		religion = perun
+		religion = ragnarok
+		religion = rod
+		religion = saule
+		religion = slavic_pagan
+		religion = sol_norse
+		religion = sol_slav
+		religion = sowilo
+		religion = svaroh
+		religion = svetovid
+		religion = teiwaz
+		religion = tengri_ahriman
+		religion = tengri_bud
+		religion = tengri_confucian
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = tengri_rod
+		religion = vattisenyaly
+		religion = veles
+		religion = voipel
+		religion = zande_pagan
+		religion = zulu_pagan
+	}
+}
+unreformed_pagan_trigger = {
+	OR = {
+		government = tribal_government
+		government = nomadic_government
+	}
+}
+ascetic_religions_trigger = {
+	OR = {
+		religion_group = bud_group
+		religion = indoh_bud
+		religion = tengri_bud
+		religion = tengri_bud_reformed
+		religion = tao
+		religion = tao_reformed
+	}
+}
+tribal_authority_religions_trigger = {
+	OR = {
+		government = tribal_government
+		government = nomadic_government
+	}
+}
+
+expelled_my_holy_order_trigger = {
+	OR = {
+		AND = {
+			primary_title = {
+				title = d_holyadoptionist
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyadoptionist
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyalexandros
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyalexandros
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyalmaqah
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyalmaqah
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyapollinarist
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyapollinarist
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyarian
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyarian
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyashari
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyashari
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyathari
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyathari
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyaudianist
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyaudianist
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyaztec
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyaztec
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_bahusrutiya
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_bahusrutiya
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_mahayana
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_mahayana
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_pratyeka
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_pratyeka
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_pureland
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_pureland
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_sthaviravada
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_sthaviravada
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_vajrayana
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_vajrayana
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holycatholic
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holycatholic
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holydonatist
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holydonatist
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyharuri
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyharuri
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyhindu
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyhindu
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyhurufi
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyhurufi
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyiconoclast
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyiconoclast
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyilm_islam
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyilm_islam
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyindoh_bud
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyindoh_bud
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyindoh_confucian
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyindoh_confucian
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyindoh_hindu
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyindoh_hindu
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyindoh_zor
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyindoh_zor
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyjain
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyjain
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyjud_zion
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyjud_zion
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyjupiter
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyjupiter
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyluwian
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyluwian
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymani
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymani
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymani_mithra
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymani_mithra
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymaturidi
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymaturidi
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymelkite
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymelkite
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymithra
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymithra
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymithra_christ
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymithra_christ
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymithra_sol
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymithra_sol
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymonophysite
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymonophysite
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymonothelite
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymonothelite
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymurjiah
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymurjiah
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymutazil
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymutazil
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymwari
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymwari
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyneoplato
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyneoplato
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holynestorian
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holynestorian
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holynyau
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holynyau
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyorthodox
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyorthodox
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holypelagian
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holypelagian
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyplato_christ
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyplato_christ
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyplato_islam
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyplato_islam
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyroman_imperial
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyroman_imperial
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysabellianist
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysabellianist
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysemipelagian
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysemipelagian
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyshiite
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyshiite
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysol
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysol
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysol_apollo
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysol_apollo
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysol_christ
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysol_christ
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysol_mani
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysol_mani
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysolomonic_alexandros
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysolomonic_alexandros
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysolomonic_christ
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysolomonic_christ
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysunni
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysunni
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyunctionist
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyunctionist
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyyoruba
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyyoruba
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzahiri
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzahiri
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzal
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzal
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzal_christ
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzal_christ
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzal_mani
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzal_mani
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzor_hindu
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzor_hindu
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzoroastrian
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzoroastrian
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyahriman_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyahriman_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyamun_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyamun_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyarab_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyarab_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyaten_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyaten_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybaal_monotheistic_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybaal_monotheistic_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybaltic_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybaltic_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybantu_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybantu_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyberber_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyberber_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybon_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybon_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_zen_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_zen_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holybud_zor_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holybud_zor_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holycathar_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holycathar_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyceltic_christ_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyceltic_christ_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyceltic_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyceltic_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holychristian_populist_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holychristian_populist_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holychumbylat_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holychumbylat_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holycybele_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holycybele_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holydruze_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holydruze_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyerlik_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyerlik_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyethiopian_war_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyethiopian_war_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyfinnish_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyfinnish_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holygerman_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holygerman_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holygraeco_roman_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holygraeco_roman_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyiberian_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyiberian_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyilluyanka_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyilluyanka_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyindohelen_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyindohelen_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyinuit_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyinuit_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyisis_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyisis_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyjud_ark_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyjud_ark_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyjudaism_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyjudaism_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holykubera_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holykubera_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holylubu_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holylubu_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymand_ruha_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymand_ruha_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymandaean_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymandaean_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymani_germanic_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymani_germanic_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymani_slavic_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymani_slavic_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymari_christ_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymari_christ_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymazdakism_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymazdakism_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymontanist_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymontanist_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymurugan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymurugan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymuslim_aliite_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymuslim_aliite_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymuslim_domination_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymuslim_domination_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holymuslim_sufi_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holymuslim_sufi_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holynasrani_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holynasrani_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holynorse_christ_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holynorse_christ_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holynorse_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holynorse_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holynorthern_sun_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holynorthern_sun_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holynyakalagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holynyakalagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holypriscillian_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holypriscillian_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyragnarok_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyragnarok_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysaura_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysaura_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyserer_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyserer_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyset_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyset_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysethian_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysethian_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyslavic_christian_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyslavic_christian_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyslavic_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyslavic_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysol_boreas_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysol_boreas_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysol_islam_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysol_islam_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holysol_sahara_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holysol_sahara_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holytao_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holytao_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holytarhunt_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holytarhunt_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyteiwaz_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyteiwaz_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holytengri_bud_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holytengri_bud_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holytengri_confucian_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holytengri_confucian_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holytengri_mani_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holytengri_mani_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holytengri_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holytengri_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holytengri_rod_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holytengri_rod_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyvattisenyaly_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyvattisenyaly_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyvidharma_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyvidharma_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyvoipel_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyvoipel_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyyazdanism_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyyazdanism_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzande_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzande_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzor_angra_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzor_angra_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzulu_pagan_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzulu_pagan_reformed
+			}
+		}
+		AND = {
+			primary_title = {
+				title = d_holyzurvanism_reformed
+			}
+			ROOT = {
+				has_character_modifier = expelled_d_holyzurvanism_reformed
+			}
+		}
+	}
+}
+scholarly_soul_trigger = {
+	OR = {
+		religion = bud_bahusrutiya
+		religion = confucian
+		religion = docetist
+		religion = hurufi
+		religion = ilm_islam
+		religion = kothar
+		religion = marcionist 
+		religion = neoplato
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = porphyryan
+		religion = tengri_confucian
+		religion = valentinian 
+		religion = zz01_vedanta 
+	}
+}
+observes_ramadan_trigger = {
+	religion_group = muslim
+}
+holds_large_feast_trigger = {
+	religion_group = christian
+}
+holds_blot_trigger = {
+	LI_norse_pagan_trigger = yes
+	holds_christ_blot_trigger = no
+}
+holds_christ_blot_trigger = {
+	OR = {
+		religion = norse_christ
+		religion = norse_christ_reformed
+	}
+}
+holds_solar_procession_trigger = {
+	religion = sol
+	primary_title = {
+		higher_tier_than = DUKE
+	}
+}
+holds_tawusgeran_trigger = {
+	religion_group = yazd_group
+}
+indian_ancestral_trigger = {
+	OR = {
+		religion = kubera
+		religion = murugan
+		religion = saura
+		religion = vidharma
+	}
+}
+indian_civilization_trigger = {
+	OR = {
+		religion_group = indian_group
+		religion = zor_hindu
+		religion = nasrani_reformed
+		religion = zz01_vedanta
+	}
+}
+holds_nerge_trigger = {
+	OR = {
+		religion_group = tengri_group
+		culture_group = altaic
+	}
+}
+holds_ukon_juhla_trigger = {
+	religion_group = finnish_group
+}
+holds_uzgavenes_trigger = {
+	religion_group = baltic_group
+}
+holds_jarilo_trigger = {
+	religion_group = slavic_group
+}
+celebrates_passover_trigger = {
+	OR = {
+		religion_group = jewish_group
+		religion = judaism_reformed
+	}
+}
+celebrates_nowruz_trigger = {
+	culture_group = iranian
+}
+holds_mithrasfeast_trigger = {
+	religion_group = mithra_group
+}
+druidic_religion_trigger = {
+	OR = {
+		religion = celtic_pagan
+		religion = celtic_pagan_reformed
+		religion = lugh
+	}
+}
+allows_concubines_trigger = {
+	OR = {
+		religion = aglibol
+		religion = allat
+		religion = allfather
+		religion = almaqah
+		religion = amanai
+		religion = amun
+		religion = aten
+		religion = attar
+		religion = beelshamen
+		religion = berber_pagan
+		religion = chumbylat
+		religion = dazhbog
+		religion = dievas
+		religion = finnish_pagan
+		religion = german_pagan
+		religion = gurzil
+		religion = horus_re
+		religion = hubal
+		religion = illuyanka
+		religion = ilmatar
+		religion = irminsul
+		religion = isis
+		religion = jumala
+		religion = luwian
+		religion = maher
+		religion = malakbel
+		religion = mande_pagan
+		religion = mazdakism
+		religion = norse_christ
+		religion = norse_pagan
+		religion = norse_war
+		religion = palmyran_pagan
+		religion = peckols
+		religion = perkunas
+		religion = perun
+		religion = ragnarok
+		religion = rod
+		religion = saule
+		religion = set
+		religion = shams
+		religion = slavic_pagan
+		religion = sol_norse
+		religion = sol_sahara
+		religion = sol_slav
+		religion = sol_tsahay
+		religion = sowilo
+		religion = svaroh
+		religion = svetovid
+		religion = talab
+		religion = tarhunt
+		religion = teiwaz
+		religion = tengri_ahriman
+		religion = tengri_bud
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = tengri_rod
+		religion = vattisenyaly
+		religion = veles
+		religion = voipel
+		religion = yazdanism
+		religion = yazidism
+		religion = yoruba
+		religion = zande_pagan
+		religion = zor_angra
+		religion = zoroastrian
+		religion = zurvanism
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = baltic_pagan_reformed 
+		religion = berber_pagan_reformed
+		religion = celtic_christ_reformed
+		religion = celtic_pagan_reformed
+		religion = chumbylat_reformed 
+		religion = ethiopian_war_reformed
+		religion = finnish_pagan_reformed 
+		religion = german_pagan_reformed 
+		religion = illuyanka_reformed
+		religion = mazdakism_reformed
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = northern_sun_reformed 
+		religion = ragnarok_reformed
+		religion = serer_reformed 
+		religion = set_reformed
+		religion = slavic_pagan_reformed 
+		religion = tarhunt_reformed 
+		religion = teiwaz_reformed 
+		religion = tengri_mani_reformed 
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+		religion = voipel_reformed
+		religion = yazdanism_reformed
+		religion = zande_pagan_reformed
+		religion = zor_angra_reformed
+		religion = zurvanism_reformed
+	}
+}
+abolitionist_trigger = {
+	OR = {
+		religion = adoptionist
+		religion = antinomian 
+		religion = apollinarist
+		religion = arian
+		religion = audianist 
+		religion = bogomilist
+		religion = bud_bahusrutiya
+		religion = bud_mahayana
+		religion = bud_pratyeka
+		religion = bud_pureland
+		religion = bud_sthaviravada
+		religion = bud_vajrayana
+		religion = bud_zen
+		religion = bud_zor
+		religion = cathar
+		religion = catholic
+		religion = confucian
+		religion = dionysos
+		religion = docetist
+		religion = donatist 
+		religion = fraticelli
+		religion = hindu
+		religion = hurufi
+		religion = iconoclast
+		religion = ilm_islam
+		religion = jain
+		religion = jud_ark
+		religion = jud_sabaoth
+		religion = jud_zion
+		religion = judaism
+		religion = kharijite
+		religion = kothar
+		religion = kubera
+		religion = mand_ruha
+		religion = mandaean
+		religion = mani
+		religion = mani_ahriman
+		religion = mani_germanic
+		religion = mani_mithra
+		religion = mani_slavic
+		religion = marcionist 
+		religion = mari_christ
+		religion = mazdakism
+		religion = melkite
+		religion = mithra
+		religion = mithra_christ
+		religion = monophysite
+		religion = monothelite
+		religion = montanist
+		religion = murugan
+		religion = nasrani
+		religion = neoplato
+		religion = nestorian
+		religion = orthodox
+		religion = pelagian
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = porphyryan
+		religion = priscillian 
+		religion = sabellianist 
+		religion = saura
+		religion = semipelagian
+		religion = sethian
+		religion = slavic_christian
+		religion = sol_mani
+		religion = solomonic_christ
+		religion = tao
+		religion = tengri_confucian
+		religion = unctionist
+		religion = valentinian 
+		religion = vidharma
+		religion = waldensian
+		religion = yahyanism
+		religion = zor_hindu
+		religion = ahriman_reformed
+		religion = bud_zen_reformed
+		religion = bud_zor_reformed 
+		religion = cathar_reformed
+		religion = christian_populist_reformed 
+		religion = jud_ark_reformed
+		religion = judaism_reformed 
+		religion = kubera_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = mari_christ_reformed
+		religion = montanist_reformed
+		religion = murugan_reformed
+		religion = nasrani_reformed
+		religion = priscillian_reformed
+		religion = saura_reformed
+		religion = sethian_reformed
+		religion = slavic_christian_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_mani_reformed
+		religion = vidharma_reformed
+	}
+}
+breeding_slave_trigger = {
+	OR = {
+		has_character_flag = flag_breeding_slave_1
+		has_character_flag = flag_breeding_slave_2
+	}
+}
+prefers_thralls_trigger = {
+	religion_group = norsegerman_group
+}
+has_holy_order_trigger = {
+		OR = {
+			religion = adoptionist
+			religion = alexandros
+			religion = almaqah
+			religion = apollinarist
+			religion = arian
+			religion = ashari
+			religion = athari
+			religion = audianist
+			religion = aztec
+			religion = bud_bahusrutiya
+			religion = bud_mahayana
+			religion = bud_pratyeka
+			religion = bud_pureland
+			religion = bud_sthaviravada
+			religion = bud_vajrayana
+			religion = catholic
+			religion = donatist
+			religion = haruri
+			religion = hindu
+			religion = hurufi
+			religion = iconoclast
+			religion = ilm_islam
+			religion = indoh_bud
+			religion = indoh_confucian
+			religion = indoh_hindu
+			religion = indoh_zor
+			religion = jain
+			religion = jud_zion
+			religion = jupiter
+			religion = luwian
+			religion = mani
+			religion = mani_mithra
+			religion = maturidi
+			religion = melkite
+			religion = mithra
+			religion = mithra_christ
+			religion = mithra_sol
+			religion = monophysite
+			religion = monothelite
+			religion = murjiah
+			religion = mutazil
+			religion = mwari
+			religion = neoplato
+			religion = nestorian
+			religion = nyau
+			religion = orthodox
+			religion = pelagian
+			religion = plato_christ
+			religion = plato_islam
+			religion = roman_imperial
+			religion = sabellianist
+			religion = semipelagian
+			religion = shiite
+			religion = sol
+			religion = sol_apollo
+			religion = sol_christ
+			religion = sol_mani
+			religion = solomonic_alexandros
+			religion = solomonic_christ
+			religion = sunni
+			religion = unctionist
+			religion = yoruba
+			religion = zahiri
+			religion = zal
+			religion = zal_christ
+			religion = zal_mani
+			religion = zor_hindu
+			religion = zoroastrian
+			religion = ahriman_reformed
+			religion = amun_reformed
+			religion = arab_pagan_reformed
+			religion = aten_reformed
+			religion = baal_monotheistic_reformed
+			religion = baltic_pagan_reformed
+			religion = bantu_pagan_reformed
+			religion = berber_pagan_reformed
+			religion = bon_reformed
+			religion = bud_zen_reformed
+			religion = bud_zor_reformed
+			religion = cathar_reformed
+			religion = celtic_christ_reformed
+			religion = celtic_pagan_reformed
+			religion = christian_populist_reformed
+			religion = chumbylat_reformed
+			religion = cybele_reformed
+			religion = druze_reformed
+			religion = erlik_reformed
+			religion = ethiopian_war_reformed
+			religion = finnish_pagan_reformed
+			religion = german_pagan_reformed
+			religion = graeco_roman_reformed
+			religion = iberian_pagan_reformed
+			religion = illuyanka_reformed
+			religion = indohelen_reformed
+			religion = inuit_pagan_reformed
+			religion = isis_reformed
+			religion = jud_ark_reformed
+			religion = judaism_reformed
+			religion = kubera_reformed
+			religion = lubu_reformed
+			religion = mand_ruha_reformed
+			religion = mandaean_reformed
+			religion = mani_germanic_reformed
+			religion = mani_slavic_reformed
+			religion = mari_christ_reformed
+			religion = mazdakism_reformed
+			religion = montanist_reformed
+			religion = murugan_reformed
+			religion = muslim_aliite_reformed
+			religion = muslim_domination_reformed
+			religion = muslim_sufi_reformed
+			religion = nasrani_reformed
+			religion = norse_christ_reformed
+			religion = norse_pagan_reformed
+			religion = northern_sun_reformed
+			religion = nyakalagan_reformed
+			religion = priscillian_reformed
+			religion = ragnarok_reformed
+			religion = saura_reformed
+			religion = serer_reformed
+			religion = set_reformed
+			religion = sethian_reformed
+			religion = slavic_christian_reformed
+			religion = slavic_pagan_reformed
+			religion = sol_boreas_reformed
+			religion = sol_islam_reformed
+			religion = sol_sahara_reformed
+			religion = tao_reformed
+			religion = tarhunt_reformed
+			religion = teiwaz_reformed
+			religion = tengri_bud_reformed
+			religion = tengri_confucian_reformed
+			religion = tengri_mani_reformed
+			religion = tengri_pagan_reformed
+			religion = tengri_rod_reformed
+			religion = vattisenyaly_reformed
+			religion = vidharma_reformed
+			religion = voipel_reformed
+			religion = yazdanism_reformed
+			religion = zande_pagan_reformed
+			religion = zor_angra_reformed
+			religion = zulu_pagan_reformed
+			religion = zurvanism_reformed
+		}
+}
+expelled_holy_order_trigger = {
+	OR = {
+			has_character_modifier = expelled_d_holyadoptionist
+			has_character_modifier = expelled_d_holyalexandros
+			has_character_modifier = expelled_d_holyalmaqah
+			has_character_modifier = expelled_d_holyapollinarist
+			has_character_modifier = expelled_d_holyarian
+			has_character_modifier = expelled_d_holyashari
+			has_character_modifier = expelled_d_holyathari
+			has_character_modifier = expelled_d_holyaudianist
+			has_character_modifier = expelled_d_holyaztec
+			has_character_modifier = expelled_d_holybud_bahusrutiya
+			has_character_modifier = expelled_d_holybud_mahayana
+			has_character_modifier = expelled_d_holybud_pratyeka
+			has_character_modifier = expelled_d_holybud_pureland
+			has_character_modifier = expelled_d_holybud_sthaviravada
+			has_character_modifier = expelled_d_holybud_vajrayana
+			has_character_modifier = expelled_d_holycatholic
+			has_character_modifier = expelled_d_holydonatist
+			has_character_modifier = expelled_d_holyharuri
+			has_character_modifier = expelled_d_holyhindu
+			has_character_modifier = expelled_d_holyhurufi
+			has_character_modifier = expelled_d_holyiconoclast
+			has_character_modifier = expelled_d_holyilm_islam
+			has_character_modifier = expelled_d_holyindoh_bud
+			has_character_modifier = expelled_d_holyindoh_confucian
+			has_character_modifier = expelled_d_holyindoh_hindu
+			has_character_modifier = expelled_d_holyindoh_zor
+			has_character_modifier = expelled_d_holyjain
+			has_character_modifier = expelled_d_holyjud_zion
+			has_character_modifier = expelled_d_holyjupiter
+			has_character_modifier = expelled_d_holyluwian
+			has_character_modifier = expelled_d_holymani
+			has_character_modifier = expelled_d_holymani_mithra
+			has_character_modifier = expelled_d_holymaturidi
+			has_character_modifier = expelled_d_holymelkite
+			has_character_modifier = expelled_d_holymithra
+			has_character_modifier = expelled_d_holymithra_christ
+			has_character_modifier = expelled_d_holymithra_sol
+			has_character_modifier = expelled_d_holymonophysite
+			has_character_modifier = expelled_d_holymonothelite
+			has_character_modifier = expelled_d_holymurjiah
+			has_character_modifier = expelled_d_holymutazil
+			has_character_modifier = expelled_d_holymwari
+			has_character_modifier = expelled_d_holyneoplato
+			has_character_modifier = expelled_d_holynestorian
+			has_character_modifier = expelled_d_holynyau
+			has_character_modifier = expelled_d_holyorthodox
+			has_character_modifier = expelled_d_holypelagian
+			has_character_modifier = expelled_d_holyplato_christ
+			has_character_modifier = expelled_d_holyplato_islam
+			has_character_modifier = expelled_d_holyroman_imperial
+			has_character_modifier = expelled_d_holysabellianist
+			has_character_modifier = expelled_d_holysemipelagian
+			has_character_modifier = expelled_d_holyshiite
+			has_character_modifier = expelled_d_holysol
+			has_character_modifier = expelled_d_holysol_apollo
+			has_character_modifier = expelled_d_holysol_christ
+			has_character_modifier = expelled_d_holysol_mani
+			has_character_modifier = expelled_d_holysolomonic_alexandros
+			has_character_modifier = expelled_d_holysolomonic_christ
+			has_character_modifier = expelled_d_holysunni
+			has_character_modifier = expelled_d_holyunctionist
+			has_character_modifier = expelled_d_holyyoruba
+			has_character_modifier = expelled_d_holyzahiri
+			has_character_modifier = expelled_d_holyzal
+			has_character_modifier = expelled_d_holyzal_christ
+			has_character_modifier = expelled_d_holyzal_mani
+			has_character_modifier = expelled_d_holyzor_hindu
+			has_character_modifier = expelled_d_holyzoroastrian
+			has_character_modifier = expelled_d_holyahriman_reformed
+			has_character_modifier = expelled_d_holyamun_reformed
+			has_character_modifier = expelled_d_holyarab_pagan_reformed
+			has_character_modifier = expelled_d_holyaten_reformed
+			has_character_modifier = expelled_d_holybaal_monotheistic_reformed
+			has_character_modifier = expelled_d_holybaltic_pagan_reformed
+			has_character_modifier = expelled_d_holybantu_pagan_reformed
+			has_character_modifier = expelled_d_holyberber_pagan_reformed
+			has_character_modifier = expelled_d_holybon_reformed
+			has_character_modifier = expelled_d_holybud_zen_reformed
+			has_character_modifier = expelled_d_holybud_zor_reformed
+			has_character_modifier = expelled_d_holycathar_reformed
+			has_character_modifier = expelled_d_holyceltic_christ_reformed
+			has_character_modifier = expelled_d_holyceltic_pagan_reformed
+			has_character_modifier = expelled_d_holychristian_populist_reformed
+			has_character_modifier = expelled_d_holychumbylat_reformed
+			has_character_modifier = expelled_d_holycybele_reformed
+			has_character_modifier = expelled_d_holydruze_reformed
+			has_character_modifier = expelled_d_holyerlik_reformed
+			has_character_modifier = expelled_d_holyethiopian_war_reformed
+			has_character_modifier = expelled_d_holyfinnish_pagan_reformed
+			has_character_modifier = expelled_d_holygerman_pagan_reformed
+			has_character_modifier = expelled_d_holygraeco_roman_reformed
+			has_character_modifier = expelled_d_holyiberian_pagan_reformed
+			has_character_modifier = expelled_d_holyilluyanka_reformed
+			has_character_modifier = expelled_d_holyindohelen_reformed
+			has_character_modifier = expelled_d_holyinuit_pagan_reformed
+			has_character_modifier = expelled_d_holyisis_reformed
+			has_character_modifier = expelled_d_holyjud_ark_reformed
+			has_character_modifier = expelled_d_holyjudaism_reformed
+			has_character_modifier = expelled_d_holykubera_reformed
+			has_character_modifier = expelled_d_holylubu_reformed
+			has_character_modifier = expelled_d_holymand_ruha_reformed
+			has_character_modifier = expelled_d_holymandaean_reformed
+			has_character_modifier = expelled_d_holymani_germanic_reformed
+			has_character_modifier = expelled_d_holymani_slavic_reformed
+			has_character_modifier = expelled_d_holymari_christ_reformed
+			has_character_modifier = expelled_d_holymazdakism_reformed
+			has_character_modifier = expelled_d_holymontanist_reformed
+			has_character_modifier = expelled_d_holymurugan_reformed
+			has_character_modifier = expelled_d_holymuslim_aliite_reformed
+			has_character_modifier = expelled_d_holymuslim_domination_reformed
+			has_character_modifier = expelled_d_holymuslim_sufi_reformed
+			has_character_modifier = expelled_d_holynasrani_reformed
+			has_character_modifier = expelled_d_holynorse_christ_reformed
+			has_character_modifier = expelled_d_holynorse_pagan_reformed
+			has_character_modifier = expelled_d_holynorthern_sun_reformed
+			has_character_modifier = expelled_d_holynyakalagan_reformed
+			has_character_modifier = expelled_d_holypriscillian_reformed
+			has_character_modifier = expelled_d_holyragnarok_reformed
+			has_character_modifier = expelled_d_holysaura_reformed
+			has_character_modifier = expelled_d_holyserer_reformed
+			has_character_modifier = expelled_d_holyset_reformed
+			has_character_modifier = expelled_d_holysethian_reformed
+			has_character_modifier = expelled_d_holyslavic_christian_reformed
+			has_character_modifier = expelled_d_holyslavic_pagan_reformed
+			has_character_modifier = expelled_d_holysol_boreas_reformed
+			has_character_modifier = expelled_d_holysol_islam_reformed
+			has_character_modifier = expelled_d_holysol_sahara_reformed
+			has_character_modifier = expelled_d_holytao_reformed
+			has_character_modifier = expelled_d_holytarhunt_reformed
+			has_character_modifier = expelled_d_holyteiwaz_reformed
+			has_character_modifier = expelled_d_holytengri_bud_reformed
+			has_character_modifier = expelled_d_holytengri_confucian_reformed
+			has_character_modifier = expelled_d_holytengri_mani_reformed
+			has_character_modifier = expelled_d_holytengri_pagan_reformed
+			has_character_modifier = expelled_d_holytengri_rod_reformed
+			has_character_modifier = expelled_d_holyvattisenyaly_reformed
+			has_character_modifier = expelled_d_holyvidharma_reformed
+			has_character_modifier = expelled_d_holyvoipel_reformed
+			has_character_modifier = expelled_d_holyyazdanism_reformed
+			has_character_modifier = expelled_d_holyzande_pagan_reformed
+			has_character_modifier = expelled_d_holyzor_angra_reformed
+			has_character_modifier = expelled_d_holyzulu_pagan_reformed
+			has_character_modifier = expelled_d_holyzurvanism_reformed
+	}
+}
+borrowed_from_holy_order_trigger = {
+		OR = {
+			has_character_modifier = borrowed_from_d_holyadoptionist
+			has_character_modifier = borrowed_from_d_holyalexandros
+			has_character_modifier = borrowed_from_d_holyalmaqah
+			has_character_modifier = borrowed_from_d_holyapollinarist
+			has_character_modifier = borrowed_from_d_holyarian
+			has_character_modifier = borrowed_from_d_holyashari
+			has_character_modifier = borrowed_from_d_holyathari
+			has_character_modifier = borrowed_from_d_holyaudianist
+			has_character_modifier = borrowed_from_d_holyaztec
+			has_character_modifier = borrowed_from_d_holybud_bahusrutiya
+			has_character_modifier = borrowed_from_d_holybud_mahayana
+			has_character_modifier = borrowed_from_d_holybud_pratyeka
+			has_character_modifier = borrowed_from_d_holybud_pureland
+			has_character_modifier = borrowed_from_d_holybud_sthaviravada
+			has_character_modifier = borrowed_from_d_holybud_vajrayana
+			has_character_modifier = borrowed_from_d_holycatholic
+			has_character_modifier = borrowed_from_d_holydonatist
+			has_character_modifier = borrowed_from_d_holyharuri
+			has_character_modifier = borrowed_from_d_holyhindu
+			has_character_modifier = borrowed_from_d_holyhurufi
+			has_character_modifier = borrowed_from_d_holyiconoclast
+			has_character_modifier = borrowed_from_d_holyilm_islam
+			has_character_modifier = borrowed_from_d_holyindoh_bud
+			has_character_modifier = borrowed_from_d_holyindoh_confucian
+			has_character_modifier = borrowed_from_d_holyindoh_hindu
+			has_character_modifier = borrowed_from_d_holyindoh_zor
+			has_character_modifier = borrowed_from_d_holyjain
+			has_character_modifier = borrowed_from_d_holyjud_zion
+			has_character_modifier = borrowed_from_d_holyjupiter
+			has_character_modifier = borrowed_from_d_holyluwian
+			has_character_modifier = borrowed_from_d_holymani
+			has_character_modifier = borrowed_from_d_holymani_mithra
+			has_character_modifier = borrowed_from_d_holymaturidi
+			has_character_modifier = borrowed_from_d_holymelkite
+			has_character_modifier = borrowed_from_d_holymithra
+			has_character_modifier = borrowed_from_d_holymithra_christ
+			has_character_modifier = borrowed_from_d_holymithra_sol
+			has_character_modifier = borrowed_from_d_holymonophysite
+			has_character_modifier = borrowed_from_d_holymonothelite
+			has_character_modifier = borrowed_from_d_holymurjiah
+			has_character_modifier = borrowed_from_d_holymutazil
+			has_character_modifier = borrowed_from_d_holymwari
+			has_character_modifier = borrowed_from_d_holyneoplato
+			has_character_modifier = borrowed_from_d_holynestorian
+			has_character_modifier = borrowed_from_d_holynyau
+			has_character_modifier = borrowed_from_d_holyorthodox
+			has_character_modifier = borrowed_from_d_holypelagian
+			has_character_modifier = borrowed_from_d_holyplato_christ
+			has_character_modifier = borrowed_from_d_holyplato_islam
+			has_character_modifier = borrowed_from_d_holyroman_imperial
+			has_character_modifier = borrowed_from_d_holysabellianist
+			has_character_modifier = borrowed_from_d_holysemipelagian
+			has_character_modifier = borrowed_from_d_holyshiite
+			has_character_modifier = borrowed_from_d_holysol
+			has_character_modifier = borrowed_from_d_holysol_apollo
+			has_character_modifier = borrowed_from_d_holysol_christ
+			has_character_modifier = borrowed_from_d_holysol_mani
+			has_character_modifier = borrowed_from_d_holysolomonic_alexandros
+			has_character_modifier = borrowed_from_d_holysolomonic_christ
+			has_character_modifier = borrowed_from_d_holysunni
+			has_character_modifier = borrowed_from_d_holyunctionist
+			has_character_modifier = borrowed_from_d_holyyoruba
+			has_character_modifier = borrowed_from_d_holyzahiri
+			has_character_modifier = borrowed_from_d_holyzal
+			has_character_modifier = borrowed_from_d_holyzal_christ
+			has_character_modifier = borrowed_from_d_holyzal_mani
+			has_character_modifier = borrowed_from_d_holyzor_hindu
+			has_character_modifier = borrowed_from_d_holyzoroastrian
+			has_character_modifier = borrowed_from_d_holyahriman_reformed
+			has_character_modifier = borrowed_from_d_holyamun_reformed
+			has_character_modifier = borrowed_from_d_holyarab_pagan_reformed
+			has_character_modifier = borrowed_from_d_holyaten_reformed
+			has_character_modifier = borrowed_from_d_holybaal_monotheistic_reformed
+			has_character_modifier = borrowed_from_d_holybaltic_pagan_reformed
+			has_character_modifier = borrowed_from_d_holybantu_pagan_reformed
+			has_character_modifier = borrowed_from_d_holyberber_pagan_reformed
+			has_character_modifier = borrowed_from_d_holybon_reformed
+			has_character_modifier = borrowed_from_d_holybud_zen_reformed
+			has_character_modifier = borrowed_from_d_holybud_zor_reformed
+			has_character_modifier = borrowed_from_d_holycathar_reformed
+			has_character_modifier = borrowed_from_d_holyceltic_christ_reformed
+			has_character_modifier = borrowed_from_d_holyceltic_pagan_reformed
+			has_character_modifier = borrowed_from_d_holychristian_populist_reformed
+			has_character_modifier = borrowed_from_d_holychumbylat_reformed
+			has_character_modifier = borrowed_from_d_holycybele_reformed
+			has_character_modifier = borrowed_from_d_holydruze_reformed
+			has_character_modifier = borrowed_from_d_holyerlik_reformed
+			has_character_modifier = borrowed_from_d_holyethiopian_war_reformed
+			has_character_modifier = borrowed_from_d_holyfinnish_pagan_reformed
+			has_character_modifier = borrowed_from_d_holygerman_pagan_reformed
+			has_character_modifier = borrowed_from_d_holygraeco_roman_reformed
+			has_character_modifier = borrowed_from_d_holyiberian_pagan_reformed
+			has_character_modifier = borrowed_from_d_holyilluyanka_reformed
+			has_character_modifier = borrowed_from_d_holyindohelen_reformed
+			has_character_modifier = borrowed_from_d_holyinuit_pagan_reformed
+			has_character_modifier = borrowed_from_d_holyisis_reformed
+			has_character_modifier = borrowed_from_d_holyjud_ark_reformed
+			has_character_modifier = borrowed_from_d_holyjudaism_reformed
+			has_character_modifier = borrowed_from_d_holykubera_reformed
+			has_character_modifier = borrowed_from_d_holylubu_reformed
+			has_character_modifier = borrowed_from_d_holymand_ruha_reformed
+			has_character_modifier = borrowed_from_d_holymandaean_reformed
+			has_character_modifier = borrowed_from_d_holymani_germanic_reformed
+			has_character_modifier = borrowed_from_d_holymani_slavic_reformed
+			has_character_modifier = borrowed_from_d_holymari_christ_reformed
+			has_character_modifier = borrowed_from_d_holymazdakism_reformed
+			has_character_modifier = borrowed_from_d_holymontanist_reformed
+			has_character_modifier = borrowed_from_d_holymurugan_reformed
+			has_character_modifier = borrowed_from_d_holymuslim_aliite_reformed
+			has_character_modifier = borrowed_from_d_holymuslim_domination_reformed
+			has_character_modifier = borrowed_from_d_holymuslim_sufi_reformed
+			has_character_modifier = borrowed_from_d_holynasrani_reformed
+			has_character_modifier = borrowed_from_d_holynorse_christ_reformed
+			has_character_modifier = borrowed_from_d_holynorse_pagan_reformed
+			has_character_modifier = borrowed_from_d_holynorthern_sun_reformed
+			has_character_modifier = borrowed_from_d_holynyakalagan_reformed
+			has_character_modifier = borrowed_from_d_holypriscillian_reformed
+			has_character_modifier = borrowed_from_d_holyragnarok_reformed
+			has_character_modifier = borrowed_from_d_holysaura_reformed
+			has_character_modifier = borrowed_from_d_holyserer_reformed
+			has_character_modifier = borrowed_from_d_holyset_reformed
+			has_character_modifier = borrowed_from_d_holysethian_reformed
+			has_character_modifier = borrowed_from_d_holyslavic_christian_reformed
+			has_character_modifier = borrowed_from_d_holyslavic_pagan_reformed
+			has_character_modifier = borrowed_from_d_holysol_boreas_reformed
+			has_character_modifier = borrowed_from_d_holysol_islam_reformed
+			has_character_modifier = borrowed_from_d_holysol_sahara_reformed
+			has_character_modifier = borrowed_from_d_holytao_reformed
+			has_character_modifier = borrowed_from_d_holytarhunt_reformed
+			has_character_modifier = borrowed_from_d_holyteiwaz_reformed
+			has_character_modifier = borrowed_from_d_holytengri_bud_reformed
+			has_character_modifier = borrowed_from_d_holytengri_confucian_reformed
+			has_character_modifier = borrowed_from_d_holytengri_mani_reformed
+			has_character_modifier = borrowed_from_d_holytengri_pagan_reformed
+			has_character_modifier = borrowed_from_d_holytengri_rod_reformed
+			has_character_modifier = borrowed_from_d_holyvattisenyaly_reformed
+			has_character_modifier = borrowed_from_d_holyvidharma_reformed
+			has_character_modifier = borrowed_from_d_holyvoipel_reformed
+			has_character_modifier = borrowed_from_d_holyyazdanism_reformed
+			has_character_modifier = borrowed_from_d_holyzande_pagan_reformed
+			has_character_modifier = borrowed_from_d_holyzor_angra_reformed
+			has_character_modifier = borrowed_from_d_holyzulu_pagan_reformed
+			has_character_modifier = borrowed_from_d_holyzurvanism_reformed
+		}
+}
+is_a_reformed_religion_trigger = {
+	OR = {
+		is_reformed_religion = yes
+		religion = adoptionist
+		religion = alexandros
+		religion = almaqah
+		religion = apollinarist
+		religion = arian
+		religion = ashari
+		religion = athari
+		religion = audianist
+		religion = aztec
+		religion = bud_bahusrutiya
+		religion = bud_mahayana
+		religion = bud_pratyeka
+		religion = bud_pureland
+		religion = bud_sthaviravada
+		religion = bud_vajrayana
+		religion = catholic
+		religion = confucian
+		religion = docetist
+		religion = donatist 
+		religion = haruri
+		religion = hindu
+		religion = hurufi
+		religion = iconoclast
+		religion = ilm_islam
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = jain
+		religion = jud_zion
+		religion = jupiter
+		religion = luwian
+		religion = mani
+		religion = mani_mithra
+		religion = marcionist
+		religion = maturidi
+		religion = melkite
+		religion = mithra
+		religion = mithra_christ
+		religion = mithra_sol
+		religion = monophysite
+		religion = monothelite
+		religion = murjiah
+		religion = mutazil
+		religion = mwari
+		religion = neoplato
+		religion = nestorian
+		religion = nyau
+		religion = orthodox
+		religion = pelagian
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = porphyryan
+		religion = roman_imperial
+		religion = sabellianist 
+		religion = semipelagian
+		religion = shiite
+		religion = sol
+		religion = sol_apollo
+		religion = sol_christ
+		religion = sol_mani
+		religion = solomonic_alexandros
+		religion = solomonic_christ
+		religion = sunni
+		religion = unctionist
+		religion = valentinian 
+		religion = yoruba
+		religion = zahiri
+		religion = zal
+		religion = zal_christ
+		religion = zal_mani
+		religion = zor_hindu
+		religion = zoroastrian
+	} 
+}
+martial_religion_trigger = {
+	OR = {
+		religion = alexandros
+		religion = amanai
+		religion = anansi
+		religion = aten
+		religion = attar
+		religion = aztec
+		religion = dazhbog
+		religion = endovellico
+		religion = ghazi_islam
+		religion = gurzil
+		religion = hadad
+		religion = jud_sabaoth
+		religion = lubu
+		religion = maher
+		religion = mani_mithra
+		religion = mithra
+		religion = mithra_christ
+		religion = mithra_sol
+		religion = murugan
+		religion = norse_war
+		religion = perun
+		religion = sol_tsahay
+		religion = solomonic_alexandros
+		religion = svetovid
+		religion = tarhunt
+		religion = teiwaz
+		religion = zal
+		religion = zal_christ
+		religion = zal_mani
+		religion = zande_pagan
+		religion = zulu_pagan
+		# Reformed religions
+		religion = berber_pagan_reformed
+		religion = cybele_reformed
+		religion = erlik_reformed
+		religion = ethiopian_war_reformed
+		religion = lubu_reformed
+		religion = murugan_reformed
+		religion = muslim_domination_reformed
+		religion = set_reformed
+		religion = teiwaz_reformed
+		religion = zande_pagan_reformed
+		religion = zulu_pagan_reformed
+	}
+}
+close_relative_marriages_allowed_trigger = {
+	OR = {
+		religion = zoroastrian
+		religion = zurvanism
+		religion = zor_angra
+		religion_group = egyptian_group
+		religion = sol_apollo
+		religion = alexandros
+	}
+}
+expansion_war_trigger = {
+	OR = {
+# list designed by Shaytana
+		religion = alexandros
+		religion = amanai
+		religion = attar
+		religion = dazhbog
+		religion = ghazi_islam
+		religion = gurzil
+		religion = jud_sabaoth
+		religion = maher
+		religion = mani_mithra
+		religion = mithra
+		religion = mithra_christ
+		religion = mithra_sol
+		religion = norse_war
+		religion = perun
+		religion = sol_tsahay
+		religion = svetovid
+		religion = tarhunt
+		religion = teiwaz
+		religion = zal
+		religion = zal_christ
+		religion = zal_mani	
+# in addition to Shaytana's list, reformed versions when lore makes it relevant (in practice, whenever new soul is Martial)
+		religion = berber_pagan_reformed
+		religion = muslim_domination_reformed
+		religion = ethiopian_war_reformed
+		religion = teiwaz_reformed
+	}
+}
+clerical_soul_trigger = {
+	OR = {
+		religion = adoptionist
+		religion = almaqah
+		religion = apollinarist
+		religion = ashari
+		religion = athari
+		religion = bud_sthaviravada
+		religion = catholic
+		religion = cybele
+		religion = haruri
+		religion = iconoclast
+		religion = ilmatar
+		religion = imana
+		religion = irminsul
+		religion = isis
+		religion = judaism
+		religion = maturidi
+		religion = melkite
+		religion = monophysite
+		religion = monothelite
+		religion = montanist
+		religion = mutazil
+		religion = nyasaye
+		religion = peckols
+		religion = pelagian
+		religion = sabellianist 
+		religion = saule
+		religion = semipelagian
+		religion = shams
+		religion = slavic_christian
+		religion = tengri_bud
+		religion = yoruba
+		religion = zahiri
+		religion = zoroastrian
+		religion = zurvanism
+		religion = bon_reformed
+		religion = bud_zen_reformed
+		religion = cathar_reformed
+		religion = inuit_pagan_reformed
+		religion = isis_reformed
+		religion = mari_christ_reformed
+		religion = priscillian_reformed
+		religion = slavic_christian_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = tengri_mani_reformed
+		religion = vidharma_reformed
+		religion = zurvanism_reformed
+	}
+}
+is_mainstream_religion_trigger = {
+	OR = {
+		religion = almaqah
+		religion = amun
+		religion = arian
+		religion = aztec
+		religion = beelshamen
+		religion = bud_sthaviravada
+		religion = catholic
+		religion = celtic_pagan
+		religion = dievas
+		religion = german_pagan
+		religion = graeco_roman
+		religion = hindu
+		religion = ilm_islam
+		religion = judaism
+		religion = luwian
+		religion = mandaean
+		religion = mani
+		religion = mithra
+		religion = monophysite
+		religion = neoplato
+		religion = nestorian
+		religion = norse_pagan
+		religion = orthodox
+		religion = perun
+		religion = shams
+		religion = shiite
+		religion = sol
+		religion = sunni
+		religion = tengri_pagan
+		religion = zal
+		religion = zoroastrian
+		# Reformed religions
+		religion = ahriman_reformed
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = baltic_pagan_reformed
+		religion = bantu_pagan_reformed
+		religion = berber_pagan_reformed
+		religion = bon_reformed
+		religion = bud_zen_reformed
+		religion = bud_zor_reformed
+		religion = cathar_reformed
+		religion = celtic_christ_reformed
+		religion = celtic_pagan_reformed
+		religion = christian_populist_reformed
+		religion = chumbylat_reformed
+		religion = cybele_reformed
+		religion = druze_reformed
+		religion = erlik_reformed
+		religion = ethiopian_war_reformed
+		religion = finnish_pagan_reformed
+		religion = german_pagan_reformed
+		religion = graeco_roman_reformed
+		religion = iberian_pagan_reformed
+		religion = illuyanka_reformed
+		religion = indohelen_reformed
+		religion = inuit_pagan_reformed
+		religion = isis_reformed
+		religion = jud_ark_reformed
+		religion = judaism_reformed
+		religion = kubera_reformed
+		religion = lubu_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = mari_christ_reformed
+		religion = mazdakism_reformed
+		religion = montanist_reformed
+		religion = murugan_reformed
+		religion = muslim_aliite_reformed
+		religion = muslim_domination_reformed
+		religion = muslim_sufi_reformed
+		religion = nasrani_reformed
+		religion = norse_christ_reformed
+		religion = norse_pagan_reformed
+		religion = northern_sun_reformed
+		religion = nyakalagan_reformed
+		religion = priscillian_reformed
+		religion = ragnarok_reformed
+		religion = saura_reformed
+		religion = serer_reformed
+		religion = set_reformed
+		religion = sethian_reformed
+		religion = slavic_christian_reformed
+		religion = slavic_pagan_reformed
+		religion = sol_boreas_reformed
+		religion = sol_islam_reformed
+		religion = sol_sahara_reformed
+		religion = tao_reformed
+		religion = tarhunt_reformed
+		religion = teiwaz_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = tengri_mani_reformed
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+		religion = vidharma_reformed
+		religion = voipel_reformed
+		religion = yazdanism_reformed
+		religion = zande_pagan_reformed
+		religion = zor_angra_reformed
+		religion = zulu_pagan_reformed
+		religion = zurvanism_reformed
+	}
+}
+goes_on_pilgrimage_trigger = {
+	religion_group = christian
+	NOR = {
+		religion = norse_christ
+		religion = priscillian
+		religion = montanist
+		religion = mari_christ
+		religion = valentinian
+		religion = nasrani
+		religion = nasrani_reformed
+		religion = priscillian_reformed
+		religion = slavic_christian
+		religion = slavic_christian_reformed
+	}
+}
+caste_religions_trigger = {
+	OR = {
+		religion = hindu
+		religion = kubera
+		religion = murugan
+		religion = saura
+		religion = vidharma
+		religion = kubera_reformed
+		religion = murugan_reformed
+		religion = saura_reformed
+		religion = vidharma_reformed
+	}
+}
+guru_religions_trigger = {
+	OR = {
+		religion_group = indian_group
+		religion_group = bud_group
+		religion = indoh_bud
+		religion = tengri_bud
+		religion = tengri_bud_reformed
+		religion = tao
+		religion = tao_reformed
+		religion = confucian
+		religion = zz01_vedanta
+	}
+}
+celibate_priest_religion_trigger = {
+	OR = {
+		religion = adoptionist
+		religion = apollinarist
+		religion = arian
+		religion = audianist
+		religion = bud_bahusrutiya
+		religion = bud_mahayana
+		religion = bud_pureland
+		religion = bud_sthaviravada
+		religion = bud_vajrayana
+		religion = bud_zen
+		religion = bud_zor
+		religion = catholic
+		religion = docetist
+		religion = donatist
+		religion = hindu
+		religion = iconoclast
+		religion = jain
+		religion = jud_ark
+		religion = jud_sabaoth
+		religion = judaism
+		religion = kubera
+		religion = mand_ruha
+		religion = mandaean
+		religion = mani
+		religion = mani_ahriman
+		religion = mani_germanic
+		religion = mani_mithra
+		religion = marcionist
+		religion = mari_christ
+		religion = melkite
+		religion = mithra
+		religion = mithra_christ
+		religion = monophysite
+		religion = monothelite
+		religion = montanist
+		religion = murugan
+		religion = nasrani
+		religion = neoplato
+		religion = nestorian
+		religion = orthodox
+		religion = pelagian
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = priscillian
+		religion = sabellianist
+		religion = saura
+		religion = semipelagian
+		religion = sethian
+		religion = slavic_christian
+		religion = sol_mani
+		religion = valentinian
+		religion = vidharma
+		religion = yahyanism
+		religion = zor_angra
+		religion = zor_hindu
+		religion = zoroastrian
+		religion = zurvanism
+		religion = cathar_reformed
+		religion = christian_populist_reformed
+		religion = mazdakism_reformed
+	}
+}
+
+oriental_monarchy_government_trigger = { #religions of Archaic and Persian civilizations + Mandaean group
+	OR = {
+		#Persian and Archaic civilization religions:
+		religion = aglibol
+		religion = allat
+		religion = almaqah
+		religion = amun
+		religion = aten
+		religion = attar
+		religion = beelshamen
+		religion = hadad
+		religion = horus_re
+		religion = hubal
+		religion = illuyanka
+		religion = isis
+		religion = kothar
+		religion = luwian
+		religion = maher
+		religion = malakbel
+		religion = mazdakism
+		religion = palmyran_pagan
+		religion = set
+		religion = shams
+		religion = sol_tsahay
+		religion = talab
+		religion = tarhunt
+		religion = waaq
+		religion = yazdanism
+		religion = yazidism
+		religion = zor_angra
+		religion = zoroastrian
+		religion = zurvanism
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = illuyanka_reformed
+		religion = mazdakism_reformed
+		religion = set_reformed
+		religion = tarhunt_reformed
+		religion = yazdanism_reformed
+		religion = zor_angra_reformed
+		religion = zurvanism_reformed
+		#Mandaean group religions:
+		religion = mand_ruha
+		religion = mandaean
+		religion = yahyanism
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+	}
+}
+
+classical_government_trigger = { #Graeco-Roman civilization civilizations + Other Mithraic, Solar and Neoplatonic religions
+	OR = {
+		#Graeco-Roman civilization religions:
+		religion = alexandros
+		religion = cybele
+		religion = dionysos
+		religion = graeco_roman
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = indohelen
+		religion = jupiter
+		religion = mithra_sol
+		religion = porphyryan
+		religion = roman_imperial
+		religion = sol
+		religion = sol_apollo
+		religion = sol_boreas
+		religion = sol_christ
+		religion = solomonic_alexandros
+		religion = zal
+		religion = zal_christ
+		religion = zal_mani
+		religion = cybele_reformed
+		religion = graeco_roman_reformed
+		religion = indohelen_reformed
+		religion = isis_reformed
+		religion = sol_boreas_reformed
+		religion = sol_sahara_reformed
+#		religion = shaytana
+		#Other Mithraic, Solar and Neoplatonic religions:
+		religion = mithra
+		religion = mithra_christ
+		religion = neoplato
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = sol_islam
+		religion = sol_mani
+		religion = sol_norse
+		religion = sol_islam_reformed
+	}
+}
+worships_ancestors_trigger = {
+	OR = {
+		is_tribal = yes
+		religion = almaqah
+		religion = bud_bahusrutiya
+		religion = bud_pratyeka
+		religion = bud_pureland
+		religion = bud_sthaviravada
+		religion = bud_vajrayana
+		religion = confucian
+		religion = luwian
+		religion = mwari
+		religion = nyau
+		religion = yoruba
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = bantu_pagan_reformed
+		religion = bon_reformed
+		religion = bud_zen_reformed
+		religion = bud_zor_reformed
+		religion = chumbylat_reformed
+		religion = finnish_pagan_reformed
+		religion = inuit_pagan_reformed
+		religion = lubu_reformed
+		religion = nyakalagan_reformed
+		religion = set_reformed
+		religion = tao_reformed
+		religion = tarhunt_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = voipel_reformed
+		religion = yazdanism_reformed
+		religion = zulu_pagan_reformed
+	}
+}
+sky_burial_trigger = {
+	OR = {
+		religion_group = zoroastrian_group
+		religion = erlik
+		religion = tengri_ahriman
+		religion = tengri_bud
+		religion = tengri_mani
+		religion = tengri_rod
+		religion = vattisenyaly
+		religion = erlik_reformed
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+	}
+}
+heroic_culture_trigger = {
+	OR = {
+		culture = irish
+		culture = norsegael
+		culture = scottish
+		culture = pictish
+		culture = sarmatobrython
+		culture_group = north_germanic
+		culture_group = congo_nigerian
+		culture = berber
+		culture = bedouin_arabic
+		culture = alan
+		culture = hunnic
+		culture = pecheneg
+		culture = bulgar
+		culture = cuman
+		culture = khazar
+		culture = kurdish
+	}
+}
+hummus_culture_trigger = {
+	OR = {
+		culture_group = arabic
+		culture_group = berberic
+		culture = jewish
+		culture_group = byzantine
+		culture = turkish
+	}
+}
+steppe_religion_trigger = {
+	OR = {
+		religion = erlik
+		religion = tengri_ahriman
+		religion = tengri_bud
+		religion = tengri_confucian
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = tengri_rod
+		religion = vattisenyaly
+		religion = erlik_reformed
+		religion = tengri_pagan_reformed
+		religion = tengri_rod_reformed
+		religion = vattisenyaly_reformed
+	}
+}
+employ_women_trigger = {
+	OR = {
+		feminist_religions_trigger = yes
+		primary_title = {
+			has_law = status_of_women_4
+		}
+		has_game_rule = {
+			name = gender
+			value = all
+		}
+	}
+}
+local_variation_trigger = {
+	OR = {
+		religion = adoptionist
+		religion = aglibol
+		religion = alexandros
+		religion = allat
+		religion = allfather
+		religion = amanai
+		religion = anansi
+		religion = apollinarist
+		religion = ashari
+		religion = athari
+		religion = attar
+		religion = audianist
+		religion = berber_pagan
+		religion = bogomilist
+		religion = bon
+		religion = bud_pratyeka
+		religion = bud_pureland
+		religion = bud_vajrayana
+		religion = bud_zen
+		religion = bud_zor
+		religion = celtic_christ
+		religion = chumbylat
+		religion = confucian
+		religion = cybele
+		religion = dazhbog
+		religion = docetist
+		religion = endovellico
+		religion = finnish_pagan
+		religion = fraticelli
+		religion = ghazi_islam
+		religion = gurzil
+		religion = hadad
+		religion = horus_re
+		religion = ilmatar
+		religion = imana
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = indohelen
+		religion = inuit_pagan
+		religion = isis
+		religion = jain
+		religion = jud_ark
+		religion = jud_zion
+		religion = jumala
+		religion = jupiter
+		religion = kintu
+		religion = kothar
+		religion = kubera
+		religion = lubu
+		religion = lugh
+		religion = maher
+		religion = makonde_pagan
+		religion = malakbel
+		religion = mande_pagan
+		religion = mani_germanic
+		religion = mani_mithra
+		religion = mani_slavic
+		religion = marabout
+		religion = marcionist
+		religion = mari_christ
+		religion = maturidi
+		religion = mithra_christ
+		religion = mithra_sol
+		religion = monothelite
+		religion = murjiah
+		religion = murugan
+		religion = mutazil
+		religion = mwari
+		religion = nasrani
+		religion = norse_christ
+		religion = nott
+		religion = nyame
+		religion = nyasaye
+		religion = nyau
+		religion = palmyran_pagan
+		religion = peckols
+		religion = perkunas
+		religion = plato_pythagorean
+		religion = porphyryan
+		religion = rod
+		religion = roman_imperial
+		religion = sabellianist
+		religion = semipelagian
+		religion = sethian
+		religion = slavic_christian
+		religion = slavic_pagan
+		religion = sol_apollo
+		religion = sol_boreas
+		religion = sol_islam
+		religion = sol_mani
+		religion = sol_norse
+		religion = sol_sahara
+		religion = sol_slav
+		religion = sol_tsahay
+		religion = solomonic_alexandros
+		religion = solomonic_christ
+		religion = sowilo
+		religion = svaroh
+		religion = svetovid
+		religion = talab
+		religion = tao
+		religion = tarhunt
+		religion = teiwaz
+		religion = tengri_bud
+		religion = tengri_confucian
+		religion = tengri_mani
+		religion = tengri_pagan
+		religion = tengri_rod
+		religion = unctionist
+		religion = valentinian
+		religion = vattisenyaly
+		religion = veles
+		religion = voipel
+		religion = waaq
+		religion = waldensian
+		religion = yazdanism
+		religion = yazidism
+		religion = yoruba
+		religion = zahiri
+		religion = zal_christ
+		religion = zal_mani
+		religion = zande_pagan
+		religion = zor_hindu
+		religion = zulu_pagan
+		religion = zurvanism
+		religion = zz01_vedanta
+	}
+}
+heretical_doctrine_trigger = {
+	OR = {
+		religion = antinomian
+		religion = aten
+		religion = batembuzi
+		religion = bud_bahusrutiya
+		religion = bud_mahayana
+		religion = cathar
+		religion = dionysos
+		religion = donatist
+		religion = druze
+		religion = erlik
+		religion = haruri
+		religion = hubal
+		religion = hurufi
+		religion = ibadi
+		religion = iconoclast
+		religion = illuyanka
+		religion = irminsul
+		religion = jud_sabaoth
+		religion = kharijite
+		religion = mand_ruha
+		religion = mani_ahriman
+		religion = mazdakism
+		religion = melkite
+		religion = montanist
+		religion = norse_war
+		religion = pelagian
+		religion = plato_christ
+		religion = plato_islam
+		religion = priscillian 
+		religion = qarmatian
+		religion = ragnarok
+		religion = saule
+		religion = saura
+		religion = set
+		religion = sol_christ
+		religion = sufi
+		religion = tengri_ahriman
+		religion = vidharma
+		religion = yahyanism
+		religion = zor_angra
+	}
+}
+archaic_civilization_trigger = {
+	OR = {
+		religion = aglibol
+		religion = allat
+		religion = almaqah
+		religion = amun
+		religion = aten
+		religion = attar
+		religion = beelshamen
+		religion = hadad
+		religion = horus_re
+		religion = hubal
+		religion = illuyanka
+		religion = isis
+		religion = kothar
+		religion = luwian
+		religion = maher
+		religion = malakbel
+		religion = palmyran_pagan
+		religion = set
+		religion = shams
+		religion = sol_tsahay
+		religion = talab
+		religion = tarhunt
+		religion = waaq
+		religion = yazdanism
+		religion = yazidism
+		religion = amun_reformed
+		religion = arab_pagan_reformed
+		religion = aten_reformed
+		religion = baal_monotheistic_reformed
+		religion = illuyanka_reformed
+		religion = set_reformed
+		religion = tarhunt_reformed
+		religion = yazdanism_reformed
+	}
+}
+barbarian_civilization_trigger = {
+	OR = {
+		religion = dazhbog
+		religion = dievas
+		religion = german_pagan
+		religion = irminsul
+		religion = peckols
+		religion = perkunas
+		religion = perun
+		religion = rod
+		religion = saule
+		religion = slavic_pagan
+		religion = sol_slav
+		religion = svaroh
+		religion = svetovid
+		religion = teiwaz
+		religion = veles
+		religion = zande_pagan
+		religion = baltic_pagan_reformed
+		religion = ethiopian_war_reformed
+		religion = german_pagan_reformed
+		religion = northern_sun_reformed
+		religion = serer_reformed
+		religion = slavic_pagan_reformed
+		religion = teiwaz_reformed
+		religion = zande_pagan_reformed
+	}
+}
+buddhist_civilization_trigger = {
+	OR = {
+		religion = bud_bahusrutiya
+		religion = bud_mahayana
+		religion = bud_pratyeka
+		religion = bud_pureland
+		religion = bud_sthaviravada
+		religion = bud_vajrayana
+		religion = bud_zen
+		religion = bud_zor
+		religion = bud_zen_reformed
+		religion = bud_zor_reformed
+		religion = tengri_bud_reformed
+	}
+}
+gnostic_civilization_trigger = {
+	OR = {
+		religion = bogomilist
+		religion = mand_ruha
+		religion = mandaean
+		religion = mani
+		religion = mani_ahriman
+		religion = mani_germanic
+		religion = mani_mithra
+		religion = mani_slavic
+		religion = mithra
+		religion = mithra_christ
+		religion = neoplato
+		religion = plato_christ
+		religion = plato_islam
+		religion = plato_pythagorean
+		religion = sethian
+		religion = sol_mani
+		religion = valentinian
+		religion = yahyanism
+		religion = ahriman_reformed
+		religion = mand_ruha_reformed
+		religion = mandaean_reformed
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = sethian_reformed
+		religion = tengri_mani_reformed
+		religion = zz01_vedanta #only ascendant technically, but included here as an exception
+
+	}
+}
+graecoroman_civilization_trigger = {
+	OR = {
+		religion = alexandros
+		religion = cybele
+		religion = dionysos
+		religion = graeco_roman
+		religion = indoh_bud
+		religion = indoh_confucian
+		religion = indoh_hindu
+		religion = indoh_zor
+		religion = indohelen
+		religion = jupiter
+		religion = mithra_sol
+		religion = porphyryan
+		religion = roman_imperial
+		religion = sol
+		religion = sol_apollo
+		religion = sol_boreas
+		religion = sol_christ
+		religion = solomonic_alexandros
+		religion = zal
+		religion = zal_christ
+		religion = zal_mani
+		religion = cybele_reformed
+		religion = graeco_roman_reformed
+		religion = indohelen_reformed
+		religion = isis_reformed
+		religion = sol_boreas_reformed
+		religion = sol_sahara_reformed
+	}
+}
+islamic_civilization_trigger = {
+	OR = {
+		religion = ashari
+		religion = athari
+		religion = druze
+		religion = ghazi_islam
+		religion = haruri
+		religion = hurufi
+		religion = ibadi
+		religion = ilm_islam
+		religion = kharijite
+		religion = marabout
+		religion = maturidi
+		religion = murjiah
+		religion = mutazil
+		religion = qarmatian
+		religion = shiite
+		religion = sol_islam
+		religion = sufi
+		religion = sunni
+		religion = zahiri
+		religion = druze_reformed
+		religion = muslim_aliite_reformed
+		religion = muslim_domination_reformed
+		religion = muslim_sufi_reformed
+		religion = sol_islam_reformed
+	}
+}
+archaic_ascendant_trigger = {
+	OR = {
+		religion = alexandros
+		religion = druze
+		religion = solomonic_alexandros
+		religion = solomonic_christ
+		religion = celtic_pagan_reformed
+		religion = cybele_reformed
+		religion = ethiopian_war_reformed
+		religion = graeco_roman_reformed
+		religion = isis_reformed
+		religion = mand_ruha_reformed
+	}
+}
+barbarian_ascendant_trigger = {
+	OR = {
+		religion = antinomian
+		religion = maher
+		religion = mani_germanic
+		religion = mani_slavic
+		religion = mari_christ
+		religion = slavic_christian
+		religion = tengri_rod
+		religion = waaq
+		religion = mani_germanic_reformed
+		religion = mani_slavic_reformed
+		religion = mari_christ_reformed
+		religion = slavic_christian_reformed
+		religion = tengri_rod_reformed
+	}
+}
+buddhist_ascendant_trigger = {
+	OR = {
+		religion = indoh_bud
+		religion = tengri_bud
+		religion = vidharma
+		religion = vidharma_reformed
+	}
+}
+gnostic_ascendant_trigger = {
+	OR = {
+		religion = bud_vajrayana
+		religion = cathar
+		religion = jain
+		religion = jud_ark
+		religion = marcionist
+		religion = mithra_sol
+		religion = nyasaye
+		religion = plato_pythagorean
+		religion = priscillian 
+		religion = sufi
+		religion = tengri_mani
+		religion = yoruba
+		religion = zal_mani
+		religion = priscillian_reformed
+	}
+}
+graecoroman_ascendant_trigger = {
+	OR = {
+		religion = aglibol
+		religion = amanai
+		religion = bud_pureland
+		religion = endovellico
+		religion = jumala
+		religion = montanist
+		religion = neoplato
+		religion = saule
+		religion = sol_islam
+		religion = sol_norse
+		religion = sol_sahara
+		religion = sol_slav
+		religion = sol_tsahay
+		religion = svaroh
+		religion = illuyanka_reformed
+		religion = sol_islam_reformed
+	}
+}
+islamic_ascendant_trigger = {
+	OR = {
+		religion = iconoclast
+		religion = plato_islam
+	}
+}
+steppe_ascendant_trigger = {
+	OR = {
+		religion = chumbylat
+		religion = mani_ahriman
+		religion = sol_boreas
+		religion = voipel
+		religion = sol_boreas_reformed
+		religion = tengri_bud_reformed
+		religion = tengri_confucian_reformed
+		religion = tengri_mani_reformed
+		religion = voipel_reformed
+	}
+}
+can_head_religion_trigger = {
+	OR = {
+		religion = 	ashari
+		religion =  aten_reformed
+		religion = 	athari
+		religion = 	bud_pratyeka
+		religion = 	haruri
+		religion = 	hurufi
+		religion = 	ilm_islam
+		religion = 	maturidi
+		religion = 	murjiah
+		religion = 	mutazil
+		religion = 	roman_imperial
+		religion = 	shiite
+		religion = 	sunni
+		religion = 	zahiri
+		religion = 	baltic_pagan_reformed
+		religion = 	bantu_pagan_reformed
+		religion = 	berber_pagan_reformed
+		religion = 	chumbylat_reformed
+		religion = 	druze_reformed
+		religion = 	erlik_reformed
+		religion = 	finnish_pagan_reformed
+		religion = 	german_pagan_reformed
+		religion = 	iberian_pagan_reformed
+		religion = 	indohelen_reformed
+		religion = 	lubu_reformed
+		religion = 	mani_germanic_reformed
+		religion = 	mani_slavic_reformed
+		religion = 	murugan_reformed
+		religion = 	muslim_aliite_reformed
+		religion = 	muslim_domination_reformed
+		religion = 	muslim_sufi_reformed
+		religion = 	norse_christ_reformed
+		religion = 	norse_pagan_reformed
+		religion = 	nyakalagan_reformed
+		religion = 	ragnarok_reformed
+		religion = 	serer_reformed
+		religion = 	slavic_pagan_reformed
+		religion = 	tao_reformed
+		religion = 	teiwaz_reformed
+		religion = 	tengri_confucian_reformed
+		religion = 	tengri_mani_reformed
+		religion = 	tengri_pagan_reformed
+		religion = 	tengri_rod_reformed
+		religion = 	vattisenyaly_reformed
+		religion = 	zande_pagan_reformed
+		religion = 	zulu_pagan_reformed
+	}
+}
+
+# TRIBAL VIRTUES & VICES
+# Virtues
+
+tribal_strong = {
+	OR = {
+		trait = strong
+		trait = robust
+		trait = master_warrior
+	}
+}
+
+tribal_virtues_1_or_more = {
+	calc_true_if = {
+		amount = 1
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		trait = proud
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+	}
+}
+
+tribal_virtues_2_or_more = {
+	calc_true_if = {
+		amount = 2
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+}
+
+tribal_virtues_3_or_more = {
+	calc_true_if = {
+		amount = 3
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+}
+tribal_virtues_4_or_more = {
+	calc_true_if = {
+		amount = 4
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+}
+tribal_virtues_5_or_more = {
+	calc_true_if = {
+		amount = 5
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+}
+tribal_virtues_6_or_more = {
+	calc_true_if = {
+		amount = 6
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+}
+tribal_virtues_7_or_more = {
+	calc_true_if = {
+		amount = 7
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+}
+
+tribal_virtues_1_exactly = {
+	calc_true_if = {
+		amount = 1
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 2
+			trait = just
+			trait = ambitious
+			trait = brave
+			trait = diligent
+			trait = gregarious
+			OR = {
+				trait = strong
+				trait = robust
+				trait = master_warrior
+			}
+			trait = proud
+		}
+	}
+}
+
+tribal_virtues_2_exactly = {
+	calc_true_if = {
+		amount = 2
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 3
+			trait = just
+			trait = ambitious
+			trait = brave
+			trait = diligent
+			trait = gregarious
+			OR = {
+				trait = strong
+				trait = robust
+				trait = master_warrior
+			}
+			trait = proud
+		}
+	}
+}
+
+tribal_virtues_3_exactly = {
+	calc_true_if = {
+		amount = 3
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 4
+			trait = just
+			trait = ambitious
+			trait = brave
+			trait = diligent
+			trait = gregarious
+			OR = {
+				trait = strong
+				trait = robust
+				trait = master_warrior
+			}
+			trait = proud
+		}
+	}
+}
+tribal_virtues_4_exactly = {
+	calc_true_if = {
+		amount = 4
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 5
+			trait = just
+			trait = ambitious
+			trait = brave
+			trait = diligent
+			trait = gregarious
+			OR = {
+				trait = strong
+				trait = robust
+				trait = master_warrior
+			}
+			trait = proud
+		}
+	}
+}
+tribal_virtues_5_exactly = {
+	calc_true_if = {
+		amount = 5
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 6
+			trait = just
+			trait = ambitious
+			trait = brave
+			trait = diligent
+			trait = gregarious
+			OR = {
+				trait = strong
+				trait = robust
+				trait = master_warrior
+			}
+			trait = proud
+		}
+	}
+}
+tribal_virtues_6_exactly = {
+	calc_true_if = {
+		amount = 6
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 7
+			trait = just
+			trait = ambitious
+			trait = brave
+			trait = diligent
+			trait = gregarious
+			OR = {
+				trait = strong
+				trait = robust
+				trait = master_warrior
+			}
+			trait = proud
+		}
+	}
+}
+tribal_virtues_7_exactly = {
+	calc_true_if = {
+		amount = 7
+		trait = just
+		trait = ambitious
+		trait = brave
+		trait = diligent
+		trait = gregarious
+		OR = {
+			trait = strong
+			trait = robust
+			trait = master_warrior
+		}
+		trait = proud
+	}
+}
+
+# Faults
+
+tribal_weak = {
+	OR = {
+		trait = weak
+		trait = feeble
+	}
+}
+
+tribal_faults_1_or_more = {
+	calc_true_if = {
+		amount = 1
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+
+tribal_faults_2_or_more = {
+	calc_true_if = {
+		amount = 2
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+
+tribal_faults_3_or_more = {
+	calc_true_if = {
+		amount = 3
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+tribal_faults_4_or_more = {
+	calc_true_if = {
+		amount = 4
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+tribal_faults_5_or_more = {
+	calc_true_if = {
+		amount = 5
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+tribal_faults_6_or_more = {
+	calc_true_if = {
+		amount = 6
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+tribal_faults_7_or_more = {
+	calc_true_if = {
+		amount = 7
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+
+tribal_faults_1_exactly = {
+	calc_true_if = {
+		amount = 1
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 2
+			trait = arbitrary
+			trait = content
+			trait = craven
+			trait = slothful
+			trait = shy
+			OR  = {
+				trait = weak
+				trait = feeble
+			}
+			trait = humble
+		}
+	}
+}
+
+tribal_faults_2_exactly = {
+	calc_true_if = {
+		amount = 2
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 3
+			trait = arbitrary
+			trait = content
+			trait = craven
+			trait = slothful
+			trait = shy
+			OR  = {
+				trait = weak
+				trait = feeble
+			}
+			trait = humble
+		}
+	}
+}
+
+tribal_faults_3_exactly = {
+	calc_true_if = {
+		amount = 3
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 4
+			trait = arbitrary
+			trait = content
+			trait = craven
+			trait = slothful
+			trait = shy
+			OR  = {
+				trait = weak
+				trait = feeble
+			}
+			trait = humble
+		}
+	}
+}
+tribal_faults_4_exactly = {
+	calc_true_if = {
+		amount = 4
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 5
+			trait = arbitrary
+			trait = content
+			trait = craven
+			trait = slothful
+			trait = shy
+			OR  = {
+				trait = weak
+				trait = feeble
+			}
+			trait = humble
+		}
+	}
+}
+tribal_faults_5_exactly = {
+	calc_true_if = {
+		amount = 5
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 6
+			trait = arbitrary
+			trait = content
+			trait = craven
+			trait = slothful
+			trait = shy
+			OR  = {
+				trait = weak
+				trait = feeble
+			}
+			trait = humble
+		}
+	}
+}
+tribal_faults_6_exactly = {
+	calc_true_if = {
+		amount = 6
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+	NOT = {
+		calc_true_if = {
+			amount = 7
+			trait = arbitrary
+			trait = content
+			trait = craven
+			trait = slothful
+			trait = shy
+			OR  = {
+				trait = weak
+				trait = feeble
+			}
+			trait = humble
+		}
+	}
+}
+tribal_faults_7_exactly = {
+	calc_true_if = {
+		amount = 7
+		trait = arbitrary
+		trait = content
+		trait = craven
+		trait = slothful
+		trait = shy
+		OR  = {
+			trait = weak
+			trait = feeble
+		}
+		trait = humble
+	}
+}
+
+has_patron_god = {
+	OR = {
+		has_character_modifier = patron_quetzalcoatl
+		has_character_modifier = patron_huitzilopochtli
+		has_character_modifier = patron_chantico
+		has_character_modifier = patron_mictlantecuhtli
+		has_character_modifier = patron_tloquenahuaque
+		has_character_modifier = patron_tlaloc
+		has_character_modifier = patron_forseti
+		has_character_modifier = patron_thor
+		has_character_modifier = patron_njordr
+		has_character_modifier = patron_tyr
+		has_character_modifier = patron_odin_war
+		has_character_modifier = patron_freyja_war
+		has_character_modifier = patron_loki
+		has_character_modifier = patron_odin
+		has_character_modifier = patron_freyja
+		has_character_modifier = patron_dazbog
+		has_character_modifier = patron_perun
+		has_character_modifier = patron_porewit
+		has_character_modifier = patron_crnobog
+		has_character_modifier = patron_rod
+		has_character_modifier = patron_jarilo
+		has_character_modifier = patron_jupiter
+		has_character_modifier = patron_mars
+		has_character_modifier = patron_herakles
+		has_character_modifier = patron_pluto
+		has_character_modifier = patron_mercury
+		has_character_modifier = patron_minerva
+		has_character_modifier = patron_bacchus
+		has_character_modifier = patron_dievas
+		has_character_modifier = patron_perkunas
+		has_character_modifier = patron_zemyna
+		has_character_modifier = patron_velnias
+		has_character_modifier = patron_laima
+		has_character_modifier = patron_ausrine
+		has_character_modifier = patron_jumala
+		has_character_modifier = patron_ukko
+		has_character_modifier = patron_akka
+		has_character_modifier = patron_kuu
+		has_character_modifier = patron_antero_vipunen
+		has_character_modifier = patron_akras
+		has_character_modifier = patron_nsamanfo
+		has_character_modifier = patron_tano
+		has_character_modifier = patron_abosom
+		has_character_modifier = patron_anansi
+		has_character_modifier = patron_nyame
+		has_character_modifier = patron_asase_ya
+		has_character_modifier = patron_yer
+		has_character_modifier = patron_kayra
+		has_character_modifier = patron_gun_ana
+		has_character_modifier = patron_ay_dede
+		has_character_modifier = patron_ulgan
+		has_character_modifier = patron_umay
+		has_character_modifier = patron_austro
+		has_character_modifier = patron_teiwaz
+		has_character_modifier = patron_frijjo
+		has_character_modifier = patron_thunaraz
+		has_character_modifier = patron_wodanaz
+		has_character_modifier = patron_fraujaz
+		has_character_modifier = patron_ogma
+		has_character_modifier = patron_morrighan
+		has_character_modifier = patron_danu
+		has_character_modifier = patron_manannan
+		has_character_modifier = patron_lugh
+		has_character_modifier = patron_cernunnos
+		has_character_modifier = patron_zeusindra
+		has_character_modifier = patron_marskartikeya
+		has_character_modifier = patron_hadesyama
+		has_character_modifier = patron_mercuryhanuman
+		has_character_modifier = patron_athenabuddha
+		has_character_modifier = patron_aphroditerambha
+		has_character_modifier = patron_zeusoromasdes
+		has_character_modifier = patron_heraklesvajrapani
+		has_character_modifier = patron_artemisanahita
+		has_character_modifier = patron_hermesnarada
+		has_character_modifier = patron_apollomithra
+		has_character_modifier = patron_dyonisosshiva
+		has_character_modifier = patron_amonra
+		has_character_modifier = patron_sobek
+		has_character_modifier = patron_isis
+		has_character_modifier = patron_set
+		has_character_modifier = patron_thoth
+		has_character_modifier = patron_bastet
+		has_character_modifier = patron_hadad
+		has_character_modifier = patron_astart
+		has_character_modifier = patron_melqart
+		has_character_modifier = patron_eshmun
+		has_character_modifier = patron_kothar
+		has_character_modifier = patron_astart2
+		has_character_modifier = patron_hubal
+		has_character_modifier = patron_attar
+		has_character_modifier = patron_bes
+		has_character_modifier = patron_allat
+		has_character_modifier = patron_manat
+		has_character_modifier = patron_aluzza
+	}
+}
+
+is_assassin = {
+	OR = {
+		society_member_of = the_assassins
+		society_member_of = the_assassins_bud_mahayana
+		society_member_of = the_assassins_mani_ahriman
+		society_member_of = the_assassins_priscillian
+		society_member_of = the_assassins_ragnarok
+		society_member_of = the_assassins_set
+		society_member_of = the_assassins_tengri_ahriman
+		society_member_of = the_assassins_yahyanism
+		society_member_of = the_assassins_zor_angra
+	}
+}

@@ -31,9 +31,11 @@
 861.1.1 = {
 	holder = 187012
 }
+#Warial's patchup
 876.1.1 = {
-	holder = 0
+	liege = k_hungary
 }
+#End of Warial's patchup
 902.1.1 = {
 	liege = k_hungary
 	holder = 1062704

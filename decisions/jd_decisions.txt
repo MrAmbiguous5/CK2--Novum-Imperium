@@ -23,6 +23,10 @@ decisions = {
 			OR = {
 				ai = no
 				AND = {
+					emf_is_chinese_imperial_culture = yes
+					prestige = 2000
+				}
+				AND = {
 					trait = proud
 					prestige = 40000
 				}
@@ -39,23 +43,34 @@ decisions = {
 			prisoner = no
 			is_incapable = no
 			is_tributary = no
-			tier = EMPEROR
-			has_law = administration_2
+			OR = {
+				tier = EMPEROR
+				emf_is_chinese_imperial_culture = yes
+			}
+			OR = {
+				has_law = administration_2
+				government = bureaucratic_government
+			}
 			conditional_tooltip = {
-				trigger = { religion = taoist }
+				trigger = { emf_is_chinese_imperial_culture = yes }
+				prestige = 4000
+				wealth = 500
+			}
+			conditional_tooltip = {
+				trigger = { emf_is_chinese_imperial_culture = no religion = taoist }
 				prestige = 8000
 				wealth = 500
 			}
 			conditional_tooltip = {
-				trigger = { NOT = { religion = taoist } }
+				trigger = { emf_is_chinese_imperial_culture = no NOT = { religion = taoist } }
 				prestige = 16000
 				wealth = 1000
 			}
 
-			offmap_china = {
-				show_scope_change = no
-				offmap_ruler = { NOT = { dynasty = ROOT } }
-			}
+			#offmap_china = {
+			#	show_scope_change = no
+			#	offmap_ruler = { NOT = { dynasty = ROOT } }
+			#}
 		}
 		effect = {
 			if = {
@@ -65,231 +80,100 @@ decisions = {
 			else = {
 				wealth = -1000
 			}
-			if = {
-				limit = {
-					has_dlc = "Holy Fury"
-					NOT = {
-						any_owned_bloodline = { 
-							has_bloodline_flag = created_bloodline
-						}
-					}
-				}
-				narrative_event = { id = HF.24240 tooltip = tooltip_evt_hf_24240 }
+			if = { 
+				limit = { higher_real_tier_than = DUKE } 
+				primary_title = { save_event_target_as = wudai_old_title }
 			}
 			custom_tooltip = {
-				text = adopt_chinese_imperialism_tt
-				hidden_effect = {
-					create_title = {
-						tier = EMPEROR
-						landless = no
-						temporary = no
-						custom_created = yes
-						culture = ROOT
-						holder = ROOT
-						base_title = THIS
-						short_name = yes
-						copy_title_laws = yes
-					}
-					new_title = {
-						set_title_flag = uses_temple_names_by_script #Titles with this flag give their heirs a temple name via on_death event
-						set_title_flag = pretender_chinese_empire #Blocks all grace interactions
-						adjective = e_china_west_governor_adj #Use WP adj as it is "Chinese" but also gives the right one in different languages
-						random_list = { #Random Empire name that China doesn't have
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = tang_china } } }
-								set_name = "e_china_tang"
-								set_title_flag = china_name_Tang
-								set_coa = e_china_tang
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = jin_china } } }
-								set_name = "e_china_jin"
-								set_title_flag = china_name_Jin
-								set_coa = e_china_jin
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = wei_china } } }
-								set_name = "e_china_wei"
-								set_title_flag = china_name_Wei
-								set_coa = e_china_wei
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = qi_china } } }
-								set_name = "e_china_qi"
-								set_title_flag = china_name_Qi
-								set_coa = e_china_qi
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = zhou_china } } }
-								set_name = "e_china_zhou"
-								set_title_flag = china_name_Zhou
-								set_coa = e_china_zhou
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = han_china } } }
-								set_name = "e_china_han"
-								set_title_flag = china_name_Han
-								set_coa = e_china_han
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = qin_china } } }
-								set_name = "e_china_qin"
-								set_title_flag = china_name_Qin
-								set_coa = e_china_qin
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = yan_china } } }
-								set_name = "e_china_yan"
-								set_title_flag = china_name_Yan
-								set_coa = e_china_yan
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = zhao_china } } }
-								set_name = "e_china_zhao"
-								set_title_flag = china_name_Zhao
-								set_coa = e_china_zhao
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = liao_china } } }
-								set_name = "e_china_liao"
-								set_title_flag = china_name_Liao
-								set_coa = e_china_liao
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = yuan_china } } }
-								set_name = "e_china_yuan"
-								set_title_flag = china_name_Yuan
-								set_coa = e_china_yuan
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = xia_china } } }
-								set_name = "e_china_xia"
-								set_title_flag = china_name_Xia
-								set_coa = e_china_xia
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = qing_china } } }
-								set_name = "e_china_qing"
-								set_title_flag = china_name_Qing
-								set_coa = e_china_qing
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = dai_china } } }
-								set_name = "e_china_dai"
-								set_title_flag = china_name_Dai
-								set_coa = e_china_dai
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = cheng_china } } }
-								set_name = "e_china_cheng"
-								set_title_flag = china_name_Cheng
-								set_coa = e_china_cheng
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = liang_china } } }
-								set_name = "e_china_liang"
-								set_title_flag = china_name_Liang
-								set_coa = e_china_liang
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = song_china } } }
-								set_name = "e_china_song"
-								set_title_flag = china_name_Song
-								set_coa = e_china_song
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = ming_china } } }
-								set_name = "e_china_min"
-								set_title_flag = china_name_Ming
-								set_coa = e_china_ming
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = shu_china } } }
-								set_name = "e_china_shu"
-								set_title_flag = china_name_Shu
-								set_coa = e_china_shu
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = wu_china } } }
-								set_name = "e_china_wu"
-								set_title_flag = china_name_Wu
-								set_coa = e_china_wu
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = chu_china } } }
-								set_name = "e_china_chu"
-								set_title_flag = china_name_Chu
-								set_coa = e_china_chu
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = yue_china } } }
-								set_name = "e_china_yue"
-								set_title_flag = china_name_Yue
-								set_coa = e_china_yue
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = yin_china } } }
-								set_name = "e_china_yin"
-								set_title_flag = china_name_Yin
-								set_coa = e_china_yin
-							}
-							1 = { 
-								trigger = { NOT = { offmap_china = { has_offmap_name = shun_china } } }
-								set_name = "e_china_shun"
-								set_title_flag = china_name_Shun
-								set_coa = e_china_shun
-							}
-						}
-						owner = { set_character_flag = emf_no_law_penalties }
-						if = {
-							limit = {
-								has_law = revokation_2
-							}
-							add_law = {
-								law = revokation_1
-								cooldown = no
-								opinion_effect = no
-							}
-						}
-						if = {
-							limit = {
-								has_law = ze_revokation_2
-							}
-							add_law = {
-								law = ze_revokation_1
-								cooldown = no
-								opinion_effect = no
-							}
-						}
-						owner = { clr_character_flag = emf_no_law_penalties }
+				if = {
+					limit = { dynasty = 1051150 e_tang = { has_holder = no } }
+					e_tang = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048157 e_later_liang = { has_holder = no } }
+					e_later_liang = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000049851 e_later_tang = { has_holder = no } }
+					e_later_tang = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000049854 e_later_jin = { has_holder = no } }
+					e_later_jin = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000049855 e_later_han = { has_holder = no } }
+					e_later_han = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048290 e_later_zhou = { has_holder = no } }
+					e_later_zhou = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1051151 e_song = { has_holder = no } }
+					e_song = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048031 e_later_shu = { has_holder = no } }
+					e_later_shu = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048184 e_former_shu = { has_holder = no } }
+					e_former_shu = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048504 e_huang_qi = { has_holder = no } }
+					e_huang_qi = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048271 e_liu_yan = { has_holder = no } }
+					e_liu_yan = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000050128 e_luoping = { has_holder = no } }
+					e_luoping = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048943 e_southern_tang = { has_holder = no } }
+					e_southern_tang = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048906 e_min = { has_holder = no } }
+					e_min = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048906 e_yin = { has_holder = no } }
+					e_yin = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048933 e_southern_wu = { has_holder = no } }
+					e_southern_wu = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { dynasty = 1000048895 e_southern_han = { has_holder = no } }
+					e_southern_han = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else_if = {
+					limit = { culture = tangut e_xixia = { has_holder = no } }
+					e_xixia = { grant_title = ROOT wudai_empire_new_title = yes }
+				}
+				else = {
+					text = adopt_chinese_imperialism_tt
+					hidden_effect = {
+						
+						character_event = { id = wudai.001 }
 					}
 				}
-			}
-			any_demesne_title = {
-				limit = { 
-					tier = EMPEROR
-					NOT = { has_title_flag = pretender_chinese_empire }
-				}
-				destroy_landed_title = THIS
 			}
 			set_government_type = chinese_imperial_government
 			custom_tooltip = { text = adopt_chinese_imperialism_gov_tt }
 			custom_tooltip = {
 				text = adopt_chinese_imperialism_temple_name_tt
-				hidden_effect = {
-					random_list = { #Give a temple name
-						1 = { set_name = Gaozu }
-						1 = { set_name = Taizu }
-						1 = { set_name = Shizu }
-						1 = { set_name = Zhaozu }
-						1 = { set_name = Jingzu }
-						1 = { set_name = Xianzu }
-						1 = { set_name = Liezu }
-						1 = { set_name = Chengzu }
-					}
-					set_character_flag = given_temple_name_by_script
-				}
+				wudai_temple_name_father = yes
 			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
@@ -391,9 +275,12 @@ decisions = {
 						}
 					}
 				}
+				break = yes
 			}
-			else_if = {
-				limit = { tier = KING }
+			if = {
+				limit = {
+					tier = king
+				}
 				capital_scope = {
 					PREV = {
 						spawn_unit = {
@@ -412,9 +299,12 @@ decisions = {
 						}
 					}
 				}
+				break = yes
 			}
-			else_if = {
-				limit = { tier = DUKE }
+			if = {
+				limit = {
+					tier = duke
+				}
 				capital_scope = {
 					PREV = {
 						spawn_unit = {
@@ -433,6 +323,7 @@ decisions = {
 						}
 					}
 				}
+				break = yes
 			}
 			else = {
 				capital_scope = {
@@ -1017,54 +908,42 @@ decisions = {
 					save_event_target_as = spawn_province
 				}
 			}
-			else_if = {
-				limit = {
-					FROM = {
-						capital_scope = {
-							NOT = { region = world_india }
-						}
-					}
-				}
-				1513 = { # Jiuquan
-					save_event_target_as = spawn_province
-				}
-			}
-			else = {
-				offmap_china = { set_offmap_flag = troop_spawn_india_temp }
-				1318 = { # Samatata
-					save_event_target_as = spawn_province
-				}
-				set_variable = {
-					which = boat_spawns
-					which = china_war_troop_quantity
-				}
-				multiply_variable = {
-					which = boat_spawns
-					value = 5
-				}
-				while = {
-					limit = {
-						check_variable = {
-							which = boat_spawns
-							value = 1
-						}
-					}
-					change_variable = {
-						which = boat_spawns
-						value = -1
-					}
-					spawn_fleet = {
-						province = 1411 # ganges delta
-						owner = ROOT
-						disband_on_peace = yes
-						troops =
-						{
-							galleys = { 1 1 }
-						}
-						merge = yes
-					}
-				}
-			}
+			#else = {
+			#   offmap_china = { set_offmap_flag = troop_spawn_india_temp }
+			#   1318 = { # Samatata
+			#	   save_event_target_as = spawn_province
+			#   }
+			#   set_variable = {
+			#	   which = boat_spawns
+			#	   which = china_war_troop_quantity
+			#   }
+			#   multiply_variable = {
+			#	   which = boat_spawns
+			#	   value = 5
+			#   }
+			#   while = {
+			#	   limit = {
+			#		   check_variable = {
+			#			   which = boat_spawns
+			#			   value = 1
+			#		   }
+			#	   }
+			#	   change_variable = {
+			#		   which = boat_spawns
+			#		   value = -1
+			#	   }
+			#	   spawn_fleet = {
+			#		   province = 1411 # ganges delta
+			#		   owner = ROOT
+			#		   disband_on_peace = yes
+			#		   troops =
+			#		   {
+			#			   galleys = { 1 1 }
+			#		   }
+			#		   merge = yes
+			#	   }
+			#   }
+			#}
 			
 			event_target:enemy = {
 				character_event = { id = JD.30047 }
@@ -1271,6 +1150,7 @@ targeted_decisions = {
 		from_potential = {
 			independent = yes
 		}
+
 		potential = {
 			has_character_flag = raiding_adventurer
 			OR = {
@@ -1296,6 +1176,7 @@ targeted_decisions = {
 				}
 			}
 		}
+
 		allow = {
 			FROM = {
 				show_scope_change = no

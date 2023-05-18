@@ -1995,16 +1995,18 @@
 	}
 }
 191430 = {
-	name = "Gopala"
-	dynasty = 1044347 # Gopala
-	religion = "hindu"
-	culture = "hindustani"
-	trait = "brahmin"
-	trait = "vaishnavist_hindu"
-	trait = content
-	trait = brilliant_strategist
+	name="Gopala"
+	dynasty=1044347 # Gopala
+	religion="hindu"
+	culture="hindustani"
+	trait="brahmin"
+	trait="vaishnavist_hindu"
+	trait=content
 	1040.1.1={
 		birth = yes
+	}
+	1056.1.1={
+		add_trait=brilliant_strategist
 	}
 	1090.1.1={
 		death = yes
@@ -2893,5 +2895,441 @@
 	}
 	890.1.1={
 		death = yes
+	}
+}
+
+#Khasiya Dynasty
+
+247553 = {
+	name="Bijor"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	842.1.1={
+		birth=yes
+	}
+	902.1.1={
+		death=yes
+	}
+}
+
+247554 = {
+	name="Jijar"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247553
+	858.1.1={
+		birth=yes
+	}
+	909.1.1={
+		death=yes
+	}
+}
+
+247555 = {
+	name="Jajar"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247554
+	874.1.1={
+		birth=yes
+	}
+	928.1.1={
+		death=yes
+	}
+}
+
+247556 = {
+	name="Jar"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247555
+	890.1.1={
+		birth=yes
+	}
+	937.1.1={
+		death=yes
+	}
+}
+
+247557 = {
+	name="Kalu"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247556
+	906.1.1={
+		birth=yes
+	}
+	942.1.1={
+		death=yes
+	}
+}
+
+247558 = {
+	name="Kalau"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247556
+	907.1.1={
+		birth=yes
+	}
+	953.1.1={
+		death=yes
+	}
+}
+
+247559 = {
+	name="Jahal"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247558
+	923.1.1={
+		birth=yes
+	}
+	973.1.1={
+		death=yes
+	}
+}
+
+247560 = {
+	name="Mul"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247559
+	939.1.1={
+		birth=yes
+	}
+	981.1.1={
+		death=yes
+	}
+}
+
+247561 = {
+	name="Guna"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247560
+	955.1.1={
+		birth=yes
+	}
+	1000.1.1={
+		death=yes
+	}
+}
+
+247562 = {
+	name="Pida"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247561
+	971.1.1={
+		birth=yes
+	}
+	1009.1.1={
+		death=yes
+	}
+}
+
+247563 = {
+	name="Nagu"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247562
+	987.1.1={
+		birth=yes
+	}
+	1028.1.1={
+		death=yes
+	}
+}
+
+247564 = {
+	name="Bhagu"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247563
+	1003.1.1={
+		birth=yes
+	}
+	1039.1.1={
+		death=yes
+	}
+}
+
+247565 = {
+	name="Jayapal"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247564
+	1019.1.1={
+		birth=yes
+	}
+	1055.1.1={
+		death=yes
+	}
+}
+
+247566 = {
+	name="Sonpal"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247565
+	1035.1.1={
+		birth=yes
+	}
+	1067.1.1={
+		death=yes
+	}
+}
+
+247567 = {
+	name="Indrapal"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247566
+	1051.1.1={
+		birth=yes
+	}
+	1088.1.1={
+		death=yes
+	}
+}
+
+247568 = {
+	name="Naagraj"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247567
+	1068.1.1={
+		birth=yes
+	}
+	1096.1.1={
+		death=yes
+	}
+}
+
+247569 = {
+	name="Chaap"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247568
+	1085.1.1={
+		birth=yes
+	}
+	1115.1.1={
+		death=yes
+	}
+}
+
+247570 = {
+	name="Chapilla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247569
+	1103.1.1={
+		birth=yes
+	}
+	1142.1.1={
+		death=yes
+	}
+}
+
+247571 = {
+	name="Krashichalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247570
+	1124.1.1={
+		birth=yes
+	}
+	1168.1.1={
+		death=yes
+	}
+}
+
+247572 = {
+	name="Kradhichalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247571
+	1142.1.1={
+		birth=yes
+	}
+	1189.1.1={
+		death=yes
+	}
+}
+
+247573 = {
+	name="Krachalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247572
+	1160.1.1={
+		birth=yes
+	}
+	1223.1.1={
+		death=yes
+	}
+}
+
+247574 = {
+	name="Jitarimalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247573
+	1182.1.1={
+		birth=yes
+	}
+	1258.1.1={
+		death=yes
+	}
+}
+
+247575 = {
+	name="Ashokmalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247574
+	1209.1.1={
+		birth=yes
+	}
+	1287.1.1={
+		death=yes
+	}
+}
+
+247576 = {
+	name="Ashokchalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247575
+	1245.1.1={
+		birth=yes
+	}
+	1312.1.1={
+		death=yes
+	}
+}
+
+247577 = {
+	name="Ripumalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247576
+	1264.1.1={
+		birth=yes
+	}
+	1314.1.1={
+		death=yes
+	}
+}
+
+247578 = {
+	name="Adityamalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247576
+	1266.1.1={
+		birth=yes
+	}
+	1318.1.1={
+		death=yes
+	}
+}
+
+247579 = {
+	name="Punyamalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247578
+	1282.1.1={
+		birth=yes
+	}
+	1326.1.1={
+		death=yes
+	}
+}
+
+247580 = {
+	name="Prithvimalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247579
+	1298.1.1={
+		birth=yes
+	}
+	1330.1.1={
+		death=yes
+	}
+}
+
+247581 = {
+	name="Suryamalla"
+	dynasty=105844 #Khasiya
+	religion="hindu"
+	culture="hindustani"
+	trait = kshatriya
+	father=247577
+	1314.1.1={
+		birth=yes
+	}
+	1373.1.1={
+		death=yes
 	}
 }

@@ -1,0 +1,44 @@
+#Later Liang
+920.2.17 = { holder = 1400224 liege = e_later_liang name = "Xuanwei" effect = { set_coa = d_xuanwei } } #Zhu Hanbin
+#Later Tang
+923.11.18 = { liege = e_later_tang }
+924.1.11 = { holder = 0 name = "Anyuan" effect = { reset_coa = THIS } } #No Jiedushi
+926.9.26 = { holder = 1412811 } #Shi Jingrong
+928.3.13 = { holder = 1400258 } #Wang Xinggui
+930.6.4 = { holder = 1406695 } #Zhou Zhiyu
+931.4.12 = { holder = 1404371 } #Yang Hanzhang
+933.4.20 = { holder = 1400165 } #Fu Yanchao
+934.2.23 = { holder = 1406696 } #Wang Xiquan
+934.2.24 = { holder = 1406697 } #Li Duan
+934.3.26 = { holder = 1401791 } #Li Jingzhou
+934.10.27 = [ holder = 1400251 } #Lu Wenjin
+#Later Jin
+937.1.11 = { liege = e_later_jin }
+937.1.31 = { holder = 0 } #No Jiedushi
+937.4.6 = { holder = 1401242 } #Zhou Gui
+#Rebellion
+937.9.1 = { holder = 1401243 liege = 0 } #Wang Hui
+#Later Jin
+937.9.5 = { holder = 1410405 liege = e_later_jin } #Li Jinquan
+#Southern Tang
+940.7.16 = { holder = 1406698 liege = e_southern_tang } #Li Chengyu
+#Later Jin
+940.7.21 = { holder = 1400287 liege = e_later_jin } #Ma Quanjie
+940.8.8 = { holder = 0 } #No Jiedushi
+#Liao
+947.3.22 = { holder = 1401071 liege = e_khitan } #Liu Suining
+#Later Han
+947.6.23 = { liege = e_later_han }
+947.8.10 = { holder = 1412436 } #Yang Chengxin
+950.4.24 = { holder = 1401910 } #Wang Lingwen
+#Later Zhou
+951.2.5 = { liege = e_later_zhou }
+951.12.14 = { holder = 1400982 } #Li Hongyi
+954.11.3 = { holder = 0 } #No Jiedushi
+#1406699 Zhang Ying - fanyushi until 956.1.22
+#Song
+960.2.4 = { holder = 1400340 liege = e_song } #Wang Yan
+964.3.31 = { holder = 1400909 } #Wu Xingde
+969.10.9 = { holder = 1401054 } #Xiang Xun
+977.5.23 = { holder = 0 }
+

@@ -34,7 +34,6 @@ chosen_of_artemis_female = {
 
 The_New_Alexander = {
     GFX_bloodlines_symbol_bucephalus
-    inheritance = patrilineal
     matrilineal_override = yes
     allow_bastards = no
     flags = {  bloodline_better_inquisition bloodline_religious_liberation }

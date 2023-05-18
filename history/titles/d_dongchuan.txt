@@ -1,0 +1,75 @@
+#Tang
+757.1.1 = { holder = 0 name = "Dongchuan" liege = e_tang government = bureaucratic_government } #Yan Wu
+761.1.1 = { holder = 0 } #Li Huan
+762.1.1 = { holder = 0 } #Mr. Chi
+763.1.1 = { holder = 0 } #Zhang Yi
+764.1.1 = { holder = 0 } #No Jiedushi
+766.1.1 = { holder = 0 } #Zhang Xiancheng
+766.6.1 = { holder = 1403694 } #Dou Ji
+768.1.1 = { holder = 0 } #Xianyu Shuming
+786.1.1 = { holder = 0 } #Wang Shuyong
+802.1.1 = { holder = 0 } #Li Kang
+806.1.10 = { holder = 1406493 } #Wei Dan
+806.4.25 = { holder = 1402844 } #Gao Chongwen - acting governor
+806.10.23 = { holder = 1408138 } #Yan Li
+809.4.19 = { holder = 0 } #Pan Mengyang
+813.1.1 = { holder = 0 } #Lu Tan
+817.11.3 = { holder = 1402256 } #Li Fengji
+820.2.20 = { holder = 0 } #Wang Ya - on Muzong's enthronment per Old Book of Tang
+823.1.1 = { holder = 1407486 } #Li Jiang
+825.4.23 = { holder = 1405852 } #Guo Qian
+830.10.27 = { holder = 0 } #Liu Zungu
+833.7.21 = { holder = 0 } #No Jiedushi
+833.8.9 = { holder = 1400791 } #Yang Sifu
+835.2.2 = { holder = 0 } #Feng Su
+837.1.28 = { holder = 1400704 } #Yang Rushi
+839.1.1 = { holder = 0 } #Zheng Fu
+841.1.1 = { holder = 1406257 } #Gui Rong
+844.1.1 = { holder = 1403215 } #Lu Shang
+845.1.1 = { holder = 1403744 } #Du Cong
+849.1.1 = { holder = 0 } #Zhou Chi
+851.1.1 = { holder = 1402355 } #Liu Zhongying
+855.1.1 = { holder = 0 } #Wei Youji
+858.2.22 = { holder = 1403125 } #Cui Shenyou
+860.12.16 = { holder = 0 } #Yan Mou
+862.1.1 = { holder = 0 } #Xue Dan
+862.11.1 = { holder = 0 } #Gao Qu
+865.1.1 = { holder = 0 } #Wang Chengye
+866.1.1 = { holder = 1416008 } #Dugu Yun
+870.3.14 = { holder = 1403275 } #Yan Qingfu
+872.1.1 = { holder = 1403271 } #Cui Jun
+875.1.1 = { holder = 1402901 } #Wu Xinglu
+877.1.1 = { holder = 1403276 } #Li Bi
+878.1.1 = { holder = 1403277 } #Wang Feng
+880.5.26 = { holder = 1403278 } #Yang Shili
+#Rebellion
+884.4.2 = { liege = 0 }
+#Tang
+884.6.29 = { holder = 1403279 liege = e_tang } #Gao Renhou
+886.4.26 = { holder = 1403281 } #Gu Yanlang
+891.10.14 = { holder = 1403282 } #Gu Yanhui
+897.11.16 = { holder = 1403285 } #Wang Zongdi
+901.5.16 = { holder = 1403234 } #Wang Zongyu
+903.9.6 = { liege = k_xichuan }
+904.1.1 = { holder = 1403286 } #Wang Zongji
+#Former Shu
+907.11.3 = { holder = 1403234 name = "Tianzhan" effect = { set_coa = d_tianzhan } liege = e_former_shu } #Wang Zongyu
+912.1.1 = { holder = 0 } #No Jiedushi
+912.11.18 = { name = "Wude" effect = { set_coa = d_wude } }
+919.1.1 = { holder = 1403287 } #Wang Zongfan
+919.4.1 = { holder = 1403291 } #Xu Yanqiong
+924.5.7 = { holder = 1403296 } #Song Guangbao
+#Later Tang
+925.11.18 = { holder = 1403298 name = "Dongchuan" effect = { reset_coa = THIS } liege = e_later_tang } #Dong Zhang
+932.6.10 = { holder = 1400030 }
+932.7.13 = { holder = 1400071 } #Zhao Jiliang
+933.3.15 = { liege = k_xichuan }
+#Later Shu
+934.1.1 = { holder = 1400035 name = "Wude" effect = { set_coa = d_wude } } #Meng Chang
+934.3.16 = { liege = e_later_shu }
+936.1.1 = { holder = 1400077 } #Zhao Tingyin
+941.3.26 = { holder = 1400111 } #Li Hao
+948.8.24 = { holder = 1400090 } #Wang Chuhui
+952.1.1 = { holder = 1400153 } #Guo Yanjun
+962.1.1 = { holder = 1400144 } #Li Tinggui
+965.2.23 = { holder = 0 liege = e_song }

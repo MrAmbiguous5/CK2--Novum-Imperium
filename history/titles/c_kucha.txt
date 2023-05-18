@@ -11,7 +11,7 @@
 	holder = 1229808
 }
 920.1.1 = {
-	liege = d_karashar
+	liege = d_turfan
 	holder = 1229802
 }
 940.1.1 = {
@@ -24,13 +24,14 @@
 	holder = 1229809
 }
 1010.1.1 = {
-	holder = 1229810
+	liege = 0
+	holder = 1410732 # fictional
 }
 1040.1.1 = {
-	holder = 1229823 # fictional
+	holder = 1410731 # date fictional, but a recorded ruler of Kucha Uyghurs
 }
 1063.1.1 = {
-	holder = 1229813 # date fictional, but a recorded ruler of Kucha Uyghurs
+	holder = 1410730 # date fictional, but a recorded ruler of Kucha Uyghurs
 }
 1095.1.1 = {
 	liege = k_turkestan_east

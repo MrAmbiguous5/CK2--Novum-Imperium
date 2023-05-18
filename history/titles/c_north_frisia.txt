@@ -12,6 +12,11 @@
 865.1.1 = {
 	holder = 1144478 # Oskitlel
 }
+#Warial's Patchup
+871.1.1 = {
+	liege = d_sjaelland
+}
+#End of Warial's patchup
 934.1.1 = {
 	liege = d_jylland
 	holder = 101500 # Gorm the Old

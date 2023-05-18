@@ -1,0 +1,762 @@
+### VESTALES
+namespace = vestalmaint
+#Vestalis Maxima maintenance - now on_death
+character_event = {
+	id = vestalmaint.1
+	
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+
+	
+	trigger = { 
+		has_landed_title = c_vesta_temple
+	}
+	
+	immediate = {
+		if = {
+			limit = { NOT = { has_minor_title = title_vestalis_maxima } }
+			random_courtier = {
+				limit = {
+					NOT = { character = ROOT }
+					has_minor_title = title_vestalis
+					trait = vestalis
+					is_female = yes
+				}
+				c_vesta_temple = { gain_title = PREV }
+				b_vesta_temple = { gain_title = PREV }
+				set_defacto_liege = THIS
+				remove_title = title_vestalis
+				give_minor_title = title_vestalis_maxima
+				ROOT = { set_character_flag = vestalis_maxima_found }
+			}
+			if = {
+				limit = { NOT = { has_character_flag = vestalis_maxima_found } }
+				random_list = {
+					10 = { create_random_priest = {
+						random_traits = yes
+						religion = roman_imperial
+						culture = roman
+						trait = vestalis
+						female = yes
+						age = 30
+					} }
+					10 = { create_random_priest = {
+						random_traits = yes
+						religion = roman_imperial
+						culture = roman
+						trait = vestalis
+						female = yes
+						age = 35
+					} }
+					10 = { create_random_priest = {
+						random_traits = yes
+						religion = roman_imperial
+						culture = roman
+						trait = vestalis
+						female = yes
+						age = 40
+					} }
+					20 = { create_random_priest = {
+						random_traits = yes
+						religion = roman_imperial
+						culture = roman
+						trait = vestalis
+						female = yes
+						age = 45
+					} }
+					20 = { create_random_priest = {
+						random_traits = yes
+						religion = roman_imperial
+						culture = roman
+						trait = vestalis
+						female = yes
+						age = 50
+					} }
+					20 = { create_random_priest = {
+						random_traits = yes
+						religion = roman_imperial
+						culture = roman
+						trait = vestalis
+						female = yes
+						age = 55
+					} }
+					10 = { create_random_priest = {
+						random_traits = yes
+						religion = roman_imperial
+						culture = roman
+						trait = vestalis
+						female = yes
+						age = 60
+					} }
+				}
+				new_character = {
+					give_minor_title = title_vestalis_maxima
+					set_character_flag = flag_vestalis
+					c_vesta_temple = { gain_title = PREV }
+					b_vesta_temple = { gain_title = PREV }
+					set_defacto_liege = THIS
+				}
+			}
+			clr_character_flag = vestalis_maxima_found
+		}
+		
+	}
+}
+
+character_event = {
+	id = vestalmaint.2
+
+	hide_window = yes
+	only_rulers = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = vestalis
+		has_landed_title = c_vesta_temple
+		NOT = { has_minor_title = title_vestalis_maxima }
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+
+	immediate = {
+		give_minor_title = title_vestalis_maxima
+		set_character_flag = flag_vestalis
+	}
+}
+
+# The Vestalis Maxima should be the guardian of all underage Vestalis
+character_event = {
+	id = ancrel.2120
+	hide_window = yes
+	
+	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		has_minor_title = title_vestalis_maxima
+		host = {
+			any_courtier = {
+				has_minor_title = title_vestalis
+				age = 6
+				NOR = {
+					age = 16
+					guardian = { character = ROOT }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		host = {
+			any_courtier = {
+				limit = {
+					has_minor_title = title_vestalis
+					age = 6
+					NOR = {
+						age = 16
+						guardian = { character = ROOT }
+					}
+				}
+				set_guardian = ROOT
+			}
+		}
+	}
+}
+
+# A Vestalis must retire after 30 years
+character_event = {
+	id = ancrel.2121
+	desc = EVTDESCancrel.2121
+	picture = GFX_evt_princess_byzantine
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		had_character_flag = {
+			flag = flag_vestalis
+			days = 10958 # 30 years
+		}
+		
+		has_minor_title = title_vestalis
+	}
+
+	option = {
+		name = OK
+
+		remove_title = title_vestalis
+		remove_title = title_vestalis_maxima
+		remove_trait = celibate
+		remove_trait = vestalis
+		add_trait = retired_vestalis
+		recalc_succession = yes
+		clr_character_flag = flag_vestalis
+	}
+}
+
+# Cleanup when a Vestalis lost her title by some way other than retiring
+character_event = {
+	id = ancrel.2122
+	hide_window = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		has_character_flag = flag_vestalis
+		NOT = { 
+			OR = {
+				has_minor_title = title_vestalis 
+				has_minor_title = title_vestalis_maxima 
+			 }
+		}
+	}
+
+	immediate = {
+		remove_trait = celibate
+		remove_trait = vestalis
+		recalc_succession = yes
+		clr_character_flag = flag_vestalis
+	}
+}
+
+#[on_death] Cleanup when a Vestalis dies
+character_event = {
+	id = ancrel.2123
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = flag_vestalis
+	}
+
+	immediate = {
+		clr_character_flag = flag_vestalis
+	}
+}
+
+# A vassal has nominated a vestalis
+character_event = {
+	id = ancrel.2124
+
+	desc = EVTDESCancrel.2124
+	picture = GFX_evt_princess_byzantine
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTAancrel.2124
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				OR = {
+					is_primary_heir = yes
+					is_pretender = yes
+				}
+			}
+			modifier = {
+				factor = 1.5
+				dynasty = ROOT
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { FROM = { host = { reverse_opinion = { who = ROOT value = -40 } } } }
+			}
+			modifier = {
+				factor = 1.25
+				FROM = { host = { reverse_opinion = { who = ROOT value = 40 } } }
+			}
+			modifier = {
+				factor = 0.5
+				check_variable = { which = "num_vestales" value = 4 }
+			}
+			modifier = {
+				factor = 2
+				NOT = { check_variable = { which = "num_vestales" value = 2 } }
+			}
+		}
+
+		FROM = { clr_character_flag = flag_nominated_as_vestalis }
+		hidden_tooltip = { FROM = { banish = ROOT } } # Move FROM to ROOT's court
+		FROM = {
+			host = {
+				prestige = 50
+				piety = 50
+				opinion = { modifier = opinion_nominated_vestalis who = ROOT }
+			}
+			give_minor_title = title_vestalis
+			hidden_tooltip = {
+				remove_trait = hedonist
+				add_trait = celibate
+				add_trait = vestalis
+				recalc_succession = yes
+				set_character_flag = flag_vestalis
+				c_vesta_temple = { owner = { change_variable = { which = "num_vestales" value = 1 } } }
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTBancrel.2124
+		ai_chance = {
+			factor = 40
+		}
+
+		FROM = { host = { prestige = -10 } }
+	}
+}
+namespace = li_mysterycults
+### Mystery Cults ###
+# Approached by the Cult of Orpheus
+character_event = {
+	id = li_mysterycults.10
+	desc = EVTDESC_li_mysterycult_2575
+	picture = GFX_evt_orpheus
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		NOR = {
+			trait = imbecile
+			trait = inbred
+			trait = slow
+			trait = cult_of_orpheus
+			trait = cult_of_serapis
+			trait = cult_eleusinian
+			trait = cult_of_trophonius
+			has_character_flag = refused_orpheus
+			has_character_flag = joined_mystery_cult
+		}
+		OR = {
+			religion = alexandros
+			religion = graeco_roman
+			religion = jupiter
+			religion = roman_imperial
+			religion = sol
+			religion = sol_apollo
+			religion = sol_boreas
+			religion = solomonic_alexandros
+			religion = graeco_roman_reformed
+			religion = sol_boreas_reformed
+		}
+		OR = {
+			is_female = no
+			is_ruler = yes
+			mother = { trait = cult_of_orpheus }
+			father = { trait = cult_of_orpheus }
+		}
+		OR = {
+			diplomacy = 8
+			mother = { trait = cult_of_orpheus }
+			father = { trait = cult_of_orpheus }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 5
+			NOT = { diplomacy = 8 }
+		}
+		modifier = {
+			factor = 0.75
+			diplomacy = 10
+		}
+		modifier = {
+			factor = 0.75
+			diplomacy = 12
+		}
+		modifier = {
+			factor = 0.75
+			diplomacy = 14
+		}
+	}
+	
+	immediate = {
+		set_character_flag = joined_mystery_cult
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = EVTOPTA_li_mysterycult_2575 #Joins
+		add_trait = cult_of_orpheus
+		narrative_event = { id = li_mysterycults.11 days = 3 tooltip = initiation_rites }
+	}
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = EVTOPTB_li_mysterycult_2575 #Refuses
+		set_character_flag = refused_orpheus
+		clr_character_flag = joined_mystery_cult
+	}
+}
+
+# Initiation event into the cult of Orpheus (players only)
+narrative_event = {
+	id = li_mysterycults.11
+	title = EVTNAME_li_mysterycult_2580
+	desc = EVTDESC_li_mysterycult_2580
+	picture = GFX_evt_mithraic_ritual
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = CONTINUE
+		narrative_event = {
+			id = li_mysterycults.15
+		}
+	}
+}
+
+narrative_event = {
+	id = li_mysterycults.15
+	title = EVTNAME_li_mysterycult_2580
+	desc = EVTDESC_li_mysterycult_2580a
+	picture = GFX_evt_mithraic_ritual
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		piety = 25
+	}
+}
+
+# Approached by the Cult of Serapis
+character_event = {
+	id = li_mysterycults.20
+	desc = EVTDESC_li_mysterycult_2577
+	picture = GFX_evt_serapis
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		NOR = {
+			trait = imbecile
+			trait = inbred
+			trait = slow
+			trait = cult_of_orpheus
+			trait = cult_of_serapis
+			trait = cult_eleusinian
+			trait = cult_of_trophonius
+			has_character_flag = refused_serapis
+			has_character_flag = joined_mystery_cult
+			has_character_flag = do_not_disturb
+		}
+		OR = {
+			religion = alexandros
+			religion = graeco_roman
+			religion = jupiter
+			religion = roman_imperial
+			religion = sol
+			religion = sol_apollo
+			religion = sol_boreas
+			religion = solomonic_alexandros
+			religion = graeco_roman_reformed
+			religion = sol_boreas_reformed
+		}
+		OR = {
+			is_female = no
+			is_ruler = yes
+			mother = { trait = cult_of_serapis }
+			father = { trait = cult_of_serapis }
+		}
+		OR = {
+			martial = 8
+			mother = { trait = cult_of_serapis }
+			father = { trait = cult_of_serapis }
+		}
+		in_command = no
+		is_abroad = no
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 5
+			NOT = { martial = 8 }
+		}
+		modifier = {
+			factor = 0.75
+			martial = 10
+		}
+		modifier = {
+			factor = 0.75
+			martial = 12
+		}
+		modifier = {
+			factor = 0.75
+			martial = 14
+		}
+	}
+	
+	immediate = {
+		set_character_flag = joined_mystery_cult
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = EVTOPTA_li_mysterycult_2575 #Joins
+		add_trait = cult_of_serapis
+		narrative_event = { id = li_mysterycults.12 days = 3 tooltip = initiation_rites }
+	}
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = EVTOPTB_li_mysterycult_2575 #Refuses
+		set_character_flag = refused_serapis
+		clr_character_flag = joined_mystery_cult
+	}
+}
+
+# Initiation event into the cult of Serapis (players only)
+narrative_event = {
+	id = li_mysterycults.12
+	title = EVTNAME_li_mysterycult_2581
+	desc = EVTDESC_li_mysterycult_2581
+	picture = GFX_evt_mithraic_ritual
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		piety = 25
+	}
+}
+
+# Approached by the Cult of Demeter (Eleusinian)
+character_event = {
+	id = li_mysterycults.30
+	desc = EVTDESC_li_mysterycult_2578
+	picture = GFX_evt_demeter
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		NOR = {
+			trait = imbecile
+			trait = inbred
+			trait = slow
+			trait = cult_of_orpheus
+			trait = cult_of_serapis
+			trait = cult_eleusinian
+			trait = cult_of_trophonius
+			has_character_flag = refused_eleusinian
+			has_character_flag = joined_mystery_cult
+			has_character_flag = do_not_disturb
+		}
+		OR = {
+			religion = alexandros
+			religion = graeco_roman
+			religion = jupiter
+			religion = roman_imperial
+			religion = sol
+			religion = sol_apollo
+			religion = sol_boreas
+			religion = solomonic_alexandros
+			religion = graeco_roman_reformed
+			religion = sol_boreas_reformed
+		}
+		OR = {
+			is_female = yes
+			is_ruler = yes
+			mother = { trait = cult_eleusinian }
+			father = { trait = cult_eleusinian }
+		}
+		OR = {
+			intrigue = 8
+			mother = { trait = cult_eleusinian }
+			father = { trait = cult_eleusinian }
+		}
+		in_command = no
+		is_abroad = no
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 5
+			NOT = { intrigue = 8 }
+		}
+		modifier = {
+			factor = 0.75
+			intrigue = 10
+		}
+		modifier = {
+			factor = 0.75
+			intrigue = 12
+		}
+		modifier = {
+			factor = 0.75
+			intrigue = 14
+		}
+	}
+	
+	immediate = {
+		set_character_flag = joined_mystery_cult
+	}
+	
+	option = {
+	ai_chance = {
+			factor = 25
+		}
+		name = EVTOPTA_li_mysterycult_2575 #Joins
+		add_trait = cult_eleusinian
+		narrative_event = { id = li_mysterycults.13 days = 3 tooltip = initiation_rites }
+	}
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = EVTOPTB_li_mysterycult_2575 #Refuses
+		set_character_flag = refused_eleusinian
+		clr_character_flag = joined_mystery_cult
+	}
+}
+
+# Initiation event into the Eleusinian Mysteries (players only)
+narrative_event = {
+	id = li_mysterycults.13
+	title = EVTNAME_li_mysterycult_2582
+	desc = EVTDESC_li_mysterycult_2582
+	picture = GFX_evt_mithraic_ritual
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		piety = 25
+	}
+}
+
+# Approached by the Cult of Zeus Trophonius
+character_event = {
+	id = li_mysterycults.40
+	desc = EVTDESC_li_mysterycult_2579
+	picture = GFX_evt_trophonius
+
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		NOR = {
+			trait = imbecile
+			trait = inbred
+			trait = slow
+			trait = cult_of_orpheus
+			trait = cult_of_serapis
+			trait = cult_eleusinian
+			trait = cult_of_trophonius
+			has_character_flag = refused_trophonius
+			has_character_flag = joined_mystery_cult
+			has_character_flag = do_not_disturb
+		}
+		OR = {
+			religion = alexandros
+			religion = graeco_roman
+			religion = jupiter
+			religion = roman_imperial
+			religion = sol
+			religion = sol_apollo
+			religion = sol_boreas
+			religion = solomonic_alexandros
+			religion = graeco_roman_reformed
+			religion = sol_boreas_reformed
+		}
+		OR = {
+			is_female = no
+			is_ruler = yes
+			mother = { trait = cult_of_trophonius }
+			father = { trait = cult_of_trophonius }
+		}
+		OR = {
+			learning = 8
+			mother = { trait = cult_of_trophonius }
+			father = { trait = cult_of_trophonius }
+		}
+		in_command = no
+		is_abroad = no
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 5
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 0.75
+			learning = 10
+		}
+		modifier = {
+			factor = 0.75
+			learning = 12
+		}
+		modifier = {
+			factor = 0.75
+			learning = 14
+		}
+	}
+	
+	immediate = {
+		set_character_flag = joined_mystery_cult
+	}
+	
+	option = {
+	ai_chance = {
+			factor = 25
+		}
+		name = EVTOPTA_li_mysterycult_2575 #Joins
+		add_trait = cult_of_trophonius
+		narrative_event = { id = li_mysterycults.14 days = 3 tooltip = initiation_rites }
+	}
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = EVTOPTB_li_mysterycult_2575 #Refuses
+		set_character_flag = refused_trophonius
+		clr_character_flag = joined_mystery_cult
+	}
+}
+
+# Initiation event into the cult of Zeus Trophonius (players only)
+narrative_event = {
+	id = li_mysterycults.14
+	title = EVTNAME_li_mysterycult_2583
+	desc = EVTDESC_li_mysterycult_2583
+	picture = GFX_evt_mithraic_ritual
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		piety = 25
+	}
+}
