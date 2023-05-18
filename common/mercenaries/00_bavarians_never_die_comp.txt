@@ -1,6 +1,0 @@
-mumu_greencoats_composition = {
-	levy_size = 5
-	archers = 155
-	heavy_infantry = 575
-	knights = 35
-}

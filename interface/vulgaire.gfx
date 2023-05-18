@@ -1,9 +1,0 @@
-spriteTypes = {
-	spriteType = {
-	name = "GFX_trait_vulgaire"
-	texturefile = "gfx/traits/vulgaire.tga" 
-	noOfFrames = 1
-	norefcount = yes
-	effectFile = "gfx/FX/buttonstate.lua"
-	}
-}

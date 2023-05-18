@@ -1,9 +1,0 @@
-spriteTypes = {
-	spriteType = {
-	name = "GFX_trait_bavard"
-	texturefile = "gfx/traits/bavard.tga" 
-	noOfFrames = 1
-	norefcount = yes
-	effectFile = "gfx/FX/buttonstate.lua"
-	}
-}

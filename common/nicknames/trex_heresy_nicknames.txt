@@ -1,2 +1,0 @@
-nick_trex_reformer = {}
-nick_trex_holy_book = {}

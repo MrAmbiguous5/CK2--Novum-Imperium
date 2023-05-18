@@ -82,7 +82,7 @@
 6. Safavid Order
 7. RDU
 8. Qizilbash
-9. Map Painter
+9. Adopt & Disinherit
 10. Knights of Jerusalem
 11. Join all the Wars
 12. Grivpanar
@@ -94,8 +94,8 @@
 18. 99 more book slots
 19. Arsiyah
 20. Crusader Amazons
-## 21. Atlantis Invasion
-## 22. Indo Rome Mod Revived
+21. Atlantis Invasion
+22. Indo Rome Mod Revived
 23. Viet Events
 24. Historical Events reborn HIP Compatch
 25. Order of Dobryzn
@@ -105,6 +105,16 @@
 29. Path of Destruction
 30. Lesbocracy
 31. Order of James Altopascio
+32. Hellenic Bödpa Temple Fix
+33. Usurpation Fix
+34. Immersive Religious Holdings - v1.5 Tibet Update
+35. Easy Map Painting
+36. Sketchy Cheat Menu
+37. Sketchy Bloodlines 
+38. Ancient Religions Reborn and Expanded
+39. Kurushimi's Cheat Menu
+40. Debug
+41. MTA Debug
 
 32. Add Holding Slot
 

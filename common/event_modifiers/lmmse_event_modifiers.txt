@@ -1,3 +1,0 @@
-lmmse_spouse_support_modifier = {
-	icon = 18
-}

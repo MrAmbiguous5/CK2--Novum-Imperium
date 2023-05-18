@@ -1,6 +1,0 @@
-spriteTypes = {
-	spriteType = {
-		name = "GFX_bloodlines_historical"
-		texturefile = "gfx\\interface\\bloodlines\\bloodlines_historical.dds"
-	}	
-}

@@ -1,7 +1,0 @@
-on_startup = {
-	events = {
-		core_resource_dist.1
-		core_building_setup.1
-		TSK.1
-	}
-}

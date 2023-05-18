@@ -1,9 +1,0 @@
-spriteTypes = {
-	spriteType = {
-	name = "GFX_trait_vegetarien"
-	texturefile = "gfx/traits/vegetarien.tga" 
-	noOfFrames = 1
-	norefcount = yes
-	effectFile = "gfx/FX/buttonstate.lua"
-	}
-}

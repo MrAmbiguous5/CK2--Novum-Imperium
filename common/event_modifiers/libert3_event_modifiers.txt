@@ -1,2 +1,0 @@
-war_tax_levied_timer = { icon = 1 }
-peace_tax_levied_timer = { icon = 1 }

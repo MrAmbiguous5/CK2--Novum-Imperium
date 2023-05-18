@@ -1,4 +1,0 @@
-
-opinion_saved_me_belas = {
-	opinion = 50
-}

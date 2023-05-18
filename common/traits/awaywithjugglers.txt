@@ -1,9 +1,0 @@
-awaywithjugglers = {
-      random = no
-      birth = 100
-      is_visible = {
-          always = no
-      }
-      pilgrimage = yes
-      customizer = no
-}

@@ -1,3 +1,0 @@
-#Sui
-580.1.1 = { holder = 1406017 liege = c_cangzhou } #Du Ziyu - magistrate at some point in time.
-590.1.1 = { holder = 0 }

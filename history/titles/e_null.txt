@@ -1,9 +1,0 @@
-# -*- ck2.history.titles -*-
-476.1.1 = {
-	set_global_flag = EMF_prestartup
-	set_global_flag = AKS
-	set_global_flag = SWMH
-	set_global_flag = SED
-	set_global_flag = ArkoCoA
-	set_global_flag = LTM
-}

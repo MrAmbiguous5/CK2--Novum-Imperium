@@ -1,6 +1,0 @@
-spriteTypes = {
-	spriteType = {
-		name = GFX_plot_usurp_liege_wife_decision
-		texturefile = "gfx\\interface\\decision_icon_liegetitle.dds"
-	}
-}

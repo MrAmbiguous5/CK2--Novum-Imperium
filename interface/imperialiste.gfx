@@ -1,9 +1,0 @@
-spriteTypes = {
-	spriteType = {
-	name = "GFX_trait_imperialiste"
-	texturefile = "gfx/traits/imperialiste.tga" 
-	noOfFrames = 1
-	norefcount = yes
-	effectFile = "gfx/FX/buttonstate.lua"
-	}
-}

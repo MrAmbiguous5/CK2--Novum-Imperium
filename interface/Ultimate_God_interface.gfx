@@ -1,9 +1,0 @@
-spriteTypes = {
-	spriteType = {
-	name = "GFX_trait_Ultimate_God"
-	texturefile = "gfx/traits/Ultimate_God.tga" 
-	noOfFrames = 1
-	norefcount = yes
-	effectFile = "gfx/FX/buttonstate.lua"
-	}
-}

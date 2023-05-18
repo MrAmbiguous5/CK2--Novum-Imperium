@@ -1,5 +1,0 @@
-lip_reader = {
-	diplomacy = 1
-	intrigue = 1
-	icon = 18
-}
