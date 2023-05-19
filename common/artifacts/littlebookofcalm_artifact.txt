@@ -1,0 +1,10 @@
+
+
+little_book_calm = {	#Little Book of Calm, not to be mistaken for the more popular 'Big Book of Clams'. Just a little joke for you. Have a nice day.
+	quality = 1
+	stacking = no
+	indestructible = yes
+	flags = { about_stewardship book created }
+	picture = "GFX_book_fish_01"
+	slot = library
+}
