@@ -1,0 +1,176 @@
+plot_decisions = {
+	#Different decisions for different levels
+	plot_court_coup_decision1 = {
+		is_high_prio = yes
+		
+		potential = {
+			is_adult = yes
+			has_plot = plot_court_coup
+			NOT = { has_character_flag = plot_court_coup_decision_taken }
+			NOT = { plot_power = 1.25 }
+		}
+		allow = {
+			plot_power = 1
+			num_of_plot_backers = 3
+			plot_target_char = {
+				NOT = {
+					any_war = {
+						defender = {
+							character = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_character_flag = starting_1
+			plot_target_char = {
+				character_event = { id = toe.1499 }
+			}
+			set_character_flag = plot_court_coup_decision_taken
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { plot_power = 1.25 }
+			}
+		}
+	}
+	
+	plot_court_coup_decision2 = {
+		is_high_prio = yes
+		
+		potential = {
+			is_adult = yes
+			has_plot = plot_court_coup
+			NOT = { has_character_flag = plot_court_coup_decision_taken }
+			NOT = { plot_power = 1.5 }
+			plot_power = 1.25
+		}
+		allow = {
+			plot_power = 1
+			num_of_plot_backers = 3
+			plot_target_char = {
+				NOT = {
+					any_war = {
+						defender = {
+							character = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_character_flag = starting_2
+			plot_target_char = {
+				character_event = { id = toe.1499 }
+			}
+			set_character_flag = plot_court_coup_decision_taken
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { plot_power = 1.25 }
+			}
+		}
+	}
+	
+	plot_court_coup_decision3 = {
+		is_high_prio = yes
+		
+		potential = {
+			is_adult = yes
+			has_plot = plot_court_coup
+			NOT = { has_character_flag = plot_court_coup_decision_taken }
+			NOT = { plot_power = 2 }
+			plot_power = 1.5
+		}
+		allow = {
+			plot_power = 1
+			num_of_plot_backers = 3
+			plot_target_char = {
+				NOT = {
+					any_war = {
+						defender = {
+							character = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_character_flag = starting_3
+			plot_target_char = {
+				character_event = { id = toe.1499 }
+			}
+			set_character_flag = plot_court_coup_decision_taken
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { plot_power = 1.25 }
+			}
+		}
+	}
+	
+	plot_court_coup_decision4 = {
+		is_high_prio = yes
+		
+		potential = {
+			is_adult = yes
+			has_plot = plot_court_coup
+			NOT = { has_character_flag = plot_court_coup_decision_taken }
+			plot_power = 2
+		}
+		allow = {
+			plot_power = 1
+			num_of_plot_backers = 3
+			plot_target_char = {
+				NOT = {
+					any_war = {
+						defender = {
+							character = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_character_flag = starting_4
+			plot_target_char = {
+				character_event = { id = toe.1499 }
+			}
+			set_character_flag = plot_court_coup_decision_taken
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { plot_power = 1.25 }
+			}
+		}
+	}
+}

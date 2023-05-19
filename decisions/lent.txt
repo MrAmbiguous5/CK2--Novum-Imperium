@@ -1,0 +1,81 @@
+decisions = {
+	observe_lent = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			is_ruler = yes
+			is_feudal = yes
+			prisoner = no
+			OR = {
+				religion = catholic
+				religion = orthodox
+				religion = unctionist
+				religion = pelagian
+				religion = semipelagian
+				religion = audianist
+				religion = monophysite
+				religion = nestorian
+				religion = monothelite
+				religion = apollinarist
+				religion = docetist
+				religion = melkite
+				religion = arian
+				religion = sabellianist
+				religion = adoptionist
+				religion = donatist
+			}	
+			NOR = { 
+				has_character_flag = lent
+				has_character_modifier = observed_lent
+			}
+		}
+		allow = {
+			war = no
+			prisoner = no
+			wealth = 100
+			custom_tooltip = {
+				text = IS_HEALTHY
+				NOR = {
+					is_ill = yes
+					has_symptom_trigger = yes
+				}
+			}
+			month = 1
+			NOT = {
+				month = 3
+			}
+		}
+		effect = {
+			narrative_event = {
+				id = lent.0 #1000100010 # lent.0 
+				tooltip = "begin_fast" }
+			set_character_flag = lent
+			piety = 15
+			wealth = -60
+			add_character_modifier = {
+				name = observed_lent
+				duration = 1900
+				hidden = no
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,1123 @@
+decisions = {
+    vassalize_inna = {
+        is_high_prio = yes
+        ai_check_interval = 12
+        
+        potential = {
+            is_adult = yes
+            religion = bori
+            religion_head = { independent = yes }
+        }
+        
+        allow = {
+            is_adult = yes
+            religion = bori
+            religion_head = { 
+                independent = yes
+                opinion = { who = ROOT value = 80 }
+            }
+            higher_tier_than = KING
+            OR = {
+                has_landed_title = c_kano
+                is_liege_or_above_of = c_kano
+            }
+            wealth = 50
+            piety = 300
+        }
+        
+        effect = {
+            wealth = -50
+            custom_tooltip = {
+                text = vassalize_inna_tooltip
+                religion_head = { set_defacto_liege = ROOT }
+            }
+        }
+        
+        revoke_allowed = {
+            always = no
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0.8
+                NOT = { trait = proud }
+            }
+            modifier = {
+                factor = 0.5
+                NOT = { trait = ambitious }
+            }
+            modifier = {
+                factor = 0.5
+                trait = humble
+            }
+            modifier = {
+                factor = 0.25
+                trait = content
+            }
+        }
+    }
+
+    exalt_inna = {
+        is_high_prio = yes
+        ai_check_interval = 24
+    
+        potential = {
+            is_adult = yes
+            religion = bori
+            NOT = { has_global_flag = bori_pseudo_reformation }
+        }
+        
+        allow = {
+            is_adult = yes
+            religion = bori
+            has_landed_title = e_kanem
+            OR = {
+                has_landed_title = c_kano
+                is_liege_or_above_of = c_kano
+            }
+            custom_tooltip = {
+                text = controls_holy_sites_tooltip
+                any_realm_title = {
+                    is_holy_site = bori
+                    count = 5
+                }
+            }
+            religion_authority = 0.5
+            piety = 750
+        }
+        
+        effect = {
+            religion_head = { grant_title = c_kano }
+            set_autocephaly = no
+            set_can_excommunicate = yes
+            set_can_grant_invasion_cb = yes
+            set_can_call_crusade = yes
+            #set_can_have_antipopes = yes
+            set_global_flag = bori_pseudo_reformation
+            character_event = { id = AFRREL.002 }
+        }
+        
+        revoke_allowed = {
+            always = no
+        }
+        
+        ai_will_do = {
+            factor = 1
+            
+            modifier = {
+                factor = 0
+                trait = cynical
+            }
+            modifier = {
+                factor = 0.5
+                NOT = { trait = zealous }
+            }
+            modifier = {
+                factor = 0.5
+                NOT = { trait = possessed }
+            }
+        }
+    }
+    
+    # Forge A tag Roog castes
+    become_foro = {
+        only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+        
+		potential = {
+			is_playable = yes
+			is_adult = yes
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+				is_nomadic = yes
+			}
+			NOT = { trait = foro }
+		}
+		
+		allow = {
+            custom_tooltip = {
+                text = has_griot_tooltip
+                any_courtier_or_vassal = {
+                    has_minor_title = title_griot
+                    liege = { character = PREVPREV }
+                }
+            }
+			OR = {
+				trait = jakhanke
+				piety = 200
+			}
+			OR = {
+				scaled_wealth = 6
+				AND = {
+                    custom_tooltip = {
+                        text = learned_griot_tooltip
+                        any_courtier_or_vassal = {
+                            has_minor_title = title_griot
+                            liege = { character = PREVPREV }
+                            learning = 12
+                        }
+                    }
+					scaled_wealth = 3
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+                    any_courtier_or_vassal = {
+                        has_minor_title = title_griot
+                        liege = { character = PREVPREV }
+                        learning = 12
+                    }
+                }
+				scaled_wealth = -3
+			}
+			else = {
+				scaled_wealth = -6
+			}
+			if = {
+				limit = { NOT = { trait = jakhanke } }
+				piety = -200
+			}
+			
+			prestige = 50
+			add_trait = foro
+			any_spouse = {
+				limit = {
+					is_ruler = no
+					liege = { character = ROOT }
+					NOT = { trait = foro }
+				}
+				add_trait = foro
+			}
+			any_child = {
+				limit = {
+					is_ruler = no
+					liege = { character = ROOT }
+					NOT = { trait = foro }
+				}
+				add_trait = foro
+			}
+			hidden_tooltip = {
+				top_liege = {
+					any_realm_character = {
+						limit = {
+                            OR = {
+                                religion = a_tag_roog
+                                religion = a_tag_roog_reformed
+                            }
+							is_adult = yes
+							NOT = { character = ROOT }
+							NOT = { trait = cynical }
+						}
+						opinion = {
+							modifier = opinion_changed_caste
+							who = ROOT
+							years = 100
+						}
+					}
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+			}
+		}
+    }
+    
+    become_wangara = {
+        only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+        
+		potential = {
+			is_playable = yes
+			is_adult = yes
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+			OR = {
+                is_republic = yes
+                is_merchant_republic = yes
+			}
+			NOT = { trait = wangara }
+		}
+		
+		allow = {
+            custom_tooltip = {
+                text = has_griot_tooltip
+                any_courtier_or_vassal = {
+                    has_minor_title = title_griot
+                    liege = { character = PREVPREV }
+                }
+            }
+			OR = {
+				trait = jakhanke
+				piety = 200
+			}
+			OR = {
+				scaled_wealth = 6
+				AND = {
+                    custom_tooltip = {
+                        text = learned_griot_tooltip
+                        any_courtier_or_vassal = {
+                            has_minor_title = title_griot
+                            liege = { character = PREVPREV }
+                            learning = 12
+                        }
+                    }
+					scaled_wealth = 3
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+                    any_courtier_or_vassal = {
+                        has_minor_title = title_griot
+                        liege = { character = PREVPREV }
+                        learning = 12
+                    }
+                }
+				scaled_wealth = -3
+			}
+			else = {
+				scaled_wealth = -6
+			}
+			if = {
+				limit = { NOT = { trait = jakhanke } }
+				piety = -200
+			}
+			
+			prestige = 50
+			add_trait = wangara
+			any_spouse = {
+				limit = {
+					is_ruler = no
+					liege = { character = ROOT }
+					NOT = { trait = wangara }
+				}
+				add_trait = wangara
+			}
+			any_child = {
+				limit = {
+					is_ruler = no
+					liege = { character = ROOT }
+					NOT = { trait = foro }
+				}
+				add_trait = wangara
+			}
+			hidden_tooltip = {
+				top_liege = {
+					any_realm_character = {
+						limit = {
+                            OR = {
+                                religion = a_tag_roog
+                                religion = a_tag_roog_reformed
+                            }
+							is_adult = yes
+							NOT = { character = ROOT }
+							NOT = { trait = cynical }
+						}
+						opinion = {
+							modifier = opinion_changed_caste
+							who = ROOT
+							years = 100
+						}
+					}
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+			}
+		}
+    }
+    
+    hold_hawan_sallah = {
+        only_playable = yes
+        ai_check_interval = 12
+        
+        potential = {
+            is_playable = yes
+            religion = bori
+            is_adult = yes
+            NOT = { has_character_modifier = holding_hawan_sallah }
+            NOT = { has_character_flag = hawan_sallah_elephant_rider }
+            NOT = { has_character_flag = hawan_sallah_new_friend }
+        }
+        
+        allow = {
+ 			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			wealth = 25
+			month = 9
+			prestige = 100
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}           
+        }
+        
+        effect = {
+            wealth = -25
+            add_character_modifier = {
+                name = holding_hawan_sallah
+                duration = -1
+            }
+            set_character_flag = recent_minor_decision
+            set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = { 
+					id = AFRREL.070
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+        }
+        
+        ai_will_do = {
+            factor = 1
+
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+            
+            modifier = {
+                factor = 0
+                NOT = { wealth = 100 }
+            }
+            
+            modifier = {
+                factor = 0
+                trait = shy
+            }
+            
+            # Give player more options for elephant-riding vassal and new friend
+            modifier = {
+                factor = 0
+                liege = { ai = no }
+            }
+        }
+        
+        revoke_allowed = {
+            always = no
+        }
+    }
+
+	pick_a_tat_roog_religious_tradition = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+        
+		potential = {
+			is_playable = yes
+			is_adult = yes
+			OR = {
+				religion = a_tag_roog
+				religion = a_tag_roog_reformed
+			}
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+			NOR = {
+                trait = serer
+                trait = dogon
+                trait = malinke
+                trait = sarakole
+			}
+            NOT = { has_character_flag = flag_picking_branch }
+		}
+		allow = {
+			prisoner = no
+            NOT = { trait = incapable }
+		}
+		effect = {
+			custom_tooltip = {
+				text = pick_religious_tradition_tooltip
+                set_character_flag = flag_picking_branch
+				character_event = { id = AFRREL.100 }
+				add_character_modifier = { modifier = picked_pagan_branch_cooldown years = 5 hidden = yes }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+            
+			modifier = {
+				factor = 1.5
+				trait = zealous
+			}
+		}
+	}
+    
+	change_a_tat_roog_branch = {
+		only_playable = yes
+		ai = no
+
+		potential = {
+			is_adult = yes
+			OR = {
+                trait = serer
+                trait = dogon
+                trait = malinke
+                trait = sarakole
+            }
+			NOT = { has_character_flag = flag_changing_branch }
+			NOT = { has_character_flag = flag_changed_branch }
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+		}
+		
+		allow = {
+			prisoner = no
+			NOT = { trait = incapable }
+			custom_tooltip = { text = pagan_branch_timer 
+				hidden_tooltip = { NOT = { has_character_modifier = picked_pagan_branch_cooldown } } 
+			}
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = tooltip_change_a_tag_roog_branch
+			}
+			hidden_tooltip = {
+				set_character_flag = flag_changing_branch
+				set_character_flag = flag_changed_branch
+				character_event = { id = AFRREL.104 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	hold_carnival_of_awussu = {
+		only_playable = yes
+		ai_check_interval = 12
+
+		potential = {
+			OR = {
+				religion = amazigh
+				religion = amazigh_reformed
+			}
+			NOT = {
+				has_character_modifier = holding_summer_fair
+			}
+			NOT = {
+				has_character_modifier = summer_fair_timer
+			}
+			OR = {
+				NOT = { has_character_flag = recent_summer_fair }
+				had_character_flag = {
+					flag = recent_summer_fair
+					days = 120
+				}
+			}
+			
+			prisoner = no
+			wealth = 25
+		}
+
+		allow = {
+
+			prisoner = no
+			month = 7
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+
+		effect = {
+			wealth = -25
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			add_character_modifier = {
+				name = holding_summer_fair	
+				duration = -1
+			}
+			hidden_tooltip = {
+				character_event = {	
+					id = AFRREL.038
+					days = 60
+				}
+				character_event = { id = AFRREL.037 }
+			}
+
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {
+            always = no
+        }
+        ai_will_do = {
+            factor = .5
+        }
+	}
+    
+    hold_bida_sacrifice = {
+        only_playable = yes
+        ai_check_interval = 12
+        
+		potential = {
+			is_playable = yes
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+				is_nomadic = yes
+			}
+			prisoner = no
+			OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+			}
+			NOR = {
+				has_character_modifier = holding_large_feast
+				has_character_modifier = large_feast_timer
+				has_character_modifier = fabulous_feast
+				has_character_flag = guest_feast_started
+				liege = {
+					has_character_modifier = holding_large_feast
+				}
+			}
+            OR = {
+                NOT = { has_character_flag = recent_feast }
+                had_character_flag = { flag = recent_feast days = 180 }
+            }
+			num_of_vassals = 1
+		}
+        
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+            is_adult = yes
+			wealth = 25
+			month = 5
+            NOT = { month = 9 }
+			prestige = 100
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+        
+		effect = {
+			wealth = -25
+			add_character_modifier = {
+				name = holding_large_feast
+				duration = -1
+			}
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = 72999 days = 150 } } # Safety catch flag clearing
+			
+			hidden_tooltip = {
+				character_event = { 
+					id = 72109  
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+        
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 200
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+            modifier = {
+                factor = 0
+                trait = cynical
+            }
+            modifier = {
+                factor = 0.5
+                NOT = { trait = zealous }
+            }
+            modifier = {
+                factor = 2
+                any_demesne_province = {
+                    OR = {
+                        has_province_modifier = africa_drought
+                        has_province_modifier = africa_drought_risk
+                    }
+                }
+            }
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+    }
+}
+
+title_decisions = {
+	secretly_convert_to_bori_holy_site = {
+		filter = owned
+		ai_target_filter = self
+	
+		only_playable = yes
+		
+		from_potential = {
+			ai = no
+			NOT = { trait = incapable }
+			NOT = { secret_religion = bori }
+			NOT = { religion = bori }
+			NOT = { controls_religion = yes }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		potential = {
+			tier = COUNT
+			NOT = {
+				location = { religion = bori }
+			}
+			OR = {
+				is_holy_site = bori
+				any_de_jure_vassal_title = {
+					is_holy_site = bori
+				}
+			}
+			OR = {
+				holder_scope = {
+					character = FROM
+				}
+				AND = {
+					tier = BARON
+					holder_scope = {
+						liege = {
+							character = FROM
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				piety = 250
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { society_member_of = secret_religious_cult }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				piety = -250
+				set_secret_religion = bori
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	secretly_convert_to_a_tag_roog_holy_site = {
+		filter = owned
+		ai_target_filter = self
+	
+		only_playable = yes
+		
+		from_potential = {
+			ai = no
+			NOT = { trait = incapable }
+			NOT = { secret_religion = a_tag_roog }
+			NOT = { has_global_flag = a_tag_roog_reformation }
+			NOT = { religion = a_tag_roog }
+			NOT = { controls_religion = yes }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		potential = {
+			tier = COUNT
+			NOT = {
+				location = { religion = a_tag_roog }
+			}
+			OR = {
+				is_holy_site = a_tag_roog
+				any_de_jure_vassal_title = {
+					is_holy_site = a_tag_roog
+				}
+			}
+			OR = {
+				holder_scope = {
+					character = FROM
+				}
+				AND = {
+					tier = BARON
+					holder_scope = {
+						liege = {
+							character = FROM
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				piety = 250
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { society_member_of = secret_religious_cult }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				piety = -250
+				set_secret_religion = a_tag_roog
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	secretly_convert_to_a_tag_roog_reformed_holy_site = {
+		filter = owned
+		ai_target_filter = self
+	
+		only_playable = yes
+		
+		from_potential = {
+			ai = no
+			NOT = { trait = incapable }
+			NOT = { secret_religion = a_tag_roog_reformed }
+			has_global_flag = a_tag_roog_reformation
+			NOT = { religion = a_tag_roog_reformed }
+			NOT = { controls_religion = yes }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		potential = {
+			tier = COUNT
+			NOT = {
+				location = { religion = a_tag_roog_reformed }
+			}
+			OR = {
+				is_holy_site = a_tag_roog_reformed
+				any_de_jure_vassal_title = {
+					is_holy_site = a_tag_roog_reformed
+				}
+			}
+			OR = {
+				holder_scope = {
+					character = FROM
+				}
+				AND = {
+					tier = BARON
+					holder_scope = {
+						liege = {
+							character = FROM
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				piety = 250
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { society_member_of = secret_religious_cult }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				piety = -250
+				set_secret_religion = a_tag_roog_reformed
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	secretly_convert_to_amazigh_holy_site = {
+		filter = owned
+		ai_target_filter = self
+	
+		only_playable = yes
+		
+		from_potential = {
+			ai = no
+			NOT = { trait = incapable }
+			NOT = { secret_religion = amazigh }
+			NOT = { has_global_flag = amazigh_reformation }
+			NOT = { religion = amazigh }
+			NOT = { controls_religion = yes }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		potential = {
+			tier = COUNT
+			NOT = {
+				location = { religion = amazigh }
+			}
+			OR = {
+				is_holy_site = amazigh
+				any_de_jure_vassal_title = {
+					is_holy_site = amazigh
+				}
+			}
+			OR = {
+				holder_scope = {
+					character = FROM
+				}
+				AND = {
+					tier = BARON
+					holder_scope = {
+						liege = {
+							character = FROM
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				piety = 250
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { society_member_of = secret_religious_cult }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				piety = -250
+				set_secret_religion = amazigh
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	secretly_convert_to_amazigh_reformed_holy_site = {
+		filter = owned
+		ai_target_filter = self
+	
+		only_playable = yes
+		
+		from_potential = {
+			ai = no
+			NOT = { trait = incapable }
+			NOT = { secret_religion = amazigh_reformed }
+			has_global_flag = amazigh_reformation
+			NOT = { religion = amazigh_reformed }
+			NOT = { controls_religion = yes }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		potential = {
+			tier = COUNT
+			NOT = {
+				location = { religion = amazigh_reformed }
+			}
+			OR = {
+				is_holy_site = amazigh_reformed
+				any_de_jure_vassal_title = {
+					is_holy_site = amazigh_reformed
+				}
+			}
+			OR = {
+				holder_scope = {
+					character = FROM
+				}
+				AND = {
+					tier = BARON
+					holder_scope = {
+						liege = {
+							character = FROM
+						}
+					}
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				piety = 250
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { society_member_of = secret_religious_cult }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				piety = -250
+				set_secret_religion = amazigh_reformed
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

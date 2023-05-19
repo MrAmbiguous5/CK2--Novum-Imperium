@@ -1,0 +1,721 @@
+decisions = {
+
+	form_bavaria_lombardy = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		potential = {
+		NOT = { has_global_flag = bavaria_lombardy_is_real }
+		    NOT = { tier = EMPEROR }
+			religion = catholic
+			NOT = {	has_character_flag = established_bavaria_lombardy }
+			NOT = {
+			has_landed_title = e_hre
+			}
+			OR = {
+			has_landed_title = k_bavaria
+			OR = {
+			has_landed_title = k_lombardy
+			hidden_tooltip = {
+			has_landed_title = k_italy
+			}
+			}
+			}
+			e_bavaria_lombardy = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			independent = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 500
+			has_landed_title = k_bavaria
+			OR = {
+			has_landed_title = k_italy
+			hidden_tooltip = {
+			has_landed_title = k_lombardy
+			}
+			}
+			
+
+		}
+		effect = {
+		    set_global_flag = bavaria_lombardy_is_real # fucc u Prussia!!!1!
+			activate_title = { title = e_bavaria_lombardy status = yes }
+			set_character_flag = established_bavaria_lombardy
+			primary_title = {
+				show_scope_change = no
+				e_bavaria_lombardy = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+					add_law = ze_administration_laws_2
+				}
+			}
+			any_demesne_title = {
+				limit = { tier = KING }
+				de_jure_liege = e_bavaria_lombardy
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_bavaria_lombardy
+						}
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = EMPEROR
+					NOT = { title = e_bavaria_lombardy }
+				}
+				destroy_landed_title = THIS
+				hidden_tooltip = { activate_title = { title = THIS status = no } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_greater_sicily = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		potential = {
+		    NOT = { has_global_flag = greater_sicily_existed }
+		    NOT = { tier = EMPEROR }
+			NOT = {	has_character_flag = established_greater_sicily }
+			OR = {
+			has_landed_title = k_africa
+			has_landed_title = k_sicily
+			has_landed_title = d_sicily
+			has_landed_title = d_tunis
+			}
+			e_greater_sicily = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			independent = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 500
+			OR = {
+			has_landed_title = k_africa
+			has_landed_title = d_tunis
+			}
+			OR = {
+			has_landed_title = k_sicily
+			completely_controls = d_sicily
+			}
+			
+
+		}
+		effect = {
+		    set_global_flag = greater_sicily_existed
+			activate_title = { title = e_greater_sicily status = yes }
+			set_character_flag = established_greater_sicily
+			primary_title = {
+				show_scope_change = no
+				e_greater_sicily = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+				}
+			}
+			any_demesne_title = {
+				limit = { tier = KING }
+				de_jure_liege = e_greater_sicily
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_greater_sicily
+						}
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = EMPEROR
+					NOT = { title = e_greater_sicily }
+				}
+				destroy_landed_title = THIS
+				hidden_tooltip = { activate_title = { title = THIS status = no } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_balkan_empire = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		potential = {
+		    religion_group = christian
+		    NOT = { has_global_flag = balkan_empire_existed }
+		    NOT = { tier = EMPEROR }
+			NOT = {	has_character_flag = established_e_balkan_empire }
+			OR = {
+			has_landed_title = k_croatia
+			has_landed_title = k_serbia
+			has_landed_title = k_greece
+			has_landed_title = k_epirus
+			}
+			e_balkan_empire = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			independent = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 500
+			OR = {
+			has_landed_title = k_croatia
+			has_landed_title = k_serbia
+			has_landed_title = k_greece
+			has_landed_title = k_epirus
+			}
+			realm_size = 140
+			
+
+		}
+		effect = {
+		    set_global_flag = balkan_empire_existed
+			activate_title = { title = e_balkan_empire status = yes }
+			set_character_flag = established_e_balkan_empire
+			primary_title = {
+				show_scope_change = no
+				e_balkan_empire = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+				}
+			}
+			any_demesne_title = {
+				limit = { tier = KING }
+				de_jure_liege = e_balkan_empire
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_balkan_empire
+						}
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = EMPEROR
+					NOT = { title = e_balkan_empire }
+				}
+				destroy_landed_title = THIS
+				hidden_tooltip = { activate_title = { title = THIS status = no } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_western_medi_empire = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		potential = {
+		    religion_group = christian
+		    NOT = { has_global_flag = western_medi_empire_existed }
+			OR = {
+		    NOT = { tier = EMPEROR }
+			has_landed_title = e_spain
+			}
+			NOT = {	has_character_flag = established_e_western_medi_empire }
+			OR = {
+			has_landed_title = k_aragon
+			has_landed_title = k_castille
+			has_landed_title = k_leon
+			has_landed_title = k_navarra
+			has_landed_title = k_spanish_galicia
+			has_landed_title = k_asturias
+			culture_group = iberian
+			}
+			e_western_medi_empire = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			independent = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 500
+			OR = {
+			has_landed_title = c_tunis
+			any_realm_lord = {
+			has_landed_title = c_tunis
+			}
+			}
+			OR = {
+			has_landed_title = c_granada
+			any_realm_lord = {
+			has_landed_title = c_granada
+			}
+			}
+			OR = {
+			has_landed_title = c_genoa
+			has_landed_title = c_roma
+			has_landed_title = c_siracusa
+			any_realm_lord = {
+			OR = {
+			has_landed_title = c_genoa
+			has_landed_title = c_roma
+			has_landed_title = c_siracusa
+			}
+			}
+			}
+			realm_size = 170
+			
+
+		}
+		effect = {
+		    set_global_flag = western_medi_empire_existed
+			activate_title = { title = e_western_medi_empire status = yes }
+			set_character_flag = established_e_western_medi_empire
+			primary_title = {
+				show_scope_change = no
+				e_western_medi_empire = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+				}
+			}
+			any_demesne_title = {
+				limit = { tier = KING }
+				de_jure_liege = e_western_medi_empire
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_western_medi_empire
+						}
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = EMPEROR
+					NOT = { title = e_western_medi_empire }
+				}
+				destroy_landed_title = THIS
+				hidden_tooltip = { activate_title = { title = THIS status = no } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_divine_walhaz = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		potential = {
+		   NOT = { has_global_flag = divine_walhaz_existed }
+		   NOT = { tier = EMPEROR }
+			OR = {
+			culture = saxon
+			culture = old_saxon
+			}
+			e_divine_walhaz = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			OR = {
+			culture = saxon
+			culture = old_saxon
+			}
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 500
+			realm_size = 300
+
+		}
+		effect = {
+		    set_global_flag = divine_walhaz_existed
+			activate_title = { title = e_divine_walhaz status = yes }
+			primary_title = {
+				show_scope_change = no
+				e_divine_walhaz = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+				}
+			}
+			any_demesne_title = {
+				limit = { tier = KING }
+				de_jure_liege = e_divine_walhaz
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_divine_walhaz
+						}
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = EMPEROR
+					NOT = { title = e_divine_walhaz }
+				}
+				destroy_landed_title = THIS
+				hidden_tooltip = { activate_title = { title = THIS status = no } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_greater_mumu = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		potential = {
+		   NOT = { has_global_flag = greater_mumu_existed }
+			OR = {
+				religion = catholic
+				religion = fraticelli
+			}
+			has_landed_title = d_munster
+			e_greater_mumu = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			culture = irish
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 500
+			realm_size = 120
+			has_landed_title = d_munster
+
+		}
+		effect = {
+		    set_global_flag = greater_mumu_existed
+			activate_title = { title = e_greater_mumu status = yes }
+			primary_title = {
+				show_scope_change = no
+				e_greater_mumu = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+				}
+			}
+			any_demesne_title = {
+				limit = { tier = KING }
+				de_jure_liege = e_greater_mumu
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_greater_mumu
+						}
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = EMPEROR
+					NOT = { title = e_greater_mumu }
+				}
+				destroy_landed_title = THIS
+				hidden_tooltip = { activate_title = { title = THIS status = no } }
+			}
+		create_random_soldier = {
+		dynasty = none
+		random_traits = yes
+		religion = ROOT
+		age = 20
+		trait = content
+		trait = strong
+		culture = ROOT
+		}
+		
+			new_character = {
+			d_greencoats = {
+			grant_title = PREV
+			}
+			set_defacto_liege = ROOT
+			wealth = 100
+			set_government_type = feudal_government
+		}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_ingstate = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 44
+
+		potential = {
+		   NOT = { has_global_flag = ingstate_existed }
+			NOT = { tier = EMPEROR }
+			has_landed_title = k_england
+			e_ingstate = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			prisoner = no
+			realm_size = 120
+			has_landed_title = k_england
+			OR = {
+			trait = elusive_shadow
+			trait = intricate_webweaver
+			trait = schemer
+			trait = impaler
+			}
+			OR = {
+			trait = cruel
+			trait = cynical
+			trait = deceitful
+			trait = shrewd
+			trait = lunatic
+			}
+
+		}
+		effect = {
+		    set_global_flag = ingstate_existed
+			activate_title = { title = e_ingstate status = yes }
+			primary_title = {
+				show_scope_change = no
+				e_ingstate = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+					succession = feudal_elective
+				}
+			}
+			any_demesne_title = {
+				limit = { tier = KING }
+				de_jure_liege = e_ingstate
+			}
+			hidden_tooltip = {
+				any_demesne_title = {
+					if = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_ingstate
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#BAD IMPLEMENTATION
+	#form_the_vague_empire = {
+	#	only_independent = yes
+	#	is_high_prio = yes
+	#	ai_check_interval = 24
+
+	#	potential = {
+	#	    tier = emperor
+	#		religion_group = christian
+	#		NOR = {
+	#		has_landed_title = e_roman_empire
+	#		has_landed_title = e_byzantium
+	#		has_landed_title = e_hre
+	#		}
+	#		e_empire_no_subtitle = {
+	#			has_holder = no
+	#		}
+	#		e_roman_empire = {
+	#			has_holder = no
+	#		}
+	#		is_alternate_start = no
+	#	}
+	#	allow = {
+	#	    e_byzantium = {
+	#			has_holder = no
+	#		}
+	#		e_hre = {
+	#			has_holder = no
+	#		}
+	#		is_adult = yes
+	#		prisoner = no
+	#		NOT = { trait = incapable }
+	#		prestige = 1000
+	#		realm_size = 777
+
+	#	}
+	#	effect = {
+	#	if = {
+	#	limit = { has_nickname = no }
+	#	give_nickname = nick_the_exalted
+	#	}
+	#		activate_title = { title = e_empire_no_subtitle status = yes }
+	#		primary_title = {
+	#			show_scope_change = no
+	#			e_empire_no_subtitle = {
+	#				show_scope_change = no
+	#				grant_title = ROOT
+	#				copy_title_laws = PREV
+	#			}
+	#		}
+	#		any_demesne_title = {
+	#			limit = { tier = KING }
+	#			de_jure_liege = e_empire_no_subtitle
+	#		}
+	#		hidden_tooltip = {
+	#			any_demesne_title = {
+	#				if = {
+	#					limit = { tier = EMPEROR }
+	#					any_direct_de_jure_vassal_title = {
+	#						de_jure_liege = e_empire_no_subtitle
+	#					}
+	#				}
+	#			}
+	#			e_hre = {
+	#			any_direct_de_jure_vassal_title = {
+	#			de_jure_liege = e_empire_no_subtitle
+	#			}
+	#			}
+	#			e_byzantium = {
+	#			any_direct_de_jure_vassal_title = {
+	#			de_jure_liege = e_empire_no_subtitle
+	#			}
+	#			}
+	#		}
+	#		any_demesne_title = {
+	#			limit = {
+	#				tier = EMPEROR
+	#				NOT = { title = e_empire_no_subtitle }
+	#			}
+	#			destroy_landed_title = THIS
+	#			hidden_tooltip = { activate_title = { title = THIS status = no } }
+	#		}
+	#	create_random_soldier = {
+	#	dynasty = none
+	#	random_traits = yes
+	#	religion = ROOT
+	#	age = 20
+	#	trait = quick
+	#	trait = strong
+	#	culture = ROOT
+	#	}
+	
+	#		new_character = {
+	#		d_emps_imperial_guard = {
+	#		grant_title = PREV
+	#		}
+	#		set_defacto_liege = ROOT
+	#		wealth = 100
+	#		set_government_type = feudal_government
+	#	}
+	#	}
+	#	revoke_allowed = {
+	#		always = no
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	
+	rebrand_to_lechina = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		potential = {
+			has_landed_title = e_lechczechrus
+			is_alternate_start = no
+			NOT = { has_global_flag = lechina_real }
+		}
+		allow = {
+		has_landed_title = e_lechczechrus
+
+		}
+		effect = {
+		set_global_flag = lechina_real
+		
+		e_lechczechrus = {
+		set_coa = e_lechina_empire
+		set_name = "Lechina Empire"
+		}
+
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}
+
