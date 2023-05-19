@@ -1,0 +1,7 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_bloodlines_symbol_gupta"
+		texturefile = "gfx\\interface\\bloodlines\\bloodlines_symbol_gupta.dds"
+	}
+}

@@ -1,0 +1,38 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_golden_fleece"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\golden_fleece.dds"
+	}
+	spriteType = {
+		name = "GFX_golden_fleece_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\golden_fleece_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_aegis"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\arti_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_aegis_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\arti_bg_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_winged_sandals"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\winged_sandals.dds"
+	}
+	spriteType = {
+		name = "GFX_winged_sandals_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\winged_sandals_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_shamsir_zomorrodnegar"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\shamsir_zomorrodnegar.dds"
+	}
+	spriteType = {
+		name = "GFX_shamsir_zomorrodnegar_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\shamsir_zomorrodnegar_small.dds"
+	}
+}
