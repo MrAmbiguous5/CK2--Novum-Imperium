@@ -1,0 +1,202 @@
+	e_bavaria_lombardy = {
+	color={ 215 113 0 }
+	color2={ 0 149 202 }
+
+	capital = 1700 # Regensburg
+	
+	roman = "Western Rome"
+	
+	
+	allow = {
+	always = no # Only created through special decisions
+	}
+
+	}
+	
+	e_greater_sicily = {
+	color={ 211 201 201 }
+	color2={ 29 29 29 }
+
+	capital = 340 #	Palermo
+	
+	
+	allow = {
+	always = no # Only created through special decisions
+	}
+
+	}
+	
+	e_balkan_empire = {
+	color={ 140 58 80 }
+	color2={ 84 43 80 }
+
+	capital = 496 # Byzantion
+	
+	
+	allow = {
+	always = no # Only created through special decisions
+	}
+	purple_born_heirs = yes
+	short_name = yes
+
+	}
+	
+	e_western_medi_empire = {
+	color={ 217 180 53 }
+	color2={ 131 51 36 }
+
+	capital = 197 # Toledo
+	
+	
+	allow = {
+	always = no # Only created through special decisions
+	}
+	short_name = yes
+
+	}
+	
+	e_greater_mumu = {
+	color={ 6 147 2 }
+	color2={ 6 147 2 }
+
+	capital = 13 # Thomond
+	
+	title = "mumuhighking"
+	foa = "mumuhighking_FOA"
+	title_female = "mumuhighqueen"
+
+	}
+	
+	e_lechina_empire = {
+	color={ 68 113 153 }
+	color2={ 158 12 46 }
+
+	capital = 547	#Kiev
+
+	}
+	
+	e_ingstate = {
+	color={ 0 0 0 }
+	color2={ 164 2 4 }
+
+	capital = 32 # Middlesex
+	
+	title = "ingruler"
+	title_female = "ingruler"
+	foa = "ingruler_FOA"
+	title_prefix = "ingstate_prefix"
+
+	}
+	
+	e_divine_walhaz = {
+	color={ 166 127 68 }
+	color2={ 151 23 23 }
+
+	capital = 32 # Middlesex
+	
+	title = "Kuningazair"
+	title_female = "Kuningazairin"
+	title_prefix = "ANGLOMOMENT"
+
+	}
+	
+	e_empire_no_subtitle = {
+	color={ 181 36 45 }
+	color2={ 99 3 58 }
+
+	
+	roman = "Roman Empire"
+	italian = "Italian Empire"
+	english = "Britannian Empire"
+	irish = "Gaelic Empire"
+	scottish = "Gaelic Empire"
+	german = "Germanian Empire"
+	saxon = "Saxon Empire"
+	frankish = "French Empire"
+	old_frankish = "Frankish Empire"
+	hungarian = "Hungarian Empire"
+	greek = "Greek Empire"
+	turkish = "Turkish Empire"
+	coptic = "Egyptian Empire"
+	ethiopian = "Ethiopian Empire"
+	swedish = "Swedish Empire"
+	welsh = "Romano-British Empire"
+	han = "Daqin"
+	
+	short_name = yes
+	
+	
+	allow = {
+	always = no # Only created through special decisions
+	}
+	}
+	
+d_greencoats = {
+	color={ 8 147 2 }
+	color2={ 8 147 2 }
+
+	capital = 13 # Thomond
+	
+	# Hire Trigger
+	allow = {
+	OR = {
+	has_landed_title = e_greater_mumu
+	has_landed_title = d_munster
+	}
+	}
+	
+	# Parent Religion 
+	religion = catholic
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	independent = yes
+	
+	strength_growth_per_century = 1.0
+
+	mercenary_type = mumu_greencoats_composition
+	
+}
+
+d_emps_imperial_guard = {
+	color={ 8 147 2 }
+	color2={ 8 147 2 }
+
+	capital = 333 # Rome
+	
+	# Hire Trigger
+	allow = {
+	has_landed_title = e_empire_no_subtitle
+	}
+	
+	# Parent Religion 
+	religion = catholic
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	independent = yes
+	
+	strength_growth_per_century = 1.0
+
+	mercenary_type = papal_guard_composition
+	
+}
+	

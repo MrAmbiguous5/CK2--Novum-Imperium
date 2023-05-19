@@ -1,0 +1,2269 @@
+# Define mercenary types here now instead of in the static_composition.txt file
+# Also remember to tell the landed title to use this mercenary type instead.
+# Several titles can refer to the same type as well now.
+###################################################
+# Mercenary compositions
+###################################################
+
+### HOLY ORDERS AUTOMATICALLY GENERATED AND MAINTAINED BY THE SELIN PARSER v0.22 - Do not edit by hand!!! If a change is required, change the python code or the source Matrix !!! ###
+
+# Total Troop Count (before levy_size)
+# is based on the religion's Civilization and, if relevant, Ascendant
+# Default levy size = 3 (base)
+
+# Statist = +1
+# Martial = +2
+# Populist = -1
+# Messianic = +1
+# Traditional = -1
+# Scholarly = -2
+
+# Mainstream = +2
+# Local = -2
+# Heretical = 1
+
+d_holyadoptionist_composition = {
+	levy_size = 3.30
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyalexandros_composition = {
+	levy_size = 4
+	knights = 11
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 17
+	archers = 67
+}
+d_holyalmaqah_composition = {
+	levy_size = 7.60
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holyapollinarist_composition = {
+	levy_size = 3.10
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyarian_composition = {
+	levy_size = 9
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyashari_composition = {
+	levy_size = 3.20
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyathari_composition = {
+	levy_size = 3.30
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyaudianist_composition = {
+	levy_size = 0.40
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyaztec_composition = {
+	levy_size = 7
+	heavy_infantry = 200
+	archers = 400
+}
+d_holybud_bahusrutiya_composition = {
+	levy_size = 2
+	heavy_infantry = 22
+	pikemen = 89
+	light_cavalry = 100
+	light_infantry = 111
+	archers = 156
+}
+d_holybud_mahayana_composition = {
+	levy_size = 7.50
+	pikemen = 133
+	light_cavalry = 100
+	light_infantry = 100
+	archers = 100
+}
+d_holybud_pratyeka_composition = {
+	levy_size = 2.50
+	pikemen = 133
+	light_cavalry = 100
+	light_infantry = 100
+	archers = 100
+}
+d_holybud_pureland_composition = {
+	levy_size = 3
+	knights = 6
+	heavy_infantry = 44
+	pikemen = 133
+	light_cavalry = 75
+	light_infantry = 67
+	archers = 67
+}
+d_holybud_sthaviravada_composition = {
+	levy_size = 12.50
+	pikemen = 133
+	light_cavalry = 100
+	light_infantry = 100
+	archers = 100
+}
+d_holybud_vajrayana_composition = {
+	levy_size = 2.60
+	heavy_infantry = 22
+	pikemen = 122
+	light_cavalry = 100
+	light_infantry = 67
+	archers = 100
+}
+d_holycatholic_composition = {
+	levy_size = 16.80
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holydonatist_composition = {
+	levy_size = 3.30
+	knights = 56
+	heavy_infantry = 67
+	horse_archers = 22
+	light_cavalry = 81
+	archers = 50
+}
+d_holyharuri_composition = {
+	levy_size = 6.40
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyhindu_composition = {
+	levy_size = 6.30
+	heavy_infantry = 67
+	light_cavalry = 100
+	light_infantry = 133
+	archers = 267
+}
+d_holyhurufi_composition = {
+	levy_size = 2.30
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyiconoclast_composition = {
+	levy_size = 6.10
+	knights = 50
+	heavy_infantry = 100
+	pikemen = 22
+	light_cavalry = 72
+	archers = 44
+}
+d_holyilm_islam_composition = {
+	levy_size = 4.20
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyindoh_bud_composition = {
+	levy_size = 2.40
+	knights = 11
+	heavy_infantry = 89
+	pikemen = 133
+	light_cavalry = 50
+	light_infantry = 33
+	archers = 33
+}
+d_holyindoh_confucian_composition = {
+	levy_size = 2.20
+	knights = 11
+	heavy_infantry = 117
+	pikemen = 111
+	light_cavalry = 17
+	light_infantry = 94
+	archers = 89
+}
+d_holyindoh_hindu_composition = {
+	levy_size = 3.60
+	knights = 11
+	heavy_infantry = 111
+	pikemen = 89
+	light_cavalry = 50
+	light_infantry = 44
+	archers = 89
+}
+d_holyindoh_zor_composition = {
+	levy_size = 2.50
+	knights = 22
+	heavy_infantry = 100
+	pikemen = 89
+	horse_archers = 28
+	light_cavalry = 39
+	light_infantry = 22
+	archers = 11
+}
+d_holyjain_composition = {
+	levy_size = 2.90
+	heavy_infantry = 67
+	pikemen = 33
+	light_cavalry = 100
+	light_infantry = 89
+	archers = 211
+}
+d_holyjud_zion_composition = {
+	levy_size = 0.20
+	heavy_infantry = 7
+	pikemen = 33
+	light_cavalry = 13
+	light_infantry = 13
+	archers = 13
+}
+d_holyjupiter_composition = {
+	levy_size = 2.70
+	knights = 33
+	heavy_infantry = 122
+	pikemen = 89
+	light_cavalry = 39
+	archers = 11
+}
+d_holyluwian_composition = {
+	levy_size = 6.30
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holymani_composition = {
+	levy_size = 7.20
+	knights = 11
+	heavy_infantry = 56
+	pikemen = 67
+	horse_archers = 28
+	light_cavalry = 89
+	light_infantry = 22
+	archers = 78
+}
+d_holymani_mithra_composition = {
+	levy_size = 3.40
+	knights = 11
+	heavy_infantry = 56
+	pikemen = 67
+	horse_archers = 28
+	light_cavalry = 89
+	light_infantry = 22
+	archers = 78
+}
+d_holymaturidi_composition = {
+	levy_size = 3
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holymelkite_composition = {
+	levy_size = 6.70
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holymithra_composition = {
+	levy_size = 8.50
+	heavy_infantry = 67
+	pikemen = 100
+	light_cavalry = 100
+	archers = 100
+}
+d_holymithra_christ_composition = {
+	levy_size = 3.90
+	knights = 22
+	heavy_infantry = 78
+	pikemen = 67
+	light_cavalry = 89
+	archers = 78
+}
+d_holymithra_sol_composition = {
+	levy_size = 3.90
+	knights = 11
+	heavy_infantry = 111
+	pikemen = 122
+	light_cavalry = 50
+	archers = 33
+}
+d_holymonophysite_composition = {
+	levy_size = 7.60
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holymonothelite_composition = {
+	levy_size = 3.20
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holymurjiah_composition = {
+	levy_size = 2.40
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holymutazil_composition = {
+	levy_size = 3.20
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holymwari_composition = {
+	levy_size = 0.50
+	knights = 17
+	heavy_infantry = 42
+	light_cavalry = 33
+	light_infantry = 100
+	archers = 33
+}
+d_holyneoplato_composition = {
+	levy_size = 3.30
+	knights = 6
+	heavy_infantry = 89
+	pikemen = 111
+	light_cavalry = 75
+	archers = 67
+}
+d_holynestorian_composition = {
+	levy_size = 6.60
+	knights = 56
+	heavy_infantry = 78
+	horse_archers = 28
+	light_cavalry = 67
+	light_infantry = 22
+	archers = 33
+}
+d_holynyau_composition = {
+	levy_size = 2.40
+	knights = 80
+	heavy_infantry = 200
+	light_cavalry = 160
+	light_infantry = 480
+	archers = 160
+}
+d_holyorthodox_composition = {
+	levy_size = 7.90
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holypelagian_composition = {
+	levy_size = 7.50
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyplato_christ_composition = {
+	levy_size = 2.20
+	knights = 22
+	heavy_infantry = 78
+	pikemen = 67
+	light_cavalry = 89
+	archers = 78
+}
+d_holyplato_islam_composition = {
+	levy_size = 2.20
+	knights = 6
+	heavy_infantry = 78
+	pikemen = 89
+	light_cavalry = 94
+	archers = 89
+}
+d_holyroman_imperial_composition = {
+	levy_size = 2.40
+	knights = 17
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 25
+}
+d_holysabellianist_composition = {
+	levy_size = 3.40
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holysemipelagian_composition = {
+	levy_size = 3.80
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyshiite_composition = {
+	levy_size = 6.90
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holysol_composition = {
+	levy_size = 7.20
+	knights = 17
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 25
+}
+d_holysol_apollo_composition = {
+	levy_size = 2.50
+	knights = 17
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 25
+}
+d_holysol_christ_composition = {
+	levy_size = 6.10
+	knights = 33
+	heavy_infantry = 122
+	pikemen = 89
+	light_cavalry = 39
+	archers = 11
+}
+d_holysol_mani_composition = {
+	levy_size = 2.30
+	knights = 11
+	heavy_infantry = 56
+	pikemen = 67
+	horse_archers = 28
+	light_cavalry = 89
+	light_infantry = 22
+	archers = 78
+}
+d_holysolomonic_alexandros_composition = {
+	levy_size = 3.30
+	knights = 11
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 17
+	archers = 67
+}
+d_holysolomonic_christ_composition = {
+	levy_size = 2.50
+	knights = 44
+	heavy_infantry = 111
+	pikemen = 44
+	light_cavalry = 44
+	archers = 89
+}
+d_holysunni_composition = {
+	levy_size = 7.50
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyunctionist_composition = {
+	levy_size = 2.60
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyyoruba_composition = {
+	levy_size = 3.90
+	knights = 22
+	heavy_infantry = 78
+	pikemen = 33
+	light_cavalry = 78
+	light_infantry = 133
+	archers = 78
+}
+d_holyzahiri_composition = {
+	levy_size = 3.20
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyzal_composition = {
+	levy_size = 7.30
+	knights = 17
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 25
+}
+d_holyzal_christ_composition = {
+	levy_size = 3.50
+	knights = 33
+	heavy_infantry = 122
+	pikemen = 89
+	light_cavalry = 39
+	archers = 11
+}
+d_holyzal_mani_composition = {
+	levy_size = 3.30
+	knights = 11
+	heavy_infantry = 111
+	pikemen = 122
+	light_cavalry = 50
+	archers = 33
+}
+d_holyzor_hindu_composition = {
+	levy_size = 2.20
+	knights = 11
+	heavy_infantry = 56
+	horse_archers = 28
+	light_cavalry = 89
+	light_infantry = 111
+	archers = 189
+}
+d_holyzoroastrian_composition = {
+	levy_size = 8.70
+	knights = 33
+	heavy_infantry = 33
+	horse_archers = 83
+	light_cavalry = 67
+	light_infantry = 67
+	archers = 33
+}
+d_holyahriman_reformed_composition = {
+	levy_size = 9
+	knights = 11
+	heavy_infantry = 56
+	pikemen = 67
+	horse_archers = 28
+	light_cavalry = 89
+	light_infantry = 22
+	archers = 78
+}
+d_holyamun_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holyarab_pagan_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holyaten_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holybaal_monotheistic_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holybaltic_pagan_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 233
+	archers = 167
+}
+d_holybantu_pagan_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	heavy_infantry = 83
+	light_cavalry = 67
+	light_infantry = 200
+	archers = 67
+}
+d_holyberber_pagan_reformed_composition = {
+	levy_size = 10
+	knights = 33
+	horse_archers = 67
+	light_cavalry = 108
+	archers = 83
+}
+d_holybon_reformed_composition = {
+	levy_size = 10
+	knights = 11
+	heavy_infantry = 84
+	pikemen = 45
+	light_cavalry = 22
+	light_infantry = 257
+	archers = 201
+}
+d_holybud_zen_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 28
+	pikemen = 111
+	light_cavalry = 67
+	light_infantry = 161
+	archers = 156
+}
+d_holybud_zor_reformed_composition = {
+	levy_size = 9
+	knights = 11
+	heavy_infantry = 11
+	pikemen = 89
+	horse_archers = 28
+	light_cavalry = 89
+	light_infantry = 89
+	archers = 78
+}
+d_holycathar_reformed_composition = {
+	levy_size = 10
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holyceltic_christ_reformed_composition = {
+	levy_size = 9
+	knights = 22
+	heavy_infantry = 100
+	horse_archers = 22
+	light_cavalry = 67
+	light_infantry = 133
+	archers = 78
+}
+d_holyceltic_pagan_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 111
+	pikemen = 44
+	horse_archers = 22
+	light_cavalry = 44
+	light_infantry = 133
+	archers = 133
+}
+d_holychristian_populist_reformed_composition = {
+	levy_size = 9
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holychumbylat_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	heavy_infantry = 83
+	light_cavalry = 67
+	light_infantry = 200
+	archers = 67
+}
+d_holycybele_reformed_composition = {
+	levy_size = 10
+	knights = 11
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 17
+	archers = 67
+}
+d_holydruze_reformed_composition = {
+	levy_size = 9
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holyerlik_reformed_composition = {
+	levy_size = 10
+	knights = 33
+	horse_archers = 133
+	light_cavalry = 67
+}
+d_holyethiopian_war_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 89
+	pikemen = 44
+	horse_archers = 22
+	light_cavalry = 44
+	light_infantry = 156
+	archers = 178
+}
+d_holyfinnish_pagan_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	heavy_infantry = 83
+	light_cavalry = 67
+	light_infantry = 200
+	archers = 67
+}
+d_holygerman_pagan_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 233
+	archers = 167
+}
+d_holygraeco_roman_reformed_composition = {
+	levy_size = 9
+	knights = 11
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 17
+	archers = 67
+}
+d_holyiberian_pagan_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 100
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 200
+	archers = 100
+}
+d_holyilluyanka_reformed_composition = {
+	levy_size = 9
+	knights = 6
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 8
+	archers = 133
+}
+d_holyindohelen_reformed_composition = {
+	levy_size = 9
+	knights = 11
+	heavy_infantry = 111
+	pikemen = 89
+	light_cavalry = 50
+	light_infantry = 44
+	archers = 89
+}
+d_holyinuit_pagan_reformed_composition = {
+	levy_size = 10
+	knights = 33
+	heavy_infantry = 83
+	light_cavalry = 67
+	light_infantry = 200
+	archers = 67
+}
+d_holyisis_reformed_composition = {
+	levy_size = 10
+	knights = 11
+	heavy_infantry = 133
+	pikemen = 133
+	light_cavalry = 17
+	archers = 67
+}
+d_holyjud_ark_reformed_composition = {
+	levy_size = 7
+	heavy_infantry = 33
+	pikemen = 167
+	light_cavalry = 67
+	light_infantry = 67
+	archers = 67
+}
+d_holyjudaism_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 33
+	pikemen = 167
+	light_cavalry = 67
+	light_infantry = 67
+	archers = 67
+}
+d_holykubera_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	light_cavalry = 100
+	light_infantry = 133
+	archers = 267
+}
+d_holylubu_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 83
+	pikemen = 67
+	light_infantry = 283
+	archers = 267
+}
+d_holymand_ruha_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 89
+	pikemen = 111
+	light_cavalry = 67
+	archers = 133
+}
+d_holymandaean_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	pikemen = 100
+	light_cavalry = 100
+	archers = 100
+}
+d_holymani_germanic_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	pikemen = 67
+	horse_archers = 11
+	light_cavalry = 89
+	light_infantry = 78
+	archers = 122
+}
+d_holymani_slavic_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	pikemen = 67
+	horse_archers = 11
+	light_cavalry = 89
+	light_infantry = 78
+	archers = 122
+}
+d_holymari_christ_reformed_composition = {
+	levy_size = 10
+	knights = 44
+	heavy_infantry = 89
+	horse_archers = 11
+	light_cavalry = 67
+	light_infantry = 78
+	archers = 78
+}
+d_holymazdakism_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	heavy_infantry = 33
+	horse_archers = 83
+	light_cavalry = 67
+	light_infantry = 67
+	archers = 33
+}
+d_holymontanist_reformed_composition = {
+	levy_size = 9
+	knights = 67
+	heavy_infantry = 100
+	light_cavalry = 67
+	archers = 33
+}
+d_holymurugan_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 67
+	light_cavalry = 100
+	light_infantry = 133
+	archers = 267
+}
+d_holymuslim_aliite_reformed_composition = {
+	levy_size = 9
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holymuslim_domination_reformed_composition = {
+	levy_size = 10
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holymuslim_sufi_reformed_composition = {
+	levy_size = 7
+	knights = 17
+	heavy_infantry = 100
+	pikemen = 67
+	light_cavalry = 83
+	archers = 67
+}
+d_holynasrani_reformed_composition = {
+	levy_size = 9
+	knights = 22
+	heavy_infantry = 78
+	light_cavalry = 89
+	light_infantry = 89
+	archers = 189
+}
+d_holynorse_christ_reformed_composition = {
+	levy_size = 9
+	knights = 22
+	heavy_infantry = 256
+	light_cavalry = 22
+	archers = 11
+}
+d_holynorse_pagan_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 333
+}
+d_holynorthern_sun_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 233
+	archers = 167
+}
+d_holynyakalagan_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	heavy_infantry = 83
+	light_cavalry = 67
+	light_infantry = 200
+	archers = 67
+}
+d_holypriscillian_reformed_composition = {
+	levy_size = 10
+	knights = 44
+	heavy_infantry = 89
+	pikemen = 33
+	light_cavalry = 78
+	archers = 56
+}
+d_holyragnarok_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 333
+}
+d_holysaura_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	light_cavalry = 100
+	light_infantry = 133
+	archers = 267
+}
+d_holyserer_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 233
+	archers = 167
+}
+d_holyset_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holysethian_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 56
+	pikemen = 122
+	light_cavalry = 89
+	light_infantry = 22
+	archers = 89
+}
+d_holyslavic_christian_reformed_composition = {
+	levy_size = 10
+	knights = 44
+	heavy_infantry = 89
+	horse_archers = 11
+	light_cavalry = 67
+	light_infantry = 78
+	archers = 78
+}
+d_holyslavic_pagan_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 67
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 233
+	archers = 167
+}
+d_holysol_boreas_reformed_composition = {
+	levy_size = 9
+	knights = 22
+	heavy_infantry = 89
+	pikemen = 89
+	horse_archers = 44
+	light_cavalry = 39
+}
+d_holysol_islam_reformed_composition = {
+	levy_size = 9
+	knights = 17
+	heavy_infantry = 111
+	pikemen = 89
+	light_cavalry = 64
+	archers = 44
+}
+d_holysol_sahara_reformed_composition = {
+	levy_size = 9
+	knights = 22
+	heavy_infantry = 89
+	pikemen = 89
+	horse_archers = 22
+	light_cavalry = 53
+	archers = 28
+}
+d_holytao_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 83
+	pikemen = 67
+	light_infantry = 283
+	archers = 267
+}
+d_holytarhunt_reformed_composition = {
+	levy_size = 9
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holyteiwaz_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 67
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 233
+	archers = 167
+}
+d_holytengri_bud_reformed_composition = {
+	levy_size = 10
+	knights = 11
+	pikemen = 89
+	horse_archers = 44
+	light_cavalry = 89
+	light_infantry = 67
+	archers = 67
+}
+d_holytengri_confucian_reformed_composition = {
+	levy_size = 10
+	knights = 11
+	heavy_infantry = 56
+	pikemen = 44
+	horse_archers = 44
+	light_cavalry = 22
+	light_infantry = 189
+	archers = 178
+}
+d_holytengri_mani_reformed_composition = {
+	levy_size = 10
+	knights = 11
+	heavy_infantry = 44
+	pikemen = 67
+	horse_archers = 44
+	light_cavalry = 89
+	archers = 67
+}
+d_holytengri_pagan_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	horse_archers = 133
+	light_cavalry = 67
+}
+d_holytengri_rod_reformed_composition = {
+	levy_size = 9
+	knights = 22
+	heavy_infantry = 22
+	horse_archers = 100
+	light_cavalry = 67
+	light_infantry = 78
+	archers = 56
+}
+d_holyvattisenyaly_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	horse_archers = 133
+	light_cavalry = 67
+}
+d_holyvidharma_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 44
+	pikemen = 44
+	light_cavalry = 100
+	light_infantry = 122
+	archers = 211
+}
+d_holyvoipel_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	heavy_infantry = 56
+	horse_archers = 44
+	light_cavalry = 67
+	light_infantry = 133
+	archers = 44
+}
+d_holyyazdanism_reformed_composition = {
+	levy_size = 7
+	heavy_infantry = 133
+	pikemen = 133
+	archers = 200
+}
+d_holyzande_pagan_reformed_composition = {
+	levy_size = 10
+	heavy_infantry = 67
+	horse_archers = 33
+	light_cavalry = 67
+	light_infantry = 233
+	archers = 167
+}
+d_holyzor_angra_reformed_composition = {
+	levy_size = 9
+	knights = 33
+	heavy_infantry = 33
+	horse_archers = 83
+	light_cavalry = 67
+	light_infantry = 67
+	archers = 33
+}
+d_holyzulu_pagan_reformed_composition = {
+	levy_size = 10
+	knights = 33
+	heavy_infantry = 83
+	light_cavalry = 67
+	light_infantry = 200
+	archers = 67
+}
+d_holyzurvanism_reformed_composition = {
+	levy_size = 10
+	knights = 33
+	heavy_infantry = 33
+	horse_archers = 83
+	light_cavalry = 67
+	light_infantry = 67
+	archers = 33
+}
+
+### CULTURAL MERCENARIES ###
+d_muslim_turkic_company_composition = {
+	levy_size = 5
+	horse_archers = 300
+	light_cavalry = 300
+}
+d_muslim_cuman_company_composition = {
+	levy_size = 4
+	horse_archers = 450
+	light_cavalry = 150
+}
+d_berber_company_composition = {
+	levy_size = 3
+	light_cavalry = 225
+	light_infantry = 150
+	heavy_infantry = 75
+	archers = 150
+}
+d_bedouin_company_composition = {
+	levy_size = 3
+	light_cavalry = 300
+	light_infantry = 150
+	archers = 150
+}
+d_victual_brothers_composition = {
+	levy_size = 5
+	archers = 150
+	heavy_infantry = 210
+	light_infantry = 225
+	knights = 15
+	galleys = 6
+}
+d_white_company_composition = {
+	levy_size = 5
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 435
+	knights = 15
+}
+d_great_company_composition = {
+	levy_size = 5
+	archers = 150
+	heavy_infantry = 570
+	knights = 30
+}
+d_company_of_st_george_composition = {
+	levy_size = 4
+	archers = 300
+	light_infantry = 150
+	heavy_infantry = 435
+	knights = 15
+}
+d_star_company_composition = {
+	levy_size = 4
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 435
+	knights = 15
+}
+d_little_hat_company_composition = {
+	levy_size = 3
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 435
+	knights = 15
+}
+d_rose_company_composition = {
+	levy_size = 3
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 435
+	knights = 15
+}
+d_catalan_company_composition = {
+	levy_size = 3
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 435
+	knights = 15
+}
+d_navarrese_company_composition = {
+	levy_size = 2
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 375
+	light_cavalry = 75
+}
+d_swiss_company_composition = {
+	levy_size = 2
+	archers = 150
+	pikemen = 300
+	heavy_infantry = 300
+}
+d_breton_company_composition = {
+	levy_size = 2
+	archers = 150
+	pikemen = 150
+	heavy_infantry = 300
+	light_cavalry = 150
+}
+d_lombard_band_composition = {
+	levy_size = 1
+	archers = 150
+	pikemen = 150
+	heavy_infantry = 300
+	light_cavalry = 150
+}
+d_swiss_band_composition = {
+	levy_size = 1
+	archers = 150
+	pikemen = 300
+	heavy_infantry = 300
+}
+d_breton_band_composition = {
+	levy_size = 1
+	archers = 150
+	pikemen = 150
+	heavy_infantry = 300
+	light_cavalry = 150
+}
+d_catalan_band_composition = {
+	levy_size = 1
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 300
+	light_cavalry = 150
+}
+d_saxon_band_composition = {
+	levy_size = 1
+	archers = 225
+	pikemen = 75
+	light_infantry = 75
+	heavy_infantry = 375
+}
+d_varangian_guard_composition = {
+	levy_size = 6
+	archers = 75
+	heavy_infantry = 300
+	light_infantry = 75
+}
+d_mamluks_composition = {
+	levy_size = 6
+	horse_archers = 225
+	light_cavalry = 300
+	archers = 150
+	heavy_infantry = 150
+	knights = 75
+}
+d_ghilman_composition = {
+	levy_size = 6
+	horse_archers = 225
+	light_cavalry = 300
+	archers = 150
+	heavy_infantry = 150
+	knights = 75
+}
+d_cuman_company_composition = {
+	levy_size = 5
+	horse_archers = 450
+	light_cavalry = 150
+}
+d_rus_company_composition = {
+	levy_size = 4
+	archers = 150
+	light_infantry = 300
+	heavy_infantry = 150
+	light_cavalry = 150
+}
+d_pecheneg_company_composition = {
+	levy_size = 3
+	light_infantry = 450
+	light_cavalry = 75
+	horse_archers = 75
+}
+d_turkic_company_composition = {
+	levy_size = 3
+	light_infantry = 450
+	light_cavalry = 75
+	horse_archers = 75
+}
+d_bulgarian_company_composition = {
+	levy_size = 2
+	archers = 150
+	light_infantry = 300
+	heavy_infantry = 150
+	light_cavalry = 150
+}
+d_rus_band_composition = {
+	levy_size = 1.5
+	archers = 150
+	light_infantry = 450
+	heavy_infantry = 150
+	light_cavalry = 150
+}
+d_lappish_band_composition = {
+	levy_size = 1.0
+	archers = 250
+	light_infantry = 450
+}
+d_lithuanian_band_composition = {
+	levy_size = 1.0
+	archers = 150
+	light_infantry = 450
+	heavy_infantry = 100
+	light_cavalry = 200
+}
+d_abyssinian_band_composition = {
+	levy_size = 1.5
+	archers = 150
+	light_infantry = 450
+	heavy_infantry = 150
+	light_cavalry = 150
+}
+d_scottish_band_composition = {
+	levy_size = 1.5
+	archers = 150
+	light_infantry = 350
+	heavy_infantry = 250
+	light_cavalry = 150
+}
+d_irish_band_composition = {
+	levy_size = 1.0
+	archers = 350
+	light_infantry = 400
+	heavy_infantry = 100
+	light_cavalry = 100
+}
+d_alan_band_composition = {
+	levy_size = 1.5
+	light_infantry = 100
+	horse_archers = 300
+	light_cavalry = 300
+}
+d_cuman_band_composition = {
+	levy_size = 1.5
+	horse_archers = 450
+	light_cavalry = 150
+}
+d_pecheneg_band_composition = {
+	levy_size = 1.5
+	light_infantry = 450
+	light_cavalry = 75
+	horse_archers = 75
+}
+d_turkic_band_composition = {
+	levy_size = 1
+	light_infantry = 450
+	light_cavalry = 75
+	horse_archers = 75
+}
+d_bulgarian_band_composition = {
+	levy_size = 1
+	archers = 150
+	light_infantry = 300
+	heavy_infantry = 150
+	light_cavalry = 150
+}
+d_venetian_navy_composition = {
+	levy_size = 9
+	galleys = 10
+}
+d_genoese_navy_composition = {
+	levy_size = 9
+	galleys = 10
+}
+d_hanseatic_navy_composition = {
+	levy_size = 9
+	galleys = 10
+}
+d_frisian_navy_composition = {
+	levy_size = 9
+	galleys = 10
+}
+d_maghreb_corsairs_composition = {
+	levy_size = 9
+	galleys = 10
+}
+
+### VASSAL MERCENARIES
+d_legioluxinvicta_composition = {
+	levy_size = 6
+	heavy_infantry = 360
+	archers = 60
+	horse_archers = 45
+	knights = 60
+}
+d_legioxiifulminata_composition = {
+	levy_size = 6
+	heavy_infantry = 360
+	archers = 60
+	horse_archers = 45
+	knights = 60
+}
+d_legioromavictrix_composition = {
+	levy_size = 6
+	heavy_infantry = 360
+	archers = 120
+	knights = 60
+}
+d_legioxiiigemina_composition = {
+	levy_size = 6
+	heavy_infantry = 360
+	archers = 120
+	knights = 60
+}
+d_legiohispana_composition = {
+	levy_size = 3
+	heavy_infantry = 360
+	archers = 120
+	knights = 60
+}
+d_legioiiiaugusta_composition = {
+	levy_size = 3
+	heavy_infantry = 340
+	archers = 100
+	knights = 60
+}
+d_legioiiaugusta_composition = {
+	levy_size = 3
+	heavy_infantry = 360
+	archers = 120
+	knights = 60
+}
+d_legioviiiaugusta_composition = {
+	levy_size = 3
+	heavy_infantry = 360
+	archers = 120
+	knights = 60
+}
+d_spartiataihomoioi_composition = {
+	levy_size = 6
+	heavy_infantry = 400
+	light_infantry = 140
+}
+d_selargyraspides_composition = {
+	levy_size = 3
+	pikemen = 250
+	heavy_infantry = 80
+}
+d_cordobaelite_composition = {
+	levy_size = 3
+	light_cavalry = 300
+	knights = 50
+}
+d_hahcelite_composition = {
+	levy_size = 3
+	light_cavalry = 200
+	knights = 50
+}
+d_angliaelite_composition = {
+	levy_size = 3
+	heavy_infantry = 250
+	knights = 50
+}
+d_powyselite_composition = {
+	levy_size = 3
+	heavy_infantry = 150
+	archers = 250
+}
+d_dalriadaelite_composition = {
+	levy_size = 3
+	heavy_infantry = 250
+	light_infantry = 200
+}
+d_sabaelite_composition = {
+	levy_size = 3
+	knights = 50
+	heavy_infantry = 220
+}
+d_daciaelite_composition = {
+	levy_size = 3
+	knights = 70
+	heavy_infantry = 200
+}
+d_zhayedan_composition = {
+	levy_size = 1.5
+	knights = 400
+}
+d_bactriaelite_composition = {
+	levy_size = 1.5
+	knights = 200
+	horse_archers = 200
+}
+d_gilanelite_composition = {
+	levy_size = 1.5
+	knights = 100
+	archers = 100
+	heavy_infantry = 200	
+}
+d_siracusaelite_composition = {
+	levy_size = 1.5
+	knights = 100
+	archers = 100
+	heavy_infantry = 200	
+}
+d_isauriaelite_composition = {
+	levy_size = 1.5
+	knights = 100
+	horse_archers = 100
+	light_cavalry = 100
+	heavy_infantry = 150	
+}
+d_sakaelite_composition = {
+	levy_size = 1.5
+	knights = 200
+	horse_archers = 200
+}
+d_sindhiaelite_composition = {
+	levy_size = 2
+	archers = 250
+	heavy_infantry = 250
+}
+d_ptolemyelite_composition = {
+	levy_size = 1.5
+	knights = 100
+	heavy_infantry = 300
+}
+d_hreelite_composition = {
+	levy_size = 1
+	knights = 200
+	light_cavalry = 200
+}
+d_gothiaelite_composition = {
+	levy_size = 1
+	knights = 150
+	heavy_infantry = 250
+}
+d_brythoniaelite_composition = {
+	levy_size = 1
+	knights = 140
+	light_cavalry = 140
+	horse_archers = 140
+}
+d_diocleiaelite_composition = {
+	levy_size = 1
+	knights = 150
+	heavy_infantry = 250
+}
+d_sacredband_composition = {
+	levy_size = 3
+	heavy_infantry = 210
+	knights = 60
+}
+d_hetairoi_composition = {
+	levy_size = 3
+	heavy_infantry = 150
+	knights = 100
+}
+d_legioiisol_composition = {
+	levy_size = 3
+	heavy_infantry = 175
+	knights = 175
+}
+d_hunselite_composition = {
+	levy_size = 3
+	horse_archers = 210
+	knights = 60
+}
+d_ukko's_thunder_composition = {
+	levy_size = 1
+	archers = 135
+	heavy_infantry = 115
+	light_infantry = 450
+}
+d_finnish_band_composition = {
+	levy_size = 1
+	archers = 200
+	heavy_infantry = 130
+	light_infantry = 1050
+}
+d_the_messengers_of_loki_composition = {
+	levy_size = 1
+	archers = 140
+	heavy_infantry = 250
+	light_infantry = 755
+}
+d_the_weeping_blade_composition = {
+	levy_size = 1
+	archers = 75
+	heavy_infantry = 200
+	light_infantry = 50
+	pikemen = 25
+	knights = 5
+	light_cavalry = 20
+}
+d_the_howling_wind_composition = {
+	levy_size = 1
+	archers = 100
+	heavy_infantry = 150
+	light_infantry = 125
+}
+d_band_of_the_hawk_composition = {
+	levy_size = 1
+	archers = 85
+	heavy_infantry = 200
+	light_infantry = 100
+	light_cavalry = 25
+	knights = 10
+}
+d_grand_alliance_composition = {
+	levy_size = 1
+	archers = 150
+	heavy_infantry = 250
+	light_infantry = 125
+	light_cavalry = 35
+	pikemen = 75
+	knights = 15
+}
+d_lettigalian_alliance_composition = {
+	levy_size = 1
+	archers = 125
+	heavy_infantry = 75
+	light_infantry = 200
+	light_cavalry = 20
+	knights = 5
+}
+d_blue_company_composition = {
+	levy_size = 1
+	archers = 75
+	heavy_infantry = 50
+	light_infantry = 225
+}
+d_worthy_disciples_composition = {
+	levy_size = 1
+	archers = 100
+	heavy_infantry = 150
+	light_infantry = 200
+	pikemen = 50
+	light_cavalry = 30
+}
+d_trusty_swords_composition = {
+	levy_size = 1
+	archers = 55
+	heavy_infantry = 85
+	light_infantry = 135
+}
+d_mountain_band_composition = {
+	levy_size = 1
+	archers = 75
+	heavy_infantry = 50
+	light_infantry = 200
+}
+d_company_of_the_bear_composition = {
+	levy_size = 1
+	archers = 115
+	heavy_infantry = 100
+	light_infantry = 200
+	pikemen = 30
+	light_cavalry = 45
+	knights = 15
+}
+d_snow_warriors_composition = {
+	levy_size = 1
+	archers = 75
+	heavy_infantry = 50
+	light_infantry = 250
+}
+d_dutch_freemen_composition = {
+	levy_size = 1
+	archers = 100
+	heavy_infantry = 100
+	light_infantry = 200
+}
+d_footmen_of_the_owl_composition = {
+	levy_size = 1
+	archers = 75
+	heavy_infantry = 50
+	light_infantry = 100
+	pikemen = 50
+}
+d_knights_of_the_iron_gauntlet_composition = {
+	levy_size = 1
+	archers = 40
+	heavy_infantry = 95
+	light_infantry = 30
+	pikemen = 30
+	knights = 35
+}
+d_horsemen_of_the_burning_stag_composition = {
+	levy_size = 1
+	archers = 50
+	heavy_infantry = 100
+	light_infantry = 150
+	pikemen = 25
+	knights = 20
+	light_cavalry = 50
+}
+d_highland_band_composition = {
+	levy_size = 1
+	archers = 75
+	heavy_infantry = 50
+	light_infantry = 220
+	pikemen = 40
+	light_cavalry = 15
+}
+d_neapolitan_company_composition = {
+	levy_size = 1
+	archers = 225
+	heavy_infantry = 300
+	light_infantry = 450
+	pikemen = 100
+	light_cavalry = 65
+	knights = 35
+}
+d_sicilian_company_composition = {
+	levy_size = 1
+	archers = 125
+	heavy_infantry = 175
+	light_infantry = 250
+	pikemen = 50
+	light_cavalry = 35
+	knights = 10
+}
+d_knights_of_al_andalus_composition = {
+	levy_size = 1
+	archers = 200
+	heavy_infantry = 270
+	light_infantry = 225
+	pikemen = 50
+	light_cavalry = 75
+	knights = 40
+}
+d_plains_band_composition = {
+	levy_size = 1
+	archers = 150
+	heavy_infantry = 200
+	light_infantry = 350
+	light_cavalry = 75
+}
+d_berber_camel_riders_composition = {
+	levy_size = 1
+	archers = 100
+	light_infantry = 275
+	light_cavalry = 95
+}
+d_maniots_composition = {
+	levy_size = 1
+	archers = 125
+	heavy_infantry = 125
+	light_infantry = 200
+	light_cavalry = 10
+	pikemen = 125
+}
+d_norman_armoured_horse_company_composition = {
+	levy_size = 1
+	archers = 200
+	heavy_infantry = 275
+	light_infantry = 100
+	light_cavalry = 75
+	knights = 55
+}
+d_scarred_mountain_composition = {
+	levy_size = 1
+	archers = 65
+	light_infantry = 175
+}
+d_ancient_spear_composition = {
+	levy_size = 1
+	archers = 125
+	light_infantry = 65
+	heavy_infantry = 175
+	pikemen = 300
+}
+d_flaming_arrow_composition = {
+	levy_size = 1
+	archers = 45
+	light_infantry = 150
+	light_cavalry = 65
+	horse_archers = 45
+}
+d_armenian_band_composition = {
+	levy_size = 1
+	archers = 150
+	light_infantry = 300
+	heavy_infantry = 250
+	light_cavalry = 25
+	knights	= 15
+}
+d_wandering_horsemen_composition = {
+	levy_size = 1
+	archers = 25
+	heavy_infantry = 25
+	light_infantry = 50
+	knights = 10
+	light_cavalry = 25
+	horse_archers = 25
+}
+d_sleeping_giant_composition = {
+	levy_size = 1
+	archers = 100
+	heavy_infantry = 275
+	light_infantry = 100
+	knights = 25
+	light_cavalry = 50
+	horse_archers = 25
+}
+d_gallowglass_of_the_hebrides_composition = {
+	levy_size = 1
+	archers = 50
+	heavy_infantry = 150
+	pikemen = 50
+}
+d_kerns_of_connacht_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 100
+	heavy_infantry = 25
+}
+d_brothers_of_the_sun_composition = {
+	levy_size = 1
+	archers = 145
+	light_infantry = 235
+	heavy_infantry = 215
+	light_cavalry = 55
+	knights = 10
+}
+d_horsemen_of_the_nile_composition = {
+	levy_size = 1
+	archers = 20
+	light_infantry = 50
+	light_cavalry = 55
+	knights = 5
+}
+d_brothers_of_the_sacred_heart_composition = {
+	levy_size = 1
+	archers = 300
+	light_infantry = 205
+	heavy_infantry = 900
+	pikemen = 150
+	light_cavalry = 75
+	knights = 55
+}
+d_horsemen_of_the_shifting_sand_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 75
+	heavy_infantry = 10
+	light_cavalry = 55
+	horse_archers = 30
+}
+d_wall_of_spears_composition = {
+	levy_size = 1
+	archers = 155
+	light_infantry = 125
+	heavy_infantry = 225
+	pikemen = 350
+}
+d_guards_of_baghdad_composition = {
+	levy_size = 1
+	archers = 100
+	light_infantry = 65
+	heavy_infantry = 145
+	pikemen = 105
+}
+d_screaming_skull_composition = {
+	levy_size = 1
+	archers = 45
+	light_infantry = 85
+	heavy_infantry = 45
+	light_cavalry = 25
+}
+d_kurd_company_composition = {
+	levy_size = 1
+	archers = 110
+	light_infantry = 215
+	heavy_infantry = 165
+	light_cavalry = 45
+	knights = 5
+}
+d_turkmen_company_composition = {
+	levy_size = 1
+	archers = 65
+	light_infantry = 195
+	light_cavalry = 85
+	knights = 15
+	horse_archers = 75
+}
+d_company_of_the_cauldron_composition = {
+	levy_size = 1
+	archers = 275
+	light_infantry = 245
+	heavy_infantry = 560
+	light_cavalry = 90
+	knights = 45
+	horse_archers = 55
+}
+d_berber_camel_raiders_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 55
+	light_cavalry = 35
+}
+d_devout_composition = {
+	levy_size = 1
+	archers = 135
+	light_infantry = 435
+	heavy_infantry = 150
+	light_cavalry = 75
+	knights = 45
+}
+d_horsemen_of_the_storm_composition = {
+	levy_size = 1
+	archers = 35
+	light_infantry = 65
+	heavy_infantry = 20
+	light_cavalry = 45
+	knights = 10
+}
+d_chariots_of_fire_composition = {
+	levy_size = 1
+	archers = 15
+	light_infantry = 45
+	heavy_infantry = 25
+	light_cavalry = 55
+	knights = 20
+}
+d_golden_bow_composition = {
+	levy_size = 1
+	archers = 65
+	light_infantry = 145
+	heavy_infantry = 40
+	light_cavalry = 85
+	horse_archers = 60
+}
+d_charging_bull_composition = {
+	levy_size = 1
+	archers = 50
+	light_infantry = 100
+	heavy_infantry = 55
+	light_cavalry = 85
+	horse_archers = 55
+}
+d_chosen_composition = {
+	levy_size = 1
+	archers = 185
+	light_infantry = 230
+	heavy_infantry = 455
+	pikemen = 100
+	light_cavalry = 55
+	knights = 45
+}
+d_falling_stone_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 55
+	light_cavalry = 20
+	knights = 10
+}
+d_sweeping_scythe_composition = {
+	levy_size = 1
+	archers = 180
+	light_infantry = 120
+	heavy_infantry = 200
+	pikemen = 70
+	light_cavalry = 65
+	knights = 15
+}
+d_horsemen_of_the_flying_stallion_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 25
+	heavy_infantry = 30
+	knights = 10
+	light_cavalry = 20
+}
+d_horsemen_of_the_smiling_elephant_composition = {
+	levy_size = 1
+	archers = 35
+	light_infantry = 55
+	heavy_infantry = 15
+	knights = 20
+}
+d_horsemen_of_the_beating_drum_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 15
+	heavy_infantry = 45
+	knights = 25
+}
+d_horsemen_of_the_serpent_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 35
+	heavy_infantry = 45
+	knights = 20
+	light_cavalry = 30
+}
+d_band_of_the_snake_composition = {
+	levy_size = 1
+	archers = 35
+	light_infantry = 90
+	heavy_infantry = 35
+}
+d_red_band_composition = {
+	levy_size = 1
+	archers = 45
+	light_infantry = 75
+	heavy_infantry = 55
+}
+d_company_of_the_roaring_lion_composition = {
+	levy_size = 1
+	archers = 85
+	light_infantry = 150
+	heavy_infantry = 50
+}
+d_company_of_the_cheetah_composition = {
+	levy_size = 1
+	archers = 55
+	light_infantry = 105
+	heavy_infantry = 45
+	light_cavalry = 40
+}
+d_roaming_camel_riders_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 65
+	light_cavalry = 45
+}
+d_brave_ones_composition = {
+	levy_size = 1
+	archers = 140
+	light_infantry = 105
+	heavy_infantry = 245
+	light_cavalry = 55
+}
+d_band_of_skulls_composition = {
+	levy_size = 1
+	archers = 45
+	light_infantry = 125
+}
+d_winds_of_the_east_composition = {
+	levy_size = 1
+	archers = 70
+	light_infantry = 130
+	heavy_infantry = 60
+}
+d_wroth_of_tengri_composition = {
+	levy_size = 1
+	archers = 25
+	light_infantry = 65
+	light_cavalry = 40
+	horse_archers = 25
+}
+d_coming_storm_composition = {
+	levy_size = 1
+	archers = 35
+	light_infantry = 85
+	light_cavalry = 45
+	horse_archers = 35
+}
+d_ghanan_band_composition = {
+	levy_size = 1.5
+	archers = 150
+	light_infantry = 450
+	heavy_infantry = 150
+	light_cavalry = 150
+}
+
+kashmiri_thunder_composition = {
+	levy_size = 3
+	archers = 150
+	light_infantry = 75
+	heavy_infantry = 25
+	pikemen = 75
+}
+
+hashshashin_composition = {
+	levy_size = 6
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 300
+	light_cavalry = 150
+}
+
+bektashi_composition = {
+	levy_size = 6
+	archers = 150
+	light_infantry = 150
+	heavy_infantry = 350
+	horse_archers = 100
+}
+
+steppe_storm_composition = {
+	levy_size = 4
+	archers = 25
+	light_infantry = 25
+	light_cavalry = 75
+	knights = 75
+	horse_archers = 150
+}
+
+chinese_flame_composition = {
+	levy_size = 3
+	archers = 150
+	light_infantry = 300
+	pikemen = 50
+}
+
+bodpa_company_composition = {
+	levy_size = 3
+	archers = 150
+	light_infantry = 100
+	pikemen = 75
+}
+
+ferghana_brotherhood_composition = {
+	levy_size = 3
+	light_infantry = 100
+	light_cavalry = 100
+	heavy_infantry = 75
+}
+
+coming_storm_composition = {
+	levy_size = 1
+	archers = 35
+	light_infantry = 85
+	light_cavalry = 45
+	horse_archers = 35
+}
+
+silky_death_composition = {
+	levy_size = 2
+	archers = 125
+	light_infantry = 150
+	light_cavalry = 100
+}
+
+dragon_company_composition = {
+	levy_size = 3
+	archers = 125
+	heavy_infantry = 150
+	pikemen = 25
+	light_cavalry = 75
+}
+
+tamil_band_composition = {
+	levy_size = 1
+	light_infantry = 400
+	light_cavalry = 100
+	archers = 200
+	war_elephants = 20
+}
+
+marathi_company_composition = {
+	levy_size = 3
+	light_infantry = 400
+	heavy_infantry = 200
+	light_cavalry = 100
+	archers = 100
+	war_elephants = 10
+}
+
+marathi_band_composition = {
+	levy_size = 1
+	light_infantry = 400
+	heavy_infantry = 200
+	light_cavalry = 100
+	archers = 100
+	war_elephants = 10
+}
+
+bengal_company_composition = {
+	levy_size = 3
+	light_infantry = 300
+	heavy_infantry = 200
+	light_cavalry = 100
+	archers = 100
+	war_elephants = 20
+}
+
+bengal_band_composition = {
+	levy_size = 1
+	light_infantry = 300
+	heavy_infantry = 200
+	light_cavalry = 100
+	archers = 100
+	war_elephants = 20
+}
+
+rajput_company_composition = {
+	levy_size = 3
+	light_infantry = 300
+	heavy_infantry = 200
+	light_cavalry = 200
+	archers = 100
+	war_elephants = 10
+}
+
+rajput_band_composition = {
+	levy_size = 1
+	light_infantry = 300
+	heavy_infantry = 200
+	light_cavalry = 200
+	archers = 100
+	war_elephants = 10
+}
+
+mercenary_princess_composition = {
+	levy_size = 5
+	archers = 450
+	heavy_infantry = 600
+	light_infantry = 500
+	light_cavalry = 500
+	pikemen = 200
+	galleys = 40
+}
+
+## Must exist or else dynamic mercenary band might fail for nomads!
+default_culture_band_composition = {
+	levy_size = 1
+	light_infantry = 100
+}
+
+altaic_culture_band_composition = {
+	levy_size = 1
+	light_cavalry = 60
+	horse_archers = 40
+}
+
+magyar_culture_band_composition = {
+	levy_size = 1
+	light_cavalry = 70
+	horse_archers = 30
+}
+
+alan_culture_band_composition = {
+	levy_size = 1
+	light_cavalry = 70
+	horse_archers = 30
+}

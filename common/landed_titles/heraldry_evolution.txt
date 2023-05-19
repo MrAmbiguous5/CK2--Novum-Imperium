@@ -1,0 +1,39 @@
+# - Vasikle's PS for HIP - #
+
+### Dynamic Heraldry Evolution ### - Historical Heraldry Evolution
+
+###Western Europe
+######British Isles
+######## Kingdom of Scotland
+k_scotland_lion_rampant = { # The Lion Rampant was the common theme of the Scottish Royal Banner beggiing with Malcolm III and his successors 11th century
+	color={ 191 16 16 } # Only for the CoA
+
+	capital = 43
+
+	allow = { always = no }
+}
+k_scotland_lion_rampant_double_border_lillies = { # Alexander III introduces double border set with lillies 13th century
+	color={ 191 16 16 } # Only for the CoA
+
+	capital = 43
+
+	allow = { always = no }
+}
+
+#plausibillities 
+
+k_scotland_lion_rampant_double_border = { # double set, no lillies
+	color={ 191 16 16 } # Only for the CoA
+
+	capital = 43
+
+	allow = { always = no }
+}
+
+k_scotland_dragon_rampant = { #Used by David I ?
+	color={ 191 16 16 } # Only for the CoA
+
+	capital = 43
+
+	allow = { always = no }
+}

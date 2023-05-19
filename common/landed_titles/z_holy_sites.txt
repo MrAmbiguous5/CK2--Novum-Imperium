@@ -1,0 +1,1871 @@
+# -*- ck2.landed_titles -*-
+
+c_koln = { # Köln (119) # Cologne
+	holy_site = catholic
+	holy_site = lollard
+}
+
+c_karnten = { # Kärnten (456)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+
+c_napoli = { # Acerra (334)
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+	holy_site = judaism_reformed
+	holy_site = sethian_reformed
+	holy_site = muslim_sufi_reformed
+	holy_site = cybele_reformed	
+	holy_site = ethiopian_war_reformed
+	holy_site = waaq
+	holy_site = hereclemasculist_pagan	
+	holy_site = vieti_mithras_pagan	
+	holy_site = britannic_hyperborean_pagan	
+	holy_site = romist_pagan	
+	holy_site = amanai	
+	holy_site = indoh_bud
+	holy_site = svetovid			
+	holy_site = arab_pagan_reformed
+	holy_site = almaqah
+	holy_site = talab
+	holy_site = shams	
+	holy_site = allat
+	holy_site = hubal
+	holy_site = attar
+	holy_site = maher		
+	holy_site = tlateotocani			
+	holy_site = northern_sun_reformed		
+	holy_site = romuva_pagan_reformed		
+	holy_site = dievas		
+	holy_site = saule	
+	holy_site = perkunas		
+	holy_site = peckols		
+	holy_site = bantu_pagan_reformed		
+	holy_site = nyakalagan_reformed		
+	holy_site = zande_pagan_reformed				
+	holy_site = zulu_pagan_reformed		
+	holy_site = kintu		
+	holy_site = batembuzi		
+	holy_site = imana
+	holy_site = nyasaye	
+	holy_site = nyau		
+	holy_site = makonde_pagan	
+	holy_site = mwari	
+	holy_site = zande_pagan	
+	holy_site = zulu_pagan		
+	holy_site = berber_pagan_reformed	
+	holy_site = berber_pagan	
+	holy_site = gurzil	
+	holy_site = bud_zen_reformed	
+	holy_site = bud_zor_reformed	
+	holy_site = bud_sthaviravada	
+	holy_site = bud_bahusrutiya	
+	holy_site = bud_mahayana	
+	holy_site = bud_pureland	
+	holy_site = bud_pratyeka	
+	holy_site = bud_vajrayana	
+	holy_site = bud_zen	
+	holy_site = bud_zor	
+	holy_site = celtic_christ_reformed
+	holy_site = stonehenge_pagan_reformed	
+	holy_site = iberian_pagan_reformed		
+	holy_site = stonehenge_pagan	
+	holy_site = lugh	
+	holy_site = endovellico	
+	holy_site = tibetan_reformed		
+	holy_site = lubu_reformed	
+	holy_site = tao_reformed	
+	holy_site = confucian	
+	holy_site = lubu	
+	holy_site = tibetan	
+	holy_site = tao	
+	holy_site = german_pagan_reformed	
+	holy_site = norse_christ_reformed	
+	holy_site = odin_pagan_reformed	
+	holy_site = ragnarok_reformed	
+	holy_site = teiwaz_reformed	
+	holy_site = odin_pagan	
+	holy_site = norse_war
+	holy_site = ragnarok	
+	holy_site = sowilo	
+	holy_site = nott	
+	holy_site = german_pagan	
+	holy_site = irminsul	
+	holy_site = allfather	
+	holy_site = teiwaz	
+	holy_site = cathar_reformed	
+	holy_site = christian_populist_reformed	
+	holy_site = mari_christ_reformed
+	holy_site = montanist_reformed	
+	holy_site = nasrani_reformed		
+	holy_site = priscillian_reformed	
+	holy_site = slavic_christian_reformed	
+	holy_site = antinomian	
+	holy_site = donatist			
+	holy_site = melkite	
+	holy_site = montanist	
+	holy_site = sabellianist	
+	holy_site = valentinian	
+	holy_site = mari_christ	
+	holy_site = priscillian	
+	holy_site = docetist	
+	holy_site = apollinarist	
+	holy_site = solomonic_christ	
+	holy_site = audianist	
+	holy_site = celtic_christ	
+	holy_site = marcionist
+	holy_site = nasrani	
+	holy_site = norse_christ	
+	holy_site = pelagian	
+	holy_site = semipelagian	
+	holy_site = sethian	
+	holy_site = slavic_christian	
+	holy_site = unctionist	
+	holy_site = amun_reformed	
+	holy_site = aten_reformed	
+	holy_site = isis_reformed	
+	holy_site = set_reformed	
+	holy_site = amun	
+	holy_site = aten	
+	holy_site = horus_re	
+	holy_site = isis	
+	holy_site = set	
+	holy_site = suomenusko_pagan_reformed	
+	holy_site = chumbylat_reformed	
+	holy_site = voipel_reformed	
+	holy_site = suomenusko_pagan	
+	holy_site = ilmatar	
+	holy_site = jumala	
+	holy_site = chumbylat	
+	holy_site = voipel	
+	holy_site = graeco_roman_reformed	
+	holy_site = graeco_roman	
+	holy_site = dionysos	
+	holy_site = jupiter	
+	holy_site = alexandros	
+	holy_site = solomonic_alexandros	
+	holy_site = roman_imperial	
+	holy_site = cybele	
+	holy_site = kubera_reformed					
+	holy_site = murugan_reformed	
+	holy_site = saura_reformed	
+	holy_site = vidharma_reformed	
+	holy_site = vidharma	
+	holy_site = saura	
+	holy_site = kubera	
+	holy_site = murugan	
+	holy_site = indohelen_reformed	
+	holy_site = indohelen	
+	holy_site = indoh_confucian	
+	holy_site = indoh_hindu	
+	holy_site = indoh_zor	
+	holy_site = inuit_pagan_reformed	
+	holy_site = inuit_pagan	
+	holy_site = jud_ark_reformed	
+	holy_site = judaism	
+	holy_site = jud_sabaoth	
+	holy_site = jud_ark	
+	holy_site = jud_zion	
+	holy_site = illuyanka_reformed	
+	holy_site = tarhunt_reformed	
+	holy_site = luwian	
+	holy_site = illuyanka	
+	holy_site = tarhunt	
+	holy_site = mand_ruha_reformed	
+	holy_site = mandaean_reformed	
+	holy_site = mand_ruha	
+	holy_site = yahyanism	
+	holy_site = ahriman_reformed	
+	holy_site = mani_germanic_reformed	
+	holy_site = mani_slavic_reformed	
+	holy_site = mani	
+	holy_site = mani_ahriman	
+	holy_site = mani_mithra	
+	holy_site = mani_slavic	
+	holy_site = mani_germanic	
+	holy_site = mithra	
+	holy_site = mithra_christ	
+	holy_site = mithra_sol	
+	holy_site = muslim_aliite_reformed	
+	holy_site = muslim_domination_reformed	
+	holy_site = ashari	
+	holy_site = athari	
+	holy_site = maturidi	
+	holy_site = murjiah	
+	holy_site = zahiri	
+	holy_site = sufi	
+	holy_site = ilm_islam	
+	holy_site = ghazi_islam	
+	holy_site = mutazil	
+	holy_site = marabout	
+	holy_site = neoplato	
+	holy_site = plato_pythagorean	
+	holy_site = porphyryan	
+	holy_site = plato_christ	
+	holy_site = plato_islam	
+	holy_site = zz01_vedanta	
+	holy_site = baal_monotheistic_reformed	
+	holy_site = beelshamen	
+	holy_site = aglibol	
+	holy_site = malakbel	
+	holy_site = palmyran_pagan	
+	holy_site = hadad	
+	holy_site = kothar	
+	holy_site = serer_reformed	
+	holy_site = mande_pagan	
+	holy_site = yoruba	
+	holy_site = nyame	
+	holy_site = anansi	
+	holy_site = rodnoveric_pagan_reformed	
+	holy_site = perun	
+	holy_site = veles	
+	holy_site = rodnoveric_pagan	
+	holy_site = rod	
+	holy_site = svaroh	
+	holy_site = dazhbog	
+	holy_site = sol_boreas_reformed	
+	holy_site = sol_islam_reformed	
+	holy_site = sol_sahara_reformed	
+	holy_site = sol	
+	holy_site = sol_christ	
+	holy_site = sol_mani	
+	holy_site = sol_apollo	
+	holy_site = sol_boreas	
+	holy_site = sol_islam	
+	holy_site = sol_sahara	
+	holy_site = sol_norse	
+	holy_site = sol_slav	
+	holy_site = sol_tsahay	
+	holy_site = erlik_reformed	
+	holy_site = tengri_bud_reformed	
+	holy_site = tengri_confucian_reformed	
+	holy_site = tengri_mani_reformed	
+	holy_site = tengrist_pagan_reformed	
+	holy_site = tengri_rod_reformed	
+	holy_site = vattisenyaly_reformed	
+	holy_site = tengrist_pagan	
+	holy_site = tengri_ahriman	
+	holy_site = tengri_bud	
+	holy_site = tengri_confucian	
+	holy_site = tengri_mani	
+	holy_site = tengri_rod	
+	holy_site = vattisenyaly	
+	holy_site = erlik	
+	holy_site = yazdanism_reformed	
+	holy_site = yazdanism	
+	holy_site = zal	
+	holy_site = zal_christ	
+	holy_site = zal_mani	
+	holy_site = mazdakism_reformed	
+	holy_site = zor_angra_reformed	
+	holy_site = zurvanism_reformed
+	holy_site = zor_angra	
+	holy_site = zor_hindu			
+	holy_site = druze_reformed
+	holy_site = adoptionist
+}
+
+c_byzantion = { # Konstantinoupolis (496)
+	holy_site = orthodox
+	holy_site = iconoclast
+	holy_site = waldensian
+	holy_site = maronite
+	holy_site = vieti_orthodox	
+	holy_site = bogomilist
+}
+
+b_hagiasophia = {
+	pentarchy = orthodox
+	pentarchy = iconoclast
+}
+
+c_chalkidike = { # Chalkidike (491)
+	holy_site = orthodox
+	holy_site = iconoclast
+}
+
+c_achaia = { # Achaía (476)
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+	holy_site = judaism_reformed
+	holy_site = sethian_reformed
+	holy_site = muslim_sufi_reformed
+	holy_site = cybele_reformed	
+	holy_site = ethiopian_war_reformed
+	holy_site = waaq
+	holy_site = hereclemasculist_pagan	
+	holy_site = vieti_mithras_pagan	
+	holy_site = britannic_hyperborean_pagan	
+	holy_site = romist_pagan	
+	holy_site = amanai	
+	holy_site = indoh_bud
+	holy_site = svetovid			
+	holy_site = arab_pagan_reformed
+	holy_site = almaqah
+	holy_site = talab
+	holy_site = shams	
+	holy_site = allat
+	holy_site = hubal
+	holy_site = attar
+	holy_site = maher		
+	holy_site = tlateotocani			
+	holy_site = northern_sun_reformed		
+	holy_site = romuva_pagan_reformed		
+	holy_site = dievas		
+	holy_site = saule	
+	holy_site = perkunas		
+	holy_site = peckols		
+	holy_site = bantu_pagan_reformed		
+	holy_site = nyakalagan_reformed		
+	holy_site = zande_pagan_reformed				
+	holy_site = zulu_pagan_reformed		
+	holy_site = kintu		
+	holy_site = batembuzi		
+	holy_site = imana
+	holy_site = nyasaye	
+	holy_site = nyau		
+	holy_site = makonde_pagan	
+	holy_site = mwari	
+	holy_site = zande_pagan	
+	holy_site = zulu_pagan		
+	holy_site = berber_pagan_reformed	
+	holy_site = berber_pagan	
+	holy_site = gurzil	
+	holy_site = bud_zen_reformed	
+	holy_site = bud_zor_reformed	
+	holy_site = bud_sthaviravada	
+	holy_site = bud_bahusrutiya	
+	holy_site = bud_mahayana	
+	holy_site = bud_pureland	
+	holy_site = bud_pratyeka	
+	holy_site = bud_vajrayana	
+	holy_site = bud_zen	
+	holy_site = bud_zor	
+	holy_site = celtic_christ_reformed
+	holy_site = stonehenge_pagan_reformed	
+	holy_site = iberian_pagan_reformed		
+	holy_site = stonehenge_pagan	
+	holy_site = lugh	
+	holy_site = endovellico	
+	holy_site = tibetan_reformed		
+	holy_site = lubu_reformed	
+	holy_site = tao_reformed	
+	holy_site = confucian	
+	holy_site = lubu	
+	holy_site = tibetan	
+	holy_site = tao	
+	holy_site = german_pagan_reformed	
+	holy_site = norse_christ_reformed	
+	holy_site = odin_pagan_reformed	
+	holy_site = ragnarok_reformed	
+	holy_site = teiwaz_reformed	
+	holy_site = odin_pagan	
+	holy_site = norse_war
+	holy_site = ragnarok	
+	holy_site = sowilo	
+	holy_site = nott	
+	holy_site = german_pagan	
+	holy_site = irminsul	
+	holy_site = allfather	
+	holy_site = teiwaz	
+	holy_site = cathar_reformed	
+	holy_site = christian_populist_reformed	
+	holy_site = mari_christ_reformed
+	holy_site = montanist_reformed	
+	holy_site = nasrani_reformed		
+	holy_site = priscillian_reformed	
+	holy_site = slavic_christian_reformed	
+	holy_site = antinomian	
+	holy_site = donatist			
+	holy_site = melkite	
+	holy_site = montanist	
+	holy_site = sabellianist	
+	holy_site = valentinian	
+	holy_site = mari_christ	
+	holy_site = priscillian	
+	holy_site = docetist	
+	holy_site = apollinarist	
+	holy_site = solomonic_christ	
+	holy_site = audianist	
+	holy_site = celtic_christ	
+	holy_site = marcionist
+	holy_site = nasrani	
+	holy_site = norse_christ	
+	holy_site = pelagian	
+	holy_site = semipelagian	
+	holy_site = sethian	
+	holy_site = slavic_christian	
+	holy_site = unctionist	
+	holy_site = amun_reformed	
+	holy_site = aten_reformed	
+	holy_site = isis_reformed	
+	holy_site = set_reformed	
+	holy_site = amun	
+	holy_site = aten	
+	holy_site = horus_re	
+	holy_site = isis	
+	holy_site = set	
+	holy_site = suomenusko_pagan_reformed	
+	holy_site = chumbylat_reformed	
+	holy_site = voipel_reformed	
+	holy_site = suomenusko_pagan	
+	holy_site = ilmatar	
+	holy_site = jumala	
+	holy_site = chumbylat	
+	holy_site = voipel	
+	holy_site = graeco_roman_reformed	
+	holy_site = graeco_roman	
+	holy_site = dionysos	
+	holy_site = jupiter	
+	holy_site = alexandros	
+	holy_site = solomonic_alexandros	
+	holy_site = roman_imperial	
+	holy_site = cybele	
+	holy_site = kubera_reformed					
+	holy_site = murugan_reformed	
+	holy_site = saura_reformed	
+	holy_site = vidharma_reformed	
+	holy_site = vidharma	
+	holy_site = saura	
+	holy_site = kubera	
+	holy_site = murugan	
+	holy_site = indohelen_reformed	
+	holy_site = indohelen	
+	holy_site = indoh_confucian	
+	holy_site = indoh_hindu	
+	holy_site = indoh_zor	
+	holy_site = inuit_pagan_reformed	
+	holy_site = inuit_pagan	
+	holy_site = jud_ark_reformed	
+	holy_site = judaism	
+	holy_site = jud_sabaoth	
+	holy_site = jud_ark	
+	holy_site = jud_zion	
+	holy_site = illuyanka_reformed	
+	holy_site = tarhunt_reformed	
+	holy_site = luwian	
+	holy_site = illuyanka	
+	holy_site = tarhunt	
+	holy_site = mand_ruha_reformed	
+	holy_site = mandaean_reformed	
+	holy_site = mand_ruha	
+	holy_site = yahyanism	
+	holy_site = ahriman_reformed	
+	holy_site = mani_germanic_reformed	
+	holy_site = mani_slavic_reformed	
+	holy_site = mani	
+	holy_site = mani_ahriman	
+	holy_site = mani_mithra	
+	holy_site = mani_slavic	
+	holy_site = mani_germanic	
+	holy_site = mithra	
+	holy_site = mithra_christ	
+	holy_site = mithra_sol	
+	holy_site = muslim_aliite_reformed	
+	holy_site = muslim_domination_reformed	
+	holy_site = ashari	
+	holy_site = athari	
+	holy_site = maturidi	
+	holy_site = murjiah	
+	holy_site = zahiri	
+	holy_site = sufi	
+	holy_site = ilm_islam	
+	holy_site = ghazi_islam	
+	holy_site = mutazil	
+	holy_site = marabout	
+	holy_site = neoplato	
+	holy_site = plato_pythagorean	
+	holy_site = porphyryan	
+	holy_site = plato_christ	
+	holy_site = plato_islam	
+	holy_site = zz01_vedanta	
+	holy_site = baal_monotheistic_reformed	
+	holy_site = beelshamen	
+	holy_site = aglibol	
+	holy_site = malakbel	
+	holy_site = palmyran_pagan	
+	holy_site = hadad	
+	holy_site = kothar	
+	holy_site = serer_reformed	
+	holy_site = mande_pagan	
+	holy_site = yoruba	
+	holy_site = nyame	
+	holy_site = anansi	
+	holy_site = rodnoveric_pagan_reformed	
+	holy_site = perun	
+	holy_site = veles	
+	holy_site = rodnoveric_pagan	
+	holy_site = rod	
+	holy_site = svaroh	
+	holy_site = dazhbog	
+	holy_site = sol_boreas_reformed	
+	holy_site = sol_islam_reformed	
+	holy_site = sol_sahara_reformed	
+	holy_site = sol	
+	holy_site = sol_christ	
+	holy_site = sol_mani	
+	holy_site = sol_apollo	
+	holy_site = sol_boreas	
+	holy_site = sol_islam	
+	holy_site = sol_sahara	
+	holy_site = sol_norse	
+	holy_site = sol_slav	
+	holy_site = sol_tsahay	
+	holy_site = erlik_reformed	
+	holy_site = tengri_bud_reformed	
+	holy_site = tengri_confucian_reformed	
+	holy_site = tengri_mani_reformed	
+	holy_site = tengrist_pagan_reformed	
+	holy_site = tengri_rod_reformed	
+	holy_site = vattisenyaly_reformed	
+	holy_site = tengrist_pagan	
+	holy_site = tengri_ahriman	
+	holy_site = tengri_bud	
+	holy_site = tengri_confucian	
+	holy_site = tengri_mani	
+	holy_site = tengri_rod	
+	holy_site = vattisenyaly	
+	holy_site = erlik	
+	holy_site = yazdanism_reformed	
+	holy_site = yazdanism	
+	holy_site = zal	
+	holy_site = zal_christ	
+	holy_site = zal_mani	
+	holy_site = mazdakism_reformed	
+	holy_site = zor_angra_reformed	
+	holy_site = zurvanism_reformed
+	holy_site = zor_angra	
+	holy_site = zor_hindu			
+	holy_site = druze_reformed
+}
+
+c_atheniai = { # Attika (482)
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+	holy_site = judaism_reformed
+	holy_site = sethian_reformed
+	holy_site = muslim_sufi_reformed
+	holy_site = cybele_reformed	
+	holy_site = ethiopian_war_reformed
+	holy_site = waaq
+	holy_site = hereclemasculist_pagan	
+	holy_site = vieti_mithras_pagan	
+	holy_site = britannic_hyperborean_pagan	
+	holy_site = romist_pagan	
+	holy_site = amanai	
+	holy_site = indoh_bud
+	holy_site = svetovid			
+	holy_site = arab_pagan_reformed
+	holy_site = almaqah
+	holy_site = talab
+	holy_site = shams	
+	holy_site = allat
+	holy_site = hubal
+	holy_site = attar
+	holy_site = maher		
+	holy_site = tlateotocani			
+	holy_site = northern_sun_reformed		
+	holy_site = romuva_pagan_reformed		
+	holy_site = dievas		
+	holy_site = saule	
+	holy_site = perkunas		
+	holy_site = peckols		
+	holy_site = bantu_pagan_reformed		
+	holy_site = nyakalagan_reformed		
+	holy_site = zande_pagan_reformed				
+	holy_site = zulu_pagan_reformed		
+	holy_site = kintu		
+	holy_site = batembuzi		
+	holy_site = imana
+	holy_site = nyasaye	
+	holy_site = nyau		
+	holy_site = makonde_pagan	
+	holy_site = mwari	
+	holy_site = zande_pagan	
+	holy_site = zulu_pagan		
+	holy_site = berber_pagan_reformed	
+	holy_site = berber_pagan	
+	holy_site = gurzil	
+	holy_site = bud_zen_reformed	
+	holy_site = bud_zor_reformed	
+	holy_site = bud_sthaviravada	
+	holy_site = bud_bahusrutiya	
+	holy_site = bud_mahayana	
+	holy_site = bud_pureland	
+	holy_site = bud_pratyeka	
+	holy_site = bud_vajrayana	
+	holy_site = bud_zen	
+	holy_site = bud_zor	
+	holy_site = celtic_christ_reformed
+	holy_site = stonehenge_pagan_reformed	
+	holy_site = iberian_pagan_reformed		
+	holy_site = stonehenge_pagan	
+	holy_site = lugh	
+	holy_site = endovellico	
+	holy_site = tibetan_reformed		
+	holy_site = lubu_reformed	
+	holy_site = tao_reformed	
+	holy_site = confucian	
+	holy_site = lubu	
+	holy_site = tibetan	
+	holy_site = tao	
+	holy_site = german_pagan_reformed	
+	holy_site = norse_christ_reformed	
+	holy_site = odin_pagan_reformed	
+	holy_site = ragnarok_reformed	
+	holy_site = teiwaz_reformed	
+	holy_site = odin_pagan	
+	holy_site = norse_war
+	holy_site = ragnarok	
+	holy_site = sowilo	
+	holy_site = nott	
+	holy_site = german_pagan	
+	holy_site = irminsul	
+	holy_site = allfather	
+	holy_site = teiwaz	
+	holy_site = cathar_reformed	
+	holy_site = christian_populist_reformed	
+	holy_site = mari_christ_reformed
+	holy_site = montanist_reformed	
+	holy_site = nasrani_reformed		
+	holy_site = priscillian_reformed	
+	holy_site = slavic_christian_reformed	
+	holy_site = antinomian	
+	holy_site = donatist			
+	holy_site = melkite	
+	holy_site = montanist	
+	holy_site = sabellianist	
+	holy_site = valentinian	
+	holy_site = mari_christ	
+	holy_site = priscillian	
+	holy_site = docetist	
+	holy_site = apollinarist	
+	holy_site = solomonic_christ	
+	holy_site = audianist	
+	holy_site = celtic_christ	
+	holy_site = marcionist
+	holy_site = nasrani	
+	holy_site = norse_christ	
+	holy_site = pelagian	
+	holy_site = semipelagian	
+	holy_site = sethian	
+	holy_site = slavic_christian	
+	holy_site = unctionist	
+	holy_site = amun_reformed	
+	holy_site = aten_reformed	
+	holy_site = isis_reformed	
+	holy_site = set_reformed	
+	holy_site = amun	
+	holy_site = aten	
+	holy_site = horus_re	
+	holy_site = isis	
+	holy_site = set	
+	holy_site = suomenusko_pagan_reformed	
+	holy_site = chumbylat_reformed	
+	holy_site = voipel_reformed	
+	holy_site = suomenusko_pagan	
+	holy_site = ilmatar	
+	holy_site = jumala	
+	holy_site = chumbylat	
+	holy_site = voipel	
+	holy_site = graeco_roman_reformed	
+	holy_site = graeco_roman	
+	holy_site = dionysos	
+	holy_site = jupiter	
+	holy_site = alexandros	
+	holy_site = solomonic_alexandros	
+	holy_site = roman_imperial	
+	holy_site = cybele	
+	holy_site = kubera_reformed					
+	holy_site = murugan_reformed	
+	holy_site = saura_reformed	
+	holy_site = vidharma_reformed	
+	holy_site = vidharma	
+	holy_site = saura	
+	holy_site = kubera	
+	holy_site = murugan	
+	holy_site = indohelen_reformed	
+	holy_site = indohelen	
+	holy_site = indoh_confucian	
+	holy_site = indoh_hindu	
+	holy_site = indoh_zor	
+	holy_site = inuit_pagan_reformed	
+	holy_site = inuit_pagan	
+	holy_site = jud_ark_reformed	
+	holy_site = judaism	
+	holy_site = jud_sabaoth	
+	holy_site = jud_ark	
+	holy_site = jud_zion	
+	holy_site = illuyanka_reformed	
+	holy_site = tarhunt_reformed	
+	holy_site = luwian	
+	holy_site = illuyanka	
+	holy_site = tarhunt	
+	holy_site = mand_ruha_reformed	
+	holy_site = mandaean_reformed	
+	holy_site = mand_ruha	
+	holy_site = yahyanism	
+	holy_site = ahriman_reformed	
+	holy_site = mani_germanic_reformed	
+	holy_site = mani_slavic_reformed	
+	holy_site = mani	
+	holy_site = mani_ahriman	
+	holy_site = mani_mithra	
+	holy_site = mani_slavic	
+	holy_site = mani_germanic	
+	holy_site = mithra	
+	holy_site = mithra_christ	
+	holy_site = mithra_sol	
+	holy_site = muslim_aliite_reformed	
+	holy_site = muslim_domination_reformed	
+	holy_site = ashari	
+	holy_site = athari	
+	holy_site = maturidi	
+	holy_site = murjiah	
+	holy_site = zahiri	
+	holy_site = sufi	
+	holy_site = ilm_islam	
+	holy_site = ghazi_islam	
+	holy_site = mutazil	
+	holy_site = marabout	
+	holy_site = neoplato	
+	holy_site = plato_pythagorean	
+	holy_site = porphyryan	
+	holy_site = plato_christ	
+	holy_site = plato_islam	
+	holy_site = zz01_vedanta	
+	holy_site = baal_monotheistic_reformed	
+	holy_site = beelshamen	
+	holy_site = aglibol	
+	holy_site = malakbel	
+	holy_site = palmyran_pagan	
+	holy_site = hadad	
+	holy_site = kothar	
+	holy_site = serer_reformed	
+	holy_site = mande_pagan	
+	holy_site = yoruba	
+	holy_site = nyame	
+	holy_site = anansi	
+	holy_site = rodnoveric_pagan_reformed	
+	holy_site = perun	
+	holy_site = veles	
+	holy_site = rodnoveric_pagan	
+	holy_site = rod	
+	holy_site = svaroh	
+	holy_site = dazhbog	
+	holy_site = sol_boreas_reformed	
+	holy_site = sol_islam_reformed	
+	holy_site = sol_sahara_reformed	
+	holy_site = sol	
+	holy_site = sol_christ	
+	holy_site = sol_mani	
+	holy_site = sol_apollo	
+	holy_site = sol_boreas	
+	holy_site = sol_islam	
+	holy_site = sol_sahara	
+	holy_site = sol_norse	
+	holy_site = sol_slav	
+	holy_site = sol_tsahay	
+	holy_site = erlik_reformed	
+	holy_site = tengri_bud_reformed	
+	holy_site = tengri_confucian_reformed	
+	holy_site = tengri_mani_reformed	
+	holy_site = tengrist_pagan_reformed	
+	holy_site = tengri_rod_reformed	
+	holy_site = vattisenyaly_reformed	
+	holy_site = tengrist_pagan	
+	holy_site = tengri_ahriman	
+	holy_site = tengri_bud	
+	holy_site = tengri_confucian	
+	holy_site = tengri_mani	
+	holy_site = tengri_rod	
+	holy_site = vattisenyaly	
+	holy_site = erlik	
+	holy_site = yazdanism_reformed	
+	holy_site = yazdanism	
+	holy_site = zal	
+	holy_site = zal_christ	
+	holy_site = zal_mani	
+	holy_site = mazdakism_reformed	
+	holy_site = zor_angra_reformed	
+	holy_site = zurvanism_reformed
+	holy_site = zor_angra	
+	holy_site = zor_hindu			
+	holy_site = druze_reformed
+}
+
+c_ephesos = { # Ionía (746)
+	holy_site = orthodox
+	holy_site = iconoclast
+}
+
+c_tephrike = { # Tephrike (944)
+	holy_site = paulician
+}
+
+c_sis = { # Sision (969)
+	holy_site = apostolic
+}
+
+c_philippopolis = { # Plovdiv (493)
+	holy_site = bogomilist
+	holy_site = cathar
+}
+
+c_sjaelland = { # Nørræ Syaland (266) # Northern Sjælland
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+
+c_uppland = { # Tiundaland (290)
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+
+c_steinkjer = { # Innriþrœndalóg (1257)
+	holy_site = pagan
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+
+c_ryazan = { # Riazan' (580)
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+
+c_kiev = { # Kiev (547)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+
+c_vyazma = { # Vyazma (569) # Viazma
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+
+c_novgorod = { # Novgorod (414)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+	holy_site = bogomilist
+}
+
+c_wroclaw = { # Wroclaw (434)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+
+c_deltuva = { # Deltuva (979)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+
+c_nadruvia = { # Nadruvia (1300)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+
+c_severin = { # Severin (516)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+
+c_vodica = { # Vodica (959)
+	holy_site = bogomilist
+}
+
+c_medina = { # Madinah (718) # Medina
+	holy_site = sunni
+	holy_site = shiite
+	holy_site = ibadi
+	holy_site = ismaili
+	holy_site = zaydi
+}
+
+c_mecca = { # Makkah (719) # Mecca
+	holy_site = sunni
+	holy_site = shiite
+	holy_site = pagan
+	holy_site = yazidi
+	holy_site = ibadi
+	holy_site = ismaili
+	holy_site = zaydi
+}
+
+c_hajar = { # Nizwa (869) # Hajar
+	holy_site = ibadi
+}
+
+c_dhofar = { # Zufar (866) # Dhofar
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+}
+
+c_alexandria = { # Iskandaríya (802)
+	holy_site = syriac
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = monothelite
+	holy_site = nestorian
+	holy_site = paulician
+	holy_site = apostolic
+	holy_site = maronite
+	holy_site = vieti_orthodox	
+	holy_site = nabawiyya
+}
+
+b_alexandria = { pentarchy = yes }
+
+c_quattara = { # Santariya (803), aka Siwa
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+	holy_site = judaism_reformed
+	holy_site = sethian_reformed
+	holy_site = muslim_sufi_reformed
+	holy_site = cybele_reformed	
+	holy_site = ethiopian_war_reformed
+	holy_site = waaq
+	holy_site = hereclemasculist_pagan	
+	holy_site = vieti_mithras_pagan	
+	holy_site = britannic_hyperborean_pagan	
+	holy_site = romist_pagan	
+	holy_site = amanai	
+	holy_site = indoh_bud
+	holy_site = svetovid			
+	holy_site = arab_pagan_reformed
+	holy_site = almaqah
+	holy_site = talab
+	holy_site = shams	
+	holy_site = allat
+	holy_site = hubal
+	holy_site = attar
+	holy_site = maher		
+	holy_site = tlateotocani			
+	holy_site = northern_sun_reformed		
+	holy_site = romuva_pagan_reformed		
+	holy_site = dievas		
+	holy_site = saule	
+	holy_site = perkunas		
+	holy_site = peckols		
+	holy_site = bantu_pagan_reformed		
+	holy_site = nyakalagan_reformed		
+	holy_site = zande_pagan_reformed				
+	holy_site = zulu_pagan_reformed		
+	holy_site = kintu		
+	holy_site = batembuzi		
+	holy_site = imana
+	holy_site = nyasaye	
+	holy_site = nyau		
+	holy_site = makonde_pagan	
+	holy_site = mwari	
+	holy_site = zande_pagan	
+	holy_site = zulu_pagan		
+	holy_site = berber_pagan_reformed	
+	holy_site = berber_pagan	
+	holy_site = gurzil	
+	holy_site = bud_zen_reformed	
+	holy_site = bud_zor_reformed	
+	holy_site = bud_sthaviravada	
+	holy_site = bud_bahusrutiya	
+	holy_site = bud_mahayana	
+	holy_site = bud_pureland	
+	holy_site = bud_pratyeka	
+	holy_site = bud_vajrayana	
+	holy_site = bud_zen	
+	holy_site = bud_zor	
+	holy_site = celtic_christ_reformed
+	holy_site = stonehenge_pagan_reformed	
+	holy_site = iberian_pagan_reformed		
+	holy_site = stonehenge_pagan	
+	holy_site = lugh	
+	holy_site = endovellico	
+	holy_site = tibetan_reformed		
+	holy_site = lubu_reformed	
+	holy_site = tao_reformed	
+	holy_site = confucian	
+	holy_site = lubu	
+	holy_site = tibetan	
+	holy_site = tao	
+	holy_site = german_pagan_reformed	
+	holy_site = norse_christ_reformed	
+	holy_site = odin_pagan_reformed	
+	holy_site = ragnarok_reformed	
+	holy_site = teiwaz_reformed	
+	holy_site = odin_pagan	
+	holy_site = norse_war
+	holy_site = ragnarok	
+	holy_site = sowilo	
+	holy_site = nott	
+	holy_site = german_pagan	
+	holy_site = irminsul	
+	holy_site = allfather	
+	holy_site = teiwaz	
+	holy_site = cathar_reformed	
+	holy_site = christian_populist_reformed	
+	holy_site = mari_christ_reformed
+	holy_site = montanist_reformed	
+	holy_site = nasrani_reformed		
+	holy_site = priscillian_reformed	
+	holy_site = slavic_christian_reformed	
+	holy_site = antinomian	
+	holy_site = donatist			
+	holy_site = melkite	
+	holy_site = montanist	
+	holy_site = sabellianist	
+	holy_site = valentinian	
+	holy_site = mari_christ	
+	holy_site = priscillian	
+	holy_site = docetist	
+	holy_site = apollinarist	
+	holy_site = solomonic_christ	
+	holy_site = audianist	
+	holy_site = celtic_christ	
+	holy_site = marcionist
+	holy_site = nasrani	
+	holy_site = norse_christ	
+	holy_site = pelagian	
+	holy_site = semipelagian	
+	holy_site = sethian	
+	holy_site = slavic_christian	
+	holy_site = unctionist	
+	holy_site = amun_reformed	
+	holy_site = aten_reformed	
+	holy_site = isis_reformed	
+	holy_site = set_reformed	
+	holy_site = amun	
+	holy_site = aten	
+	holy_site = horus_re	
+	holy_site = isis	
+	holy_site = set	
+	holy_site = suomenusko_pagan_reformed	
+	holy_site = chumbylat_reformed	
+	holy_site = voipel_reformed	
+	holy_site = suomenusko_pagan	
+	holy_site = ilmatar	
+	holy_site = jumala	
+	holy_site = chumbylat	
+	holy_site = voipel	
+	holy_site = graeco_roman_reformed	
+	holy_site = graeco_roman	
+	holy_site = dionysos	
+	holy_site = jupiter	
+	holy_site = alexandros	
+	holy_site = solomonic_alexandros	
+	holy_site = roman_imperial	
+	holy_site = cybele	
+	holy_site = kubera_reformed					
+	holy_site = murugan_reformed	
+	holy_site = saura_reformed	
+	holy_site = vidharma_reformed	
+	holy_site = vidharma	
+	holy_site = saura	
+	holy_site = kubera	
+	holy_site = murugan	
+	holy_site = indohelen_reformed	
+	holy_site = indohelen	
+	holy_site = indoh_confucian	
+	holy_site = indoh_hindu	
+	holy_site = indoh_zor	
+	holy_site = inuit_pagan_reformed	
+	holy_site = inuit_pagan	
+	holy_site = jud_ark_reformed	
+	holy_site = judaism	
+	holy_site = jud_sabaoth	
+	holy_site = jud_ark	
+	holy_site = jud_zion	
+	holy_site = illuyanka_reformed	
+	holy_site = tarhunt_reformed	
+	holy_site = luwian	
+	holy_site = illuyanka	
+	holy_site = tarhunt	
+	holy_site = mand_ruha_reformed	
+	holy_site = mandaean_reformed	
+	holy_site = mand_ruha	
+	holy_site = yahyanism	
+	holy_site = ahriman_reformed	
+	holy_site = mani_germanic_reformed	
+	holy_site = mani_slavic_reformed	
+	holy_site = mani	
+	holy_site = mani_ahriman	
+	holy_site = mani_mithra	
+	holy_site = mani_slavic	
+	holy_site = mani_germanic	
+	holy_site = mithra	
+	holy_site = mithra_christ	
+	holy_site = mithra_sol	
+	holy_site = muslim_aliite_reformed	
+	holy_site = muslim_domination_reformed	
+	holy_site = ashari	
+	holy_site = athari	
+	holy_site = maturidi	
+	holy_site = murjiah	
+	holy_site = zahiri	
+	holy_site = sufi	
+	holy_site = ilm_islam	
+	holy_site = ghazi_islam	
+	holy_site = mutazil	
+	holy_site = marabout	
+	holy_site = neoplato	
+	holy_site = plato_pythagorean	
+	holy_site = porphyryan	
+	holy_site = plato_christ	
+	holy_site = plato_islam	
+	holy_site = zz01_vedanta	
+	holy_site = baal_monotheistic_reformed	
+	holy_site = beelshamen	
+	holy_site = aglibol	
+	holy_site = malakbel	
+	holy_site = palmyran_pagan	
+	holy_site = hadad	
+	holy_site = kothar	
+	holy_site = serer_reformed	
+	holy_site = mande_pagan	
+	holy_site = yoruba	
+	holy_site = nyame	
+	holy_site = anansi	
+	holy_site = rodnoveric_pagan_reformed	
+	holy_site = perun	
+	holy_site = veles	
+	holy_site = rodnoveric_pagan	
+	holy_site = rod	
+	holy_site = svaroh	
+	holy_site = dazhbog	
+	holy_site = sol_boreas_reformed	
+	holy_site = sol_islam_reformed	
+	holy_site = sol_sahara_reformed	
+	holy_site = sol	
+	holy_site = sol_christ	
+	holy_site = sol_mani	
+	holy_site = sol_apollo	
+	holy_site = sol_boreas	
+	holy_site = sol_islam	
+	holy_site = sol_sahara	
+	holy_site = sol_norse	
+	holy_site = sol_slav	
+	holy_site = sol_tsahay	
+	holy_site = erlik_reformed	
+	holy_site = tengri_bud_reformed	
+	holy_site = tengri_confucian_reformed	
+	holy_site = tengri_mani_reformed	
+	holy_site = tengrist_pagan_reformed	
+	holy_site = tengri_rod_reformed	
+	holy_site = vattisenyaly_reformed	
+	holy_site = tengrist_pagan	
+	holy_site = tengri_ahriman	
+	holy_site = tengri_bud	
+	holy_site = tengri_confucian	
+	holy_site = tengri_mani	
+	holy_site = tengri_rod	
+	holy_site = vattisenyaly	
+	holy_site = erlik	
+	holy_site = yazdanism_reformed	
+	holy_site = yazdanism	
+	holy_site = zal	
+	holy_site = zal_christ	
+	holy_site = zal_mani	
+	holy_site = mazdakism_reformed	
+	holy_site = zor_angra_reformed	
+	holy_site = zurvanism_reformed
+	holy_site = zor_angra	
+	holy_site = zor_hindu			
+	holy_site = druze_reformed
+}
+
+c_cairo = { # Cairo (796)
+	holy_site = druze
+	holy_site = adoptionist
+}
+
+c_eilat = { # Jabal Katrina (786)
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+}
+
+c_damascus = { # Ghutah (728)
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+	holy_site = shiite
+	holy_site = ismaili
+	holy_site = zaydi
+	holy_site = druze	
+}
+
+c_baalbek = { # Bekaa (768)
+	holy_site = druze
+}
+
+c_aksum = { # Aksum (875)
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = monothelite
+}
+
+c_makuria = { # Dongola (1230)
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = monothelite
+}
+
+c_kent = { # Kent (73)
+	holy_site = catholic
+	holy_site = lollard
+}
+
+c_gloucester = { # Gloucester (21)
+	holy_site = lollard
+}
+
+c_middlesex = { # Middlesex (32)
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+
+c_york = { # West York Ridding # West ridding / York Vale
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+
+c_asti = { # Asti (232)
+	holy_site = waldensian
+}
+
+c_roma = { # Roma (333)
+	holy_site = catholic
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+	holy_site = judaism_reformed
+	holy_site = sethian_reformed
+	holy_site = muslim_sufi_reformed
+	holy_site = cybele_reformed	
+	holy_site = ethiopian_war_reformed
+	holy_site = waaq
+	holy_site = hereclemasculist_pagan	
+	holy_site = vieti_mithras_pagan	
+	holy_site = britannic_hyperborean_pagan	
+	holy_site = romist_pagan	
+	holy_site = amanai	
+	holy_site = indoh_bud
+	holy_site = svetovid			
+	holy_site = arab_pagan_reformed
+	holy_site = almaqah
+	holy_site = talab
+	holy_site = shams	
+	holy_site = allat
+	holy_site = hubal
+	holy_site = attar
+	holy_site = maher		
+	holy_site = tlateotocani			
+	holy_site = northern_sun_reformed		
+	holy_site = romuva_pagan_reformed		
+	holy_site = dievas		
+	holy_site = saule	
+	holy_site = perkunas		
+	holy_site = peckols		
+	holy_site = bantu_pagan_reformed		
+	holy_site = nyakalagan_reformed		
+	holy_site = zande_pagan_reformed				
+	holy_site = zulu_pagan_reformed		
+	holy_site = kintu		
+	holy_site = batembuzi		
+	holy_site = imana
+	holy_site = nyasaye	
+	holy_site = nyau		
+	holy_site = makonde_pagan	
+	holy_site = mwari	
+	holy_site = zande_pagan	
+	holy_site = zulu_pagan		
+	holy_site = berber_pagan_reformed	
+	holy_site = berber_pagan	
+	holy_site = gurzil	
+	holy_site = bud_zen_reformed	
+	holy_site = bud_zor_reformed	
+	holy_site = bud_sthaviravada	
+	holy_site = bud_bahusrutiya	
+	holy_site = bud_mahayana	
+	holy_site = bud_pureland	
+	holy_site = bud_pratyeka	
+	holy_site = bud_vajrayana	
+	holy_site = bud_zen	
+	holy_site = bud_zor	
+	holy_site = celtic_christ_reformed
+	holy_site = stonehenge_pagan_reformed	
+	holy_site = iberian_pagan_reformed		
+	holy_site = stonehenge_pagan	
+	holy_site = lugh	
+	holy_site = endovellico	
+	holy_site = tibetan_reformed		
+	holy_site = lubu_reformed	
+	holy_site = tao_reformed	
+	holy_site = confucian	
+	holy_site = lubu	
+	holy_site = tibetan	
+	holy_site = tao	
+	holy_site = german_pagan_reformed	
+	holy_site = norse_christ_reformed	
+	holy_site = odin_pagan_reformed	
+	holy_site = ragnarok_reformed	
+	holy_site = teiwaz_reformed	
+	holy_site = odin_pagan	
+	holy_site = norse_war
+	holy_site = ragnarok	
+	holy_site = sowilo	
+	holy_site = nott	
+	holy_site = german_pagan	
+	holy_site = irminsul	
+	holy_site = allfather	
+	holy_site = teiwaz	
+	holy_site = cathar_reformed	
+	holy_site = christian_populist_reformed	
+	holy_site = mari_christ_reformed
+	holy_site = montanist_reformed	
+	holy_site = nasrani_reformed		
+	holy_site = priscillian_reformed	
+	holy_site = slavic_christian_reformed	
+	holy_site = antinomian	
+	holy_site = donatist			
+	holy_site = melkite	
+	holy_site = montanist	
+	holy_site = sabellianist	
+	holy_site = valentinian	
+	holy_site = mari_christ	
+	holy_site = priscillian	
+	holy_site = docetist	
+	holy_site = apollinarist	
+	holy_site = solomonic_christ	
+	holy_site = audianist	
+	holy_site = celtic_christ	
+	holy_site = marcionist
+	holy_site = nasrani	
+	holy_site = norse_christ	
+	holy_site = pelagian	
+	holy_site = semipelagian	
+	holy_site = sethian	
+	holy_site = slavic_christian	
+	holy_site = unctionist	
+	holy_site = amun_reformed	
+	holy_site = aten_reformed	
+	holy_site = isis_reformed	
+	holy_site = set_reformed	
+	holy_site = amun	
+	holy_site = aten	
+	holy_site = horus_re	
+	holy_site = isis	
+	holy_site = set	
+	holy_site = suomenusko_pagan_reformed	
+	holy_site = chumbylat_reformed	
+	holy_site = voipel_reformed	
+	holy_site = suomenusko_pagan	
+	holy_site = ilmatar	
+	holy_site = jumala	
+	holy_site = chumbylat	
+	holy_site = voipel	
+	holy_site = graeco_roman_reformed	
+	holy_site = graeco_roman	
+	holy_site = dionysos	
+	holy_site = jupiter	
+	holy_site = alexandros	
+	holy_site = solomonic_alexandros	
+	holy_site = roman_imperial	
+	holy_site = cybele	
+	holy_site = kubera_reformed					
+	holy_site = murugan_reformed	
+	holy_site = saura_reformed	
+	holy_site = vidharma_reformed	
+	holy_site = vidharma	
+	holy_site = saura	
+	holy_site = kubera	
+	holy_site = murugan	
+	holy_site = indohelen_reformed	
+	holy_site = indohelen	
+	holy_site = indoh_confucian	
+	holy_site = indoh_hindu	
+	holy_site = indoh_zor	
+	holy_site = inuit_pagan_reformed	
+	holy_site = inuit_pagan	
+	holy_site = jud_ark_reformed	
+	holy_site = judaism	
+	holy_site = jud_sabaoth	
+	holy_site = jud_ark	
+	holy_site = jud_zion	
+	holy_site = illuyanka_reformed	
+	holy_site = tarhunt_reformed	
+	holy_site = luwian	
+	holy_site = illuyanka	
+	holy_site = tarhunt	
+	holy_site = mand_ruha_reformed	
+	holy_site = mandaean_reformed	
+	holy_site = mand_ruha	
+	holy_site = yahyanism	
+	holy_site = ahriman_reformed	
+	holy_site = mani_germanic_reformed	
+	holy_site = mani_slavic_reformed	
+	holy_site = mani	
+	holy_site = mani_ahriman	
+	holy_site = mani_mithra	
+	holy_site = mani_slavic	
+	holy_site = mani_germanic	
+	holy_site = mithra	
+	holy_site = mithra_christ	
+	holy_site = mithra_sol	
+	holy_site = muslim_aliite_reformed	
+	holy_site = muslim_domination_reformed	
+	holy_site = ashari	
+	holy_site = athari	
+	holy_site = maturidi	
+	holy_site = murjiah	
+	holy_site = zahiri	
+	holy_site = sufi	
+	holy_site = ilm_islam	
+	holy_site = ghazi_islam	
+	holy_site = mutazil	
+	holy_site = marabout	
+	holy_site = neoplato	
+	holy_site = plato_pythagorean	
+	holy_site = porphyryan	
+	holy_site = plato_christ	
+	holy_site = plato_islam	
+	holy_site = zz01_vedanta	
+	holy_site = baal_monotheistic_reformed	
+	holy_site = beelshamen	
+	holy_site = aglibol	
+	holy_site = malakbel	
+	holy_site = palmyran_pagan	
+	holy_site = hadad	
+	holy_site = kothar	
+	holy_site = serer_reformed	
+	holy_site = mande_pagan	
+	holy_site = yoruba	
+	holy_site = nyame	
+	holy_site = anansi	
+	holy_site = rodnoveric_pagan_reformed	
+	holy_site = perun	
+	holy_site = veles	
+	holy_site = rodnoveric_pagan	
+	holy_site = rod	
+	holy_site = svaroh	
+	holy_site = dazhbog	
+	holy_site = sol_boreas_reformed	
+	holy_site = sol_islam_reformed	
+	holy_site = sol_sahara_reformed	
+	holy_site = sol	
+	holy_site = sol_christ	
+	holy_site = sol_mani	
+	holy_site = sol_apollo	
+	holy_site = sol_boreas	
+	holy_site = sol_islam	
+	holy_site = sol_sahara	
+	holy_site = sol_norse	
+	holy_site = sol_slav	
+	holy_site = sol_tsahay	
+	holy_site = erlik_reformed	
+	holy_site = tengri_bud_reformed	
+	holy_site = tengri_confucian_reformed	
+	holy_site = tengri_mani_reformed	
+	holy_site = tengrist_pagan_reformed	
+	holy_site = tengri_rod_reformed	
+	holy_site = vattisenyaly_reformed	
+	holy_site = tengrist_pagan	
+	holy_site = tengri_ahriman	
+	holy_site = tengri_bud	
+	holy_site = tengri_confucian	
+	holy_site = tengri_mani	
+	holy_site = tengri_rod	
+	holy_site = vattisenyaly	
+	holy_site = erlik	
+	holy_site = yazdanism_reformed	
+	holy_site = yazdanism	
+	holy_site = zal	
+	holy_site = zal_christ	
+	holy_site = zal_mani	
+	holy_site = mazdakism_reformed	
+	holy_site = zor_angra_reformed	
+	holy_site = zurvanism_reformed
+	holy_site = zor_angra	
+	holy_site = zor_hindu			
+	holy_site = druze_reformed
+	holy_site = pagan
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+
+b_roma = { pentarchy = yes }
+
+c_ferrara = { # Rovigo (353)
+	holy_site = waldensian
+	holy_site = cathar
+	holy_site = lollard
+}
+
+c_lyon = { # Lyon (227)
+	holy_site = cathar
+	holy_site = waldensian
+	holy_site = adoptionist
+}
+
+c_brugge = { # Brugge (78)
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+
+c_ile_de_france = { # Paris (112)
+	holy_site = aztec
+	holy_site = aztec_reformed
+	holy_site = adoptionist
+}
+
+c_carcassonne = { # Carcassona (213)
+	holy_site = cathar
+}
+
+c_santiago = { # Santiago (157)
+	holy_site = catholic
+	holy_site = adoptionist
+}
+
+c_cordoba = { # Cordoba (181)
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+
+c_kairwan = { # Kairwan (815)
+	holy_site = sunni
+}
+
+c_tunis = { # Tunis (817)
+	holy_site = nabawiyya
+}
+
+c_al_djazair = { # Al-Jazáir (831)
+	holy_site = ibadi
+}
+
+c_marrakech = { # Marrákush (843)
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+
+c_massat = { # Asfí (844)
+	holy_site = nabawiyya
+}
+
+c_ghana = { # Wagadu (913)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+
+c_mali = { # Manding (925)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+
+c_timbuktu = { # Timbuktu (911)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+
+c_esfahan = { # Isfahan (646)
+	holy_site = manichean
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+
+c_shiraz = { # Shíráz (644) # Shiraz
+	holy_site = nabawiyya
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+
+c_larestan = { # Darabjird (642) # Larestan
+	holy_site = zoroastrian # The Great Fire of Adur Farnbag (unidentified location in Pars, possibly near Juyum)
+	holy_site = mazdaki
+	holy_site = manichean
+}
+
+c_sistan = { # Sistan (637)
+	holy_site = zoroastrian # Fire temple of Karkuya
+	holy_site = mazdaki
+}
+
+c_maragheh = { # Maragheh (650)
+	holy_site = zoroastrian # The Great Fire of Adur Gushnasp (Shiz, Media)
+	holy_site = mazdaki
+	holy_site = yazidi # Placeholder
+}
+
+c_nishapur = { # Níshápúr (634) # Nishápur
+	holy_site = zoroastrian # The Great Fire of Adur Burzen-Mehr (on a mountain near Nishapur)
+	holy_site = mazdaki
+	holy_site = manichean
+	holy_site = yazidi
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+
+c_samarqand = { # Samarkand (903)
+	holy_site = manichean
+}
+
+c_al_nadjaf = { # Qadisiyyah (692) # Al Nadjaf
+	holy_site = ismaili
+}
+
+c_kufa = { # Al-Kufah (655) # Kufa
+	holy_site = shiite
+	holy_site = zaydi
+}
+
+c_baghdad = { # Baghdad (693)
+	holy_site = sunni
+	holy_site = nestorian
+	holy_site = manichean
+	holy_site = zoroastrian # Great fire temples of Ctesiphon and Madain
+	holy_site = mazdaki
+}
+
+c_mathura = { # Mathura (1664)
+	holy_site = hindu
+	holy_site = buddhist
+}
+
+c_kol = { # Kol (1665)
+	holy_site = buddhist # Sankassa
+}
+
+c_garhwal = { # Garhwal (1980)
+	holy_site = hindu # Haridwar/Gangadvara
+}
+
+c_sarasvata_mandala = { # Anahilapataka/Vadnagar (1629)
+	holy_site = jain
+}
+
+c_dvaraka = { # Dvaraka (1633)
+	holy_site = hindu
+}
+
+c_kutch = { # Kutch (1634)
+	holy_site = jain # Bhadreshwar
+}
+
+c_bhumilka = { # Bhumilka (1635)
+	holy_site = jain # Girnar
+}
+
+c_godwad = { # Godwad (1644)
+	holy_site = jain
+}
+
+c_ujjayini = { # Ujjayini (1673)
+	holy_site = hindu
+}
+
+c_vidisa = { # Vidisa (1675)
+	holy_site = buddhist
+}
+
+c_purushapura = { # Purushapura (1625)
+	holy_site = buddhist # Kanishka Vihara
+	holy_site = bon # placeholder
+	holy_site = bon_reformed
+}
+
+c_varazhnunik = { # Varazhnunik (1531)
+	holy_site = apostolic
+}
+
+c_jerusalem = { # Jérusalem (774)
+	holy_site = catholic
+	holy_site = orthodox
+	holy_site = iconoclast
+	holy_site = sunni
+	holy_site = shiite
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = monothelite
+	holy_site = nestorian
+	holy_site = syriac
+	holy_site = pagan
+	holy_site = yazidi
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+	holy_site = ibadi
+	holy_site = waldensian
+	holy_site = cathar
+	holy_site = lollard
+	holy_site = paulician
+	holy_site = apostolic
+	holy_site = maronite
+	holy_site = vieti_orthodox	
+	holy_site = bogomilist
+	holy_site = ismaili
+	holy_site = zaydi
+	holy_site = nabawiyya
+}
+
+b_jerusalem = {
+	pentarchy = orthodox
+	pentarchy = iconoclast
+}
+
+c_beirut = { # Beirut (770)
+	holy_site = maronite
+	holy_site = vieti_orthodox	
+	holy_site = druze
+}
+
+c_antiocheia = { # Antioch (764)
+	holy_site = syriac
+	holy_site = orthodox
+	holy_site = iconoclast
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = monothelite
+	holy_site = nestorian
+	holy_site = paulician
+	holy_site = apostolic
+	holy_site = maronite
+	holy_site = vieti_orthodox	
+	holy_site = druze
+}
+
+b_antiocheia = { pentarchy = yes }
+
+c_amida = { # Amida (683)
+	holy_site = syriac
+}
+
+c_mardin = { # Mardin (1239)
+	holy_site = syriac
+	holy_site = nestorian
+}
+
+c_nineveh = { # Ninawa (685)
+	holy_site = yazidi
+}
+
+c_mecklemburg = { # Mecklemburg (260) # Mecklenburg
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+
+c_rugen = { # Rügen (304)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+
+c_jeriska = { # Jersika (963)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+
+c_osel = { # Osilia (376)
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+
+c_crimea = { # Qirim (559)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+
+c_itil = { # Itil (620)
+	holy_site = pagan
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+
+c_ghazna = { # Ghazna (1547)
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+	holy_site = buddhist # site of "pagan" pilgrimage according to Muslim records
+}
+
+c_zamindawar = { # Zamindavar (852)
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+
+c_jand = { # Jand (900)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+
+c_barskhan = { # Barskhan (1577)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+
+c_viipuri = { # Viipuri (1296)
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+
+c_perm = { # Viser (886) # Višera
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+
+c_hlynov = { # Vice (401) # Vyatka
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+
+c_absheron = { # Abšaran (668)
+	holy_site = paulician
+}
+
+c_tuat = { # Tuat (1396)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+
+c_zamfara = { # Zamfara (1323)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+
+c_kashgar = { # Kashgar (1567)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate
+}
+
+c_kucha = { # Kucha (1569)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate
+}
+
+c_balasaghun = { # Balasaghun (1572)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate (transferred from Qarashahr)
+}
+
+c_khotan = { # Khotan (1580)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate
+}
+
+c_badakhshan = { # Badakhshan (1553)
+	holy_site = bon # placeholder
+	holy_site = bon_reformed
+}
+
+c_gilgit = { # Gilgit (1975)
+	holy_site = bon
+	holy_site = bon_reformed
+}
+
+c_purang = { # Purang (1985)
+	holy_site = hindu # Mount Kailash
+	holy_site = jain
+	holy_site = bon
+	holy_site = bon_reformed
+}
+
+c_kunlun = { # Kunlun (1989)
+	holy_site = taoist # shares the same name as a mythical mountain in Chinese/Taoist mythology
+	holy_site = bon # placeholder
+	holy_site = bon_reformed
+}

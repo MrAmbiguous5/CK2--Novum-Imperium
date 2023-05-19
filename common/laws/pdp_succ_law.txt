@@ -1,0 +1,52 @@
+succ_playable_catholic_bishopric = {
+		potential = {
+			ai = no
+			is_landless_type_title = no
+			OR = {
+				AND = {
+					tier = baron
+					OR = {
+						is_theocracy = yes
+						government = playable_theocracy_government
+					}
+				}
+				OR = {
+					holder_scope = { is_theocracy = yes }
+					holder_scope = { government = playable_theocracy_government}
+					holder_scope = { government = order_government}
+				}
+			}
+
+			holder_scope = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+				is_merchant_republic = no
+				#OR = {
+					#independent = yes
+					###is_feudal = no
+					#NOT = {
+					#	any_liege = {
+					#		holy_order = yes
+					#	}
+					#}
+				#}
+			}
+							  
+			is_primary_type_title = no
+			NOT = { holder_scope = { government = confucian_bureaucracy } }
+			NOT = { holder_scope = { government = chinese_imperial_government } }
+		}
+		effect = {
+			succession = {
+				base_type = feudal_elective
+				voting_rules = playable_bishopric_succession
+			}
+			elective_voting_rules = playable_bishopric_succession
+		}
+		revoke_allowed = {
+			always = no
+		}
+	}
+}

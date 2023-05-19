@@ -1,0 +1,51 @@
+government_flavor = {
+	name = gov_rhaetian_imperial_government
+	graphics = GFX_evt_rome_falls
+	priority = 3
+	trigger = {
+		is_landed = yes
+		OR = {
+			has_landed_title = e_bavaria_lombardy
+			government = bavarian_imperial_government
+		}
+	}	
+}
+
+government_flavor = {
+	name = gov_irish_imperial_government
+	graphics = GFX_evt_tribal_lands
+	priority = 3
+	trigger = {
+		is_landed = yes
+		OR = {
+			has_landed_title = e_greater_mumu
+			government = mumu_feudal_government
+		}
+	}	
+}
+
+government_flavor = {
+	name = gov_ingstate_imperial_government
+	graphics = GFX_evt_beheading
+	priority = 3
+	trigger = {
+		is_landed = yes
+		OR = {
+			has_landed_title = e_ingstate
+			government = ingstate_dictatorship_government
+		}
+	}	
+}
+
+government_flavor = {
+	name = gov_neoroman_imperial_government
+	graphics = GFX_evt_victory_arch_byzantine
+	priority = 3
+	trigger = {
+		is_landed = yes
+		OR = {
+			has_landed_title = e_empire_no_subtitle
+			government = late_empire_imperial_government
+		}
+	}	
+}
