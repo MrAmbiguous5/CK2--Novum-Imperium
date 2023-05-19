@@ -1,0 +1,279 @@
+# -*- ck2.history.titles -*-
+
+661.2.28 = {
+	holder = 163029
+}
+680.5.6 = {
+	holder = 163030
+}
+683.1.1 = {
+	holder = 163031
+}
+684.6.1 = {
+	holder = 163003
+}
+685.5.7 = {
+	holder = 163002
+}
+705.1.1 = {
+	holder = 163032
+}
+715.1.1 = {
+	holder = 163033
+}
+717.10.1 = {
+	holder = 163035
+}
+720.2.10 = {
+	holder = 163036
+}
+724.1.1 = {
+	holder = 163001
+}
+743.2.6 = {
+	holder = 163037
+}
+744.4.15 = {
+	holder = 163038
+}
+744.10.3 = {
+	holder = 163039
+}
+744.11.3 = {
+	holder = 163041
+}
+750.1.1 = {
+	holder = 34001
+}
+754.1.1 = {
+	holder = 34002
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 1
+		}
+		set_variable = {
+			which = "imperial_decay"
+			value = 25
+		}
+	}
+}
+775.1.1 = {
+	holder = 34003
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 2
+		}
+	}
+}
+785.1.1 = {
+	holder = 34004
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 3
+		}
+	}
+}
+786.1.1 = {
+	holder = 34005
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 4
+		}
+	}
+}
+809.1.1 = {
+	holder = 34006
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 5
+		}
+	}
+}
+813.1.1 = {
+	holder = 34007
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 6
+		}
+	}
+}
+833.8.9 = {
+	holder = 34008
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 7
+		}
+	}
+}
+836.1.1 = {
+	capital = 696 # The Abbasid Court Moves to Samarra
+}
+842.1.5 = {
+	holder = 34009
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 8
+		}
+	}
+}
+847.1.1 = {
+	holder = 34010
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 9
+		}
+	}
+}
+861.12.1 = {
+	holder = 34012
+	law = infighting_0
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 10
+		}
+	}
+}
+862.6.7 = {
+	holder = 34013
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 11
+		}
+	}
+}
+866.1.1 = {
+	holder = 34014
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 12
+		}
+		set_variable = {
+			which = "imperial_decay"
+			value = 50
+		}
+	}
+	law = law_voting_power_1
+	law = war_voting_power_1
+	law = titles_voting_power_1
+}
+869.1.1 = {
+	holder = 34015
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 13
+		}
+	}
+}
+870.6.1 = {
+	effect = {
+		revoke_law = infighting_0
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 14
+		}
+	}
+	holder = 34016
+	law = titles_voting_power_0
+}
+892.1.1 = {
+	capital = 693 # The Abbasid Court returns to Baghdad
+}
+892.10.1 = {
+	holder = 34018
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 15
+		}
+	}
+}
+902.1.1 = {
+	holder = 34019
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 16
+		}
+	}
+}
+908.1.1 = {
+	holder = 34021
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 17
+		}
+	}
+}
+932.1.1 = {
+	holder = 34020
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 18
+		}
+	}
+}
+934.1.1 = {
+	holder = 34022
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 19
+		}
+	}
+}
+940.1.1 = {
+	holder = 34023
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 20
+		}
+	}
+}
+944.1.1 = {
+	holder = 34024
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 21
+		}
+	}
+}
+945.1.1 = {
+	liege = 0
+	effect = {
+		set_variable = {
+			which = "imperial_dynasty_count"
+			value = 0
+		}
+	}
+	holder = 0
+	law = law_voting_power_0
+	law = war_voting_power_0
+	capital = 719 # Mecca
+}
+#946.1.1 = {
+#	holder = 34025
+#}
+#974.1.1 = {
+#	holder = 3080
+#}
+#978.1.1 = {
+#	holder = 0
+#	capital = 719 # Mecca
+#}
