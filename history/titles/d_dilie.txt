@@ -1,0 +1,7 @@
+867.1.1 = { holder = 1417457 historical_nomad = yes }
+885.1.1 = { holder = 1417458 }
+915.1.1 = { holder = 1417459 }
+#Liao
+919.1.1 = { liege = e_khitan }
+920.1.1 = { holder = 1417448 }
+950.1.1 = { holder = 0 }
