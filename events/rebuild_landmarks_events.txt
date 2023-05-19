@@ -1,0 +1,3948 @@
+namespace = rebuild_chattousa
+####Rebuild Chattousa
+province_event = {
+	id = rebuild_chattousa.1
+#	title = "EVTNAMErebuild_chattousa.1"
+	desc = "EVTDESCrebuild_chattousa.1"
+	picture = "GFX_persepolis_ruin"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.1" # Rebuild just the royal palace.
+		set_global_flag = rebuilding_chattousa
+		add_province_modifier = { name = "rebuilding_chattousa_local" duration = 730 }
+		owner = {
+			wealth = -150
+		}
+		custom_tooltip = {
+			text = start_rebuild_palace
+			hidden_tooltip = {
+				province_event = {
+					id = rebuild_chattousa.2 
+					days = 730
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTBrebuild_chattousa.1" # Rebuild the entire city.
+		set_global_flag = rebuilding_chattousa
+		add_province_modifier = { name = "rebuilding_chattousa_local" duration = 1460 }
+		owner = {
+			wealth = -300
+		}
+		custom_tooltip = {
+			text = start_rebuild_palace_city
+			hidden_tooltip = {
+				province_event = { 
+					id = rebuild_chattousa.3 
+					days = 1460 
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTCrebuild_chattousa.1" # Rebuild palace, city and temple!
+		trigger = {
+			owner = {
+				piety = 500
+			}
+		}
+		set_global_flag = rebuilding_chattousa
+		add_province_modifier = { name = "rebuilding_chattousa_local" duration = 2920 }
+		owner = {
+			wealth = -300
+		}
+		custom_tooltip = {
+			text = start_rebuild_palace_city_temple
+			hidden_tooltip = {
+				province_event = {
+					id = rebuild_chattousa.4 
+					days = 2920 
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTDrebuild_chattousa.1" # I have better uses for my gold
+	}
+}
+
+####Rebuild Chattousa 2 - Palace only
+province_event = {
+	id = rebuild_chattousa.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					religion_group = luwian_group
+				}
+				narrative_event = {
+					id = rebuild_chattousa.9
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion_group = luwian_group
+					}
+				}
+				character_event = {
+					id = rebuild_chattousa.10
+				}
+			}
+		}
+	}
+}
+#Rebuild Chattousa - Palace only (owner)
+narrative_event = {
+	id = rebuild_chattousa.9
+	title = "EVTNAMErebuild_chattousa.2"
+	desc = "EVTDESCrebuild_chattousa.2"
+	picture = "GFX_persepolis_built"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.2" #Palace
+		prestige = 300
+		set_global_flag = chattousa_rebuilt
+		set_character_flag = rebuilt_chattousa_palace
+		b_mikissos = {
+			set_name = "Great Chattousa"
+			location = {
+				add_province_modifier = {
+					name = "chattousa_palace"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+#Current owner wrong religion, project cancelled.
+character_event = {
+	id = rebuild_chattousa.10
+	picture = GFX_persepolis_ruin
+	desc = EVTDESCrebuild_chattousa.10
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTArebuild_chattousa.10
+		clr_global_flag = rebuilding_chattousa
+	}
+}
+#Rebuilt palace and city
+province_event = {
+	id = rebuild_chattousa.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					religion_group = luwian_group
+				}
+				narrative_event = {
+					id = rebuild_chattousa.11
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion_group = luwian_group
+					}
+				}
+				character_event = {
+					id = rebuild_chattousa.10
+				}
+			}
+		}
+	}
+}
+#Rebuilt palace and city (owner)
+narrative_event = {
+	id = rebuild_chattousa.11
+	title = "EVTNAMErebuild_chattousa.3"
+	desc = "EVTDESCrebuild_chattousa.3"
+	picture = "GFX_persepolis_built"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.2" #City
+		prestige = 500
+		set_global_flag = chattousa_rebuilt
+		set_character_flag = rebuilt_chattousa_city
+		b_mikissos = {
+			set_name = "Great Chattousa"
+			location = {
+				add_province_modifier = { name = "chattousa_city" duration = -1 }
+			}
+		}
+	}
+}
+#Rebuilt palace, city and temple
+province_event = {
+	id = rebuild_chattousa.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					religion_group = luwian_group
+				}
+				narrative_event = {
+					id = rebuild_chattousa.12
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion_group = luwian_group
+					}
+				}
+				character_event = {
+					id = rebuild_chattousa.10
+				}
+			}
+		}
+	}
+}
+				
+#Rebuilt palace, city and temple (owner)
+narrative_event = {
+	id = rebuild_chattousa.12
+	title = "EVTNAMErebuild_chattousa.4"
+	desc = "EVTDESCrebuild_chattousa.4"
+	picture = "GFX_persepolis_built"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.2"
+		prestige = 500
+		piety = 500
+		set_global_flag = chattousa_rebuilt
+		add_trait = arinnitifavor
+#		add_character_modifier = {
+#			name = arinnitifavor_modifier
+#			days = -1
+#		}
+		b_mikissos = {
+			set_name = "Great Chattousa"
+			location = {
+				add_province_modifier = {
+					name = "chattousa_temple"
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion_head = {
+					always = yes
+				}
+			}
+			religion_head = {
+				b_tavia = {
+					gain_title = PREV
+				}
+			}
+		}
+	}
+}
+#Palace rebuilt by previous ruler, rebuild city
+province_event = {
+	id = rebuild_chattousa.5
+#	title = "EVTNAMErebuild_chattousa.1"
+	desc = "EVTDESCrebuild_chattousa.5"
+	picture = "GFX_persepolis_ruin"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.5" # Rebuild the city.
+		set_global_flag = rebuilding_chattousa
+		add_province_modifier = { name = "rebuilding_chattousa_local" duration = 730 }
+		owner = {
+			wealth = -150
+		}
+		custom_tooltip = {
+			text = start_rebuild_city
+			hidden_tooltip = {
+				province_event = {
+					id = rebuild_chattousa.6 
+					days = 730 
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTDrebuild_chattousa.1" # I have better uses for my gold
+	}
+}
+#Rebuilt city
+province_event = {
+	id = rebuild_chattousa.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					religion_group = luwian_group
+				}
+				narrative_event = {
+					id = rebuild_chattousa.13
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion_group = luwian_group
+					}
+				}
+				character_event = {
+					id = rebuild_chattousa.10
+				}
+			}
+		}
+	}
+}
+#Rebuilt city (owner)
+narrative_event = {
+	id = rebuild_chattousa.13
+	title = "EVTNAMErebuild_chattousa.3"
+	desc = "EVTDESCrebuild_chattousa.6"
+	picture = "GFX_persepolis_built"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.2" #City
+		prestige = 500
+		set_character_flag = rebuilt_chattousa_cit
+		b_mikissos = {
+			set_name = "Great Chattousa"
+			location = {
+				remove_province_modifier = chattousa_palace
+				add_province_modifier = {
+					name = "chattousa_city"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+#City rebuilt by previous ruler, rebuild palace
+province_event = {
+	id = rebuild_chattousa.7
+#	title = "EVTNAMErebuild_chattousa.1"
+	desc = "EVTDESCrebuild_chattousa.7"
+	picture = "GFX_persepolis_ruin"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.7" # Rebuild the palace.
+		set_global_flag = rebuilding_chattousa
+		add_province_modifier = { name = "rebuilding_chattousa_local" duration = 730 }
+		owner = {
+			wealth = -150
+		}
+		custom_tooltip = {
+			text = start_build_temple
+			hidden_tooltip = {
+				province_event = {
+					id = rebuild_chattousa.8
+					days = 730
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTDrebuild_chattousa.1" # I have better uses for my gold
+	}
+}
+#Rebuilt temple
+province_event = {
+	id = rebuild_chattousa.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					religion_group = luwian_group
+				}
+				narrative_event = {
+					id = rebuild_chattousa.14
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion_group = luwian_group
+					}
+				}
+				character_event = {
+					id = rebuild_chattousa.10
+				}
+			}
+		}
+	}
+}
+#Built temple (owner)
+narrative_event = {
+	id = rebuild_chattousa.14
+	title = "EVTNAMErebuild_chattousa.4"
+	desc = "EVTDESCrebuild_chattousa.8"
+	picture = "GFX_persepolis_built"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTArebuild_chattousa.2" #City
+		prestige = 500
+		piety = 500
+		set_character_flag = rebuilt_chattousa_palace
+		add_trait = arinnitifavor
+	#	add_character_modifier = {
+	#		name = arinnitifavor_modifier
+	#		days = -1
+	#	}
+		b_mikissos = {
+			set_name = "Great Chattousa"
+			location = {
+				remove_province_modifier = chattousa_city
+				add_province_modifier = {
+					name = "chattousa_temple"
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion_head = {
+					always = yes
+				}
+			}
+			religion_head = {
+				b_tavia = {
+					gain_title = PREV
+				}
+			}
+		}
+	}
+}
+
+namespace = seek_arinnitis_favor
+narrative_event = {
+	id = seek_arinnitis_favor.1
+	title = EVTNAMEarinnitis_favor.1
+	desc = EVTDESCarinnitis_favor.1
+	picture = GFX_evt_holy_light
+	
+	trigger = {
+		has_ambition = obj_become_arinnitis_consort
+		NOT = {
+			has_character_flag = seeking_arinnitis_favor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.1
+		set_character_flag = seeking_arinnitis_favor
+		job_spiritual = {
+			custom_tooltip = {
+				text = analyzes_dream
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.3
+						days = 7
+						random = 3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBarinnitis_favor.1
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+narrative_event = {
+	id = seek_arinnitis_favor.2
+	title = EVTNAMEarinnitis_favor.1
+	desc = EVTDESCarinnitis_favor.2
+	picture = GFX_evt_holy_light
+	
+	trigger = {
+		has_ambition = obj_become_arinniti_in_flesh
+		NOT = {
+			has_character_flag = seeking_arinnitis_favor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.1
+		set_character_flag = seeking_arinnitis_favor
+		job_spiritual = {
+			custom_tooltip = {
+				text = analyzes_dream
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.3
+						days = 7
+						random = 3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBarinnitis_favor.1
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+#Lord Spiritual reacts to liege's dream
+character_event = {
+	id = seek_arinnitis_favor.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	option = {		#Discourage liege
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 20
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 10
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = 0
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -10
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -20
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -30
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -50
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -60
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -70
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -80
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					opinion = {
+						who = FROM
+						value = -90
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOR = {
+						trait = detached_priest
+						trait = martial_cleric
+						trait = scholarly_theologian
+						trait = mastermind_theologian
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = cynical
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					is_female = no
+					trait = chaste
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					is_female = yes
+					trait = lustful
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = temperate
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = cheap
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = greedy
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = slothful
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = shy
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					is_weak_trigger = yes
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = humble
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						piety = 2500
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						piety = 2000
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						piety = 1500
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						piety = 1000
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						piety = 500
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						prestige = 1000
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						prestige = 500
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = ugly
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					age = 50
+				}
+			}
+			modifier = {
+				factor = 1.5
+				is_reformed_religion = no
+			}
+		}
+		
+		FROM = {
+			if = {
+				limit = {
+					is_female = no
+				}
+				narrative_event = {
+					id = seek_arinnitis_favor.4
+				}
+			}
+			if = {
+				limit = {
+					is_female = yes
+				}
+				narrative_event = {
+					id = seek_arinnitis_favor.5
+				}
+			}
+		}
+	}
+	option = {		#Encourage liege
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.1
+				opinion = {
+					who = FROM
+					value = 50
+				}
+			}
+			modifier = {
+				factor = 1.1
+				opinion = {
+					who = FROM
+					value = 60
+				}
+			}
+			modifier = {
+				factor = 1.1
+				opinion = {
+					who = FROM
+					value = 70
+				}
+			}
+			modifier = {
+				factor = 1.1
+				opinion = {
+					who = FROM
+					value = 80
+				}
+			}
+			modifier = {
+				factor = 1.1
+				opinion = {
+					who = FROM
+					value = 90
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = martial_cleric
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = scholarly_theologian
+				}
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					trait = mastermind_theologian
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = zealous
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = scholar
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = poet
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					is_female = no
+					trait = lustful
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					is_female = yes
+					trait = chaste
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = gluttonous
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = charitable
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = diligent
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = gregarious
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					is_strong_trigger = yes
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = proud
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					piety = 3000
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					piety = 4000
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					piety = 5000
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					piety = 6000
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					piety = 7000
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					prestige = 2000
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					prestige = 3000
+				}
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					trait = arinnitifavor
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					trait = fair
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = {
+					NOT = {
+						age = 31
+					}
+				}
+			}
+		}
+		FROM = {
+			if = {
+				limit = {
+					is_female = no
+				}
+				narrative_event = {
+					id = seek_arinnitis_favor.6
+				}
+			}
+			if = {
+				limit = {
+					is_female = yes
+				}
+				narrative_event = {
+					id = seek_arinnitis_favor.7
+				}
+			}
+		}
+	}
+}
+#Male liege recieves lord spiritual's response (discouragement)
+narrative_event = {
+	id = seek_arinnitis_favor.4
+	title = EVTNAMEarinnitis_favor.4
+	desc = EVTDESCarinnitis_favor.4
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {		#Ask for more information
+		name = EVTOPTAarinnitis_favor.4
+		FROM = {
+			custom_tooltip = {
+				text = formulates_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.8
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	option = {		#Give up
+		name = EVTOPTBarinnitis_favor.4
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+#Female liege recieves lord spiritual's response (discouragement)
+narrative_event = {
+	id = seek_arinnitis_favor.5
+	title = EVTNAMEarinnitis_favor.4
+	desc = EVTDESCarinnitis_favor.5
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {		#Ask for more information
+		name = EVTOPTAarinnitis_favor.4
+		FROM = {
+			custom_tooltip = {
+				text = formulates_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.8
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	option = {		#Give up
+		name = EVTOPTBarinnitis_favor.4
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+#Male liege recieves lord spiritual's response (encouragement)
+narrative_event = {
+	id = seek_arinnitis_favor.6
+	title = EVTNAMEarinnitis_favor.4
+	desc = EVTDESCarinnitis_favor.6
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {		#Ask for more information
+		name = EVTOPTAarinnitis_favor.6
+		FROM = {
+			custom_tooltip = {
+				text = formulates_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.8
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	option = {		#Give up
+		name = EVTOPTBarinnitis_favor.6
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+#Female liege recieves lord spiritual's response (encouragement)
+narrative_event = {
+	id = seek_arinnitis_favor.7
+	title = EVTNAMEarinnitis_favor.4
+	desc = EVTDESCarinnitis_favor.7
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {		#Ask for more information
+		name = EVTOPTAarinnitis_favor.6
+		FROM = {
+			custom_tooltip = {
+				text = formulates_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.8
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	option = {		#Give up
+		name = EVTOPTBarinnitis_favor.6
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+#The lord spiritual begins his explanation (temple)
+character_event = {
+	id = seek_arinnitis_favor.8
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					trait = arinnitifavor
+				}
+				narrative_event = {
+					id = seek_arinnitis_favor.9
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						trait = arinnitifavor
+					}
+				}
+				narrative_event = {
+					id = seek_arinnitis_favor.10
+				}
+			}
+		}
+	}
+}
+#The liege listens to the explanation (temple built by liege)
+narrative_event = {
+	id = seek_arinnitis_favor.9
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.9
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.9
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.11
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+
+#The liege listens to the explanation (temple not built by liege)
+narrative_event = {
+	id = seek_arinnitis_favor.10
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.10
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.9
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.11
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#The Lord Spiritual continues his explanation (authority)
+character_event = {
+	id = seek_arinnitis_favor.11
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					prestige = 2000
+				}
+				if = {
+					limit = {
+						is_female = no
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.12
+					}
+				}
+				if = {
+					limit = {
+						is_female = yes
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.13
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						prestige = 2000
+					}
+				}
+				if = {
+					limit = {
+						is_female = no
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.14
+					}
+				}
+				if = {
+					limit = {
+						is_female = yes
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.15
+					}
+				}
+			}
+		}
+	}
+}
+#Male liege hears Lord Spiritual's explanation (high authority)
+narrative_event = {
+	id = seek_arinnitis_favor.12
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.12
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.12
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.16
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Female liege hears Lord Spiritual's explanation (high authority)
+narrative_event = {
+	id = seek_arinnitis_favor.13
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.13
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.12
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.16
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Male liege hears Lord Spiritual's explanation (low authority)
+narrative_event = {
+	id = seek_arinnitis_favor.14
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.14
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.12
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.16
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Female liege hears Lord Spiritual's explanation (low authority)
+narrative_event = {
+	id = seek_arinnitis_favor.15
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.15
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.12
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.16
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Lord Spiritual continues explanation (piety)
+character_event = {
+	id = seek_arinnitis_favor.16
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					piety = 3000
+				}
+				if = {
+					limit = {
+						is_female = no
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.17
+					}
+				}
+				if = {
+					limit = {
+						is_female = yes
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.18
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						piety = 3000
+					}
+				}
+				if = {
+					limit = {
+						is_female = no
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.19
+					}
+				}
+				if = {
+					limit = {
+						is_female = yes
+					}
+					narrative_event = {
+						id = seek_arinnitis_favor.20
+					}
+				}
+			}
+		}
+	}
+}
+#Male liege hears Lord Spiritual's explanation (high piety)
+narrative_event = {
+	id = seek_arinnitis_favor.17
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.17
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.17
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.21
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Female liege hears Lord Spiritual's explanation (high piety)
+narrative_event = {
+	id = seek_arinnitis_favor.18
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.18
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.17
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.21
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Male liege hears Lord Spiritual's explanation (low piety)
+narrative_event = {
+	id = seek_arinnitis_favor.19
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.19
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.17
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.21
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Female liege hears Lord Spiritual's explanation (low piety)
+narrative_event = {
+	id = seek_arinnitis_favor.20
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.20
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.17
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.21
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Lord Spiritual's explanation continues (reformation)
+character_event = {
+	id = seek_arinnitis_favor.21
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					is_reformed_religion = yes
+				}
+				rightful_religious_head_scope = {
+					character_event = {
+						id = seek_arinnitis_favor.22
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_reformed_religion = no
+				}
+				narrative_event = {
+					id = seek_arinnitis_favor.27
+				}
+			}
+		}
+	}
+}
+#Religious head gets event (to establish FROMFROM for explanation, and get opinion)
+character_event = {
+	id = seek_arinnitis_favor.22
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				opinion = {
+					who = FROMFROM
+					value = 50
+				}
+			}
+			FROM = {
+				character_event = {
+					id = seek_arinnitis_favor.23
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					opinion = {
+						who = FROMFROM
+						value = 50
+					}
+				}
+			}
+			FROM = {
+				character_event = {
+					id = seek_arinnitis_favor.24
+				}
+			}
+		}
+	}
+}
+#Lord Spiritual explains about reformation (religious head has favorable opinion)
+character_event = {
+	id = seek_arinnitis_favor.23
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROMFROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.25
+			}
+		}
+	}
+}
+#Lord Spiritual explains about reformation (religious head has unfavorable opinion)
+character_event = {
+	id = seek_arinnitis_favor.24
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROMFROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.26
+			}
+		}
+	}
+}
+#Liege hears Lord Spiritual's explanation (reformed, head favorable)
+narrative_event = {
+	id = seek_arinnitis_favor.25
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.25
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.25
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.28
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Liege hears Lord Spiritual's explanation (reformed, head not favorable)
+narrative_event = {
+	id = seek_arinnitis_favor.26
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.26
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.26
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.28
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Liege hears Lord Spiritual's explanation (not reformed)
+narrative_event = {
+	id = seek_arinnitis_favor.27
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.27
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.27
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.28
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Lord Spiritual's explanation continues (education)
+character_event = {
+	id = seek_arinnitis_favor.28
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			FROM = {
+				OR = {
+					trait = detached_priest
+					trait = martial_cleric
+					trait = scholarly_theologian
+				}
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.29
+			}
+		}
+	}
+	option = {
+		trigger = {
+			FROM = {
+				trait = mastermind_theologian
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.30
+			}
+		}
+	}
+	option = {
+		trigger = {
+			FROM = {
+				NOR = {
+					trait = detached_priest
+					trait = martial_cleric
+					trait = scholarly_theologian
+					trait = mastermind_theologian
+				}
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.31
+			}
+		}
+	}
+}
+#Liege hears lord spiritual's explanation (clerical education, less than best)
+narrative_event = {
+	id = seek_arinnitis_favor.29
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.29
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.29
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.32
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Liege hears lord spiritual's explanation (clerical education, best)
+narrative_event = {
+	id = seek_arinnitis_favor.30
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.30
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.29
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.32
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Liege hears lord spiritual's explanation (no clerical education)
+narrative_event = {
+	id = seek_arinnitis_favor.31
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.31
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.29
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.32
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Lord spiritual continues explanation (shy/gregarious)
+character_event = {
+	id = seek_arinnitis_favor.32
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			FROM = {
+				trait = shy
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.33
+			}
+		}
+	}
+	option = {
+		trigger = {
+			FROM = {
+				trait = gregarious
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.34
+			}
+		}
+	}
+	option = {
+		trigger = {
+			FROM = {
+				NOR = {
+					trait = shy
+					trait = gregarious
+				}
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.35
+			}
+		}
+	}
+}
+#Liege hears continuation of Lord Spiritual's explanation (shy)
+narrative_event = {
+	id = seek_arinnitis_favor.33
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.33
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.33
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.36
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Liege hears continuation of Lord Spiritual's explanation (gregarious)
+narrative_event = {
+	id = seek_arinnitis_favor.34
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.34
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.33
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.36
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Liege hears continuation of Lord Spiritual's explanation (neither shy nor gregarious)
+narrative_event = {
+	id = seek_arinnitis_favor.35
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.35
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.33
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.36
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Lord Spiritual continues explanation (lustful/chaste)
+character_event = {
+	id = seek_arinnitis_favor.36
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			FROM = {
+				is_female = no
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.37
+			}
+		}
+	}
+	option = {
+		trigger = {
+			FROM = {
+				is_female = yes
+			}
+		}
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.38
+			}
+		}
+	}
+}
+#Male liege hears Lord Spiritual's explanation (chaste/lustful)
+narrative_event = {
+	id = seek_arinnitis_favor.37
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.37
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.37
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.39
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Female liege hears Lord Spiritual's explanation (chaste/lustful)
+narrative_event = {
+	id = seek_arinnitis_favor.38
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.38
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_favor.37
+		FROM = {
+			custom_tooltip = {
+				text = continues_explanation
+				hidden_tooltip = {
+					character_event = {
+						id = seek_arinnitis_favor.39
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+#Lord Spiritual continues explanation (summary of other factors)
+character_event = {
+	id = seek_arinnitis_favor.39
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		FROM = {
+			narrative_event = {
+				id = seek_arinnitis_favor.40
+			}
+		}
+	}
+}
+#Liege hears Lord Spiritual's explanation (summary of other factors)
+narrative_event = {
+	id = seek_arinnitis_favor.40
+	title = EVTNAMEarinnitis_favor.9
+	desc = EVTDESCarinnitis_favor.40
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			is_female = no
+		}
+		name = EVTOPTAarinnitis_favor.40
+		set_character_flag = arinniti_explanation_complete
+	}
+	option = {
+		trigger = {
+			is_female = yes
+		}
+		name = EVTOPTBarinnitis_favor.40
+		set_character_flag = arinniti_explanation_complete
+	}
+	option = {
+		name = EVTOPTCarinnitis_favor.40
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+namespace = become_arinnitis_consort
+#Start the ritual to become Arinniti's consort (religious head)
+character_event = {
+	id = become_arinnitis_consort.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			job_spiritual = {
+				character_event = {
+					id = become_arinnitis_consort.2
+					days = 7
+					random = 3
+				}
+			}
+		}
+	}
+}
+#Start the ritual to become Arinniti's consort (lord spiritual)
+character_event = {
+	id = become_arinnitis_consort.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			narrative_event = {
+				id = become_arinnitis_consort.3
+			}
+		}
+	}
+}
+#Start the ritual to become Arinniti's consort (liege)
+narrative_event = {
+	id = become_arinnitis_consort.3
+	title = EVTNAMEarinnitis_ritual
+	desc = EVTDESCarinnitis_consort.3
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_ritual
+		set_character_flag = arinnitis_ritual_begun
+		add_trait = travelling
+		set_character_flag = do_not_disturb
+	}
+	option = {
+		name = EVTOPTBarinnitis_ritual
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+#Ritual succeeds
+narrative_event = {
+	id = become_arinnitis_consort.4
+	title = EVTNAMEarinnitis_ritual
+	desc = EVTDESCarinnitis_consort.4
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	trigger = {
+		has_character_flag = arinnitis_ritual_begun
+		is_female = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 40
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 30
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 20
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 10
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 0
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -10
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -20
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -30
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -40
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -60
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -70
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -80
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -90
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOR = {
+				trait = detached_priest
+				trait = martial_cleric
+				trait = scholarly_theologian
+				trait = mastermind_theologian
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = cynical
+		}
+		modifier = {
+			factor = 1.1
+			trait = chaste
+			is_female = no
+		}
+		modifier = {
+			factor = 1.1
+			trait = lustful
+			is_female = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.1
+			trait = cheap
+		}
+		modifier = {
+			factor = 1.1
+			trait = greedy
+		}
+		modifier = {
+			factor = 1.1
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.1
+			trait = shy
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = humble
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 2500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 2000
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 1500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 1000
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				prestige = 1000
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				prestige = 500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = ugly
+		}
+		modifier = {
+			factor = 1.1
+			age = 50
+		}
+	}
+	
+	immediate = {
+		clr_character_flag = arinnitis_ritual_begun
+	}
+	
+	option = {
+		name = EVTOPTAarinnitis_ritual_complete
+		add_trait = arinnitis_consort
+		remove_trait = travelling
+		clr_character_flag = do_not_disturb
+	}
+}
+#Ritual fails
+narrative_event = {
+	id = become_arinnitis_consort.5
+	title = EVTNAMEarinnitis_ritual
+	desc = EVTDESCarinnitis_consort.5
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	trigger = {
+		has_character_flag = arinnitis_ritual_begun
+		is_female = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 70
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 80
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 90
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = martial_cleric
+		}
+		modifier = {
+			factor = 1.25
+			trait = scholarly_theologian
+		}
+		modifier = {
+			factor = 1.5
+			trait = mastermind_theologian
+		}
+		modifier = {
+			factor = 1.1
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.1
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.1
+			trait = poet
+		}
+		modifier = {
+			factor = 1.1
+			trait = lustful
+			is_female = no
+		}
+		modifier = {
+			factor = 1.1
+			trait = chaste
+			is_female = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 1.1
+			trait = charitable
+		}
+		modifier = {
+			factor = 1.1
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.1
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.1
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = proud
+		}
+		modifier = {
+			factor = 1.1
+			piety = 3000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 4000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 5000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 6000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 7000
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 2000
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 3000
+		}
+		modifier = {
+			factor = 1.5
+			trait = arinnitifavor
+		}
+		modifier = {
+			factor = 1.1
+			trait = fair
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				age = 31
+			}
+		}
+	}
+	
+	immediate = {
+		clr_character_flag = arinnitis_ritual_begun
+	}
+	
+	option = {
+		name = EVTOPTAarinnitis_ritual_rejected
+		add_trait = rejected_by_arinniti
+		remove_trait = travelling
+		set_character_flag = rejected_by_arinniti
+		clr_character_flag = do_not_disturb
+		cancel_ambition = yes
+	}
+}
+namespace = become_arinniti_in_flesh
+#Start the ritual to become Arinniti in flesh (religious head)
+character_event = {
+	id = become_arinniti_in_flesh.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			job_spiritual = {
+				character_event = {
+					id = become_arinniti_in_flesh.2
+					days = 7
+					random = 3
+				}
+			}
+		}
+	}
+}
+#Start the ritual to become Arinniti in flesh (head of religion)
+character_event = {
+	id = become_arinniti_in_flesh.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			narrative_event = {
+				id = become_arinniti_in_flesh.3
+			}
+		}
+	}
+}
+#Start the ritual to become Arinniti in flesh (liege)
+narrative_event = {
+	id = become_arinniti_in_flesh.3
+	title = EVTNAMEarinnitis_ritual
+	desc = EVTDESCarinniti_in_flesh.3
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAarinnitis_ritual
+		set_character_flag = arinnitis_ritual_begun
+		add_trait = travelling
+		set_character_flag = do_not_disturb
+	}
+	option = {
+		name = EVTOPTBarinnitis_ritual
+		set_character_flag = rejected_by_arinniti
+		cancel_ambition = yes
+	}
+}
+#Ritual succeeds
+narrative_event = {
+	id = become_arinniti_in_flesh.4
+	title = EVTNAMEarinnitis_ritual
+	desc = EVTDESCarinniti_in_flesh.4
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	trigger = {
+		has_character_flag = arinnitis_ritual_begun
+		is_female = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 40
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 30
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 20
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 10
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = 0
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -10
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -20
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -30
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -40
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -60
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -70
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -80
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				NOT = {
+					opinion = {
+						who = ROOT
+						value = -90
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOR = {
+				trait = detached_priest
+				trait = martial_cleric
+				trait = scholarly_theologian
+				trait = mastermind_theologian
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = cynical
+		}
+		modifier = {
+			factor = 1.1
+			trait = lustful
+			is_female = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = chaste
+			is_female = no
+		}
+		modifier = {
+			factor = 1.1
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.1
+			trait = cheap
+		}
+		modifier = {
+			factor = 1.1
+			trait = greedy
+		}
+		modifier = {
+			factor = 1.1
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.1
+			trait = shy
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = humble
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 2500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 2000
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 1500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 1000
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				piety = 500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				prestige = 1000
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				prestige = 500
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = ugly
+		}
+		modifier = {
+			factor = 1.1
+			age = 50
+		}
+	}
+	
+	immediate = {
+		clr_character_flag = arinnitis_ritual_begun
+	}
+	
+	option = {
+		name = EVTOPTAarinnitis_ritual_complete
+		add_trait = arinniti_in_flesh
+		remove_trait = travelling
+		clr_character_flag = do_not_disturb
+	}
+}
+#Ritual fails
+narrative_event = {
+	id = become_arinniti_in_flesh.5
+	title = EVTNAMEarinnitis_ritual
+	desc = EVTDESCarinnitis_consort.5
+	picture = GFX_evt_zoroastrian_marriage_oldgods
+	
+	trigger = {
+		has_character_flag = arinnitis_ritual_begun
+		is_female = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 70
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 80
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			rightful_religious_head_scope = {
+				opinion = {
+					who = ROOT
+					value = 90
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = martial_cleric
+		}
+		modifier = {
+			factor = 1.25
+			trait = scholarly_theologian
+		}
+		modifier = {
+			factor = 1.5
+			trait = mastermind_theologian
+		}
+		modifier = {
+			factor = 1.1
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.1
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.1
+			trait = poet
+		}
+		modifier = {
+			factor = 1.1
+			trait = chaste
+			is_female = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = lustful
+			is_female = no
+		}
+		modifier = {
+			factor = 1.1
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 1.1
+			trait = charitable
+		}
+		modifier = {
+			factor = 1.1
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.1
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.1
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			trait = proud
+		}
+		modifier = {
+			factor = 1.1
+			piety = 3000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 4000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 5000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 6000
+		}
+		modifier = {
+			factor = 1.1
+			piety = 7000
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 2000
+		}
+		modifier = {
+			factor = 1.1
+			prestige = 3000
+		}
+		modifier = {
+			factor = 1.5
+			trait = arinnitifavor
+		}
+		modifier = {
+			factor = 1.1
+			trait = fair
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				age = 31
+			}
+		}
+	}
+	
+	immediate = {
+		clr_character_flag = arinnitis_ritual_begun
+	}
+	
+	option = {
+		name = EVTOPTAarinnitis_ritual_rejected
+		add_trait = rejected_by_arinniti
+		remove_trait = travelling
+		set_character_flag = rejected_by_arinniti
+		clr_character_flag = do_not_disturb
+		cancel_ambition = yes
+	}
+}
+namespace = arinnitis_heritage
+#on_birth event, passing on heritage of Arinniti's consort or Arinniti in flesh
+character_event = {
+	id = arinnitis_heritage.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			mother = {
+				OR = {
+					trait = scion_of_arinniti
+					trait = arinniti_in_flesh
+				}
+			}
+			father_even_if_dead = {
+				NOT = {
+					ROOT = {
+						real_father = {
+							always = yes
+						}
+					}
+				}
+				OR = {
+					trait = scion_of_arinniti
+					trait = arinnitis_consort
+				}
+			}
+			real_father = {
+				OR = {
+					trait = scion_of_arinniti
+					trait = arinnitis_consort
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			mother = {
+				OR = {
+					trait = scion_of_arinniti
+					trait = arinnitis_consort
+				}
+			}
+		}
+		mother = {
+			ROOT = {
+				religion = PREV
+			}
+		}
+		add_trait = scion_of_arinniti
+#		add_character_modifier = {
+#			name = scion_of_arinniti_modifier
+#			days = -1
+#		}
+	}
+	option = {
+		trigger = {
+			NOT = {
+				real_father = {
+					always = yes
+				}
+			}
+			father_even_if_dead = {
+				OR = {
+					trait = scion_of_arinniti
+					trait = arinnitis_consort
+				}
+			}
+		}
+		father_even_if_dead = {
+			ROOT = {
+				religion = PREV
+			}
+		}
+		add_trait = scion_of_arinniti
+	}
+	option = {
+		trigger = {
+			real_father = {
+				OR = {
+					trait = scion_of_arinniti
+					trait = arinnitis_consort
+				}
+			}
+		}
+		real_father = {
+			ROOT = {
+				religion = PREV
+			}
+		}
+		add_trait = scion_of_arinniti
+	}
+}
+namespace = luwian_retreat
+#Start retreat
+narrative_event = {
+	id = luwian_retreat.1
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.1
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAluwian_retreat.1
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+				set_character_flag = do_not_disturb
+			}
+		}
+	}
+}
+#War interrupts retreat
+narrative_event = {
+	id = luwian_retreat.2
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.2
+	picture = GFX_evt_melee_zoroastrian_group
+
+	war = yes
+	
+	trigger = {
+		has_character_flag = on_luwian_retreat
+		NOT = {
+			has_character_flag = ignores_war
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	#Leaves retreat to deal with war
+	option = {
+		name = EVTOPTAluwian_retreat.2
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = do_not_disturb
+	}
+	#Stays on retreat, ignores war
+	option = {
+		name = EVTOPTBluwian_retreat.2
+		set_character_flag = ignores_war
+	}
+}
+#Incapability ends retreat
+narrative_event = {
+	id = luwian_retreat.3
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.3
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	trigger = {
+		trait = incapable
+		has_character_flag = on_luwian_retreat
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Check if a negative trait was lost
+character_event = {
+	id = luwian_retreat.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			10 = {
+				if = {
+					limit = {
+						NOT = {
+							trait = cynical
+						}
+					}
+					narrative_event = {
+						id = luwian_retreat.5 #No effect
+					}
+				}
+				if = {
+					limit = {
+						trait = cynical
+					}
+					narrative_event = {
+						id = luwian_retreat.6	#Lose cynical
+					}
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						is_female = yes
+					}
+					if = {
+						limit = {
+							NOT = {
+								trait = lustful
+							}
+						}
+						narrative_event = {
+							id = luwian_retreat.5 #No effect
+						}
+					}
+					if = {
+						limit = {
+							trait = lustful
+						}
+						narrative_event = {
+							id = luwian_retreat.7	#Lose lustful
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_female = no
+					}
+					if = {
+						limit = {
+							NOT = {
+								trait = chaste
+							}
+						}
+						narrative_event = {
+							id = luwian_retreat.5 #No effect
+						}
+					}
+					if = {
+						limit = {
+							trait = chaste
+						}
+						narrative_event = {
+							id = luwian_retreat.8	#Lose chaste
+						}
+					}
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = {
+							trait = temperate
+						}
+					}
+					narrative_event = {
+						id = luwian_retreat.5 #No effect
+					}
+				}
+				if = {
+					limit = {
+						trait = temperate
+					}
+					narrative_event = {
+						id = luwian_retreat.9	#Lose temperate
+					}
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = {
+							trait = cheap
+						}
+					}
+					narrative_event = {
+						id = luwian_retreat.5 #No effect
+					}
+				}
+				if = {
+					limit = {
+						trait = cheap
+					}
+					narrative_event = {
+						id = luwian_retreat.10	#Lose cheap
+					}
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = {
+							trait = greedy
+						}
+					}
+					narrative_event = {
+						id = luwian_retreat.5 #No effect
+					}
+				}
+				if = {
+					limit = {
+						trait = greedy
+					}
+					narrative_event = {
+						id = luwian_retreat.11	#Lose greedy
+					}
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = {
+							trait = slothful
+						}
+					}
+					narrative_event = {
+						id = luwian_retreat.5 #No effect
+					}
+				}
+				if = {
+					limit = {
+						trait = slothful
+					}
+					narrative_event = {
+						id = luwian_retreat.12	#Lose slothful
+					}
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = {
+							trait = shy
+						}
+					}
+					narrative_event = {
+						id = luwian_retreat.5 #No effect
+					}
+				}
+				if = {
+					limit = {
+						trait = shy
+					}
+					narrative_event = {
+						id = luwian_retreat.13	#Lose shy
+					}
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = {
+							trait = humble
+						}
+					}
+					narrative_event = {
+						id = luwian_retreat.5 #No effect
+					}
+				}
+				if = {
+					limit = {
+						trait = humble
+					}
+					narrative_event = {
+						id = luwian_retreat.14	#Lose humble
+					}
+				}
+			}
+			80 = {
+				narrative_event = {
+					id = luwian_retreat.5
+				}
+			}
+		}
+	}
+}
+#No effect
+narrative_event = {
+	id = luwian_retreat.5
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.5
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose cynical
+narrative_event = {
+	id = luwian_retreat.6
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.6
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		remove_trait = cynical
+		piety = 25
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = cynical
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose lustful
+narrative_event = {
+	id = luwian_retreat.7
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.7
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = lustful
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = lustful
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose chaste
+narrative_event = {
+	id = luwian_retreat.8
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.8
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = chaste
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = chaste
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose temperate
+narrative_event = {
+	id = luwian_retreat.9
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.9
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = temperate
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = temperate
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose cheap
+narrative_event = {
+	id = luwian_retreat.10
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.10
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = cheap
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = cheap
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose greedy
+narrative_event = {
+	id = luwian_retreat.11
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.11
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = greedy
+		character_event = {
+			id = luwian_retreat.4
+			days = 30
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = greedy
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose slothful
+narrative_event = {
+	id = luwian_retreat.12
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.12
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = slothful
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = slothful
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose shy
+narrative_event = {
+	id = luwian_retreat.13
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.13
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = shy
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = shy
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+#Lose humble
+narrative_event = {
+	id = luwian_retreat.14
+	title = EVTNAMEluwian_retreat
+	desc = EVTDESCluwian_retreat.14
+	picture = GFX_evt_monk_zoroastrian_group
+	
+	is_triggered_only = yes
+	
+	option = {		#Continue
+		name = EVTOPTAluwian_retreat.5
+		piety = 25
+		remove_trait = shy
+		custom_tooltip = {
+			text = meditate
+			hidden_tooltip = {
+				character_event = {
+					id = luwian_retreat.4
+					days = 30
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBluwian_retreat.5
+		remove_trait = shy
+		clr_character_flag = on_luwian_retreat
+		remove_trait = travelling
+		clr_character_flag = ignores_war
+		clr_character_flag = do_not_disturb
+	}
+}
+
+namespace = rebuild_memphis
+# Memphis Restoration Part 1
+province_event = {
+	id = rebuild_memphis.1
+#	title = "EVTNAME1000182319"
+	desc = "EVTDESC1000182319"
+	picture = "GFX_persepolis_ruin"
+
+	is_triggered_only = yes	
+
+	
+	option = {
+		name = "EVTOPTB1000182319" # Rebuild just the palace of Apries
+		owner = {
+			capital_scope = {
+				add_province_modifier = { name = "rebuilding_memphis_local" duration = 730 }
+			}
+			wealth = -100
+		}
+		province_event = { id = rebuild_memphis.2 days = 730 }
+	}
+
+	option = {
+		name = "EVTOPTC1000182319" # Rebuild the entire city.
+		owner = {
+			capital_scope = {
+				add_province_modifier = { name = "rebuilding_memphis_local" duration = 1460 }
+			}
+			wealth = -200
+		}
+		province_event = { id = rebuild_memphis.2 days = 1460 }
+	}
+	
+	option = {
+		name = "EVTOPTA1000182319" # Make it the greatest city there ever was!
+		owner = {
+			capital_scope = {
+				add_province_modifier = { name = "rebuilding_memphis_local" duration = 2920 }
+			}
+			wealth = -300
+		}
+		province_event = { id = rebuild_memphis.2 days = 2920 }
+	}
+}
+
+# Memphis Restoration Part 2 - Add Memphis bonus modifier
+province_event = {
+	id = rebuild_memphis.2
+#	title = "EVTNAME1000182320"
+	desc = "EVTDESC1000182320"
+	picture = "GFX_evt_memphis"
+
+	is_triggered_only = yes	
+	
+	trigger = {
+		has_global_flag = memphis_restoring
+		province_id = 1001 # Memphis
+		NOT = { has_global_flag = memphis_restored }
+	}
+
+	immediate = {
+		clr_global_flag = memphis_restoring
+		set_global_flag = memphis_restored
+	}
+	
+	option = {
+		name = "EVTOPTA1000182320" # Library
+		1001 = {
+			b_manusura = { set_name = "Memphis" }
+			add_province_modifier = { name = "memphis_library" duration = -1 }
+		}
+		owner = {
+			prestige = 500
+			hidden_tooltip = {
+				set_character_flag = event_1000182322
+				narrative_event = { id = rebuild_memphis.4 days = 7 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB1000182320" # Temple
+		1001 = {
+			b_manusura = { set_name = "Memphis" }
+			add_province_modifier = { name = "memphis_fanaticism" duration = -1 }
+		}
+		owner = {
+			prestige = 500
+			hidden_tooltip = {
+				set_character_flag = event_1000182322
+				narrative_event = { id = rebuild_memphis.4 days = 7 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC1000182320" # Palace
+		1001 = {
+			b_manusura = { set_name = "Memphis" }
+			add_province_modifier = { name = "memphis_admin" duration = -1 }
+		}
+		owner = {
+			prestige = 500
+			hidden_tooltip = {
+				set_character_flag = event_1000182322
+				narrative_event = { id = rebuild_memphis.4 days = 7 }
+			}
+		}
+	}
+}
+
+# News spread about Memphis
+narrative_event = {
+	id = rebuild_memphis.4
+	title = "EVTNAME1000182322"
+	desc = "EVTDESC1000182322"
+	picture = "GFX_evt_memphis"
+	border = "GFX_event_narrative_frame_religion"
+	
+	major = yes
+	only_rulers = yes
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				has_character_flag = event_1000182322
+				religion_group = egyptian_group
+			}
+		}
+		if = {
+			limit = { has_character_flag = event_1000182322 }
+			clr_character_flag = event_1000182322
+		}
+		name = "OK"
+	}
+	
+	option = {
+		trigger = {
+			NOT = { has_character_flag = event_1000182322 }
+		}
+		name = "EVTOPTA1000182322"
+	}
+}
