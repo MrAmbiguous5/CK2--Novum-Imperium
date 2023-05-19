@@ -1,0 +1,7 @@
+dishonored_favor = {
+    icon = 1
+}
+dishonored_favor_1 = {
+	general_opinion = -10
+	icon = 28
+}

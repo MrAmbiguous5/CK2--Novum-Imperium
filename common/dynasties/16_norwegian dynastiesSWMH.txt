@@ -1,0 +1,254 @@
+# -*- ck2.dynasties -*-
+
+######################################
+#New norwegian dynasties
+######################################
+#
+#
+######################################
+#Range1000053600-1000053699
+######################################
+1000053600 = {
+name="Slæðe"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 15
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053601 = {
+name="Paus"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 19
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053602 = {
+name="Skaktavl"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 59
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053603 = {
+name="Hrafn"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 64
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053604 = {
+name="Haukur"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 65
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053605 = {
+name="Loftur"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 66
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053606 = {
+name="Torfi"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 67
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053607 = {
+name="Bjørn"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 68
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053608 = {
+name="Eggert"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 69
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053609 = {
+name="Hummer"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 90
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053610 = {
+name="Skak"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 91
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053611 = {
+name="Kalips"
+ culture = norwegian
+ coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 12
+			texture_internal = 94
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+1000053612 = {
+name="av Ranrike"
+ culture = norwegian
+}
+1000053613 = {
+name="av Bratsberg"
+ culture = norwegian
+}
+1000053614 = {
+name="av Dønna"
+ culture = norwegian
+}
+1000053615 = {
+name="av Bjarkøy"
+ culture = norwegian
+}
+1000053616 = {
+name="av Tjøtta"
+ culture = norwegian
+}
+1000053617 = {
+name="av Gudbrandzdalen"
+ culture = norwegian
+}
+1000053618 = {
+name="av Gerðe"
+ culture = norwegian
+}
+1000053619 = {
+name="av Stuðla"
+ culture = norwegian
+}
+1000053620 = {
+name="av Steig"
+ culture = norwegian
+}
+1000053621 = {
+name="av Manvik"
+ culture = norwegian
+}
+1000053622 = {
+name="av Vettaland"
+ culture = norwegian
+}
+1000053623 = {
+name="av Arinbjörn"
+ culture = norwegian
+}
+1000053624 = {
+name="av Heiðmørk"
+ culture = norwegian
+}
+1000053625 = {
+name="av Raumríkí"
+ culture = norwegian
+}
+1000053626 = {
+name="av Hundþorp"
+ culture = norwegian
+}
+1000053627 = {
+name="av Egge"
+ culture = norwegian
+}
