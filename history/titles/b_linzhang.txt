@@ -1,3 +1,0 @@
-#Eastern Wei
-537.1.1 = { holder = 1407576 liege = c_xiangzhou } #Wang Songnian - magistrate at some point
-541.1.1 = { holder = 0 }

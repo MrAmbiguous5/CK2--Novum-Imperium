@@ -1,3 +1,0 @@
-#Sui
-606.1.1 = { holder = 1406923 liege = c_xiangzhou } #Chen Shurong - made magistrate
-612.6.21 = { holder = 0 }

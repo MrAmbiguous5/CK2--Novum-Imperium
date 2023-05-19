@@ -1,3 +1,0 @@
-#Tang
-879.1.1 = { holder = 1408007 liege = b_wenzhou_jiangnan } #Sun Xu - magistrate at some point in time.
-883.1.1 = { holder = 0 }
