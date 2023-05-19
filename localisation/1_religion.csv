@@ -22,6 +22,7 @@ fiction_group;Custom Religions;;;;;;;;;;;;;x
 finnish_group;Finnic;;;;;;;;;;;;;x
 graecoroman_group;Graeco-Roman;;;;;;;;;;;;;x
 indian_group;Dharman;;;;;;;;;;;;;x
+indoeurope_group;Indo-European;;;;;;;;;;;;;x
 indohelen_group;Indo-Hellenic;;;;;;;;;;;;;x
 inti_group;Inti;;;;;;;;;;;;;x
 inuit_group;Inuit;;;;;;;;;;;;;x
@@ -34,7 +35,7 @@ muslim;Islamic;;;;;;;;;;;;;x
 native_american_group;Native American;;;;;;;;;;;;;x
 neoplato_group;Neoplatonic;;;;;;;;;;;;;x
 norsegerman_group;Germanic;;;;;;;;;;;;;x
-pagan_group;Indo-European;;;;;;;;;;;;;x
+pagan_group;Pagan;;;;;;;;;;;;;x
 palmyranpagan_group;Canaanite;;;;;;;;;;;;;x
 serer_group;Western African;;;;;;;;;;;;;x
 slavic_group;Slavic;;;;;;;;;;;;;x
@@ -45,7 +46,6 @@ zal_group;Zalmoxian;;;;;;;;;;;;;x
 zoroastrian_group;Zoroastrian;Zoroastrien;Zoroastrier;;Zoroastriano;;;;;;;;;x
 #;;;;;;;;;;;;;;x
 ### RELIGION NAMES ###;;;;;;;;;;;;;;x
-adoptionist;Adoptionist;;;;;;;;;;;;;x
 aglibol;Aglibôli;;;;;;;;;;;;;x
 ahriman_reformed;Akomanic;;;;;;;;;;;;;x
 akuj;Akuj;;;;;;;;;;;;;x
@@ -78,7 +78,6 @@ batembuzi;Batembuzi;;;;;;;;;;;;;x
 beelshamen;Beelshameni;;;;;;;;;;;;;x
 berber_pagan;Amazigh;;;;;;;;;;;;;x
 berber_pagan_reformed;Mastimani;;;;;;;;;;;;;x
-bogomilist;Bogomilist;;;;;;;;;;;;;x
 tibetan;Tibetan;;;;;;;;;;;;;x
 tibetan_reformed;Dzogchen;;;;;;;;;;;;;x
 bud_bahusrutiya;Bahushrutiya;;;;;;;;;;;;;x
@@ -135,13 +134,9 @@ graeco_roman_reformed;Olympist;;;;;;;;;;;;;x
 gurzil;Gurzili;;;;;;;;;;;;;x
 hadad;Hadadi;;;;;;;;;;;;;x
 haruri;Haruri;;;;;;;;;;;;;x
-hindu;Hindu;;;;;;;;;;;;;x
 horus_re;Ra-Horakhtic;;;;;;;;;;;;;x
 hubal;Hubali;;;;;;;;;;;;;x
-hurufi;Hurufi;;;;;;;;;;;;;x
-ibadi;Ibadi;;;;;;;;;;;;;x
 iberian_pagan_reformed;Iberist;;;;;;;;;;;;;x
-iconoclast;Iconoclast;;;;;;;;;;;;;x
 illuyanka;Illuyankan;;;;;;;;;;;;;x
 illuyanka_reformed;Typhonist;;;;;;;;;;;;;x
 ilm_islam;'Ilmi;;;;;;;;;;;;;x
@@ -171,7 +166,6 @@ jumala;Jumalanpalvoja;;;;;;;;;;;;;x
 jupiter;Jovian;;;;;;;;;;;;;x
 kalunga;Kalunga;;;;;;;;;;;;;x
 kalunga_reformed;Kalunga;;;;;;;;;;;;;x
-kharijite;Kharijite;;;;;;;;;;;;;x
 kintu;Kintu;;;;;;;;;;;;;x
 kothar;Kothar-wa-Khasisi;;;;;;;;;;;;;x
 kubera;Kuberan;;;;;;;;;;;;;x
@@ -206,11 +200,6 @@ melkite;Melkite;;;;;;;;;;;;;x
 mithra;Mithraic;;;;;;;;;;;;;x
 mithra_christ;Mithraic-Christian;;;;;;;;;;;;;x
 mithra_sol;Eosphorist;;;;;;;;;;;;;x
-monophysite;Monophysite;;;;;;;;;;;;;x
-<<<<<<< HEAD
-=======
-monothelite;Monothelite;;;;;;;;;;;;;x
->>>>>>> 3721d46b545a83b82d0197adcf2201426e4cbff1
 montanist;Montanist;;;;;;;;;;;;;x
 montanist_reformed;Phrygian;;;;;;;;;;;;;x
 murjiah;Murji'i;;;;;;;;;;;;;x
@@ -257,7 +246,6 @@ plato_pythagorean;Platonic Pythagorean;;;;;;;;;;;;;x
 porphyryan;Porphyryan;;;;;;;;;;;;;x
 priscillian;Priscillian;;;;;;;;;;;;;x
 priscillian_reformed;Apologetic;;;;;;;;;;;;;x
-qarmatian;Qarmatian;;;;;;;;;;;;;x
 quetzal;Quetzalcoatl;;;;;;;;;;;;;x
 quetzal_reformed;Huitzilopochtli;;;;;;;;;;;;;x
 ragnarok;Ragnarökic;;;;;;;;;;;;;x

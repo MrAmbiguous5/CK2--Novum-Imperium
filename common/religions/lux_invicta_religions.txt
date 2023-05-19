@@ -1322,7 +1322,7 @@ aztec_group = {
 		religious_clothing_priest = 4
 	}
 }
-indoeurope_group = {
+pagan_group = {
 	graphical_culture = norsegfx
 	playable = yes
 	has_coa_on_barony_only = yes
@@ -1447,11 +1447,11 @@ indoeurope_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -1575,11 +1575,11 @@ baltic_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -1630,7 +1630,7 @@ baltic_group = {
 		aggression = 0.5
 
 		intermarry = odin_pagan
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = suomenusko_pagan
 		intermarry = dievas
 		intermarry = peckols
@@ -1642,6 +1642,8 @@ baltic_group = {
 		religious_clothing_head = 14
 		religious_clothing_priest = 6
 	}
+	
+	######################
 	dievas = {
 		graphical_culture = norsegfx
 		color = { 31 150 220 }
@@ -1747,11 +1749,11 @@ baltic_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -1947,11 +1949,11 @@ baltic_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -2056,11 +2058,11 @@ baltic_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -5798,11 +5800,11 @@ norsegerman_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -5904,11 +5906,11 @@ norsegerman_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -6009,11 +6011,11 @@ norsegerman_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -6277,11 +6279,11 @@ norsegerman_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -6545,11 +6547,11 @@ norsegerman_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -6738,11 +6740,11 @@ norsegerman_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -6930,11 +6932,11 @@ norsegerman_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -10579,11 +10581,11 @@ finnish_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -10686,11 +10688,11 @@ finnish_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		religious_clothing_head = 6
 		religious_clothing_priest = 6
@@ -10869,11 +10871,11 @@ finnish_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -10971,11 +10973,11 @@ finnish_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -11077,11 +11079,11 @@ finnish_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -11180,11 +11182,11 @@ finnish_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		religious_clothing_head = 6
 		religious_clothing_priest = 6
@@ -14967,11 +14969,11 @@ mani_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -16590,8 +16592,8 @@ muslim = {
 	marabout = {
 		graphical_culture = muslimgfx
 		color = { 143 255 31 }
-		icon = 616
-		heresy_icon = 616
+		icon = 327
+		heresy_icon = 327
 		
 		reformed = muslim_sufi_reformed
 		#reformer_head_of_religion = yes
@@ -16683,6 +16685,161 @@ muslim = {
 		intermarry = ibadi
 		intermarry = shiite
 		intermarry = muslim_aliite_reformed
+		}
+	
+	haruri = {
+		crusade_name = JIHAD
+		graphical_culture = muslimgfx
+		color = { 173 255 92 }
+		icon = 51
+		heresy_icon = 52
+		
+		piety_name = PIETY
+		priest_title = IMAM_PRIEST
+		scripture_name = THE_KORAN
+		god_names = {
+			GOD_ALLAH GOD_THE_GREATEST PROHPET_MUHAMMAD 
+		}
+
+			evil_god_names = {
+			IBLIS SHAYTAN
+		}
+	
+		high_god_name = GOD_ALLAH
+		character_modifier = {
+			global_revolt_risk = -0.02
+			general_opinion = -20
+			same_religion_opinion = 40
+			church_opinion = 20
+#			dynasty_opinion = -10
+			castle_vassal_tax_modifier = 0.10
+			temple_vassal_tax_modifier = -0.15
+			castle_vassal_min_levy = 0.10
+			castle_vassal_max_levy = 0.10
+			city_vassal_min_levy = 0.10
+			city_vassal_max_levy = 0.10
+			temple_vassal_min_levy = -0.15
+			temple_vassal_max_levy = -0.15
+#			monthly_character_piety = 1.00
+			assassinate_chance_modifier = 0.10
+			arrest_chance_modifier = 0.10
+			diplomacy = -2
+			martial = 1
+			stewardship = -2
+			intrigue = 3
+			learning = 3
+#			ai_ambition = 50
+#			ai_zeal = 70
+#			ai_honor = -20
+#			ai_greed = 50
+#			ai_rationality = -40
+		}
+		unit_modifier = {
+			key = "OFF_RELIGION"
+			
+			light_cavalry_offensive = 0.20
+			light_infantry_offensive = 0.20
+			archers_offensive = 0.20
+			land_morale = 0.20
+		}
+		unit_home_modifier = {
+			key = "OFF_RELIGION"
+			
+			light_cavalry_defensive = 0.20
+			light_infantry_defensive = 0.20
+			archers_defensive = 0.20
+			land_morale = 0.30
+		}
+		
+		can_call_crusade = yes
+#		can_hold_temples = yes
+		max_wives = 4
+		priests_can_marry = yes
+		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
+		short_reign_opinion_year_mult = 4 # The default in LI is 5
+		attacking_same_religion_piety_loss = yes
+		uses_decadence = yes
+		uses_jizya_tax = yes
+	}
+	
+	druze = {
+		graphical_culture = muslimgfx
+		color = { 204 255 153 }
+		icon = 53
+		heresy_icon = 55
+		
+		reformed = druze_reformed
+		#reformer_head_of_religion = yes
+
+		piety_name = PIETY
+		priest_title = IMAM_PRIEST
+		scripture_name = THE_EPISTLES_OF_WISDOM
+		god_names = {
+			GOD_ALLAH GOD_GOD GOD_YAHWEH
+		}
+		
+			evil_god_names = {
+			IBLIS SHAYTAN
+		}
+	
+		high_god_name = GOD_ALLAH
+		character_modifier = {
+			general_opinion = -30
+			same_religion_opinion = 60
+			church_opinion = 5
+#			dynasty_opinion = -10
+			castle_vassal_tax_modifier = 0.20
+			city_vassal_tax_modifier = -0.10
+			temple_vassal_tax_modifier = 0.20
+			build_cost_modifier = 0.10
+			land_organisation = -0.20
+			castle_vassal_min_levy = 0.30
+			castle_vassal_max_levy = 0.30
+			city_vassal_min_levy = -0.10
+			city_vassal_max_levy = -0.25
+#			monthly_character_prestige = -0.20
+#			monthly_character_piety = 0.50
+			assassinate_chance_modifier = 0.10
+			arrest_chance_modifier = 0.10
+			diplomacy = -2
+			martial = 5
+			stewardship = -3
+			intrigue = 2
+			learning = 1
+#			ai_ambition = 30
+#			ai_zeal = 70
+#			ai_rationality = -40
+		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.05
+			light_cavalry_offensive = 0.35
+			light_infantry_offensive = 0.35
+			archers_offensive = 0.35
+			land_morale = 0.20
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.50
+			light_infantry_defensive = 0.50
+			archers_defensive = 0.50
+			land_morale = 0.50
+		}
+		
+		aggression = 1.5
+		can_call_crusade = no
+		independence_war_score_bonus = 30
+		matrilineal_marriages = no
+		max_wives = 4
+		priests_can_marry = yes
+		psc_marriage = no # Disallow uncle-niece and aunt-nephew marriages
+		hard_to_convert = yes
+		short_reign_opinion_year_mult = 6 # The default in LI is 5
+		attacking_same_religion_piety_loss = yes
+		uses_decadence = yes
+		uses_jizya_tax = yes
 	}
 }
 neoplato_group = {
@@ -16700,8 +16857,8 @@ neoplato_group = {
 	neoplato = {
 		graphical_culture = westerngfx
 		color = { 153 255 204 }
-		icon = 460
-		heresy_icon = 461
+		icon = 171
+		heresy_icon = 172
 		
 		high_god_name = GOD_PLATO
 		
@@ -16784,8 +16941,8 @@ neoplato_group = {
 	plato_pythagorean = {
 		graphical_culture = westerngfx
 		color = { 153 204 255 }
-		icon = 460
-		heresy_icon = 461
+		icon = 171
+		heresy_icon = 172
 		
 		parent = neoplato
 		
@@ -16868,8 +17025,8 @@ neoplato_group = {
 	porphyryan = {
 		graphical_culture = westerngfx
 		color = { 255 92 173 }
-		icon = 515
-		heresy_icon = 515
+		icon = 226
+		heresy_icon = 226
 		
 		high_god_name = GOD_PLATO
 		
@@ -16946,8 +17103,8 @@ neoplato_group = {
 	plato_christ = {
 		graphical_culture = westerngfx
 		color = { 255 204 153 }
-		icon = 515
-		heresy_icon = 515
+		icon = 225
+		heresy_icon = 225
 		
 		high_god_name = GOD_PLATO
 		
@@ -17020,8 +17177,8 @@ neoplato_group = {
 	plato_islam = {
 		graphical_culture = westerngfx
 		color = { 153 255 153 }
-		icon = 513
-		heresy_icon = 513
+		icon = 224
+		heresy_icon = 224
 		
 		high_god_name = GOD_PLATO
 		
@@ -17097,8 +17254,8 @@ neoplato_group = {
 	zz01_vedanta = {
 		graphical_culture = indiangfx
 		color = { 8 88 8 }
-		icon = 685
-		heresy_icon = 685
+		icon = 396
+		heresy_icon = 396
 
 		high_god_name = PARA_BRAHMAN
 
@@ -17201,8 +17358,8 @@ palmyranpagan_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = zigguratgfx
 		color = { 77 166 255 }
-		icon = 435
-		heresy_icon = 436
+		icon = 146
+		heresy_icon = 147
 		
 		high_god_name = GOD_BAAL
 		reformer_head_of_religion = no
@@ -17284,8 +17441,8 @@ palmyranpagan_group = {
 	beelshamen = {
 		graphical_culture = zigguratgfx
 		color = { 77 77 255 }
-		icon = 499
-		heresy_icon = 500
+		icon = 210
+		heresy_icon = 211
 		
 		reformed = baal_monotheistic_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -17365,8 +17522,8 @@ palmyranpagan_group = {
 	aglibol = {
 		graphical_culture = zigguratgfx
 		color = { 135 15 255 }
-		icon = 499
-		heresy_icon = 500
+		icon = 210
+		heresy_icon = 211
 		
 		high_god_name = GOD_AGLIBOL
 		
@@ -17444,8 +17601,8 @@ palmyranpagan_group = {
 	malakbel = {
 		graphical_culture = zigguratgfx
 		color = { 26 140 255 }
-		icon = 499
-		heresy_icon = 500
+		icon = 210
+		heresy_icon = 211
 
 		parent = beelshamen
 		reformed = baal_monotheistic_reformed
@@ -17527,8 +17684,8 @@ palmyranpagan_group = {
 	palmyran_pagan = {
 		graphical_culture = zigguratgfx
 		color = { 219 110 0 }
-		icon = 433
-		heresy_icon = 434
+		icon = 144
+		heresy_icon = 145
 		
 		high_god_name = GOD_BAALHADAD
 		
@@ -17611,8 +17768,8 @@ palmyranpagan_group = {
 	hadad = {
 		graphical_culture = zigguratgfx
 		color = { 150 163 45 }
-		icon = 437
-		heresy_icon = 438
+		icon = 148
+		heresy_icon = 149
 		
 		reformed = baal_monotheistic_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -17688,8 +17845,8 @@ palmyranpagan_group = {
 	kothar = {
 		graphical_culture = zigguratgfx
 		color = { 40 55 190 }
-		icon = 501
-		heresy_icon = 501
+		icon = 212
+		heresy_icon = 212
 		
 		reformed = baal_monotheistic_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -17992,8 +18149,8 @@ serer_group = {
 		crusade_name = CRUSADE
 		graphical_culture = africangfx
 		color = { 107 4 98 }
-		icon = 472
-		heresy_icon = 473
+		icon = 183
+		heresy_icon = 184
 		
 		high_god_name = GOD_OLODUMARE
 		
@@ -18090,8 +18247,8 @@ serer_group = {
 	nyame = {
 		graphical_culture = africangfx
 		color = { 0.5 0.6 0.35 }
-		icon = 599
-		heresy_icon = 599
+		icon = 310
+		heresy_icon = 310
 		
 		high_god_name = GOD_NYAME
 		
@@ -18184,8 +18341,8 @@ serer_group = {
 	anansi = {
 		graphical_culture = africangfx
 		color = { 0.3 0.1 0.1 }
-		icon = 600
-		heresy_icon = 600
+		icon = 311
+		heresy_icon = 311
 		
 		high_god_name = GOD_ANANSI
 		
@@ -18268,7 +18425,7 @@ slavic_group = {
 	ai_convert_other_group = 2 # always try to convert
 	
 	# Reformed
-	rodnoveric_pagan_reformed = {
+	slavic_pagan_reformed = {
 		allow_in_ruler_designer = no
 		graphical_culture = norsegfx
 		color = { 33 105 83 }
@@ -18366,7 +18523,7 @@ slavic_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
@@ -18378,10 +18535,10 @@ slavic_group = {
 	perun = {
 		graphical_culture = norsegfx
 		color = { 33 105 47 }
-		icon = 569
-		heresy_icon = 570
+		icon = 280
+		heresy_icon = 281
 		
-		reformed = rodnoveric_pagan_reformed
+		reformed = slavic_pagan_reformed
 		#reformer_head_of_religion = yes
 		
 		high_god_name = GOD_PERUN
@@ -18452,11 +18609,11 @@ slavic_group = {
 	veles = {
 		graphical_culture = norsegfx
 		color = { 105 47 33 }
-		icon = 570
-		heresy_icon = 571
+		icon = 281
+		heresy_icon = 282
 		
 		parent = perun
-		reformed = rodnoveric_pagan_reformed
+		reformed = slavic_pagan_reformed
 		#reformer_head_of_religion = yes
 		
 		high_god_name = GOD_VELES
@@ -18540,25 +18697,25 @@ slavic_group = {
 		# Slavic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dazhbog
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 	}
 	
-	rodnoveric_pagan = {
+	slavic_pagan = {
 		graphical_culture = norsegfx
 		color = { 55 105 33 }
 		icon = 22
-		heresy_icon = 455
+		heresy_icon = 166
 		
 		high_god_name = GOD_PERUN
 		
-		reformed = rodnoveric_pagan_reformed
+		reformed = slavic_pagan_reformed
 		#reformer_head_of_religion = yes
 
 		piety_name = PIETY
@@ -18642,11 +18799,11 @@ slavic_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -18655,10 +18812,10 @@ slavic_group = {
 	rod = {
 		graphical_culture = norsegfx
 		color = { 151 120 48 }
-		icon = 570
-		heresy_icon = 571
+		icon = 281
+		heresy_icon = 282
 		
-		reformed = rodnoveric_pagan_reformed
+		reformed = slavic_pagan_reformed
 		#reformer_head_of_religion = yes
 
 		high_god_name = GOD_ROD
@@ -18742,11 +18899,11 @@ slavic_group = {
 		# Slavic open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = dazhbog
 		intermarry = perun
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -18755,12 +18912,12 @@ slavic_group = {
 	svaroh = {
 		graphical_culture = norsegfx
 		color = { 151 68 48 }
-		icon = 572
-		heresy_icon = 572
+		icon = 283
+		heresy_icon = 283
 		
 		high_god_name = GOD_SVAROG
 		
-		reformed = rodnoveric_pagan_reformed
+		reformed = slavic_pagan_reformed
 		#reformer_head_of_religion = yes
 		
 		piety_name = PIETY
@@ -18850,10 +19007,10 @@ slavic_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -18862,8 +19019,8 @@ slavic_group = {
 	dazhbog = {
 		graphical_culture = norsegfx
 		color = { 151 48 79 }
-		icon = 573
-		heresy_icon = 573
+		icon = 284
+		heresy_icon = 284
 		
 		reformed = northern_sun_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -18934,12 +19091,12 @@ slavic_group = {
 	svetovid = {
 		graphical_culture = norsegfx
 		color = { 48 130 151 }
-		icon = 574
-		heresy_icon = 574
+		icon = 285
+		heresy_icon = 285
 		
 		high_god_name = GOD_SVETOVID
 		
-		reformed = rodnoveric_pagan_reformed
+		reformed = slavic_pagan_reformed
 		#reformer_head_of_religion = yes
 		
 		piety_name = PIETY
@@ -19019,8 +19176,8 @@ sol_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = hellengfx
 		color = { 149 208 208 }
-		icon = 665
-		heresy_icon = 666
+		icon = 376
+		heresy_icon = 377
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_BOREAS
@@ -19135,8 +19292,8 @@ sol_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = muslimgfx
 		color = { 122 184 61 }
-		icon = 668
-		heresy_icon = 669
+		icon = 379
+		heresy_icon = 380
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_ALLAH
@@ -19261,8 +19418,8 @@ sol_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = desertgfx
 		color = { 177 115 0 }
-		icon = 673
-		heresy_icon = 674
+		icon = 384
+		heresy_icon = 385
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_SUNEMPEROR
@@ -19396,8 +19553,8 @@ sol_group = {
 	sol = {
 		graphical_culture = hellengfx
 		color = { 209 209 0 }
-		icon = 480
-		heresy_icon = 481
+		icon = 191
+		heresy_icon = 192
 		
 		high_god_name = GOD_SOL
 		
@@ -19507,8 +19664,8 @@ sol_group = {
 	sol_christ = {
 		graphical_culture = westerngfx
 		color = { 255 255 77 }
-		icon = 681
-		heresy_icon = 682
+		icon = 392
+		heresy_icon = 393
 		
 		parent = sol
 		
@@ -19633,8 +19790,8 @@ sol_group = {
 	sol_mani = {
 		graphical_culture = persiangfx
 		color = { 209 105 0 }
-		icon = 482
-		heresy_icon = 483
+		icon = 193
+		heresy_icon = 194
 		
 		parent = sol
 		
@@ -19726,8 +19883,8 @@ sol_group = {
 	sol_apollo = {
 		graphical_culture = hellengfx
 		color = { 209 209 150 }
-		icon = 508
-		heresy_icon = 508
+		icon = 219
+		heresy_icon = 219
 		
 		high_god_name = GOD_APOLLO
 		
@@ -19838,8 +19995,8 @@ sol_group = {
 	sol_boreas = {
 		graphical_culture = hellengfx
 		color = { 106 190 190 }
-		icon = 664
-		heresy_icon = 666
+		icon = 375
+		heresy_icon = 377
 		
 		reformed = sol_boreas_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -19959,8 +20116,8 @@ sol_group = {
 	sol_islam = {
 		graphical_culture = muslimgfx
 		color = { 184 219 148 }
-		icon = 667
-		heresy_icon = 669
+		icon = 378
+		heresy_icon = 380
 		
 		high_god_name = GOD_ALLAH
 		
@@ -20092,8 +20249,8 @@ sol_group = {
 	sol_norse = {
 		graphical_culture = norsegfx
 		color = { 208 208 149 }
-		icon = 670
-		heresy_icon = 670
+		icon = 381
+		heresy_icon = 381
 		
 		high_god_name = GOD_ODINSOL
 		
@@ -20220,8 +20377,8 @@ sol_group = {
 	sol_slav = {
 		graphical_culture = norsegfx
 		color = { 149 208 179 }
-		icon = 671
-		heresy_icon = 671
+		icon = 382
+		heresy_icon = 382
 		
 		high_god_name = GOD_HORS
 		
@@ -20304,11 +20461,11 @@ sol_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 
 		# Graeco-Roman open-minded (sectarian 0), can be married from the same group or civilization or related ones
 		intermarry = cybele
@@ -20351,8 +20508,8 @@ sol_group = {
 	sol_tsahay = {
 		graphical_culture = africangfx
 		color = { 163 72 116 }
-		icon = 577
-		heresy_icon = 577
+		icon = 288
+		heresy_icon = 288
 		
 		reformed = ethiopian_war_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -20434,8 +20591,8 @@ sol_group = {
 	sol_sahara = {
 		graphical_culture = desertgfx
 		color = { 182 120 0 }
-		icon = 672
-		heresy_icon = 674
+		icon = 383
+		heresy_icon = 385
 		
 		reformed = sol_sahara_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -20534,8 +20691,8 @@ tengri_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = mongolgfx
 		color = { 0.1 0.05 0.1 }
-		icon = 595
-		heresy_icon = 596
+		icon = 306
+		heresy_icon = 307
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_ERLIK_KHAN
@@ -20613,8 +20770,8 @@ tengri_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = mongolgfx
 		color = { 20 79 255 }
-		icon = 583
-		heresy_icon = 584
+		icon = 294
+		heresy_icon = 295
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_BURKHAN
@@ -20710,8 +20867,8 @@ tengri_group = {
 		crusade_name = CRUSADE
 		graphical_culture = mongolgfx
 		color = { 160 15 40 }
-		icon = 586
-		heresy_icon = 587
+		icon = 297
+		heresy_icon = 298
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_THE_HEAVEN
@@ -20817,8 +20974,8 @@ tengri_group = {
 		crusade_name = CRUSADE
 		graphical_culture = mongolgfx
 		color = { 255 148 112 }
-		icon = 489
-		heresy_icon = 490
+		icon = 300
+		heresy_icon = 301
 		
 		high_god_name = GOD_BAI-ULGAN
 		reformer_head_of_religion = yes
@@ -20898,7 +21055,7 @@ tengri_group = {
 		religious_clothing_head = 5
 		religious_clothing_priest = 5
 	}
-	tengrist_pagan_reformed = {
+	tengri_pagan_reformed = {
 		allow_in_ruler_designer = no
 		graphical_culture = mongolgfx
 		color = { 112 148 255 }
@@ -20996,8 +21153,8 @@ tengri_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = mongolgfx
 		color = { 0 179 89 }
-		icon = 592
-		heresy_icon = 593
+		icon = 303
+		heresy_icon = 304
 		
 		high_god_name = GOD_RODTENGRI
 		reformer_head_of_religion = yes
@@ -21093,8 +21250,8 @@ tengri_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = mongolgfx
 		color = { 46 46 255 }
-		icon = 642
-		heresy_icon = 643
+		icon = 353
+		heresy_icon = 354
 		reformer_head_of_religion = yes
 		
 		high_god_name = GOD_TURA
@@ -21182,13 +21339,13 @@ tengri_group = {
 		religious_clothing_priest = 6
 	}
 	######################
-	tengrist_pagan = {
+	tengri_pagan = {
 		graphical_culture = mongolgfx
 		color = { 0 61 245 }
 		icon = 28
-		heresy_icon = 457
+		heresy_icon = 168
 		
-		reformed = tengrist_pagan_reformed
+		reformed = tengri_pagan_reformed
 		#reformer_head_of_religion = yes
 
 		high_god_name = GOD_TENGRI
@@ -21279,8 +21436,8 @@ tengri_group = {
 	tengri_ahriman = {
 		graphical_culture = mongolgfx
 		color = { 0 0 0 }
-		icon = 581
-		heresy_icon = 581
+		icon = 292
+		heresy_icon = 292
 		
 		reformed = ahriman_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -21365,8 +21522,8 @@ tengri_group = {
 	tengri_bud = {
 		graphical_culture = mongolgfx
 		color = { 143 171 255 }
-		icon = 582
-		heresy_icon = 582
+		icon = 293
+		heresy_icon = 293
 		
 		reformed = tengri_bud_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -21464,8 +21621,8 @@ tengri_group = {
 	tengri_confucian = {
 		graphical_culture = mongolgfx
 		color = { 56 177 80 }
-		icon = 585
-		heresy_icon = 585
+		icon = 296
+		heresy_icon = 296
 		
 		piety_name = PIETY
 		priest_title = SHAMAN
@@ -21575,8 +21732,8 @@ tengri_group = {
 	tengri_mani = {
 		graphical_culture = mongolgfx
 		color = { 73 104 123 }
-		icon = 588
-		heresy_icon = 588
+		icon = 299
+		heresy_icon = 299
 		
 		reformed = tengri_mani_reformed
 		#reformer_head_of_religion = yes
@@ -21664,8 +21821,8 @@ tengri_group = {
 	tengri_rod = {
 		graphical_culture = mongolgfx
 		color = { 0 117 59 }
-		icon = 591
-		heresy_icon = 591
+		icon = 302
+		heresy_icon = 302
 		
 		reformed = tengri_rod_reformed
 		#reformer_head_of_religion = yes
@@ -21761,11 +21918,11 @@ tengri_group = {
 		intermarry = dazhbog
 		intermarry = perun
 		intermarry = rod
-		intermarry = rodnoveric_pagan
+		intermarry = slavic_pagan
 		intermarry = svaroh
 		intermarry = svetovid
 		intermarry = veles
-		intermarry = rodnoveric_pagan_reformed
+		intermarry = slavic_pagan_reformed
 		
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
@@ -21774,8 +21931,8 @@ tengri_group = {
 	vattisenyaly = {
 		graphical_culture = mongolgfx
 		color = { 107 107 255 }
-		icon = 641
-		heresy_icon = 641
+		icon = 352
+		heresy_icon = 352
 		
 		reformed = vattisenyaly_reformed
 		#reformer_head_of_religion = yes
@@ -21862,8 +22019,8 @@ tengri_group = {
 	erlik = {
 		graphical_culture = mongolgfx
 		color = { 0.05 0.05 0.09 }
-		icon = 594
-		heresy_icon = 594
+		icon = 305
+		heresy_icon = 305
 		
 		high_god_name = GOD_ERLIK_KHAN
 		
@@ -21958,8 +22115,8 @@ yazd_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = desertgfx
 		color = { 46 255 46 }
-		icon = 366
-		heresy_icon = 367
+		icon = 77
+		heresy_icon = 78
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_TAWUSE_MELEK
@@ -22036,8 +22193,8 @@ yazd_group = {
 	yazdanism = {
 		graphical_culture = desertgfx
 		color = { 107 255 107 }
-		icon = 364
-		heresy_icon = 365
+		icon = 75
+		heresy_icon = 76
 		
 		reformed = yazdanism_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -22113,6 +22270,91 @@ yazd_group = {
 		religious_clothing_head = 5
 		religious_clothing_priest = 5
 	}
+	
+	yazidism = {
+		graphical_culture = desertgfx
+		color = { 255 255 107 }
+		icon = 343
+		heresy_icon = 343
+		
+		reformed = yazdanism_reformed
+		#reformer_head_of_religion = no #Reformer is NOT a ruler head
+		
+		high_god_name = GOD_TAWUSE_MELEK
+		
+		piety_name = PIETY
+		priest_title = SHEIKH_PRIEST
+		scripture_name = THE_BOOK_OF_ILLUMINATION
+		god_names = {
+			 GOD_TAWUSE_MELEK GOD_THE_YAZDANI GOD_THE_HEPTAD GOD_XWA
+		}
+		evil_god_names = {
+			THE_DARK_SPIRITS
+		}
+		
+		character_modifier = {
+			global_revolt_risk = -0.02
+			general_opinion = -20
+			same_religion_opinion = 40
+			church_opinion = 10
+#			dynasty_opinion = 10
+			castle_vassal_tax_modifier = -0.20
+			city_vassal_tax_modifier = 0.10
+			temple_vassal_tax_modifier = 0.30
+			build_cost_modifier = -0.30
+			land_organisation = -0.05
+			castle_vassal_min_levy = -0.10
+			castle_vassal_max_levy = -0.10
+			city_vassal_min_levy = 0.10
+			temple_vassal_min_levy = 0.15
+			temple_vassal_max_levy = 0.10
+#			monthly_character_prestige = -0.40
+			diplomacy = -1
+			martial = 1
+			stewardship = 2
+			learning = 1
+			fertility = -0.10
+#			ai_ambition = -50
+#			ai_zeal = 40
+#			ai_honor = 70
+#			ai_rationality = 20
+		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.15
+			light_cavalry_offensive = 0.10
+			light_infantry_offensive = 0.10
+			archers_offensive = 0.10
+			heavy_infantry_offensive = 0.10
+			knights_offensive = 0.10
+			pikemen_offensive = 0.10
+			land_morale = -0.25
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.50
+			light_infantry_defensive = 0.50
+			archers_defensive = 0.50
+			land_morale = 0.95
+		}
+		
+		can_call_crusade = no
+		independence_war_score_bonus = 20
+		max_consorts = 3
+		priests_can_marry = yes
+		short_reign_opinion_year_mult = 3 # The default in LI is 5
+		hard_to_convert = yes
+
+		# Kurdish/Mandean restrictive (sectarian 1), can be married only from the same group or civilization
+		intermarry = mandaean
+		intermarry = yazdanism
+		intermarry = yazdanism_reformed
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+	}
 }
 zal_group = {
 	crusade_cb = crusade
@@ -22129,8 +22371,8 @@ zal_group = {
 	zal = {
 		graphical_culture = mongolgfx
 		color = { 204 153 51 }
-		icon = 462
-		heresy_icon = 463
+		icon = 173
+		heresy_icon = 174
 		
 		high_god_name = GOD_ZAL
 		
@@ -22207,8 +22449,8 @@ zal_group = {
 		crusade_name = CRUSADE
 		graphical_culture = mongolgfx
 		color = { 216 177 100 }
-		icon = 462
-		heresy_icon = 463
+		icon = 173
+		heresy_icon = 174
 		
 		parent = zal
 		
@@ -22283,8 +22525,8 @@ zal_group = {
 		crusade_name = CRUSADE
 		graphical_culture = mongolgfx
 		color = { 204 77 51 }
-		icon = 462
-		heresy_icon = 463
+		icon = 173
+		heresy_icon = 174
 		
 		parent = zal
 		
@@ -22376,8 +22618,8 @@ zoroastrian_group = {
 		allow_in_ruler_designer = no
 		graphical_culture = persiangfx
 		color = { 200 60 50 }
-		icon = 655
-		heresy_icon = 656
+		icon = 366
+		heresy_icon = 367
 		
 		high_god_name = GOD_AHURA_MAZDA
 		
@@ -22450,8 +22692,8 @@ zoroastrian_group = {
 		crusade_name = CRUSADE
 		graphical_culture = persiangfx
 		color = { 0 0 0 }
-		icon = 470
-		heresy_icon = 471
+		icon = 181
+		heresy_icon = 182
 		reformer_head_of_religion = no
 		
 		high_god_name = GOD_ANGRA_MAINYU
@@ -22525,9 +22767,9 @@ zoroastrian_group = {
 		crusade_name = CRUSADE
 		graphical_culture = persiangfx
 		color = { 189 199 51 }
-		icon = 658
+		icon = 369
 		reformer_head_of_religion = no
-		heresy_icon = 659
+		heresy_icon = 370
 		
 		high_god_name = GOD_ZURVAN
 		
@@ -22598,11 +22840,254 @@ zoroastrian_group = {
 		religious_clothing_priest = 5
 	}
 	######################
+	zoroastrian = {
+		graphical_culture = persiangfx
+		color = { 213 200 50 }
+		icon = 10
+		heresy_icon = 12
+		
+		high_god_name = GOD_AHURA_MAZDA
+		
+		crusade_name = "FRASHOKERETI"
+		piety_name = PIETY
+		priest_title = HERBAD
+		scripture_name = THE_GATHAS
+		god_names = {
+			GOD_AHURA_MAZDA GOD_MANAH GOD_ZURVAN GOD_SPENTA_MAINYU
+			PROPHET_ZOROASTER
+		}
+		evil_god_names = {
+			ANGRA_MAINYU
+		}
+		
+		character_modifier = {
+			global_revolt_risk = -0.04
+			general_opinion = 10
+			church_opinion = 20
+#			dynasty_opinion = 20
+			temple_vassal_tax_modifier = -0.45 
+			land_organisation = 0.15
+			temple_vassal_min_levy = -0.35
+			temple_vassal_max_levy = -0.35
+#			monthly_character_prestige = 1.00
+#			monthly_character_piety = 0.50
+			diplomacy = 1
+			martial = -2
+			intrigue = 1
+#			ai_zeal = 20	
+#			ai_honor = 20
+#			ai_greed = 50
+#			ai_rationality = -20
+		}
+		unit_modifier = {
+			key = "OFF_RELIGION"
+			
+			levy_size = 0.30
+			light_cavalry_offensive = -0.20
+			light_infantry_offensive = -0.20
+			archers_offensive = -0.20
+			knights_offensive = 0.20
+			heavy_infantry_offensive = 0.20
+			pikemen_offensive = 0.20
+			land_morale = -0.30
+		}
+		unit_home_modifier = {
+			key = "OFF_RELIGION"
+			
+			light_cavalry_defensive = 0.20
+			light_infantry_defensive = 0.20
+			archers_defensive = 0.20
+			land_morale = 0.80
+		}
+		
+		bs_marriage = yes
+		can_call_crusade = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		divine_blood = yes # Sacred Xwedodah close-kin marriage mechanics
+		max_consorts = 3
+		pc_marriage = yes
+		short_reign_opinion_year_mult = 4 # The default in LI is 5
+
+		# Persian open-minded (sectarian 0), can be married from the same group or civilization or related ones
+		intermarry = zor_hindu
+		intermarry = zurvanism
+		intermarry = zurvanism_reformed
+
+		# Persian restrictive (sectarian 1), can be married only from the same group or civilization
+		intermarry = mazdakism_reformed
+		intermarry = zor_angra_reformed
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+	}
+	zurvanism = {
+		graphical_culture = persiangfx
+		color = { 222 227 145 }
+		icon = 368
+		heresy_icon = 370
+		
+		high_god_name = GOD_ZURVAN
+		
+		parent = zoroastrian
+		reformed = zurvanism_reformed
+		#reformer_head_of_religion = no #Reformer is NOT a ruler head
+		
+		piety_name = PIETY
+		priest_title = HERBAD
+		scripture_name = THE_GREAT_SECRET
+		god_names = {
+			GOD_ZURVAN GOD_AHURA_MAZDA GOD_MANAH PROPHET_ZOROASTER
+		}
+		evil_god_names = {
+			ANGRA_MAINYU
+		}
+		
+		character_modifier = {
+			global_revolt_risk = -0.03
+			church_opinion = 15
+#			dynasty_opinion = 20
+			temple_vassal_tax_modifier = -0.35
+			land_organisation = 0.1
+			temple_vassal_min_levy = -0.30
+			temple_vassal_max_levy = -0.35
+#			monthly_character_piety = 0.30
+			martial = -2
+			stewardship = 1
+			intrigue = 1
+			learning = 1
+#			ai_ambition = 20
+#			ai_zeal = 20
+#			ai_greed = 50
+		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.30
+			light_cavalry_offensive = -0.20
+			light_infantry_offensive = -0.20
+			archers_offensive = -0.20
+			heavy_infantry_offensive = 0.20
+			knights_offensive = 0.20
+			pikemen_offensive = 0.20
+			land_morale = -0.30
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.20
+			light_infantry_defensive = 0.20
+			archers_defensive = 0.20
+			land_morale = 0.80
+		}
+		
+		bs_marriage = yes
+		can_call_crusade = no
+		divine_blood = yes # Sacred Xwedodah close-kin marriage mechanics
+		max_consorts = 3
+		pc_marriage = yes
+		hard_to_convert = yes
+
+		# Persian open-minded (sectarian 0), can be married from the same group or civilization or related ones
+		intermarry = zor_hindu
+		intermarry = zoroastrian
+		intermarry = zurvanism_reformed
+
+		# Persian restrictive (sectarian 1), can be married only from the same group or civilization
+		intermarry = mazdakism_reformed
+		intermarry = zor_angra_reformed
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+	}
+	mazdakism = {
+		graphical_culture = persiangfx
+		color = { 200 50 115 }
+		icon = 365
+		heresy_icon = 367
+		
+		high_god_name = GOD_AHURA_MAZDA
+		
+		parent = zoroastrian
+		reformed = mazdakism_reformed
+		#mazdakism_reformed has NO religious head, WAD
+		
+		piety_name = PIETY
+		priest_title = HERBAD
+		scripture_name = THE_MAZDAK
+		god_names = {
+			GOD_AHURA_MAZDA GOD_MANAH PROPHET_MAZDAK
+		}
+		evil_god_names = {
+			ANGRA_MAINYU
+		}
+		
+		character_modifier = {
+			global_revolt_risk = 0.02
+			general_opinion = -40
+			same_religion_opinion = 80
+#			dynasty_opinion = 20
+			castle_vassal_tax_modifier = 0.10
+			city_vassal_tax_modifier = -0.10
+			temple_vassal_tax_modifier = 0.20
+			land_organisation = -0.15
+			castle_vassal_min_levy = 0.10
+			castle_vassal_max_levy = 0.10
+			city_vassal_min_levy = -0.10
+			city_vassal_max_levy = -0.10
+			temple_vassal_min_levy = 0.20
+			temple_vassal_max_levy = 0.20
+##			monthly_character_prestige = -2.00
+##			monthly_character_piety = 0.50
+			assassinate_chance_modifier = -0.10
+			arrest_chance_modifier = -0.10
+			diplomacy = -3
+			stewardship = -1
+			intrigue = 3
+			learning = 4
+#			ai_ambition = 50
+#			ai_zeal = 50
+#			ai_honor = -50
+#			ai_greed = -20
+#			ai_rationality = -40
+		}
+		unit_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			levy_size = 0.30
+			light_cavalry_offensive = 0.40
+			light_infantry_offensive = 0.40
+			archers_offensive = 0.40
+			knights_offensive = -0.30
+			heavy_infantry_offensive = -0.30
+			pikemen_offensive = -0.30
+			land_morale = 0.70
+		}
+		unit_home_modifier = {
+			key = "DEF_RELIGION_HOME_TERRITORY"
+			
+			light_cavalry_defensive = 0.50
+			light_infantry_defensive = 0.50
+			archers_defensive = 0.50
+			land_morale = 0.50
+		}
+		
+		allow_viking_invasion = yes
+		can_call_crusade = no
+		max_consorts = 3
+		priests_can_marry = yes
+		short_reign_opinion_year_mult = 8 # The default in LI is 5
+		hard_to_convert = yes
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+	}
+	
 	zor_angra = {
 		graphical_culture = persiangfx
 		color = { 102 0 0 }
-		icon = 468
-		heresy_icon = 469
+		icon = 179
+		heresy_icon = 180
 		
 		reformed = zor_angra_reformed
 		#reformer_head_of_religion = no #Reformer is NOT a ruler head
@@ -22683,8 +23168,8 @@ zoroastrian_group = {
 	zor_hindu = {
 		graphical_culture = persiangfx
 		color = { 153 102 0 }
-		icon = 580
-		heresy_icon = 580
+		icon = 291
+		heresy_icon = 291
 		
 		high_god_name = GOD_MITRA
 		
