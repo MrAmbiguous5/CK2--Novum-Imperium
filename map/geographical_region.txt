@@ -243,9 +243,13 @@ world_india_deccan = {
 		#Karnata
 		d_kalyani d_gangavadi d_nulambavadi d_raichur_doab
 		#Tamilakam
-		d_pandya_nadu d_chera_nadu
+		d_chola_nadu d_pandya_nadu d_chera_nadu d_tondai_nadu
+		#Andhra
+		d_vengi d_udayagiri
 		#Telingana
 		d_warangal d_racakonda
+		#Lanka
+		d_sinhala d_vidharba
 	}
 }
 world_india_rajastan = { # Rajastan
@@ -261,11 +265,25 @@ world_india_rajastan = { # Rajastan
 		# Rajputana
 		d_maru d_jangladesh d_stravani d_medapata d_ajmer
 		# Malwa
-		d_dadhipadra d_akara_dasarna d_anupa
+		d_dadhipadra d_akara_dasarna d_anupa d_devagiri
 		# Panchala
 		d_kanyakubja d_vodamayutja d_nisada d_saryupara
 		# Cedi
 		d_dahala d_jejakabhukti
+	}
+}
+world_india_bengal = {
+	duchies = {
+		#Gondwana
+		d_dahala d_ratanpur
+		#Bengal
+		d_vanga d_varendra d_gauda d_nadia d_suhma
+		#Kamarupa
+		d_kamarupanagara d_para_lauhitya d_sutiya
+		#Orissa
+		d_daksina_kosala d_tosali d_kalinga d_dandakaranya
+		#Bihar
+		d_tirabhukti d_kasi d_jharkand d_magadha
 	}
 }
 world_persia = { # Persia
@@ -346,7 +364,7 @@ world_africa = { # Africa
 world_steppe_tarim = { # Tarim Basin
 	duchies = {
 		# Tarim
-		d_kashgar d_khotan d_karashar
+		d_kashgar d_khotan d_karashar d_kumul
 	}
 }
 world_steppe_west = { # Western Steppes
@@ -370,7 +388,7 @@ world_steppe_east = { # Eastern Steppes
 		# Dasht-e-Qipchaq
 		d_yaik d_ustyurt d_dasht-i-qipchaq d_jand
 		# Zhetisu and Ayaguz from Turkestán
-		d_zhetysu d_ayaguz
+		d_zhetysu d_ayaguz d_altay d_turfan d_shangjing d_orkhon d_sayan d_kerulen
 	}
 }
 world_steppe = { # Steppes
@@ -390,18 +408,112 @@ world_middle_east = { # Near East
 }
 world_india = { # India
 	regions = {
-		world_india_rajastan world_india_deccan
+		world_india_rajastan world_india_bengal world_india_deccan
 	}
 }
 world_himalayas = { # Himalayas
 	duchies = {
 		# Guge
-		d_purang d_ngari d_ladakh
+		d_purang d_ngari d_ladakh d_shigatse d_nagchu d_lhasa d_yarlung d_nyingchi d_qamdo d_dege d_nangqen d_nagormo d_qinghai d_dome d_kham d_longyou
 		# Kashmir
-		d_kashmir d_pamir d_uttaranchal
+		d_kashmir d_pamir d_uttaranchal d_gorkha d_kathmandu d_bhutan
 	}
 }
-
+world_china = { # China
+	duchies = {
+		d_hexi
+		d_henan
+		d_fengxiang
+		d_yongxing
+		d_datong
+		d_hedong
+		d_nanjing
+		d_dongchuan
+		d_xichuan
+		d_shuofang
+		d_zhenwu
+		d_binning
+		d_jingyuan
+		d_wuxing
+		d_xiongwu
+		d_baoda
+		d_baosai
+		d_baoyi
+		d_hezhong
+		d_jinshang
+		d_kuangguo
+		d_zhenguo
+		d_zhangguo
+		d_zhaoyi
+		d_fenzhou
+		d_jianxiong
+		d_weisai
+		d_anguo
+		d_chengde
+		d_heyang
+		d_yiwu
+		d_zhangde
+		d_tianxiong
+		d_zhenning
+		d_yongqing
+		d_yichang
+		d_yicheng
+		d_dongdu
+		d_weisheng
+		d_jingxinan
+		d_tianping
+		d_zhangxin
+		d_pinglu
+		d_taining
+		d_xuanwu
+		d_guide
+		d_zhenan
+		d_zhongwu
+		d_fengguo
+		d_ganhua
+		d_huainan
+		d_eyue
+		d_anyuan
+		d_desheng
+		d_qinghuai
+		d_zhexi
+		d_xuanshe
+		d_zhedong
+		d_zhenhai
+		d_zhongwu_wuyue
+		d_hunan
+		d_jiangxi
+		d_anhua
+		d_baisheng
+		d_fenghua
+		d_wuping
+		d_fujian
+		d_qingyuan
+		d_yongan
+		d_lingnandong
+		d_qiongguan
+		d_rongguan
+		d_guiguan
+		d_lingnanxi
+		d_jinghai
+		d_shannanxi
+		d_longjian
+		d_weirong
+		d_yongping
+		d_baoning
+		d_huaide
+		d_jingnan
+		d_ningjiang
+		d_wuding
+		d_wutai
+		d_wuxin
+		d_yongning
+		d_zhaowu
+		d_dongjing
+		d_zhongjing
+		d_bohai
+	}
+}
 ###########################################################################
 # Custom Regions
 ###########################################################################
@@ -557,38 +669,30 @@ custom_historical_plague_free_zone = { # Historical Plague Exclusion Zone
 }
 custom_eastern_edge_of_map = { # Eastern Edge
 	counties = {
-		# Yulduz from Zhetisu
-		c_yulduz
-		# Niya from Khotan
-		c_cadota
-		# Qarashahr from Kucha
-		c_karashar
-		# Emil from Ayaguz
-		c_emil
+	
 	}
 }
 custom_chinese_invasion_target_region = { # Chinese Region of Influence
 	duchies = {
 		# Zhetisu and Ayaguz from Turkestán
-		d_zhetysu d_ayaguz
+		
 	}
 	regions = {
 		world_steppe_tarim world_himalayas
 	}
 }
+
+
 custom_eastern_access = { # Vicinity of China
 	duchies = {
-		# Mavár-an-Nahr except Khatlón
-		d_soghd d_ustrushana d_ferghana d_shash
-		# Jand from Dasht-e-Qipchaq
-		d_jand
-		# Ayaguz from Turkestán
-		d_ayaguz
+		d_kumul d_karashar d_kashgar d_khotan d_turfan 
 	}
 	regions = {
-		world_steppe_tarim world_himalayas
+		world_himalayas
 	}
 }
+
+
 custom_leon = { # León
 	duchies = {
 		# León except Galicia
@@ -802,7 +906,7 @@ emf_region_mongol_east = {
 		# Kábul from Kábulistán
 		d_kabul
 		# Zhetisu and Ayaguz from Turkestán
-		d_zhetysu d_ayaguz
+		d_zhetysu d_ayaguz d_altay d_turfan
 	}
 	regions = {
 		world_steppe_tarim world_himalayas
