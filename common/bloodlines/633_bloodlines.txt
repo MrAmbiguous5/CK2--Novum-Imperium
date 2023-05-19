@@ -1,0 +1,52 @@
+gupta = {
+	hindu_opinion = 5
+	bengali_opinion = 5
+	global_tax_modifier=0.05
+	monthly_character_prestige = 0.2
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_gupta
+	flags = { historical_bloodline }
+}
+
+syagrius = {
+	combat_rating = -1
+	latin_opinion = 5
+	monthly_character_prestige = 0.1
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_roman
+	flags = { historical_bloodline }
+}
+
+arsacid = {
+	iranian_opinion = 5
+	armenian_opinion = 5
+	monthly_character_prestige = 0.2
+	horse_archers_offensive = 0.2
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_zoroastrian
+	flags = { historical_bloodline }
+}
+
+cunimund = {
+	lombard_opinion = -5
+	monthly_character_prestige = 0.1
+	monthly_character_piety = -0.05
+	intrigue = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_bloodthirsty
+	flags = { historical_bloodline }
+}
+
+hausa_najibu = {
+	hausa_opinion = 5
+	monthly_character_prestige = 0.1
+	bloodline_effect_enatic_cognatic = 1
+	inheritance = matrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_african
+	flags = { historical_bloodline bloodline_enatic_cognatic }
+}
