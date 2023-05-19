@@ -1,0 +1,41 @@
+#Tang
+865.7.1 = { holder = 1405349 liege = d_fujian } #Li Zan
+866.1.1 = { holder = 1409910 } #Huang Jie - prefect around this time
+870.1.1 = { holder = 1407073 } #Meng Biao
+873.1.1 = { holder = 1407087 } #Huangfu Gui
+875.5.9 = [ holder = 1407099 } #Li Hui
+876.2.1 = { holder = 1404006 } #Li Bo
+878.1.1 = { holder = 1406496 } #Wei Zhou
+879.1.9 = { holder = 1407101 } #Zheng Yi
+880.1.1 = { holder = 1408251 } #Li Jing - prefect at some point
+885.1.5 = { holder = 1407039 } #Chen Yan
+892.3.1 = { holder = 1407104 } #Fan Hui
+893.5.22 = { holder = 1406713 } #Wang Chao
+898.1.2 = { holder = 1406717 } #Wang Shenzhi
+#Min
+925.12.30 = { holder = 1406725 } #Wang Yanhan
+927.1.14 = { holder = 1406726 } #Wang Yanjun
+935.11.17 = { holder = 1406742 } #Wang Jipeng
+939.8.29 = { holder = 1406729 } #Wang Yanxi
+944.4.8 = { holder = 1406758 } #Zhu Wenjin
+#Yin/Min
+945.2.14 = { holder = 1406731 } #Wang Yanzheng
+945.3.14 = {  holder = 1406731 liege = e_min }
+#Southern Tang
+945.10.2 = { holder = 1406760 liege = d_fujian } #Li Renda
+946.11.10 = { holder = 1406774 name = "Nanzhou" } #Dong Si'an - made prefect
+949.1.1 = { holder = 1407123 liege = d_qingyuan de_jure_liege = d_qingyuan } #Liu Congyuan - took over prefecture
+964.3.9 = { holder = 1407133 } #Chen Wenhao - made prefect
+965.10.24 = { name = "Zhangzhou" }
+#Song
+971.1.1 = { holder = 1407136 } #Chen Tian - made prefect
+975.1.1 = { holder = 1407133 } #Chen Wenhao - prefect in 976.8.11
+977.1.1 = { holder = 1407134 } #Chen Wenyi - prefect until 978.6.7
+978.6.3  = { liege = e_song }
+978.7.6 = { holder = 217722 }
+1006.1.1 = { holder = 217723 }
+1022.3.23 = { holder = 217724 }
+1063.3.30 = { holder = 217725 }
+1067.1.25 = { holder = 217726 }
+1085.4.1 = { holder = 217727 }
+1100.2.23 = { holder = 217728 }

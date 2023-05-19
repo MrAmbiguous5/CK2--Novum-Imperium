@@ -1,0 +1,25 @@
+#Khitan - Diela tribe
+730.1.1 = { holder = 1413002 } #Pidie
+735.1.1 = { holder = 1413003 } #Keling
+742.1.1 = { holder = 1413004 } #Noulisi
+770.1.1 = { holder = 1413005 } #Qiashen
+790.1.1 = {	holder = 1413006 } #Salade
+808.1.1 = {	holder = 1413010 } #Tiela
+870.1.1 = {	holder = 1413011 } #Yundeshi
+871.1.1 = {	holder = 1413013 } #Yanmu
+890.1.1 = {	holder = 1413015 } #Saladi
+900.1.1 = {	holder = 194325 } #Abaoji
+#Kitai Gur
+926.9.6 = { holder = 194326 liege = e_khitan }
+947.5.15 = { holder = 194328 }
+951.10.7 = { holder = 194329 }
+969.3.12 = { holder = 194330 }
+982.10.13 = { holder = 194331 }
+1031.1.1 = { holder = 194331 } #No deputy
+1031.6.25 = { holder = 194332 } #No deputy
+1055.1.1 = { holder = 1413308 } #Yelu Dilie - made prefect
+1058.10.22 = { liege = e_khitan }
+1064.1.1 = { holder = 194333 } #No deputy
+1101.2.12 = { holder = 194334 }
+#Jin
+1120.5.29 = { holder = 0 }
