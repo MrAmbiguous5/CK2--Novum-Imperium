@@ -1,0 +1,6 @@
+on_siege_over_winner = {
+    events = {
+	pod.0000
+	pod.0002
+    }
+}

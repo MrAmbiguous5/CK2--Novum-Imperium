@@ -1,0 +1,29 @@
+# -*- ck2.on_actions -*-
+
+#character
+on_yearly_pulse = {
+	events = {
+		emf_historical.99 # De jure expansion of Christian Iberia (master event)
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder = {
+	events = {
+		emf_core.50 # Handle HRE stem duchy kingdom elevation
+		emf_britain.0 # Formation of England
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_inheritance = {
+	events = {
+		emf_core.50 # Handle HRE stem duchy kingdom elevation
+	}
+}
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_usurpation = {
+	events = {
+		emf_core.50 # Handle HRE stem duchy kingdom elevation
+	}
+}

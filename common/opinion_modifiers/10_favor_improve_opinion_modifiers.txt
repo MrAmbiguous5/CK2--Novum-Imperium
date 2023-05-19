@@ -1,0 +1,11 @@
+favor_timer_1 = {
+	opinion = 0
+}
+
+favor_timer_2 = {
+	opinion = 0
+}
+
+favor_offer = {
+	opinion = 30
+}
