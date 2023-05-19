@@ -1,0 +1,48 @@
+# -*- ck2.history.titles -*-
+
+864.1.1 = {
+	liege = d_dalmatia
+	holder = 1233578
+}
+888.1.1 = {
+	#liege = d_croatia
+	liege = c_split
+	holder = 0
+}
+998.1.1 = {
+	liege = k_venice
+	holder = 537 # Pietro II Orseolo
+}
+1009.1.1 = {
+	holder = 496 # Oddone Orsielo
+}
+1019.1.1 = {
+	liege = c_split
+	holder = 0
+}
+1096.1.1 = {
+	liege = k_venice
+	holder = 32133 # Vitale I Michele
+}
+1102.1.1 = {
+	liege = c_split
+	holder = 0
+}
+1118.1.1 = {
+	liege = k_venice
+	holder = 32115 # Domenico Michele
+}
+1130.1.2 = {
+	holder = 32116 # Pietro Polani
+}
+1141.1.1 = {
+	liege = c_split
+	holder = 0
+}
+1327.1.1 = {
+	liege = k_venice
+	holder = 32132 # Giovannia Soranza
+}
+1328.12.31 = {
+	holder = 463600 # Francesco Dandalo
+}
