@@ -1,0 +1,21 @@
+#Immortality
+character_event = {
+	id = 65535
+	hide_window = yes
+	
+	only_playable = yes
+	min_age = 16
+	
+	trigger = {
+		trait = charimmortal
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		remove_trait = charimmortal
+		add_trait = immortal
+	}
+}

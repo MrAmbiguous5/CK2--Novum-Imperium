@@ -1,0 +1,1646 @@
+namespace = toe
+
+#Ping event to ensure scopes
+character_event = {
+	id = toe.1499
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { FROM = { has_character_flag = starting_1 }}
+			set_variable = { which = "coup_success" value = 1 }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = starting_2 }}
+			set_variable = { which = "coup_success" value = 2 }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = starting_3 }}
+			set_variable = { which = "coup_success" value = 3 }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = starting_4 }}
+			set_variable = { which = "coup_success" value = 4 }
+		}
+		FROM = {
+			any_plot_backer = {
+				letter_event = { id = toe.1500 }
+			}
+		}
+		FROM = {
+			character_event = { id = toe.1501 }
+		}
+	}
+}
+
+#Notify co-conspirators of plot
+letter_event = {
+	id = toe.1500
+	desc = EVTDESC_toe.1500
+	border = GFX_event_letter_frame_war
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1500 #We are committed then
+	}
+}
+
+#First event for the plotters
+character_event = {
+	id = toe.1501
+	desc = EVTDESC_toe.1501
+	picture = "GFX_evt_eavesdropping"
+	is_triggered_only = yes
+	
+	immediate = {
+		# Set up flag to see on whose side the guard is on
+		if = { 
+			limit = { 
+				any_plot_backer = {
+					OR = {
+						any_demesne_title = {
+							has_title_flag = is_imperial_guard 
+						}
+						has_landed_title = d_varangian_guard
+					}
+				}
+			}
+			set_character_flag = has_guard
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1501 #Surround but slow
+		set_character_flag = coup_surround
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 1.25
+					intrigue = 10
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 15
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 20
+				}
+				custom_tooltip = { text = EVTTOOLTIPA_toe.1501 }
+				change_variable = { which = "coup_success" value = 1 }
+			}
+			50 = {
+				modifier = {
+					factor = 1.25
+					NOT = { intrigue = 5 }
+				}
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+				change_variable = { which = "coup_success" value = -1 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROM = { character_event = { id = toe.1502 }} #Go to next stage
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1501 #Fast entrance
+		set_character_flag = coup_fast_in
+		random_list = {
+			50 = {	
+				modifier = {
+					factor = 1.25
+					martial = 10
+				}
+				modifier = {
+					factor = 1.25
+					martial = 15
+				}
+				modifier = {
+					factor = 1.25
+					martial = 20
+				}
+				custom_tooltip = { text = EVTTOOLTIPA_toe.1501 }
+				change_variable = { which = "coup_success" value = 1 }
+			}
+			50 = {
+				modifier = {
+					factor = 1.25
+					NOT = { martial = 5 }
+				}
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+				change_variable = { which = "coup_success" value = -1 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROM = { character_event = { id = toe.1502 }} #Go to next stage
+		}
+	}
+	option = {
+		name = EVTOPTC_toe.1501 #Use secret passages
+		trigger = {
+			intrigue = 10
+		}
+		tooltip_info = intrigue
+		set_character_flag = coup_passages
+		random_list = {
+			75 = {
+				custom_tooltip = { text = EVTTOOLTIPA_toe.1501 }
+				change_variable = { which = "coup_success" value = 1 }
+			}
+			25 = {
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+				change_variable = { which = "coup_success" value = -1 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROM = { character_event = { id = toe.1502 }} #Go to next stage
+		}
+	}
+	option = {
+		name = EVTOPTD_toe.1501 #March in with guard
+		trigger = {
+			has_character_flag = has_guard
+		}
+		random_list = {
+			75 = {
+				custom_tooltip = { text = EVTTOOLTIPC_toe.1501 }
+				change_variable = { which = "coup_success" value = 2 }
+			}
+			25 = {
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+				change_variable = { which = "coup_success" value = -1 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROM = { character_event = { id = toe.1502 }} #Go to next stage
+		}
+	}
+}
+
+#First event for the emperor
+character_event = {
+	id = toe.1502
+	desc = EVTDESC_toe.1502
+	picture = "GFX_evt_house_arrest_escape"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1502 #Hide
+		hidden_tooltip = { 
+			random_list = {
+				50 = {
+					modifier = {
+						factor = 1.25
+						intrigue = 10
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 15
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 20
+					}
+					change_variable = { which = "coup_success" value = -1 } #Succeed (plotters lose success)
+				}
+				50 = {
+					modifier = {
+						factor = 1.25
+						NOT = { intrigue = 5 }
+					}
+					modifier = {
+						factor = 1.25
+						FROM = { has_character_flag = coup_fast_in }
+					}
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1503 } #Go to next stage (IN)
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1502 #Climb out window
+		hidden_tooltip = {
+			random_list = {
+				50 = {	
+					modifier = {
+						factor = 1.25
+						martial = 10
+					}
+					modifier = {
+						factor = 1.25
+						martial = 15
+					}
+					modifier = {
+						factor = 1.25
+						martial = 20
+					}
+					change_variable = { which = "coup_success" value = -1 } 
+				}
+				50 = {
+					modifier = {
+						factor = 1.25
+						NOT = { martial = 5 }
+					}
+					modifier = {
+						factor = 1.25
+						FROM = { has_character_flag = coup_surround }
+					}
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1504 } #Go to next stage (OUT)
+		}
+	}
+	option = {
+		name = EVTOPTC_toe.1502 #Escape through secret passages
+		trigger = {
+			intrigue = 10
+		}
+		tooltip_info = intrigue
+		hidden_tooltip = {
+			random_list = {
+				75 = {
+					change_variable = { which = "coup_success" value = -2 }
+				}
+				25 = {
+					modifier = {
+						factor = 4
+						FROM = { has_character_flag = coup_passages }
+					}
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1504 } #Go to next stage (OUT)
+		}
+	}
+	option = {
+		name = EVTOPTD_toe.1502 #Search for guard
+		trigger = {
+			primary_title = {
+				OR = {
+					AND = {
+						OR = {
+							has_landed_title = e_byzantium
+							has_landed_title = e_roman_empire
+						}
+						has_global_flag = varangian_guard_founded 
+					}
+					has_title_flag = imperial_guard_founded 
+				}
+			}
+		}
+		custom_tooltip = { text = EVTTOOLTIPA_toe.1502 }
+		hidden_tooltip = {
+			random_list = {
+				75 = {
+					modifier = {
+						factor = 0
+						FROM = { has_character_flag = has_guard }
+					}
+					change_variable = { which = "coup_success" value = -2 }
+					set_character_flag = has_guard
+				}
+				25 = {
+					change_variable = { which = "coup_success" value = 2 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1503 } #Go to next stage (IN)
+		}
+	}
+}
+
+#Emperor IN
+character_event = {
+	id = toe.1503
+	desc = EVTDESC_toe.1503
+	picture = "GFX_evt_house_arrest_escape"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1503 #Keep hiding
+		hidden_tooltip = { #From here on, check (unsure if hidden_tooltip or something else)
+			random_list = {
+				50 = {
+					modifier = {
+						factor = 1.25
+						intrigue = 10
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 15
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 20
+					}
+					change_variable = { which = "coup_success" value = -1 } #Succeed (plotters lose success)
+				}
+				50 = {
+					modifier = {
+						factor = 1.25
+						NOT = { intrigue = 5 }
+					}
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROMFROM = { character_event = { id = toe.1504 }} #Go to plotter reaction
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1503 #Fight
+		hidden_tooltip = {
+			random_list = {
+				50 = {	
+					modifier = {
+						factor = 1.25
+						martial = 10
+					}
+					modifier = {
+						factor = 1.25
+						martial = 15
+					}
+					modifier = {
+						factor = 1.25
+						martial = 20
+					}
+					change_variable = { which = "coup_success" value = -1 } 
+				}
+				50 = {
+					modifier = {
+						factor = 1.25
+						NOT = { martial = 5 }
+					}
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROMFROM = { character_event = { id = toe.1504 }} #Go to plotter reaction
+		}
+	}
+	option = {
+		name = EVTOPTC_toe.1503 #Order the guard to attack
+		trigger = {
+			has_character_flag = has_guard
+		}
+		hidden_tooltip = {
+			random_list = {
+				75 = {
+					change_variable = { which = "coup_success" value = -2 }
+				}
+				25 = {
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROMFROM = { character_event = { id = toe.1504 }} #Go to plotter reaction
+		}
+	}
+}
+
+#Plotters IN
+character_event = {
+	id = toe.1504
+	desc = EVTDESC_toe.1504
+	picture = "GFX_evt_shadow"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1504 #Search
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 1.25
+					intrigue = 10
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 15
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 20
+				}
+				change_variable = { which = "coup_success" value = 1 } 
+				custom_tooltip = { text = EVTTOOLTIPA_toe.1501 }
+			}
+			50 = {
+				modifier = {
+					factor = 1.25
+					NOT = { intrigue = 5 }
+				}
+				change_variable = { which = "coup_success" value = -1 }
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1507 } #Go to resolution selection
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1504 #Send in guard
+		trigger = {
+			has_character_flag = has_guard
+		}
+		add_character_modifier = { name = toe_unleash_guard }
+		random_list = {
+			50 = {	
+				modifier = {
+					factor = 1.25
+					martial = 10
+				}
+				modifier = {
+					factor = 1.25
+					martial = 15
+				}
+				modifier = {
+					factor = 1.25
+					martial = 20
+				}
+				change_variable = { which = "coup_success" value = 2 } 
+				custom_tooltip = { text = EVTTOOLTIPC_toe.1501 }
+			}
+			50 = {
+				modifier = {
+					factor = 1.25
+					NOT = { martial = 5 }
+				}
+				change_variable = { which = "coup_success" value = -1 }
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1507 } #Go to resolution selection
+		}
+	}
+	option = {
+		name = EVTOPTC_toe.1504 #Contact traitor
+		trigger = {
+			intrigue = 10
+		}	
+		tooltip_info = intrigue
+		random_list = {
+			75 = {
+				change_variable = { which = "coup_success" value = 2 }
+				custom_tooltip = { text = EVTTOOLTIPC_toe.1501 }
+			}
+			25 = {
+				change_variable = { which = "coup_success" value = -1 }
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1507 } #Go to resolution selection
+		}
+	}
+}
+
+#Emperor OUT
+character_event = {
+	id = toe.1505
+	desc = EVTDESC_toe.1505
+	picture = "GFX_evt_hiding_from_pursuers"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1505 #Hide somewhere
+		hidden_tooltip = { #From here on, check (unsure if hidden_tooltip or something else)
+			random_list = {
+				50 = {
+					modifier = {
+						factor = 1.25
+						intrigue = 10
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 15
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 20
+					}
+					change_variable = { which = "coup_success" value = -1 } #Succeed (plotters lose success)
+				}
+				50 = {
+					modifier = {
+						factor = 1.25
+						NOT = { intrigue = 5 }
+					}
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROMFROM = { character_event = { id = toe.1506 }} #Go to plotter reaction
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1505 #Escape city
+		hidden_tooltip = {
+			random_list = {
+				50 = {	
+					modifier = {
+						factor = 1.25
+						martial = 10
+					}
+					modifier = {
+						factor = 1.25
+						martial = 15
+					}
+					modifier = {
+						factor = 1.25
+						martial = 20
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 10
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 15
+					}
+					modifier = {
+						factor = 1.25
+						intrigue = 20
+					}
+					change_variable = { which = "coup_success" value = 0 } 
+				}
+				50 = {
+					modifier = {
+						factor = 1.25
+						NOT = { martial = 5 }
+					}
+					modifier = {
+						factor = 1.25
+						NOT = { intrigue = 5 }
+					}
+					change_variable = { which = "coup_success" value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROMFROM = { character_event = { id = toe.1506 }} #Go to plotter reaction
+		}
+	}
+	option = {
+		name = EVTOPTC_toe.1505 #Go to the guard barracks
+		trigger = {
+			primary_title = {
+				OR = {
+					AND = {
+						OR = {
+							has_landed_title = e_byzantium
+							has_landed_title = e_roman_empire
+						}
+						has_global_flag = varangian_guard_founded 
+					}
+					has_title_flag = imperial_guard_founded 
+				}
+			}
+		}
+		hidden_tooltip = {
+			random_list = {
+				75 = {
+					change_variable = { which = "coup_success" value = -2 }
+					modifier = {
+						factor = 0
+						FROMFROM = {
+							has_character_modifier = has_guard 
+						}
+					}
+				}
+				25 = {
+					
+					change_variable = { which = "coup_success" value = 2 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1564 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROMFROM = { character_event = { id = toe.1566 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			FROMFROM = { character_event = { id = toe.1506 }} #Go to plotter reaction
+		}
+	}
+}
+
+#Plotters OUT
+character_event = {
+	id = toe.1506
+	desc = EVTDESC_toe.1506
+	picture = "GFX_evt_hiding_from_pursuers"
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_toe.1506 #Check houses
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 1.25
+					intrigue = 10
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 15
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 20
+				}
+				change_variable = { which = "coup_success" value = 1 } 
+				custom_tooltip = { text = EVTTOOLTIPA_toe.1501 }
+			}
+			50 = {
+				modifier = {
+					factor = 1.25
+					NOT = { intrigue = 5 }
+				}
+				change_variable = { which = "coup_success" value = -1 }
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1507 } #Go to resolution selection
+		}
+	}
+	option = {
+		name = EVTOPTB_toe.1506 #Escape
+		random_list = {
+			50 = {	
+				modifier = {
+					factor = 1.25
+					martial = 10
+				}
+				modifier = {
+					factor = 1.25
+					martial = 15
+				}
+				modifier = {
+					factor = 1.25
+					martial = 20
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 10
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 15
+				}
+				modifier = {
+					factor = 1.25
+					intrigue = 20
+				}
+				change_variable = { which = "coup_success" value = 0 } 
+				custom_tooltip = { text = EVTTOOLTIPD_toe.1501 }
+			}
+			50 = {
+				modifier = {
+					factor = 1.25
+					NOT = { martial = 5 }
+				}
+				modifier = {
+					factor = 1.25
+					NOT = { intrigue = 5 }
+				}
+				change_variable = { which = "coup_success" value = -1 }
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1507 } #Go to resolution selection
+		}
+	}
+	option = {
+		name = EVTOPTC_toe.1506 #Contact traitor
+		trigger = {
+			intrigue = 10
+		}	
+		tooltip_info = intrigue
+		random_list = {
+			75 = {
+				change_variable = { which = "coup_success" value = 2 }
+				custom_tooltip = { text = EVTTOOLTIPC_toe.1501 }
+			}
+			25 = {
+				change_variable = { which = "coup_success" value = -1 }
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1507 } #Go to resolution selection
+		}
+	}
+	option = {
+		name = EVTOPTD_toe.1506 #Unleash guard
+		trigger = {
+			has_character_flag = has_guard
+		}	
+		add_character_modifier = { name = toe_unleash_guard }
+		random_list = {
+			75 = {
+				change_variable = { which = "coup_success" value = 2 }
+				custom_tooltip = { text = EVTTOOLTIPC_toe.1501 }
+			}
+			25 = {
+				change_variable = { which = "coup_success" value = -1 }
+				custom_tooltip = { text = EVTTOOLTIPB_toe.1501 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 5 }
+					is_variable_equal = { which = "coup_success" value = 6 }
+				}
+			}
+			FROM = { character_event = { id = toe.1514 }} #Ruler killed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = -1 }
+					is_variable_equal = { which = "coup_success" value = -2 }
+				}
+			}
+			FROM = { character_event = { id = toe.1516 }} #Plotters killed
+		}
+		else_if = {
+			limit = {}
+			character_event = { id = toe.1507 } #Go to resolution selection
+		}
+	}
+}
+
+#ROOT is plotter #FROMFROMFROM is emperor
+#Resolution direction
+character_event = {
+	id = toe.1507
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 4 } #Plotters win
+				}
+			}
+			FROMFROMFROM = { character_event = { id = toe.1508 }} #Emperor abdicates
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "coup_success" value = 0 } #Emperor wins
+				}
+			}
+			FROMFROMFROM = { character_event = { id = toe.1510 }}
+		}
+		else_if = {
+			limit = {}
+			FROMFROMFROM = { character_event = { id = toe.1512 }}
+		}
+		clr_character_flag = starting_1
+		clr_character_flag = starting_2
+		clr_character_flag = starting_3
+		clr_character_flag = starting_4
+		clr_character_flag = has_guard
+		clr_character_flag = coup_surround
+		clr_character_flag = coup_fast_in
+		clr_character_flag = coup_passages
+		FROMFROMFROM = {
+			clr_character_flag = starting_1
+			clr_character_flag = starting_2
+			clr_character_flag = starting_3
+			clr_character_flag = starting_4
+			clr_character_flag = has_guard
+			clr_character_flag = coup_surround
+			clr_character_flag = coup_fast_in
+			clr_character_flag = coup_passages
+		}
+	}
+}
+
+#Emperor abdicates
+character_event = {
+	id = toe.1508
+	desc = EVTDESC_toe.1508
+	picture = "GFX_evt_into_the_dungeon"
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { character_event = { id = toe.1509 days = 1 }}
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				ai = yes
+				AND = {
+					ai = no
+					num_of_count_titles = 2
+				}
+			}
+		}
+		name = EVTOPTA_toe.1508 #Continue?
+		primary_title = {
+			usurp_title = FROM
+		}
+		capital_scope = {
+			usurp_title = FROM
+		}
+	}
+	option = {	
+		trigger = {
+			ai = no
+			FROM = { dynasty = ROOT }
+		}
+		name = EVTOPTB_toe.1508 #Switch to plotter?
+		set_player_character = FROM
+		primary_title = {
+			usurp_title = FROM
+		}
+		capital_scope = {
+			usurp_title = FROM
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+			num_of_count_titles = 1
+		}
+		name = EVTOPTA_toe.1508 #Continue with random province?
+		random_vassal = {
+			limit = {
+				NOT = { character = FROM }
+				NOT = { is_rival = ROOT }
+				num_of_count_titles = 2
+			}
+		}
+		primary_title = {
+			usurp_title = FROM
+		}
+		capital_scope = {
+			usurp_title = FROM
+		}
+	}
+}
+
+#What to do with former emperor?
+character_event = {
+	id = toe.1509
+	desc = EVTDESC_toe.1509
+	picture = "GFX_evt_into_the_dungeon"
+	is_triggered_only = yes
+	
+	immediate = {
+		cancel_plot = plot_court_coup
+	}
+	
+	option = {
+		trigger = {
+			FROM = { 
+				is_adult = yes
+				OR = {
+					AND = { 
+						religion_group = christian
+						is_alternate_start = no
+					}
+					AND = { 
+						religion = hindu
+						is_alternate_start = no
+					}
+					AND = { 
+						religion = buddhist
+						is_alternate_start = no
+					}
+					AND = { 
+						religion = jain
+						is_alternate_start = no
+					}
+					AND = { 
+						religion = manichean
+						is_alternate_start = no
+					}
+					has_religion_feature = religion_monastic
+					has_religion_feature = religion_feature_west_african
+				} 
+			}
+		}
+		name = EVTOPTA_toe.1509 #Monk
+		add_ascetic_trait_effect = yes #Adds religion-based monk-traits.
+		if = { #For pagans and Altstart
+			limit = { 
+				FROM = {
+					NOR = { 
+						religion_group = christian 
+						religion = hindu
+						religion = buddhist
+						religion = jain
+					} 
+					is_female = no
+				}
+			}
+			FROM = { add_trait = monk }
+		}
+		if = {
+			limit = { 
+				FROM = {
+					NOR = { 
+						religion_group = christian 
+						religion = hindu
+						religion = buddhist
+						religion = jain
+					} 
+				}
+				FROM = { is_female = yes }
+			}
+			FROM = { add_trait = nun }
+		}
+	}
+	option = {	
+		trigger = {
+			FROM = { 
+				NOT = { trait = eunuch }
+				is_female = no
+			}
+		}
+		name = EVTOPTB_toe.1509 #Eunuch
+		FROM = {
+			opinion = {
+				modifier = opinion_mutilated_me
+				who = ROOT
+			}
+			add_trait = eunuch
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				add_trait_severely_injured_effect = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_toe.1509 #Exile
+		FROM = {
+			banish = yes
+		}
+	}
+	option = {
+		name = EVTOPTD_toe.1509 #Kill
+		trigger = {
+			NOT = {
+				FROM = {
+					dynasty = ROOT
+				}
+			}
+		}
+		FROM = {
+			death = { 
+				death_reason = death_execution 
+				killer = ROOT 
+			}
+		}
+	}
+	option = {
+		name = EVTOPTE_toe.1509 #Kill relative
+		trigger = {
+			FROM = {
+				dynasty = ROOT
+			}
+		}
+		FROM = {
+			death = { 
+				death_reason = death_execution 
+				killer = ROOT 
+			}
+		}
+		add_kinslayer_trait_effect = yes
+	}
+}
+
+
+#Imprison plotters
+character_event = {
+	id = toe.1510
+	desc = EVTDESC_toe.1510
+	picture = "GFX_evt_into_the_dungeon"
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { 
+			any_plot_backer = {
+				character_event = { id = toe.1511 }
+				imprison = ROOT
+				ROOT = {
+					opinion = {
+						modifier = opinion_traitor
+						who = PREV
+					}
+				}
+			}
+			character_event = { id = toe.1511 }
+			imprison = ROOT
+			ROOT = {
+				opinion = {
+					modifier = opinion_traitor
+					who = PREV
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1510 #Nice
+	}
+}
+
+#Plotters know failure
+character_event = {
+	id = toe.1511
+	desc = EVTDESC_toe.1511
+	picture = "GFX_evt_into_the_dungeon"
+	is_triggered_only = yes
+	
+	immediate = {
+		cancel_plot = plot_court_coup
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1511 #Damn
+	}
+}
+
+#Emperor status quo
+character_event = {
+	id = toe.1512
+	desc = EVTDESC_toe.1512
+	picture = "GFX_evt_cathedral"
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { 
+			any_plot_backer = {
+				character_event = { id = toe.1513 }
+				ROOT = {
+					opinion = {
+						modifier = opinion_traitor
+						who = PREV
+					}
+				}
+			}
+			character_event = { id = toe.1513 }
+			ROOT = {
+				opinion = {
+					modifier = opinion_traitor
+					who = PREV
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1512 #Damn
+	}
+}
+
+#Plotters status quo
+character_event = {
+	id = toe.1513
+	desc = EVTDESC_toe.1513
+	picture = "GFX_evt_courier"
+	is_triggered_only = yes
+	
+	immediate = {
+		cancel_plot = plot_court_coup
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1513 #Damn
+	}
+}
+
+#Emperor killed ping from plotter
+character_event = {
+	id = toe.1564
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		FROM = { character_event = { id = toe.1514 }}
+	}
+}
+
+#Emperor killed ROOT is Emperor and FROM is plotter
+character_event = {
+	id = toe.1514
+	desc = EVTDESC_toe.1514
+	picture = "GFX_evt_cornered_duel_hf"
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { character_event = { id = toe.1515 }}
+		clr_character_flag = starting_1
+		clr_character_flag = starting_2
+		clr_character_flag = starting_3
+		clr_character_flag = starting_4
+		clr_character_flag = has_guard
+		clr_character_flag = coup_surround
+		clr_character_flag = coup_fast_in
+		clr_character_flag = coup_passages
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1514 #Argh
+		primary_title = {
+			usurp_title = FROM
+		}
+		capital_scope = {
+			usurp_title = FROM
+		}
+		death = { 
+			death_reason = death_murder_butchered 
+		}
+	}
+}
+
+#Plotters killed emperor
+character_event = {
+	id = toe.1515
+	desc = EVTDESC_toe.1515
+	picture = "GFX_evt_cornered_duel_hf"
+	is_triggered_only = yes
+	
+	immediate = {
+		cancel_plot = plot_court_coup
+		clr_character_flag = starting_1
+		clr_character_flag = starting_2
+		clr_character_flag = starting_3
+		clr_character_flag = starting_4
+		clr_character_flag = has_guard
+		clr_character_flag = coup_surround
+		clr_character_flag = coup_fast_in
+		clr_character_flag = coup_passages
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1515 #Woo
+	}
+}
+
+#Emperor killed plotters ping from plotter
+character_event = {
+	id = toe.1566
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		FROM = { character_event = { id = toe.1516 }}
+	}
+}
+
+#Emperor killed plotters ROOT is Emperor and FROM is plotter
+character_event = {
+	id = toe.1516
+	desc = EVTDESC_toe.1516
+	picture = "GFX_evt_cornered_duel_hf"
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			any_plot_backer = {
+				character_event = { id = toe.1517 }
+			}
+			character_event = { id = toe.1517 }
+		}
+		clr_character_flag = starting_1
+		clr_character_flag = starting_2
+		clr_character_flag = starting_3
+		clr_character_flag = starting_4
+		clr_character_flag = has_guard
+		clr_character_flag = coup_surround
+		clr_character_flag = coup_fast_in
+		clr_character_flag = coup_passages
+	}
+	
+	option = {
+		name = EVTOPTA_toe.1516 #Woo
+	}
+}
+
+#Plotters being killed
+character_event = {
+	id = toe.1517
+	desc = EVTDESC_toe.1517
+	picture = "GFX_evt_cornered_duel_hf"
+	is_triggered_only = yes
+	
+	immediate = {
+		cancel_plot = plot_court_coup
+		clr_character_flag = starting_1
+		clr_character_flag = starting_2
+		clr_character_flag = starting_3
+		clr_character_flag = starting_4
+		clr_character_flag = has_guard
+		clr_character_flag = coup_surround
+		clr_character_flag = coup_fast_in
+		clr_character_flag = coup_passages
+	}
+	
+	option = {
+		death = { 
+			death_reason = death_murder_butchered 
+		}
+		name = EVTOPTA_toe.1517 #Argh
+	}
+}
