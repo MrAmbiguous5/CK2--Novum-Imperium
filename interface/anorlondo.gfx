@@ -1,0 +1,8 @@
+spriteTypes = {
+
+     spriteType = {
+          name = "GFX_evt_anorlondo"
+          texturefile = "gfx\\event_pictures\\anorlondo.dds"
+     }
+
+}

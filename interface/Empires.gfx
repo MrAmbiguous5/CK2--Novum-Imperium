@@ -1,0 +1,89 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_trait_capri_seclusion"
+		texturefile = "gfx/traits/capri_seclusion.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_toe_guard"
+		texturefile = "gfx/traits/toe_guard.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_toe_guard_captain"
+		texturefile = "gfx/traits/toe_guard_captain.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_court_eunuch"
+		texturefile = "gfx/traits/court_eunuch.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_plot_court_coup_decision1"
+		texturefile = "gfx/interface/decision_icon_faction_claimant_ultimatum.dds"
+	}
+	spriteType = {
+		name = "GFX_plot_court_coup_decision2"
+		texturefile = "gfx/interface/decision_icon_faction_claimant_ultimatum.dds"
+	}
+	spriteType = {
+		name = "GFX_plot_court_coup_decision3"
+		texturefile = "gfx/interface/decision_icon_faction_claimant_ultimatum.dds"
+	}
+	spriteType = {
+		name = "GFX_plot_court_coup_decision4"
+		texturefile = "gfx/interface/decision_icon_faction_claimant_ultimatum.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomatic_reform"
+		texturefile = "gfx/interface/decision_icon_faction_lower_crown_authority_ultimatum.dds"
+	}
+	spriteType = {
+		name = "GFX_end_capri"
+		texturefile = "gfx/interface/decision_icon_come_out_of_hiding.dds"
+	}
+	spriteType = {
+		name = "GFX_create_imperial_guard"
+		texturefile = "gfx/interface/decision_icon_create_bulls_rishabha.dds"
+	}
+	spriteType = {
+		name = "GFX_call_eunuch"
+		texturefile = "gfx/interface/decision_icon_adopt_chinese_imperialism.dds"
+	}
+	spriteType = {
+		name = "GFX_call_eunuch_legal"
+		texturefile = "gfx/interface/decision_icon_adopt_chinese_imperialism.dds"
+	}
+	spriteType = {
+		name = "GFX_legalize_eunuchs"
+		texturefile = "gfx/interface/decision_icon_convert_to_swedish.dds"
+	}
+	spriteType = {
+		name = "GFX_print_debased_currency"
+		texturefile = "gfx/interface/decision_icon_borrow_money.dds"
+	}
+	spriteType = {
+		name = "GFX_military_reform"
+		texturefile = "gfx/interface/decision_icon_create_bulls_rishabha.dds"
+	}
+	spriteType = {
+		name = "GFX_economic_reform"
+		texturefile = "gfx/interface/decision_icon_borrow_money.dds"
+	}
+	spriteType = {
+		name = "GFX_plot_court_coup"
+		texturefile = "gfx/ambitions/plot_claimant.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}
