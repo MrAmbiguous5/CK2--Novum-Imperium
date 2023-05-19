@@ -1,0 +1,485 @@
+# Faction tags need to start with 'faction_'
+
+# Supported types:
+# liege_titles, liege_titles_w_claimant, character
+
+# The succession law factions have hard coded elements to ensure that the correct heir is shown in Plot and 
+# Faction interfaces and that AI faction members vote for laws in accordance with the faction goal.
+# The valid tags correspond to the law name: faction_succ_seniority, faction_succ_primogeniture, etc.
+# (faction_succ_ultimogeniture is fully supported by the code, but not currently implemented)
+
+###############
+# FACTIONS
+###############
+
+
+#court places regent/office holder as new emperor
+faction_ipc_takeover = {
+	type = liege_titles
+	exclusive = yes #Can only lead or be in one faction of this type
+	
+	warning_level = 0.7
+	
+	# Plotter scope
+	potential = {
+		prisoner = no
+		is_ruler = yes
+		independent = no
+		is_landed = yes
+		is_adult = yes
+		is_feudal = yes
+		mercenary = no
+		primary_title = { holy_order = no }
+		liege = {
+			tier = emperor
+			NOT = { any_demesne_title = { temporary = yes } }
+			has_character_modifier = imperial_court_influence_5
+		}
+		NOT = { any_demesne_title = { temporary = yes } }
+		NOT = { has_character_modifier = faction_ipc_takeover_ultimatum_timer }
+		
+		is_in_society = yes
+		
+		#these work
+		
+		#has_character_flag = ipc_member
+		
+		#these break 
+		#is_imperial_court_member_trigger = yes
+		
+	}
+	
+	# Target scope
+	allow = {
+		tier = emperor
+		is_primary_holder_title = yes
+		has_title_flag = imperial_court_active
+		holder_scope = {
+			NOT = {
+				any_war = {
+					war_title = ROOT
+					using_cb = ipc_faction_takeover_war
+				}
+			}
+			
+			NOR = {
+				reverse_has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_coerced_into_leaving_faction
+				}
+				reverse_has_opinion_modifier = {
+					who = FROM
+					modifier = opinion_replaced_bad_ruler
+				}
+			}
+		}
+	}
+	
+	# Faction member scope (ROOT = joiner, FROM = target)
+	allow_join = {
+		ROOT = {
+			is_ruler = yes
+			independent = no
+			is_landed = yes
+			is_adult = yes
+			NOT = { trait = incapable }
+			prisoner = no
+			NOT = { has_character_modifier = faction_ipc_takeover_ultimatum_timer }
+			
+			
+			
+			is_in_society = yes
+			has_character_flag = ipc_member
+			
+			
+			#these break it
+			#society_member_of = imperial_court_byzantine
+			#is_imperial_court_member_trigger = yes
+			
+			#society_influence >= 80
+		}
+	}
+	
+	# AI creation weight
+	chance = {
+		factor = 1
+		
+		modifier = {
+			factor = 0
+			FROM = { is_imperial_court_member_trigger = no }
+		}
+		modifier = {
+			factor = 0
+			FROM = { society_rank < 3 }
+		}
+		modifier = {
+			factor = 4
+			FROM = { is_imperial_court_regent_trigger = yes }
+		}
+		modifier = {
+			factor = 2
+			FROM = { 
+				has_unique_imperial_office_trigger = yes
+				is_imperial_court_regent_trigger = no 
+			}
+		}
+		
+		##misc
+		modifier = {
+			factor = 0.2
+			FROM = { pacifist = yes }
+		}
+
+		modifier = {
+			factor = 0
+			FROM = {
+				OR = {
+					leads_faction = faction_claimant
+					in_faction = faction_claimant 
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			FROM = {
+				OR = {
+					prisoner = yes
+					has_character_modifier = in_seclusion
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			holder_scope = { any_spouse = { character = FROM } }
+		}
+		modifier = {
+			factor = 0
+			current_heir = { character = FROM }
+		}
+		modifier = {
+			factor = 0
+			FROM = { preparing_invasion = yes }
+		}
+		
+		##opinions
+		modifier = {
+			factor = 0
+			FROM = { opinion = { who = LIEGE value = 75 } }
+		}
+		modifier = {
+			factor = 0
+			FROM = { 
+				opinion = { who = LIEGE value = 50 } 
+				NOR = {
+					trait = deceitful
+					trait = ambitious
+					trait = envious
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			FROM = { 
+				opinion = { who = LIEGE value = 25 } 
+				OR = { 
+					trait = kind
+					trait = charitable
+					trait = content
+					trait = just
+					trait = humble
+					trait = honest
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { FROM = { opinion = { who = LIEGE value = 0 } } }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { FROM = { opinion = { who = LIEGE value = -25 } } }
+		}
+		modifier = {
+			factor = 2
+			NOT = { FROM = { opinion = { who = LIEGE value = -50 } } }
+		}
+		modifier = {
+			factor = 4
+			NOT = { FROM = { opinion = { who = LIEGE value = -75 } } }
+		}
+		
+		##traits
+		modifier = {
+			factor = 0.01
+			FROM = { trait = content }
+		}
+		modifier = {
+			factor = 0.01
+			FROM = { trait = imbecile }
+		}
+		modifier = {
+			factor = 0.1
+			FROM = { trait = inbred }
+		}
+		modifier = {
+			factor = 0.1
+			FROM = { trait = craven }
+		}
+		modifier = {
+			factor = 0.2
+			FROM = { 
+				OR = {
+					trait = slow
+					trait = dull
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { trait = kind }
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { trait = charitable }
+		}
+		modifier = {
+			factor = 0.5
+			FROM = { trait = honest }
+		}
+		modifier = {
+			factor = 0.75
+			FROM = { trait = humble }
+		}
+		modifier = {
+			factor = 0.75
+			FROM = { trait = just }
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { trait = proud }
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { trait = brave }
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { trait = arbitrary }
+		}
+		modifier = {
+			factor = 2
+			FROM = { trait = envious }
+		}
+		modifier = {
+			factor = 2
+			FROM = { trait = greedy }
+		}
+		modifier = {
+			factor = 2
+			FROM = { trait = impaler }
+		}
+		modifier = {
+			factor = 2
+			FROM = { trait = deceitful }
+		}
+		modifier = {
+			factor = 4
+			FROM = { trait = ambitious }
+		}
+	}
+	
+	# AI membership weight: ROOT is the prospective member. FROM is the faction leader. FROMFROM is the target title or character.
+	membership = {
+		factor = 1
+		
+		modifier = {
+			factor = 1000
+			has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM }
+		}
+		modifier = {
+			factor = 0
+			is_imperial_court_member_trigger = no
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				leads_faction = faction_claimant
+				in_faction = faction_claimant 
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				prisoner = yes
+				trait = incapable
+				is_adult = no
+				is_landed = no
+				preparing_invasion = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			FROMFROM = { current_heir = { character = ROOT } }
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		modifier = {
+			factor = 0
+			has_character_modifier = faction_ipc_takeover_ultimatum_timer
+		}
+		modifier = {
+			factor = 0
+			has_opinion_modifier = {
+				who = LIEGE
+				modifier = opinion_coerced_into_leaving_faction
+			}
+		}
+		modifier = {
+			factor = 0.2
+			pacifist = yes
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		
+		modifier = {
+			factor = 0
+			NOT = { opinion = { who = FROM value = -40 } }
+			NOT = {	has_opinion_modifier = { who = FROM modifier = opinion_coerced_into_joining_faction } }
+		}
+		modifier = {
+			factor = 0
+			opinion = { who = LIEGE value = -40 }
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		
+		
+		
+		
+		##opinions
+		modifier = {
+			factor = 0
+			opinion = { who = LIEGE value = 50 }
+		}
+		modifier = {
+			factor = 0.5
+			opinion = { who = LIEGE value = 25 }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { opinion = { who = LIEGE value = -25 } }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { opinion = { who = LIEGE value = -50 } }
+		}
+		modifier = {
+			factor = 4.0
+			NOT = { opinion = { who = LIEGE value = -75 } }
+		}
+		
+		
+		##traits
+		modifier = {
+			factor = 0.01
+			trait = content
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		modifier = {
+			factor = 0.01
+			trait = imbecile
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		modifier = {
+			factor = 0.1
+			trait = inbred
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		modifier = {
+			factor = 0.1
+			trait = craven
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		modifier = {
+			factor = 0.2
+			OR = {
+				trait = slow
+				trait = dull
+			}
+			NOT = {	has_opinion_modifier = { modifier = opinion_coerced_into_joining_faction who = FROM } }
+		}
+		modifier = {
+			factor = 0.5
+			trait = kind
+		}
+		modifier = {
+			factor = 0.5
+			trait = charitable
+		}
+		modifier = {
+			factor = 0.5
+			trait = honest
+		}
+		modifier = {
+			factor = 0.75
+			trait = humble
+		}
+		modifier = {
+			factor = 0.75
+			trait = just
+		}
+		modifier = {
+			factor = 1.5
+			trait = proud
+		}
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 1.5
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 2.0
+			trait = envious
+		}
+		modifier = {
+			factor = 2.0
+			trait = greedy
+		}
+		modifier = {
+			factor = 2.0
+			trait = impaler
+		}
+		modifier = {
+			factor = 2.0
+			trait = deceitful
+		}
+		modifier = {
+			factor = 4.0
+			trait = ambitious
+		}
+	}
+	
+	success = {
+		holder_scope = {
+			FROM = {
+				has_opinion_modifier = { who = PREV modifier = opinion_abdicated }
+			}
+		}
+	}
+	
+	abort = {}
+	abort_effect = {}
+	
+	effect = {
+		FROM = {
+			any_faction_backer = {
+				faction = faction_ipc_takeover
+				reverse_opinion = {
+					modifier = opinion_grateful
+					who = FROM
+					years = 5
+				}
+			}
+		}
+	}
+}

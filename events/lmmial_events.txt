@@ -1,0 +1,124 @@
+namespace = lmmial
+
+character_event = {
+	id = lmmial.1
+	hide_window = yes
+	
+	only_playable = yes	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		is_adult = yes
+	}
+	
+	option = {
+		if = {
+			limit = {				
+				OR = {
+					is_primary_war_attacker = yes
+					is_primary_war_defender = yes
+				}
+			}
+			# Apply army leader trait if applicable
+			if = {
+				limit = { lmmial_is_leading_any_army_of_ROOT_trigger = yes }
+				remove_character_modifier = lmmial_war_cowardice_m
+				remove_trait = lmmial_war_cowardice_t
+				if = {
+					limit = { ai = yes }
+					add_character_modifier = { name = lmmial_army_leader_ai_m duration = -1 }					
+				}
+				else = {
+					add_character_modifier = { name = lmmial_army_leader_m duration = -1 }					
+				}
+			}
+			# Remove army leader trait and apply cowardice traits if applicable
+			else = {
+				remove_character_modifier = lmmial_army_leader_ai_m
+				remove_character_modifier = lmmial_army_leader_m
+				if = {
+					limit = {
+						# Exclude certain government types from cowardice modifiers and opinions
+						NOR = {							
+							government = roman_imperial_government
+							government = chinese_imperial_government
+							is_republic = yes
+							is_theocracy = yes
+							primary_title = { has_law = imperial_administration }
+						}
+					}
+					# Ruler can lead armies himself
+					if = {
+						limit = {						
+							lmmial_would_be_eligible_for_leading_troops_trigger = yes
+						}
+						if = {
+							limit = {					
+								NOR = {
+									any_close_relative = {
+										liege = { character = ROOT }
+										lmmial_is_leading_any_army_of_ROOT_trigger = yes
+									}
+									any_spouse = {																
+										liege = { character = ROOT }
+										lmmial_is_leading_any_army_of_ROOT_trigger = yes
+									}
+								}
+							}
+							set_character_flag = lmmial_eligible_and_no_family_member
+							add_character_modifier = { name = lmmial_war_cowardice_m duration = -1 }
+							add_trait = lmmial_war_cowardice_t
+						}
+						else = {
+							remove_character_modifier = lmmial_war_cowardice_m
+							remove_trait = lmmial_war_cowardice_t
+						}
+					}
+					# Ruler can't lead armies himself
+					else = {
+						if = {
+							limit = {
+								OR = {
+									any_close_relative = {
+										always = yes	
+										liege = { character = ROOT }							
+										lmmial_would_be_eligible_for_leading_troops_trigger = yes
+									} 
+									any_spouse = {
+										always = yes
+										liege = { character = ROOT }							
+										lmmial_would_be_eligible_for_leading_troops_trigger = yes
+									}
+								}
+								NOR = {
+									any_close_relative = {
+										liege = { character = ROOT }
+										lmmial_is_leading_any_army_of_ROOT_trigger = yes
+									}
+									any_spouse = {																
+										liege = { character = ROOT }
+										lmmial_is_leading_any_army_of_ROOT_trigger = yes
+									}
+								}				
+							}						
+							add_character_modifier = { name = lmmial_war_cowardice_m duration = -1 }
+							add_trait = lmmial_war_cowardice_t
+						}
+						else = {
+							remove_character_modifier = lmmial_war_cowardice_m
+							remove_trait = lmmial_war_cowardice_t
+						}
+					}
+				}								
+			}
+		}		
+		else = {
+			remove_character_modifier = lmmial_war_cowardice_m
+			remove_character_modifier = lmmial_army_leader_m
+			remove_trait = lmmial_war_cowardice_t
+		}		
+	}
+}

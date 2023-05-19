@@ -17,32 +17,10 @@
 1000035292 = {
 name="Lomellini"
  culture = ligurian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 17
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	} 
 }
 1000035293 = {
 name="Gentile"
  culture = ligurian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 16
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035294 = {
 name="De Fornari"
@@ -79,17 +57,6 @@ name="Embriaci"
 1000035302 = {
 name="Riario"
  culture = ligurian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 15
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035303 = {
 name="Lascaris di Ventimiglia"

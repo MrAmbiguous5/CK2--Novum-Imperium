@@ -9,6 +9,7 @@ d_targa = { # Targa
 	#foa = RAIS_FOA
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_azben = { # Azben
 	color = { 22 238 106 }
 	capital = 1225 # Agadez # Agadés
@@ -18,6 +19,7 @@ d_azben = { # Azben
 	#foa = RAIS_FOA
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_soninke = { # Soninke
 	color = { 110 50 30 }
 	#tribe = yes
@@ -25,6 +27,7 @@ d_soninke = { # Soninke
 	capital = 913 # Wagadu # Ghana
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_zaghawa = { # Zagháwa
 	color = { 22 111 22 }
 	capital = 1235 # Koufra # Borkou
@@ -34,6 +37,7 @@ d_zaghawa = { # Zagháwa
 	#foa = RAIS_FOA
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_duguwa = { # Duguwa
 	color = { 143 64 64 }
 	#tribe = yes

@@ -7,8 +7,6 @@ d_band_of_the_brave = { # The brave band
 	# Parent Religion
 	religion = catholic
 	mercenary = yes
-	title = CAPTAIN
-	foa = CAPTAIN_FOA
 	# Always exists
 	landless = yes
 	# Cannot be held as a secondary title
@@ -30,7 +28,11 @@ d_band_of_the_brave = { # The brave band
 			culture = english
 		}
 	}
+	title = CAPTAIN
+	title_female = CAPTAIN
+	foa = CAPTAIN_FOA
 }
+
 d_band_of_the_red = { # Floti hinn rauði
 	color = { 101 0 0 }
 	color2 = { 255 255 255 }
@@ -38,8 +40,6 @@ d_band_of_the_red = { # Floti hinn rauði
 	# Parent Religion
 	religion = catholic
 	mercenary = yes
-	title = DROTTINN
-	foa = CAPTAIN_FOA
 	# Always exists
 	landless = yes
 	# Cannot be held as a secondary title
@@ -56,7 +56,11 @@ d_band_of_the_red = { # Floti hinn rauði
 			culture = anglonorse
 		}
 	}
+	title = DROTTINN
+	title_female = DROTTINN
+	foa = CAPTAIN_FOA
 }
+
 d_black_gang = { # Arumer Zwarte Hoop
 	color = { 101 0 0 }
 	color2 = { 255 255 255 }
@@ -64,8 +68,6 @@ d_black_gang = { # Arumer Zwarte Hoop
 	# Parent Religion
 	religion = catholic
 	mercenary = yes
-	title = CAPTAIN
-	foa = CAPTAIN_FOA
 	# Always exists
 	landless = yes
 	# Cannot be held as a secondary title
@@ -76,7 +78,11 @@ d_black_gang = { # Arumer Zwarte Hoop
 	strength_growth_per_century = 0.25
 	# Hire Trigger
 	allow = { culture = frisian }
+	title = CAPTAIN
+	title_female = CAPTAIN
+	foa = CAPTAIN_FOA
 }
+
 d_ulfhedar = { # Úlfhéðnar
 	color = { 231 232 227 }
 	color2 = { 255 255 255 }
@@ -84,8 +90,6 @@ d_ulfhedar = { # Úlfhéðnar
 	# Parent Religion
 	religion = norse_pagan
 	mercenary = yes
-	title = DROTTINN
-	foa = CAPTAIN_FOA
 	# Always exists
 	landless = yes
 	# Cannot be held as a secondary title
@@ -96,7 +100,11 @@ d_ulfhedar = { # Úlfhéðnar
 	strength_growth_per_century = 0.25
 	# Hire Trigger
 	allow = { religion = norse_pagan }
+	title = DROTTINN
+	title_female = DROTTINN
+	foa = CAPTAIN_FOA
 }
+
 d_valr = { # Valr
 	color = { 20 20 20 }
 	color2 = { 255 255 255 }
@@ -104,8 +112,6 @@ d_valr = { # Valr
 	# Parent Religion
 	religion = norse_pagan
 	mercenary = yes
-	title = DROTTINN
-	foa = CAPTAIN_FOA
 	# Always exists
 	landless = yes
 	# Cannot be held as a secondary title
@@ -116,4 +122,7 @@ d_valr = { # Valr
 	strength_growth_per_century = 0.25
 	# Hire Trigger
 	allow = { religion = norse_pagan }
+	title = DROTTINN
+	title_female = DROTTINN
+	foa = CAPTAIN_FOA
 }

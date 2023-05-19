@@ -1,0 +1,1476 @@
+
+
+namespace = ipcf
+
+
+
+##############Estabilishing Courts##############
+
+
+##establishing generic court
+character_event = {
+	id = ipcf.000
+	desc = EVTDESAipcf.000
+	picture = GFX_evt_emissary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcf.000
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcf.000
+			
+			##christian courts
+			if = {
+				limit = {
+					OR = {
+						religion_group = christian
+						religion_group = jewish_group
+					}
+				}
+				primary_title = {
+					set_title_flag = imperial_court_active
+					if = {
+						limit = { NOT = { has_global_flag = imperial_court_christian_1_active } }
+						set_global_flag = imperial_court_christian_1_active
+						save_global_event_target_as = imperial_court_christian_1_title
+					}
+					else_if = {
+						limit = { NOT = { has_global_flag = imperial_court_christian_2_active } }
+						set_global_flag = imperial_court_christian_2_active
+						save_global_event_target_as = imperial_court_christian_2_title
+					}
+					else = {
+						set_global_flag = imperial_court_christian_3_active
+						save_global_event_target_as = imperial_court_christian_3_title
+					}
+					trigger_switch = {
+						on_trigger = title
+						
+						event_target:imperial_court_christian_1_title = {
+							ROOT = {
+								join_society = imperial_court_christian_1
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_christian_2_title = {
+							ROOT = {
+								join_society = imperial_court_christian_2
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_christian_3_title = {
+							ROOT = {
+								join_society = imperial_court_christian_3
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+					}
+				}
+			}
+			
+			
+			##muslim courts
+			else_if = {
+				limit = {
+					OR = {
+						religion_group = muslim
+						religion_group = zoroastrian_group
+					}
+				}
+				primary_title = {
+					set_title_flag = imperial_court_active
+					if = {
+						limit = { NOT = { has_global_flag = imperial_court_muslim_1_active } }
+						set_global_flag = imperial_court_muslim_1_active
+						save_global_event_target_as = imperial_court_muslim_1_title
+					}
+					else_if = {
+						limit = { NOT = { has_global_flag = imperial_court_muslim_2_active } }
+						set_global_flag = imperial_court_muslim_2_active
+						save_global_event_target_as = imperial_court_muslim_2_title
+					}
+					else = {
+						set_global_flag = imperial_court_muslim_3_active
+						save_global_event_target_as = imperial_court_muslim_3_title
+					}
+					trigger_switch = {
+						on_trigger = title
+						
+						event_target:imperial_court_muslim_1_title = {
+							ROOT = {
+								join_society = imperial_court_muslim_1
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_muslim_2_title = {
+							ROOT = {
+								join_society = imperial_court_muslim_2
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_muslim_3_title = {
+							ROOT = {
+								join_society = imperial_court_muslim_3
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+					}
+				}
+			}
+			
+			##pagan courts
+			else_if = {
+				limit = { religion_group = pagan_group }
+				primary_title = {
+					set_title_flag = imperial_court_active
+					if = {
+						limit = { NOT = { has_global_flag = imperial_court_pagan_1_active } }
+						set_global_flag = imperial_court_pagan_1_active
+						save_global_event_target_as = imperial_court_pagan_1_title
+					}
+					else_if = {
+						limit = { NOT = { has_global_flag = imperial_court_pagan_2_active } }
+						set_global_flag = imperial_court_pagan_2_active
+						save_global_event_target_as = imperial_court_pagan_2_title
+					}
+					else = {
+						set_global_flag = imperial_court_pagan_3_active
+						save_global_event_target_as = imperial_court_pagan_3_title
+					}
+					trigger_switch = {
+						on_trigger = title
+						
+						event_target:imperial_court_pagan_1_title = {
+							ROOT = {
+								join_society = imperial_court_pagan_1
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_pagan_2_title = {
+							ROOT = {
+								join_society = imperial_court_pagan_2
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_pagan_3_title = {
+							ROOT = {
+								join_society = imperial_court_pagan_3
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+					}
+				}
+			}
+			
+			##eastern courts
+			else_if = {
+				limit = { religion_group = indian_group }
+				primary_title = {
+					set_title_flag = imperial_court_active
+					if = {
+						limit = { NOT = { has_global_flag = imperial_court_eastern_1_active } }
+						set_global_flag = imperial_court_eastern_1_active
+						save_global_event_target_as = imperial_court_eastern_1_title
+					}
+					else_if = {
+						limit = { NOT = { has_global_flag = imperial_court_eastern_2_active } }
+						set_global_flag = imperial_court_eastern_2_active
+						save_global_event_target_as = imperial_court_eastern_2_title
+					}
+					else = {
+						set_global_flag = imperial_court_eastern_3_active
+						save_global_event_target_as = imperial_court_eastern_3_title
+					}
+					trigger_switch = {
+						on_trigger = title
+						
+						event_target:imperial_court_eastern_1_title = {
+							ROOT = {
+								join_society = imperial_court_eastern_1
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_eastern_2_title = {
+							ROOT = {
+								join_society = imperial_court_eastern_2
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+						event_target:imperial_court_eastern_3_title = {
+							ROOT = {
+								join_society = imperial_court_eastern_3
+								set_society_grandmaster = yes
+								change_society_currency = 500
+							}
+						}
+					}
+				}
+			}
+			
+			#notification and initial joining
+			any_realm_character = { character_event = { id = ipcf.001 days = 5 random = 2 } }
+			
+		}
+		if = {
+			limit = {
+				primary_title = {
+					NAND = {
+						has_law = law_voting_power_1
+						has_law = war_voting_power_1
+					}
+				}
+			}
+			primary_title = {
+				if = {
+					limit = { NOT = { has_law = law_voting_power_1 } }
+					add_law = law_voting_power_1
+				}
+				if = {
+					limit = { NOT = { has_law = war_voting_power_1 } }
+					add_law = war_voting_power_1
+				}
+			}
+		}
+		hidden_tooltip = { capital_holding = { set_title_flag = is_imperial_capital } }
+		ai_chance = { factor = 100 }
+	}
+
+	option = {
+		name = EVTOPTBipcf.000 
+		ai_chance = { factor = 0 }
+	}
+
+	after = {
+		clr_character_flag = establishing_imperial_court
+	}
+}
+
+
+##generic courts initial joining
+character_event = {
+	id = ipcf.001
+	desc = EVTDESAipcf.001
+	picture = GFX_evt_emissary
+
+	is_triggered_only = yes
+	
+	#join
+	option = {
+		trigger = {
+			OR = {
+				can_join_christian_imperial_court_trigger = yes
+				can_join_muslim_imperial_court_trigger = yes
+				can_join_pagan_imperial_court_trigger = yes
+				can_join_eastern_imperial_court_trigger = yes
+			}
+		}
+		name = EVTOPTAipcf.001
+		join_realm_imperial_court_effect = yes
+		if = {
+			limit = { higher_tier_than = count }
+			random = { chance = 75 society_rank_up = 2 }
+		}
+		else_if = {
+			limit = { higher_tier_than = baron }
+			society_rank_up = 1
+		}
+		
+		ai_chance = {
+			factor = 60
+			
+			modifier = {
+				factor = 0
+				FROM = { num_of_society_members >= 70 }
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.4 
+				is_landed = no
+			}
+			modifier = {
+				factor = 0.4
+				is_feudal = no
+			}
+			modifier = {
+				factor = 0.5
+				age >= 40
+			}
+			modifier = {
+				factor = 0.7
+				tier = baron
+			}
+			modifier = {
+				factor = 1.5
+				tier = count
+			}
+			modifier = {
+				factor = 2
+				tier = duke
+			}
+			modifier = {
+				factor = 2
+				tier = king
+			}
+		}
+	}
+	
+	#ok
+	option = {
+		name = EVTOPTBipcf.001 
+		ai_chance = { factor = 30 }
+	}
+}
+
+
+
+##establishing byzantine court
+character_event = {
+	id = ipcf.002
+	desc = EVTDESAipcf.002
+	picture = GFX_evt_emissary_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcf.002
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcf.002
+			e_byzantium = { set_title_flag = imperial_court_active }
+			#notification and initial joining
+			any_realm_character = { character_event = { id = ipcf.003 days = 5 random = 2 } }
+		}
+		join_society = imperial_court_byzantine
+		set_society_grandmaster = yes
+		change_society_currency = 500
+		if = {
+			limit = {
+				e_byzantium = {
+					NAND = {
+						has_law = law_voting_power_1
+						has_law = war_voting_power_1
+					}
+				}
+			}
+			e_byzantium = {
+				if = {
+					limit = { NOT = { has_law = law_voting_power_1 } }
+					add_law = law_voting_power_1
+				}
+				if = {
+					limit = { NOT = { has_law = war_voting_power_1 } }
+					add_law = war_voting_power_1
+				}
+			}
+		}
+		hidden_tooltip = { capital_holding = { set_title_flag = is_imperial_capital } }
+		ai_chance = { factor = 100 }
+	}
+
+	option = {
+		name = EVTOPTBipcf.002 
+		ai_chance = { factor = 0 }
+	}
+
+	after = {
+		clr_character_flag = establishing_imperial_court
+	}
+}
+
+##byzantine court initial joining
+character_event = {
+	id = ipcf.003
+	desc = EVTDESAipcf.003
+	picture = GFX_evt_victory_arch_byzantine
+
+	is_triggered_only = yes
+	
+	#join
+	option = {
+		trigger = { can_join_byzantine_imperial_court_trigger = yes }
+		name = EVTOPTAipcf.003
+		join_realm_imperial_court_effect = yes
+		if = {
+			limit = { higher_tier_than = count }
+			random = { chance = 75 society_rank_up = 2 }
+		}
+		else_if = {
+			limit = { higher_tier_than = baron }
+			society_rank_up = 1
+		}
+		
+		ai_chance = {
+			factor = 60
+			
+			modifier = {
+				factor = 0
+				FROM = { num_of_society_members >= 70 }
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.4 
+				is_landed = no
+			}
+			modifier = {
+				factor = 0.4
+				is_feudal = no
+			}
+			modifier = {
+				factor = 0.5
+				age >= 40
+			}
+			modifier = {
+				factor = 0.7
+				tier = baron
+			}
+			modifier = {
+				factor = 1.5
+				tier = count
+			}
+			modifier = {
+				factor = 2
+				tier = duke
+			}
+			modifier = {
+				factor = 2
+				tier = king
+			}
+		}
+	}
+	
+	#ok
+	option = {
+		name = EVTOPTBipcf.003 
+		ai_chance = { factor = 30 }
+	}
+}
+
+
+##establishing hre court
+character_event = {
+	id = ipcf.004
+	desc = EVTDESAipcf.004
+	picture = GFX_evt_holy_emperor
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcf.004
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcf.004
+			e_hre = { set_title_flag = imperial_court_active }
+			
+			#notification and initial joining
+			any_realm_character = { character_event = { id = ipcf.005 days = 5 random = 2 } }
+		}
+		join_society = imperial_court_hre
+		set_society_grandmaster = yes
+		change_society_currency = 500
+		if = {
+			limit = {
+				e_hre = {
+					NAND = {
+						has_law = law_voting_power_1
+						has_law = war_voting_power_1
+					}
+				}
+			}
+			e_hre = {
+				if = {
+					limit = { NOT = { has_law = law_voting_power_1 } }
+					add_law = law_voting_power_1
+				}
+				if = {
+					limit = { NOT = { has_law = war_voting_power_1 } }
+					add_law = war_voting_power_1
+				}
+			}
+		}
+		hidden_tooltip = { capital_holding = { set_title_flag = is_imperial_capital } }
+		ai_chance = { factor = 100 }
+	}
+
+	option = {
+		name = EVTOPTBipcf.004 
+		ai_chance = { factor = 0 }
+	}
+
+	after = {
+		clr_character_flag = establishing_imperial_court
+	}
+}
+
+##hre court initial joining
+character_event = {
+	id = ipcf.005
+	desc = EVTDESAipcf.005
+	picture = GFX_evt_holy_emperor
+
+	is_triggered_only = yes
+	
+	#join
+	option = {
+		trigger = { can_join_hre_imperial_court_trigger = yes }
+		name = EVTOPTAipcf.005
+		join_realm_imperial_court_effect = yes
+		if = {
+			limit = { higher_tier_than = count }
+			random = { chance = 75 society_rank_up = 2 }
+		}
+		else_if = {
+			limit = { higher_tier_than = baron }
+			society_rank_up = 1
+		}
+		
+		ai_chance = {
+			factor = 60
+			
+			modifier = {
+				factor = 0
+				FROM = { num_of_society_members >= 70 }
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.4 
+				is_landed = no
+			}
+			modifier = {
+				factor = 0.4
+				is_feudal = no
+			}
+			modifier = {
+				factor = 0.5
+				age >= 40
+			}
+			modifier = {
+				factor = 0.7
+				tier = baron
+			}
+			modifier = {
+				factor = 1.5
+				tier = count
+			}
+			modifier = {
+				factor = 2
+				tier = duke
+			}
+			modifier = {
+				factor = 2
+				tier = king
+			}
+		}
+	}
+	
+	#ok
+	option = {
+		name = EVTOPTBipcf.005 
+		ai_chance = { factor = 30 }
+	}
+}
+
+##establishing arabian court
+character_event = {
+	id = ipcf.006
+	desc = EVTDESAipcf.006
+	picture = GFX_evt_emissary
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcf.006
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcf.006
+			e_arabia = { set_title_flag = imperial_court_active }
+			
+			#notification and initial joining
+			any_realm_character = { character_event = { id = ipcf.007 days = 5 random = 2 } }
+		}
+		join_society = imperial_court_arabia
+		set_society_grandmaster = yes
+		change_society_currency = 500
+		if = {
+			limit = {
+				e_arabia = {
+					NAND = {
+						has_law = law_voting_power_1
+						has_law = war_voting_power_1
+					}
+				}
+			}
+			e_arabia = {
+				if = {
+					limit = { NOT = { has_law = law_voting_power_1 } }
+					add_law = law_voting_power_1
+				}
+				if = {
+					limit = { NOT = { has_law = war_voting_power_1 } }
+					add_law = war_voting_power_1
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+		hidden_tooltip = { capital_holding = { set_title_flag = is_imperial_capital } }
+	}
+
+	option = {
+		name = EVTOPTBipcf.006 
+		ai_chance = { factor = 0 }
+	}
+
+	after = {
+		clr_character_flag = establishing_imperial_court
+	}
+}
+
+##arabian court initial joining
+character_event = {
+	id = ipcf.007
+	desc = EVTDESAipcf.007
+	picture = GFX_evt_emissary
+
+	is_triggered_only = yes
+	
+	#join
+	option = {
+		trigger = {
+			OR = {
+				ai = no
+				can_join_muslim_imperial_court_trigger = yes
+			}
+		}
+		name = EVTOPTAipcf.007
+		join_realm_imperial_court_effect = yes
+		if = {
+			limit = { higher_tier_than = count }
+			random = { chance = 75 society_rank_up = 2 }
+		}
+		else_if = {
+			limit = { higher_tier_than = baron }
+			society_rank_up = 1
+		}
+		
+		ai_chance = {
+			factor = 60
+			
+			modifier = {
+				factor = 0
+				FROM = { num_of_society_members >= 70 }
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.4 
+				is_landed = no
+			}
+			modifier = {
+				factor = 0.4
+				is_feudal = no
+			}
+			modifier = {
+				factor = 0.5
+				age >= 40
+			}
+			modifier = {
+				factor = 0.7
+				tier = baron
+			}
+			modifier = {
+				factor = 1.5
+				tier = count
+			}
+			modifier = {
+				factor = 2
+				tier = duke
+			}
+			modifier = {
+				factor = 2
+				tier = king
+			}
+		}
+	}
+	
+	#ok
+	option = {
+		name = EVTOPTBipcf.007 
+		ai_chance = { factor = 30 }
+	}
+}
+
+
+##establishing roman court
+character_event = {
+	id = ipcf.008
+	desc = EVTDESAipcf.008
+	picture = GFX_evt_rome_restored_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcf.008
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcf.008
+			e_roman_empire = { set_title_flag = imperial_court_active }
+			
+			#notification and initial joining
+			
+			any_realm_character = { character_event = { id = ipcf.009 days = 5 random = 2 } }
+		}
+		join_society = imperial_court_roman_empire
+		set_society_grandmaster = yes
+		change_society_currency = 500
+		if = {
+			limit = {
+				e_roman_empire = {
+					NAND = {
+						has_law = law_voting_power_1
+						has_law = war_voting_power_1
+					}
+				}
+			}
+			e_roman_empire = {
+				if = {
+					limit = { NOT = { has_law = law_voting_power_1 } }
+					add_law = law_voting_power_1
+				}
+				if = {
+					limit = { NOT = { has_law = war_voting_power_1 } }
+					add_law = war_voting_power_1
+				}
+			}
+		}
+		ai_chance = { factor = 100 }
+		hidden_tooltip = { capital_holding = { set_title_flag = is_imperial_capital } }
+	}
+
+	option = {
+		name = EVTOPTBipcf.008 
+		ai_chance = { factor = 0 }
+	}
+
+	after = {
+		clr_character_flag = establishing_imperial_court
+	}
+}
+
+##roman court initial joining
+character_event = {
+	id = ipcf.009
+	desc = EVTDESAipcf.009
+	picture = GFX_evt_rome_restored_byzantine
+
+	is_triggered_only = yes
+	
+	#join
+	option = {
+		trigger = {
+			OR = {
+				ai = no
+				can_join_roman_imperial_court_trigger = yes
+			}
+		}
+		name = EVTOPTAipcf.009
+		join_realm_imperial_court_effect = yes
+		if = {
+			limit = { higher_tier_than = count }
+			random = { chance = 75 society_rank_up = 2 }
+		}
+		else_if = {
+			limit = { higher_tier_than = baron }
+			society_rank_up = 1
+		}
+		
+		ai_chance = {
+			factor = 60
+			
+			modifier = {
+				factor = 0
+				FROM = { num_of_society_members >= 70 }
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.4 
+				is_landed = no
+			}
+			modifier = {
+				factor = 0.4
+				is_feudal = no
+			}
+			modifier = {
+				factor = 0.5
+				age >= 40
+			}
+			modifier = {
+				factor = 0.7
+				tier = baron
+			}
+			modifier = {
+				factor = 1.5
+				tier = count
+			}
+			modifier = {
+				factor = 2
+				tier = duke
+			}
+			modifier = {
+				factor = 2
+				tier = king
+			}
+		}
+	}
+	
+	#ok
+	option = {
+		name = EVTOPTBipcf.009 
+		ai_chance = { factor = 30 }
+	}
+}
+
+###forming rome with byzantine court
+character_event = {
+	id = ipcf.010
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		society = {
+			any_society_member = {
+				limit = { NOT = { character = ROOT } }
+				#get current ranks
+				if = {
+					limit = { society_rank = 3 }
+					set_character_flag = court_rank_3
+				}
+				else_if = {
+					limit = { society_rank = 2 }
+					set_character_flag = court_rank_2
+				}
+				else = { set_character_flag = court_rank_1 }
+				leave_society = yes
+			}
+		}
+		leave_society = yes
+		if = {
+			limit = { 
+				has_global_flag = ipc_hip_detected
+				has_landed_title = e_latin_empire
+			}
+			e_latin_empire = { clr_title_flag = imperial_court_active }
+		}
+		else = { e_byzantium = { clr_title_flag = imperial_court_active } }
+		##delays this so vanilla event finishes
+		character_event = { id = ipcf.011 days = 3 }
+	}
+}
+
+###old members rejoin and get ranks
+character_event = {
+	id = ipcf.011
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		
+		e_roman_empire = { set_title_flag = imperial_court_active }
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes 
+		}
+		
+		join_society = imperial_court_roman_empire
+		set_society_grandmaster = yes
+		change_society_currency = 500
+		
+		any_realm_character = {
+			limit = {
+				OR = {
+					has_character_flag = court_rank_3
+					has_character_flag = court_rank_2
+					has_character_flag = court_rank_1
+				}
+			}
+			if = {
+				limit = { has_character_flag = court_rank_3 }
+				if = {
+					limit = { is_in_society = yes }
+					leave_society = yes 
+				}
+				join_society = imperial_court_roman_empire
+				society_rank_up = 2
+				change_society_currency = 300
+				
+			}
+			else_if = {
+				limit = { has_character_flag = court_rank_2 }
+				if = {
+					limit = { is_in_society = yes }
+					leave_society = yes 
+				}
+				join_society = imperial_court_roman_empire
+				society_rank_up = 1
+				change_society_currency = 200
+				
+			}
+			else = {
+				if = {
+					limit = { is_in_society = yes }
+					leave_society = yes 
+				}
+				join_society = imperial_court_roman_empire
+				change_society_currency = 100
+				
+			}
+			#i have no idea why this is so wonky
+			if = {
+				limit = {
+					society_rank = 3 
+					NOT = { has_character_flag = court_rank_3 } 
+				}
+				society_rank_down = 1
+			}
+			clr_character_flag = court_rank_3
+			clr_character_flag = court_rank_2
+			clr_character_flag = court_rank_1
+		}
+		clr_character_flag = ipc_forming_new_empire
+	}
+}
+
+
+###forming hre with ipc
+character_event = {
+	id = ipcf.012
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		society = {
+			any_society_member = {
+				#get current ranks
+				if = {
+					limit = { society_rank == 3 }
+					set_character_flag = court_rank_3
+				}
+				else_if = {
+					limit = { society_rank == 2 }
+					set_character_flag = court_rank_2
+				}
+				else_if = {
+					limit = { society_rank == 1 }
+					set_character_flag = court_rank_1
+				}
+			}
+		}
+		primary_title = { dismantle_imperial_court_effect = yes }
+		
+		e_hre = {
+			set_title_flag = imperial_court_active
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				emf_make_primary_title = yes
+			}
+			else = { make_primary_title = yes }
+		}
+		
+		if = {
+			limit = { NOT = { has_global_flag = ipc_hip_detected } } ##hip handles this by its own effects
+			any_demesne_title = {
+				limit = {
+					tier = emperor
+					NOT = { title = e_hre }
+				}
+				if = {
+					limit = { has_global_flag = ipc_plus_detected }
+					ROOT = { clr_character_flag = must_grant_empire_flag }
+				}
+				else_if = {
+					limit = {
+						NOR = {
+							has_global_flag = ipc_hip_detected
+							has_global_flag = ipc_plus_detected
+						}
+						is_landless_type_title = no 
+					}
+					destroy_landed_title = THIS
+				}
+				else_if = {
+					limit = {
+						NOR = {
+							has_global_flag = ipc_hip_detected
+							has_global_flag = ipc_plus_detected
+						}
+						is_landless_type_title = yes 
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		
+		join_society = imperial_court_hre
+		set_society_grandmaster = yes
+		change_society_currency = 400
+		
+		any_realm_character = {
+			limit = {
+				OR = {
+					has_character_flag = court_rank_3
+					has_character_flag = court_rank_2
+					has_character_flag = court_rank_1
+				}
+			}
+			if = {
+				limit = { has_character_flag = court_rank_3 }
+				if = {
+					limit = { is_in_society = yes }
+					leave_society = yes 
+				}
+				join_society = imperial_court_hre
+				society_rank_up = 2
+				change_society_currency = 300
+				clr_character_flag = court_rank_3
+			}
+			else_if = {
+				limit = { has_character_flag = court_rank_2 }
+				if = {
+					limit = { is_in_society = yes }
+					leave_society = yes 
+				}
+				join_society = imperial_court_hre
+				society_rank_up = 1
+				change_society_currency = 200
+				clr_character_flag = court_rank_2
+			}
+			else = {
+				if = {
+					limit = { is_in_society = yes }
+					leave_society = yes 
+				}
+				join_society = imperial_court_hre
+				change_society_currency = 100
+				clr_character_flag = court_rank_1
+			}
+		}
+		##hidden_tooltip = { capital_holding = { set_title_flag = is_imperial_capital } } #why am i doing this here?
+		clr_character_flag = ipc_forming_new_empire
+	}
+}
+
+
+
+
+
+###Court dismantled realm notification
+character_event = {
+	id = ipcf.019
+	desc = EVTDESAipcf.019
+	picture = GFX_evt_powerful_ruler
+	
+	is_triggered_only = yes
+	
+	option = { 
+		trigger = { is_imperial_court_member_trigger = yes }
+		name = EVTOPTAipcf.019
+		opinion = { who = FROM modifier = opinion_dismantled_imperial_court years = 10 }
+	}
+	option = { 
+		trigger = { is_imperial_court_member_trigger = no }
+		name = EVTOPTBipcf.019 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+###Slavic union
+character_event = {
+	id = ipcf.030
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		e_lechczechrus = { save_event_target_as = new_empire }
+		
+		save_imperial_court_membership_effect = yes
+		primary_title = { dismantle_imperial_court_effect = yes }
+		set_as_new_imperial_court_effect = yes
+		event_target:new_empire = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				emf_make_primary_title = yes
+			}
+			else = { make_primary_title = yes }
+		}
+		restore_imperial_court_membership_effect = yes
+		
+		e_lechczechrus = { make_primary_title = yes }
+		
+		
+		
+		any_demesne_title = {
+			limit = { 
+				tier = emperor
+				NOT = { title = e_lechczechrus }
+			}
+			if = {
+				limit = { has_global_flag = ipc_plus_detected }
+				ROOT = { clr_character_flag = must_grant_empire_flag }
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = no 
+				}
+				destroy_landed_title = THIS
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = yes 
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+		clr_character_flag = ipc_forming_new_empire
+	}
+}
+
+
+##Outremer
+character_event = {
+	id = ipcf.031
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		e_outremer = { save_event_target_as = new_empire }
+		
+		save_imperial_court_membership_effect = yes
+		primary_title = { dismantle_imperial_court_effect = yes }
+		set_as_new_imperial_court_effect = yes
+		event_target:new_empire = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				emf_make_primary_title = yes
+			}
+			else = { make_primary_title = yes }
+		}
+		restore_imperial_court_membership_effect = yes
+		
+		
+		
+		any_demesne_title = {
+			limit = { 
+				tier = emperor
+				NOT = { title = e_outremer }
+			}
+			if = {
+				limit = { has_global_flag = ipc_plus_detected }
+				ROOT = { clr_character_flag = must_grant_empire_flag }
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = no 
+				}
+				destroy_landed_title = THIS
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = yes 
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+		clr_character_flag = ipc_forming_new_empire
+	}
+}
+
+###chinese imperialism
+character_event = {
+	id = ipcf.032
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		random_demesne_title = { 
+			limit = { has_title_flag = pretender_chinese_empire }
+			save_event_target_as = new_empire 
+		}
+		
+		save_imperial_court_membership_effect = yes
+		primary_title = { dismantle_imperial_court_effect = yes }
+		set_as_new_imperial_court_effect = yes
+		event_target:new_empire = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				emf_make_primary_title = yes
+			}
+			else = { make_primary_title = yes }
+		}
+		restore_imperial_court_membership_effect = yes
+		
+		event_target:new_empire = { make_primary_title = yes }
+		
+		
+		any_demesne_title = {
+			limit = {
+				tier = emperor
+				NOT = { has_title_flag = pretender_chinese_empire }
+			}
+			if = {
+				limit = { has_global_flag = ipc_plus_detected }
+				ROOT = { clr_character_flag = must_grant_empire_flag }
+			}
+			else_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				else_if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+			else_if = {
+				limit = { is_landless_type_title = no }
+				destroy_landed_title = THIS
+			}
+			else_if = {
+				limit = { is_landless_type_title = yes }
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+		clr_character_flag = ipc_forming_new_empire
+	}
+}
+
+###restoring byzantine empire
+character_event = {
+	id = ipcf.033
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		
+		save_imperial_court_membership_effect = yes
+		primary_title = { dismantle_imperial_court_effect = yes }
+
+		e_byzantium = { 
+			set_title_flag = imperial_court_active 
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				emf_make_primary_title = yes
+			}
+			else = { make_primary_title = yes }
+		}
+		
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes
+		}
+		join_society = imperial_court_byzantine
+		set_society_grandmaster = yes
+		change_society_currency = 500
+		
+		
+		any_realm_character = {
+			limit = { 
+				OR = {
+					has_character_flag = court_rank_3
+					has_character_flag = court_rank_2
+					has_character_flag = court_rank_1
+				}
+			}
+			if = {
+				limit = { has_character_flag = court_rank_3 }
+				join_society = imperial_court_byzantine
+				society_rank_up = 2
+				change_society_currency = 200
+				clr_character_flag = court_rank_3
+			}
+			else_if = {
+				limit = { has_character_flag = court_rank_2 }
+				join_society = imperial_court_byzantine
+				society_rank_up = 1
+				change_society_currency = 100
+				clr_character_flag = court_rank_2
+			}
+			else_if = {
+				limit = { has_character_flag = court_rank_1 }
+				join_society = imperial_court_byzantine
+				change_society_currency = 100
+				clr_character_flag = court_rank_1
+			}
+		}
+		
+		#from saving membership effect
+		clr_character_flag = emperor_ipc_grandmaster
+		clr_character_flag = moving_imperial_court
+		
+		any_demesne_title = {
+			limit = { 
+				tier = EMPEROR
+				NOT = { title = e_byzantium }
+			}
+			if = {
+				limit = { has_global_flag = ipc_plus_detected }
+				ROOT = { clr_character_flag = must_grant_empire_flag }
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = no 
+				}
+				destroy_landed_title = THIS
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = yes 
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = ipc_hip_detected
+					has_global_flag = ipc_plus_detected
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = KING
+					de_jure_liege = e_byzantium
+					is_landless_type_title = no
+				}
+				destroy_landed_title = THIS
+			}
+		}
+		
+		clr_character_flag = ipc_forming_new_empire
+	}
+}
+
+##Outremer
+character_event = {
+	id = ipcf.034
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		e_russian_empire = { save_event_target_as = new_empire }
+		
+		save_imperial_court_membership_effect = yes
+		primary_title = { dismantle_imperial_court_effect = yes }
+		set_as_new_imperial_court_effect = yes
+		event_target:new_empire = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				emf_make_primary_title = yes
+			}
+			else = { make_primary_title = yes }
+		}
+		restore_imperial_court_membership_effect = yes
+		
+		
+		
+		any_demesne_title = {
+			limit = {
+				tier = emperor
+				NOT = { title = e_russian_empire }
+			}
+			if = {
+				limit = { has_global_flag = ipc_plus_detected }
+				ROOT = { clr_character_flag = must_grant_empire_flag }
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = no 
+				}
+				destroy_landed_title = THIS
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = ipc_hip_detected
+						has_global_flag = ipc_plus_detected
+					}
+					is_landless_type_title = yes 
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+		clr_character_flag = ipc_forming_new_empire
+	}
+}

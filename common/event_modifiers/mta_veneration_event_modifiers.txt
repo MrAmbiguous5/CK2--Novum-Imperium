@@ -1,0 +1,3 @@
+mta_recently_used_veneration = {
+	icon = 112
+}

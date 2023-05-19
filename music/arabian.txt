@@ -1,0 +1,546 @@
+song = {
+	name = "Thikriati_Peace.ogg"
+	song_name = "Thikriati; Hijaz Maqam"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Thikriati_War.ogg"
+	song_name = "Thikriati; Hijaz Maqam"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Civilization V OST Ahmad Al-Mansur Peace Theme Mawal Gnawi.ogg"
+	song_name = "Mawal Gnawi"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Civilization V OST Ahmad Al-Mansur War Theme Mawal Gnawi.ogg"
+	song_name = "Mawal Gnawi"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "World Fusion Music - Arabian Knights.ogg"
+	song_name = "Arabian Knights"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "At the Gates of Babylon REMASTERED.ogg"
+	song_name = "At the Gates of Babylon"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabian Fantasy Music - Son of the Hawk.ogg"
+	song_name = "Son of the Hawk"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabian Fantasy Music - Hual Hadi.ogg"
+	song_name = "Hual Hadi"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabian Fantasy Music - Enchanted Palace.ogg"
+	song_name = "Enchanted Palace"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabian Fantasy Music - Dust and Shadows.ogg"
+	song_name = "Dust and Shadows"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Traditional Arabic - Sallatu Allah (Prayer for God).ogg"
+	song_name = "Sallatu Allah"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 1
+}
+song = {
+	name = "Ancient Arabian Music - Genie in a Lamp.ogg"
+	song_name = "Genie in a Lamp"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Desert Fantasy Music - Desert of the Sand Elves.ogg"
+	song_name = "Desert of the Sand Elves"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Ancient Arabic Music - Sultan's Palace.ogg"
+	song_name = "Sultan's Palace"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabic Battle Music - The Great Fortress.ogg"
+	song_name = "The Great Fortress"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabia Theme - Atomic (Civilization 6 OST) Banat Iskandaria.ogg"
+	song_name = "Banat Iskandaria (Atomic)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0.1
+			war = no
+		}	
+		modifier = {
+			factor = 0.1
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabia Theme - Ancient (Civilization 6 OST) Banat Iskandaria.ogg"
+	song_name = "Banat Iskandaria (Ancient)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 2
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabia Theme - Industrial (Civilization 6 OST) Banat Iskandaria.ogg"
+	song_name = "Banat Iskandaria (Industrial)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0.5
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Arabia Theme - Medieval (Civilization 6 OST) Banat Iskandaria.ogg"
+	song_name = "Banat Iskandaria (Medieval)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "World Music - Desert Mermaids.ogg"
+	song_name = "Desert Mermaids"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Middle Eastern Music - Sands of Arabia.ogg"
+	song_name = "Sands of Arabia"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "World Music - Sleeping Sabre.ogg"
+	song_name = "Sleeping Sabre"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Epic Arabian Battle Music The Arrivals.ogg"
+	song_name = "The Arrivals"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Kevin MacLeod Ibn Al-Noor.ogg"
+	song_name = "Ibn Al-Noor"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Epic Arabian Music - Saladin.ogg"
+	song_name = "Saladin"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Interstellar Theme (Oud cover) by Ahmed Alshaiba.ogg"
+	song_name = "Interstellar"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = muslim }
+			NOT = { culture_group = arabic }
+		}
+		modifier = {
+			factor = 0.1
+			war = no
+		}	
+		modifier = {
+			factor = 0.1
+			war = yes
+		}
+	}
+	volume = 2
+}

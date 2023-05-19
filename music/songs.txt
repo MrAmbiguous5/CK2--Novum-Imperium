@@ -1,0 +1,73 @@
+#A King is Dead DELETED
+#A Simple Song For Commoners DELETED
+#Saladin Besiege Jerusalem DELETED
+#Guy de Roses Quandary DELETED
+#The Franks DELETED
+#The Holy Sepulchre DELETED
+#Horns of Hattin and Aftermath DELETED
+#Crusader Kings 2 Maintitle REPLACED
+#Crusaders DELETED
+#Kingdom of Jerusalem DELETED
+#Krak Des Chevaliers DELETED
+#March to Holyland DELETED
+#Order of the Temple DELETED
+#Path to Glory DELETED
+#A Royal Marriage DELETED
+#Siege of Kerak DELETED
+#The First Crusade DELETED
+#The Last Crusader DELETED
+#Tu Rex Gloriae DELETED
+#Sanctus DELETED
+#Te Donimum DELETED
+#The Franks DELETED
+#The Holy Sepulchre DELETED
+#Horns of Hattin and Aftermath DELETED
+#Crusader Kings 2 Maintitle REPLACED
+#Crusaders DELETED
+#Kingdom of Jerusalem DELETED
+#Krak Des Chevaliers DELETED
+#March to Holyland DELETED
+#Order of the Temple DELETED
+#Path to Glory DELETED
+#A Royal Marriage DELETED
+#Siege of Kerak DELETED
+#The First Crusade DELETED
+#The Last Crusader DELETED
+#Tu Rex Gloriae DELETED
+#Sanctus DELETED
+#Te Donimum DELETED
+# Journey To Absolution DELETED
+
+song = {
+	name = "coeurdelion.ogg"
+	song_name = "Coeur-De-Lion"
+	
+	chance = {
+		factor = 1 
+	}
+	volume = 0.48
+}
+
+song = {
+	name = "intaberna.ogg"
+	song_name = "In Taberna"
+	
+	chance = {
+		factor = 1 
+	}
+	volume = 0.48
+}
+
+song = {
+	name = "pilgrimage.ogg"
+	song_name = "Pilgrimage"
+	
+	chance = {
+		factor = 1 
+	}
+	volume = 0.48
+}
+
+
+
+

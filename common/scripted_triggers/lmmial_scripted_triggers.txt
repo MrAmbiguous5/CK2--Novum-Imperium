@@ -1,0 +1,71 @@
+#Make sure that the character is male, or if she is female check if can lead army
+lmmial_would_be_eligible_for_leading_troops_trigger = {
+	is_incapable = no
+	has_regent = no
+	OR = {
+		is_female = no
+		has_game_rule = { name = gender value = all }		
+		OR = {
+			has_character_flag = special_marshal
+			AND = {
+				trait = shieldmaiden
+				top_liege = { religion = PREV }
+			}
+			AND = {
+				is_member_of_any_warrior_lodge_trigger = yes
+				top_liege = { religion = PREV }
+			}
+			# custom_tooltip = {
+				# text = tooltip_feminist_liege_vanilla_religion
+				AND = {
+					OR = {
+						religion = cathar
+						religion = messalian
+						religion = bogomilist
+						religion = mazdaki
+					}
+					top_liege = { religion = PREV }
+				}
+			# }
+			# custom_tooltip = {
+				# text = tooltip_feminist_liege_religion_feature
+				AND = {
+					OR = {
+						has_religion_feature = religion_equal
+						has_religion_feature = religion_matriarchal
+					}
+					top_liege = {
+						has_religion_feature = religion_equal
+						has_religion_feature = religion_matriarchal
+					}
+				}
+			# }
+			primary_title = {
+				has_law = status_of_women_4 
+			}
+			top_liege = {
+				primary_title = {
+					has_law = status_of_women_4
+				}
+			}
+		}
+	}
+}
+
+lmmial_is_leading_any_army_of_ROOT_trigger = {
+	ROOT = {
+		any_army = {
+			OR = {
+				center_flank_leader = { 
+					character = PREVPREVPREV					
+				}
+				left_flank_leader = { 
+					character = PREVPREVPREV
+				}
+				right_flank_leader = { 
+					character = PREVPREVPREV
+				}
+			}
+		}
+	}
+}

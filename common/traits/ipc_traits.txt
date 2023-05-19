@@ -1,0 +1,90 @@
+
+ipc_imperial_administrator = {
+
+	lifestyle = yes
+	random = no
+	customizer = no
+	
+	potential = { is_imperial_court_member_trigger = yes }
+	
+	opposites =  {
+		ipc_imperial_aristrocrat
+		ipc_imperial_commander
+	}
+	
+	diplomacy = 2
+	intrigue = 2
+	build_cost_modifier = -0.05
+	
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	ai_rationality = 20
+}
+
+ipc_imperial_aristrocrat = {
+
+	lifestyle = yes
+	random = no
+	customizer = no
+	
+	potential = { is_imperial_court_member_trigger = yes }
+	
+	opposites =  {
+		ipc_imperial_administrator
+		ipc_imperial_commander
+	}
+	
+	diplomacy = 1
+	intrigue = 2
+	plot_power_modifier = 0.05
+	
+
+	opposite_opinion = -5
+	same_opinion = 5
+	dynasty_opinion = 5
+	
+	ai_rationality = 20
+}
+
+ipc_imperial_commander = {
+
+	lifestyle = yes
+	random = no
+	customizer = no
+	
+	potential = { 
+		OR = {
+			is_imperial_court_member_trigger = yes 
+			has_character_flag = ipc_special_commander
+		}
+	}
+	
+	opposites =  {
+		ipc_imperial_administrator
+		ipc_imperial_aristrocrat
+	}
+	
+	martial = 3
+	combat_rating = 2
+	command_modifier = {
+		morale_offence = 0.1
+		morale_defence = 0.1
+	}
+
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	ai_rationality = 20
+}
+
+ipc_infiltrator_trait = {
+	random = no
+	customizer = no
+	hidden = yes
+	
+	plot_power_modifier = 0.15
+	murder_plot_power_modifier = 0.3
+	ai_ambition = 20
+	ai_honor = -50
+}

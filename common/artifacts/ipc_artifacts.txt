@@ -1,0 +1,26 @@
+
+
+
+
+
+
+empire_tribute_chest = {
+	
+	monthly_character_prestige = 0.1
+	castle_opinion = 1
+	ipc_monthly_currency_gain = 1
+
+	active = {
+		tier = emperor
+		FROMFROM = {
+			is_alive = yes
+			has_non_aggression_pact_with = ROOT
+		}
+	}
+	allowed_gift = { always = no }
+	
+	quality = 3
+	flags = { curse imperial_court temporary }
+	stacking = yes
+	picture = "GFX_relic_box"
+}

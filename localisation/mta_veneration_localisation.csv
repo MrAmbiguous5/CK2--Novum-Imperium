@@ -1,0 +1,31 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+#### TOOLTIPS #####
+mta_NOT_RECENTLY_USED_VENERATION_DEFAULT;Has NOT venerated an ancestor by decision within the last 50 years\n;;;;;;;;;;;;;x
+mta_NOT_RECENTLY_USED_VENERATION_HALVED;Has NOT venerated an ancestor by decision within the last 25 years\n;;;;;;;;;;;;;x
+mta_NOT_USED_MARKED_FOR_VENERATION;Has NOT already used Select for Veneration\n;;;;;;;;;;;;;x
+mta_NOT_FOUNDER_REFORMER_BLOODLINE;Is NOT already the founder of a §YReformation Bloodline§!\n;;;;;;;;;;;;;x
+
+### DECISIONS ###
+mta_mark_for_veneration;Select for Veneration;;;;;;;;;;;;;x
+mta_mark_for_veneration_desc;Select §Y[Root.GetTitledFirstName]§! for veneration after [Root.GetSheHe] dies.;;;;;;;;;;;;;x
+mta_unmark_for_veneration;Unselect for Veneration;;;;;;;;;;;;;x
+mta_unmark_for_veneration_desc;Unselect §Y[Root.GetTitledFirstName]§! for veneration, allowing you to immediately choose someone else instead.;;;;;;;;;;;;;x
+
+### TRAITS ###
+mta_marked_for_sainthood;Selected for Veneration;;;;;;;;;;;;;x
+mta_marked_for_sainthood_desc;This character has been selected by the [Root.RelHead.GetTitle] to be potentially venerated when they die, and is much more likely to receive the honor.;;;;;;;;;;;;;x
+mta_used_mark_for_veneration;Used Select for Veneration;;;;;;;;;;;;;x
+
+#### OPINION MODIFIERS ###
+opinion_marked_for_veneration;Marked for Veneration;;;;;;;;;;;;;x
+
+### MODIFIER DEFINITIONS ###
+pagan_church_opinion;Pagan Church Opinion;;;;;;;;;;;;;x
+
+### GAME RULES ###
+MTA_RULE_GROUP;MTA;;;;;;;;;;;;;x
+MTA_RULE_VENERATION_NAME;§BMTA - Veneration Selection§!: Delay;;;;;;;;;;;;;x
+MTA_RULE_VENERATION_DEFAULT;Default;;;;;;;;;;;;;x
+MTA_RULE_VENERATION_DEFAULT_DESC;A Temporal leader with the Ancestor Worship doctrine can mark a character for veneration every 50 years.\n;;;;;;;;;;;;;x
+MTA_RULE_VENERATION_HALVED;Halved;;;;;;;;;;;;;x
+MTA_RULE_VENERATION_HALVED_DESC;A Temporal leader with the Ancestor Worship doctrine can mark a character for veneration every 25 years.\n;;;;;;;;;;;;;x

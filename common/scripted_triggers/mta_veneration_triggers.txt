@@ -1,0 +1,16 @@
+# -*- ck2.scripted_triggers -*-
+
+mta_reformed_religious_leader_title = {
+	OR = {
+		title = d_norse_pagan_reformed
+		title = d_tengri_pagan_reformed
+		title = d_baltic_pagan_reformed
+		title = d_finnish_pagan_reformed
+		title = d_slavic_pagan_reformed
+		title = d_aztec_reformed
+		title = d_west_african_pagan_reformed
+		title = d_zun_pagan_reformed
+		title = d_bon_reformed
+		title = k_hellenic_pagan
+	}
+}

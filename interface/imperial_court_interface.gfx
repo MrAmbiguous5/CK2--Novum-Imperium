@@ -1,0 +1,777 @@
+spriteTypes = {
+
+	########Christian Courts########
+	##backgrounds
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_christian_1"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_christian.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_christian_1"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_christian.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_christian_2"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_christian.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_christian_2"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_christian.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_christian_3"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_christian.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_christian_3"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_christian.dds"
+	}
+	##mission windows
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_christian_1"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_christian.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_christian_2"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_christian.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_christian_3"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_christian.dds"
+	}
+	##icons
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_christian_1"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_christian.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_christian_2"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_christian.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_christian_3"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_christian.dds"
+		noOfFrames = 2
+	}
+	##portrait rings
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_christian_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_christian_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_christian_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_christian_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_christian_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_christian_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	##influence
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_christian_1"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_christian_2"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_christian_3"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	##currency
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_christian_1"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_christian_2"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_christian_3"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	
+	########Muslim Courts########
+	##backgrounds
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_muslim_1"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_muslim.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_muslim_1"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_muslim.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_muslim_2"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_muslim.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_muslim_2"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_muslim.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_muslim_3"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_muslim.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_muslim_3"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_muslim.dds"
+	}
+	##mission windows
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_muslim_1"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_muslim.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_muslim_2"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_muslim.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_muslim_3"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_muslim.dds"
+	}
+	##icons
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_muslim_1"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_muslim.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_muslim_2"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_muslim.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_muslim_3"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_muslim.dds"
+		noOfFrames = 2
+	}
+	##portrait rings
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_muslim_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_muslim_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_muslim_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_muslim_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_muslim_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_muslim_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	##influence
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_muslim_1"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_muslim_2"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_muslim_3"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	##currency
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_muslim_1"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_muslim_2"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_muslim_3"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	
+	########Pagan Courts########
+	##backgrounds
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_pagan_1"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_pagan.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_pagan_1"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_pagan.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_pagan_2"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_pagan.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_pagan_2"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_pagan.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_pagan_3"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_pagan.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_pagan_3"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_pagan.dds"
+	}
+	##mission windows
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_pagan_1"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_pagan.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_pagan_2"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_pagan.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_pagan_3"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_pagan.dds"
+	}
+	##icons
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_pagan_1"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_pagan.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_pagan_2"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_pagan.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_pagan_3"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_pagan.dds"
+		noOfFrames = 2
+	}
+	##portrait rings
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_pagan_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_pagan_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_pagan_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_pagan_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_pagan_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_pagan_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	##influence
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_pagan_1"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_pagan_2"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_pagan_3"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	##currency
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_pagan_1"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_pagan_2"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_pagan_3"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	
+	
+	########Eastern Courts########
+	##backgrounds
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_eastern_1"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_eastern.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_eastern_1"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_eastern.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_eastern_2"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_eastern.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_eastern_2"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_eastern.dds"
+	}
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_eastern_3"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_eastern.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_eastern_3"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_eastern.dds"
+	}
+	##mission windows
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_eastern_1"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_eastern.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_eastern_2"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_eastern.dds"
+	}
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_eastern_3"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_eastern.dds"
+	}
+	##icons
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_eastern_1"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_eastern.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_eastern_2"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_eastern.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_eastern_3"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_eastern.dds"
+		noOfFrames = 2
+	}
+	##portrait rings
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_eastern_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_eastern_1"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_eastern_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_eastern_2"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_eastern_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_eastern_3"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	##influence
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_eastern_1"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_eastern_2"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_eastern_3"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	##currency
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_eastern_1"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_eastern_2"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_eastern_3"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	########Unique Courts########
+	##backgrounds
+	#byzantine
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_byzantine.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_byzantine.dds"
+	}
+	#hre
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_hre"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_hre.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_hre"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_hre.dds"
+	}
+	#arabia
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_arabia"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_muslim.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_arabia"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_muslim.dds"
+	}
+	#roman empire
+	spriteType = {
+		name = "GFX_society_main_background_imperial_court_roman_empire"
+		texturefile = "gfx\\interface\\societies\\society_bg_imperial_court_roman_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_society_expansion_background_imperial_court_roman_empire"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_imperial_court_roman_empire.dds"
+	}
+	
+	###mission window
+	#byzantine
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_byzantine"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_byzantine.dds"
+	}
+	#hre
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_hre"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_hre.dds"
+	}
+	#arabia
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_arabia"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_muslim.dds"
+	}
+	#roman empire
+	spriteType = { 
+		name = "GFX_event_window_society_quest_background_imperial_court_roman_empire"
+		textureFile = "gfx/interface/society_quest/mission_bg_imperial_court_roman_empire.dds"
+	}
+	###icons
+	#byzantine
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_byzantine.dds"
+		noOfFrames = 2
+	}
+	#hre
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_hre"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_hre.dds"
+		noOfFrames = 2
+	}
+	#arabia
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_arabia"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_muslim.dds"
+		noOfFrames = 2
+	}
+	#roman empire
+	spriteType = {
+		name = "GFX_icon_small_imperial_court_roman_empire"
+		texturefile = "gfx\\interface\\societies\\symbol_small_imperial_court_roman_empire.dds"
+		noOfFrames = 2
+	}
+	###portrait rings
+	#byzantine
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	#hre
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_hre"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_hre"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	#arabia
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_arabia"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_arabia"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	#roman empire
+	spriteType = { 
+		name = "GFX_society_portrait_ring_imperial_court_roman_empire"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_imperial_court.dds"
+	}
+	spriteType = { 
+		name = "GFX_society_portrait_ring_small_imperial_court_roman_empire"
+		texturefile = "gfx\\interface\\societies\\portrait_ring_small_imperial_court.dds"
+	}
+	
+	###influence
+	#byzantine
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	#hre
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_hre"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	#arabia
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_arabia"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}
+	#roman empire
+	spriteType = {
+		name = "GFX_society_influence_imperial_court_roman_empire"
+		texturefile = "gfx\\interface\\societies\\society_influence_imperial_court.dds"
+	}	
+	###currency
+	#byzantine
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	#hre
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_hre"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	#arabia
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_arabia"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	#roman empire
+	spriteType = { 
+		name = "GFX_society_currency_imperial_court_roman_empire"
+		texturefile = "gfx\\interface\\societies\\society_currency_imperial_court.dds"
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	###########Traits###########
+	spriteType = {
+		name = "GFX_trait_ipc_imperial_administrator"
+		texturefile = "gfx/traits/ipc_imperial_administrator.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_ipc_imperial_aristrocrat"
+		texturefile = "gfx/traits/ipc_imperial_aristrocrat.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_ipc_imperial_commander"
+		texturefile = "gfx/traits/ipc_imperial_commander.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	
+	
+	
+	
+	
+	
+	###########Decisions###########
+	
+	
+	###Formation Decisions
+	spriteType = {
+		name = "GFX_establish_imperial_court"
+		texturefile = "gfx\\interface\\decision_icon_form_new_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_establish_imperial_court_byzantine"
+		texturefile = "gfx\\interface\\decision_icon_form_new_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_establish_imperial_court_hre"
+		texturefile = "gfx\\interface\\decision_icon_form_new_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_establish_imperial_court_arabia"
+		texturefile = "gfx\\interface\\decision_icon_form_new_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_establish_imperial_court_roman"
+		texturefile = "gfx\\interface\\decision_icon_form_new_empire.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_form_the_hre_with_ipc"
+		texturefile = "gfx\\interface\\decision_icon_form_the_hre.dds"
+	}
+	spriteType = {
+		name = "GFX_form_the_hre_early_with_ipc"
+		texturefile = "gfx\\interface\\decision_icon_restore_roman_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_restore_roman_empire_with_ipc"
+		texturefile = "gfx\\interface\\decision_icon_restore_roman_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_restore_byzantine_empire_with_ipc"
+		texturefile = "gfx\\interface\\decision_icon_restore_byzantine_empire.dds"
+	}
+	spriteType = {
+		name = "GFX_adopt_chinese_imperialism_with_ipc"
+		texturefile = "gfx\\interface\\decision_icon_adopt_chinese_imperialism.dds"
+	}
+	spriteType = {
+		name = "GFX_form_lcr_with_ipc"
+		texturefile = "gfx\\interface\\decision_icon_form_lcr.dds"
+	}
+	spriteType = {
+		name = "GFX_form_the_outremer_with_ipc"
+		texturefile = "gfx\\interface\\decision_icon_form_the_outremer.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dismantle_imperial_court"
+		texturefile = "gfx\\interface\\decision_icon_faction_claimant_ultimatum.dds"
+	}
+	
+	
+	###Other Decisions
+	spriteType = {
+		name = "GFX_claim_imperial_capital"
+		texturefile = "gfx\\interface\\decision_icon_claim_constantinople.dds"
+	}
+	spriteType = {
+		name = "GFX_move_imperial_capital"
+		texturefile = "gfx\\interface\\decision_icon_claim_constantinople.dds"
+	}
+	spriteType = {
+		name = "GFX_reduce_ipc_influence_army_levy"
+		texturefile = "gfx\\interface\\decision_icon_raise_chinese_regiment.dds"
+	}
+	
+	
+	
+	
+	
+	
+	###Society Decisions
+	spriteType = {
+		name = "GFX_ipc_donate_to_court_power"
+		texturefile = "gfx\\interface\\decision_icon_donate_to_liege.dds"
+	}
+	spriteType = {
+		name = "GFX_ipc_visit_imperial_capital_power"
+		texturefile = "gfx\\interface\\decision_icon_claim_constantinople.dds"
+	}
+	spriteType = {
+		name = "GFX_ipc_hereditary_viceroyalty_power"
+		texturefile = "gfx\\interface\\decision_icon_help_liege_manage_titles.dds"
+	}
+	spriteType = {
+		name = "GFX_ipc_choose_imperial_focus_power"
+		texturefile = "gfx\\interface\\decision_icon_convert_to_liege_religion.dds"
+	}
+	spriteType = {
+		name = "GFX_ipc_levy_extra_tax_seneschal_power"
+		texturefile = "gfx\\interface\\decision_icon_adopt_republicanism.dds"
+	}
+	spriteType = {
+		name = "GFX_ipc_employ_imperial_commander_power"
+		texturefile = "gfx\\interface\\decision_icon_employ_soldier.dds"
+	}
+	spriteType = {
+		name = "GFX_faction_ipc_takeover_ultimatum"
+		texturefile = "gfx\\interface\\decision_icon_ask_help_to_manage_titles.dds" #ironic
+	}
+	
+	
+	###Factions
+	spriteType = {
+		name = "GFX_faction_ipc_takeover"
+		texturefile = "gfx/ambitions/plot_claimant.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}
+
+
+
+
+
+
+
+

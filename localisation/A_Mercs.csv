@@ -1,28 +1,27 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
 d_band_of_the_brave;Brave Band;;;;;;;;;;;;;x
 d_band_of_the_brave_adj;Brave Band;;;;;;;;;;;;;x
-d_band_of_the_red;Floti hinn rauði;;;;;;;;;;;;;x
-d_band_of_the_red_adj;Floti hinn rauði;;;;;;;;;;;;;x
-d_jomsvikinger;Jómsvíkingar;;;;;;;;;;;;;x
-d_jomsvikinger_adj;Jómsvíkingar;;;;;;;;;;;;;x
+d_band_of_the_red;Band of the Red;;;;;;;;;;;;;x
+d_band_of_the_red_adj;Band of the Red;;;;;;;;;;;;;x
+d_jomsvikinger;Jomsvikings;;;;;;;;;;;;;x
+d_jomsvikinger_adj;Jomsviking;;;;;;;;;;;;;x
 d_black_gang;Arumer Zwarte Hoop;;;;;;;;;;;;;x
 d_black_gang_adj;Arumer Zwarte Hoop;;;;;;;;;;;;;x
-d_dove_company;Compagnia della Colomba;;;;;;;;;;;;;x
-d_dove_company_adj;Compagnia della Colomba;;;;;;;;;;;;;x
-d_ulfhedar;Úlfhéðnar;;;;;;;;;;;;;x
-d_ulfhedar_adj;Úlfhéðnar;;;;;;;;;;;;;x
-d_valr;Valr;;;;;;;;;;;;;x
-d_valr_adj;Valr;;;;;;;;;;;;;x
-d_treasure_fleet;Yemeni Fleet;;;;;;;;;;;;;x
-d_treasure_fleet_adj;Yemeni Fleet;;;;;;;;;;;;;x
-d_han_junks;Hormuzi Navy;;;;;;;;;;;;;x
-d_han_junks_adj;Hormuzi Navy;;;;;;;;;;;;;x
-d_jurchen_corsairs;Gujarati Corsairs;;;;;;;;;;;;;x
-d_jurchen_corsairs_adj;Gujarati Corsairs;;;;;;;;;;;;;x
-d_jurchen_band;Karluk Band;;;;;;;;;;;;;x
-d_jurchen_band_adj;Karluk Band;;;;;;;;;;;;;x
+d_dove_company;Company of the Dove;;;;;;;;;;;;;x
+d_dove_company_adj;Company of the Dove;;;;;;;;;;;;;x
+d_ulfhedar;Berserkers;;;;;;;;;;;;;x
+d_ulfhedar_adj;Berserker;;;;;;;;;;;;;x
+d_valr;Slain;;;;;;;;;;;;;x
+d_valr_adj;Slain;;;;;;;;;;;;;x
+d_treasure_fleet;Treasure Fleet;;;;;;;;;;;;;x
+d_treasure_fleet_adj;Treasure Fleet;;;;;;;;;;;;;x
+d_han_junks;Han Junks;;;;;;;;;;;;;x
+d_han_junks_adj;Han Junks;;;;;;;;;;;;;x
+d_jurchen_corsairs;Jurchen Corsairs;;;;;;;;;;;;;x
+d_jurchen_corsairs_adj;Jurchen Corsairs;;;;;;;;;;;;;x
+d_jurchen_band;Jurchen Band;;;;;;;;;;;;;x
+d_jurchen_band_adj;Jurchen Band;;;;;;;;;;;;;x
 d_shiite_berber_company;Zenata Company;;;;;;;;;;;;;x
-#Sjómenninir;;;;;;;;;;;;;;
-#Title;;;;;;;;;;;;;;
-DROTTINN;Drottin;;;;;;;;;;;;;x
-Styrimadur;Styrimaðr;;;;;;;;;;;;;x
-VENTURECAPTAIN;Capitano di ventura;;;;;;;;;;;;;x
+DROTTINN;Lord;;;;;;;;;;;;;x
+Styrimadur;Steersman;;;;;;;;;;;;;x
+VENTURECAPTAIN;Capitano di Ventura;;;;;;;;;;;;;x

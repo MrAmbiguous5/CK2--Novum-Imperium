@@ -1,0 +1,74 @@
+
+
+
+
+defined_text = {
+	name = GetIpcSocietyLeaderDesc
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { FROM = { tier = emperor } }
+		localisation_key = imperial_court_leader_emperor_desc
+	}
+	text = {
+		trigger = { FROM = { NOT = { tier = emperor } } }
+		localisation_key = imperial_court_leader_regent_desc
+	}
+}
+
+#doesnt work for now, to change grandmaster rank name from Emperor => regent
+#defined_text = {
+#	name = GetSocietyLeaderName
+#	use_first_valid = yes
+#	
+#	text = { 
+#		trigger = { tier = emperor }
+#		localisation_key = imperial_court_leader_emperor
+#	}
+#	text = {
+#		trigger = { NOT = { tier = emperor } }
+#		localisation_key = imperial_court_christian_leader_rep
+#	}
+#}
+
+#doesnt work for now, to change grandmaster rank name from Emperor => regent, for both genders
+#defined_text = {
+#	name = GetImperialSocietyRank
+#
+#	text = {
+#		trigger = {
+#			tier = emperor
+#			is_female = yes
+#			is_christian_imperial_court_member_trigger = yes
+#			society_rank == 4
+#		}
+#		localisation_key = imperial_court_christian_rank_4_female
+#	}
+#	text = {
+#		trigger = {
+#			tier = emperor
+#			is_female = no
+#			is_christian_imperial_court_member_trigger = yes
+#			society_rank == 4
+#		}
+#		localisation_key = imperial_court_christian_rank_4_male
+#	}
+#	text = {
+#		trigger = { 
+#			NOT = { tier = emperor }
+#			is_female = yes
+#			is_christian_imperial_court_member_trigger = yes
+#			society_rank == 4
+#		}
+#		localisation_key = imperial_court_christian_rank_4_female_rep
+#	}
+#	text = {
+#		trigger = {
+#			NOT = { tier = emperor }
+#			is_female = no
+#			is_christian_imperial_court_member_trigger = yes
+#			society_rank == 4
+#		}
+#		localisation_key = imperial_court_christian_rank_4_male_rep
+#	}	
+#}

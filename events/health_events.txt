@@ -1,5 +1,3 @@
-# -*- ck2.events -*-
-
 ###################################
 #
 # Health Events
@@ -25,45 +23,38 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		emf_isolated_character = no
-		NOR = {
+		NOT = {
 			trait = syphilitic
+		}
+		NOT = {
 			trait = celibate
-			trait = eunuch
+		}
+		NOT = {
+			trait = infirm
 		}
 		OR = {
 			NOT = { trait = chaste }
-			any_spouse = {
-				trait = syphilitic
+			spouse = {
+				is_alive = yes
 				is_abroad = no
-				block_general_event_trigger = no
-				NOR = {
-					trait = celibate
-					trait = eunuch
-				}
+				trait = syphilitic
 			}
 		}
 	}
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 10
-			any_spouse = {
+			spouse = {
 				trait = syphilitic
-				is_abroad = no
-				block_general_event_trigger = no
-				NOR = {
-					trait = celibate
-					trait = eunuch
-				}
 			}
 		}
 		modifier = {
 			factor = 2
 			in_command = yes
-		}		
+		}
 		modifier = {
 			factor = 2
 			trait = lustful
@@ -72,7 +63,7 @@ character_event = {
 			factor = 1.7
 			trait = hedonist
 		}
-		
+
 		modifier = {
 			factor = 0.2
 			trait = chaste
@@ -107,7 +98,7 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 2
 			health = 8
@@ -136,7 +127,6 @@ character_event = {
 	only_capable = yes
 
 	trigger = {
-		emf_isolated_character = no
 		NOT = {
 			trait = leper
 		}
@@ -145,11 +135,11 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 2
-			NOT = { 
-				health = 4 
+			NOT = {
+				health = 4
 			}
 		}
 		modifier = {
@@ -178,7 +168,7 @@ character_event = {
 			factor = 2
 			trait = charitable
 		}
-		
+
 	}
 
 	option = {
@@ -193,7 +183,7 @@ character_event = {
 				host = {
 					random_courtier_or_vassal = {
 						limit = {
-							vassal_of = PREV
+							liege = { character = PREVPREV }
 							has_minor_title = title_court_physician
 						}
 						character_event = { id = RIP.11031 days = 1 }
@@ -254,13 +244,6 @@ character_event = {
 				value = off
 			}
 		}
-		OR = {
-			ai = no
-			has_game_rule = {
-				name = supernatural_events
-				value = unrestricted
-			}
-		}
 	}
 
 	weight_multiplier = {
@@ -287,7 +270,7 @@ character_event = {
 			is_ill = no
 			NOT = { trait = paranoid }
 			NOT = { trait = zealous }
-			is_incapable = no
+			NOT = { trait = incapable }
 			prisoner = no
 		}
 	}
@@ -295,52 +278,52 @@ character_event = {
 		text = EVTDESC6020_PARA
 		trigger = {
 			trait = paranoid
-			is_incapable = no
+			NOT = { trait = incapable }
 		}
 	}
 	desc = {
 		text = EVTDESC6020_FEVER
 		trigger = {
 			is_ill = yes
-			is_incapable = no
+			NOT = { trait = incapable }
 		}
 	}
 	desc = {
 		text = EVTDESC6020_ZEAL
 		trigger = {
 			trait = zealous
-			is_incapable = no
+			NOT = { trait = incapable }
 		}
 	}
 	desc = {
 		text = EVTDESC6020_PRISON
 		trigger = {
 			prisoner = yes
-			is_incapable = no
+			NOT = { trait = incapable }
 		}
 	}
 	desc = {
 		text = EVTDESC6020_COMA
-		trigger = { is_incapable = yes }
+		trigger = { trait = incapable }
 	}
 
 	min_age = 10
 
 	trigger = {
-		emf_isolated_character = no
 		NOT = {
 			trait = lunatic
 		}
 		OR = {
-			#Senile/comatose due to old age do not gain lunatic
-			NOT = { practical_age = 65 }
-			is_incapable = no
+			#Senile/comatose due to old age do not gain lunatic, immortals get a pass though
+			NOT = { age = 65 }
+			immortal = yes
+			NOT = { trait = incapable }
 		}
 	}
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 333 # 12 years on average
 			OR = {
@@ -382,12 +365,12 @@ character_event = {
 		}
 		modifier = {
 			factor = 40
-			is_incapable = yes # Coma due to brain damage. Wakes up a lunatic.
+			trait = incapable # Coma due to brain damage. Wakes up a lunatic.
 		}
 		modifier = {
 			factor = 40
 			AND = {
-				is_incapable = yes
+				trait = incapable
 				immortal = yes # Incapable immortals more likely to wake up nuts
 			}
 		}
@@ -432,7 +415,7 @@ character_event = {
 				is_ill = no
 				NOT = { trait = paranoid }
 				NOT = { trait = zealous }
-				is_incapable = no
+				NOT = { trait = incapable }
 				prisoner = no
 			}
 		}
@@ -440,33 +423,33 @@ character_event = {
 			text = EVTOPTA6020_PARA
 			trigger = {
 				trait = paranoid
-				is_incapable = no
+				NOT = { trait = incapable }
 			}
 		}
 		name = {
 			text = EVTOPTA6020_FEVER
 			trigger = {
 				is_ill = yes
-				is_incapable = no
+				NOT = { trait = incapable }
 			}
 		}
 		name = {
 			text = EVTOPTA6020_ZEAL
 			trigger = {
 				trait = zealous
-				is_incapable = no
+				NOT = { trait = incapable }
 			}
 		}
 		name = {
 			text = EVTOPTA6020_PRISON
 			trigger = {
 				prisoner = yes
-				is_incapable = no
+				NOT = { trait = incapable }
 			}
 		}
 		name = {
 			text = EVTOPTA6020_COMA
-			trigger = { is_incapable = yes }
+			trigger = { trait = incapable }
 		}
 
 		add_trait = lunatic
@@ -480,7 +463,7 @@ character_event = {
 			remove_trait = stressed
 		}
 		if = {
-			limit = { is_incapable = yes }
+			limit = { trait = incapable }
 			remove_trait = incapable
 		}
 	}
@@ -542,23 +525,22 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		emf_isolated_character = no
 		NOT = { trait = possessed }
 	}
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 1.1
 			prestige < 20
 		}
-		
+
 		modifier = {
 			factor = 1.1
 			piety < 10
 		}
-		
+
 		modifier = {
 			factor = 1.1
 			trait = zealous
@@ -610,12 +592,12 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 1.1
 			prestige = 20
 		}
-		
+
 		modifier = {
 			factor = 1.1
 			piety = 10
@@ -657,7 +639,6 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		emf_isolated_character = no
 		OR = {
 			is_ruler = yes
 			is_councillor = yes
@@ -669,17 +650,17 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 1.333
 			trait = diligent
 		}
-		
+
 		modifier = {
 			factor = 1.25
 			in_command = yes
 		}
-		
+
 		modifier = {
 			factor = 0.1
 			trait = slothful
@@ -709,7 +690,7 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 200
 			is_ruler = no
@@ -753,7 +734,6 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		emf_isolated_character = no
 		NOT = { trait = depressed }
 		NOT = { trait = zealous }
 		NOT = { trait = content }
@@ -761,18 +741,18 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 2
 			NOT = { age = 20 }
-			mother_even_if_dead = { is_alive = no } 
+			mother_even_if_dead = { is_alive = no }
 		}
 		modifier = {
 			factor = 1.33
 			NOT = { age = 20 }
-			father_even_if_dead = { is_alive = no } 
+			father_even_if_dead = { is_alive = no }
 		}
-		
+
 		modifier = {
 			factor = 2
 			trait = cynical
@@ -830,7 +810,7 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 10
 			trait = content
@@ -917,7 +897,7 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 2
 			trait = depressed
@@ -1091,7 +1071,6 @@ character_event = {
 	lacks_dlc = "Reapers"
 
 	trigger = {
-		emf_isolated_character = no
 		OR = {
 			trait = ill
 			trait = has_measles
@@ -1210,7 +1189,6 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		emf_isolated_character = no
 		OR = {
 			trait = hunter
 			in_command = yes
@@ -1224,27 +1202,27 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 1.1
 			trait = brave
 		}
-		
+
 		modifier = {
 			factor = 1.25
 			in_command = yes
 		}
-		
+
 		modifier = {
 			factor = 1.4
 			is_ruler = yes
 		}
-		
+
 		modifier = {
 			factor = 1.666
 			trait = misguided_warrior
 		}
-		
+
 		modifier = {
 			factor = 0.9
 			trait = paranoid
@@ -1301,7 +1279,6 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		emf_isolated_character = no
 		trait = wounded
 		NOT = { base_health = 8 }
 		is_ill = no
@@ -1309,28 +1286,28 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 1.1
 			in_command = yes
 		}
-		
+
 		modifier = {
 			factor = 1.25
 			trait = leper
 		}
-		
+
 		modifier = {
 			factor = 1.25
 			NOT = { base_health = 6 }
 		}
 		modifier = {
 			factor = 1.25
-			practical_age = 60
+			age = 60
 		}
 		modifier = {
 			factor = 1.25
-			practical_age = 70
+			age = 70
 		}
 	}
 
@@ -1366,34 +1343,34 @@ character_event = {
 	picture = GFX_evt_illness
 	border = GFX_event_normal_frame_religion
 
+	min_age = 45
 	only_capable = yes
-	
+
 	is_triggered_only = yes
 
 	trigger = {
-		practical_age = 45
-		emf_isolated_character = no
+		NOT = { trait = infirm }
 		immortal = no
 	}
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 1.25
-			practical_age = 60
+			age = 60
 		}
 		modifier = {
 			factor = 1.4
-			practical_age = 70
+			age = 70
 		}
 		modifier = {
 			factor = 2
-			practical_age = 80
+			age = 80
 		}
 		modifier = {
 			factor = 2
-			practical_age = 90
+			age = 90
 		}
 		modifier = {
 			factor = 2
@@ -1433,22 +1410,21 @@ character_event = {
 	desc = EVTDESC6110
 	picture = GFX_evt_recovery
 	border = GFX_event_normal_frame_religion
-	
+
 	is_triggered_only = yes
 
 	trigger = {
-		emf_isolated_character = no
 		OR = {
 			trait = infirm
 			trait = inbred
 		}
-		is_incapable = no
+		NOT = { trait = incapable }
 		immortal = no
 	}
 
 	weight_multiplier = {
 		days = 1
-		
+
 		modifier = {
 			factor = 2
 			NOT = { health = 3.0 }
@@ -1517,23 +1493,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.66
-			NOT = { practical_age = 20 }
+			NOT = { age = 20 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 30 }
+			NOT = { age = 30 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 40 }
+			NOT = { age = 40 }
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 50
+			age = 50
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 70
+			age = 70
 		}
 		modifier = {
 			factor = 2.0
@@ -1545,7 +1521,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 5.0
-			is_incapable = yes
+			trait = incapable
 		}
 	}
 
@@ -1594,23 +1570,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.66
-			NOT = { practical_age = 20 }
+			NOT = { age = 20 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 30 }
+			NOT = { age = 30 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 40 }
+			NOT = { age = 40 }
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 50
+			age = 50
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 70
+			age = 70
 		}
 		modifier = {
 			factor = 2.0
@@ -1622,7 +1598,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 5.0
-			is_incapable = yes
+			trait = incapable
 		}
 	}
 
@@ -1671,23 +1647,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.66
-			NOT = { practical_age = 20 }
+			NOT = { age = 20 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 30 }
+			NOT = { age = 30 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 40 }
+			NOT = { age = 40 }
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 50
+			age = 50
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 70
+			age = 70
 		}
 		modifier = {
 			factor = 2.0
@@ -1699,7 +1675,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 5.0
-			is_incapable = yes
+			trait = incapable
 		}
 	}
 
@@ -1747,23 +1723,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.66
-			NOT = { practical_age = 20 }
+			NOT = { age = 20 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 30 }
+			NOT = { age = 30 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 40 }
+			NOT = { age = 40 }
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 50
+			age = 50
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 70
+			age = 70
 		}
 		modifier = {
 			factor = 2.0
@@ -1775,7 +1751,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 5.0
-			is_incapable = yes
+			trait = incapable
 		}
 	}
 
@@ -1824,23 +1800,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.66
-			NOT = { practical_age = 20 }
+			NOT = { age = 20 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 30 }
+			NOT = { age = 30 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 40 }
+			NOT = { age = 40 }
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 50
+			age = 50
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 70
+			age = 70
 		}
 		modifier = {
 			factor = 2.0
@@ -1852,7 +1828,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 5.0
-			is_incapable = yes
+			trait = incapable
 		}
 	}
 
@@ -1901,23 +1877,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.66
-			NOT = { practical_age = 20 }
+			NOT = { age = 20 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 30 }
+			NOT = { age = 30 }
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { practical_age = 40 }
+			NOT = { age = 40 }
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 50
+			age = 50
 		}
 		modifier = {
 			factor = 2.0
-			practical_age = 70
+			age = 70
 		}
 		modifier = {
 			factor = 2.0
@@ -1929,7 +1905,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 5.0
-			is_incapable = yes
+			trait = incapable
 		}
 	}
 
@@ -1957,13 +1933,6 @@ character_event = {
 			has_game_rule = {
 				name = supernatural_events
 				value = off
-			}
-		}
-		OR = {
-			ai = no
-			has_game_rule = {
-				name = supernatural_events
-				value = unrestricted
 			}
 		}
 		trait = possessed
@@ -2392,7 +2361,7 @@ character_event = {
 	}
 
 	option = {
-		name = EVTOPTA6211
+		name = GLORY_TO_HIGHGOD
 		add_trait = diligent
 	}
 }
@@ -2609,7 +2578,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA6218
-		emf_character_become_heretic = yes
+		usurpfix_become_heretic_effect = yes
 	}
 }
 
@@ -3388,6 +3357,7 @@ character_event = {
 
 	min_age = 16
 	prisoner = no
+	only_playable = yes
 	only_independent = yes
 
 	trigger = {
@@ -3618,6 +3588,7 @@ character_event = {
 	picture = GFX_evt_lunatic
 	border = GFX_event_normal_frame_religion
 
+	ai = no
 	min_age = 16
 	prisoner = no
 
@@ -3643,6 +3614,7 @@ character_event = {
 	picture = GFX_evt_lunatic
 	border = GFX_event_normal_frame_religion
 
+	ai = no
 	min_age = 16
 	prisoner = no
 
@@ -3679,13 +3651,6 @@ character_event = {
 			has_game_rule = {
 				name = supernatural_events
 				value = off
-			}
-		}
-		OR = {
-			ai = no
-			has_game_rule = {
-				name = supernatural_events
-				value = unrestricted
 			}
 		}
 		trait = lunatic
@@ -3740,19 +3705,13 @@ character_event = {
 	picture = GFX_evt_recovery
 	border = GFX_event_normal_frame_religion
 
+	ai = no
 	min_age = 16
 	prisoner = no
 	only_playable = yes
 	religion_group = pagan_group
 
 	trigger = {
-		OR = {
-			ai = no
-			has_game_rule = {
-				name = supernatural_events
-				value = unrestricted
-			}
-		}
 		NOT = {
 			has_game_rule = {
 				name = supernatural_events
@@ -3808,19 +3767,13 @@ character_event = {
 	picture = GFX_evt_garden
 	border = GFX_event_normal_frame_religion
 
+	ai = no
 	min_age = 16
 	prisoner = no
 	only_playable = yes
 	religion_group = pagan_group
 
 	trigger = {
-		OR = {
-			ai = no
-			has_game_rule = {
-				name = supernatural_events
-				value = unrestricted
-			}
-		}
 		NOT = {
 			has_game_rule = {
 				name = supernatural_events
@@ -3876,19 +3829,13 @@ character_event = {
 	picture = GFX_evt_death
 	border = GFX_event_normal_frame_religion
 
+	ai = no
 	min_age = 16
 	prisoner = no
 	only_playable = yes
 	religion_group = pagan_group
 
 	trigger = {
-		OR = {
-			ai = no
-			has_game_rule = {
-				name = supernatural_events
-				value = unrestricted
-			}
-		}
 		NOT = {
 			has_game_rule = {
 				name = supernatural_events
@@ -3944,19 +3891,13 @@ character_event = {
 	picture = GFX_evt_burning_house
 	border = GFX_event_normal_frame_religion
 
+	ai = no
 	min_age = 16
 	prisoner = no
 	only_playable = yes
 	religion_group = pagan_group
 
 	trigger = {
-		OR = {
-			ai = no
-			has_game_rule = {
-				name = supernatural_events
-				value = unrestricted
-			}
-		}
 		NOT = {
 			has_game_rule = {
 				name = supernatural_events
@@ -4116,7 +4057,7 @@ character_event = {
 		text = EVTDESC_WOL_40_NC
 		trigger = {
 			is_female = yes
-			has_dlc = "Sons of Abraham"
+			has_DLC = "Sons of Abraham"
 		}
 		picture = GFX_evt_bad_news_female
 	}
@@ -4124,12 +4065,12 @@ character_event = {
 		text = EVTDESC_WOL_40_NC
 		trigger = {
 			is_female = no
-			has_dlc = "Sons of Abraham"
+			has_DLC = "Sons of Abraham"
 		}
 		picture = GFX_evt_bad_news
 	}
 	desc = {
-		trigger = { NOT = { has_dlc = "Sons of Abraham" } }
+		trigger = { NOT = { has_DLC = "Sons of Abraham" } }
 		text = EVTDESC_WOL_40_NC
 		picture = GFX_evt_recovery
 	}
@@ -4169,14 +4110,14 @@ character_event = {
 		picture = GFX_evt_council
 		text = EVTDESC6360
 	}
-	
+
 	min_age = 16
 	prisoner = no
 	only_capable = yes
 	only_playable = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		OR = {
 			ai = no
@@ -4185,19 +4126,17 @@ character_event = {
 				value = unrestricted
 			}
 		}
-		NOT = {
+		NOR = {
 			has_game_rule = {
 				name = silly_events
 				value = off
 			}
+			has_character_flag = cat_spymaster_flag
 		}
 		trait = lunatic
-		job_spymaster = {
+		any_courtier = {
+			has_job_title = job_spymaster
 			ai = yes
-			NOR = {
-				trait = cat
-				trait = horse
-			}
 		}
 		has_character_modifier = pet_cat
 	}
@@ -4205,12 +4144,23 @@ character_event = {
 	weight_multiplier = {
 		days = 1
 	}
-	
+
+	immediate = {
+		set_character_flag = cat_spymaster_flag
+		random_courtier = {
+			limit = {
+				has_job_title = job_spymaster
+				ai = yes
+			}
+			save_event_target_as = show
+		}
+	}
+
 	option = {
 		name = EVTOPTA6360
 		custom_tooltip = { text = cat_start }
 		hidden_tooltip = {
-			character_event = { 
+			character_event = {
 				id = 6361
 				#days = 30
 			}
@@ -4234,17 +4184,17 @@ character_event = {
 	desc = EVTDESC6361
 	picture = GFX_evt_kitten_shadow
 	border = GFX_event_normal_frame_intrigue
-	
+
 	is_triggered_only = yes
 	hide_from = yes
 
 	trigger = { has_character_modifier = pet_cat }
-	
+
 	option = {
 		name = EVTOPTA6361
 		custom_tooltip = { text = cat_corridor }
 		hidden_tooltip = {
-			character_event = { 
+			character_event = {
 				id = 6362
 				#days = 3
 			}
@@ -4262,11 +4212,11 @@ character_event = {
 	desc = EVTDESC6362
 	picture = GFX_evt_kitten_shadow
 	border = GFX_event_normal_frame_intrigue
-	
+
 	is_triggered_only = yes
 
 	trigger = { has_character_modifier = pet_cat }
-	
+
 	option = {
 		name = EVTOPTA6362
 		tooltip_info = lunatic
@@ -4275,7 +4225,7 @@ character_event = {
 				death_reason = death_murder_unknown
 			}
 		}
-		
+
 		create_character = {
 			name = "Mittens"
 			age = 16
@@ -4292,7 +4242,6 @@ character_event = {
 		}
 		new_character = {
 			give_job_title = job_spymaster
-			emf_new_character = yes
 			opinion = {
 				modifier = opinion_my_servant
 				who = ROOT
@@ -4303,7 +4252,7 @@ character_event = {
 				who = ROOT
 				years = 100
 			}
-			character_event = { 
+			character_event = {
 				id = 6364
 			}
 		}
@@ -4315,12 +4264,12 @@ character_event = {
 
 #Mittens ping
 character_event = {
-	id = 6364
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = { 
-		FROM = {
-			any_courtier = {
+    id = 6364
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+    	FROM = {
+    		any_courtier = {
 				limit = {
 					OR = {
 						has_job_title = job_chancellor
@@ -4329,16 +4278,16 @@ character_event = {
 						has_job_title = job_spiritual
 					}
 				}
-				character_event = { 
+				character_event = {
 					id = 6363
 				}
 			}
-			if = { 
+			if = {
 				limit = { trait = immortal }
 				character_event = { id = 6365 days = 10 }
 			}
-		}
-	}
+    	}
+    }
 }
 
 # End
@@ -4347,11 +4296,11 @@ character_event = {
 	desc = EVTDESC6363
 	picture = GFX_evt_kitten_shadow
 	border = GFX_event_normal_frame_intrigue
-	
+
 	is_triggered_only = yes
 
 	hide_new = yes
-	
+
 	option = {
 		name = EVTOPTA6363
 		opinion = {
@@ -4368,10 +4317,10 @@ character_event = {
 	desc = EVTDESC6365
 	picture = GFX_evt_kitten_shadow
 	border = GFX_event_normal_frame_intrigue
-	
+
 	is_triggered_only = yes
 
-	
+
 	trigger = {
 		trait = lunatic
 		trait = immortal
@@ -4379,8 +4328,8 @@ character_event = {
 
 	option = {
 		name = EVTOPTA6365
-		FROM = { 
-			add_trait = immortal 
+		FROM = {
+			add_trait = immortal
 		}
 	}
 

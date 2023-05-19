@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_bloodlines_symbol_cross_messalian"
+		texturefile = "gfx\\interface\\bloodlines\\bloodlines_symbol_cross_messalian.dds"
+	}
+}

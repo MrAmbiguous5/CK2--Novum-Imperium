@@ -1,0 +1,1794 @@
+decisions = {
+	
+	#test_man = {
+	#	only_playable = yes
+	#	is_high_prio = yes
+	#	
+	#	ai = no
+	#	
+	#	potential = { ai = no }
+	#	allow = { 
+	#		always = yes 
+	#		persistent_event_target:office_revolt_emperor = { primary_title = { has_title_flag = imperial_court_active } }
+	#	}
+	#	effect = {
+	#		add_character_modifier = { modifier = imperial_court_influence_1 duration = -1 }
+	#		add_character_modifier = { modifier = imperial_court_influence_2 duration = -1 }
+	#		add_character_modifier = { modifier = imperial_court_influence_3 duration = -1 }
+	#		add_character_modifier = { modifier = imperial_court_influence_4 duration = -1 }
+	#		add_character_modifier = { modifier = imperial_court_influence_5 duration = -1 }
+	#	}
+	#}
+	
+	
+	claim_imperial_capital = {
+		only_playable = yes
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+			NOT = { any_demesne_title = { has_title_flag = is_imperial_capital } }
+			any_realm_lord = {
+				ai = yes
+				any_demesne_title = { has_title_flag = is_imperial_capital } 
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = claim_imperial_capital_allow
+				NOT = { any_demesne_title = { has_title_flag = is_imperial_capital } }
+			}
+		}
+		effect = {
+			random_realm_lord = {
+				limit = { any_demesne_title = { has_title_flag = is_imperial_capital } }
+				random_demesne_title = {
+					limit = { has_title_flag = is_imperial_capital }
+					usurp_title = ROOT
+					ROOT = { capital = PREV }
+				}
+			}
+		}
+		ai_check_interval = 12
+		ai_will_do = { factor = 1 }
+	}
+	
+	move_imperial_capital = {
+		only_playable = yes
+		only_independent = yes
+		ai = no
+		is_high_prio = yes
+		
+		potential = {
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+			capital_holding = {
+				holding_type = castle
+				NOT = { has_title_flag = is_imperial_capital }
+			}
+		}
+		allow = {
+			primary_title = {
+				NOR = {
+					has_law = succ_elective_gavelkind
+					has_law = succ_seniority
+					has_law = succ_feudal_elective
+				}
+			}
+			is_adult = yes
+			is_inaccessible_or_incapable_trigger = no
+			war = no
+			ruled_years = 5
+			prestige = 2000
+			custom_tooltip = {
+				text = move_imperial_capital_allow
+				any_demesne_title = {
+					has_title_flag = is_imperial_capital
+					is_quest_target = no
+				}
+			}
+		}
+		effect = {
+			prestige = -2000
+			custom_tooltip = {
+				text = move_imperial_capital_effect
+				character_event = { id = ipc.140 }
+			}
+		}
+	}
+	
+	
+	reduce_ipc_influence_army_levy = {
+		only_playable = yes
+		only_independent = yes
+
+		is_high_prio = yes
+		
+		potential = {
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+			OR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		allow = {
+			is_adult = yes
+			is_inaccessible_or_incapable_trigger = no
+			war = no
+			ruled_years = 5
+			prestige = 2500
+			custom_tooltip = {
+				text = reduce_ipc_influence_army_levy_allow
+				NOT = { has_character_modifier = reduce_ipc_influence_army_levy_timer }
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = reduce_ipc_influence_army_levy_effect
+				if = {
+					limit = { is_imperial_court_member_trigger = yes }
+					add_society_modifier = 	{ modifier = ipc_conscripted_court_levies years = 10 }
+				}
+				else_if = {
+					limit = { is_imperial_court_member_trigger = no }
+					random_realm_lord = {
+						limit = { is_imperial_court_member_trigger = yes }
+						add_society_modifier = 	{ modifier = ipc_failed_foreign_mission years = 10 }
+					}
+				}
+				add_character_modifier = { modifier = ipc_conscripted_court_levies years = 10 hidden = yes }
+			}
+			custom_tooltip = {
+				text = reduce_ipc_influence_army_levy_effect2
+				any_realm_lord = {
+					limit = { 
+						is_imperial_court_member_trigger = yes
+						is_landed = yes
+					}
+					long_character_event = { id = ipc.200 }
+				}
+			}
+			capital_holding = { add_holding_modifier = { modifier = conscripted_imperial_army_emperor years = 5 } }
+		}
+	}
+	
+	
+	
+	
+	
+}
+
+
+
+society_decisions = {
+	
+	request_to_rank_up_within_society_imperial_court = {
+		hide_in_decisions_list = yes
+		
+		potential = {
+			hidden_tooltip = {
+				society_rank < 3
+				days_in_society > 365
+				is_in_society = yes
+				OR = {
+					ai = no
+					AND = {
+						ai = yes
+						society_can_rank_up = yes
+					}
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				text = request_to_rank_up_within_society_imperial_court_currency_tooltip
+				OR = {
+					AND = {
+						society_rank == 1
+						society_currency >= 750
+					}
+					AND = {
+						society_rank == 2
+						society_currency >= 1250
+					}
+					hidden_tooltip = {
+						ai = yes
+						society_rank == 2
+						society_currency >= 1000
+					}
+				}
+			}
+			trigger_if = {
+				limit = { society_rank == 2 }
+				OR = {
+					custom_tooltip = {
+						text = request_to_rank_up_within_society_imperial_court_vassal_tooltip
+						is_landed = yes
+						top_liege = {
+							ROOT = {
+								liege = { character = PREVPREV }
+							}
+						}
+					}
+					custom_tooltip = {
+						text = request_to_rank_up_within_society_imperial_court_close_relative_tooltip
+						top_liege = {
+							ROOT = {
+								OR = {
+									is_close_relative = PREV
+									is_grandparent_of = PREV
+									is_grandchild_of = PREV
+									is_cousin_of = PREV
+									is_aunt_uncle_of = PREV
+									is_nibling_of = PREV
+								}
+								liege = { character = PREVPREV }
+							}
+						}
+					}
+				}
+			}
+			can_interact_with_imperial_court_revolt_trigger = yes
+			
+			custom_tooltip = {
+				text = must_not_have_sent_request_already_tooltip 
+				NOT = { has_character_flag = has_sent_request_to_rank_up }
+			}
+			custom_tooltip = {
+				text = request_to_rank_up_within_society_imperial_court_tooltip_days 
+				days_at_current_society_rank >= 1825
+			}
+			custom_tooltip = {
+				text = must_have_grandmaster_tooltip
+				any_society_member = {
+					is_society_grandmaster = yes
+					same_society_as = ROOT
+				}
+			}
+			custom_tooltip = {
+				text = must_have_multiple_rank_4
+				NOT = { society_rank == 3 }
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				save_event_target_as = rank_up_target
+				set_character_flag = has_sent_request_to_rank_up
+			}
+			if = {
+				limit = { society_rank == 1 }
+				change_society_currency = -750
+				hidden_tooltip = { character_event = { id = ipc.023 days = 20 random = 10 } }
+			}
+			else_if = {
+				limit = { ai = yes society_rank == 2 }
+				change_society_currency = -1250
+				custom_tooltip = {
+					text = request_to_rank_up_within_society_imperial_court_effect
+					character_event = { id = ipc.026 days = 20 random = 10 }
+				}
+			}
+			else_if = {
+				limit = { ai = no society_rank == 2 }
+				change_society_currency = -1250
+				custom_tooltip = {
+					text = request_to_rank_up_within_society_imperial_court_effect
+					character_event = { id = ipc.026 days = 20 random = 10 }
+				}
+			}
+		}
+		
+		ai_check_interval = 12
+		ai_will_do = { factor = 1 }
+	}
+	
+	ipc_donate_to_court_power = {
+		only_playable = yes
+		
+
+		potential = {
+			is_imperial_court_member_trigger = yes
+			society_rank < 4
+		}
+
+		allow = {
+			trigger_if = {
+				limit = { society_rank == 1 }
+				wealth = 150
+			}
+			trigger_else_if = {
+				limit = { society_rank == 2 }
+				wealth = 200
+			}
+			trigger_else_if = {
+				limit = { society_rank == 3 }
+				wealth = 250
+			}
+			custom_tooltip = {
+				text = ipc_donate_to_court_power_allow
+				NOT = { has_character_modifier = ipc_donate_to_court_power_timer } 
+			}
+			can_interact_with_imperial_court_revolt_trigger = yes
+		}
+
+		effect = {
+			if = {
+				limit = { society_rank == 1 }
+				wealth = -150
+				change_society_currency = 250
+			}
+			else_if = {
+				limit = { society_rank == 2 }
+				wealth = -200
+				change_society_currency = 200
+			}
+			else_if = {
+				limit = { society_rank == 3 }
+				wealth = -250
+				change_society_currency = 150
+			}
+			hidden_tooltip = { add_character_modifier = { modifier = ipc_donate_to_court_power_timer years = 5 hidden = yes } }
+		}
+		
+		ai_check_interval = 120
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 0.1
+				trait = greedy
+			}
+			modifier = {
+				factor = 0.1
+				war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 300 }
+			}
+		}
+	}
+	
+	ipc_visit_imperial_capital_power = {
+		only_playable = yes
+		
+		potential = {
+			is_imperial_court_member_trigger = yes
+			society_rank < 4
+		}
+
+		allow = {
+			is_inaccessible_or_incapable_trigger = no
+			war = no
+			society_currency >= 200
+			custom_tooltip = {
+				text = ipc_visit_imperial_capital_power_allow
+				NOT = { has_character_modifier = ipc_visit_imperial_capital_power_timer } 
+			}
+			can_interact_with_imperial_court_revolt_trigger = yes
+		}
+
+		effect = {
+			change_society_currency = -200
+			hidden_tooltip = {
+				set_character_flag = visiting_imperial_capital
+				add_character_modifier = { modifier = ipc_visit_imperial_capital_power_timer years = 10 hidden = yes } 
+				character_event = { id = ipc.100 days = 2 }
+			}
+		}
+		
+		ai_check_interval = 120
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 0.5
+				society_currency < 300
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 50 }
+			}
+			modifier = {
+				factor = 2
+				is_loyal_to_empire_trigger = yes
+			}
+		}
+	}
+	
+	ipc_hereditary_viceroyalty_power = {
+		only_playable = yes
+	
+		potential = {
+			society_rank = 2
+			is_imperial_court_member_trigger = yes
+			NOT = { tier = emperor }
+			any_demesne_title = {
+				tier = duke 
+				is_vice_royalty = yes 
+			}
+		}
+		
+		allow = {
+			society_influence >= 60
+			society_currency >= 1500
+			OR = {
+				trait = ambitious
+				trait = envious
+				trait = ipc_imperial_aristrocrat
+			}
+			reverse_opinion = { who = top_liege value = 25 }
+			is_inaccessible_or_incapable_trigger = no
+			war = no
+			can_interact_with_imperial_court_revolt_trigger = yes
+			custom_tooltip = {
+				text = ipc_hereditary_viceroyalty_power_allow
+				NOT = { has_character_flag = ipc_hereditary_viceroyalty_power_used }
+			}
+		}
+		
+		effect = {
+			random_demesne_title = {
+				limit = { tier = duke is_vice_royalty = yes }
+				custom_tooltip = {
+					text = ipc_hereditary_viceroyalty_power_effect
+					ROOT = { 
+						top_liege = { usurp_title = PREVPREV } 
+						grant_title_no_opinion = PREV
+						remove_opinion = { modifier = opinion_usurped_title who = top_liege }
+					}
+				}
+				custom_tooltip = {
+					text = ipc_hereditary_viceroyalty_power_effect2
+					ROOT = { top_liege = { character_event = { id = ipc.139 days = 1 } } }
+				}
+			}
+			hidden_tooltip = { set_character_flag = ipc_hereditary_viceroyalty_power_used }
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			
+			modifier = {
+				factor = 0.5
+				OR = {
+					trait = charitable
+					trait = kind
+					trait = just
+				}
+			}
+		}
+	}
+	
+	
+	ipc_choose_imperial_focus_power = {
+		
+		potential = {
+			society_rank == 3
+			is_imperial_court_member_trigger = yes
+		}
+		
+		allow = {
+			OR = {
+				NOT = { lifestyle_traits = 1 }
+				trait = ipc_imperial_administrator
+				trait = ipc_imperial_aristrocrat
+				trait = ipc_imperial_commander
+			}
+			society_currency >= 200
+			can_interact_with_imperial_court_revolt_trigger = yes
+			hidden_tooltip = { NOT = { has_character_flag = choosing_imperial_focus } }
+		}
+		
+		effect = {
+			change_society_currency = -200
+			hidden_tooltip = {
+				set_character_flag = choosing_imperial_focus
+				character_event = { id = ipc.134 }
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				lifestyle_traits = 1
+			}
+		}
+	}
+	
+	
+	
+	ipc_levy_extra_tax_seneschal_power = {
+		only_playable = yes
+		
+		potential = {
+			society_rank == 3
+			is_imperial_court_seneschal_trigger = yes
+		}
+		allow = {
+			society_currency >= 200
+			custom_tooltip = {
+				text = ipc_levy_extra_tax_seneschal_power_allow
+				NOT = { has_character_modifier = ipc_levy_extra_tax_seneschal_power_timer } 
+			}
+		}
+		effect = {
+			change_society_currency = -200
+			scaled_wealth = { value = 0.8 min = 100 max = 500 }
+			any_demesne_province = { add_province_modifier = { modifier = high_taxes years = 2 } }
+			hidden_tooltip = { add_character_modifier = { modifier = ipc_levy_extra_tax_seneschal_power_timer years = 5 hidden = yes }	}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.1
+			
+			modifier = {
+				factor = 0.5
+				OR = {
+					trait = charitable
+					trait = kind
+					trait = just
+				}
+			}
+			modifier = {
+				factor = 2
+				wealth < 100
+			}
+			modifier = {
+				factor = 1.5
+				wealth < 300
+			}
+			modifier = {
+				factor = 2
+				trait = greedy
+			}
+		}
+	}
+	
+	ipc_employ_imperial_commander_power = {
+		only_playable = yes
+		
+		potential = {
+			society_rank == 3
+			is_imperial_court_marshal_trigger = yes
+		}
+		allow = {
+			society_currency >= 200
+			custom_tooltip = {
+				text = ipc_employ_imperial_commander_power
+				NOT = { has_character_modifier = ipc_employ_imperial_commander_power_timer } 
+			}
+		}
+		effect = {
+			change_society_currency = -200
+			hidden_tooltip = { 
+				add_character_modifier = { modifier = ipc_employ_imperial_commander_power_timer years = 3 hidden = yes }
+				character_event = { id = ipc.132 } 
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.1
+			
+			modifier = {
+				factor = 3
+				NOT = {
+					any_courtier_or_vassal = {
+						has_minor_title = title_commander
+						martial >= 20
+					}
+				}
+			}
+		}
+	}
+	
+	##factions
+	faction_ipc_takeover_ultimatum = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_playable = yes
+			leads_faction = faction_ipc_takeover
+			OR = {
+				NOT = { has_character_flag = faction_ipc_takeover_ultimatum_taken }
+				had_character_flag = { flag = faction_ipc_takeover_ultimatum_taken days = 7 }
+			}
+		}
+		allow = {
+			war = no
+			prisoner = no
+			liege = {
+				in_revolt = no
+				NOT = { war_with = ROOT }
+				NOT = { reverse_has_truce = ROOT }
+			}
+			NOT = {
+				any_realm_title = {
+					NOT = { higher_tier_than = count }
+					is_occupied = yes
+				}
+			}
+			liege = {
+				OR = {
+					independent = yes
+					AND = {
+						will_liege_enforce_peace = no
+						has_liege_enforced_peace = no
+					}
+				}
+			}
+		}
+		
+		effect = {
+			liege = { letter_event = { id = ipc.150 days = 3 tooltip = faction_ipc_takeover_ultimatum_effect } }
+			hidden_tooltip = { set_character_flag = faction_ipc_takeover_ultimatum_taken }
+		}
+		
+		ai_check_interval = 4
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { faction_power = { faction = faction_ipc_takeover power = 0.75 } }
+			}			
+			modifier = {
+				factor = 0.1
+				NOT = { faction_power = { faction = faction_ipc_takeover power = 1.0 } }
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { faction_power = { faction = faction_ipc_takeover power = 1.5 } }
+			}			
+			
+			modifier = {
+				factor = 0.5 # Slow it down a bit
+			}
+			
+			modifier = {
+				factor = 0
+				liege = {
+					any_war = {
+						OR = {
+							AND = {
+								defender = { character = PREV }
+								NOT = { using_cb = depose_liege }
+								NOT = { using_cb = overthrow_ruler }
+								NOT = { using_cb = overthrow_ruler_no_calls }
+							}
+							AND = {
+								attacker = { character = PREV }
+								OR = {
+									using_cb = invasion
+									using_cb = religious
+									using_cb = tribal_invasion
+									using_cb = muslim_invasion
+									using_cb = viking_invasion
+									using_cb = claim_all
+									using_cb = claim
+									using_cb = other_claim
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+targeted_decisions = {
+
+	#test_man_target = {
+	#	only_playable = yes
+	#	
+	#	ai = no
+	#	
+	#	from_potential = { ai = no }
+	#	potential = { ai = yes }
+	#	allow = {
+	#		always = yes
+	#	}
+	#	effect = { 
+	#		quest_target = { 
+	#			holder_scope = {
+	#				if = {
+	#					limit = { independent = yes }
+	#					ROOT = { war = { target = PREV casus_belli = ipc_imperial_conquest thirdparty_title = PREVPREV tier = duke } }
+	#				}
+	#				else = {
+	#					top_liege = {
+	#						ROOT = { war = { target = PREV casus_belli = ipc_imperial_conquest thirdparty_title = PREVPREVPREV tier = duke } }
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
+	
+	ipc_emperor_introduce_child = {
+		only_playable = yes
+		
+		filter = close_relatives
+		
+		from_potential = {
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+		}
+		potential = { 
+			is_child_of = FROM 
+			is_imperial_court_member_trigger = no
+		}
+
+		allow = {
+			FROM = {
+				trigger_if = {
+					limit = { is_imperial_court_member_trigger = yes }
+					society_currency >= 250
+				}
+				trigger_else_if = {
+					limit = { is_imperial_court_member_trigger = no }
+					prestige = 500
+				}
+				NOR = {
+					has_character_modifier = imperial_court_influence_4
+					has_character_modifier = imperial_court_influence_5
+				}
+			}
+			ROOT = {
+				is_adult = yes
+				is_in_society = no
+				is_inaccessible_or_incapable_trigger = no
+				can_interact_with_imperial_court_revolt_trigger = yes
+				
+				trigger_if = {
+					limit = { 
+						FROM = { 
+							primary_title = {
+								OR = {
+									title = event_target:imperial_court_christian_1_title
+									title = event_target:imperial_court_christian_2_title
+									title = event_target:imperial_court_christian_3_title
+								}
+							}
+						}
+					}
+					NOR = {
+						is_ascetic_trigger = yes
+						trait = excommunicated
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { 
+						FROM = { 
+							primary_title = {
+								OR = {
+									title = event_target:imperial_court_muslim_1_title
+									title = event_target:imperial_court_muslim_2_title
+									title = event_target:imperial_court_muslim_3_title
+									title = e_arabia
+								}
+							}
+						}
+					}
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							FROM = {
+								show_scope_change = no
+								primary_title = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+					}
+					NOR = {
+						trait = decadent
+						trait = hedonist
+						trait = drunkard
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { 
+						FROM = { 
+							primary_title = {
+								OR = {
+									title = event_target:imperial_court_pagan_1_title
+									title = event_target:imperial_court_pagan_2_title
+									title = event_target:imperial_court_pagan_3_title
+								}
+							}
+						}
+					}
+					OR = {
+						is_female = no
+						trait = shieldmaiden
+						AND = {
+							is_female = yes
+							FROM = {
+								show_scope_change = no
+								primary_title = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { 
+						FROM = { 
+							primary_title = {
+								OR = {
+									title = event_target:imperial_court_eastern_1_title
+									title = event_target:imperial_court_eastern_2_title
+									title = event_target:imperial_court_eastern_3_title
+								}
+							}
+						}
+					}
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							FROM = {
+								show_scope_change = no
+								primary_title = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+					}
+					is_ascetic_trigger = no
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { primary_title = { title = e_byzantium } } }
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							FROM = {
+								show_scope_change = no
+								e_byzantium = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_byzantine_imperial_court_trigger_castrate_blind_NOT
+						top_liege = { 
+							NOR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { primary_title = { title = e_hre } } }
+					NOR = {
+						is_ascetic_trigger = yes
+						trait = excommunicated
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { primary_title = { title = e_roman_empire } } }
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							FROM = {
+								show_scope_change = no
+								e_roman_empire = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_roman_imperial_court_trigger_castrate_blind_NOT
+						top_liege = { 
+							NOR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			join_realm_imperial_court_effect = yes
+			if = {
+				limit = {
+					FROM = { is_imperial_court_member_trigger = yes }
+				}
+				FROM = { change_society_currency = -250 }
+			}
+			else = { FROM = { prestige = -500 } }
+			change_society_currency = 250
+			society_rank_up = 1
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.4
+
+			modifier = {
+				factor = 0.1
+				FROM = {
+					is_imperial_court_member_trigger = yes
+					society_currency < 300
+				}
+			}
+			modifier = {
+				factor = 0.1
+				age > 25
+			}
+			modifier = {
+				factor = 1.5
+				is_heir = yes
+			}
+			modifier = {
+				factor = 2
+				has_top_tier_education_trait_trigger = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = genius
+					trait = quick
+					trait = strong
+					trait = shrewd
+				}
+			}
+		}
+	}
+	
+	ipc_introduce_child_power = {
+		only_playable = yes
+		is_in_society = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		filter = close_relatives
+		ai_target_filter = close_relatives
+
+		from_potential = {
+			is_imperial_court_member_trigger = yes
+			society_rank > 1
+			NOT = { tier = emperor }
+		}
+		potential = { is_child_of = FROM }
+
+		allow = {
+			FROM = {
+				trigger_if = {
+					limit = { society_rank == 2 }
+					society_currency = 250
+				}
+				trigger_else_if = {
+					limit = { society_rank == 3 }
+					society_currency = 200
+				}
+				trigger_else_if = {
+					limit = { is_society_grandmaster = yes }
+					society_currency = 150
+				}
+				can_interact_with_imperial_court_revolt_trigger = yes
+				hidden_tooltip = {
+					OR = { 
+						ai = no
+						AND = {
+							ai = yes
+							NOT = {
+								any_child = {
+									count = 3
+									is_imperial_court_member_trigger = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			ROOT = {
+				is_in_society = no
+				is_adult = yes
+				is_inaccessible_or_incapable_trigger = no
+				can_interact_with_imperial_court_revolt_trigger = yes
+				
+				trigger_if = {
+					limit = { FROM = { is_christian_imperial_court_member_trigger = yes } }
+					NOR = {
+						is_ascetic_trigger = yes
+						trait = excommunicated
+					}
+				}
+				
+				trigger_else_if = {
+					limit = {
+						FROM = { 
+							OR = {
+								is_muslim_imperial_court_member_trigger = yes
+								society_member_of = imperial_court_arabia
+							}
+						}
+					}
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								ROOT = {
+									show_scope_change = no
+									dynasty = PREV
+								}
+								primary_title = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								primary_title = { 
+									NOR = {
+										has_law = status_of_women_0
+										has_law = status_of_women_1
+									}
+								}
+							}
+						}
+					}
+					NOR = {
+						trait = decadent
+						trait = hedonist
+						trait = drunkard
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { is_pagan_imperial_court_member_trigger = yes } }
+					OR = {
+						is_female = no
+						trait = shieldmaiden
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								ROOT = {
+									show_scope_change = no
+									dynasty = PREV
+								}
+								primary_title = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								primary_title = { 
+									NOR = {
+										has_law = status_of_women_0
+										has_law = status_of_women_1
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { is_eastern_imperial_court_member_trigger = yes } }
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								ROOT = {
+									show_scope_change = no
+									dynasty = PREV
+								}
+								primary_title = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								primary_title = { 
+									NOR = {
+										has_law = status_of_women_0
+										has_law = status_of_women_1
+									}
+								}
+							}
+						}
+					}
+					is_ascetic_trigger = no
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { society_member_of = imperial_court_byzantine } }
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								ROOT = {
+									show_scope_change = no
+									dynasty = PREV
+								}
+								e_byzantium = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+						AND = {
+							is_female = yes
+							e_byzantium = { 
+								NOR = {
+									has_law = status_of_women_0
+									has_law = status_of_women_1
+								}
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_byzantine_imperial_court_trigger_castrate_blind_NOT
+						top_liege = { 
+							NOR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { society_member_of = imperial_court_hre } }
+					NOR = {
+						is_ascetic_trigger = yes
+						trait = excommunicated
+					}
+				}
+				
+				trigger_else_if = {
+					limit = { FROM = { society_member_of = imperial_court_roman_empire } }
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							top_liege = {
+								show_scope_change = no
+								ROOT = {
+									show_scope_change = no
+									dynasty = PREV
+								}
+								e_roman_empire = { NOT = { has_law = status_of_women_0 } }
+							}
+						}
+						AND = {
+							is_female = yes
+							e_roman_empire = { 
+								NOR = {
+									has_law = status_of_women_0
+									has_law = status_of_women_1
+								}
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_roman_imperial_court_trigger_castrate_blind_NOT
+						top_liege = {
+							NOR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			join_realm_imperial_court_effect = yes
+			if = {
+				limit = { FROM = { society_rank == 2 } }
+				FROM = { change_society_currency = -250 }
+				change_society_currency = 150
+			}
+			else_if = {
+				limit = { FROM = { society_rank == 3 } }
+				FROM = { change_society_currency = -200 }
+				change_society_currency = 200
+			}
+			else = {
+				FROM = { change_society_currency = -150 }
+				change_society_currency = 250
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.4
+
+			modifier = {
+				factor = 0.1
+				FROM = { society_currency < 300 }
+			}
+			modifier = {
+				factor = 0.1
+				age > 25
+			}
+			modifier = {
+				factor = 1.5
+				is_heir = yes
+			}
+			modifier = {
+				factor = 2
+				has_top_tier_education_trait_trigger = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = genius
+					trait = quick
+					trait = strong
+					trait = shrewd
+				}
+			}
+		}
+	}
+	
+	ipc_gain_favor_power = {
+		only_playable = yes
+		is_in_society = yes
+		
+		filter = society
+		ai_target_filter = society
+
+		from_potential = {
+			is_imperial_court_member_trigger = yes
+			society_rank == 3
+		}
+		potential = { 
+			same_society_as = FROM
+			society_rank < 3
+		}
+
+		allow = {
+			FROM = {
+				society_currency >= 350
+				can_interact_with_imperial_court_revolt_trigger = yes
+			}
+			ROOT = {
+				is_adult = yes
+				can_interact_with_imperial_court_revolt_trigger = yes
+				NOR = { 
+					owes_favor_to = FROM 
+					is_foe = FROM
+					top_liege = { 
+						show_scope_change = no
+						ROOT = { 
+							show_scope_change = no
+							is_child_of = PREV
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			FROM = { change_society_currency = -350 }
+			reverse_add_favor = FROM
+			opinion = { modifier = opinion_irritated who = FROM years = 5 }
+			hidden_tooltip = { character_event = { id = ipc.130 days = 1 } }
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 0.1
+				FROM = { society_currency < 400 }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { trait = ambitious }
+			}
+			modifier = {
+				factor = 0.1
+				is_close_relative = FROM
+			}
+			modifier = {
+				factor = 0.1
+				is_landed = no
+			}
+			modifier = {
+				factor = 1.5
+				higher_tier_than = count
+			}
+		}
+	}
+	
+	ipc_leave_faction_lawkeeper_power = {
+		only_playable = yes
+		is_in_society = yes
+		
+		filter = realm
+		ai_target_filter = realm
+
+		from_potential = {
+			society_rank == 3
+			is_imperial_court_lawkeeper_trigger = yes
+		}
+		potential = { 
+			is_playable = yes
+			independent = no
+			is_adult = yes
+		}
+		allow = {
+			FROM = {
+				society_currency >= 250
+				can_interact_with_imperial_court_revolt_trigger = yes
+			}
+			ROOT = {
+				in_faction = yes
+				can_interact_with_imperial_court_revolt_trigger = yes
+			}
+		}
+
+		effect = {
+			FROM = { change_society_currency = -250 }
+			custom_tooltip = {
+				text = ipc_leave_faction_lawkeeper_power_effect
+				liege = {
+					ROOT = { 
+						opinion = { modifier = opinion_coerced_into_leaving_faction who = PREV } 
+						character_event = { id = ipc.131 days = 1 }
+					}
+				}
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 0.1
+				FROM = { society_currency < 300 }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { trait = ambitious }
+			}
+			modifier = {
+				factor = 0
+				relative_power_to_liege < 5
+			}
+			modifier = {
+				factor = 0.5
+				liege = {
+					NOR = {
+						character = FROM
+						tier = emperor
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				relative_power_to_liege < 10
+			}
+			modifier = {
+				factor = 3
+				relative_power_to_liege > 30
+			}
+			modifier = {
+				factor = 3
+				leads_faction = yes
+			}
+			modifier = {
+				factor = 1.5
+				higher_tier_than = count
+			}
+			modifier = {
+				factor = 3
+				is_liege_or_above = FROM
+			}
+			modifier = {
+				factor = 2
+				liege = { tier = emperor }
+				FROM = { is_loyal_to_empire_trigger = yes }
+			}
+		}
+	}
+	
+	ipc_declare_traitor_spymaster_power = {
+		only_playable = yes
+		is_in_society = yes
+		
+		filter = realm
+		ai_target_filter = realm
+
+		from_potential = {
+			society_rank == 3
+			is_imperial_court_spymaster_trigger = yes
+		}
+		potential = { 
+			independent = no
+			is_adult = yes
+		}
+		allow = {
+			FROM = {
+				society_currency >= 350
+				can_interact_with_imperial_court_revolt_trigger = yes
+				custom_tooltip = {
+					text = ipc_declare_traitor_spymaster_power_allow
+					NOT = { has_character_modifier = ipc_declare_traitor_spymaster_power_timer }
+				}
+				hidden_tooltip = {
+					OR = { 
+						ai = no 
+						AND = {
+							ai = yes
+							NOT = { opinion = { who = ROOT value = 10 } }
+						}
+					}
+				}
+			}
+			ROOT = {
+				is_landed = yes
+				prisoner = no
+				war = no
+				NOR = {
+					top_liege = { 
+						show_scope_change = no 
+						ROOT = { is_child_of = PREV }
+					}
+					top_liege = { 
+						show_scope_change = no 
+						ROOT = { is_close_relative = PREV }
+					}
+					top_liege = { 
+						show_scope_change = no 
+						ROOT = { is_primary_heir = PREV }
+					}
+				}
+				can_interact_with_imperial_court_revolt_trigger = yes
+			}
+		}
+
+		effect = {
+			FROM = { 
+				change_society_currency = -350 
+				hidden_tooltip = { add_character_modifier = { modifier = ipc_declare_traitor_spymaster_power_timer years = 3 hidden = yes } }
+			}
+			custom_tooltip = {
+				text = ipc_declare_traitor_spymaster_power_effect
+				liege = {
+					ROOT = { 
+						opinion = { modifier = opinion_charge_traitor who = PREV } 
+						character_event = { id = ipc.133 days = 1 }
+					}
+				}
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.1
+			
+			
+			modifier = {
+				factor = 0.1
+				FROM = { society_currency < 400 }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { is_loyal_to_empire_trigger = yes }
+			}
+			modifier = {
+				factor = 0.5
+				dynasty = FROM
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { trait = ambitious }
+			}
+			modifier = {
+				factor = 3
+				is_foe = FROM
+			}
+			modifier = {
+				factor = 1.5
+				higher_tier_than = count
+			}
+		}
+	}
+	
+	ipc_relinquish_titles_power = { # (╯°□°）╯︵ ┻━┻
+		only_playable = yes
+		only_independent = yes 
+		is_in_society = yes
+		
+		filter = realm
+		ai_target_filter = realm
+
+		from_potential = {
+			is_imperial_court_member_trigger = yes
+			is_society_grandmaster = yes
+			OR = {
+				ai = no #so players can see it
+				tier = emperor
+			}
+		}
+		potential = {
+			higher_tier_than = baron
+			liege = { character = FROM }
+		}
+		allow = {
+			FROM = {
+				tier = emperor
+				society_currency >= 750
+				hidden_tooltip = {
+					OR = { 
+						ai = no 
+						AND = {
+							ai = yes
+							NOT = { opinion = { who = ROOT value = 15 } }
+						}
+					}
+				}
+			}
+			ROOT = {
+				is_landed = yes
+				is_adult = yes
+				NOT = { has_non_aggression_pact_with = FROM }
+				OR = {
+					prisoner = no
+					custom_tooltip = {
+						text = ipc_imprisoned_by_from
+						prisoner = yes
+						host = { character = FROM }
+					}
+				}
+				is_vice_royalty = no
+				can_interact_with_imperial_court_revolt_trigger = yes
+				custom_tooltip = {
+					text = ipc_relinquish_titles_power_allow
+					primary_title = {
+						ROOT = {
+							OR = {
+								any_demesne_title = { 
+									can_be_relinquished_trigger = yes
+									NOT = { de_jure_liege = PREVPREV } 
+								}
+								any_vassal = {
+									any_demesne_title = {
+										can_be_relinquished_trigger = yes
+										NOT = { de_jure_liege = PREVPREVPREV } 
+									}
+								}
+							}
+						}
+					}
+				}
+				custom_tooltip = {
+					text = ipc_relinquish_titles_power_allow2
+					war = no
+					any_vassal = { war = no }
+				}
+				trigger_if = {
+					limit = { society_influence >= 60 }
+					custom_tooltip = {
+						text = ipc_relinquish_titles_power_allow3
+						NOT = { has_character_flag = awaiting_relinquish_response }
+					}
+				}
+			}
+		}
+
+		effect = {
+			FROM = { change_society_currency = -750 }
+			ROOT = {
+				hidden_tooltip = { set_character_flag = awaiting_relinquish_response }
+				if = {
+					limit = { society_influence >= 60 }
+					custom_tooltip = {
+						text = ipc_relinquish_titles_power_effect
+						character_event = { id = ipc.137 days = 1 }
+					}
+				}
+				else = {
+					custom_tooltip = {
+						text = ipc_relinquish_titles_power_effect2
+						character_event = { id = ipc.135 }
+						opinion = { modifier = opinion_revoked_my_title who = FROM years = 10 }
+					}
+				}
+			}
+		}
+		
+		ai_acceptance = {
+			factor = 50
+			yes_threshold = 100 
+			
+			additive_modifier = { # Any type of modifier can be used, but "additive" is recommended as it is the most intuitive to the end user. Works same way as MTTHs, ai_will_do, and so on
+				value = 100
+				FROM = { show_scope_change = no society_influence < 60 }
+			}
+			additive_modifier = {
+				value = 15
+				trait = content
+			}
+			additive_modifier = {
+				value = 15
+				trait = humble
+			}
+			additive_modifier = {
+				value = 15
+				dynasty = FROM
+			}
+			additive_modifier = {
+				value = 20
+				is_loyal_to_empire_trigger = yes
+			}
+			
+			additive_modifier = {
+				value = -10
+				tier = duke
+			}
+			additive_modifier = {
+				value = -20
+				tier = king
+			}
+			additive_modifier = {
+				value = -5
+				trait = greedy
+			}
+			additive_modifier = {
+				value = -5
+				trait = envious
+			}
+			additive_modifier = {
+				value = -5
+				trait = proud
+			}
+			additive_modifier = {
+				value = -5
+				trait = ambitious
+			}
+			additive_modifier = {
+				value = -5
+				trait = stubborn
+			}
+			additive_modifier = {
+				value = -10
+				trait = lunatic
+			}
+			additive_modifier = {
+				value = -10
+				trait = possessed
+			}
+			additive_modifier = {
+				value = -5
+				trait = zealous
+				NOT = { religion = FROM }
+			}
+			additive_modifier = {
+				value = -5
+				NOT = { culture_group = FROM }
+			}
+			additive_modifier = {
+				value = -5
+				NOT = { culture = FROM }
+			}
+			additive_modifier = {
+				value = -5
+				is_imperial_court_member_trigger = yes
+				society_influence > 70
+			}
+			additive_modifier = {
+				value = -5
+				is_imperial_court_member_trigger = yes
+				society_influence > 80
+			}
+			additive_modifier = {
+				value = -5
+				is_imperial_court_member_trigger = yes
+				society_influence > 90
+			}
+			additive_modifier = {
+				value = -5
+				is_imperial_court_member_trigger = yes
+				has_unique_imperial_office_trigger = yes
+			}
+			
+		}
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.1
+			
+			modifier = {
+				factor = 0
+				primary_title = {
+					OR = {
+						has_law = succ_gavelkind
+						has_law = succ_elective_gavelkind
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				ai = no
+			}
+			modifier = {
+				factor = 0.5
+				dynasty = FROM
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { society_influence > 60 }
+				NOT = { trait = content }
+			}
+			modifier = {
+				factor = 1.25
+				is_powerful_vassal = yes
+			}
+			modifier = {
+				factor = 1.5
+				demesne_size > 3
+			}
+			modifier = {
+				factor = 1.5
+				higher_tier_than = count
+			}
+			modifier = {
+				factor = 1.5
+				higher_tier_than = duke
+			}
+			modifier = {
+				factor = 2
+				is_foe = FROM
+			}
+		}
+	}
+	
+	
+}
+
+#title_decisions = { 
+#	test_man_title = {
+#		
+#		filter = realm_owned
+#		
+#		from_potential = { ai = no }
+#		potential = { has_title_flag = is_imperial_capital }
+#		allow = { is_quest_target = no }
+#		effect = { FROM = { wealth = 1 } }
+#	}
+#}
+
+
+
+
+
+
+
+
+
+
+

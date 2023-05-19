@@ -1,0 +1,300 @@
+song = {
+	name = "Chevalier, Mult Estes Guariz - French Crusade Song.ogg"
+	song_name = "Chevalier, Mult Estes Guariz"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Holy Grail Music - Quest for the Holy Grail.ogg"
+	song_name = "Quest for the Holy Grail"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Deus Lo Vult (Total War Battles Kingdom OST).ogg"
+	song_name = "Deus Lo Vult"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "EPIC MUSIC Tides of Chaos By DTD Music.ogg"
+	song_name = "Tides of Chaos"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Hans Zimmer - Chevaliers de Sangreal (Cello Cover).ogg"
+	song_name = "Chevaliers de Sangreal"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Astronomia (Medieval Style) (Tavern Version).ogg"
+	song_name = "Astronomia (Tavern Version)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { has_focus = focus_carousing }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Cantiga de Santa Maria 205 La mora y su nino Oracon con piadade.ogg"
+	song_name = "Cantiga de Santa María 205"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Gace Brule, 13th c. France Biaus est estez.ogg"
+	song_name = "Gace Brulé"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Jaufre Rudel (1113-1170) Officium lusorum.ogg"
+	song_name = "La Passion du Jeu : Officium Lusorum"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Ludus Danielis - Ad honorem tui, Christe et.ogg"
+	song_name = "Ad honorem tui, Christe et"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantigas de Santa Maria 38 Pois que Deus quis da Virgen fillo.ogg"
+	song_name = "Cantigas de Santa Maria 38"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Da Pacem, Domine A Templar Chant Lyric Video (Full chant).ogg"
+	song_name = "Da Pacem, Domine"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantus Romanus 'Veritas mea et misericordia' - Psalm 88(Lyric Video).ogg"
+	song_name = "Veritas Mea et Misericordia"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantus Romanus 'Inveni David servum meum' - Psalm 88 (Lyric Video).ogg"
+	song_name = "Inveni David Servum Meum"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Hymnus Peregrinorum Compostela, Dum Pater Familias (Lyric Video).ogg"
+	song_name = "Compostela, Dum Pater Familias"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { religion_group = christian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}

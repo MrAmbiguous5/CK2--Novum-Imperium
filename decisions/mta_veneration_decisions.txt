@@ -1,0 +1,198 @@
+targetted_decisions = {
+
+	mta_mark_for_veneration = {
+		ai = no 
+		only_playable = yes
+
+		filter = all_including_me
+
+		from_potential = {
+			has_dlc = "Holy Fury"
+			controls_religion = yes
+			is_playable = yes
+			ai = no
+			OR = {
+				has_religion_feature = religion_beatification
+				religion_group = christian
+			}
+			has_religion_feature = religion_temporal_head
+		}
+
+		potential = {
+			is_playable = yes
+			is_adult = yes
+			religion = FROM
+			NOT = { trait = mta_marked_for_sainthood }
+		}
+
+		allow = {
+			is_adult = yes
+			religion = FROM
+			conditional_tooltip = {
+				trigger = {
+					any_owned_bloodline = {
+						founder = { character = PREVPREV }
+						has_bloodline_flag = bloodline_reformer 
+					}
+				}
+				custom_tooltip = {
+					text = mta_NOT_FOUNDER_REFORMER_BLOODLINE
+					
+					NOT = {
+						any_owned_bloodline = {
+							founder = { character = PREVPREV }
+							has_bloodline_flag = bloodline_reformer 
+						}
+					}
+				}
+			}
+			FROM = { 
+				custom_tooltip = {
+					text = mta_NOT_USED_MARKED_FOR_VENERATION
+					hidden_tooltip = {
+						NOT = { trait = mta_used_mark_for_veneration } 
+					}
+				}
+				conditional_tooltip = {
+					trigger = {
+						has_game_rule = { 
+							name = mta_rule_veneration 
+							value = default 
+						}
+					}
+					custom_tooltip = {
+						text = mta_NOT_RECENTLY_USED_VENERATION_DEFAULT # Has NOT venerated an ancestor by decision within the last 50 years
+						hidden_tooltip = {
+							NOT = { has_character_modifier = mta_recently_used_veneration }
+						}
+					}
+				}
+				conditional_tooltip = {
+					trigger = {
+						has_game_rule = { 
+							name = mta_rule_veneration 
+							value = halved 
+						}
+					}
+					custom_tooltip = {
+						text = mta_NOT_RECENTLY_USED_VENERATION_HALVED # Has NOT venerated an ancestor by decision within the last 25 years
+						hidden_tooltip = {
+							NOT = { has_character_modifier = mta_recently_used_veneration }
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_trait = mta_marked_for_sainthood
+			
+			if = {
+				limit = { NOT = { character = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_marked_for_veneration
+					years = 5
+				}
+			}
+			
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_game_rule = { 
+							name = mta_rule_veneration 
+							value = default 
+						}
+					}
+					FROM = { 
+						add_character_modifier = { name = mta_recently_used_veneration years = 50 hidden = yes }
+						add_trait = mta_used_mark_for_veneration 
+					}
+				}
+				else_if = {
+					limit = {
+						has_game_rule = { 
+							name = mta_rule_veneration 
+							value = halved 
+						}
+					}
+					FROM = { 
+						add_character_modifier = { name = mta_recently_used_veneration years = 25 hidden = yes }
+						add_trait = mta_used_mark_for_veneration 
+					}
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	mta_unmark_for_veneration = {
+		ai = no 
+		only_playable = yes
+
+		filter = all_including_me
+
+		from_potential = {
+			has_dlc = "Holy Fury"
+			controls_religion = yes
+			is_playable = yes
+			ai = no
+			OR = {
+				has_religion_feature = religion_beatification
+				religion_group = christian
+			}
+			has_religion_feature = religion_temporal_head
+		}
+
+		potential = {
+			is_adult = yes
+			religion = FROM
+			trait = mta_marked_for_sainthood
+		}
+
+		allow = {
+			trait = mta_marked_for_sainthood
+		}
+
+		effect = {
+			remove_trait = mta_marked_for_sainthood
+			
+			if = {
+				limit = { 
+					religion = FROM 
+					NOT = { character = FROM }
+				}
+				opinion = {
+					who = FROM
+					modifier = opinion_very_disappointed
+					years = 5
+				}
+				hidden_tooltip = {
+					remove_opinion = { who = FROM modifier = opinion_marked_for_veneration }
+				}
+			}
+			
+			hidden_tooltip = {
+				FROM = { 
+					remove_character_modifier = mta_recently_used_veneration
+					remove_trait = mta_used_mark_for_veneration 
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,582 @@
+song = {
+	name = "LAST OF THE MOHICANS THE GAEL Royal Scots Dragoon Guards.ogg"
+	song_name = "The Gael"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Prophecy.ogg"
+	song_name = "Prophecy"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Fabled (epic magical fantasy music).ogg"
+	song_name = "Fabled"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "The King of the Highlands REMASTERED (Celtic battle music).ogg"
+	song_name = "The King of the Highlands"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Bua No Bas (Victory or Death).ogg"
+	song_name = "Bua Nó Bás"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Walking With The Ancestors.ogg"
+	song_name = "Walking With The Ancestors"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Most Epic Music Ever The Fable by Fran Soto.ogg"
+	song_name = "The Fable"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Legacy.ogg"
+	song_name = "Legacy"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Antumnos (Celtic music).ogg"
+	song_name = "Antumnos"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Siochain Shuthain.ogg"
+	song_name = "Síocháin Shuthain"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 6
+			mother_even_if_dead = {
+				is_alive = no
+			}
+		}	
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Victorious.ogg"
+	song_name = "Victorious"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Assassin's Creed Celtic Age (Unofficial Theme).ogg"
+	song_name = "Celtic Age"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Epic Fantasy E Kolesnikov - Dreams - Epic Music VN.ogg"
+	song_name = "Dreams"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Crann Na Beatha.ogg"
+	song_name = "Crann Na Beatha"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - For the King.ogg"
+	song_name = "For the King"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Hero.ogg"
+	song_name = "Hero"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Epic Fantasy Music - The Wolf and the Moon.ogg"
+	song_name = "The Wolf and the Moon"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Fantasy Celtic Music - Spirit of the Wild.ogg"
+	song_name = "Spirit of the Wild"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Wolf Blood.ogg"
+	song_name = "Wolf Blood"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Celtic Music - Ancient Storm.ogg"
+	song_name = "Ancient Storm"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Winterheart (Celtic fantasy music).ogg"
+	song_name = "Winterheart"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Baudica by Prima Nocta.ogg"
+	song_name = "Baudica"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "BEALTAINE.ogg"
+	song_name = "Bealtaine"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "From the Fields of Gallia (Epic Celtic Metal).ogg"
+	song_name = "From the Fields of Gallia"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0.1
+			war = no
+		}	
+		modifier = {
+			factor = 0.1
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Come Out Ye Black and Tans hidden.ogg"
+	song_name = "Come Out Ye Black and Tans"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = celtic }
+		}
+		modifier = {
+			factor = 0.1
+			war = no
+		}	
+		modifier = {
+			factor = 0.1
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Scotland Theme - Ancient (Civilization 6 OST) Scotland the Brave Bonnie Dundee.ogg"
+	song_name = "Scotland the Brave; Bonnie Dundee (Ancient)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = scottish }
+			NOT = { culture = pictish }
+		}
+		modifier = {
+			factor = 2
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Scotland Theme - Medieval (Civilization 6 OST) Scotland the Brave Bonnie Dundee.ogg"
+	song_name = "Scotland the Brave; Bonnie Dundee (Medieval)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = scottish }
+			NOT = { culture = pictish }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Scotland Theme - Industrial (Civilization 6 OST) Scotland the Brave Bonnie Dundee.ogg"
+	song_name = "Scotland the Brave; Bonnie Dundee (Industrial)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = scottish }
+			NOT = { culture = pictish }
+		}
+		modifier = {
+			factor = 0.5
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Scotland Theme - Atomic (Civilization 6 OST) Scotland the Brave Bonnie Dundee.ogg"
+	song_name = "Scotland the Brave; Bonnie Dundee (Atomic)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = scottish }
+			NOT = { culture = pictish }
+		}
+		modifier = {
+			factor = 0.1
+			war = no
+		}	
+		modifier = {
+			factor = 0.1
+			war = yes
+		}
+	}
+	volume = 2
+}

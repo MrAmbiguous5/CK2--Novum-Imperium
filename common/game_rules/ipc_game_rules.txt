@@ -1,0 +1,44 @@
+starting_ipc_courts_byzantine = {
+	name = "rule_starting_ipc_courts_byzantine"
+	group = "RULE_GROUP_IPC"
+	option = {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "rule_starting_ipc_courts_byzantine_default_desc"
+	}
+	option = {
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "rule_starting_ipc_courts_byzantine_off_desc"
+	}
+}
+
+starting_ipc_courts_hre = {
+	name = "rule_starting_ipc_courts_hre"
+	group = "RULE_GROUP_IPC"
+	option = {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "rule_starting_ipc_courts_hre_default_desc"
+	}
+	option = {
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "rule_starting_ipc_courts_hre_off_desc"
+	}
+}
+
+starting_ipc_courts_arabia = {
+	name = "rule_starting_ipc_courts_arabia"
+	group = "RULE_GROUP_IPC"
+	option = {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "rule_starting_ipc_courts_arabia_default_desc"
+	}
+	option = {
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "rule_starting_ipc_courts_arabia_off_desc"
+	}
+}

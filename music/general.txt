@@ -1,0 +1,56 @@
+song = {
+	name = "1203944181.ogg"
+	
+	chance = {
+		factor = 1
+		
+	}		
+}
+song = {
+	name = "1719586427.ogg"
+	
+	chance = {
+		factor = 1
+		
+	}		
+}
+song = {
+	name = "2081406526.ogg"
+	
+	chance = {
+		factor = 1.5
+		
+	}		
+}
+song = {
+	name = "2451706169.ogg"
+	
+	chance = {
+		factor = 1.5
+		
+	}		
+}
+song = {
+	name = "2988480535.ogg"
+	
+	chance = {
+		factor = 1
+		
+	}		
+}
+song = {
+	name = "876802622.ogg"
+	
+	chance = {
+		factor = 1.5
+		
+	}		
+}
+song = {
+	name = "Firelink.ogg"
+	
+	chance = {
+		factor = 1
+		
+	}		
+}

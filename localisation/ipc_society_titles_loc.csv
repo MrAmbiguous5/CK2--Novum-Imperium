@@ -1,0 +1,596 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+
+
+############Societies############
+
+imperial_court_christian_1;Imperial Court of [imperial_court_christian_1_title.GetName];;;;;;;;;;;;;x
+imperial_court_christian_1_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But the [Root.TopLiege.GetTitle] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_christian_2;Imperial Court of [imperial_court_christian_2_title.GetName];;;;;;;;;;;;;x
+imperial_court_christian_2_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But the [Root.TopLiege.GetTitle] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_christian_3;Imperial Court of [imperial_court_christian_3_title.GetName];;;;;;;;;;;;;x
+imperial_court_christian_3_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But the [Root.TopLiege.GetTitle] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+
+imperial_court_muslim_1;Imperial Court of [imperial_court_muslim_1_title.GetName];;;;;;;;;;;;;x
+imperial_court_muslim_1_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But the [Root.TopLiege.GetTitle] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_muslim_2;Imperial Court of [imperial_court_muslim_2_title.GetName];;;;;;;;;;;;;x
+imperial_court_muslim_2_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But the [Root.TopLiege.GetTitle] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_muslim_3;Imperial Court of [imperial_court_muslim_3_title.GetName];;;;;;;;;;;;;x
+imperial_court_muslim_3_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But the [Root.TopLiege.GetTitle] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+
+imperial_court_pagan_1;Imperial Court of [imperial_court_pagan_1_title.GetName];;;;;;;;;;;;;x
+imperial_court_pagan_1_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But [Root.TopLiege.GetTitledFirstName] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_pagan_2;Imperial Court of [imperial_court_pagan_2_title.GetName];;;;;;;;;;;;;x
+imperial_court_pagan_2_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But [Root.TopLiege.GetTitledFirstName] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_pagan_3;Imperial Court of [imperial_court_pagan_3_title.GetName];;;;;;;;;;;;;x
+imperial_court_pagan_3_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But [Root.TopLiege.GetTitledFirstName] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+
+imperial_court_eastern_1;Imperial Court of [imperial_court_eastern_1_title.GetName];;;;;;;;;;;;;x
+imperial_court_eastern_1_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But [Root.TopLiege.GetTitledFirstName] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_eastern_2;Imperial Court of [imperial_court_eastern_2_title.GetName];;;;;;;;;;;;;x
+imperial_court_eastern_2_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But [Root.TopLiege.GetTitledFirstName] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+imperial_court_eastern_3;Imperial Court of [imperial_court_eastern_3_title.GetName];;;;;;;;;;;;;x
+imperial_court_eastern_3_desc;The ambitious and ruthless elites of the [Root.TopLiege.GetTitle]'s court strive to fulfil their goals and those of their [Root.TopLiege.GetMasterMistress]. The more powerful the court grows the more it will be able to accomplish. But [Root.TopLiege.GetTitledFirstName] must be sure to maintain control, or else [Root.TopLiege.GetSheHe] will find [Root.TopLiege.GetHerHis] authority challenged.;;;;;;;;;;;;;x
+
+imperial_court_byzantine;Imperial Court of the Byzantine Empire;;;;;;;;;;;;;x
+imperial_court_byzantine_desc;The Imperial Court of Constantinople is usually regarded as the most prestigious in all Christendom. The court is rife with opportunities to ascend to greatness, but not without opposition from those seeking the same. Those wise in court politics know that sometimes the pen is mightier than the sword. The balance of power between the [Root.TopLiege.GetTitle] and [Root.TopLiege.GetHerHis] inner council is ever shifting.;;;;;;;;;;;;;x
+
+imperial_court_hre;Imperial Court of the Holy Roman Empire;;;;;;;;;;;;;x
+imperial_court_hre_desc;The Court of the Holy Roman Empire is ever filled with squabbling nobles seeking to further empower themselves within the empire, while others struggle to strengthen the empire itself. It falls to the [Root.TopLiege.GetTitle] to carefully manage this amalgamation of interests, lest civil war engulf the empire.;;;;;;;;;;;;;x
+
+imperial_court_arabia;Imperial Court of the Arabian Empire;;;;;;;;;;;;;x
+imperial_court_arabia_desc;The court of the Islamic heartlands is often regarded as the most prestigious in the world, an outstanding exemplar of culture and refinement for the whole of the Dar al-Islam. But those wise in court politics know that beneath the glory and splendour, nothing is sacred - and not even the [Root.TopLiege.GetTitle] is safe from the intrigues of [Root.TopLiege.GetHerHis] subjects.;;;;;;;;;;;;;x
+
+imperial_court_roman_empire;Imperial Court of the Roman Empire;;;;;;;;;;;;;x
+imperial_court_roman_empire_desc;The Roman Empire has been restored and with it the authority of Rome. The Eternal City is once again the center of the known world, its great buildings filled with senators, officials, and foreign dignataries all vying for the [Root.TopLiege.GetTitle]'s time. The Roman Court must be kept strong, but controlled carefully, so that Rome may never fall again.;;;;;;;;;;;;;x
+
+
+
+####leader descs
+imperial_court_leader_emperor_desc;The [Root.TopLiege.GetTitle] is the ruler of [Root.TopLiege.PrimaryTitle.GetName] and leads the Imperial Court. Under [Root.TopLiege.GetHerHis] watchful eye, members of the Imperial Court work to seek [Root.TopLiege.GetHerHis] favor.;;;;;;;;;;;;;x
+imperial_court_leader_regent_desc;[Root.GetImperialRegentAssignableOffice] [Society.current_imperial_regent.GetFirstName] is the [Root.TopLiege.GetTitle]'s acting representative within the Imperial Court. Although [Society.current_imperial_regent.GetSheHe] is the leader of the court, [Society.current_imperial_regent.GetSheHe] does not have complete control and members may be more inclined to seek power for themselves.;;;;;;;;;;;;;x
+
+imperial_court_christian_1_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_christian_2_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_christian_3_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+
+imperial_court_muslim_1_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_muslim_2_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_muslim_3_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+
+imperial_court_pagan_1_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_pagan_2_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_pagan_3_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+
+imperial_court_eastern_1_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_eastern_2_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_eastern_3_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+
+imperial_court_byzantine_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_hre_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_arabia_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+imperial_court_roman_empire_leader_desc;[GetIpcSocietyLeaderDesc];;;;;;;;;;;;;x
+
+
+
+
+####Ranks
+#doesnt work for dynamic leader name, wait for holy fury for maybe fix?
+#[From.GetTitle]
+#imperial_court_leader_emperor;[From.GetTitle];;;;;;;;;;;;;x
+#imperial_court_christian_leader_rep;Master of Offices;;;;;;;;;;;;;x
+
+##Christian Courts
+imperial_court_christian_1_rank_1_female;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_christian_1_rank_1_male;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_christian_1_rank_2_female;Lady;;;;;;;;;;;;;x
+imperial_court_christian_1_rank_2_male;Lord;;;;;;;;;;;;;x
+imperial_court_christian_1_rank_3_female;High Councillor;;;;;;;;;;;;;x
+imperial_court_christian_1_rank_3_male;High Councillor;;;;;;;;;;;;;x
+imperial_court_christian_1_rank_4_female;Empress;;;;;;;;;;;;;x
+imperial_court_christian_1_rank_4_male;Emperor;;;;;;;;;;;;;x
+
+imperial_court_christian_2_rank_1_female;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_christian_2_rank_1_male;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_christian_2_rank_2_female;Lady;;;;;;;;;;;;;x
+imperial_court_christian_2_rank_2_male;Lord;;;;;;;;;;;;;x
+imperial_court_christian_2_rank_3_female;High Councillor;;;;;;;;;;;;;x
+imperial_court_christian_2_rank_3_male;High Councillor;;;;;;;;;;;;;x
+imperial_court_christian_2_rank_4_female;Empress;;;;;;;;;;;;;x
+imperial_court_christian_2_rank_4_male;Emperor;;;;;;;;;;;;;x
+
+imperial_court_christian_3_rank_1_female;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_christian_3_rank_1_male;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_christian_3_rank_2_female;Lady;;;;;;;;;;;;;x
+imperial_court_christian_3_rank_2_male;Lord;;;;;;;;;;;;;x
+imperial_court_christian_3_rank_3_female;High Councillor;;;;;;;;;;;;;x
+imperial_court_christian_3_rank_3_male;High Councillor;;;;;;;;;;;;;x
+imperial_court_christian_3_rank_4_female;Empress;;;;;;;;;;;;;x
+imperial_court_christian_3_rank_4_male;Emperor;;;;;;;;;;;;;x
+
+##Muslim Courts
+imperial_court_muslim_1_rank_1_female;Mawlat;;;;;;;;;;;;;x
+imperial_court_muslim_1_rank_1_male;Mawla;;;;;;;;;;;;;x
+imperial_court_muslim_1_rank_2_female;Na'iba;;;;;;;;;;;;;x
+imperial_court_muslim_1_rank_2_male;Na'ib;;;;;;;;;;;;;x
+imperial_court_muslim_1_rank_3_female;Qahramana;;;;;;;;;;;;;x
+imperial_court_muslim_1_rank_3_male;Vizier;;;;;;;;;;;;;x
+imperial_court_muslim_1_rank_4_female;Badshah;;;;;;;;;;;;;x
+imperial_court_muslim_1_rank_4_male;Badshah;;;;;;;;;;;;;x
+
+imperial_court_muslim_2_rank_1_female;Mawlat;;;;;;;;;;;;;x
+imperial_court_muslim_2_rank_1_male;Mawla;;;;;;;;;;;;;x
+imperial_court_muslim_2_rank_2_female;Na'iba;;;;;;;;;;;;;x
+imperial_court_muslim_2_rank_2_male;Na'ib;;;;;;;;;;;;;x
+imperial_court_muslim_2_rank_3_female;Qahramana;;;;;;;;;;;;;x
+imperial_court_muslim_2_rank_3_male;Vizier;;;;;;;;;;;;;x
+imperial_court_muslim_2_rank_4_female;Badshah;;;;;;;;;;;;;x
+imperial_court_muslim_2_rank_4_male;Badshah;;;;;;;;;;;;;x
+
+imperial_court_muslim_3_rank_1_female;Mawlat;;;;;;;;;;;;;x
+imperial_court_muslim_3_rank_1_male;Mawla;;;;;;;;;;;;;x
+imperial_court_muslim_3_rank_2_female;Na'iba;;;;;;;;;;;;;x
+imperial_court_muslim_3_rank_2_male;Na'ib;;;;;;;;;;;;;x
+imperial_court_muslim_3_rank_3_female;Qahramana;;;;;;;;;;;;;x
+imperial_court_muslim_3_rank_3_male;Vizier;;;;;;;;;;;;;x
+imperial_court_muslim_3_rank_4_female;Badshah;;;;;;;;;;;;;x
+imperial_court_muslim_3_rank_4_male;Badshah;;;;;;;;;;;;;x
+
+##Pagan Courts
+imperial_court_pagan_1_rank_1_female;Retainer;;;;;;;;;;;;;x
+imperial_court_pagan_1_rank_1_male;Retainer;;;;;;;;;;;;;x
+imperial_court_pagan_1_rank_2_female;Oathwoman;;;;;;;;;;;;;x
+imperial_court_pagan_1_rank_2_male;Oathman;;;;;;;;;;;;;x
+imperial_court_pagan_1_rank_3_female;High Councillor;;;;;;;;;;;;;x
+imperial_court_pagan_1_rank_3_male;High Councillor;;;;;;;;;;;;;x
+imperial_court_pagan_1_rank_4_female;Empress;;;;;;;;;;;;;x
+imperial_court_pagan_1_rank_4_male;Emperor;;;;;;;;;;;;;x
+
+imperial_court_pagan_2_rank_1_female;Retainer;;;;;;;;;;;;;x
+imperial_court_pagan_2_rank_1_male;Retainer;;;;;;;;;;;;;x
+imperial_court_pagan_2_rank_2_female;Oathwoman;;;;;;;;;;;;;x
+imperial_court_pagan_2_rank_2_male;Oathman;;;;;;;;;;;;;x
+imperial_court_pagan_2_rank_3_female;High Councillor;;;;;;;;;;;;;x
+imperial_court_pagan_2_rank_3_male;High Councillor;;;;;;;;;;;;;x
+imperial_court_pagan_2_rank_4_female;Empress;;;;;;;;;;;;;x
+imperial_court_pagan_2_rank_4_male;Emperor;;;;;;;;;;;;;x
+
+imperial_court_pagan_3_rank_1_female;Retainer;;;;;;;;;;;;;x
+imperial_court_pagan_3_rank_1_male;Retainer;;;;;;;;;;;;;x
+imperial_court_pagan_3_rank_2_female;Oathwoman;;;;;;;;;;;;;x
+imperial_court_pagan_3_rank_2_male;Oathman;;;;;;;;;;;;;x
+imperial_court_pagan_3_rank_3_female;High Councillor;;;;;;;;;;;;;x
+imperial_court_pagan_3_rank_3_male;High Councillor;;;;;;;;;;;;;x
+imperial_court_pagan_3_rank_4_female;Empress;;;;;;;;;;;;;x
+imperial_court_pagan_3_rank_4_male;Emperor;;;;;;;;;;;;;x
+
+##Eastern Courts
+imperial_court_eastern_1_rank_1_female;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_eastern_1_rank_1_male;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_eastern_1_rank_2_female;Ayagara;;;;;;;;;;;;;x
+imperial_court_eastern_1_rank_2_male;Ayagar;;;;;;;;;;;;;x
+imperial_court_eastern_1_rank_3_female;Naika;;;;;;;;;;;;;x
+imperial_court_eastern_1_rank_3_male;Naik;;;;;;;;;;;;;x
+imperial_court_eastern_1_rank_4_female;Samrajni;;;;;;;;;;;;;x
+imperial_court_eastern_1_rank_4_male;Samrat;;;;;;;;;;;;;x
+
+imperial_court_eastern_2_rank_1_female;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_eastern_2_rank_1_male;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_eastern_2_rank_2_female;Ayagara;;;;;;;;;;;;;x
+imperial_court_eastern_2_rank_2_male;Ayagar;;;;;;;;;;;;;x
+imperial_court_eastern_2_rank_3_female;Naika;;;;;;;;;;;;;x
+imperial_court_eastern_2_rank_3_male;Naik;;;;;;;;;;;;;x
+imperial_court_eastern_2_rank_4_female;Samrajni;;;;;;;;;;;;;x
+imperial_court_eastern_2_rank_4_male;Samrat;;;;;;;;;;;;;x
+
+imperial_court_eastern_3_rank_1_female;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_eastern_3_rank_1_male;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_eastern_3_rank_2_female;Ayagara;;;;;;;;;;;;;x
+imperial_court_eastern_3_rank_2_male;Ayagar;;;;;;;;;;;;;x
+imperial_court_eastern_3_rank_3_female;Naika;;;;;;;;;;;;;x
+imperial_court_eastern_3_rank_3_male;Naik;;;;;;;;;;;;;x
+imperial_court_eastern_3_rank_4_female;Samrajni;;;;;;;;;;;;;x
+imperial_court_eastern_3_rank_4_male;Samrat;;;;;;;;;;;;;x
+ 
+##Unique Courts
+imperial_court_byzantine_rank_1_female;Patrikia;;;;;;;;;;;;;x
+imperial_court_byzantine_rank_1_male;Patrikios;;;;;;;;;;;;;x
+imperial_court_byzantine_rank_2_female;Kephale;;;;;;;;;;;;;x
+imperial_court_byzantine_rank_2_male;Kephale;;;;;;;;;;;;;x
+imperial_court_byzantine_rank_3_female;Logothetissa;;;;;;;;;;;;;x
+imperial_court_byzantine_rank_3_male;Logothetes;;;;;;;;;;;;;x
+imperial_court_byzantine_rank_4_female;Basilissa;;;;;;;;;;;;;x
+imperial_court_byzantine_rank_4_male;Basileus;;;;;;;;;;;;;x
+
+imperial_court_hre_rank_1_female;Kurtisane;;;;;;;;;;;;;x
+imperial_court_hre_rank_1_male;Höfling;;;;;;;;;;;;;x
+imperial_court_hre_rank_2_female;Dame;;;;;;;;;;;;;x
+imperial_court_hre_rank_2_male;Herr;;;;;;;;;;;;;x
+imperial_court_hre_rank_3_female;Herzogin;;;;;;;;;;;;;x
+imperial_court_hre_rank_3_male;Herzog;;;;;;;;;;;;;x
+imperial_court_hre_rank_4_female;Kaiserin;;;;;;;;;;;;;x
+imperial_court_hre_rank_4_male;Kaiser;;;;;;;;;;;;;x
+
+imperial_court_arabia_rank_1_female;Mawlat;;;;;;;;;;;;;x
+imperial_court_arabia_rank_1_male;Mawla;;;;;;;;;;;;;x
+imperial_court_arabia_rank_2_female;Na'iba;;;;;;;;;;;;;x
+imperial_court_arabia_rank_2_male;Na'ib;;;;;;;;;;;;;x
+imperial_court_arabia_rank_3_female;Qahramana;;;;;;;;;;;;;x
+imperial_court_arabia_rank_3_male;Vizier;;;;;;;;;;;;;x
+imperial_court_arabia_rank_4_female;Badshah;;;;;;;;;;;;;x
+imperial_court_arabia_rank_4_male;Badshah;;;;;;;;;;;;;x
+
+imperial_court_roman_empire_rank_1_female;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_roman_empire_rank_1_male;Imperial Courtier;;;;;;;;;;;;;x
+imperial_court_roman_empire_rank_2_female;Domina;;;;;;;;;;;;;x
+imperial_court_roman_empire_rank_2_male;Dominus;;;;;;;;;;;;;x
+imperial_court_roman_empire_rank_3_female;Tribune;;;;;;;;;;;;;x
+imperial_court_roman_empire_rank_3_male;Tribune;;;;;;;;;;;;;x
+imperial_court_roman_empire_rank_4_female;Augusta;;;;;;;;;;;;;x
+imperial_court_roman_empire_rank_4_male;Augustus;;;;;;;;;;;;;x
+
+
+
+####Currencies
+currency_name_imperial_court_christian;Renown;;;;;;;;;;;;;x
+currency_name_imperial_court_christian_1;Renown;;;;;;;;;;;;;x
+currency_name_imperial_court_christian_2;Renown;;;;;;;;;;;;;x
+currency_name_imperial_court_christian_3;Renown;;;;;;;;;;;;;x
+currency_name_imperial_court_muslim;Recognition;;;;;;;;;;;;;x
+currency_name_imperial_court_muslim_1;Recognition;;;;;;;;;;;;;x
+currency_name_imperial_court_muslim_2;Recognition;;;;;;;;;;;;;x
+currency_name_imperial_court_muslim_3;Recognition;;;;;;;;;;;;;x
+currency_name_imperial_court_pagan;Fame;;;;;;;;;;;;;x
+currency_name_imperial_court_pagan_1;Fame;;;;;;;;;;;;;x
+currency_name_imperial_court_pagan_2;Fame;;;;;;;;;;;;;x
+currency_name_imperial_court_pagan_3;Fame;;;;;;;;;;;;;x
+currency_name_imperial_court_eastern;Merit;;;;;;;;;;;;;x
+currency_name_imperial_court_eastern_1;Merit;;;;;;;;;;;;;x
+currency_name_imperial_court_eastern_2;Merit;;;;;;;;;;;;;x
+currency_name_imperial_court_eastern_3;Merit;;;;;;;;;;;;;x
+currency_name_imperial_court_byzantine;Splendor;;;;;;;;;;;;;x
+currency_name_imperial_court_hre;Prominence;;;;;;;;;;;;;x
+currency_name_imperial_court_arabia;Recognition;;;;;;;;;;;;x
+currency_name_imperial_court_roman_empire;Imperium;;;;;;;;;;;;;x
+
+
+
+
+#####Currency gains
+
+ipc_emperor_gain;[Root.GetTitle]: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_regent_gain;[Root.GetImperialRegentAssignableOffice]: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+ipc_emperor_influence_1;Weak Imperial Court: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_emperor_influence_2;Adequate Imperial Court: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_emperor_influence_4;Influential Imperial Court: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_emperor_influence_5;Dangerous Imperial Court: §R$GAIN$§!;;;;;;;;;;;;;x
+
+ipc_emperor_tribute_gain;Tribute Chests: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+ipc_efficiency_gain;Imperial Office Efficiency: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+##education
+ipc_poor_education_gain;Has a §Ypathetic§! education: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_good_education_gain;Has a §Ygreat§! education: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_excellent_education_gain;Has an §Yexcellent§! education: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+##health and condition
+ipc_illness_gain;Is infected with a §Ydisease§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_disfigured_likes_gain;The [Root.TopLiege.GetTitle] is also §Ydisfigured§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_one_eyed_likes_gain;The [Root.TopLiege.GetTitle] is also §Ymissing an eye§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_one_handed_likes_gain;The [Root.TopLiege.GetTitle] is also §Ymissing a hand§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_one_legged_likes_gain;The [Root.TopLiege.GetTitle] is also §Ymissing a leg§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_fat_likes_gain;The [Root.TopLiege.GetTitle] is also §Yfat§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_fat_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yobesity§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+##genetic and appearance
+ipc_fair_gain;The [Root.TopLiege.GetTitle] finds [Root.GetFirstName] §Yattractive§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_quick_gain;Possesses an §Yacute mind§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_slow_gain;Is a bit §Yslow§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_genius_gain;Possesses a §Ytowering intellect§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_imbecile_gain;Is a complete §Yimbecile§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_inbred_gain;Is an §Yinbred monstrosity§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_robust_gain;Is physically §Yrobust§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_sturdy_gain;Is physically §Ysturdy§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_feeble_gain;Is physically §Yweak§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_shrewd_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yshrewdness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_shrewd_dislikes_gain;The [Root.TopLiege.GetTitle] dislikes §Yshrewdness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_dull_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ydullness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_dull_dislikes_gain;The [Root.TopLiege.GetTitle] dislikes §Ydullness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_groomed_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ycareful grooming§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_groomed_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yexcessive grooming§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_uncouth_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yunpretentious manners§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_uncouth_dislikes_gain;The [Root.TopLiege.GetTitle] dislikes §Yuncouth manners§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+##lifestyles
+ipc_court_lifestyle_gain;Has an Imperial Court §Ylifestyle§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_administrator_lifestyle_gain;Is a superb §Yadministrator§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_architect_lifestyle_gain;Is a master §Yarchitect§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_duelist_lifestyle_gain;Is a renowned §Yduelist§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_hedonist_lifestyle_gain;Is a rampant §Yhedonist§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_hunter_lifestyle_gain;Is a skilled §Yhunter§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_impaler_lifestyle_gain;;Is a cruel §Yimpaler§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_scholar_lifestyle_gain;Is a wise §Yscholar§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_strategist_lifestyle_gain;Is an adept §Ystrategist§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+##virtues
+ipc_chaste_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ychastity§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_chaste_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ychastity§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_temperate_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ytemperance§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_temperate_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ytemperance§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_charitable_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ycharity§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_charitable_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ycharity§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_diligent_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ydiligence§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_diligent_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ydiligence§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_patient_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ypatience§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_patient_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ypatience§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_kind_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ykindness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_kind_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ykindness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_humble_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yhumility§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_humble_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yhumility§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+##sins
+ipc_lustful_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ylust§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_lustful_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ylust§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_gluttonous_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ygluttony§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_gluttonous_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ygluttony§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_greedy_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ygreed§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_greedy_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ygreed§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_slothful_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ysloth§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_slothful_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ysloth§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_wroth_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ywrath§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_wroth_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ywrath§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_envious_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yenvy§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_envious_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yenvy§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_proud_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ypride§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_proud_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ypride§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+##misc
+ipc_ambitious_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yambition§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_ambitious_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yambition§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_arbitrary_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yarbitrariness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_arbitrary_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yarbitrariness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_brave_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ybraveness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_brave_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ybraveness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_content_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ycontentedness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_content_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ycontentedness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_craven_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ycowardice§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_craven_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ycowardice§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_cruel_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ycruelty§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_cruel_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ycruelty§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_cynical_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ycynicism§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_cynical_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ycynicism§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_deceitful_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ydeceit§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_deceitful_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ydeceit§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_erudite_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yerudition§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_gregarious_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ygregariousness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_gregarious_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ygregariousness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_honest_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yhonesty§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_honest_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yhonesty§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_just_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yjustice§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_just_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yjustice§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_paranoid_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yparanoia§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_paranoid_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yparanoia§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_shy_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yshyness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_shy_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yshyness§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_stubborn_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ystubbornness§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_trusting_likes_gain;The [Root.TopLiege.GetTitle] approves of §Ytrust§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_trusting_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Ytrust§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_zealous_likes_gain;The [Root.TopLiege.GetTitle] approves of §Yzeal§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_zealous_dislikes_gain;The [Root.TopLiege.GetTitle] disapproves of §Yzeal§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+
+ipc_theological_school_likes_gain;The [Root.TopLiege.GetTitle] follows the same §Ytheological school§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_theological_school_dislikes_gain;The [Root.TopLiege.GetTitle] follows an opposing §Ytheological school§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+##christian stuff
+ipc_pilgrim_likes_gain;The [Root.TopLiege.GetTitle] is also a §Ypilgrim§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_crowned_by_pope_gain;[Root.GetFirstName] has been §Ycrowned by the Pope§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_crowned_by_myself_gain;[Root.GetFirstName] has §Ycrowned [Root.GetHerselfHimself]§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_baptized_gain;[Root.GetFirstName] has been §Ybaptized by a notable priest§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_baptized_by_pope_gain;[Root.GetFirstName] has been §Ybaptized by the Pope§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+ipc_messalian_master_gain;Has achieved §YPerfection§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_perfecti_gain;Perfecti: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+
+##muslim stuff
+ipc_decadent_dislikes_gain;[Root.GetFirstName] leads a §Ydecadent life§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_faqih_likes_gain;Is a §Ylearned faqih§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_hafiz_likes_gain;Has §Ymemorized the Quran§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_hajjaj_likes_gain;The [Root.TopLiege.GetTitle] is also a §Yhajjaj§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_mirza_likes_gain;Is a §Ymirza§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_sayyid_likes_gain;Is a §Ysayyid§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_decadence_gain;§YDecadent§! Dynasty: §R$GAIN$§!;;;;;;;;;;;;;x
+
+ipc_hrufi_diwan_gain;Diwan Poet: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_hurufi_mystic_a_gain;Sufi Initiate: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_hurufi_mystic_b_gain;Sufi Adept: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_hurufi_mystic_c_gain;Sufi Master: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_kharijite_kafir_gain;Kafir: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_koasasa_gain;Believed to be the reincarnation of a §Ydivine being§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_yazidi_pilgrim_gain;[yazidi.GetName] Pilgrim: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+##zoroastrian
+ipc_saoshyant_likes_gain;Is the §YSaoshyant§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_saoshyant_descendant_likes_gain;Is a §Ydescendant of the Saoshyant§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+
+
+##indian stuff
+ipc_indian_pilgrim_likes_gain;The [Root.TopLiege.GetTitle] is also a §Ypilgrim§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_indian_caste_likes_gain;[Root.GetFirstName] belongs to the same §Ycaste§! as the [Root.TopLiege.GetTitle]: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_indian_caste_dislikes_gain;[Root.GetFirstName] belongs to a different §Ycaste§! than the [Root.TopLiege.GetTitle]: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_indian_branch_likes_gain;[Root.GetFirstName] follows the same §Yreligious branch§! as the [Root.TopLiege.GetTitle]: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_indian_branch_dislikes_gain;[Root.GetFirstName] follows a different §Yreligious branch§! to the [Root.TopLiege.GetTitle]: §R$GAIN$§!;;;;;;;;;;;;;x
+
+
+##pagans
+ipc_berserker_likes_gain;Is a §Ymad berserker§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_shieldmaiden_likes_gain;Is a §Yshieldmaiden§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_zodiac_likes_gain;[Root.GetFirstName] and the [Root.TopLiege.GetTitle]'s §Yzodiac signs§! are compatible: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_zodiac_dislikes_gain;[Root.GetFirstName] and the [Root.TopLiege.GetTitle]'s §Yzodiac signs§! are incompatible: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_bloodthirsty_gods_1_likes_gain;Is a §Yhaemophiliac§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_bloodthirsty_gods_2_likes_gain;Is a §Yhaemophant§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_bloodthirsty_gods_3_likes_gain;Is a §Yhaemoarch§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_bloodthirsty_gods_dislikes_gain;Is a §Ybloodthirsty maniac§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_pagan_branch_likes_gain;[Root.GetFirstName] follows the same §Yreligious branch§! as the [Root.TopLiege.GetTitle]: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_pagan_branch_dislikes_gain;[Root.GetFirstName] follows a different §Yreligious branch§! to the [Root.TopLiege.GetTitle]: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_raiding_1_likes_gain;Is a §Yraider§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_raiding_2_likes_gain;Is a renowned §Yraider§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+ipc_raiding_3_likes_gain;Is a legendary §Yraider§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+
+
+##crusader traits
+ipc_crusader_likes_gain;[Root.GetFirstName] is a veteran of a §Y[Root.Religion.GetCrusadeName]§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+
+##misc
+ipc_bad_priest_dislikes_gain;[Root.GetFirstName] is a §Ywicked priest§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_kow_tow_dislikes_gain;[Root.GetFirstName] has §Ypaid tribute to a foreign emperor§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_kinslayer_dislikes_gain;[Root.GetFirstName] is a §Yvile kinslayer§!: §R$GAIN$§!;;;;;;;;;;;;;x
+ipc_excommunicated_dislikes_gain;[Root.GetFirstName] has been §Yexcommunicated§!: §R$GAIN$§!;;;;;;;;;;;;;x
+
+
+
+
+ipc_purple_born_gain;Has been §Yborn in the Purple§!: §G+$GAIN$§!;;;;;;;;;;;;;x
+
+
+
+############Powers and Abilities############
+
+ipc_donate_to_court_power_power_desc;Enables the decision to donate money in exchange for §Y[Root.Society.GetCurrency]§!. Becomes less efficient in higher ranks.;;;;;;;;;;;;;x
+ipc_visit_imperial_capital_power_power_desc;Enables the decision to visit the Imperial Capital. The different activities and events available there depend on the Imperial Buildings already built.;;;;;;;;;;;;;x
+
+ipc_introduce_child_power_power_desc;Enables §Gright-clicking§! the portraits of your children to make them join the Imperial Court, bypassing some of the usual requirements.;;;;;;;;;;;;;x
+ipc_hereditary_viceroyalty_power_power_desc;Enables the decision to turn a duchy viceroyalty into a hereditary duchy if the society's influence is high enough.;;;;;;;;;;;;;x
+
+ipc_gain_favor_power_power_desc;Enables §Gright-clicking§! the portraits of society members of lower rank to force them to owe you a favor.;;;;;;;;;;;;;x
+ipc_choose_imperial_focus_power_power_desc;Enables the decision to obtain one of three lifestyle traits unique to the society.;;;;;;;;;;;;;x
+imperial_office_power_tooltip;Able to hold one of four unique §MImperial Offices§! granted by the Imperial Court's leader which allow the holder to issue special missions to lower ranks and give access to a unique power. Office specific details are found in the associated character modifier located on the office holder.;;;;;;;;;;;;;x
+
+ipc_relinquish_titles_power_power_desc;Enables §Gright-clicking§! the portraits of direct vassals in order ro make them relinquish all non-de jure titles. Titles will be reassigned in the following manner.\n  §Y*§! §YKingdoms:§! Will be given to a non-viceroy direct vassal of the §Y[Root.TopLiege.GetTitle]§! that owns de jure land within the §YKingdom§!. If no applicable vassal exists, the §YKingdom§! will revert to the §Y[Root.TopLiege.GetTitle]§!.\n  §Y*§! §YDuchies:§!Will be given to a Count rank vassal that owns dejure land within the §YDuchy§!.\n  §Y*§! §YCounties:§!Will be distributed to new vassals.\n  §Y*§! All vassals will then be transferred to their de jure lieges if they exist, otherwise they will become direct vassals of the §Y[Root.TopLiege.GetTitle]§!.;;;;;;;;;;;;;x
+
+
+############Landed Titles############
+d_imperial_guard_christian_1;The Imperial Guard;;;;;;;;;;;;;x
+d_imperial_guard_christian_1_adj;Imperial;;;;;;;;;;;;;x
+d_imperial_guard_christian_2;The Imperial Guard;;;;;;;;;;;;;x
+d_imperial_guard_christian_2_adj;Imperial;;;;;;;;;;;;;x
+d_imperial_guard_christian_3;The Imperial Guard;;;;;;;;;;;;;x
+d_imperial_guard_christian_3_adj;Imperial;;;;;;;;;;;;;x
+imperial_guard_christian_male;Imperial Captain;;;;;;;;;;;;;x
+imperial_guard_christian_female;Imperial Captain;;;;;;;;;;;;;x
+imperial_guard_christian_foa;My Imperial Captain;;;;;;;;;;;;;x
+
+
+d_imperial_guard_byzantine;The Spatharios Guard;;;;;;;;;;;;;x
+d_imperial_guard_byzantine_adj;Spatharian;;;;;;;;;;;;;x
+imperial_guard_byzantine_male;Protospatharios;;;;;;;;;;;;;x
+imperial_guard_byzantine_female;Protospatharios;;;;;;;;;;;;;x
+imperial_guard_byzantine_foa;Protospatharios;;;;;;;;;;;;;x
+
+
+
+############Minor Titles############
+not_recently_granted_imperial_office_tooltip;Has NOT been recently granted an Imperial Office;;;;;;;;;;;;;x
+imperial_office_revoke_tooltip;§RImperial Offices can only be revoked by targeted decision§!;;;;;;;;;;;;;x
+
+#regent
+title_imperial_court_regent_christian;§MMaster of Offices§!;;;;;;;;;;;;;x
+title_imperial_court_regent_christian_desc;The [This.TopLiege.GetTitle]'s personal representative at the Imperial Court. The holder of this Imperial Office §Rwill immediately become the leader of the Imperial Court in place of the [This.TopLiege.GetTitle]§! until dismissed.;;;;;;;;;;;;;x
+title_imperial_court_regent_muslim;§M'Amid al-Dawla§!;;;;;;;;;;;;;x
+title_imperial_court_regent_muslim_desc;The [This.TopLiege.GetTitle]'s personal representative at the Imperial Court. The holder of this Imperial Office §Rwill immediately become the leader of the Imperial Court in place of the [This.TopLiege.GetTitle]§! until dismissed.;;;;;;;;;;;;;x
+title_imperial_court_regent_pagan;§MEmperor's Voice§!;;;;;;;;;;;;;x
+title_imperial_court_regent_pagan_desc;The [This.TopLiege.GetTitle]'s personal representative at the Imperial Court. The holder of this Imperial Office §Rwill immediately become the leader of the Imperial Court in place of the [This.TopLiege.GetTitle]§! until dismissed.;;;;;;;;;;;;;x
+title_imperial_court_regent_eastern;§MPeshwa§!;;;;;;;;;;;;;x
+title_imperial_court_regent_eastern_desc;The [This.TopLiege.GetTitle]'s personal representative at the Imperial Court. The holder of this Imperial Office §Rwill immediately become the leader of the Imperial Court in place of the [This.TopLiege.GetTitle]§! until dismissed.;;;;;;;;;;;;;x
+title_imperial_court_regent_byzantine;§MNobelissimos§!;;;;;;;;;;;;;x
+title_imperial_court_regent_byzantine_desc;Originally a title given to close relatives of the [This.TopLiege.GetTitle] meaning "most noble". The holder of this Imperial Office §Rwill immediately become the leader of the Imperial Court in place of the [This.TopLiege.GetTitle]§! until dismissed.;;;;;;;;;;;;;x
+title_imperial_court_regent_hre;§MHofmeister§!;;;;;;;;;;;;;x
+title_imperial_court_regent_hre_desc;The [This.TopLiege.GetTitle]'s personal representative at the Imperial Court. The holder of this Imperial Office §Rwill immediately become the leader of the Imperial Court in place of the [This.TopLiege.GetTitle]§! until dismissed.;;;;;;;;;;;;;x
+title_imperial_court_regent_roman;§MMagister Officiorum§!;;;;;;;;;;;;;x
+title_imperial_court_regent_roman_desc;One of the most senior administrative officials in the Roman Empire. The holder of this Imperial Office §Rwill immediately become the leader of the Imperial Court in place of the [This.TopLiege.GetTitle]§! until dismissed.;;;;;;;;;;;;;x
+imperial_regent_assign_no_revolt;The previous [Root.GetImperialRegentAssignableOffice] is NOT revolting against the empire;;;;;;;;;;;;;x
+
+
+##female variants and culture variants dont work
+#title_imperial_court_regent_pagan_female;Blood Sister;;;;;;;;;;;;;x
+#title_imperial_court_regent_eastern_chinese;Imperial Counselor;;;;;;;;;;;;;x
+#title_imperial_court_regent_hre_female;Erzherzogin;;;;;;;;;;;;;x
+
+#seneschal
+title_imperial_court_seneschal_christian;§MLord High Treasurer§!;;;;;;;;;;;;;x
+title_imperial_court_seneschal_christian_desc;The Lord High Treasurer is the chief financial official of the Imperial Court,responsible for overseeing taxation and infrastructure in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_seneschal_muslim;§MMaster of Coin§!;;;;;;;;;;;;;x
+title_imperial_court_seneschal_muslim_desc;The Master of Coin is the chief financial official of the Imperial Court,responsible for overseeing taxation and infrastructure in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_seneschal_pagan;§MEmperor's Hand§!;;;;;;;;;;;;;x
+title_imperial_court_seneschal_pagan_desc;The Emperor's Hand is the chief financial official of the Imperial Court,responsible for overseeing taxation and infrastructure in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_seneschal_eastern;§MMajumdar§!;;;;;;;;;;;;;x
+title_imperial_court_seneschal_eastern_desc;The Majumdar is the chief financial official of the Imperial Court,responsible for overseeing taxation and infrastructure in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_seneschal_byzantine;§MProtonotarios§!;;;;;;;;;;;;;x
+title_imperial_court_seneschal_byzantine_desc;The Imperial secretary in various government ministries of the Byzantine Empire. The Protonotarios is the chief financial official of the Imperial Court,responsible for overseeing taxation and infrastructure in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_seneschal_hre;§MErzschatzmeister§!;;;;;;;;;;;;;x
+title_imperial_court_seneschal_hre_desc;The Erschatzmeister is the chief financial official of the Holy Roman Empire,responsible for overseeing taxation and infrastructure in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_seneschal_roman;§MPraetor§!;;;;;;;;;;;;;x
+title_imperial_court_seneschal_roman_desc;The Praetor is the chief financial magistrate of the Roman Empire,responsible for overseeing taxation and infrastructure in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+imperial_seneschal_assign_no_revolt;The previous [Root.GetImperialSeneschalAssignableOffice] is NOT revolting against the empire;;;;;;;;;;;;;x
+
+
+#marshal
+title_imperial_court_marshal_christian;§MLord Constable§!;;;;;;;;;;;;;x
+title_imperial_court_marshal_christian_desc;The most senior general in the Imperial Court, the Lord Constable is responsible for managing and maintaining the empire's armies in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_marshal_muslim;§MAmir al-umara§!;;;;;;;;;;;;;x
+title_imperial_court_marshal_muslim_desc;The most senior general in the Imperial Court, the Amir al-umara is responsible for managing and maintaining the empire's armies in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_marshal_pagan;§MEmperor's Wrath§!;;;;;;;;;;;;;x
+title_imperial_court_marshal_pagan_desc;The most senior general in the Imperial Court, the Emperor's Wrath is responsible for managing and maintaining the empire's armies in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_marshal_eastern;§MSenapati§!;;;;;;;;;;;;;x
+title_imperial_court_marshal_eastern_desc;The most senior general in the Imperial Court, the Senapati is responsible for managing and maintaining the empire's armies in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_marshal_byzantine;§MStratelates§!;;;;;;;;;;;;;x
+title_imperial_court_marshal_byzantine_desc;The most senior general in the Imperial Court, the Stratelates is responsible for managing and maintaining the empire's armies in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_marshal_hre;§MErzkommandant§!;;;;;;;;;;;;;x
+title_imperial_court_marshal_hre_desc;The most senior general of the Holy Roman Empire, the Erzkommandant is responsible for managing and maintaining the realm's armies in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_marshal_roman;§MMagister Militum§!;;;;;;;;;;;;;x
+title_imperial_court_marshal_roman_desc;The highest level of military command that can be obtained in the Roman Empire. The Magister Militum is responsible for managing and maintaining the realm's armies in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+imperial_marshal_assign_no_revolt;The previous [Root.GetImperialMarshalAssignableOffice] is NOT revolting against the empire;;;;;;;;;;;;;x
+
+
+#lawkeeper
+##tried for localising the office character modifier, so it localises properly for other realms
+title_imperial_court_lawkeeper_fallback;§MImperial Lawkeeper§!;;;;;;;;;;;;;x
+
+title_imperial_court_lawkeeper_christian;§MLord Speaker§!;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_christian_desc;The chief official in charge of keeping the peace in the empire. The Lord Speaker is largely responsible for the realm's political stability in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_muslim;§MHakeem§!;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_muslim_desc;The chief official in charge of keeping the peace in the empire. The Hakeem is largely responsible for the realm's political stability in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_pagan;§MEmperor's Will§!;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_pagan_desc;The chief official in charge of keeping the peace in the empire. The Emperor's Will is largely responsible for the realm's political stability in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_eastern;§MNyayadhish§!;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_eastern_desc;The chief official in charge of keeping the peace in the empire. The Nyayadhish is largely responsible for the realm's political stability in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_byzantine;§MProtasekretis§!;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_byzantine_desc;The First Secretary of the Byzantine Empire who serves as the head of the chancery. The Protasekretis is largely responsible for the realm's political stability in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_hre;§MKaiserlicher Hofpfalzgraf§!;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_hre_desc;The Imperial Count Palatine is the official in charge of legal matters in the Holy Roman Empire. The Kaiserlicher Hofpfalzgraf is largely responsible for the realm's political stability in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_roman;§MQuaestor Sacri Palatii§!;;;;;;;;;;;;;x
+title_imperial_court_lawkeeper_roman_desc;The primary legal adviser to the [Root.TopLiege.GetTitle]. The Quaestor Sacri Palatii is largely responsible for the realm's political stability in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+imperial_lawkeeper_assign_no_revolt;The previous [Root.GetImperialLawkeeperAssignableOffice] is NOT revolting against the empire;;;;;;;;;;;;;x
+
+
+#spymaster
+title_imperial_court_spymaster_christian;§MGrand Inquisitor§!;;;;;;;;;;;;;x
+title_imperial_court_spymaster_christian_desc;The official in charge of the realm's secret police with far-reaching powers to enforce religious and social orthodoxy among the populace in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_spymaster_muslim;§MChief Investigator§!;;;;;;;;;;;;;x
+title_imperial_court_spymaster_muslim_desc;The official in charge of the realm's secret police with far-reaching powers to enforce religious and social orthodoxy among the populace in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_spymaster_pagan;§MEmperor's Eyes§!;;;;;;;;;;;;;x
+title_imperial_court_spymaster_pagan_desc;The official in charge of the realm's secret police with far-reaching powers to enforce religious and social orthodoxy among the populace in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_spymaster_eastern;§MSamant§!;;;;;;;;;;;;;x
+title_imperial_court_spymaster_eastern_desc;The official in charge of the realm's secret police with far-reaching powers to enforce religious and social orthodoxy among the populace in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_spymaster_byzantine;§MSilentiarius§!;;;;;;;;;;;;;x
+title_imperial_court_spymaster_byzantine_desc;The official in charge of the realm's secret police with far-reaching powers to enforce religious and social orthodoxy among the populace in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_spymaster_hre;§MSpionagemeister§!;;;;;;;;;;;;;x
+title_imperial_court_spymaster_hre_desc;The official in charge of the realm's secret police with far-reaching powers to enforce religious and social orthodoxy among the populace in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+title_imperial_court_spymaster_roman;§MFrumentarii Maximus§!;;;;;;;;;;;;;x
+title_imperial_court_spymasterr_roman_desc;The official in charge of the Roman Empire's Fruumentarri, the secret service. This official is in charge of the realm's secret police with far-reaching powers to enforce religious and social orthodoxy among the populace in the name of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;x
+imperial_spymaster_assign_no_revolt;The previous [Root.GetImperialSpymasterAssignableOffice] is NOT revolting against the empire;;;;;;;;;;;;;x

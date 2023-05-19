@@ -1,0 +1,483 @@
+title_decisions = {
+	tm_create_duchy = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = COUNT
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			FROM = {
+				primary_title = {
+					OR = {
+						real_tier = DUKE
+						real_tier = KING
+						real_tier = EMPEROR
+					}
+				}
+				wealth = 200
+			}
+		}
+		
+		effect = {
+			create_title = {
+				tier = DUKE
+				landless = no
+				temporary = no
+				custom_created = yes
+				holder = FROM
+				base_title = ROOT
+				copy_title_laws = yes
+			}
+			FROM = {
+				wealth = -200
+				prestige = 200
+			}
+		}
+	}
+
+	tm_create_kingdom = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = DUKE
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			FROM = {
+				primary_title = {
+					OR = {
+						real_tier = KING
+						real_tier = EMPEROR
+					}
+				}
+				wealth = 400
+				piety = 200
+			}
+		}
+		
+		effect = {
+			create_title = {
+				tier = KING
+				landless = no
+				temporary = no
+				custom_created = yes
+				holder = FROM
+				base_title = ROOT
+				copy_title_laws = yes
+			}
+			FROM = {
+				wealth = -400
+				piety = -200
+				prestige = 400
+			}
+		}
+	}
+	
+	tm_create_empire = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = KING
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			FROM = {
+				primary_title = {
+					OR = {
+						real_tier = EMPEROR
+					}
+				}
+				wealth = 800
+				piety = 400
+			}
+		}
+		
+		effect = {
+			create_title = {
+				tier = EMPEROR
+				landless = no
+				temporary = no
+				custom_created = yes
+				holder = FROM
+				base_title = ROOT
+				copy_title_laws = yes
+			}
+			FROM = {
+				wealth = -800
+				piety = -400
+				prestige = 800
+			}
+		}
+	}
+	
+	tm_designate_recipient_duchy = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = DUKE
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			OR = {
+				custom_tooltip = {
+					text = tm_tooltip_not_designated_duchy
+					hidden_tooltip = {
+						NOT = {
+							has_title_flag = adjudication_duchy_recipient
+						}
+					}
+				}
+				custom_tooltip = {
+					text = tm_tooltip_two_designated_duchy
+					FROM = {
+						any_realm_title = {
+							count = 2
+							has_title_flag = adjudication_duchy_recipient			
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = tm_tooltip_is_designated_duchy
+				hidden_tooltip = {
+					FROM = {
+						any_title_under = {
+							limit = {
+								real_tier = DUKE
+								has_title_flag = adjudication_duchy_recipient
+							}
+							clr_title_flag = adjudication_duchy_recipient
+						}
+					}
+					ROOT = { set_title_flag = adjudication_duchy_recipient }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+	}
+	
+	tm_designate_recipient_kingdom = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = KING
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			OR = {
+				custom_tooltip = {
+					text = tm_tooltip_not_designated_kingdom
+					hidden_tooltip = {
+						NOT = {
+							has_title_flag = adjudication_kingdom_recipient
+						}
+					}
+				}
+				custom_tooltip = {
+					text = tm_tooltip_two_designated_kingdom
+					FROM = {
+						any_realm_title = {
+							count = 2
+							has_title_flag = adjudication_kingdom_recipient			
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = tm_tooltip_is_designated_kingdom
+				hidden_tooltip = {
+					FROM = {
+						any_title_under = {
+							limit = {
+								real_tier = KING
+								has_title_flag = adjudication_kingdom_recipient
+							}
+							clr_title_flag = adjudication_kingdom_recipient
+						}
+					}
+					ROOT = { set_title_flag = adjudication_kingdom_recipient }
+				}
+				
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+	}
+	
+	tm_designate_recipient_empire = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = EMPEROR
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			OR = {
+				custom_tooltip = {
+					text = tm_tooltip_not_designated_empire
+					hidden_tooltip = {
+						NOT = {
+							has_title_flag = adjudication_empire_recipient
+						}
+					}
+				}
+				custom_tooltip = {
+					text = tm_tooltip_two_designated_empire
+					FROM = {
+						any_realm_title = {
+							count = 2
+							has_title_flag = adjudication_empire_recipient			
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = tm_tooltip_is_designated_empire
+				hidden_tooltip = {
+					FROM = {
+						any_title_under = {
+							limit = {
+								real_tier = EMPEROR
+								has_title_flag = adjudication_empire_recipient
+							}
+							clr_title_flag = adjudication_empire_recipient
+						}
+					}
+					ROOT = { set_title_flag = adjudication_empire_recipient }
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+	}
+	
+	tm_transfer_county_to_recipient_duchy = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = COUNT
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			FROM = {
+				custom_tooltip = {
+					text = tm_tooltip_any_duchy_is_designated
+					hidden_tooltip = {
+						any_realm_title = {
+							has_title_flag = adjudication_duchy_recipient 
+						}
+					}
+					NOT = {
+						any_realm_title = {
+							count = 2
+							has_title_flag = adjudication_duchy_recipient
+						}
+					}
+				}
+				wealth = 100
+			}
+		}
+
+		effect = {
+			FROM = {
+				any_title_under = {
+					limit = {
+						real_tier = DUKE
+						has_title_flag = adjudication_duchy_recipient
+					}
+					custom_tooltip = {
+						text = tm_tooltip_transfer
+						hidden_tooltip = {
+							ROOT = {
+								de_jure_liege = PREV
+							}
+						}
+					}
+				}	
+				wealth = -100
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+	}
+
+	tm_transfer_duchy_to_recipient_kingdom = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = DUKE
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			FROM = {
+				custom_tooltip = {
+					text = tm_tooltip_any_kingdom_is_designated
+					hidden_tooltip = {
+						any_realm_title = {
+							has_title_flag = adjudication_kingdom_recipient 
+						}
+					}
+					NOT = {
+						any_realm_title = {
+							count = 2
+							has_title_flag = adjudication_kingdom_recipient
+						}
+					}
+				}
+				wealth = 200
+				piety = 100
+			}
+		}
+		
+		effect = {	
+			FROM = {
+				any_title_under = {
+					limit = {
+						real_tier = KING
+						has_title_flag = adjudication_kingdom_recipient
+					}
+					custom_tooltip = {
+						text = tm_tooltip_transfer
+						hidden_tooltip = {
+							ROOT = {
+								de_jure_liege = PREV
+							}
+						}
+					}
+				}
+				wealth = -200
+				piety = -100
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+	}
+
+	tm_transfer_kingdom_to_recipient_empire = {
+		from_potential = {
+			ai = no
+			independent = yes
+		}
+		
+		potential = {
+			real_tier = KING
+			holder_scope = {
+				same_realm = FROM
+			}
+		}
+		
+		allow = {
+			FROM = {
+				custom_tooltip = {
+					text = tm_tooltip_any_empire_is_designated
+					hidden_tooltip = {
+						any_realm_title = {
+							has_title_flag = adjudication_empire_recipient 
+						}
+					}
+					NOT = {
+						any_realm_title = {
+							count = 2
+							has_title_flag = adjudication_empire_recipient
+						}
+					}
+				}
+				wealth = 400
+				piety = 200
+			}
+		}
+		
+		effect = {
+			FROM = {
+				any_title_under = {
+					limit = {
+						real_tier = EMPEROR
+						has_title_flag = adjudication_empire_recipient
+					}
+					custom_tooltip = {
+						text = tm_tooltip_transfer
+						hidden_tooltip = {
+							ROOT = {
+								de_jure_liege = PREV
+							}
+						}
+					}
+				}	
+				wealth = -400
+				piety = 200
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+	}
+}

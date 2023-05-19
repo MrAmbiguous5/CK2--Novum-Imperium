@@ -15,6 +15,7 @@ d_curonian = { # Kurši
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_selonians = { # Seli
 	color = { 22 96 143 }
 	color2 = { 255 255 255 }
@@ -23,6 +24,7 @@ d_selonians = { # Seli
 	capital = 985 # Sèlija # Selija
 	allow = { always = no }
 }
+
 d_talavians = { # Tãlavi
 	color = { 169 41 27 }
 	color2 = { 255 255 255 }
@@ -31,6 +33,7 @@ d_talavians = { # Tãlavi
 	capital = 375 # Tholowa # Talava
 	allow = { always = no }
 }
+
 d_lettigalians = { # Latgali
 	color = { 126 51 51 }
 	capital = 375 # Tholowa # Letigalia
@@ -38,6 +41,7 @@ d_lettigalians = { # Latgali
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_zemigalians = { # Zemgali
 	color = { 183 21 21 }
 	culture = lettigallish
@@ -45,6 +49,7 @@ d_zemigalians = { # Zemgali
 	capital = 374 # Opemele # zemgali
 	allow = { always = no }
 }
+
 #####
 # Lithuanian tribes
 #####
@@ -56,6 +61,7 @@ d_deltuvians = { # Deltuvai
 	capital = 979 # Deltuva
 	allow = { always = no }
 }
+
 d_yatviags = { # Jotvingiai
 	color = { 149 97 97 }
 	capital = 426 # Dainava
@@ -63,6 +69,7 @@ d_yatviags = { # Jotvingiai
 	#tribe = yes
 	allow = { always = no }
 }
+
 #####
 # Prussian tribes
 #####
@@ -73,17 +80,15 @@ d_pruthenians = { # Prùsà #  prussian uprising.
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_goliadj = { # Goladi # Galindians
 	color = { 42 132 210 }
 	capital = 427 # Galindia
 	culture = lithuanian
-	polish = "Galindowie"
-	bohemian = "Galindowie"
-	pommeranian = "Galindowie"
-	slovieni = "Galindowie"
-	russian = "Goliadj"
 	allow = { always = no }
+	russian = "Goliads"
 }
+
 d_warmians = { # Varmi
 	color = { 1 49 93 }
 	capital = 370 # Warmia
@@ -91,6 +96,7 @@ d_warmians = { # Varmi
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_pomesanians = { # Pomedi
 	color = { 200 99 3 }
 	capital = 1297 # Pomesania
@@ -98,6 +104,7 @@ d_pomesanians = { # Pomedi
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_sasnians = { # Sasnai
 	color = { 25 70 31 }
 	capital = 427 # Galindia
@@ -105,6 +112,7 @@ d_sasnians = { # Sasnai
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_pogesanians = { # Paugudi
 	color = { 7 99 129 }
 	capital = 1298 # Pogesania
@@ -112,6 +120,7 @@ d_pogesanians = { # Paugudi
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_bartians = { # Barthi
 	color = { 22 1 7 }
 	capital = 1299 # Bartia
@@ -119,6 +128,7 @@ d_bartians = { # Barthi
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_nadruvians = { # Nadrawai
 	color = { 93 9 77 }
 	capital = 1300 # Nadruvia
@@ -126,6 +136,7 @@ d_nadruvians = { # Nadrawai
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_scalovians = { # Skalwai
 	color = { 95 24 55 }
 	capital = 422 # Skalva # Scalovia
@@ -133,6 +144,7 @@ d_scalovians = { # Skalwai
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_sambians = { # Sembai
 	color = { 22 24 66 }
 	capital = 371 # Sambi # Sambia
@@ -140,6 +152,7 @@ d_sambians = { # Sembai
 	#tribe = yes
 	allow = { always = no }
 }
+
 ######################################
 # West Slavic
 ######################################
@@ -154,24 +167,28 @@ k_oborites = { # Obodriti
 	culture = pommeranian
 	allow = { FROM = { is_de_jure_title = yes } }
 }
+
 k_pommeranians = { # Pomorzani
 	color = { 11 5 129 }
 	capital = 1313 # Belgard # Kolberg
 	culture = pommeranian
 	allow = { FROM = { is_de_jure_title = yes } }
 }
+
 k_lutici = { # Ljutici
 	color = { 22 57 233 }
 	capital = 365 # Mittelmark # Brandenburg
 	culture = pommeranian
 	allow = { FROM = { is_de_jure_title = yes } }
 }
+
 k_sorbs = { # Sorbi
 	color = { 209 147 2 }
 	capital = 364 # Oberlausitz
 	culture = pommeranian
 	allow = { FROM = { is_de_jure_title = yes } }
 }
+
 ######################################
 # Lutici tribes
 #####
@@ -181,18 +198,21 @@ d_lutici = { # Ljutici
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_hevelli = { # Hawolani
 	color = { 66 35 86 }
 	capital = 365 # Mittelmark # Brandenburg
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_sprevani = { # Sprewjani
 	color = { 111 55 139 }
 	capital = 1064 # Niederlausitz
 	culture = pommeranian
 	allow = { always = no }
 }
+
 # Dossanen/Doxani/Dasseri/Desseri
 d_doxani = { # Dossani
 	color = { 88 55 100 }
@@ -200,36 +220,42 @@ d_doxani = { # Dossani
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_lunkini = { # Glinjani
 	color = { 14 51 79 }
 	capital = 982 # Prignitz
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_circipanes = { # Czerzpjani
 	color = { 33 72 55 }
 	capital = 1028 # Gützkow
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_kessians = { # Chyzani
 	color = { 94 125 49 }
 	capital = 306 # Rostock
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_readrians = { # Ratari
 	color = { 66 88 9 }
 	capital = 307 # Werle
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_tollensians = { # Dolenci
 	color = { 12 81 22 }
 	capital = 1505 # Barth
 	culture = pommeranian
 	allow = { always = no }
 }
+
 # Zamzizi/Zamcici/Zemzizi
 d_rani = { # Rujani
 	color = { 76 51 33 }
@@ -237,6 +263,7 @@ d_rani = { # Rujani
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_veleti = { # Wilci # Wilzi
 	color = { 115 92 133 }
 	color2 = { 255 255 255 }
@@ -245,6 +272,7 @@ d_veleti = { # Wilci # Wilzi
 	capital = 307 # Werle
 	allow = { always = no }
 }
+
 d_wolinians = { # Wolinjani # Velunzani
 	color = { 115 92 56 }
 	color2 = { 255 255 255 }
@@ -253,6 +281,7 @@ d_wolinians = { # Wolinjani # Velunzani
 	capital = 308 # Wolgast
 	allow = { always = no }
 }
+
 ######################################
 # Oborite tribes
 #####
@@ -262,30 +291,35 @@ d_oborites = { # Obodriti
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_wagrians = { # Wajiri
 	color = { 199 155 11 }
 	capital = 1066 # Kiel # Wagrien # Wagrinen
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_drevani = { # Drewani
 	color = { 141 55 179 }
 	capital = 1053 # Dannenberg
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_travnjane = { # Trawnjani
 	color = { 41 175 201 }
 	capital = 1098 # Ratzeburg # Lauenburg
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_warnabi = { # Warnowi
 	color = { 118 65 99 }
 	capital = 951 # Schwerin
 	culture = pommeranian
 	allow = { always = no }
 }
+
 ######################################
 # Pomeranian tribes
 #####
@@ -295,24 +329,28 @@ d_pommeranians = { # Pomorzani
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_prissani = { # Przicani
 	color = { 160 202 210 }
 	capital = 366 # Stettin
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_slovinici = { # Slowinci
 	color = { 79 51 28 }
 	capital = 367 # Stolp # Schlawe-Stolp
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_kashubians = { # Kassubi
 	color = { 11 35 210 }
 	capital = 368 # Danzig # Gdansk
 	culture = pommeranian
 	allow = { always = no }
 }
+
 ########################################
 # Sorbs
 #########
@@ -322,6 +360,7 @@ d_sorbs = { # Sorbi
 	culture = pommeranian
 	allow = { always = no }
 }
+
 d_chutizi = { # Chutici # Chutizi
 	color = { 81 126 201 }
 	color2 = { 255 255 255 }
@@ -330,6 +369,7 @@ d_chutizi = { # Chutici # Chutizi
 	capital = 978 # Landsberg # Merseburg
 	allow = { always = no }
 }
+
 d_leubuzzi = { # Lestkowici # Licicaviki
 	color = { 191 188 175 }
 	color2 = { 255 255 255 }
@@ -338,6 +378,7 @@ d_leubuzzi = { # Lestkowici # Licicaviki
 	capital = 430 # Sternberg # Lubusz
 	allow = { always = no }
 }
+
 d_glomacze = { # Glomaci # Glomacze # Aka Dolomici
 	color = { 215 143 156 }
 	color2 = { 255 255 255 }
@@ -346,6 +387,7 @@ d_glomacze = { # Glomaci # Glomacze # Aka Dolomici
 	capital = 331 # Voigtland
 	allow = { always = no }
 }
+
 d_lusatians = { # Lusitzi
 	color = { 76 45 37 }
 	color2 = { 255 255 255 }
@@ -354,6 +396,7 @@ d_lusatians = { # Lusitzi
 	capital = 1064 # Niederlausitz
 	allow = { always = no }
 }
+
 d_nizzi = { # Niccici
 	color = { 45 25 88 }
 	color2 = { 255 255 255 }
@@ -362,6 +405,7 @@ d_nizzi = { # Niccici
 	capital = 310 # Anhalt
 	allow = { always = no }
 }
+
 d_milceni = { # Milcani
 	color = { 56 37 19 }
 	color2 = { 255 255 255 }
@@ -370,6 +414,7 @@ d_milceni = { # Milcani
 	capital = 312 # Meissen
 	allow = { always = no }
 }
+
 d_nudzici = { # Nudici
 	color = { 48 180 110 }
 	color2 = { 255 255 255 }
@@ -378,6 +423,7 @@ d_nudzici = { # Nudici
 	capital = 1075 # Wittenberg
 	allow = { always = no }
 }
+
 d_nisan = { # Nizani
 	color = { 65 205 30 }
 	color2 = { 255 255 255 }
@@ -386,6 +432,7 @@ d_nisan = { # Nizani
 	capital = 1077 # Brehna
 	allow = { always = no }
 }
+
 d_coledizi = { # Koledici
 	color = { 67 88 10 }
 	color2 = { 255 255 255 }
@@ -394,6 +441,7 @@ d_coledizi = { # Koledici
 	capital = 954 # Groitzsch # Zeitz
 	allow = { always = no }
 }
+
 #####
 # Polish tribes
 #####
@@ -405,6 +453,7 @@ d_lendians = { # Ledzianie # aka Lechs
 	capital = 527 # Krakow # Krakowskie
 	allow = { always = no }
 }
+
 #####
 # Bohemian and Moravian tribes
 #####
@@ -416,6 +465,7 @@ d_bohemians = { # Czechowé
 	#tribe = yes
 	allow = { always = no }
 }
+
 ######################################
 # East Slavic
 ######################################
@@ -427,6 +477,7 @@ d_drevlyans = { # Drevlyane
 	capital = 1280 # Ovruch # Iskorosten
 	allow = { always = no }
 }
+
 d_ulichs = { # Ulichi # Ulichane
 	color = { 39 77 104 }
 	color2 = { 255 255 255 }
@@ -435,6 +486,7 @@ d_ulichs = { # Ulichi # Ulichane
 	capital = 541 # Podolya # Peresechen
 	allow = { always = no }
 }
+
 d_volhynians = { # Volyniane
 	color = { 191 165 46 }
 	color2 = { 255 255 255 }
@@ -443,6 +495,7 @@ d_volhynians = { # Volyniane
 	capital = 535 # Vladimir Volynsky
 	allow = { always = no }
 }
+
 d_buzhans = { # Buzhane
 	color = { 20 75 90 }
 	color2 = { 255 255 255 }
@@ -451,6 +504,7 @@ d_buzhans = { # Buzhane
 	capital = 546 # Terebovl # Kamyanetspodilsky
 	allow = { always = no }
 }
+
 d_tivertsi = { # Tivertsy # Tivertsi
 	color = { 54 92 124 }
 	color2 = { 255 255 255 }
@@ -459,6 +513,7 @@ d_tivertsi = { # Tivertsy # Tivertsi
 	capital = 1283 # Yanbu # Cern
 	allow = { always = no }
 }
+
 d_meshcheras = { # Meshcheras
 	color = { 151 71 41 }
 	capital = 580 # Riazan' # Ryazan
@@ -466,6 +521,7 @@ d_meshcheras = { # Meshcheras
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_kryvians = { # Krivichi
 	color = { 128 133 104 }
 	color2 = { 255 255 255 }
@@ -474,6 +530,7 @@ d_kryvians = { # Krivichi
 	capital = 419 # Polotsk
 	allow = { always = no }
 }
+
 d_severians = { # Severiane
 	color = { 120 155 40 }
 	color2 = { 255 255 255 }
@@ -482,6 +539,7 @@ d_severians = { # Severiane
 	capital = 567 # Novgorod Seversky
 	allow = { always = no }
 }
+
 d_vyatichi = { # Vyatichi
 	color = { 169 183 125 }
 	color2 = { 255 255 255 }
@@ -490,6 +548,7 @@ d_vyatichi = { # Vyatichi
 	capital = 570 # Tver
 	allow = { always = no }
 }
+
 d_dregovichi = { # Dregovichi
 	color = { 100 100 20 }
 	color2 = { 255 255 255 }
@@ -498,6 +557,7 @@ d_dregovichi = { # Dregovichi
 	capital = 548 # Pinsk
 	allow = { always = no }
 }
+
 d_radimichi = { # Radimichi
 	color = { 110 136 68 }
 	color2 = { 255 255 255 }
@@ -506,6 +566,7 @@ d_radimichi = { # Radimichi
 	capital = 551 # Mstislavl
 	allow = { always = no }
 }
+
 d_polyane = { # Polyane
 	color = { 82 81 75 }
 	color2 = { 255 255 255 }
@@ -514,6 +575,7 @@ d_polyane = { # Polyane
 	capital = 547 # Kiev
 	allow = { always = no }
 }
+
 ##############
 # Mongol
 # d_naimans = { # Naiman
@@ -531,6 +593,7 @@ d_yawdi_ertim = { # Yawdi Ertim # aka Shining horses
 	culture = pecheneg
 	allow = { always = no }
 }
+
 d_kuerchi_chur = { # Küerchi Chür # aka blue horses
 	color = { 44 53 106 }
 	color2 = { 255 255 255 }
@@ -538,6 +601,7 @@ d_kuerchi_chur = { # Küerchi Chür # aka blue horses
 	culture = pecheneg
 	allow = { always = no }
 }
+
 d_qabuqsin_yula = { # Qabuqsin Yula # aka bark colored horses
 	color = { 147 152 87 }
 	color2 = { 255 255 255 }
@@ -545,6 +609,7 @@ d_qabuqsin_yula = { # Qabuqsin Yula # aka bark colored horses
 	culture = pecheneg
 	allow = { always = no }
 }
+
 d_suru_kulbej = { # Suru Külbej # aka grey horses of the bey.
 	color = { 182 198 176 }
 	color2 = { 255 255 255 }
@@ -552,6 +617,7 @@ d_suru_kulbej = { # Suru Külbej # aka grey horses of the bey.
 	culture = pecheneg
 	allow = { always = no }
 }
+
 d_qara_bay = { # Qara Bay # aka black horses.
 	color = { 38 41 37 }
 	color2 = { 255 255 255 }
@@ -559,6 +625,7 @@ d_qara_bay = { # Qara Bay # aka black horses.
 	culture = pecheneg
 	allow = { always = no }
 }
+
 d_boru_tolmach = { # Boru Tolmach # aka grey horses of the tolmach.
 	color = { 105 111 102 }
 	color2 = { 255 255 255 }
@@ -566,6 +633,7 @@ d_boru_tolmach = { # Boru Tolmach # aka grey horses of the tolmach.
 	culture = pecheneg
 	allow = { always = no }
 }
+
 d_yazi_qapan = { # Yazi Qapan # aka darkbrown horses.
 	color = { 145 99 10 }
 	color2 = { 255 255 255 }
@@ -573,6 +641,7 @@ d_yazi_qapan = { # Yazi Qapan # aka darkbrown horses.
 	culture = pecheneg
 	allow = { always = no }
 }
+
 d_bula_chopan = { # Bula Chopan # aka piebald horses
 	color = { 133 102 112 }
 	color2 = { 255 255 255 }
@@ -580,6 +649,7 @@ d_bula_chopan = { # Bula Chopan # aka piebald horses
 	culture = pecheneg
 	allow = { always = no }
 }
+
 ######################################
 # Uighur
 ######################################
@@ -588,11 +658,13 @@ d_uighurs = { # Uighurs
 	#tribe = yes
 	culture = uyghur
 	capital = 1570 # Qarashahr
+	allow = { always = no }
 	title = Idiqut
+	title_female = Idiqut
 	foa = Idiqut_FOA
 	title_prefix = Yabghuluq_OF
-	allow = { always = no }
 }
+
 ######################################
 # Kirghiz
 ######################################
@@ -601,11 +673,13 @@ d_qirghiz = { # Qirghiz
 	#tribe = yes
 	culture = kirghiz
 	capital = 1580 # Khotan # Jungaria
+	allow = { always = no }
 	title = Elteber
+	title_female = Elteber
 	foa = Elteber_FOA
 	title_prefix = Elteberluq_OF
-	allow = { always = no }
 }
+
 ######################################
 # Oghuz
 ######################################
@@ -618,6 +692,7 @@ d_uzes = { # Uzes
 	capital = 607 # Sarpa
 	allow = { always = no }
 }
+
 d_tekule = { # Teküle
 	color = { 40 91 60 }
 	color2 = { 255 255 255 }
@@ -626,22 +701,26 @@ d_tekule = { # Teküle
 	capital = 896 # Op
 	allow = { always = no }
 }
+
 d_oghuz = { # Oghuz
 	color = { 31 45 147 }
 	#tribe = yes
 	culture = oghuz
 	capital = 900 # Jand
+	allow = { always = no }
 	title = Yabghu
+	title_female = Yabghu
 	foa = Yabghu_FOA
 	title_prefix = Yabghuluq_OF
-	allow = { always = no }
 }
+
 d_ghuzz = { # Ghuzz
 	color = { 210 45 45 }
 	culture = oghuz
 	capital = 904 # Balkh
 	allow = { always = no }
 }
+
 ######################################
 # Karluk
 ######################################
@@ -651,46 +730,55 @@ d_qarluq = { # Qarluq
 	capital = 1577 # Barskhan
 	allow = { always = no }
 }
+
 d_yaghma = { # Yaghma
 	color = { 58 110 170 }
 	#tribe = yes
 	culture = karluk
 	capital = 1567 # Kashgar
+	allow = { always = no }
 	title = Yabghu
+	title_female = Yabghu
 	foa = Yabghu_FOA
 	title_prefix = Yabghuluq_OF
-	allow = { always = no }
 }
+
 d_chigil = { # Chigil
 	color = { 65 100 130 }
 	#tribe = yes
 	culture = karluk
 	capital = 1563 # Talas
+	allow = { always = no }
 	title = Yabghu
+	title_female = Yabghu
 	foa = Yabghu_FOA
 	title_prefix = Yabghuluq_OF
-	allow = { always = no }
 }
+
 d_basmils = { # Bamils
 	color = { 147 21 39 }
 	#tribe = yes
 	culture = karluk
 	capital = 1574 # Emil
+	allow = { always = no }
 	title = Yabghu
+	title_female = Yabghu
 	foa = Yabghu_FOA
 	title_prefix = Yabghuluq_OF
-	allow = { always = no }
 }
+
 d_tukhsi = { # Tukhsi
 	color = { 147 21 39 }
 	#tribe = yes
 	culture = karluk
 	capital = 1572 # Balasaghun
+	allow = { always = no }
 	title = Yabghu
+	title_female = Yabghu
 	foa = Yabghu_FOA
 	title_prefix = Yabghuluq_OF
-	allow = { always = no }
 }
+
 ######################################
 # Qipchaq
 ######################################
@@ -699,11 +787,13 @@ d_qipchaq = { # Qipchaq
 	#tribe = yes
 	culture = cuman
 	capital = 1579 # Balkhash
+	allow = { always = no }
 	title = Opa
+	title_female = Opa
 	foa = Opa_FOA
 	title_prefix = Kuren_OF
-	allow = { always = no }
 }
+
 # Tribes
 d_ay_opa = { # Ay-opa
 	color = { 33 1 66 }
@@ -713,6 +803,7 @@ d_ay_opa = { # Ay-opa
 	capital = 895 # Yaik
 	allow = { always = no }
 }
+
 d_dorut = { # Dörüt
 	color = { 130 50 6 }
 	color2 = { 255 255 255 }
@@ -721,6 +812,7 @@ d_dorut = { # Dörüt
 	capital = 618 # Saray-Jük
 	allow = { always = no }
 }
+
 d_terteroba = { # Terteroba
 	color = { 80 83 50 }
 	color2 = { 255 255 255 }
@@ -729,6 +821,7 @@ d_terteroba = { # Terteroba
 	capital = 605 # Ugru
 	allow = { always = no }
 }
+
 d_toqsoba = { # Toqsoba
 	color = { 28 30 150 }
 	color2 = { 255 255 255 }
@@ -737,6 +830,7 @@ d_toqsoba = { # Toqsoba
 	capital = 565 # Uda # Duna-Jük
 	allow = { always = no }
 }
+
 d_yimek = { # Yimek
 	color = { 128 30 110 }
 	color2 = { 255 255 255 }
@@ -745,6 +839,7 @@ d_yimek = { # Yimek
 	capital = 564 # Vskol'
 	allow = { always = no }
 }
+
 d_enchogli = { # Ençogli
 	color = { 99 71 16 }
 	color2 = { 255 255 255 }
@@ -753,6 +848,7 @@ d_enchogli = { # Ençogli
 	capital = 542 # Yedisan
 	allow = { always = no }
 }
+
 d_olberlig = { # Ölberli
 	color = { 43 60 70 }
 	color2 = { 255 255 255 }
@@ -761,6 +857,7 @@ d_olberlig = { # Ölberli
 	capital = 619 # Saray
 	allow = { always = no }
 }
+
 d_targil = { # Targil
 	color = { 240 60 10 }
 	color2 = { 255 255 255 }
@@ -769,6 +866,7 @@ d_targil = { # Targil
 	capital = 593 # Khoper
 	allow = { always = no }
 }
+
 d_qongurogli = { # Bekrüti
 	color = { 20 230 190 }
 	color2 = { 255 255 255 }
@@ -777,6 +875,7 @@ d_qongurogli = { # Bekrüti
 	capital = 599 # Cuba
 	allow = { always = no }
 }
+
 d_oren = { # Ören
 	color = { 220 200 190 }
 	color2 = { 255 255 255 }
@@ -785,6 +884,7 @@ d_oren = { # Ören
 	capital = 893 # Turgay
 	allow = { always = no }
 }
+
 d_qor = { # Qor
 	color = { 20 20 60 }
 	color2 = { 255 255 255 }
@@ -793,6 +893,7 @@ d_qor = { # Qor
 	capital = 511 # Basarabia
 	allow = { always = no }
 }
+
 d_burchali = { # Burçali
 	color = { 14 230 78 }
 	color2 = { 255 255 255 }
@@ -801,6 +902,7 @@ d_burchali = { # Burçali
 	capital = 556 # Aq Samar
 	allow = { always = no }
 }
+
 d_chortan = { # Çortan
 	color = { 146 29 18 }
 	color2 = { 255 255 255 }
@@ -809,6 +911,7 @@ d_chortan = { # Çortan
 	capital = 559 # Qirim
 	allow = { always = no }
 }
+
 d_ulasgoli = { # Ulashogli
 	color = { 89 134 185 }
 	color2 = { 255 255 255 }
@@ -817,6 +920,7 @@ d_ulasgoli = { # Ulashogli
 	capital = 557 # Tokmak
 	allow = { always = no }
 }
+
 d_urusoba = { # Urus-oba
 	color = { 189 10 18 }
 	color2 = { 255 255 255 }
@@ -825,6 +929,7 @@ d_urusoba = { # Urus-oba
 	capital = 558 # Özü
 	allow = { always = no }
 }
+
 d_bayawut = { # Bayawut
 	color = { 59 98 77 }
 	color2 = { 255 255 255 }
@@ -833,6 +938,7 @@ d_bayawut = { # Bayawut
 	capital = 622 # Sighnaq
 	allow = { always = no }
 }
+
 d_chaghraq = { # Çaghraq
 	color = { 41 90 69 }
 	color2 = { 255 255 255 }
@@ -841,6 +947,7 @@ d_chaghraq = { # Çaghraq
 	capital = 897 # Irgiz
 	allow = { always = no }
 }
+
 d_baruq = { # Baruq
 	color = { 163 41 66 }
 	color2 = { 255 255 255 }
@@ -849,6 +956,7 @@ d_baruq = { # Baruq
 	capital = 624 # Mangyshlak
 	allow = { always = no }
 }
+
 d_badach = { # Badaç # Badach
 	color = { 120 40 79 }
 	color2 = { 255 255 255 }
@@ -857,6 +965,7 @@ d_badach = { # Badaç # Badach
 	capital = 604 # Kuma
 	allow = { always = no }
 }
+
 ######################################
 # Khazars
 ######################################
@@ -868,6 +977,7 @@ d_khavars = { # Qavarlar
 	capital = 520 # Bihar
 	allow = { always = no }
 }
+
 ######################################
 ######################################
 ######################################
@@ -879,12 +989,14 @@ d_zunbil = { # Rutbils # Zunbils
 	capital = 852 # Zamindavar
 	allow = { always = no }
 }
+
 d_shabankara = { # Shabankara
 	color = { 244 190 91 }
 	culture = kurdish
 	capital = 1534 # Darabjird #was 642 # Larestan
 	allow = { always = no }
 }
+
 ######################################
 ######################################
 ######################################
@@ -898,6 +1010,7 @@ d_brodniks = { # Brodnici
 	capital = 515 # Tirgoviste
 	allow = { always = no }
 }
+
 d_bolohoveni = { # Bolohoveni
 	color = { 40 170 88 }
 	color2 = { 255 255 255 }
@@ -906,6 +1019,7 @@ d_bolohoveni = { # Bolohoveni
 	capital = 1147 # Bacau
 	allow = { always = no }
 }
+
 ######################################
 ######################################
 ######################################
@@ -917,79 +1031,69 @@ d_zyriane = { # Zyriana
 	color = { 200 170 60 }
 	color2 = { 255 255 255 }
 	culture = komi
-	#tribe = yes
-	danish = "Syrjænger"
-	russian = "Zyriane"
-	polish = "Zyriane"
-	bohemian = "Zyriane"
-	pommeranian = "Zyriane"
-	slovieni = "Zyriane"
-	serbian = "Zyriane"
-	croatian = "Zyriane"
-	bulgarian = "Zyriane"
-	carantanian = "Zyriane"
-	bosnian = "Zyriane"
 	capital = 400 # Ežva # Vychegda
 	allow = { always = no }
 }
+
 #####
 # Mari tribes
 #####
 d_maris = { # Vice Mari
 	color = { 150 130 45 }
 	capital = 588 # Šošma # Mari
-	khazar = "Sarmäslar"
-	khavar = "Sarmäslar"
-	pecheneg = "Çirmislar"
-	oghuz = "Çirmislar"
-	turkmen = "Çirmislar"
-	kasogi = "Çirmislar"
-	avar = "Sarmäslar"
-	bashkir = "Çirmislar"
-	karluk = "Çirmeslär"
-	mongol = "Çirmeslär"
-	cuman = "Çirmeslär"
-	kirghiz = "Çirmeslär"
-	bolghar = "Sarmäslar"
-	uyghur = "Çirmeslär"
-	turkish = "Çirmislar"
 	culture = mordvin
 	#tribe = yes
 	allow = { always = no }
+	turkish = "Cheremis"
+	turkmen = "Cheremis"
+	oghuz = "Cheremis"
+	mongol = "Cheremis"
+	cuman = "Cheremis"
+	pecheneg = "Cheremis"
+	khazar = "Cheremis"
+	khavar = "Cheremis"
+	bolghar = "Cheremis"
+	avar = "Cheremis"
+	karluk = "Cheremis"
+	kasogi = "Cheremis"
+	kirghiz = "Cheremis"
+	uyghur = "Cheremis"
+	bashkir = "Cheremis"
 }
+
 d_maris_vetluga = { # Vütla Mari
 	color = { 180 15 63 }
 	color2 = { 255 255 255 }
 	culture = mari
-	#tribe = yes
-	khazar = "Tuçi Sarmäslar"
-	khavar = "Tuçi Sarmäslar"
-	pecheneg = "Tepe Çirmislar"
-	oghuz = "Tepe Çirmislar"
-	turkmen = "Tepe Çirmislar"
-	kasogi = "Tepe Çirmislar"
-	avar = "Tuçi Sarmäslar"
-	bashkir = "Tepe Çirmislar"
-	karluk = "Tepe Çirmeslär"
-	mongol = "Tepe Çirmeslär"
-	cuman = "Tepe Çirmeslär"
-	kirghiz = "Tepe Çirmeslär"
-	bolghar = "Tuçi Sarmäslar"
-	uyghur = "Tepe Çirmeslär"
-	turkish = "Tepe Çirmislar"
-	russian = "Gornyye Cheremis"
-	polish = "Gornyye Cheremis"
-	bohemian = "Gornyye Cheremis"
-	pommeranian = "Gornyye Cheremis"
-	slovieni = "Gornyye Cheremis"
-	serbian = "Gornyye Cheremis"
-	croatian = "Gornyye Cheremis"
-	bulgarian = "Gornyye Cheremis"
-	carantanian = "Gornyye Cheremis"
-	bosnian = "Gornyye Cheremis"
 	capital = 589 # Vütla # Vetluga
 	allow = { always = no }
+	turkish = "Vetluga Cheremis"
+	turkmen = "Vetluga Cheremis"
+	oghuz = "Vetluga Cheremis"
+	mongol = "Vetluga Cheremis"
+	cuman = "Vetluga Cheremis"
+	pecheneg = "Vetluga Cheremis"
+	khazar = "Vetluga Cheremis"
+	khavar = "Vetluga Cheremis"
+	bolghar = "Vetluga Cheremis"
+	avar = "Vetluga Cheremis"
+	karluk = "Vetluga Cheremis"
+	kasogi = "Vetluga Cheremis"
+	kirghiz = "Vetluga Cheremis"
+	uyghur = "Vetluga Cheremis"
+	bashkir = "Vetluga Cheremis"
+	russian = "Vetluga Cheremis"
+	pommeranian = "Vetluga Cheremis"
+	polish = "Vetluga Cheremis"
+	bohemian = "Vetluga Cheremis"
+	slovieni = "Vetluga Cheremis"
+	carantanian = "Vetluga Cheremis"
+	croatian = "Vetluga Cheremis"
+	serbian = "Vetluga Cheremis"
+	bosnian = "Vetluga Cheremis"
+	bulgarian = "Vetluga Cheremis"
 }
+
 d_meryas = { # Meryas
 	color = { 131 41 41 }
 	capital = 574 # Rostov # Rostov / Merya
@@ -997,6 +1101,7 @@ d_meryas = { # Meryas
 	#tribe = yes
 	allow = { always = no }
 }
+
 ######
 # Mordvin tribes
 ######
@@ -1006,182 +1111,78 @@ d_mordvins_erza = { # Erzyät
 	culture = mordvin
 	#tribe = yes
 	capital = 1273 # Kadom
-	khazar = "Irçëlar"
-	khavar = "Irçëlar"
-	pecheneg = "Irçilar"
-	oghuz = "Irçilar"
-	turkmen = "Irçilar"
-	kasogi = "Irçilar"
-	avar = "Irçëlar"
-	bashkir = "Ïrzälar"
-	karluk = "Ïrzälar"
-	mongol = "Ïrzälär"
-	cuman = "Ïrzälär"
-	kirghiz = "Ïrzälär"
-	bolghar = "Irçëlar"
-	uyghur = "Ïrzälär"
-	turkish = "Irçilar"
 	allow = { always = no }
 }
+
 d_mordvins = { # Mokshet
 	color = { 148 165 45 }
 	color2 = { 255 255 255 }
 	capital = 579 # Moksha
-	pahlavi = "Tuqshi"
-	persian = "Tuqshi"
-	adhari = "Tuqshi"
-	khorasani = "Tuqshi"
-	tajik = "Tuqshi"
-	daylamite = "Tuqshi"
-	khalaj = "Tuqshi"
-	sogdian = "Tuqshi"
-	khwarezmi = "Tuqshi"
-	kurdish = "Tuqshi"
-	afghan = "Tuqshi"
-	qufs = "Tuqshi"
-	baloch = "Tuqshi"
-	bedouin_arabic = "Tuqshi"
-	hijazi = "Tuqshi"
-	yemeni = "Tuqshi"
-	maghreb_arabic = "Tuqshi"
-	levantine_arabic = "Tuqshi"
-	egyptian_arabic = "Tuqshi"
-	andalusian_arabic = "Tuqshi"
-	sicilian_arabic = "Tuqshi"
-	sanhaja = "Tuqshi"
-	tagelmust = "Tuqshi"
-	tuareg = "Tuqshi"
-	masmuda = "Tuqshi"
-	zanata = "Tuqshi"
-	khazar = "Tuqšilar"
-	khavar = "Tuqšilar"
-	pecheneg = "Tuqšilar"
-	oghuz = "Tuqšilar"
-	turkmen = "Tuqšilar"
-	kasogi = "Tuqšilar"
-	avar = "Tuqšilar"
-	bashkir = "Tuqšilar"
-	karluk = "Tuqšilar"
-	mongol = "Tuqšilär"
-	cuman = "Tuqšilar"
-	kirghiz = "Tuqšilär"
-	bolghar = "Tuqšilar"
-	uyghur = "Tuqšilar"
-	turkish = "Tuqšilar"
-	old_hungarian = "Mordva"
-	hungarian = "Mordva"
-	szekely = "Mordva"
-	alan = "Mordia"
-	arberian = "Mordia"
-	armenian = "Mordia"
-	georgian = "Mordia"
-	greek = "Mordia"
-	crimean_gothic = "Mordens"
-	gothic = "Merdas"
-	swedish = "Merdas"
-	danish = "Merdas"
-	basque = "Merdas"
-	aragonese = "Merdas"
-	castillan = "Merdas"
-	catalan = "Merdas"
-	leonese = "Merdas"
-	thuringian = "Merdas"
-	swabian = "Merdas"
-	bavarian = "Merdas"
-	low_saxon = "Merdas"
-	franconian = "Merdas"
-	low_german = "Merdas"
-	low_frankish = "Merdas"
-	german = "Merdas"
-	frankish = "Merdas"
-	norman = "Merdas"
-	arpitan = "Merdas"
-	occitan = "Merdas"
-	dalmatian = "Merdas"
-	italian = "Merdas"
-	sardinian = "Merdas"
-	sicilian = "Merdas"
-	umbrian = "Merdas"
-	laziale = "Merdas"
-	neapolitan = "Merdas"
-	tuscan = "Merdas"
-	ligurian = "Merdas"
-	langobardisch = "Merdas"
-	venetian = "Merdas"
-	english = "Merdas"
-	romanian = "Merdas"
-	polish = "Mordva"
-	bohemian = "Mordva"
-	pommeranian = "Mordva"
-	slovieni = "Mordva"
-	serbian = "Mordva"
-	croatian = "Mordva"
-	bulgarian = "Mordva"
-	carantanian = "Mordva"
-	bosnian = "Mordva"
 	culture = mordvin
 	#tribe = yes
 	allow = { always = no }
+	swedish = "Mordvins"
+	danish = "Mordvins"
+	gothic = "Mordvins"
+	german = "Mordvins"
+	low_german = "Mordvins"
+	low_saxon = "Mordvins"
+	thuringian = "Mordvins"
+	franconian = "Mordvins"
+	swabian = "Mordvins"
+	bavarian = "Mordvins"
+	low_frankish = "Mordvins"
+	english = "Mordvins"
+	frankish = "Mordvins"
+	arpitan = "Mordvins"
+	norman = "Mordvins"
+	basque = "Mordvins"
+	occitan = "Mordvins"
+	castillan = "Mordvins"
+	aragonese = "Mordvins"
+	catalan = "Mordvins"
+	leonese = "Mordvins"
+	armenian = "Mordvins"
+	greek = "Mordvins"
+	crimean_gothic = "Mordvins"
+	romanian = "Mordvins"
+	alan = "Mordvins"
+	arberian = "Mordvins"
+	georgian = "Mordvins"
+	pommeranian = "Mordvins"
+	polish = "Mordvins"
+	bohemian = "Mordvins"
+	slovieni = "Mordvins"
+	carantanian = "Mordvins"
+	croatian = "Mordvins"
+	serbian = "Mordvins"
+	bosnian = "Mordvins"
+	bulgarian = "Mordvins"
+	old_hungarian = "Mordvins"
+	hungarian = "Mordvins"
+	szekely = "Mordvins"
+	sardinian = "Mordvins"
+	sicilian = "Mordvins"
+	umbrian = "Mordvins"
+	laziale = "Mordvins"
+	neapolitan = "Mordvins"
+	tuscan = "Mordvins"
+	ligurian = "Mordvins"
+	langobardisch = "Mordvins"
+	italian = "Mordvins"
+	venetian = "Mordvins"
+	dalmatian = "Mordvins"
 } # end d_mordvins
+
 d_burtas = { # Burtas
 	color = { 120 74 130 }
 	color2 = { 255 255 255 }
 	capital = 592 # Barysh
-	pahlavi = "Burdas"
-	persian = "Burdas"
-	adhari = "Burdas"
-	khorasani = "Burdas"
-	tajik = "Burdas"
-	daylamite = "Burdas"
-	khalaj = "Burdas"
-	sogdian = "Burdas"
-	khwarezmi = "Burdas"
-	kurdish = "Burdas"
-	afghan = "Burdas"
-	qufs = "Burdas"
-	baloch = "Burdas"
-	bedouin_arabic = "Burdas"
-	hijazi = "Burdas"
-	yemeni = "Burdas"
-	maghreb_arabic = "Burdas"
-	levantine_arabic = "Burdas"
-	egyptian_arabic = "Burdas"
-	andalusian_arabic = "Burdas"
-	sicilian_arabic = "Burdas"
-	sanhaja = "Burdas"
-	tagelmust = "Burdas"
-	tuareg = "Burdas"
-	masmuda = "Burdas"
-	zanata = "Burdas"
-	khazar = "Bortaslar"
-	khavar = "Bortaslar"
-	pecheneg = "Bortaslar"
-	oghuz = "Bortaslar"
-	turkmen = "Bortaslar"
-	kasogi = "Bortaslar"
-	avar = "Bortaslar"
-	bashkir = "Bortaslar"
-	karluk = "Bortaslar"
-	mongol = "Bortaslär"
-	cuman = "Bortaslär"
-	kirghiz = "Bortaslär"
-	bolghar = "Bortaslar"
-	uyghur = "Bortaslar"
-	turkish = "Bortaslar"
-	russian = "Burtasy"
-	polish = "Burtasy"
-	bohemian = "Burtasy"
-	pommeranian = "Burtasy"
-	slovieni = "Burtasy"
-	serbian = "Burtasy"
-	croatian = "Burtasy"
-	bulgarian = "Burtasy"
-	carantanian = "Burtasy"
-	bosnian = "Burtasy"
 	culture = mordvin
 	#tribe = yes
 	allow = { always = no }
 } # end d_burtas
+
 d_muromians = { # Muromians
 	color = { 160 120 75 }
 	capital = 581 # Murom
@@ -1189,6 +1190,7 @@ d_muromians = { # Muromians
 	#tribe = yes
 	allow = { always = no }
 }
+
 ######
 # Vepsian tribes
 ######
@@ -1198,37 +1200,18 @@ d_lyydians = { # Lüüdiläižed
 	culture = vepsian
 	#tribe = yes
 	capital = 403 # Latša # Kargopol
-	russian = "Ljudiny"
-	polish = "Ljudiny"
-	bohemian = "Ljudiny"
-	pommeranian = "Ljudiny"
-	slovieni = "Ljudiny"
-	serbian = "Ljudiny"
-	croatian = "Ljudiny"
-	bulgarian = "Ljudiny"
-	carantanian = "Ljudiny"
-	bosnian = "Ljudiny"
 	allow = { always = no }
 }
+
 d_chudes = { # Vepsläižed
 	color = { 113 39 124 }
 	color2 = { 255 255 255 }
 	culture = vepsian
 	#tribe = yes
 	capital = 406 # Vologda
-	russian = "Chud'"
-	polish = "Chud'"
-	bohemian = "Chud'"
-	pommeranian = "Chud'"
-	slovieni = "Chud'"
-	serbian = "Chud'"
-	croatian = "Chud'"
-	bulgarian = "Chud'"
-	carantanian = "Chud'"
-	bosnian = "Chud'"
-	lappish = "Etelätšuudilaš"
 	allow = { always = no }
 }
+
 # Bjarmians
 d_toimians = { # Toimiläižed
 	color = { 159 150 150 }
@@ -1238,35 +1221,27 @@ d_toimians = { # Toimiläižed
 	capital = 396 # Pinega
 	allow = { always = no }
 }
+
 d_bjarmians = { # Bjarmiläižed
 	color = { 37 21 83 }
 	color2 = { 255 255 255 }
 	culture = vepsian
 	#tribe = yes
 	capital = 395 # Výnva # North dvina
-	saxon = "Beormas"
-	norwegian = "Bjarmir"
-	danish = "Bjarmir"
-	swedish = "Bjarmir"
-	anglonorse = "Bjarmir"
-	norse = "Bjarmir"
-	norsegaelic = "Bjarmir"
-	icelandic = "Bjarmir"
-	gothic = "Bjarmir"
-	roman = "Biarmones"
-	russian = "Zavoloch'e Chud'"
-	polish = "Zavoloch'e Chud'"
-	bohemian = "Zavoloch'e Chud'"
-	pommeranian = "Zavoloch'e Chud'"
-	slovieni = "Zavoloch'e Chud'"
-	serbian = "Zavoloch'e Chud'"
-	croatian = "Zavoloch'e Chud'"
-	bulgarian = "Zavoloch'e Chud'"
-	carantanian = "Zavoloch'e Chud'"
-	bosnian = "Zavoloch'e Chud'"
-	lappish = "Norjantšuudilaš"
 	allow = { always = no }
+	saxon = "Beormas"
+	russian = "Zavoloshka Chudes"
+	pommeranian = "Zavoloshka Chudes"
+	polish = "Zavoloshka Chudes"
+	bohemian = "Zavoloshka Chudes"
+	slovieni = "Zavoloshka Chudes"
+	carantanian = "Zavoloshka Chudes"
+	croatian = "Zavoloshka Chudes"
+	serbian = "Zavoloshka Chudes"
+	bosnian = "Zavoloshka Chudes"
+	bulgarian = "Zavoloshka Chudes"
 }
+
 ######
 # Karelian tribes
 ######
@@ -1278,6 +1253,7 @@ d_livgians = { # Livgilaižed
 	capital = 387 # Olonec
 	allow = { always = no }
 }
+
 d_karelians = { # Karjalaižed
 	color = { 193 192 108 }
 	capital = 388 # Karjala
@@ -1285,6 +1261,7 @@ d_karelians = { # Karjalaižed
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_horse_karelians = { # Tamma-Karjalaižed
 	color = { 63 114 74 }
 	capital = 1296 # Viipuri
@@ -1292,6 +1269,7 @@ d_horse_karelians = { # Tamma-Karjalaižed
 	#tribe = yes
 	allow = { always = no }
 }
+
 #####
 # Estonian tribes
 #####
@@ -1302,6 +1280,7 @@ d_estonia = { # Eestlased
 	culture = ugricbaltic
 	allow = { always = no }
 }
+
 d_ugandians = { # Ugandilased
 	color = { 115 143 196 }
 	color2 = { 255 255 255 }
@@ -1310,6 +1289,7 @@ d_ugandians = { # Ugandilased
 	capital = 379 # Ugaunia # Dorpat
 	allow = { always = no }
 }
+
 d_oseelians = { # Saarlased
 	color = { 124 124 124 }
 	color2 = { 255 255 255 }
@@ -1318,6 +1298,7 @@ d_oseelians = { # Saarlased
 	capital = 376 # Osilia # Osel
 	allow = { always = no }
 }
+
 d_rotalians = { # Läänelased
 	color = { 121 39 17 }
 	color2 = { 255 255 255 }
@@ -1326,6 +1307,7 @@ d_rotalians = { # Läänelased
 	capital = 987 # Rotalia # Läänemaa
 	allow = { always = no }
 }
+
 d_vironians = { # Virulased
 	color = { 30 25 90 }
 	color2 = { 255 255 255 }
@@ -1334,6 +1316,7 @@ d_vironians = { # Virulased
 	capital = 380 # Vironia # Narva
 	allow = { always = no }
 }
+
 #####
 # Livonian tribes
 #####
@@ -1345,6 +1328,7 @@ d_sakalians = { # Sakali
 	capital = 377 # Saccalia # Sakala
 	allow = { always = no }
 }
+
 d_vanemas = { # Vanemi
 	color = { 95 160 73 }
 	color2 = { 255 255 255 }
@@ -1353,26 +1337,18 @@ d_vanemas = { # Vanemi
 	capital = 373 # Vredecuren # Kurs
 	allow = { always = no }
 }
+
 #####
 # Sami
 #####
 d_sami = { # Sami
 	color = { 101 99 35 }
 	capital = 850 # Kantalahti # Kandalax
-	russian = "Lop'"
-	polish = "Lop'"
-	bohemian = "Lop'"
-	pommeranian = "Lop'"
-	slovieni = "Lop'"
-	serbian = "Lop'"
-	croatian = "Lop'"
-	bulgarian = "Lop'"
-	carantanian = "Lop'"
-	bosnian = "Lop'"
 	culture = lappish
 	#tribe = yes
 	allow = { always = no }
 }
+
 #####
 # Finns
 #####
@@ -1383,57 +1359,41 @@ d_satakunta = { # Satakuntans
 	culture = finnish
 	allow = { always = no }
 }
+
 d_tavasts = { # Hämäläiset
 	color = { 131 21 21 }
 	#tribe = yes
 	capital = 383 # Tavastland # Tavast
-	russian = "Jem"
-	polish = "Jem"
-	bohemian = "Jem"
-	pommeranian = "Jem"
-	slovieni = "Jem"
-	serbian = "Jem"
-	croatian = "Jem"
-	bulgarian = "Jem"
-	carantanian = "Jem"
-	bosnian = "Jem"
 	culture = finnish
 	allow = { always = no }
+	russian = "Yem"
+	pommeranian = "Yem"
+	polish = "Yem"
+	bohemian = "Yem"
+	slovieni = "Yem"
+	carantanian = "Yem"
+	croatian = "Yem"
+	serbian = "Yem"
+	bosnian = "Yem"
+	bulgarian = "Yem"
 }
+
 d_suomi_finns = { # Suomalaiset
 	color = { 100 11 114 }
 	#tribe = yes
 	capital = 382 # Finland
-	russian = "Sum"
-	polish = "Sum"
-	bohemian = "Sum"
-	pommeranian = "Sum"
-	slovieni = "Sum"
-	serbian = "Sum"
-	croatian = "Sum"
-	bulgarian = "Sum"
-	carantanian = "Sum"
-	bosnian = "Sum"
 	culture = finnish
 	allow = { always = no }
 }
+
 d_savonians = { # Savolaiset
 	color = { 186 125 181 }
 	#tribe = yes
 	capital = 390 # Savolax
-	russian = "Savaki"
-	polish = "Savaki"
-	bohemian = "Savaki"
-	pommeranian = "Savaki"
-	slovieni = "Savaki"
-	serbian = "Savaki"
-	croatian = "Savaki"
-	bulgarian = "Savaki"
-	carantanian = "Savaki"
-	bosnian = "Savaki"
 	culture = finnish
 	allow = { always = no }
 }
+
 #####
 # Ingrians
 #####
@@ -1441,85 +1401,32 @@ d_votes = { # Vadjalased
 	color = { 1 193 119 }
 	#tribe = yes
 	capital = 1268 # Koporje
-	russian = "Vod'"
-	polish = "Vod'"
-	bohemian = "Vod'"
-	pommeranian = "Vod'"
-	slovieni = "Vod'"
-	serbian = "Vod'"
-	croatian = "Vod'"
-	bulgarian = "Vod'"
-	carantanian = "Vod'"
-	bosnian = "Vod'"
-	lettigallish = "Krievini"
-	lithuanian = "Krievini"
-	prussian = "Krievini"
-	thuringian = "Woten"
-	swabian = "Woten"
-	bavarian = "Woten"
-	low_saxon = "Woten"
-	franconian = "Woten"
-	low_german = "Woten"
-	low_frankish = "Woten"
-	german = "Woten"
-	dutch = "Woten"
 	culture = ugricbaltic
 	allow = { always = no }
+	lettigallish = "Kreevins"
+	lithuanian = "Kreevins"
+	prussian = "Kreevins"
 }
+
 d_ingrians = { # Inkerilaižed
 	color = { 193 40 40 }
 	#tribe = yes
 	capital = 411 # Ingria
-	russian = "Ižory"
-	polish = "Ižory"
-	bohemian = "Ižory"
-	pommeranian = "Ižory"
-	slovieni = "Ižory"
-	serbian = "Ižory"
-	croatian = "Ižory"
-	bulgarian = "Ižory"
-	carantanian = "Ižory"
-	bosnian = "Ižory"
-	lettigallish = "Ižorai"
-	lithuanian = "Ižorai"
-	prussian = "Ižorai"
 	culture = karelian
 	allow = { always = no }
 }
+
 #####
 # Sami
 #####
 d_kylfings = { # Kylfingilaš
 	color = { 11 114 28 }
 	capital = 280 # Norrland # Västerbotten
-	russian = "Kolbiagi"
-	polish = "Kolbiagi"
-	bohemian = "Kolbiagi"
-	pommeranian = "Kolbiagi"
-	slovieni = "Kolbiagi"
-	serbian = "Kolbiagi"
-	croatian = "Kolbiagi"
-	bulgarian = "Kolbiagi"
-	carantanian = "Kolbiagi"
-	bosnian = "Kolbiagi"
-	alan = "Koulpingoi"
-	arberian = "Koulpingoi"
-	armenian = "Koulpingoi"
-	georgian = "Koulpingoi"
-	greek = "Koulpingoi"
-	crimean_gothic = "Koulpingoi"
-	norwegian = "Kylfingar"
-	danish = "Kylfingar"
-	swedish = "Kylfingar"
-	anglonorse = "Kylfingar"
-	norse = "Kylfingar"
-	norsegaelic = "Kylfingar"
-	icelandic = "Kylfingar"
-	gothic = "Kylfingar"
 	culture = lappish
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_kvens = { # Kveanatlaš
 	color = { 117 47 47 }
 	capital = 385 # Österbotten
@@ -1527,6 +1434,7 @@ d_kvens = { # Kveanatlaš
 	#tribe = yes
 	allow = { always = no }
 }
+
 d_kvens_birkarls = { # Bircharlaboa
 	color = { 7 190 23 }
 	capital = 386 # Kvänland
@@ -1534,6 +1442,7 @@ d_kvens_birkarls = { # Bircharlaboa
 	#tribe = yes
 	allow = { always = no }
 }
+
 ####
 # Samoyed
 ####
@@ -1545,6 +1454,7 @@ d_samoyeds = { # Sikhirti
 	capital = 397 # Ižva # Izhma
 	allow = { always = no }
 }
+
 ####
 # Ghor
 ####
@@ -1556,6 +1466,7 @@ d_ghor = { # Ghór
 	capital = 1540 # Ghór
 	allow = { always = no }
 }
+
 ####
 # Banu Ifran
 ####
@@ -1567,6 +1478,7 @@ d_sala = { # Sala
 	capital = 1361 # Sala
 	allow = { always = no }
 }
+
 ####
 # Barghawata
 ####
@@ -1578,6 +1490,7 @@ d_barghawata = { # Tamasna # Sala
 	capital = 844 # Asfí # Asfî
 	allow = { always = no }
 }
+
 ####
 # Nafusa
 ####
@@ -1589,6 +1502,7 @@ d_nafusa = { # Nafusa/Infusen
 	capital = 1398 # Nafusa
 	allow = { title_duke_basic_allow = yes }
 }
+
 ####
 # Uri
 ####
@@ -1600,6 +1514,7 @@ d_darfur = { # Uri
 	capital = 1229 # Uri
 	allow = { title_duke_basic_allow = yes }
 }
+
 ######################################
 # nomads for HL compatch
 ######################################
@@ -1614,6 +1529,7 @@ d_baloch = { # Baloch
 	capital = 853 # Jiruft
 	allow = { always = no }
 }
+
 d_kufichi = { # Kufichi # Qufs
 	color = { 190 165 65 }
 	color2 = { 255 255 255 }

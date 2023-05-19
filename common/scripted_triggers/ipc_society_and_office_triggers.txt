@@ -1,0 +1,813 @@
+
+
+###########Membership###########
+
+is_imperial_court_member_trigger = {
+	custom_tooltip = {
+		text = is_imperial_court_member_trigger_tooltip
+		OR = {
+			is_christian_imperial_court_member_trigger = yes
+			is_muslim_imperial_court_member_trigger = yes
+			is_pagan_imperial_court_member_trigger = yes
+			is_eastern_imperial_court_member_trigger = yes
+			is_unique_imperial_court_member_trigger = yes
+		}
+	}
+}
+
+is_christian_imperial_court_member_trigger = {
+	custom_tooltip = {
+		text = is_christian_imperial_court_member_trigger_tooltip
+		OR = {
+			society_member_of = imperial_court_christian_1
+			society_member_of = imperial_court_christian_2
+			society_member_of = imperial_court_christian_3
+		}
+	}
+}
+is_muslim_imperial_court_member_trigger = {
+	custom_tooltip = {
+		text = is_muslim_imperial_court_member_trigger_tooltip
+		OR = {
+			society_member_of = imperial_court_muslim_1
+			society_member_of = imperial_court_muslim_2
+			society_member_of = imperial_court_muslim_3
+		}
+	}
+}
+is_pagan_imperial_court_member_trigger = {
+	custom_tooltip = {
+		text = is_pagan_imperial_court_member_trigger_tooltip
+		OR = {
+			society_member_of = imperial_court_pagan_1
+			society_member_of = imperial_court_pagan_2
+			society_member_of = imperial_court_pagan_3
+		}
+	}
+}
+is_eastern_imperial_court_member_trigger = {
+	custom_tooltip = {
+		text = is_eastern_imperial_court_member_trigger_tooltip
+		OR = {
+			society_member_of = imperial_court_eastern_1
+			society_member_of = imperial_court_eastern_2
+			society_member_of = imperial_court_eastern_3
+		}
+	}
+}
+is_unique_imperial_court_member_trigger = {
+	custom_tooltip = {
+		text = is_unique_imperial_court_member_trigger_tooltip
+		OR = {
+			society_member_of = imperial_court_byzantine
+			society_member_of = imperial_court_hre
+			society_member_of = imperial_court_arabia
+			society_member_of = imperial_court_roman_empire
+		}
+	}
+}
+
+
+###########Joining Reqs###########
+
+imperial_court_female_membership_trigger = {
+	OR = {
+		is_female = no
+		AND = {
+			is_female = yes
+			
+			OR = {
+				custom_tooltip = {
+					text = imperial_court_female_membership_trigger_tooltip
+					OR = {
+						father = { tier = emperor }
+						mother = { tier = emperor }
+						spouse = { tier = emperor }
+					}
+				}
+				top_liege = {
+					OR = {
+						primary_title = { 
+							NOR = {
+								has_law = status_of_women_0
+								has_law = status_of_women_1
+							}
+						}
+						religion_group = christian
+						has_religion_feature = religion_equal
+						has_religion_feature = religion_matriarchal
+						has_religion_feature = religion_feature_bon
+					}
+				}
+				trigger_if = {
+					limit = { top_liege = { religion_group = pagan_group } }
+					trait = shieldmaiden
+				}
+			}
+		}
+	}
+}
+
+
+can_join_imperial_court_trigger = {
+	OR = {
+		can_join_christian_imperial_court_trigger = yes
+		can_join_muslim_imperial_court_trigger = yes
+		can_join_pagan_imperial_court_trigger = yes
+		can_join_eastern_imperial_court_trigger = yes
+		can_join_byzantine_imperial_court_trigger = yes
+		can_join_hre_imperial_court_trigger = yes
+		can_join_roman_imperial_court_trigger = yes
+	}
+}
+
+can_join_christian_imperial_court_trigger = {
+	hidden_tooltip = { is_in_society = no }
+	is_adult = yes
+	is_inaccessible_or_incapable_trigger = no
+	hidden_tooltip = {
+		top_liege = {
+			primary_title = {
+				has_title_flag = imperial_court_active
+				OR = {
+					title = event_target:imperial_court_christian_1_title
+					title = event_target:imperial_court_christian_2_title
+					title = event_target:imperial_court_christian_3_title
+				}
+			}
+		}
+		NOT = { has_character_flag = society_join_block } 
+	}
+	OR = {
+		is_landed = yes
+		trigger_if = {
+			limit = { is_married = yes }
+			custom_tooltip = {
+				text = can_join_imperial_court_spouse
+				spouse = { is_landed = yes }
+			}
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_heir
+			is_heir = yes
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_claim
+			any_claim = { higher_tier_than = count }
+		}
+		top_liege = {
+			show_scope_change = no
+			ROOT = { show_scope_change = no is_child_of = PREV }
+		}
+	}
+	NOR = {
+		is_ascetic_trigger = yes
+		trait = excommunicated
+	}
+	can_interact_with_imperial_court_revolt_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip
+			NOT = { has_character_flag = imperial_court_previous_emperor_block }
+		}
+	}
+	trigger_else_if = {
+		limit = { tier = emperor }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip2
+			NOT = { tier = emperor }
+		}
+	}
+	hidden_tooltip = {
+		OR = {
+			ai = no
+			NOR = {
+				father = { ai = no }
+				mother = { ai = no }
+			}
+		}	
+	}
+}
+
+can_join_muslim_imperial_court_trigger = {
+	hidden_tooltip = { is_in_society = no }
+	is_adult = yes
+	is_inaccessible_or_incapable_trigger = no
+	hidden_tooltip = {
+		top_liege = {
+			primary_title = {
+				has_title_flag = imperial_court_active
+				OR = {
+					title = event_target:imperial_court_muslim_1_title
+					title = event_target:imperial_court_muslim_2_title
+					title = event_target:imperial_court_muslim_3_title
+					title = e_arabia
+				}
+			}
+		}
+		NOT = { has_character_flag = society_join_block } 
+	}
+	OR = {
+		is_landed = yes
+		trigger_if = {
+			limit = { is_married = yes }
+			custom_tooltip = {
+				text = can_join_imperial_court_spouse
+				spouse = { is_landed = yes }
+			}
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_heir
+			is_heir = yes
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_claim
+			any_claim = { higher_tier_than = count }
+		}
+		top_liege = {
+			show_scope_change = no
+			ROOT = { show_scope_change = no is_child_of = PREV }
+		}
+	}
+	imperial_court_female_membership_trigger = yes
+	NOR = {
+		trait = decadent
+		trait = hedonist
+		trait = drunkard
+	}
+	can_interact_with_imperial_court_revolt_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip
+			NOT = { has_character_flag = imperial_court_previous_emperor_block }
+		}
+	}
+	trigger_else_if = {
+		limit = { tier = emperor }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip2
+			NOT = { tier = emperor }
+		}
+	}
+	hidden_tooltip = {
+		OR = {
+			ai = no
+			NOR = {
+				father = { ai = no }
+				mother = { ai = no }
+			}
+		}	
+	}
+}
+
+can_join_pagan_imperial_court_trigger = {
+	hidden_tooltip = { is_in_society = no }
+	is_adult = yes
+	is_inaccessible_or_incapable_trigger = no
+	hidden_tooltip = {
+		top_liege = {
+			primary_title = {
+				has_title_flag = imperial_court_active
+				OR = {
+					title = event_target:imperial_court_pagan_1_title
+					title = event_target:imperial_court_pagan_2_title
+					title = event_target:imperial_court_pagan_3_title
+				}
+			}
+		}
+		NOT = { has_character_flag = society_join_block } 
+	}
+	OR = {
+		is_landed = yes
+		trigger_if = {
+			limit = { is_married = yes }
+			custom_tooltip = {
+				text = can_join_imperial_court_spouse
+				spouse = { is_landed = yes }
+			}
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_heir
+			is_heir = yes
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_claim
+			any_claim = { higher_tier_than = count }
+		}
+		top_liege = {
+			show_scope_change = no
+			ROOT = { show_scope_change = no is_child_of = PREV }
+		}
+	}
+	imperial_court_female_membership_trigger = yes
+	can_interact_with_imperial_court_revolt_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip
+			NOT = { has_character_flag = imperial_court_previous_emperor_block }
+		}
+	}
+	trigger_else_if = {
+		limit = { tier = emperor }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip2
+			NOT = { tier = emperor }
+		}
+	}
+	hidden_tooltip = {
+		OR = {
+			ai = no
+			NOR = {
+				father = { ai = no }
+				mother = { ai = no }
+			}
+		}	
+	}
+}
+
+can_join_eastern_imperial_court_trigger = {
+	hidden_tooltip = { is_in_society = no }
+	is_adult = yes
+	is_inaccessible_or_incapable_trigger = no
+	hidden_tooltip = {
+		top_liege = {
+			primary_title = {
+				has_title_flag = imperial_court_active
+				OR = {
+					title = event_target:imperial_court_eastern_1_title
+					title = event_target:imperial_court_eastern_2_title
+					title = event_target:imperial_court_eastern_3_title
+				}
+			}
+		}
+		NOT = { has_character_flag = society_join_block } 
+	}
+	OR = {
+		is_landed = yes
+		trigger_if = {
+			limit = { is_married = yes }
+			custom_tooltip = {
+				text = can_join_imperial_court_spouse
+				spouse = { is_landed = yes }
+			}
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_heir
+			is_heir = yes
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_claim
+			any_claim = { higher_tier_than = count }
+		}
+		top_liege = {
+			show_scope_change = no
+			ROOT = { show_scope_change = no is_child_of = PREV }
+		}
+	}
+	imperial_court_female_membership_trigger = yes
+	is_ascetic_trigger = no
+	can_interact_with_imperial_court_revolt_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip
+			NOT = { has_character_flag = imperial_court_previous_emperor_block }
+		}
+	}
+	trigger_else_if = {
+		limit = { tier = emperor }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip2
+			NOT = { tier = emperor }
+		}
+	}
+	hidden_tooltip = {
+		OR = {
+			ai = no
+			NOR = {
+				father = { ai = no }
+				mother = { ai = no }
+			}
+		}	
+	}
+}
+
+can_join_byzantine_imperial_court_trigger = {
+	hidden_tooltip = { is_in_society = no }
+	is_adult = yes
+	is_inaccessible_or_incapable_trigger = no
+	hidden_tooltip = {
+		top_liege = {
+			primary_title = {
+				has_title_flag = imperial_court_active
+				title = e_byzantium
+			}
+		}
+		NOT = { has_character_flag = society_join_block } 
+	}
+	OR = {
+		is_landed = yes
+		trigger_if = {
+			limit = { is_married = yes }
+			custom_tooltip = {
+				text = can_join_imperial_court_spouse
+				spouse = { is_landed = yes }
+			}
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_heir
+			is_heir = yes
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_claim
+			any_claim = { higher_tier_than = count }
+		}
+		top_liege = {
+			show_scope_change = no
+			ROOT = { show_scope_change = no is_child_of = PREV }
+		}
+	}
+	imperial_court_female_membership_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_castrate_blind
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+	}
+	can_interact_with_imperial_court_revolt_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip
+			NOT = { has_character_flag = imperial_court_previous_emperor_block }
+		}
+	}
+	trigger_else_if = {
+		limit = { tier = emperor }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip2
+			NOT = { tier = emperor }
+		}
+	}
+	hidden_tooltip = {
+		OR = {
+			ai = no
+			NOR = {
+				father = { ai = no }
+				mother = { ai = no }
+			}
+		}	
+	}
+}
+
+can_join_hre_imperial_court_trigger = {
+	hidden_tooltip = { is_in_society = no }
+	is_adult = yes
+	is_inaccessible_or_incapable_trigger = no
+	hidden_tooltip = {
+		top_liege = {
+			primary_title = {
+				has_title_flag = imperial_court_active
+				title = e_hre
+			}
+		}
+		NOT = { has_character_flag = society_join_block } 
+	}
+	OR = {
+		is_landed = yes
+		trigger_if = {
+			limit = { is_married = yes }
+			custom_tooltip = {
+				text = can_join_imperial_court_spouse
+				spouse = { is_landed = yes }
+			}
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_heir
+			is_heir = yes
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_claim
+			any_claim = { higher_tier_than = count }
+		}
+		top_liege = {
+			show_scope_change = no
+			ROOT = { show_scope_change = no is_child_of = PREV }
+		}
+	}
+	NOR = {
+		is_ascetic_trigger = yes
+		trait = excommunicated
+	}
+	can_interact_with_imperial_court_revolt_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip
+			NOT = { has_character_flag = imperial_court_previous_emperor_block }
+		}
+	}
+	trigger_else_if = {
+		limit = { tier = emperor }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip2
+			NOT = { tier = emperor }
+		}
+	}
+	hidden_tooltip = {
+		OR = {
+			ai = no
+			NOR = {
+				father = { ai = no }
+				mother = { ai = no }
+			}
+		}	
+	}
+}
+
+can_join_roman_imperial_court_trigger = {
+	hidden_tooltip = { is_in_society = no }
+	is_adult = yes
+	is_inaccessible_or_incapable_trigger = no
+	hidden_tooltip = {
+		top_liege = {
+			primary_title = {
+				has_title_flag = imperial_court_active
+				title = e_roman_empire
+			}
+		}
+		NOT = { has_character_flag = society_join_block } 
+	}
+	OR = {
+		is_landed = yes
+		trigger_if = {
+			limit = { is_married = yes }
+			custom_tooltip = {
+				text = can_join_imperial_court_spouse
+				spouse = { is_landed = yes }
+			}
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_heir
+			is_heir = yes
+		}
+		custom_tooltip = {
+			text = can_join_imperial_court_claim
+			any_claim = { higher_tier_than = count }
+		}
+		top_liege = {
+			show_scope_change = no
+			ROOT = { show_scope_change = no is_child_of = PREV }
+		}
+	}
+	imperial_court_female_membership_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_castrate_blind
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+	}
+	can_interact_with_imperial_court_revolt_trigger = yes
+	trigger_if = {
+		limit = { NOT = { tier = emperor } }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip
+			NOT = { has_character_flag = imperial_court_previous_emperor_block }
+		}
+	}
+	trigger_else_if = {
+		limit = { tier = emperor }
+		custom_tooltip = {
+			text = can_join_imperial_court_trigger_tooltip2
+			NOT = { tier = emperor }
+		}
+	}
+	hidden_tooltip = {
+		OR = {
+			ai = no
+			NOR = {
+				father = { ai = no }
+				mother = { ai = no }
+			}
+		}	
+	}
+}
+
+
+###########Court Special Titles###########
+
+has_unique_court_title_trigger = {
+	OR = {
+		has_landed_title = e_byzantium
+		has_landed_title = e_hre
+		has_landed_title = e_arabia
+		has_landed_title = e_roman_empire
+	}
+}
+
+has_unique_imperial_office_trigger = {
+	custom_tooltip = {
+		text = has_unique_imperial_office_trigger_tooltip
+		OR = {
+			is_imperial_court_regent_trigger = yes
+			is_imperial_court_seneschal_trigger = yes
+			is_imperial_court_marshal_trigger = yes
+			is_imperial_court_lawkeeper_trigger = yes
+			is_imperial_court_spymaster_trigger = yes
+		}
+	}
+}
+
+is_imperial_court_regent_trigger = {
+	custom_tooltip = {
+		text = is_imperial_court_regent_trigger_tooltip
+		OR = {
+			has_minor_title = title_imperial_court_regent_christian
+			has_minor_title = title_imperial_court_regent_muslim
+			has_minor_title = title_imperial_court_regent_pagan
+			has_minor_title = title_imperial_court_regent_eastern
+			has_minor_title = title_imperial_court_regent_byzantine
+			has_minor_title = title_imperial_court_regent_hre
+			has_minor_title = title_imperial_court_regent_roman
+		}	
+	}
+}
+
+
+is_imperial_court_seneschal_trigger = {
+	custom_tooltip = {
+		text = is_imperial_court_seneschal_trigger_tooltip
+		OR = {
+			has_minor_title = title_imperial_court_seneschal_christian
+			has_minor_title = title_imperial_court_seneschal_muslim
+			has_minor_title = title_imperial_court_seneschal_pagan
+			has_minor_title = title_imperial_court_seneschal_eastern
+			has_minor_title = title_imperial_court_seneschal_byzantine
+			has_minor_title = title_imperial_court_seneschal_hre
+			has_minor_title = title_imperial_court_seneschal_roman
+		}
+	}
+}
+
+is_imperial_court_marshal_trigger = {
+	custom_tooltip = {
+		text = is_imperial_court_marshal_trigger_tooltip
+		OR = {
+			has_minor_title = title_imperial_court_marshal_christian
+			has_minor_title = title_imperial_court_marshal_muslim
+			has_minor_title = title_imperial_court_marshal_pagan
+			has_minor_title = title_imperial_court_marshal_eastern
+			has_minor_title = title_imperial_court_marshal_byzantine
+			has_minor_title = title_imperial_court_marshal_hre
+			has_minor_title = title_imperial_court_marshal_roman
+		}
+	}
+}
+
+is_imperial_court_lawkeeper_trigger = {
+	custom_tooltip = {
+		text = is_imperial_court_lawkeeper_trigger_tooltip
+		OR = {
+			has_minor_title = title_imperial_court_lawkeeper_christian
+			has_minor_title = title_imperial_court_lawkeeper_muslim
+			has_minor_title = title_imperial_court_lawkeeper_pagan
+			has_minor_title = title_imperial_court_lawkeeper_eastern
+			has_minor_title = title_imperial_court_lawkeeper_byzantine
+			has_minor_title = title_imperial_court_lawkeeper_hre
+			has_minor_title = title_imperial_court_lawkeeper_roman
+		}
+	}
+}
+
+is_imperial_court_spymaster_trigger = {
+	custom_tooltip = {
+		text = is_imperial_court_spymaster_trigger_tooltip
+		OR = {
+			has_minor_title = title_imperial_court_spymaster_christian
+			has_minor_title = title_imperial_court_spymaster_muslim
+			has_minor_title = title_imperial_court_spymaster_pagan
+			has_minor_title = title_imperial_court_spymaster_eastern
+			has_minor_title = title_imperial_court_spymaster_byzantine
+			has_minor_title = title_imperial_court_spymaster_hre
+			has_minor_title = title_imperial_court_spymaster_roman
+		}
+	}
+}
+
+####Missions
+can_assign_imperial_court_missions_potential_trigger = {
+	is_imperial_court_member_trigger = yes
+	society_rank >= 3
+	OR = {
+		ai = no
+		has_unique_imperial_office_trigger = yes
+		AND = {
+			tier = emperor
+			is_society_grandmaster = yes
+		}
+	}
+}
+
+can_assign_seneschal_missions_trigger = {
+	OR = {
+		AND = {
+			is_society_grandmaster = yes
+			custom_tooltip = {
+				text = can_assign_seneschal_missions_trigger_tooltip
+				NOR = {
+					primary_title = { has_title_flag = has_imperial_seneschal }
+					top_liege = { primary_title = { has_title_flag = has_imperial_seneschal } }
+				}
+			}
+		}
+		#AND = {
+			#hidden_tooltip = { society_rank == 3 }
+			is_imperial_court_seneschal_trigger = yes
+		#}
+	}
+}
+
+can_assign_marshal_missions_trigger = {
+	OR = {
+		AND = {
+			is_society_grandmaster = yes
+			custom_tooltip = {
+				text = can_assign_marshal_missions_trigger_tooltip
+				NOR = {
+					primary_title = { has_title_flag = has_imperial_marshal }
+					top_liege = { primary_title = { has_title_flag = has_imperial_marshal } }
+				}
+			}
+		}
+		#AND = {
+			#hidden_tooltip = { society_rank == 3 }
+			is_imperial_court_marshal_trigger = yes
+		#}
+	}
+}
+
+can_assign_lawkeeper_missions_trigger = {
+	OR = {
+		AND = {
+			is_society_grandmaster = yes
+			custom_tooltip = {
+			text = can_assign_lawkeeper_missions_trigger_tooltip
+				NOR = {
+					primary_title = { has_title_flag = has_imperial_lawkeeper }
+					top_liege = { primary_title = { has_title_flag = has_imperial_lawkeeper } }
+				}
+			}
+		}
+		#AND = {
+			#hidden_tooltip = { society_rank == 3 }
+			is_imperial_court_lawkeeper_trigger = yes
+		#}
+	}
+}
+
+can_assign_spymaster_missions_trigger = {
+	OR = {
+		AND = {
+			is_society_grandmaster = yes
+			custom_tooltip = {
+				text = can_assign_spymaster_missions_trigger_tooltip
+				NOR = {
+					primary_title = { has_title_flag = has_imperial_spymaster }
+					top_liege = { primary_title = { has_title_flag = has_imperial_spymaster } }
+				}
+			}
+		}
+		#AND = {
+			#hidden_tooltip = { society_rank == 3 }
+			is_imperial_court_spymaster_trigger = yes
+		#}
+	}
+}
+
+can_be_assigned_ipc_mission_trigger = {
+	is_imperial_court_member_trigger = yes
+	society_rank < 3
+	has_any_quest = no
+	war = no
+	is_inaccessible_or_incapable_trigger = no
+	can_interact_with_imperial_court_revolt_trigger = yes
+	custom_tooltip = {
+		text = can_be_assigned_ipc_mission_trigger_tooltip
+		NOT = { has_character_modifier = quest_cooldown_timer } 
+	}
+}

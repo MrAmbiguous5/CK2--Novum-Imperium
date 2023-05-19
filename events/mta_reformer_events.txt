@@ -1,0 +1,124 @@
+namespace = mta
+
+# On_reform_religion: Reformer is venerated and added to the list of gods
+character_event = {
+	id = mta.24
+	hide_window = yes
+	
+	religion_group = pagan_group
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		ROOT = {
+			if = { limit = { NOT = { has_religion_feature = religion_peaceful } }
+				if = {
+					limit = { 
+						is_female = no 
+					}
+					create_bloodline = {
+						type = mta_reformer_bloodline
+						religion = ROOT
+						inheritance = patrilineal
+					}
+					new_bloodline = {
+						set_description = "bloodline_desc_mta_reformer"
+					}
+				}
+				if = {
+					limit = { 
+						is_female = yes 
+					}
+					create_bloodline = {
+						type = mta_reformer_bloodline
+						religion = ROOT
+						inheritance = matrilineal
+					}
+					new_bloodline = {
+						set_description = "bloodline_desc_mta_reformer"
+					}
+				}
+			}
+			if = { limit = { has_religion_feature = religion_peaceful }
+				if = {
+					limit = { 
+						is_female = no 
+					}
+					create_bloodline = {
+						type = mta_reformer_bloodline_peaceful
+						religion = ROOT
+						inheritance = patrilineal
+					}
+					new_bloodline = {
+						set_description = "bloodline_desc_mta_reformer"
+					}
+				}
+				if = {
+					limit = { 
+						is_female = yes 
+					}
+					create_bloodline = {
+						type = mta_reformer_bloodline_peaceful
+						religion = ROOT
+						inheritance = matrilineal
+					}
+					new_bloodline = {
+						set_description = "bloodline_desc_mta_reformer"
+					}
+				}
+			}
+			#add_god_name = string_reformer_god # Temporarily disabled because of a bug
+			
+			#Save the reformer as a global event target
+			save_global_event_target_as = reformer_last
+			religion_scope = { 
+				save_global_event_target_as = reformer_last_rel
+			}
+			if = { limit = { religion = aztec_reformed }
+				save_global_event_target_as = reformer_aztec
+			}
+			if = { limit = { religion = baltic_pagan_reformed }
+				save_global_event_target_as = reformer_baltic
+			}
+			if = { limit = { religion = bon_reformed }
+				save_global_event_target_as = reformer_bon
+			}
+			if = { limit = { religion = finnish_pagan_reformed }
+				save_global_event_target_as = reformer_finnish
+			}
+			if = { limit = { religion = hellenic_pagan_reformed }
+				save_global_event_target_as = reformer_hellenic
+			}
+			if = { limit = { religion = norse_pagan_reformed }
+				save_global_event_target_as = reformer_norse
+			}
+			if = { limit = { religion = slavic_pagan_reformed }
+				save_global_event_target_as = reformer_slavic
+			}
+			if = { limit = { religion = tengri_pagan_reformed }
+				save_global_event_target_as = reformer_tengri
+			}
+			if = { limit = { religion = west_african_pagan_reformed }
+				save_global_event_target_as = reformer_west_african
+			}
+			if = { limit = { religion = zun_pagan_reformed }
+				save_global_event_target_as = reformer_zun
+			}
+		}
+	}
+}
+
+# Debug
+character_event = {
+	id = mta.25
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+		event_target:reformer_last = {
+			show_portrait = yes
+		}
+		religion = event_target:reformer_last_rel
+	}
+}

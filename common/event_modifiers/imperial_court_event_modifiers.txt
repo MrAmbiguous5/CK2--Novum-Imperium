@@ -1,0 +1,307 @@
+
+
+######Society Influence Trackers######
+imperial_court_influence_1 = {  #emperor holds most power < 20
+	icon = 7
+	
+	ipc_monthly_currency_gain = 3
+	demesne_size = 1
+	short_reign_length = -5
+	arrest_chance_modifier = 0.2
+	plot_discovery_chance = 0.1
+	build_cost_modifier = -0.1
+}
+
+imperial_court_influence_2 = { #emperor holds some power 20+
+	icon = 7
+	
+	ipc_monthly_currency_gain = 1.5
+	demesne_size = 1
+	short_reign_length = -5
+	arrest_chance_modifier = 0.1
+	plot_discovery_chance = 0.05
+	build_cost_modifier = -0.05
+}
+
+imperial_court_influence_3 = { #emperor busy keeping things in balance 40+
+	icon = 7
+	
+	arrest_chance_modifier = 0.05
+	plot_power_modifier = 0.1
+	monthly_character_prestige = -0.25
+}
+
+imperial_court_influence_4 = { #vassals hold some power, emperor must rely on own resources 60+
+	icon = 25
+	
+	ipc_monthly_currency_gain = -1.5
+	global_levy_size = 0.1
+	defensive_plot_power_modifier = 0.05
+	global_tax_modifier = -0.05
+	monthly_character_prestige = -0.5
+	vassal_opinion = -10 
+	
+	castle_vassal_max_levy = -0.05
+	castle_vassal_min_levy = -0.05
+	city_vassal_max_levy = -0.05
+	city_vassal_min_levy = -0.05
+	temple_vassal_max_levy = -0.05
+	temple_vassal_min_levy = -0.05
+}
+
+imperial_court_influence_5 = { #vassals hold most power, emperor must rely on own resources 80+
+	icon = 25
+	
+	ipc_monthly_currency_gain = -3
+	global_levy_size = 0.2
+	defensive_plot_power_modifier = 0.1
+	global_tax_modifier = -0.1
+	monthly_character_prestige = -1
+	vassal_opinion = -20
+	
+	castle_vassal_max_levy = -0.1
+	castle_vassal_min_levy = -0.1
+	city_vassal_max_levy = -0.1
+	city_vassal_min_levy = -0.1
+	temple_vassal_max_levy = -0.1
+	temple_vassal_min_levy = -0.1
+}
+
+
+######Office Modifiers######
+
+ipc_missions_list_modifier = { icon = 3 }
+
+imperial_regent_modifier = {
+	icon = 10
+	vassal_opinion = -5
+}
+
+imperial_seneschal_modifier = {
+	icon = 4
+	vassal_opinion = 5
+}
+
+imperial_marshal_modifier = {
+	icon = 1
+	vassal_opinion = 5
+}
+
+imperial_lawkeeper_modifier = {
+	icon = 11
+	vassal_opinion = 5
+}
+
+imperial_spymaster_modifier = {
+	icon = 5
+	vassal_opinion = 5
+}
+
+imperial_office_bonus = {
+	icon = 9
+	ipc_monthly_currency_gain = 0.2
+}
+
+
+######Society Influence Modifiers######
+
+
+##missions
+
+ipc_successful_generic_mission = {
+	society_influence = 1
+}
+
+ipc_failed_generic_mission = {
+	society_influence = -1
+}
+
+ipc_successful_realm_mission = {
+	society_influence = 2
+}
+
+ipc_failed_realm_mission = {
+	society_influence = -2
+}
+
+ipc_successful_foreign_mission = {
+	society_influence = 2
+}
+
+ipc_failed_foreign_mission = {
+	society_influence = -2
+}
+
+ipc_successful_imperial_conquest = {
+	society_influence = 5
+}
+
+ipc_failed_imperial_conquest = {
+	society_influence = -5
+}
+
+
+##factions
+
+ipc_successful_faction_takeover = {
+	society_influence = -50
+}
+
+ipc_failed_faction_takeover = {
+	society_influence = -75
+}
+
+
+##events and decisions
+
+ipc_conscripted_court_levies = {
+	society_influence = -10
+}
+
+ipc_magnanimous_emperor = {
+	society_influence = -2.5
+}
+
+
+
+
+
+#Cant use because cant manually remove society modifiers
+#imperial_regent_society_modifier = {
+#	society_influence = 20
+#}
+#imperial_seneschal_society_modifier = {
+#	society_influence = 10
+#}
+#imperial_marshal_society_modifier = {
+#	society_influence = 10
+#}
+#imperial_lawkeeper_society_modifier = {
+#	society_influence = 10
+#}
+#imperial_spymaster_society_modifier = {
+#	society_influence = 10
+#}
+##for character checking
+#influence_modifier_timer = { icon = 1 }
+
+
+######Timers######
+ipc_random_mission_timer = { icon = 1 }
+ipc_donate_to_court_power_timer = { icon = 1 }
+ipc_visit_imperial_capital_power_timer = { icon = 1 }
+ipc_levy_extra_tax_seneschal_power_timer = { icon = 1 }
+ipc_employ_imperial_commander_power_timer = { icon = 1 }
+ipc_declare_traitor_spymaster_power_timer = { icon = 1 }
+faction_ipc_takeover_ultimatum_timer = { icon = 1 } 
+ipc_recently_insulted_timer = { icon = 1 }
+fix_bordergore_character_modifier = { icon = 1 }
+reduce_ipc_influence_army_levy_timer = { icon = 1 }
+
+recompense_timer = { icon = 1 }
+
+
+######Mission notification timers######
+
+quest_ipc_build_imperial_road_success_notification = { icon = 1 }
+quest_ipc_improve_imperial_capital_success_notification = { icon = 1 }
+quest_ipc_improve_imperial_capital_failure_notification = { icon = 1 }
+quest_ipc_improve_imperial_capital_building_notification = { icon = 1 }
+
+quest_ipc_military_drill_success_notification = { icon = 1 }
+quest_ipc_military_drill_failure_notification = { icon = 1 }
+quest_ipc_distribute_levy_recompense_success_notification = { icon = 1 }
+quest_ipc_distribute_levy_recompense_failure_notification = { icon = 1 }
+quest_ipc_imperial_conquest_success_notification = { icon = 1 }
+quest_ipc_imperial_conquest_failure_notification = { icon = 1 }
+
+
+quest_ipc_change_culture_success_notification = { icon = 1 }
+quest_ipc_change_culture_failure_notification = { icon = 1 }
+quest_ipc_organize_festival_success_notification = { icon = 1 }
+quest_ipc_organize_festival_failure_notification = { icon = 1 }
+
+
+quest_ipc_investigate_secret_religions_success_notification = { icon = 1 }
+quest_ipc_investigate_secret_religions_failure_notification = { icon = 1 }
+quest_ipc_infiltrate_court_success_notification = { icon = 1 }
+quest_ipc_infiltrate_court_failure_notification = { icon = 1 }
+
+######Misc timers######
+ipc_large_pledge = { icon = 1 }
+ipc_medium_pledge = { icon = 1 }
+ipc_small_pledge = { icon = 1 }
+imperial_conquest_chose_dynasty = { icon = 1 }
+imperial_conquest_dynasty_candidate = { icon = 1 }
+
+######Character Modifiers######
+ipc_imperial_champion = {
+	icon = 123
+	monthly_character_prestige = 1
+	general_opinion = 10
+	ambitious_opinion = -15
+}
+
+ipc_refused_court_request = {
+	icon = 34
+	vassal_opinion = -5
+}
+
+
+######Province Modifiers######
+building_imperial_road = { icon = 1 }
+
+ipc_imperial_road = {
+	icon = 11
+	local_movement_speed = 0.25
+	supply_limit = 1
+	tradevalue = 2
+	local_tax_modifier = -0.1
+}
+
+peasants_forced_road_building = {
+	icon = 29
+	local_revolt_risk = 0.02
+	local_tax_modifier = -0.1 
+}
+
+soldiers_guarding_road = {
+	icon = 31
+	levy_size = -0.15
+}
+
+soldiers_guarding_road_2 = {
+	icon = 31
+	levy_size = -0.05
+}
+
+ipc_military_drill = {
+	icon = 13
+	levy_reinforce_rate = 0.25
+	land_organisation = 0.75
+}
+
+pledged_to_imperial_conquest = {
+	icon = 31
+	levy_size = -0.25
+	levy_reinforce_rate = -0.5
+}
+
+ipc_festival = {
+	icon = 11
+	local_revolt_risk = -0.05
+}
+
+######Holding Modifiers######
+conscripted_imperial_army = {
+	icon = 19
+	levy_size = -0.25
+}
+
+conscripted_imperial_army_emperor = {
+	icon = 1
+	levy_size = 0.25
+	levy_reinforce_rate = 0.5
+}
+
+

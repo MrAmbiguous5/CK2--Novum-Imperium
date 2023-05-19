@@ -1,0 +1,886 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+
+
+####tooltip infos
+
+
+ipc_admin_strategist_info;This option is available due to you having the §YAdministrator§! or §YStrategist§! trait.;;;;;;;;;;;;;x
+ipc_admin_architect_info;This option is available due to you having the §YAdministrator§! or §YArchitect§! trait.;;;;;;;;;;;;;x
+ipc_king_info;This option is available due to you being a §YKing§!.;;;;;;;;;;;;;x
+ipc_low_influence_info;This option is available due to the §YImperial Court's§! influence being §Glow§!.;;;;;;;;;;;;;x
+ipc_high_influence_info;This option is available due to the §YImperial Court's§! influence being §Rhigh§!.;;;;;;;;;;;;;x
+
+
+
+
+
+#############Maintenance Events#################
+
+
+EVTDESAipcm.010;[From.GetTitledName] has inherited the [From.PrimaryTitle.GetName], but is too young to manage court life. Until [From.GetSheHe] comes of age, control of the Imperial Court will be in the hands of the [From.GetImperialRegentAssignableOffice].;;;;;;;;;;;;;x
+EVTDESBipcm.010;[From.GetTitledName] has inherited the [From.PrimaryTitle.GetName] and has taken direct control of affairs of state. Long live the [From.GetTitle]!;;;;;;;;;;;;;x
+EVTDESCipcm.010;[From.GetTitledName] has inherited the [From.PrimaryTitle.GetName]. [From.GetSheHeCap] has decided to appoint a [From.GetImperialRegentAssignableOffice] to manage court life in [From.GetHerHis] stead.;;;;;;;;;;;;;x
+EVTDESDipcm.010;[From.GetTitledName] has usurped the [From.PrimaryTitle.GetName] from [previous_emperor.GetBestName]. [From.GetSheHeCap] has taken direct control of affairs of state.;;;;;;;;;;;;;x
+EVTDESEipcm.010;[From.GetTitledName] has usurped the [From.PrimaryTitle.GetName] from [previous_emperor.GetBestName]. [From.GetSheHeCap] has decided to appoint a [From.GetImperialRegentAssignableOffice] to manage court life in [From.GetHerHis] stead.;;;;;;;;;;;;;x
+EVTDESFipcm.010;[From.GetTitledName] has decided that [imperial_regent.GetBestName]'s services are no longer required and has taked direct control of court affairs. With the removal of the [From.GetImperialRegentAssignableOffice], the Imperial Court's influence has decreased.;;;;;;;;;;;;;x
+EVTDESGipcm.010;[From.GetTitledName] is unhappy with the current [From.GetImperialRegentAssignableOffice] and has transferred the office to [new_regent.GetBestName]. Let us hope the new [From.GetImperialRegentAssignableOffice] does not disappoint the [From.GetTitle].;;;;;;;;;;;;;x
+EVTOPTAipcm.010;Interesting...;;;;;;;;;;;;;x
+
+EVTDESAipcm.012;I have inherited the [Root.PrimaryTitle.GetName] from my predecessor, but I am too young to manage court life. A regent is required to handle its affairs until I come of age.;;;;;;;;;;;;;x
+EVTOPTAipcm.012;Keep the current [Root.GetImperialRegentAssignableOffice].;;;;;;;;;;;;;x
+EVTOPTBipcm.012;Award the Imperial Office of [Root.GetImperialRegentAssignableOffice] to [Root.GetNewImperialRegent].;;;;;;;;;;;;;x
+EVTOPTCipcm.012;Let the nominated [Root.GetImperialRegentAssignableOffice] serve.;;;;;;;;;;;;;x
+EVTDESAipcm.013;I have inherited the [Root.PrimaryTitle.GetName] from my predecessor. Now that I have ascended as the [Root.GetTitle], I must decide how I will govern my court...;;;;;;;;;;;;;x
+EVTOPTAipcm.013;I will take direct control;;;;;;;;;;;;;x
+EVTOPTBipcm.013;I will take direct control;;;;;;;;;;;;;x
+EVTOPTCipcm.013;Keep the current [Root.GetImperialRegentAssignableOffice] in place.;;;;;;;;;;;;;x
+EVTOPTDipcm.013;Award the Imperial Office of [Root.GetImperialRegentAssignableOffice] to [Root.GetNewImperialRegent];;;;;;;;;;;;;x
+EVTOPTEipcm.013;Let the nominated [Root.GetImperialRegentAssignableOffice] serve.;;;;;;;;;;;;;x
+EVTDESAipcm.014;I have finally come of age, now I must decide how I will govern my court.;;;;;;;;;;;;;x
+EVTOPTAipcm.014;I will take direct control;;;;;;;;;;;;;x
+EVTOPTBipcm.014;Keep the [Root.GetImperialRegentAssignableOffice] I assigned;;;;;;;;;;;;;x
+EVTDESAipcm.016;You have usurped the [usurped_imperial_title.GetName]. You may choose to take direct control of court life or appoint a [Root.GetImperialRegentAssignableOffice] to handle it in your stead.;;;;;;;;;;;;;x
+EVTOPTAipcm.016;I will take direct control;;;;;;;;;;;;;x
+EVTOPTBipcm.016;I will take direct control;;;;;;;;;;;;;x
+EVTOPTCipcm.016;Keep the current [Root.GetImperialRegentAssignableOffice];;;;;;;;;;;;;x
+EVTOPTDipcm.016;Award the Imperial Office of [Root.GetImperialRegentAssignableOffice] to [Root.GetNewImperialRegent];;;;;;;;;;;;;x
+
+EVTDESAipcm.018;Another empire is now under my control. There can only be one empire, so a choice must be made.;;;;;;;;;;;;;x
+EVTOPTAipcm.018;The time of [new_empire.GetName] is at an end, [current_empire.GetName] reigns supreme!;;;;;;;;;;;;;x
+EVTOPTBipcm.018;The time of change has come. [new_empire.GetName] will be my domain.;;;;;;;;;;;;;x
+
+EVTDESAipcm.019;Another empire is now under my control. There can only be one empire, so a choice must be made.;;;;;;;;;;;;;x
+EVTDESBipcm.019;Another empire is now under my control. [new_empire.GetName] already has an established imperial court, if I am to be accepted as [Root.GetTitle] I must ingratiate myself to my new subjects.;;;;;;;;;;;;;x
+EVTDESCipcm.019;[new_empire.GetName] has fallen before my horde. This empire had a deeply ingrained Imperial Court system, but such elaborate bureaucracy is of little use to us and our ways.;;;;;;;;;;;;;x
+EVTOPTAipcm.019;The time of [new_empire.GetName] is at an end, [current_empire.GetName] reigns supreme!;;;;;;;;;;;;;x
+EVTOPTBipcm.019;The time of change has come. [new_empire.GetName] will be my domain.;;;;;;;;;;;;;x
+EVTOPTCipcm.019;I shall assume [new_empire.GetName] as my new title.;;;;;;;;;;;;;x
+EVTOPTDipcm.019;I care not for these fools. Destroy everything!;;;;;;;;;;;;;x
+
+EVTDESAipcm.020;I now rule another empire and [new_empire.GetName]'s court rivals the size and influence of my own. My advisors urge me to disperse these fools, so that [current_empire.GetName] reigns supreme.;;;;;;;;;;;;;x
+EVTOPTAipcm.020;Down with the false empire!;;;;;;;;;;;;;x
+EVTOPTBipcm.020;I think I would prefer to be the [Root.GetTitle] of [new_empire.GetName].;;;;;;;;;;;;;x
+
+EVTDESAipcm.021;The Imperial Capital is lost! This is a devastating blow to the empire and to civilization itself. [new_imperial_capital.GetName] will become the new imperial capital.;;;;;;;;;;;;;x
+EVTOPTAipcm.021;Very well.;;;;;;;;;;;;;x
+
+
+###minor titles
+
+#regent
+EVTDESAipcm.030;To [Root.GetFullName],\n\nI have decided to award you with the Imperial Office of [FromFrom.GetImperialRegentAssignableOffice] to manage the Imperial Court in my stead. May you rule with wisdom.\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.030;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.030;You will be responsible for leading the Imperial Court. You can assign missions to any lower ranking member and other Imperial Offices to high-ranking members through targeted decisions.;;;;;;;;;;;;;x
+EVTDESAipcm.031;To [Root.GetFullName],\n\nYour services as [FromFrom.GetImperialRegentAssignableOffice] are no longer required, as I will be assuming control myself.\nMay [FromFrom.Religion.GetHighGodName] go with you. \n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESBipcm.031;To [Root.GetFullName],\n\nYour services as [FromFrom.GetImperialRegentAssignableOffice] are no longer required. I am now capable to deal with affairs of state myself.\n May [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.031;To [Root.GetFullName],\n\nAs you are no longer a subject of [FromFrom.PrimaryTitle.GetName] you can no longer serve the realm as [FromFrom.GetImperialRegentAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESDipcm.031;To [Root.GetFullName],\n\nFilthy traitor! I hereby strip you of the Imperial Office of [FromFrom.GetImperialRegentAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] curse your name!\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.031;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.031;You will no longer be [FromFrom.GetImperialRegentAssignableOffice].;;;;;;;;;;;;;x
+EVTOPTBipcm.031;Very well;;;;;;;;;;;;;x
+EVTTOOLTIPBipcm.031;You will no longer be [FromFrom.GetImperialRegentAssignableOffice].;;;;;;;;;;;;;x
+EVTOPTCipcm.031;Oh well;;;;;;;;;;;;;x
+EVTTOOLTIPCipcm.031;You will no longer be [FromFrom.GetImperialRegentAssignableOffice].;;;;;;;;;;;;;x
+EVTOPTDipcm.031;Your rule is at an end [FromFrom.GetTitledFirstName]!;;;;;;;;;;;;;x
+EVTDESAipcm.032;[Root.GetImperialRegentAssignableOffice] [From.GetFullName] has died in office. I am once again faced with a choice on how to manage the Imperial Court.;;;;;;;;;;;;;x
+EVTOPTAipcm.032;I will take direct control!;;;;;;;;;;;;;x
+EVTOPTBipcm.032;Award the Imperial Office of [Root.GetImperialRegentAssignableOffice] to [Root.GetNewImperialRegent];;;;;;;;;;;;;x
+EVTDESAipcm.033;I have revoked the Imperial Office of [Root.GetImperialRegentAssignableOffice] from [From.GetFullName]. This has surely angered [From.GetHerHim] and may have upset the Imperial Court. Now I must decide who will be the new [Root.GetImperialRegentAssignableOffice].;;;;;;;;;;;;;x
+EVTOPTAipcm.033;I will take direct control of the Imperial Court;;;;;;;;;;;;;x
+EVTOPTBipcm.033;Award the Imperial Office of [Root.GetImperialRegentAssignableOffice] to [Root.GetNewImperialRegent];;;;;;;;;;;;;x
+EVTOPTCipcm.033;I have changed my mind;;;;;;;;;;;;;x
+EVTDESAipcm.034;[From.GetBestName] can no longer serve as [Root.GetImperialRegentAssignableOffice] as [From.GetSheHe] has left my domains. Either a replacement must be found or I must lead the Imperial Court myself.;;;;;;;;;;;;;x
+EVTOPTAipcm.034;I will assume direct control;;;;;;;;;;;;;x
+EVTOPTBipcm.034;Award the Imperial Office of [Root.GetImperialRegentAssignableOffice] to [Root.GetNewImperialRegent];;;;;;;;;;;;;x
+EVTOPTCipcm.034;Let the nominated [Root.GetImperialRegentAssignableOffice] serve.;;;;;;;;;;;;;x
+
+#custom loc for other minor title letters
+imperial_office_award_intro_emperor;I have decided to honor you with the Imperial Office of;;;;;;;;;;;;;x
+imperial_office_award_intro_regent;In the name of [This.TopLiege.GetTitledName], I grant you the Imperial Office of;;;;;;;;;;;;;x
+imperial_office_award_outro_emperor;\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+imperial_office_award_outro_regent;\nFor the [This.TopLiege.GetTitle].\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+
+imperial_office_revoke_intro_emperor;Your services are no longer required. I hereby revoke the Imperial Office of;;;;;;;;;;;;;x
+imperial_office_revoke_intro_regent;In the name of [This.TopLiege.GetTitledName], I hereby revoke the Imperial Office of;;;;;;;;;;;;;x
+imperial_office_revoke_outro_emperor;\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+imperial_office_revoke_outro_regent;\nFor the [This.TopLiege.GetTitle].\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+
+#seneschal
+EVTDESAipcm.040;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeAwardIntro] [FromFrom.GetImperialSeneschalAssignableOffice]. The stewardship of the realm is now in your hands. May it prosper under your care.[FromFrom.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.040;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.040;§GNew decisions are available and you will be able to assign Stewardship based missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.041;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeRevokeIntro] [FromFrom.GetImperialSeneschalAssignableOffice] from you. Management of the realm's finances should be left to those who are more capable.[FromFrom.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.041;To [Root.GetFullName],\n\nAs you are no longer a subject of [FromFrom.PrimaryTitle.GetName] you can no longer serve the realm as [FromFrom.GetImperialSeneschalAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.041;To [Root.GetFullName],\n\nFilthy traitor! I hereby strip you of the Imperial Office of [FromFrom.GetImperialSeneschalAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] curse your name!\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.041;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.041;§RYou will no longer be§! [FromFrom.GetImperialSeneschalAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.041;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.041;Your rule is at an end [FromFrom.GetTitledFirstName]!;;;;;;;;;;;;;x
+EVTDESAipcm.042;[Root.GetImperialSeneschalAssignableOffice] [From.GetFirstName] has died and [From.GetHerHis] Imperial Office has been left vacant. The burden of the realm's finances is mine once again.;;;;;;;;;;;;;x
+EVTOPTAipcm.042;Unfortunate...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.042;You will once again have full control over the [Root.GetImperialSeneschalAssignableOffice]'s powers;;;;;;;;;;;;;x
+EVTDESAipcm.044;To [Root.GetFullName],\n\n[From.GetImperialOfficeAwardIntro] [From.GetImperialSeneschalAssignableOffice]. The stewardship of the realm is now in your hands. May it prosper under your care.[From.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.044;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.044;§GNew decisions are available and you will be able to assign Stewardship based missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.046;To [Root.GetFullName],\n\n[From.GetImperialOfficeRevokeIntro] [From.GetImperialSeneschalAssignableOffice] from you. Management of the realm's finances should be left to those who are more capable.[From.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.046;To [Root.GetFullName],\n\nAs you are no longer a subject of [From.TopLiege.PrimaryTitle.GetName] you can no longer serve the realm as [From.GetImperialSeneschalAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.046;To [Root.GetFullName],\n\nYou dare to revolt against the [From.TopLiege.GetTitle]? This treason will not be forgotten.\nMay [From.Religion.GetHighGodName] curse your name!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESDipcm.046;To [Root.GetFullName],\n\nI am pleased to see that you have joined us in our cause. Only together can we overthrow this tyrant!\nMay [From.Religion.GetHighGodName] guide us!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.046;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.046;§RYou will no longer be§! [From.GetImperialSeneschalAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.046;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.046;Down with the [From.TopLiege.GetTitle]!;;;;;;;;;;;;;x
+EVTOPTDipcm.046;To victory!;;;;;;;;;;;;;x
+EVTDESAipcm.047;[Root.GetImperialSeneschalAssignableOffice] [From.GetFirstName] is no longer a member of the Imperial Court and thus can no longer hold an Imperial Office.;;;;;;;;;;;;;x
+EVTOPTAipcm.047;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.047;You will once again have full control over the [Root.GetImperialSeneschalAssignableOffice]'s powers;;;;;;;;;;;;;x
+
+#marshal
+EVTDESAipcm.050;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeAwardIntro] [FromFrom.GetImperialMarshalAssignableOffice]. The realm's armies are under your command. May you bring glory to [Root.PrimaryTitle.GetName].[FromFrom.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.050;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.050;§GNew decisions are available and you will be able to assign Martial based missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.051;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeRevokeIntro] [FromFrom.GetImperialMarshalAssignableOffice] from you. Command of the realm's armies should be left to those who are more capable.[FromFrom.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.051;To [Root.GetFullName],\n\nAs you are no longer a subject of [FromFrom.PrimaryTitle.GetName] you can no longer serve the realm as [FromFrom.GetImperialMarshalAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.051;To [Root.GetFullName],\n\nFilthy traitor! I hereby strip you of the Imperial Office of [FromFrom.GetImperialMarshalAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] curse your name!\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.051;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.051;§RYou will no longer be§! [FromFrom.GetImperialMarshalAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.051;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.051;Your rule is at an end [FromFrom.GetTitledFirstName]!;;;;;;;;;;;;;x
+EVTDESAipcm.052;[Root.GetImperialMarshalAssignableOffice] [From.GetFirstName] has died and [From.GetHerHis] Imperial Office has been left vacant. The burden of commanding the realm's armies is mine once again.;;;;;;;;;;;;;x
+EVTOPTAipcm.052;Unfortunate...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.052;You will once again have full control over the [Root.GetImperialMarshalAssignableOffice]'s powers;;;;;;;;;;;;;x
+EVTDESAipcm.054;To [Root.GetFullName],\n\n[From.GetImperialOfficeAwardIntro] [From.GetImperialMarshalAssignableOffice]. The realm's armies are under your command. May you bring glory to [Root.PrimaryTitle.GetName].[From.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.054;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.054;§GNew decisions are available and you will be able to assign missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.056;To [Root.GetFullName],\n\n[From.GetImperialOfficeRevokeIntro] [From.GetImperialMarshalAssignableOffice] from you. Command of the realm's armies should be left to those who are more capable.[From.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.056;To [Root.GetFullName],\n\nAs you are no longer a subject of [From.TopLiege.PrimaryTitle.GetName] you can no longer serve the realm as [From.GetImperialMarshalAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.056;To [Root.GetFullName],\n\nYou dare to revolt against the [From.TopLiege.GetTitle]? This treason will not be forgotten.\nMay [From.Religion.GetHighGodName] curse your name!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESDipcm.056;To [Root.GetFullName],\n\nI am pleased to see that you have joined us in our cause. Only together can we overthrow this tyrant!\nMay [From.Religion.GetHighGodName] guide us!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.056;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.056;§RYou will no longer be§! [From.GetImperialMarshalAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.056;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.056;Down with the [From.TopLiege.GetTitle]!;;;;;;;;;;;;;x
+EVTOPTDipcm.056;To victory!;;;;;;;;;;;;;x
+EVTDESAipcm.057;[Root.GetImperialMarshalAssignableOffice] [From.GetFirstName] is no longer a member of the Imperial Court and thus can no longer hold an Imperial Office.;;;;;;;;;;;;;x
+EVTOPTAipcm.057;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.057;You will once again have full control over the [Root.GetImperialMarshalAssignableOffice]'s powers;;;;;;;;;;;;;x
+
+
+
+#lawkeeper
+EVTDESAipcm.060;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeAwardIntro] [FromFrom.GetImperialLawkeeperAssignableOffice]. You are now the chief representative of the Imperial Court to the people. May you always speak with wisdom![FromFrom.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.060;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.060;§GNew decisions are available and you will be able to assign Diplomacy based missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.061;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeRevokeIntro] [FromFrom.GetImperialLawkeeperAssignableOffice] from you. The chief ministry should be left to those who are more capable.[FromFrom.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.061;To [Root.GetFullName],\n\nAs you are no longer a subject of [FromFrom.PrimaryTitle.GetName] you can no longer serve the realm as [FromFrom.GetImperialLawkeeperAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.061;To [Root.GetFullName],\n\nFilthy traitor! I hereby strip you of the Imperial Office of [FromFrom.GetImperialLawkeeperAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] curse your name!\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.061;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.061;§RYou will no longer be§! [FromFrom.GetImperialLawkeeperAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.061;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.061;Your rule is at an end [FromFrom.GetTitledFirstName]!;;;;;;;;;;;;;x
+EVTDESAipcm.062;[Root.GetImperialLawkeeperAssignableOffice] [From.GetFirstName] has died and [From.GetHerHis] Imperial Office has been left vacant. The burden of maintaining order is mine once again.;;;;;;;;;;;;;x
+EVTOPTAipcm.062;Unfortunate...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.062;You will once again have full control over the [Root.GetImperialLawkeeperAssignableOffice]'s powers;;;;;;;;;;;;;x
+EVTDESAipcm.064;To [Root.GetFullName],\n\n[From.GetImperialOfficeAwardIntro] [From.GetImperialLawkeeperAssignableOffice]. You are now the chief representative of the Imperial Court to the people. May you always speak with wisdom![From.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.064;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.064;§GNew decisions are available and you will be able to assign Diplomacy based missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.066;To [Root.GetFullName],\n\n[From.GetImperialOfficeRevokeIntro] [From.GetImperialLawkeeperAssignableOffice] from you. The chief ministry should be left to those who are more capable.[From.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.066;To [Root.GetFullName],\n\nAs you are no longer a subject of [From.TopLiege.PrimaryTitle.GetName] you can no longer serve the realm as [From.GetImperialLawkeeperAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.066;To [Root.GetFullName],\n\nYou dare to revolt against the [From.TopLiege.GetTitle]? This treason will not be forgotten.\nMay [From.Religion.GetHighGodName] curse your name!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESDipcm.066;To [Root.GetFullName],\n\nI am pleased to see that you have joined us in our cause. Only together can we overthrow this tyrant!\nMay [From.Religion.GetHighGodName] guide us!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.066;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.066;§RYou will no longer be§! [From.GetImperialLawkeeperAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.066;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.066;Down with the [From.TopLiege.GetTitle]!;;;;;;;;;;;;;x
+EVTOPTDipcm.066;To victory!;;;;;;;;;;;;;x
+EVTDESAipcm.067;[Root.GetImperialLawkeeperAssignableOffice] [From.GetFirstName] is no longer a member of the Imperial Court and thus can no longer hold an Imperial Office.;;;;;;;;;;;;;x
+EVTOPTAipcm.067;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.067;You will once again have full control over the [Root.GetImperialLawkeeperAssignableOffice]'s powers;;;;;;;;;;;;;x
+
+
+
+#spymaster
+EVTDESAipcm.070;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeAwardIntro] [FromFrom.GetImperialSpymasterAssignableOffice]. The realm's subtle affairs are now under your watch. May your eyes never be deceived![FromFrom.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.070;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.070;§GNew decisions are available and you will be able to assign missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.071;To [Root.GetFullName],\n\n[FromFrom.GetImperialOfficeRevokeIntro] [FromFrom.GetImperialSpymasterAssignableOffice] from you. Such delicate matters should be left to those who are more capable.[FromFrom.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.071;To [Root.GetFullName],\n\nAs you are no longer a subject of [FromFrom.PrimaryTitle.GetName] you can no longer serve the realm as [FromFrom.GetImperialSpymasterAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.071;To [Root.GetFullName],\n\nFilthy traitor! I hereby strip you of the Imperial Office of [FromFrom.GetImperialSpymasterAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] curse your name!\n\nSigned,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.071;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.071;§RYou will no longer be§! [FromFrom.GetImperialSpymasterAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.071;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.071;Your reign is at an end [FromFrom.GetTitledFirstName]!;;;;;;;;;;;;;x
+EVTDESAipcm.072;[Root.GetImperialSpymasterAssignableOffice] [From.GetFirstName] has died and [From.GetHerHis] Imperial Office has been left vacant. The burden of the realm's subtle affairs is mine once again.;;;;;;;;;;;;;x
+EVTOPTAipcm.072;Unfortunate...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.072;You will once again have full control over the [Root.GetImperialSpymasterAssignableOffice]'s powers;;;;;;;;;;;;;x
+EVTDESAipcm.074;To [Root.GetFullName],\n\n[From.GetImperialOfficeAwardIntro] [From.GetImperialSpymasterAssignableOffice]. The realm's subtle affairs are now under your watch. May your eyes never be deceived![From.GetImperialOfficeAwardOutro];;;;;;;;;;;;;x
+EVTOPTAipcm.074;I am honored;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.074;§GNew decisions are available and you will be able to assign missions to lower ranking members§!;;;;;;;;;;;;;x
+EVTDESAipcm.076;To [Root.GetFullName],\n\n[From.GetImperialOfficeRevokeIntro] [From.GetImperialSpymasterAssignableOffice] from you. Such delicate matters should be left to those who are more capable.[FromFrom.GetImperialOfficeRevokeOutro];;;;;;;;;;;;;x
+EVTDESBipcm.076;To [Root.GetFullName],\n\nAs you are no longer a subject of [From.TopLiege.PrimaryTitle.GetName] you can no longer serve the realm as [From.GetImperialSpymasterAssignableOffice].\nMay [FromFrom.Religion.GetHighGodName] go with you.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESCipcm.076;To [Root.GetFullName],\n\nYou dare to revolt against the [From.TopLiege.GetTitle]? This treason will not be forgotten.\nMay [From.Religion.GetHighGodName] curse your name!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESDipcm.076;To [Root.GetFullName],\n\nI am pleased to see that you have joined us in our cause. Only together can we overthrow this tyrant!\nMay [From.Religion.GetHighGodName] guide us!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipcm.076;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.076;§RYou will no longer be§! [From.GetImperialSpymasterAssignableOffice] §Rand will lose all powers associated with the office§!;;;;;;;;;;;;;x
+EVTOPTBipcm.076;Oh well.;;;;;;;;;;;;;x
+EVTOPTCipcm.076;Down with the [From.TopLiege.GetTitle]!;;;;;;;;;;;;;x
+EVTOPTDipcm.076;To victory!;;;;;;;;;;;;;x
+EVTDESAipcm.077;[Root.GetImperialSpymasterAssignableOffice] [From.GetFirstName] is no longer a member of the Imperial Court and thus can no longer hold an Imperial Office.;;;;;;;;;;;;;x
+EVTOPTAipcm.077;I see...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.077;You will once again have full control over the [Root.GetImperialSpymasterAssignableOffice]'s powers;;;;;;;;;;;;;x
+
+
+###misc
+EVTDESAipcm.084;Leaving the Imperial Court without effective leadership would surely lead the realm to ruin. Perhaps I should appoint a [Root.GetImperialRegentAssignableOffice] first.;;;;;;;;;;;;;x
+EVTOPTAipcm.084;Ok;;;;;;;;;;;;;x
+EVTTOOLTIPAipcm.084;This can be done by assigning the [Root.GetImperialRegentAssignableOffice] minor title;;;;;;;;;;;;;x
+
+EVTDESAipcm.091;The traitorous [Root.GetImperialRegentAssignableOffice] has been dealt with, and I am once again faced with the decision on how to govern my court.;;;;;;;;;;;;;x
+EVTOPTAipcm.091;I shall take direct control;;;;;;;;;;;;;x
+EVTOPTBipcm.091;Award the Imperial Office of [Root.GetImperialRegentAssignableOffice] to [Root.GetNewImperialRegent];;;;;;;;;;;;;x
+
+#############Formation Events#################
+
+EVTDESAipcf.000;I have decided to institute an imperial court system in [Root.PrimaryTitle.GetName]. This will confer various benefits to me, including increased vassal control and realm management. Yet there are also increased risks of vassals increasing their power through privileges that I would have to eventually grant. the Imperial Court's influence must be kept in check.;;;;;;;;;;;;;x
+EVTOPTAipcf.000;For the glory of [Root.PrimaryTitle.GetName].;;;;;;;;;;;;;x
+EVTOPTBipcf.000;Perhaps now is not the best time after all.;;;;;;;;;;;;;x
+EVTTOOLTIPAipcf.000;You will take direct control of the Imperial Court. New Honorary Titles are available.;;;;;;;;;;;;;x
+EVTDESAipcf.001;Today is a momentous day! [From.GetTitledName] has instituted an Imperial Court system. The realm now has access to deeper politics and intrigue. The power of vassals and [From.GetTitle] will be shifting endlessly.;;;;;;;;;;;;;x
+EVTOPTAipcf.001;I will join immediately!;;;;;;;;;;;;;x
+EVTOPTBipcf.001;Interesting...;;;;;;;;;;;;;x
+EVTDESAipcf.002;I have decided to formalise the structure of the Imperial Court of Constantinople. This will confer various benefits to me, including increased vassal control and realm management. Yet there are also increased risks of vassals increasing their power through privileges that I would have to eventually grant. the Imperial Court's influence must be kept in check.;;;;;;;;;;;;;x
+EVTOPTAipcf.002;Basileía tôn ouranôn.;;;;;;;;;;;;;x
+EVTTOOLTIPAipcf.002;You will take direct control of the Imperial Court. New Honorary Titles are available;;;;;;;;;;;;;x
+EVTOPTBipcf.002;Perhaps now is not the best time after all.;;;;;;;;;;;;;x
+EVTDESAipcf.003;Today is a momentous day! [From.GetTitledName] has instituted an Imperial Court system. The realm now has access to deeper politics and intrigue. The power of vassals and [From.GetTitle] will be shifting endlessly.;;;;;;;;;;;;;x
+EVTOPTAipcf.003;I will join immediately.;;;;;;;;;;;;;x
+EVTOPTBipcf.003;Interesting...;;;;;;;;;;;;;x
+EVTDESAipcf.004;I have decided to establish the Imperial Court of the Holy Roman Empire. This will confer various benefits to me, including increased vassal control and realm management. Yet there are also increased risks of vassals increasing their power through privileges that I would have to eventually grant. the Imperial Court's influence must be kept in check.;;;;;;;;;;;;;x
+EVTOPTAipcf.004;Gloria Sacrum Romanum Imperium.;;;;;;;;;;;;;x
+EVTTOOLTIPAipcf.004;You will take direct control of the Imperial Court. New Honorary Titles are available.;;;;;;;;;;;;;x
+EVTOPTBipcf.004;Perhaps now is not the best time after all.;;;;;;;;;;;;;x
+EVTDESAipcf.005;Today is a momentous day! [From.GetTitledName] has instituted an Imperial Court system. The realm now has access to deeper politics and intrigue. The power of vassals and [From.GetTitle] will be shifting endlessly.;;;;;;;;;;;;;x
+EVTOPTAipcf.005;I will join immediately.;;;;;;;;;;;;;x
+EVTOPTBipcf.005;Interesting...;;;;;;;;;;;;;x
+EVTDESAipcf.006;I have decided to institute a new court structure in the capital. This will confer various benefits to me, including increased vassal control and realm management. Yet there are also increased risks of vassals increasing their power through privileges that I would have to eventually grant. The Imperial Court's influence must be kept in check.;;;;;;;;;;;;;x
+EVTOPTAipcf.006;Mashallah!;;;;;;;;;;;;;x
+EVTTOOLTIPAipcf.006;You will take direct control of the Imperial Court. New Honorary Titles are available;;;;;;;;;;;;;x
+EVTOPTBipcf.006;Perhaps now is not the best time after all.;;;;;;;;;;;;;x
+EVTDESAipcf.007;Today is a momentous day! [From.GetTitledName] has instituted an Imperial Court system. The realm now has access to deeper politics and intrigue. The power of vassals and [From.GetTitle] will be shifting endlessly.;;;;;;;;;;;;;x
+EVTOPTAipcf.007;I will join immediately.;;;;;;;;;;;;;x
+EVTOPTBipcf.007;Interesting...;;;;;;;;;;;;;x
+EVTDESAipcf.008;I have decided to formalise the structure of the Imperial Court of the Roman Empire. This will confer various benefits to me, including increased vassal control and realm management. Yet there are also increased risks of vassals increasing their power through privileges that I would have to eventually grant. the Imperial Court's influence must be kept in check.;;;;;;;;;;;;;x
+EVTOPTAipcf.008;Roma Invicta!;;;;;;;;;;;;;x
+EVTTOOLTIPAipcf.008;You will take direct control of the Imperial Court. New Honorary Titles are available.;;;;;;;;;;;;;x
+EVTOPTBipcf.008;Perhaps now is not the best time after all.;;;;;;;;;;;;;x
+EVTDESAipcf.009;Today is a momentous day! [From.GetTitledName] has instituted an Imperial Court system. The realm now has access to deeper politics and intrigue. The power of vassals and [From.GetTitle] will be shifting endlessly.;;;;;;;;;;;;;x
+EVTOPTAipcf.009;I will join immediately.;;;;;;;;;;;;;x
+EVTOPTBipcf.009;Interesting...;;;;;;;;;;;;;x
+
+EVTDESAipcf.019;After greatly reducing the Imperial Court's power, [From.GetTitledName] has completely dismantled the imperial bureaucracy. All members have no choice but to accept.;;;;;;;;;;;;;x
+EVTOPTAipcf.019;Damn [From.GetHerHim]!;;;;;;;;;;;;;x
+EVTOPTBipcf.019;Interesting...;;;;;;;;;;;;;x
+
+
+
+
+#############Regular Events#################
+
+
+
+####Joining and Ranking
+EVTDESAipc.022;Greetings [Root.GetBestName],\nI welcome you to the Imperial Court. May [From.GetHighGodName] grant you wisdom as you [From.GetCourtWelcomeLetter].\nSigned\n[From.GetTitledName];;;;;;;;;;;;;x
+imperial_welcome_letter_emperor;govern in my name;;;;;;;;;;;;;x
+imperial_welcome_letter_regent;govern in [This.TopLiege.GetTitledName]'s name;;;;;;;;;;;;;x
+EVTOPTAipc.022;It is my honor to serve.;;;;;;;;;;;;;x
+
+
+EVTDESAipc.025;Honored [Root.GetFirstName],\n\nI hereby grant you permission to advance to the next rank in court.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;x
+EVTOPTAipc.025;It is my privilege.;;;;;;;;;;;;;x
+EVTDESAipc.027;Honored [From.GetImperialGrandmaster],\nI humbly request that you grant me the privilege of ascending to the next rank in court so that I may better serve you.\n\nSigned,\n[From.GetBestName];;;;;;;;;;x
+EVTOPTAipc.027;Approve;;;;;;;;;;;;;x
+EVTTOOLTIPAipc.027;[From.GetBestName] will advance to the next rank;;;;;;;;;;;;;x
+EVTOPTBipc.027;Deny;;;;;;;;;;;;;x
+EVTTOOLTIPBipc.027;[From.GetBestName] will remain in [From.GetHerHis] current rank;;;;;;;;;;;;;x
+EVTDESAipc.028;To the honored [Root.GetTitledName],\nI approve your request. You may ascend to the next rank.\n\nSigned,\n[Root.GetImperialGrandmaster] [From.GetFirstName];;;;;;;;;;;;;x
+EVTDESBipc.028;[Root.GetTitledName],\nYour request has been denied. You will need to work harder to earn my favor.\n\nSigned,\n[Root.GetImperialGrandmaster] [From.GetFirstName];;;;;;;;;;;;;x
+EVTOPTAipc.028;Excellent.;;;;;;;;;;;;;x
+EVTOPTBipc.028;Damn [From.GetHerHim]!;;;;;;;;;;;;;x
+
+
+#####Decision/Power Events
+EVTDESAipc.100;It's not often I find myself with some free time, and where better to spend it than in [imperial_capital.GetName]? I will start making the neccessary preparations and gather a few men to serve as my bodyguards for the journey.;;;;;;;;;;;;;x
+EVTOPTAipc.100;Onwards, to [imperial_capital.GetName]!;;;;;;;;;;;;;x
+EVTOPTBipc.100;Perhaps not.;;;;;;;;;;;;;x
+EVTDESAipc.101;[imperial_capital.GetName] has fallen, and the enemy is quickly occupying what remains. Time is short and I must flee before I am captured!;;;;;;;;;;;;;;x
+EVTOPTAipc.101;Civilization weeps for this loss.;;;;;;;;;;;;;;x
+EVTDESAipc.102;The gates of [imperial_capital.GetName] finally stand before me. The guards stand silent as they watch the waves of travelers entering and leaving the magnificent city. The day is young, so I have plenty of time to enjoy myself.;;;;;;;;;;;;;x
+EVTOPTAipc.102;Let's see what the market has to offer.;;;;;;;;;;;;;x
+EVTOPTBipc.102;I'd like to see the barracks and drill grounds.;;;;;;;;;;;;;x
+EVTOPTCipc.102;I'll see where the road takes me.;;;;;;;;;;;;;x
+EVTDESAipc.103;The marketplace is filled with people hailing from all over [Root.TopLiege.PrimaryTitle.GetName]. I walk among the numerous traders and craftsmen until a stall manages to catch my eye.;;;;;;;;;;;;;;x 
+EVTOPTAipc.103;These look nice.;;;;;;;;;;;;;x
+EVTOPTBipc.103;This would make a fine gift for [Root.Spouse.GetFirstName].;;;;;;;;;;;;;x
+EVTOPTCipc.103;Perhaps I should get something for one of my children.;;;;;;;;;;;;;x
+EVTOPTDipc.103;I'd rather keep my money.;;;;;;;;;;;;;x
+EVTDESAipc.104;I've made my way to the drill grounds of [imperial_capital.GetName]. Here the [Root.TopLiege.GetTitle]'s soldiers train and prepare themselves for the coming wars.;;;;;;;;;;;;;x
+EVTOPTAipc.104;I should practice my sword arm.;;;;;;;;;;;;;x
+EVTOPTBipc.104;I'll watch as the soldiers train.;;;;;;;;;;;;;x
+EVTOPTCipc.104;[commander_to_train.GetBestName] could improve his fighting skills.;;;;;;;;;;;;;x
+EVTOPTDipc.104;The might of [Root.TopLiege.PrimaryTitle.GetTitle] is truly something to behold.;;;;;;;;;;;;;x
+EVTDESAipc.105;The day drags on. I wonder what I should do next?;;;;;;;;;;;;;x 
+EVTOPTAipc.105;I should visit a bathhouse.;;;;;;;;;;;;;x
+EVTOPTBipc.105;I think I will visit the library or the council chambers.;;;;;;;;;;;;;x
+EVTOPTCipc.105;I'll see where the road takes me.;;;;;;;;;;;;;x
+EVTDESAipc.106;It took me a while, but I've finally managed to locate a decent bathhouse. Unlike my private one back home, this one is quite the impressive sight, no doubt to draw in customers in the bustling capital. I undress and slowly submerge myself in the refreshing water.;;;;;;;;;;;;;x
+EVTOPTAipc.106;Time to properly care for myself.;;;;;;;;;;;;;x 
+EVTOPTBipc.106;That servant is quite the looker...;;;;;;;;;;;;;x 
+EVTDESAipc.107;Before me stands [imperial_capital.GetName]'s largest library. A wealth of knowledge lies within its walls. The grand building where the realm's most distinguished citizens congregate is also located just a short walk away. Both locations could probably teach me something worthwhile.;;;;;;;;;;;;;x
+EVTOPTAipc.107;Reading is always helpful.;;;;;;;;;;;;;x
+EVTOPTBipc.107;Maybe I could meet one of the [Root.TopLiege.GetTitle]'s councillors?;;;;;;;;;;;;;x
+EVTOPTCipc.107;Perhaps I could ask a renowned scholar to teach young [child_to_teach.GetFirstName]?;;;;;;;;;;;;;x
+EVTOPTDipc.107;Much can be learned from those that came before.;;;;;;;;;;;;;x
+EVTDESAipc.108;It is almost evening. I might just be able to do something before I have to return home.;;;;;;;;;;;;;x
+EVTOPTAipc.108;I will relax at a local inn.;;;;;;;;;;;;;x
+EVTOPTBipc.108;I must visit the Imperial Palace!;;;;;;;;;;;;;x
+EVTOPTCipc.108;I'll see where the road takes me.;;;;;;;;;;;;;x
+EVTDESAipc.109;After wandering around for a while, I find a quiet inn where I can spend the last few hours of my visit. The inside is filled with various people, some enjoying a simple meal while others socialize and laugh the evening hours away.;;;;;;;;;;;;;x
+EVTDESBipc.109;After wandering around for a while, I find a crowded inn where I can spend the last few hours of my visit. I quickly realize that my stay will not be a pleasant one. An argument between a group of young men quickly escalates into a full brawl, and I just happen to be have sat next to them...;;;;;;;;;;;;;x
+EVTOPTAipc.109;Time to make merry!;;;;;;;;;;;;;x
+EVTOPTBipc.109;A meal is all I seek.;;;;;;;;;;;;;x
+EVTOPTCipc.109;Oh no...;;;;;;;;;;;;;x
+EVTDESAipc.110;I have arrived at the wondrous home of the [Root.TopLiege.GetTitle] and the true centre of the realm. Despite the late hour, the Imperial Palace is bustling with activity, although it seems that [Root.TopLiege.GetTitledName] is not currently in [imperial_capital.GetName]. This limits my options.;;;;;;;;;;;;;x
+EVTDESBipc.110;I have arrived at the wondrous home of the [Root.TopLiege.GetTitle] and the true centre of the realm. Despite the late hour, the Imperial Palace is bustling with activity. [Root.TopLiege.GetTitledName] can be seen hearing the petitions of the countless courtiers assembled in the main hall.;;;;;;;;;;;;;x
+EVTOPTAipc.110;That's a shame.;;;;;;;;;;;;;x
+EVTOPTBipc.110;A chance to speak with the [Root.TopLiege.GetTitle]!;;;;;;;;;;;;;x
+EVTOPTCipc.110;The courtiers speak of some interesting things...;;;;;;;;;;;;;x
+EVTOPTDipc.110;I am curious about these foreigners.;;;;;;;;;;;;;x
+
+EVTDESAipc.120;The day is over - and what a day it was! I leave the city and start making my way back home. [imperial_capital.GetName] slowly fades away into the distance.;;;;;;;;;;;;;x
+EVTOPTAipc.120;A day well spent.;;;;;;;;;;;;;x
+
+
+EVTDESAipc.130;[FromFrom.GetBestName] has used [FromFrom.GetHerHis] influence within the Imperial Court to force me into owing [FromFrom.GetHerHim] a favor.;;;;;;;;;;;;;x
+EVTDESAipc.131;[FromFrom.GetBestName] has used [FromFrom.GetHerHis] power as [FromFrom.GetImperialLawkeeperAssignableOffice] of [FromFrom.TopLiege.PrimaryTitle.GetName] to force me into leaving all factions.;;;;;;;;;;;;;x
+EVTDESAipc.132;[invited_character.GetBestName] stands before me, ready to serve in battle.;;;;;;;;;;;;;x
+EVTOPTAipc.132;Make [invited_character.GetHerHim] a commander.;;;;;;;;;;;;;x
+EVTDESAipc.133;[FromFrom.GetBestName] has used [FromFrom.GetHerHis] power as [FromFrom.GetImperialSpymasterAssignableOffice] of [FromFrom.TopLiege.PrimaryTitle.GetName] to declare me a traitor!;;;;;;;;;;;;;x
+EVTDESAipc.134;For years I have devoted myself to the Imperial Court by taking on many different tasks and responsibilities. It would be prudent to devote myself to one focus in order to benefit both [Root.TopLiege.PrimaryTitle.GetName] and myself.;;;;;;;;;;;;;x
+EVTOPTAipc.134;Being an administrator suits me.;;;;;;;;;;;;;x
+EVTOPTBipc.134;I must ensure the continued success of my dynasty.;;;;;;;;;;;;;x
+EVTOPTCipc.134;I will lead [Root.TopLiege.PrimaryTitle.GetName] to victory in battle!;;;;;;;;;;;;;x
+EVTOPTDipc.134;I'm not ready to decide yet.;;;;;;;;;;;;;x
+
+EVTDESAipc.138;To [Root.GetBestName],\n\nI humbly accept your command and will relinquish all my non-de jure lands.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESBipc.138;To the [GetFromRootInsult] [Root.GetFirstName],\n\nI will not relinquish my titles! You are no longer my liege lord!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipc.138;A wise choice;;;;;;;;;;;;;x
+EVTOPTBipc.138;It's treason then...;;;;;;;;;;;;;x
+
+EVTDESAipc.139;[From.GetBestName] has used [From.GetHerHis] influence to turn [From.GetHerHis] ducal viceroyalty into a hereditary title! If this is not dealt with, other vassals may follow.;;;;;;;;;;;;;x
+EVTOPTAipc.139;Curse [From.GetHerHim]!;;;;;;;;;;;;;x
+
+EVTDESAipc.150;You have no power here, false [FromFrom.TopLiege.PrimaryTitle.GetName]! The whole Imperial Court is in agreement that you are unfit to rule [Root.PrimaryTitle.GetTitle] and must be removed. The time has come for you to abdicate in favor of [new_title_holder.GetFullName]! Submit to this demand peacefully or face the consequences.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipc.150;I guess I have no choice...;;;;;;;;;;;;;x
+EVTOPTBipc.150;I AM THE STATE!;;;;;;;;;;;;;x
+EVTTOOLTIPBipc.150;Receives a letter with my reply;;;;;;;;;;;;;x
+EVTDESAipc.151;Under pressure from the Imperial Court, §Y[From.GetTitledName]§! has agreed to abdicate the throne. Hail our new liege, §Y[new_title_holder.GetFullName]§!!;;;;;;;;;;;;;x
+EVTDESAipc.152;Rather than see the realm tear itself apart in a civil war, I have decided to accede to your demand and abdicate the throne. But this treacherous act of blackmail will not be forgotten...\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESAipc.153;Rather than see the realm tear itself apart in a civil war, [From.GetTitledName] has agreed to abdicate [From.GetHerHis] title for the good of the realm. We have chosen [new_title_holder.GetFullName] as our new liege. Your valuable support in this matter will not be forgotten.\n\nSincerely,\n[FromFrom.GetTitledName];;;;;;;;;;;;;x
+EVTDESAipc.154;Your shameful attempt at blackmail has failed. No matter how many corrupted souls you have enticed to help carry out your plan I will not give in without a fight.\nI AM THE STATE!\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipc.154;Not yet!;;;;;;;;;;;;;x
+EVTDESipc.155;I am humbled by the responsibility you have given me. I accept the title of [new_title_holder.GetTitle] and swear to serve you in every way that I can. I will remember your benevolence.\n\n[new_title_holder.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipc.155;Wonderful;;;;;;;;;;;;;x
+EVTDESAipc.156;the Imperial Court, led by [From.GetBestName] have won the war and have chosen me as successor to the title of [Root.GetTitle]. I am expected to show generosity towards anyone who helped me ascend to the throne.;;;;;;;;;;;;;x
+EVTOPTAipc.156;I am honored;;;;;;;;;;;;;x
+
+EVTDESAipc.200;A messenger has arrived from [imperial_capital.GetName]. He bows before you and unfurls his scroll which bares the [From.GetTitle]'s personal seal.\n"By order of [From.GetTitledName], [From.GetTitle] of [From.PrimaryTitle.GetName] and all [From.Culture.GetName]s. All vassal lords and ladies of the Imperial Court must contribute a quarter of their capital's levies to the Imperial Army. Failure to do so will be seen as treason, and will be dealt with accordingly. Signed, [From.GetBestName]."\nThe [From.GetTitle]'s men are already outside, rounding up the new recruits.;;;;;;;;;;;;;x
+EVTOPTAipc.200;I...see...;;;;;;;;;;;;;x
+EVTOPTBipc.200;I will gladly comply.;;;;;;;;;;;;;x
+
+EVTDESAipc.302;While attending a small gathering with my fellow courtiers, [From.GetTitledFirstName] starts throwing veiled insults my way. At first they go unnoticed by the others, but soon everyone in attendance pick up on them. An awkward silence fills the room. They seem to be awaiting my response.;;;;;;;;;;;;;x
+EVTOPTAipc.302;Your mother was a hamster!;;;;;;;;;;;;;x
+EVTOPTBipc.302;Your father smelt of elderberries!;;;;;;;;;;;;;x
+EVTOPTCipc.302;I will not lower myself to [FromFrom.GetHerHis] level.;;;;;;;;;;;;;x
+EVTDESAipc.303;While attending a small gathering of courtiers, I started poking fun at [From.GetTitledFirstName]. Unfortunately [From.GetSheHe] did not take kindly to this taunting. [From.GetSheHeCap] yells at me "Your mother was a hamster!".;;;;;;;;;;;;;x
+EVTDESBipc.303;While attending a small gathering of courtiers, I started poking fun at [From.GetTitledFirstName]. Unfortunately [From.GetSheHe] did not take kindly to this taunting. [From.GetSheHeCap] yells at me "Your father smelt of elderberries!".;;;;;;;;;;;;;x
+EVTOPTAipc.303;You fiend!;;;;;;;;;;;;;x
+EVTDESAipc.304;Being a member of the court bureaucracy isn't easy. A mountain of paperwork waits on my desk and my [Root.job_chancellor.GetJobTitle] keeps bringing me more.;;;;;;;;;;;;;x
+EVTOPTAipc.304;Time to get to work.;;;;;;;;;;;;;x
+EVTOPTBipc.304;Maybe later.;;;;;;;;;;;;;x
+EVTDESAipc.305;Lately I have been finding it harder to focus on my duties because of my health. Many of my courtiers and family members say that I should be resting instead of working.;;;;;;;;;;;;;x
+EVTOPTAipc.305;I will heed their advice.;;;;;;;;;;;;;x
+EVTOPTBipc.305;The realm does not rest, and neither will I!;;;;;;;;;;;;;x
+EVTDESAipc.307;[From.GetBestName] has invited me over for a small private feast. I polish off a plate of delicious delicacies, only for [From.GetFirstName] to hand me a plate piled high with even more food.;;;;;;;;;;;;;x
+EVTOPTAipc.307;A bit more wouldn't hurt.;;;;;;;;;;;;;x
+EVTTOOLTIPAipc.307;You may get §Yfat§!!;;;;;;;;;;;;;x
+EVTTOOLTIPBipc.307;You may lose §Ymalnourished§!!;;;;;;;;;;;;;x
+EVTOPTBipc.307;I am sorry friend, but I cannot eat another bite.;;;;;;;;;;;;;x
+
+
+EVTDESAipc.501;My advisors have been urging me to secure a non-aggression pact with [From.GetBestName]. [Root.PrimaryTitle.GetName] borders [From.PrimaryTitle.GetName] making us a prime target for annexation by both [From.GetTitledFirstName] and [From.GetHerHis] influential court. A messenger has been prepared to negotiate a pact, but without a suitable gift he would undoubtedly fail.;;;;;;;;;;;;;x
+EVTOPTAipc.501;A substantial gift of gold should convince [From.GetTitledFirstName].;;;;;;;;;;;;;x
+EVTOPTBipc.501;I will offer my child in marriage.;;;;;;;;;;;;;x
+EVTOPTCipc.501;Hand me a quill. I have a message in mind.;;;;;;;;;;;;;x
+EVTTOOLTIPCipc.501;success;;;;;;;;;;;;;x
+EVTOPTDipc.501;[From.GetTitledFirstName] is of no threat to me.;;;;;;;;;;;;;x
+EVTDESAipc.502;A [From.Culture.GetName] messenger sent by [From.GetTitledFirstName] has arrived in [Root.Capital.GetName], seeking an audience. Along with his liege's message, he also brings with him a sizable amount of gold and hopes that it is enough to ensure peace between our two realms.;;;;;;;;;;;;;x
+EVTDESBipc.502;A [From.Culture.GetName] messenger sent by [From.GetTitledFirstName] has arrived in [Root.Capital.GetName], seeking an audience. His liege's message is complementary, and offers [From.GetHerHis] child's hand in marriage in order to build a lasting peace between our two realms.;;;;;;;;;;;;;x
+EVTDESCipc.502;A [From.Culture.GetName] messenger sent by [From.GetTitledFirstName] has arrived in [Root.Capital.GetName], seeking an audience. He reads a very well written message from [From.GetTitledName] with the intention of ensuring a lasting peace between us. The proposal is so well argued that it meets with unanimous approval from my courtiers, and I am rather impressed myself. My advisors urge me to accept.;;;;;;;;;;;;;x
+EVTOPTAipc.502;I do like gold.;;;;;;;;;;;;;x
+EVTTOOLTIPAipc.502;A non-aggression pact is signed with §Y[From.GetTitledName]§!;;;;;;;;;;;;;x
+ipc_foreign_nap_agreement;Offered treasure for non-aggression pact;;;;;;;;;;;;;x
+EVTOPTBipc.502;I accept this arrangement.;;;;;;;;;;;;;x
+EVTOPTCipc.502;[relative_marriage_candidate.GetTitledFirstName] is a fortunate man.;;;;;;;;;;;;;x
+ipc_foreign_nap_agreement_marriage;Offered marriage for non-aggression pact;;;;;;;;;;;;;x
+EVTOPTDipc.502;Very well, I accept [From.GetHerHis] offer.;;;;;;;;;;;;;x
+ipc_foreign_nap_agreement_diplomacy;A mutual agreement;;;;;;;;;;;;;x
+EVTOPTEipc.502;Tell your "[From.GetTitle]" that I have no interest in [From.GetHerHis] proposal.;;;;;;;;;;;;;x
+EVTDESAipc.503;The messenger has returned from [From.Capital.GetName] with excellent news! [From.GetBestName] has agreed to a non-aggression pact. We longer have to fear the threat of a large empire on our borders.;;;;;;;;;;;;;x
+EVTDESBipc.503;The messenger has returned from [From.Capital.GetName] with terrible news! [From.GetBestName] has declined our offer of a non-aggression pact, and [From.PrimaryTitle.GetName] remains a threat to our independence.;;;;;;;;;;;;;x
+EVTOPTAipc.503;Excellent!;;;;;;;;;;;;;x
+EVTTOOLTIPAipc.503;A non-aggression pact is signed with §Y[From.GetTitledName]§!;;;;;;;;;;;;;x
+EVTOPTBipc.503;Curses.;;;;;;;;;;;;;x
+EVTDESAipc.505;The court bureaucracy tirelessly works for the betterment of [From.PrimaryTitle.GetName], but without sufficient power in the [From.GetTitle]'s council our work is hindered. I could write a letter to [From.GetBestName] asking [From.GetHerHim] to increase the council's powers.;;;;;;;;;;;;;x
+EVTOPTAipc.505;Someone fetch me a quill!;;;;;;;;;;;;;x
+EVTTOOLTIPAipc.505;A letter is sent;;;;;;;;;;;;;x
+EVTOPTBipc.505;Perhaps this isn't a good idea after all.;;;;;;;;;;;;;x
+EVTDESAipc.506;To [Root.GetTitledName],\n\nOn behalf of all of your obedient courtiers, I humbly petition that you increase the council's powers so that we may be further able to assist you in managing the realm.\n\nYour loyal servant,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESBipc.506;To [Root.GetTitledName],\n\nOn behalf of the Imperial Court, I demand that you increase the council's powers. Since you do not have our interests in mind, we are forced to promote them ourselves.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipc.506;Very well.;;;;;;;;;;;;;x
+EVTOPTBipc.506;Damn traitors.;;;;;;;;;;;;;x
+EVTOPTCipc.506;No, the council cannot be trusted.;;;;;;;;;;;;;x
+EVTDESAipc.507;To [Root.GetTitledName],\n\nYour words have swayed me. I will increase the council's powers. I hope I can count on your continued loyalty.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTDESBipc.507;To [Root.GetTitledName],\n\nThe power of the council is sufficient for it to adequately carry out its duties. I will decide how [From.PrimaryTitle.GetName] is ruled, not you.\n\nSigned,\n[From.GetTitledName];;;;;;;;;;;;;x
+EVTOPTAipc.507;Excellent.;;;;;;;;;;;;;x
+EVTOPTBipc.507;Damn [From.GetHerHim]!;;;;;;;;;;;;;x
+EVTDESAipc.508;For years I have ruled over [Root.PrimaryTitle.GetName], and many of the people respect and revere me. The elite also strongly supports me. Whether this will last, I cannot say. One thing is certain: the realm will continue to prosper under my care.;;;;;;;;;;;;;x
+EVTOPTAipc.508;For [Root.PrimaryTitle.GetName]!;;;;;;;;;;;;;x
+EVTDESAipc.509;A young entertainer by the name of [new_jester.GetFirstName] has arrived at my court seeking employment. [new_jester.GetSheHeCap] seems to be well liked by my courtiers, and [new_jester.GetHerHis] presence could provide a nice distraction from the tedium of running an empire.;;;;;;;;;;;;;x
+EVTOPTAipc.509;We could use some laughter here.;;;;;;;;;;;;;x
+EVTOPTBipc.509;I have no interest in fools.;;;;;;;;;;;;;x
+
+
+EVTDESAipc.701;The imperial road in [Root.GetName] has started to crumble and weather away from use. As ruler of the province, the local populace looks to me to fix it.;;;;;;;;;;;;;x
+EVTOPTAipc.701;I will see it done.;;;;;;;;;;;;;x
+EVTOPTBipc.701;If the [Root.TopLiege.GetTitle] wants it, the [Root.TopLiege.GetTitle] can fix it.;;;;;;;;;;;;;x
+
+
+
+
+
+
+
+
+#############Mission Events#################
+
+ipc_mission_diplomacy_bonus_tooltip;§GThis mission's difficulty, costs, and benefits will scale with your Diplomacy skill.§!;;;;;;;;;;;;;x
+ipc_mission_martial_bonus_tooltip;§GThis mission's difficulty, costs, and benefits will scale with your Martial skill.§!;;;;;;;;;;;;;x
+ipc_mission_stewardship_bonus_tooltip;§GThis mission's difficulty, costs, and benefits will scale with your Stewardship skill.§!;;;;;;;;;;;;;x
+ipc_mission_intrigue_bonus_tooltip;§GThis mission's difficulty, costs, and benefits will scale with your Intrigue skill.§!;;;;;;;;;;;;;x
+ipc_mission_diplomacy_or_learning_bonus_tooltip;§GThis mission's difficulty, costs, and benefits will scale with your Diplomacy or Learning skill.§!;;;;;;;;;;;;;x
+ipc_mission_combat_rating_tooltip;§RYou may have to personally engage in a duel during this mission.§!;;;;;;;;;;;;;x
+
+
+ipc_success_tooltip;of success;;;;;;;;;;;;;x
+ipc_failure_tooltip;of failure;;;;;;;;;;;;;x
+
+#undermine member
+EVTDESAipcq.002;For some time [From.GetBestName] has been a thorn in my side during court debates. Fortunately [From.GetSheHe] has other enemies at the Imperial Court, perhaps I can persuade one of them to help me humiliate [From.GetFirstName]?;;;;;;;;;;;;;x
+EVTOPTAipcq.002;[underminer_mission_candidate_1.GetBestName] might be interested...;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.002;[underminer_mission_candidate_1.GetSheHeCap] might refuse if [underminer_mission_candidate_1.GetSheHe] likes [From.GetFirstName] enough;;;;;;;;;;;;;x
+EVTOPTBipcq.002;Or maybe [underminer_mission_candidate_2.GetBestName]?;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.002;[underminer_mission_candidate_2.GetSheHeCap] might refuse if [underminer_mission_candidate_2.GetSheHe] likes [From.GetFirstName] enough;;;;;;;;;;;;;x
+EVTOPTCipcq.002;Or how about [underminer_mission_candidate_3.GetBestName]?;;;;;;;;;;;;;x
+EVTTOOLTIPCipcq.002;[underminer_mission_candidate_3.GetSheHeCap] might refuse if [underminer_mission_candidate_3.GetSheHe] likes [From.GetFirstName] enough;;;;;;;;;;;;;x
+EVTOPTDipcq.002;Nevermind.;;;;;;;;;;;;;x
+quest_ipc_undermine_member;Undermine $TARGET$'s Influence;;;;;;;;;;;;;;x
+quest_ipc_undermine_member_fallback;Undermine a rival society member;;;;;;;;;;;;;;x
+quest_ipc_undermine_member_desc;With a common enemy at court, a temporary alliance is made. This is a chance to weaken your foe and elevate your own standing within the Imperial Court.;;;;;;;;;;;;;x
+quest_ipc_undermine_member_tooltip;The mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.003;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n[undermined_member.GetBestName] holds considerable influence over the Imperial Court, and I have noticed you are not fond of [undermined_member.GetHerHim] either. Perhaps we could work together to seize some of [undermined_member.GetHerHis] influence?;;;;;;;;;;;;;;x
+EVTDESAipcq.004;To [Root.GetSocietyRank] [Root.GetFirstName],\n\nI must decline your proposal. I bear no ill will towards [undermined_member.GetBestName]. I cannot be a part of your underhanded scheme.\n\nSigned,\n[From.GetSocietyRank] [From.GetFirstName];;;;;;;;;;;;;x
+EVTOPTAipcq.004;Maybe I should have picked someone else.;;;;;;;;;;;;;;x
+EVTDESAipcq.005;The time has come to plan for a way to sabotage [undermined_member.GetBestName]'s standing within the Imperial Court. Murder would be ill advised, as [undermined_member.GetFirstName] might simply be replaced with someone even more influential. Instead I must resort to more subtle methods.;;;;;;;;;;;;;x
+EVTOPTAipcq.005;[undermined_member.GetFirstName] keeps important court documents in [undermined_member.GetHerHis] study. A simple bribe to a servant should see these...disappear.;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.005;Success will depend on your diplomacy skill and relevant traits;;;;;;;;;;;;;;x
+EVTOPTBipcq.005;A spot of arson might keep [undermined_member.GetHerHim] away from the next court gathering...;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.005;Success will depend on your intrigue skill and relevant traits;;;;;;;;;;;;;;x
+EVTOPTCipcq.005;My superior learning will expose [undermined_member.GetHerHim] as an unlettered charlatan.;;;;;;;;;;;;;;x
+EVTTOOLTIPCipcq.005;Success will depend on your learning skill and relevant traits. Consequences for failure will be low.;;;;;;;;;;;;;;x
+EVTDESAipcq.006;An agreement has been made with one of [undermined_member.GetFirstName]'s servants to dispose of some important papers in [undermined_member.GetHerHis] care. Part of the reward will be paid in advance with the rest upon completion.;;;;;;;;;;;;;;x
+EVTDESBipcq.006;I have managed to hire some bandits to burn one of the buildings near [undermined_member.GetFirstName]'s home. That should hold [undermined_member.GetHerHim] up long enough for [undermined_member.GetHerHim] to miss the Imperial Court gathering.;;;;;;;;;;;;;;x
+EVTDESCipcq.006;I have spent hours in the library with my most learned advisors reading up on every affair of state [undermined_member.GetFirstName] could conceivably talk about and preparing a detailed list of rebuttals. I am completely exhausted. Now the rest is in [mission_giver.GetBestName]'s hands.;;;;;;;;;;;;;;x
+EVTOPTAipcq.006;This had better be worth it.;;;;;;;;;;;;;;x
+EVTOPTBipcq.006;I hope they succeed.;;;;;;;;;;;;;;x
+EVTOPTCipcq.006;I wish I could see the look on [undermined_member.GetHerHis] face.;;;;;;;;;;;;;;x
+EVTDESAipcq.007;It seems the servant I bribed has succeeded in her task. The important documents that had been placed in [undermined_member.GetBestName]'s care are nowhere to be found. The next audience at court should be...interesting.;;;;;;;;;;;;;;x
+EVTDESBipcq.007;Sneaking through the streets my hired ruffians managed to reach the targeted building undetected. A few burning rushes here and there are enough to start a roaring fire inside the warehouse. As the fire rages and guards start yelling for water, they manage to make a clean escape.;;;;;;;;;;;;;;x
+EVTDESCipcq.007;Word has reached me that [undermined_member.GetBestName] has been humiliated at the Imperial Court meeting. Every point [undermined_member.GetSheHe] raised was immediately refuted by [mission_giver.GetBestName].;;;;;;;;;;;;;;x
+EVTOPTAipcq.007;Ha! The poor fool.;;;;;;;;;;;;;;x
+EVTOPTBipcq.007;That should keep [undermined_member.GetBestName] busy for a while.;;;;;;;;;;;;;;x
+EVTOPTCipcq.007;Serves [undermined_member.GetHerHim] right.;;;;;;;;;;;;;;x
+EVTDESAipcq.008;To [Root.GetBestName],\nI am pleased to report my success in sabotaging [undermined_member.GetBestName]'s reputation at court.\n\nSigned,\n[From.GetBestName];;;;;;;;;;;;;;x
+EVTOPTAipcq.008;Excellent;;;;;;;;;;;;;;x
+EVTDESAipcq.009;With the next audience at court drawing near, I have retired to my study to look over some important documents. Yet they are not where they are supposed to be, in fact they are nowhere to be seen!;;;;;;;;;;;;;;x
+EVTDESBipcq.009;Frantic yelling can be heard coming from outside. It seems one of the nearby warehouses has caught fire, and with it being located so close to my residence it ends up occupying me long enough to miss the Imperial Court gathering.;;;;;;;;;;;;;;x
+EVTDESCipcq.009;As I sit conversing with my fellow courtiers, I start to notice that somehow every idea I bring up is immediately shot down. I can't help but feel embarrassed at the situation.;;;;;;;;;;;;;;x
+EVTOPTAipcq.009;But...how?;;;;;;;;;;;;;;x
+EVTOPTBipcq.009;Damn it! Why now?;;;;;;;;;;;;;;x
+EVTOPTCipcq.009;Umm, yes but...you see...;;;;;;;;;;;;;;x
+EVTDESAipcq.010;The servant I hired has decided she would rather not risk she neck for my schemes. Of course, she will still keep my "gift".;;;;;;;;;;;;;;x"
+EVTDESBipcq.010;The initial stage of the plan succeeded and the warehouse was set aflame. Yet the fire was dealt with so quickly that it barely caused any damage or affected anyone.;;;;;;;;;;;;;;x
+EVTDESCipcq.010;It seems that all the clever wordplay I prepared was all for naught. [undermined_member.GetBestName]'s abilities are beyond me and [undermined_member.GetHerHis] silver tongue makes short work of my "ideas".;;;;;;;;;;;;;;x
+EVTOPTAipcq.010;Curse her!;;;;;;;;;;;;;;x
+EVTOPTBipcq.010;Curses!;;;;;;;;;;;;;;x
+EVTOPTCipcq.010;Damn [undermined_member.GetHerHim]!;;;;;;;;;;;;;;x
+EVTDESAipcq.011;To [Root.GetBestName],\nIt pains me to report of my failure in sabotaging [undermined_member.GetBestName]'s reputation.\n\nSigned,\n[From.GetBestName];;;;;;;;;;;;;;x
+EVTOPTAipcq.011;Curses.;;;;;;;;;;;;;;x
+
+##########Seneschal##########
+
+##build imperial roads
+quest_ipc_build_imperial_road;Build an Imperial Road in $TARGET$;;;;;;;;;;;;;;x
+quest_ipc_build_imperial_road_fallback;Build an Imperial Road;;;;;;;;;;;;;;x
+quest_ipc_build_imperial_road_desc;In order to facilitate faster travel and communication in the realm, you have been tasked to oversee the construction of an Imperial Road in a province.;;;;;;;;;;;;;;x
+quest_ipc_build_imperial_road_tooltip;\nThe mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.100;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nIn a realm as large as ours it takes quite some time to reach one's destination. Thus the you have been tasked to oversee the construction of an Imperial Road in [imperial_road_province.GetName].\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.101;In order for construction to begin, I will first need to secure an ample amount of materials. There are numerous suppliers around, all I need to do is find the one that best fits my needs.;;;;;;;;;;;;;;x
+EVTOPTAipcq.101;Perhaps these.;;;;;;;;;;;;;;x
+EVTOPTBipcq.101;I know exactly what we need.;;;;;;;;;;;;;;x
+EVTDESAipcq.102;With the materials ready, I will need to find manpower to actually build the road. I could hire professional builders, or rely on conscripted peasants.;;;;;;;;;;;;;;x
+EVTOPTAipcq.102;The builders should do the job right.;;;;;;;;;;;;;;x
+EVTOPTBipcq.102;I'll have some peasants build it.;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.102;§GSince you own the province there will be no cost§!;;;;;;;;;;;;;;x
+EVTDESAipcq.103;Construction has been progessing well and the road is almost complete. While the local garrision will be in charge of patrols, they will require some help in the initial stages.;;;;;;;;;;;;;;x
+EVTOPTAipcq.103;Make the neccessary preparations.;;;;;;;;;;;;;;x
+EVTOPTBipcq.103;We can make do with patroling only these key routes.;;;;;;;;;;;;;;x
+EVTDESAipcq.104;The Imperial Road is complete. It shall serve the realm well, provided the local officials keep it well maintained. Regardless, my work is complete and my liege will be pleased.;;;;;;;;;;;;;;x 
+EVTOPTAipcq.104;A job well done.;;;;;;;;;;;;;;x
+
+##improve imperial capital
+quest_ipc_improve_imperial_capital;Improve the Imperial Capital;;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_fallback;Improve the Imperial Capital;;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_desc;As the center of [Root.TopLiege.PrimaryTitle.GetName], $TARGET$ must become a great capital. While the empire itself is funding the construction, you are tasked with overseeing and ensuring the quality of the work.;;;;;;;;;;;;;;x 
+quest_ipc_improve_imperial_capital_tooltip;\nThe mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.110;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nConstruction of a new building has begun in [imperial_capital.GetName] and I ask that you supervise it. The empire has already taken care of all costs related to the construction.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.111;[imperial_capital.GetName] has fallen and all that we have built has burned to ashes. Time is short and I must flee.;;;;;;;;;;;;;;x 
+EVTOPTAipcq.111;The empire has lost something truly great...;;;;;;;;;;;;;;x
+EVTTOOLTIPbuildingprogress;This has a normal chance of increasing building progress;;;;;;;;;;;;;;x
+EVTTOOLTIPbuildingincreasedprogress;This has an increased chance of increasing building progress;;;;;;;;;;;;;;x
+EVTTOOLTIPbuildinggreatprogress;This has a §Ghigh§! chance of increasing building progress;;;;;;;;;;;;;;x
+EVTDESAipcq.113;A couple of labourers have decided that admiring the construction site from the shade is more important than their actual work. They quickly pretend to work whenever they catch me looking in their general direction.;;;;;;;;;;;;;;x
+EVTOPTAipcq.113;This is hardly worth my time.;;;;;;;;;;;;;;x
+EVTOPTBipcq.113;Get back to work you slackers!;;;;;;;;;;;;;;x
+EVTOPTCipcq.113;I'll make sure this never happens again...;;;;;;;;;;;;;;x
+EVTDESAipcq.114;Some of the stone that was set aside for the building has gone missing. Unless a solution is found, construction will be delayed.;;;;;;;;;;;;;;x
+EVTOPTAipcq.114;Buy some cheaper stone to replace it.;;;;;;;;;;;;;;x
+EVTOPTBipcq.114;Try to find it.;;;;;;;;;;;;;;x
+EVTOPTCipcq.114;This is an opportunity to do better - buy higher quality stone.;;;;;;;;;;;;;;x
+EVTDESAipcq.115;As the day drags along, I spot a beautiful peasant girl walking all alone. For some reason I can't stop looking at her...;;;;;;;;;;;;;;x
+EVTDESBipcq.115;As the day drags along, I spot a handsome peasant boy walking all alone. For some reason can't stop looking at him...;;;;;;;;;;;;;;x
+EVTOPTAipcq.115;Good evening, my flower!;;;;;;;;;;;;;;x
+EVTOPTBipcq.115;Good evening, my petal!;;;;;;;;;;;;;;x
+EVTOPTCipcq.115;No, I must not give in to these temptations.;;;;;;;;;;;;;;x
+EVTDESAipcq.116;A messenger has arrived and informs me that I am are needed for an urgent matter back in my own domain. Construction will still progress while I am gone, but I worry about its quality.;;;;;;;;;;;;;;x
+EVTOPTAipcq.116;It seems I am needed then.;;;;;;;;;;;;;;x
+EVTOPTBipcq.116;I trust my council to handle it.;;;;;;;;;;;;;;x
+EVTDESAipcq.118;At last my task comes to an end. Significant progress has been made in the construction of a grand new building for [imperial_capital.GetName]. Another member of the Imperial Court will have to see it completed.;;;;;;;;;;;;;;x
+EVTDESBipcq.118;At last my task comes to an end. A magnificent new building stands tall in [imperial_capital.GetName]. The capital continues to prosper.;;;;;;;;;;;;;;x
+EVTDESCipcq.118;At last my task comes to an end although hardly any progress has been made in the construction. Rumors of my failure are already circulating at court.;;;;;;;;;;;;;;x
+EVTOPTAipcq.118;It is now up to my fellow courtiers.;;;;;;;;;;;;;;x
+EVTOPTBipcq.118;For [Root.TopLiege.PrimaryTitle.GetName]!;;;;;;;;;;;;;;x
+EVTOPTCipcq.118;Sinister forces are at work!;;;;;;;;;;;;;;x
+EVTDESAipcq.119;Thanks to the tireless efforts of court officials, a major new building has finished construction in [imperial_capital.GetName].;;;;;;;;;;;;;;x
+EVTOPTAipcq.119;Marvelous;;;;;;;;;;;;;;x
+
+
+
+##########Marshal##########
+quest_ipc_military_drill;Organize a Military Drill;;;;;;;;;;;;;;x
+quest_ipc_military_drill_fallback;Organize a Military Drill;;;;;;;;;;;;;;x
+quest_ipc_military_drill_desc;You have been ordered to organize a military drill in order to improve the effectiveness of the army. This is a chance to prove your worth and loyalty to the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;;x
+quest_ipc_military_drill_tooltip;\nThe mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.200;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nYou are known as a capable commander in the realm. I therefore task you with organizing a military drill in order to impart your skills to some of the lesser commanders. I expect to see a marked improvement in their effectiveness.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.201;As I ponder how to begin planning the military drill I was instructed to carry out, I realize that I could simply organize a training exercise with my fellow courtiers. However that would likely displease the [TopLiege.GetTitle]. On the other hand I could take the whole army out on manouvres. This would be more expensive but also more rewarding.;;;;;;;;;;;;;;x
+EVTOPTAipcq.201;Training the elite is enough.;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.201;All society members that are either feudal, unlanded commanders, or have a military education will be invited;;;;;;;;;;;;;;x
+EVTOPTBipcq.201;Let all the commanders of the realm join.;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.201;All realm characters that are either feudal or are unlanded commanders will be invited;;;;;;;;;;;;;;x
+EVTDESAipcq.202;To [Root.GetBestName],\nI wish to invite you to attend a military drill that I will be holding shortly. This is an excellent chance to improve your skills and drill your troops so that they will perform better in battle.\n\nSigned,\n[From.GetBestName];;;;;;;;;;;;;;x
+EVTOPTAipcq.202;Of course.;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.202;You will have a chance to increase your Martial skill or learn one of [From.GetBestName]'s leadership traits;;;;;;;;;;;;;;x
+EVTOPTBipcq.202;I have better things to do.;;;;;;;;;;;;;;x
+EVTDESAipcq.203;The troops and commanders have assembled. They eagerly await my instructions. Hopefully they can keep up with me and actually learn something.;;;;;;;;;;;;;;x
+EVTOPTAipcq.203;A balanced mindset is key to victory.;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.203;This has a high chance to increase the attending commanders' Martial skill;;;;;;;;;;;;;;x
+EVTOPTBipcq.203;An overwhelming assault is best.;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.203;This has a high chance to teach the attending commanders one of your offensive leader traits;;;;;;;;;;;;;;x
+EVTOPTCipcq.203;Be immovable as a stone!;;;;;;;;;;;;;;x
+EVTTOOLTIPCipcq.203;This has a high chance to teach the attending commanders one of your defensive leader traits;;;;;;;;;;;;;;x
+EVTOPTDipcq.203;A wise strategy conquers all.;;;;;;;;;;;;;;x
+EVTTOOLTIPDipcq.203;This has a high chance to teach the attending commanders your leader traits or greatly improve their Martial skill;;;;;;;;;;;;;;x
+EVTDESAipcq.204;My fellow commanders and I follow [From.GetBestName]'s instructions to the best of our abilities. [From.GetSheHeCap] takes time to properly teach all attending the finer points of tactics and strategy.;;;;;;;;;;;;;;x
+EVTOPTAipcq.204;I have done my best.;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.204;You will learn an offensive leader trait;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.204;You will learn a defensive leader trait;;;;;;;;;;;;;;x
+EVTTOOLTIPCipcq.204;You will learn a terrain specialization leader trait;;;;;;;;;;;;;;x
+EVTDESAipcq.205;At last the military drill comes to an end. I am proud of my work, the commanders of the realm have improved thanks to my efforts. The might of [Root.TopLiege.PrimaryTitle.GetName] grows ever stronger!;;;;;;;;;;;;;;x
+EVTDESBipcq.205;At last the military drill comes to an end. The majority of commanders leave feeling that they have wasted their time. With an instructor like myself, it's no wonder [Root.TopLiege.PrimaryTitle.GetName]'s commanders are lacking.;;;;;;;;;;;;;;x
+EVTOPTAipcq.205;For the [Root.TopLiege.GetTitle]!;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.205;The majority of attending commanders improve;;;;;;;;;;;;;;x
+EVTOPTBipcq.205;I couldn't have been that bad...was I?;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.205;Not enough commanders have improved to consider this a success;;;;;;;;;;;;;;x
+
+quest_ipc_distribute_levy_recompense;Distribute Vassal Levy Recompense;;;;;;;;;;;;;;x
+quest_ipc_distribute_levy_recompense_fallback;Distribute Vassal Levy Recompense;;;;;;;;;;;;;;x
+quest_ipc_distribute_levy_recompense_desc;[Root.TopLiege.PrimaryTitle.GetName] is at war and the elites are displeased about their raised levies. You have been charged to distribute compensation on behalf of the [Root.TopLiege.GetTitle].;;;;;;;;;;;;;;x
+quest_ipc_distribute_levy_recompense_tooltip;\n§RDue to its urgency, this mission will begin shortly.§!\n;;;;;;;;;;;;;;x
+EVTDESAipcq.210;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nThe realm is at war. Some of the elites of [Root.TopLiege.PrimaryTitle.GetName] are upset at having to pay to raise their levies. You are therefore tasked with distributing compensation on behalf of the [Root.TopLiege.GetTitle]. Make haste!\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.211;[Root.TopLiege.PrimaryTitle.GetName] is at war, but not all vassals give freely for love of the realm. With a cart full of coin clanking behind me, I ride out with my escort to distribute recompense to my fellow vassals.;;;;;;;;;;;;;;x
+EVTOPTAipcq.211;Onwards!;;;;;;;;;;;;;;x
+EVTDESAipcq.213;[From.GetBestName] has arrived from the imperial capital with a large retinue. [From.GetSheHeCap] hands me a chest of coin and tells me that the [Root.TopLiege.GetTitle] has offered me recompense for all of my raised levies.;;;;;;;;;;;;;;x
+EVTOPTAipcq.213;A surprise to be sure, but a welcome one.;;;;;;;;;;;;;;x
+EVTDESAipcq.214;I have delivered compensation to [From.GetBestName], and now set out to my next destination.;;;;;;;;;;;;;;x
+EVTOPTAipcq.214;Excellent.;;;;;;;;;;;;;;x
+EVTDESAipcq.215;Whilst we are making camp for the evening, I realize that I could potentially pocket some of the gold for myself. The guards are busy watching the roads for brigands, giving me the perfect opportunity to "reward" myself.;;;;;;;;;;;;;;x
+EVTOPTAipcq.215;Nobody would notice a few coins...;;;;;;;;;;;;;;x
+EVTOPTBipcq.215;I dare not...;;;;;;;;;;;;;;x
+EVTDESAipcq.217;Shouts erupt from all around! It seems [From.TopLiege.GetTitledName] caught wind of my mission and sent a small force to ambush us on the road. The enemy commander spots me at the head of the column and charges towards me!;;;;;;;;;;;;;;x
+EVTOPTAipcq.217;Die!;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.217;\nYou duel [From.GetBestName]!;;;;;;;;;;;;;;x
+EVTOPTBipcq.217;No...stay back!;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.217;\nWhile you flee for your life, [From.GetBestName] will surely plunder the coin cart...;;;;;;;;;;;;;;x
+EVTDESAipcq.219;Once I bested [From.GetBestName] in combat, the enemy lost their will to fight and retreated. The remaining caravan guards thanked me for the swift victory, and we are now free to continue with our task.;;;;;;;;;;;;;;x
+EVTDESBipcq.219;I lie on the ground, utterly defeated. [From.GetBestName] and [From.GetHerHis] soldiers pillage what they can from the caravan before riding back in the direction of [From.TopLiege.PrimaryTitle.GetName].;;;;;;;;;;;;;;x
+EVTOPTAipcq.219;That was…not the plan.;;;;;;;;;;;;;;x
+EVTOPTBipcq.219;I just hope they don't realize I'm still alive...;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.219;\nThe cart has been looted!;;;;;;;;;;;;;;x
+EVTDESAipcq.220;The gold has been distributed, and the realm has become more stable. With the now empty cart behind me, I can return to inform the [Root.TopLiege.GetTitle] of our success.;;;;;;;;;;;;;;x
+EVTOPTAipcq.220;A job well done.;;;;;;;;;;;;;;x
+EVTDESAipcq.221;The cart has been emptied of all coin, but barely any of it was delivered to its intended recipients. Whatever the reason, the [Root.TopLiege.GetTitle] and the Imperial Court will blame me for this failure.;;;;;;;;;;;;;;x
+EVTOPTAipcq.221;Curses...;;;;;;;;;;;;;;x
+
+quest_ipc_imperial_conquest;Imperial Conquest of $TARGET$;;;;;;;;;;;;;;x
+quest_ipc_imperial_conquest_fallback;Imperial Conquest;;;;;;;;;;;;;;x
+quest_ipc_imperial_conquest_desc;By order of [Root.TopLiege.GetTitledName], you are to conquer $TARGET$ by any means necessary.;;;;;;;;;;;;;;x
+quest_ipc_imperial_conquest_tooltip;\nTo complete this mission, declare war on the owner of $TARGET$ or the top liege using the §YImperial Conquest§! Casus Belli and win.;;;;;;;;;;;;;;x
+EVTDESAipcq.230;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nThe [imperial_conquest_target.GetFullBaseName] lies on the edge of [FromFrom.PrimaryTitle.GetName]. It must be brought under our control for the glory of the realm. You are hereby ordered to conquer these lands by any means necessary.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESBipcq.230;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nBy the power granted to me by [Root.TopLiege.GetTitledName], I declare that the [imperial_conquest_target.GetFullBaseName] is to be conquered for the glory of the realm. You are hereby ordered to secure these lands by any means necessary.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.232;A war of conquest has been declared and [From.GetBestName] has been given command. As a member of the Imperial Court, I have a duty to contribute to this endeavor.;;;;;;;;;;;;;;x
+EVTOPTAipcq.232;I will give them everything I can!;;;;;;;;;;;;;;x
+EVTOPTBipcq.232;Send some coin and troops.;;;;;;;;;;;;;;x
+EVTOPTCipcq.232;Some coin should help.;;;;;;;;;;;;;;x
+EVTOPTDipcq.232;I can spare nothing right now.;;;;;;;;;;;;;;x
+EVTDESAipcq.233;An elite army has finished assembling at [Root.Capital.GetName], they now await my command.;;;;;;;;;;;;;;x
+EVTOPTAipcq.233;Excellent.;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.233;The Imperial Court's army appears.;;;;;;;;;;;;;;x
+EVTDESAipcq.234;The war has started, and as the leader of the conquest I have priority in choosing a dynasty member to rule the conquered territory.;;;;;;;;;;;;;;x
+EVTOPTAipcq.234;[candidate_1.GetBestName] will serve our dynasty well.;;;;;;;;;;;;;;x
+EVTOPTBipcq.234;[candidate_2.GetBestName] will bring us glory.;;;;;;;;;;;;;;x
+EVTOPTCipcq.234;[candidate_3.GetBestName] will rule well.;;;;;;;;;;;;;;x
+EVTOPTDipcq.234;I would rather keep my family close.;;;;;;;;;;;;;;x
+EVTDESAipcq.235;The war of conquest has started, and now I may choose a dynasty member to potentially hold some of the conquered land. The land will be given out to the most powerful society members' candidates, with [From.GetBestName]'s candidate having priority in ruling the duchy.;;;;;;;;;;;;;;x
+EVTOPTAipcq.235;[candidate_1.GetBestName] will serve our dynasty well.;;;;;;;;;;;;;;x
+EVTOPTBipcq.235;[candidate_2.GetBestName] will bring us glory.;;;;;;;;;;;;;;x
+EVTOPTCipcq.235;[candidate_3.GetBestName] will rule well.;;;;;;;;;;;;;;x
+EVTOPTDipcq.235;I'd rather keep my family close.;;;;;;;;;;;;;;x
+EVTDESAipcq.238;I have claimed victory for [Root.TopLiege.PrimaryTitle.GetName]! The entire realm is filled with people shouting my name!;;;;;;;;;;;;;;x
+EVTOPTAipcq.238;Victory! For [Root.TopLiege.PrimaryTitle.GetName]!;;;;;;;;;;;;;;x
+EVTDESAipcq.239;The war has been forced into a stalemate. While not as crushing as a defeat, this war has not ended in [Root.TopLiege.PrimaryTitle.GetName]'s favor.;;;;;;;;;;;;;;x
+EVTOPTAipcq.239;Curses.;;;;;;;;;;;;;;x
+EVTDESAipcq.240;My forces have been completely defeated. I have completely disgraced [Root.TopLiege.PrimaryTitle.GetName]!;;;;;;;;;;;;;;x
+EVTOPTAipcq.240;No...how could this happen?;;;;;;;;;;;;;;x
+
+
+
+##########Lawkeeper##########
+quest_ipc_change_culture;Change $TARGET$'s Culture;;;;;;;;;;;;;;x
+quest_ipc_change_culture_fallback;Change a Character's Culture;;;;;;;;;;;;;;x
+quest_ipc_change_culture_desc;While the realm is vast and peopled by many different cultures, slowly but surely the elites will surely adopt the [Root.TopLiege.GetTitle]'s ways.;;;;;;;;;;;;;;x
+quest_ipc_change_culture_tooltip;\nThe mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.300;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nAs you may already know, [From.GetBestName] considers us foreigners. I wish to eliminate all possible sources of conflict within the realm ,you are therefore tasked with convincing [From.GetHerHim] to adopt our customs.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.302;[From.GetBestName]'s cultural customs stand in the way of a united [Root.TopLiege.PrimaryTitle.GetName]. You have managed to get [From.GetHerHim] alone for a while, if you are to make a [Root.Culture.GetName] of [From.GetHerHim] then this is the time.;;;;;;;;;;;;;;x
+EVTOPTAipcq.302;Do you not wish for peace and harmony in the realm [From.GetFirstName]?;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.302;Success depends on the difference between your Diplomacy skill;;;;;;;;;;;;;;x
+EVTOPTBipcq.302;Are you not interested in our customs [From.GetFirstName]?;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.302;Success depends on the difference between your Learning skill;;;;;;;;;;;;;;x
+EVTOPTCipcq.302;You will loyally adopt our ways [From.GetFirstName], as our liege commands. This is not a question...;;;;;;;;;;;;;;x
+EVTTOOLTIPCipcq.302;Threatening [From.GetFirstName] will anger [From.GetHerHim] and [From.GetSheHe] will not attempt to convert [From.GetHerHis] heir if you succeed;;;;;;;;;;;;;;x
+EVTDESAipcq.303;As you finish up your duties and start heading back to the peace and quiet of your chambers, you are stopped by [From.GetBestName]. [From.GetSheHeCap] asks for just a few minutes of your time, and you reluctantly agree. After talking about various petty matters, [From.GetSheHe] finally gets to the point. "Do you not wish for peace and harmony in the realm [From.GetFirstName]? Should the people not speak with one voice? Why don't you adopt our ways and become [From.Culture.GetName]?";;;;;;;;;;;;;;x
+EVTDESBipcq.303;As you finish up your duties and start heading back to the peace and quiet of your chambers, you are stopped by [From.GetBestName]. [From.GetSheHeCap] asks for just a few minutes of your time, and you reluctantly agree. After talking about various petty matters, [From.GetSheHe] finally gets to the point. "Are you not interested in our ways [From.GetFirstName]? Do you not wish to share in our success? Why don't you adopt our ways and become [From.Culture.GetName]?";;;;;;;;;;;;;;x
+EVTDESCipcq.303;As you finish up your duties and start heading back to the peace and quiet of your chambers, you are stopped by [From.GetBestName]. [From.GetSheHeCap] asks for just a few minutes of your time, and you reluctantly agree. [From.GetSheHeCap] immediately gets to the point. "Your [Root.Culture.GetName] ways are standing in the way of a united [From.TopLiege.PrimaryTitle.GetName]. You will adopt [From.Culture.GetName] customs as our liege commands,or there will be consequences...";;;;;;;;;;;;;;x
+EVTOPTAipcq.303;Perhaps it would be best if I followed your advice;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.303;You will convert to [From.Culture.GetName] and have the option of converting your heir as well;;;;;;;;;;;;;;x
+EVTOPTBipcq.303;I would rather stay true to my roots;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.303;You dismiss [From.GetBestName]'s advice;;;;;;;;;;;;;;x
+EVTOPTCipcq.303;Fine, but I won't forget this [From.GetFirstName]...;;;;;;;;;;;;;;x
+EVTOPTDipcq.303;I care neither for threats [From.GetFirstName], nor for your foreign culture.;;;;;;;;;;;;;;x
+EVTDESAipcq.304;"Very well [Root.GetFirstName], I shall heed your wise counsel." Satisfied with your success, you wish [From.GetBestName] a pleasant day and leave to inform the Imperial Court of your success.;;;;;;;;;;;;;;x
+EVTDESBipcq.304;"Thank you for your advice [Root.GetFirstName], however I cannot betray my culture so readily." You leave disappointed, perhaps this wasn't the best time to speak with [From.GetBestName].;;;;;;;;;;;;;;x
+EVTDESCipcq.304;"Fine then, I will become [Root.Culture.GetName], but do not think I will forget this insult, [Root.GetFirstName]..." Satisfied with your success, you leave to inform the Imperial Court of your success.;;;;;;;;;;;;;;x
+EVTDESDipcq.304;"Save your threats, you [GetFromRootInsult]. I have no intention of abandoning the culture of my people at the command of a dog like you. Leave me in peace." It seems [From.GetBestName] doesn't take your threats seriously. Regardless, you have failed in your task.;;;;;;;;;;;;;;x
+EVTOPTAipcq.304;Excellent;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.304;§Y[From.GetBestName]§! will attempt to convert [From.GetHerHis] current heir as well;;;;;;;;;;;;;;x
+EVTOPTBipcq.304;Curses;;;;;;;;;;;;;;x
+EVTOPTCipcq.304;I care not how [From.GetSheHe] feels about this;;;;;;;;;;;;;;x
+EVTOPTDipcq.304;That stubborn fool!;;;;;;;;;;;;;;x
+EVTDESAipcq.305;After following the advice of [From.GetBestName] to learn more about [From.GetHerHis] culture and customs, I feel I've learned enough to consider myself a [From.Culture.GetName].;;;;;;;;;;;;;;x
+EVTOPTAipcq.305;[Root.Heir.GetBestName] should learn as well;;;;;;;;;;;;;;x
+EVTOPTBipcq.305;I will not force this on anyone;;;;;;;;;;;;;;x
+
+
+quest_ipc_organize_festival;Organize a Festival;;;;;;;;;;;;;x
+quest_ipc_organize_festival_fallback;Organize a Festival;;;;;;;;;;;;;x
+quest_ipc_organize_festival_desc;Tension is high in [Root.TopLiege.PrimaryTitle.GetName], you are to plan a festival to placate the people.;;;;;;;;;;;;;x
+quest_ipc_organize_festival_tooltip;\nThe mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.310;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nThere will always be discontented commoners in [Root.TopLiege.PrimaryTitle.GetName] for one reason or another, but nothing calms the populace like a palliative distraction. I want you to organize a festival to entertain and placate the masses. Make it a great success that glorifies the realm. I will leave the details to you.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.311;As with all large events, the location is essential to its success. A location that borders discontent provinces would have the most impact.;;;;;;;;;;;;;x
+EVTOPTAipcq.311;I will hold the festival in [province_1.GetName].;;;;;;;;;;;;;x
+EVTOPTBipcq.311;Prepare to set out for [province_2.GetName].;;;;;;;;;;;;;x
+EVTOPTCipcq.311;Why not shore up support at home?;;;;;;;;;;;;;x
+EVTDESAipcq.312;As you plan out the various festivities, you realize that if you really want to make the event a success you will have to spend your own wealth.;;;;;;;;;;;;;x
+EVTOPTAipcq.312;I shall spare no expense in bringing joy to the people!;;;;;;;;;;;;;x
+EVTOPTBipcq.312;A modest sum should be enough.;;;;;;;;;;;;;x
+EVTOPTCipcq.312;They're only peasants, they don't need much.;;;;;;;;;;;;;x
+EVTDESAipcq.313;The day of the festival begins with a procession in full pomp and ceremony dedicated to the majesty of [Root.TopLiege.GetBestNameWithoutRegnalNumber]. As the [Root.TopLiege.GetTitle]'s official representative you take up the lead immediately followed by other dignitaries, [Root.Religion.GetPriestTitle]s and local notables. However, it is the entertainments of the fair that the common folk of [mission_province.GetName] have really come to see. As the procession comes to a close,you decide to take a look around for yourself.;;;;;;;;;;;;;x
+EVTOPTAipcq.313;This should be interesting.;;;;;;;;;;;;;x
+EVTDESAipcq.315;As you walk around the fair, you begin to hear the roar of an angry crowd. Upon arriving at the source of the commotion, you discover that a brawl has broken out between rival members of two local factions. Enraged peasants are attacking everything and everyone in sight. Someone has even managed to start a fire!;;;;;;;;;;;;;x
+EVTOPTAipcq.315;Guards!!!;;;;;;;;;;;;;x
+EVTOPTBipcq.315;Now now, let's all calm down.;;;;;;;;;;;;;x
+EVTOPTCipcq.315;Stop this madness in the name of the [Root.TopLiege.GetTitle]!;;;;;;;;;;;;;x
+EVTDESAipcq.318;The festival has been a joyous occasion for the people of [mission_province.GetName], with superb entertainment and much singing and dancing in the local fashion. Alas,all good things must come to an end. Everyone leaves in high spirits, having forgetten their worries for a while.;;;;;;;;;;;;;x
+EVTOPTAipcq.318;A well deserved respite.;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.318;[mission_province.GetName] and up to two provinces away will have reduced revolt risk.;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.318;[mission_province.GetName] and its neighboring provinces will have reduced revolt risk.;;;;;;;;;;;;;x
+EVTDESAipcq.319;The festival is over, and it was clearly not a success. The people leave wondering why they even bothered attending such a travesty.;;;;;;;;;;;;;x
+EVTOPTAipcq.319;Damned ingrates.;;;;;;;;;;;;;x
+
+
+
+
+
+
+
+##########Spymaster##########
+quest_ipc_investigate_secret_religions;Investigate Secret Cults;;;;;;;;;;;;;;x
+quest_ipc_investigate_secret_religions_fallback;Investigate Secret Cults;;;;;;;;;;;;;;x
+quest_ipc_investigate_secret_religions_desc;Many people claim to confess the one true faith, but the realm must be constantly vigilant lest corruption and heresy enter the hearts of the populace. You have been tasked to root out any secret cults and worshippers of foul spirits you can find in the empire.;;;;;;;;;;;;;;x
+quest_ipc_investigate_secret_religions_tooltip;\nThe mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.400;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nHeresy is like a tree, its roots lie in the darkness whilst its leaves wave in the sun and to those who suspect nought, it has an attractive and pleasing appearance. I suspect that there are some who falsely practice our faith in an attempt to hide their true beliefs. Thus you are tasked with investigating the realm of any such dissidents. Heresy must be exorcised utterly or it will return all the stronger, time and time again, until it is too great to destroy.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.400;§GSince you follow a secret religion yourself, you may be able to trick [FromFrom.GetTitledName]§!;;;;;;;;;;;;;;x
+EVTDESAipcq.401;You have been entrusted with a very important yet dangerous mission. In order to root out heresy effectively you must be prepared to take some personal risks. Or you could be more circumspect - but risk failure.;;;;;;;;;;;;;;x
+EVTDESBipcq.401;The fools tasked you with exposing "heresy". Little did they know that you are one of these so-called "heretics" yourself! This is a perfect opportunity to hide the True Faith from prying eyes.;;;;;;;;;;;;;;x
+EVTOPTAipcq.401;Nobody can harm a shadow...;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.401;You will be presented with relatively safe opportunities to make progress;;;;;;;;;;;;;;x
+EVTOPTBipcq.401;But the shadows can harm them!;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.401;Some risky but more effective opportunities will become available which will raise your chance of success;;;;;;;;;;;;;;x
+EVTOPTCipcq.401;This is perfect;;;;;;;;;;;;;;x
+EVTDESAipcq.402;The investigation has begun. You begin gathering gossip and rumor and keep your ears pricked for any leads.;;;;;;;;;;;;;;x
+EVTDESBipcq.402;You have made some progress, but you need more information before you can conclude the investigation.;;;;;;;;;;;;;;x
+EVTDESCipcq.402;Things are progressing well, you feel that you are on the verge of uncovering something significant.;;;;;;;;;;;;;;x
+EVTDESDipcq.402;Satisfied with the information you have gathered, you begin piecing it all together. Whether there are any actual heretics in the empire remains to be seen.;;;;;;;;;;;;;;x
+EVTOPTAipcq.402;I will find the truth;;;;;;;;;;;;;;x
+EVTOPTBipcq.402;There is more out there...;;;;;;;;;;;;;;x
+EVTOPTCipcq.402;My dedication will be rewarded;;;;;;;;;;;;;;x
+EVTOPTDipcq.402;No, this is too dangerous;;;;;;;;;;;;;;x
+EVTOPTEipcq.402;Now to make sense of all this!;;;;;;;;;;;;;;x
+EVTTOOLTIPgoodlead;§Ga good lead§!;;;;;;;;;;;;;;x
+EVTTOOLTIPgreatlead;§Za great lead§!;;;;;;;;;;;;;;x
+EVTTOOLTIPbadlead;§Ra bad lead§!;;;;;;;;;;;;;;x
+EVTTOOLTIPdiscoveredinvestigation;§Ryour mission is discovered§!;;;;;;;;;;;;;;x
+EVTTITLEipcq.404;§YWhispers in the Night§!;;;;;;;;;;;;;;x
+EVTDESAipcq.404;You receive a tip-off from one of your spies about suspicious nighttime meetings between two unusually-dressed individuals in a poorer quarter of the city, and decide to check it out yourself. True enough, you discover the pair talking quietly in an alleyway. You carefully hide in a nearby shadow in an attempt to eavesdrop on them.;;;;;;;;;;;;;;x
+EVTOPTAipcq.404;What secrets do you hide?;;;;;;;;;;;;;;x
+EVTTITLEipcq.405;§YIntercepted Correspondence§!;;;;;;;;;;;;;;x
+EVTDESAipcq.405;Word has reached you that two courtiers who are never seen in public together have recently been exchanging a high volume of letters. You arrange for one of your agents to intercept one of these letters in order to find out what has suddenly made them such eager penfriends.;;;;;;;;;;;;;;x
+EVTOPTAipcq.405;Let's see here...;;;;;;;;;;;;;;x
+EVTTITLEipcq.406;§YA Slip of the Tongue§!;;;;;;;;;;;;;;x
+EVTDESAipcq.406;One day you find yourself speaking with [From.GetBestName] and compliment them on their sterling reputation at court as a [GetRootFromCompliment]. As you finish up your chat you wish [From.GetHerHim] good health and long life, to which [From.GetSheHe] warmly replies "And may [From.GetInvestigationHereticSlip] keep you, friend.";;;;;;;;;;;;;;x
+mission_tongue_slip_1;[This.SecretReligion.GetRandomGodNameCap];;;;;;;;;;;;;;x
+mission_tongue_slip_2;[This.Religion.GetRandomEvilGodNameCap];;;;;;;;;;;;;;x
+EVTOPTAipcq.406;I'm sorry, what did you say?;;;;;;;;;;;;;;x
+EVTTITLEipcq.407;§YThe Price of Freedom§!;;;;;;;;;;;;;;x
+EVTDESAipcq.407;The imprisonment of [From.GetBestName] presents an opportunity for your investigation. It stands to reason that a [From.GetManWoman] like [From.GetHerHim] moves in circles of a less than salubrious nature. So you offer [From.GetHerHim] a sliver of hope that [From.GetSheHe] might yet escape [From.GetHerHis] current ordeal: freedom in exchange for all information [From.GetSheHe] has on secret cults in [Root.TopLiege.PrimaryTitle.GetName]. This certainly appears to focus [From.GetHersHis] mind, and [From.GetSheHe] eagerly tells you all [From.GetSheHe] knows. Discovering whether any of it is true is the next step in your investigation.;;;;;;;;;;;;;;x
+EVTOPTAipcq.407;You had better not be lying...;;;;;;;;;;;;;;x
+EVTDESAipcq.408;[From.GetBestName] approaches your cell and calls to you: "I have an offer for you, [Root.GetFirstName]. I know the kind of company you keep. Tell me everything you know about the secret cults that blight [From.TopLiege.PrimaryTitle.GetName] and I swear by [From.Religion.GetRandomGodName] I will secure your immediate release.";;;;;;;;;;;;;;x
+EVTOPTAipcq.408;I will tell you everything I know!;;;;;;;;;;;;;;x
+EVTTITLEipcq.409;§YSecrets in the Dark§!;;;;;;;;;;;;;;x
+EVTDESAipcq.409;A cloaked figure scurries alone down moonlit alleyways, darting left and right through the narrowing labyrinth, stopping only to check that they are not being followed - but you are quietly confident that they have neither seen nor heard your advance through the shrouding gloom. Eventually the figure reaches a shabby door in an unremarkable wall and enters...;;;;;;;;;;;;;;x
+EVTOPTAipcq.409;What is this place?;;;;;;;;;;;;;;x
+EVTTITLEipcq.410;§YAsking Nicely§!;;;;;;;;;;;;;;x
+EVTDESAipcq.410;Sneaking around may yield some results, but intimidation can also be effective. [From.GetBestName] has been acting suspiciously of late, and you have begun to doubt where [From.GetHerHis] true loyalties lie. Accompanied by two of your burliest retainers, you surprise [From.GetFirstName] whilst [From.GetSheHe] is spending a moment alone. [From.GetSheHeCap] stammers protests at your accusations, but eventually gives you some information - intentionally or not.;;;;;;;;;;;;;;x
+EVTOPTAipcq.410;Speak or you'll find out how "Gouger" here got his name...;;;;;;;;;;;;;;x"
+EVTTITLEipcq.411;§YThe Heretics' Lair§!;;;;;;;;;;;;;;x
+EVTDESAipcq.411;You have discovered what you believe to be a cult's secret meeting place. Careful not to alert the inhabitants to your presence, you make the neccessary preparations before entering the building.;;;;;;;;;;;;;;x
+EVTOPTAipcq.411;Slowly but surely...;;;;;;;;;;;;;;x
+EVTDESAipcq.415;Unfortunately, your recent activities have not gone unnoticed by your enemies. An assassin emerges from a darkened corner and rushes towards you, weapon raised. You must act quickly in order to survive.;;;;;;;;;;;;;;x
+EVTOPTAipcq.415;Oh no!;;;;;;;;;;;;;;x
+EVTDESAipcq.416;You have discovered several heretics and prepare to reveal their identities to the Imperial Court. They will be pleased to hear of your success.;;;;;;;;;;;;;;x
+EVTDESBipcq.416;You have discovered a multitude of heretics and prepare to reveal their identities to the Imperial Court. Although they will surely be horrified to hear of such widespread corruption in the realm, they will be surely be pleased with your courage and loyalty.;;;;;;;;;;;;;;x
+EVTDESCipcq.416;You have left no stone unturned in your investigation and believe you know the identities of all prominent heretics and apostates in [Root.TopLiege.PrimaryTitle.GetName]. The Imperial Court will surely be overjoyed that you have vanquished this insidious threat to the realm.;;;;;;;;;;;;;;x
+EVTOPTAipcq.416;In the name of [Root.Religion.GetHighGodName]!;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.416;§GUp to three characters will be revealed as heretics to their liege§!;;;;;;;;;;;;;;x
+EVTOPTBipcq.416;In the name of [Root.Religion.GetHighGodName]!;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.416;§GUp to seven characters will be revealed as heretics to their liege§!;;;;;;;;;;;;;;x
+EVTOPTCipcq.416;In the name of [Root.Religion.GetHighGodName]!;;;;;;;;;;;;;;x
+EVTTOOLTIPCipcq.416;§GAll characters will be revealed as heretics to their liege§!;;;;;;;;;;;;;;x
+EVTDESAipcq.417;You and your coreligionists begin burning evidence and forging documents to clear any suspicion that a secret religious cult exists in [Root.TopLiege.PrimaryTitle.GetName].;;;;;;;;;;;;;;x
+EVTOPTAipcq.417;Nothing to see here...;;;;;;;;;;;;;;x
+EVTTOOLTIPAipcq.417;of success;;;;;;;;;;;;;;x
+EVTTOOLTIPBipcq.417;of failure;;;;;;;;;;;;;;x
+EVTDESAipcq.418;Everything is ready, and you head to court to report the "success" of your investigation. Thankfully your peers are convinced of the veracity and thoroughness of your work and the matter is considered closed.;;;;;;;;;;;;;;x
+EVTDESBipcq.418;Everything is ready, and you head to court to report the "success" of your investigation. Unfortunately your peers are not only not impressed by your shabby excuses,they now also strongly suspect you of being a heretic.;;;;;;;;;;;;;;x
+EVTOPTAipcq.418;Excellent;;;;;;;;;;;;;;x
+EVTOPTBipcq.418;This is bad;;;;;;;;;;;;;;x
+
+quest_ipc_infiltrate_court;Infiltrate $TARGET$'s Court;;;;;;;;;;;;;;x
+quest_ipc_infiltrate_court_fallback;Infiltrate Court;;;;;;;;;;;;;;x
+quest_ipc_infiltrate_court_desc;You have been tasked with establishing an agent at $TARGET$'s court.;;;;;;;;;;;;;;x
+quest_ipc_infiltrate_court_tooltip;\nThe mission will begin in a month.\n;;;;;;;;;;;;;;x
+EVTDESAipcq.420;Greetings [Root.GetSocietyRank] [Root.GetFirstName],\n\nI have been using one of your trusted courtiers to pass bad information to [infiltrate_court_target.PrimaryTitle.GetName] for several months, and an opportunity has arisen to place this "traitor" with [infiltrate_court_target.GetBestName] and [infiltrate_court_target.GetHersHis] court. I would like you to travel together to pledge your services - with my blessing - and return here to take your place as the [infiltrate_court_target.PrimaryTitle.GetAdjective] "agent". All is in readiness. I expect you to play your part in this mission for the good of the realm, but do not forget who is your true liege.\n\nSigned,\n[FromFrom.GetBestName];;;;;;;;;;;;;;x
+EVTDESAipcq.421;The time has come for you to visit [infiltrate_court_target.GetTitledName]'s court. You set off in disguise with your fellow agent. Even if no-one is watching, on this mission appearances are everything.;;;;;;;;;;;;;;x
+EVTOPTAipcq.421;Onwards...;;;;;;;;;;;;;;x
+EVTDESAipcq.423;You have arrived at [From.GetTitledName]'s court. It seems you are expected - after a few words with your colleague, a retainer ushers you quietly into a small side chamber. You are soon joined by [From.GetBestNameWithoutRegnalNumber]. "I had been told to expect you", [Root.GetTitledFirstName]. Our mutual friend here - my new court informant - has told me you have suffered great wrongs at the hands of your [Root.TopLiege.GetMasterMistress] and can be trusted, but remain well connected in the [Root.TopLiege.PrimaryTitle.GetAdjective] court. Can I count on you to serve me?";;;;;;;;;;;;;;x
+EVTOPTAipcq.423;Yes, [From.GetTitledFirstName]. We share common enemies - let them tremble.;;;;;;;;;;;;;;x
+EVTOPTBipcq.423;Of course. This could be a most profitable agreement.;;;;;;;;;;;;;;x
+EVTDESAipcq.424;[infiltrate_court_target.GetBestName] regards you for a moment then smiles. "Good. Then let us get down to business." The three of you speak together for some time on the "secret" matters on which you were briefed - most of it fabricated nonsense, of course - before the [infiltrate_court_target.GetTitle] bids you eat and rest a while, and shows you and your courtier to secluded but comfortable accommodation. You share a conspiratorial wink as you make yourselves comfortable.;;;;;;;;;;;;;;x
+EVTDESBipcq.424;[infiltrate_court_target.GetBestName] regards you for a moment then laughs. "I should cut off your head, but I would rather you return home and tell your [Root.TopLiege.GetTitle] of your failure - and thank [Root.TopLiege.GetHerHim] for alerting me to spies by sending such an obvious fool." [infiltrate_court_target.GetHerHisCap] face then turns serious. "And if I ever find either of you in my domains again your heads will be the last things I cut off." You both leave...very quickly.;;;;;;;;;;;;;;x
+EVTOPTAipcq.424;My work here is done.;;;;;;;;;;;;;;x
+EVTOPTBipcq.424;How humiliating!;;;;;;;;;;;;;;x
+EVTDESAipcq.425;Everything has been prepared. You leave [infiltrate_court_target.GetBestName] contented and none the wiser to the new mole in [infiltrate_court_target.GetHersHis] court - who remains loyal to both you and your liege. As you begin your journey back to [Root.TopLiege.PrimaryTitle.GetName], you congratulate yourself on a mission well done.;;;;;;;;;;;;;;x
+EVTOPTAipcq.425;Excellent;;;;;;;;;;;;;;x
+
+#####Notifications#####
+EVTDESAipcq.1010;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YBuild an Imperial Road§!;;;;;;;;;;;;;;x
+EVTDESBipcq.1010;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YImprove the Imperial Capital§!\n[From.GetImperialBuildingProgress]\nProgress to next building: §Y[imperial_capital.imperial_capital_building_progress.GetValue]%§!;;;;;;;;;;;;;;x
+EVTDESCipcq.1010;[From.GetTitledName] has §Rfailed§! in [From.GetHerHis] mission to §YImprove the Imperial Capital§!\n[From.GetImperialBuildingProgress]\nProgress to next building: §Y[imperial_capital.imperial_capital_building_progress.GetValue]%§!;;;;;;;;;;;;;;x
+capital_building_built_1;§GA building has been completed§!;;;;;;;;;;;;;;x
+capital_building_built_2;;;;;;;;;;;;;;;x
+
+
+
+EVTDESAipcq.1020;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YOrganize a Military Drill§!;;;;;;;;;;;;;;x
+EVTDESBipcq.1020;[From.GetTitledName] has §Rfailed§! in [From.GetHerHis] mission to §YOrganize a Military Drill§!;;;;;;;;;;;;;;x
+EVTDESCipcq.1020;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YDistribute Vassal Levy Recompense§!;;;;;;;;;;;;;;x
+EVTDESDipcq.1020;[From.GetTitledName] has §Rfailed§! in [From.GetHerHis] mission to §YDistribute Vassal Levy Recompense§!;;;;;;;;;;;;;;x
+EVTDESEipcq.1020;[From.GetTitledName] has §Gsucceeded§! in the §YImperial Conquest§!;;;;;;;;;;;;;;x
+EVTDESFipcq.1020;[From.GetTitledName] has §Rfailed§! in the §YImperial Conquest§!;;;;;;;;;;;;;;x
+
+
+
+EVTDESAipcq.1030;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YChange a Character's Culture§!;;;;;;;;;;;;;;x
+EVTDESBipcq.1030;[From.GetTitledName] has §Rfailed§! in [From.GetHerHis] mission to §YChange a Character's Culture§!;;;;;;;;;;;;;;x
+EVTDESCipcq.1030;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YOrganize a Festival§!;;;;;;;;;;;;;;x
+EVTDESDipcq.1030;[From.GetTitledName] has §Rfailed§! in [From.GetHerHis] mission to §YOrganize a Festival§!;;;;;;;;;;;;;;x
+
+
+
+EVTDESAipcq.1040;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YInvestigate Secret Cults§!;;;;;;;;;;;;;;x
+EVTDESBipcq.1040;[From.GetTitledName] has §Rfailed§! in [From.GetHerHis] mission to §YInvestigate Secret Cults§!;;;;;;;;;;;;;;x
+EVTDESCipcq.1040;[From.GetTitledName] has §Gsucceeded§! in [From.GetHerHis] mission to §YInfiltrate a Foreign Court§!;;;;;;;;;;;;;;x
+EVTDESDipcq.1040;[From.GetTitledName] has §Rfailed§! in [From.GetHerHis] mission to §YInfiltrate a Foreign Court§!;;;;;;;;;;;;;;x
+
+EVTDESAipcq.1050;[From.GetTitledName] has §Rdied§! while carrying out [From.GetHerHis] mission;;;;;;;;;;;;;;x
+
+
+

@@ -1,0 +1,784 @@
+decisions = {
+	ai_move_to_imperial_capital = {
+		only_playable = yes
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			tier = emperor
+			ai = yes
+			primary_title = { has_title_flag = imperial_court_active }
+			capital_holding = { NOT = { has_title_flag = is_imperial_capital } }
+			any_demesne_title = { has_title_flag = is_imperial_capital }
+		}
+		allow = { always = yes }
+		effect = {
+			random_demesne_title = {
+				limit = { has_title_flag = is_imperial_capital }
+				ROOT = { capital = PREV }
+			}
+		}
+		ai_check_interval = 24
+		ai_will_do = { factor = 10 }
+	}
+}
+
+
+targeted_decisions = {
+
+	#######Minor Titles#######
+	revoke_imperial_regent = {
+		only_playable = yes
+		only_independent = yes
+		ai = no
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		filter = realm
+		
+		from_potential = {
+			tier = emperor
+			primary_title = { has_title_flag = has_imperial_regent }
+		}
+		potential = { is_imperial_court_regent_trigger = yes }
+		
+		allow = {
+			FROM = {
+				is_adult = yes
+				has_regent = no
+				is_inaccessible_or_incapable_trigger = no
+				is_in_society = no
+			}
+			ROOT = {
+				war = no
+				is_imperial_court_regent_trigger = yes
+				OR = {
+					society_influence < 65
+					custom_tooltip = {
+						text = ipc_imprisoned_by_from
+						prisoner = yes
+						host = { character = FROM }
+					}
+				}
+				custom_tooltip = {
+					text = not_recently_granted_imperial_office_tooltip
+					NOR = {
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_1 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_2 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_3 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_4 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_5 }
+					}
+				}
+				can_interact_with_imperial_court_revolt_trigger = yes
+			}
+		}
+		effect = { hidden_tooltip = { FROM = { character_event = { id = ipcm.033 } } } }
+	}
+	
+	ai_assign_imperial_regent = {
+		only_playable = yes
+		only_independent = yes
+		is_in_society = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		ai_target_filter = society
+		
+		from_potential = {
+			ai = yes
+			tier = emperor
+			primary_title = { 
+				has_title_flag = imperial_court_active 
+				NOT = { has_title_flag = has_imperial_regent }
+			}
+			is_society_grandmaster = yes
+			is_imperial_court_member_trigger = yes
+		}
+		potential = {
+			society_rank == 3
+			NOT = { trait = incapable }
+			prisoner = no
+			has_unique_imperial_office_trigger = no
+		}
+		allow = {
+			FROM = {
+				war = no
+				is_adult = yes
+				NOR = {
+					trait = ambitious
+					trait = stubborn
+				}
+				opinion = { who = ROOT value = 10 } 
+				can_interact_with_imperial_court_revolt_trigger = yes
+				custom_tooltip = {
+					text = imperial_regent_assign_no_revolt
+					NOT = { 
+						any_current_enemy = {
+							liege_before_war = { character = PREVPREV }
+							OR = {
+								has_character_flag = revolting_imperial_regent
+								any_realm_character = { has_character_flag = revolting_imperial_regent }
+							}
+						}
+					} 
+				}
+			}
+			
+			NOR = {
+				has_opinion_modifier = { who = FROM  modifier = opinion_castrated_me }
+				has_opinion_modifier = { who = FROM  modifier = opinion_blinded_me }
+			}
+			can_interact_with_imperial_court_revolt_trigger = yes
+		}
+		effect = { award_imperial_regent_effect = yes }
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.05 
+			#imperial_office_assignment_ai_chance = yes
+			modifier = {
+				factor = 4
+				FROM = { trait = slothful }
+			}
+			modifier = {
+				factor = 4
+				FROM = { trait = trusting }
+			}
+			modifier = {
+				factor = 4
+				FROM = { trait = shy }
+			}
+			modifier = {
+				factor = 4
+				FROM = { trait = content }
+			}
+			modifier = {
+				factor = 4
+				FROM = { trait = infirm }
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				dynasty = FROM
+			}
+		}
+	}
+	
+	
+	
+	ai_revoke_imperial_regent = {
+		only_playable = yes
+		only_independent = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		ai_target_filter = realm
+		
+		from_potential = {
+			ai = yes
+			tier = emperor
+			primary_title = { has_title_flag = has_imperial_regent }
+		}
+		potential = { is_imperial_court_regent_trigger = yes }
+		
+		allow = {
+			FROM = {
+				is_adult = yes
+				has_regent = no
+				is_inaccessible_or_incapable_trigger = no
+				war = no
+				is_in_society = no
+				NOT = { opinion = { who = ROOT value = 10 } }
+			}
+			war = no
+			society_influence < 60
+			custom_tooltip = {
+				text = not_recently_granted_imperial_office_tooltip
+				NOR = {
+					has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_1 }
+					has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_2 }
+					has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_3 }
+					has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_4 }
+					has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_5 }
+				}
+			}
+			can_interact_with_imperial_court_revolt_trigger = yes
+		}
+		
+		effect = { revoke_imperial_regent_effect = yes } #if ai revokes, it should take control and not replace
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.1
+			imperial_office_revokation_ai_chance = yes
+			modifier = {
+				factor = 3
+				FROM = { trait = ambitious }
+			}
+			modifier = {
+				factor = 3
+				FROM = { trait = stubborn }
+			}
+		}
+	}
+	
+	revoke_imperial_office = {
+		is_in_society = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		filter = society
+		ai_target_filter = society
+		
+		from_potential = {
+			is_society_grandmaster = yes
+			is_imperial_court_member_trigger = yes
+		}
+		potential = { 
+			has_unique_imperial_office_trigger = yes 
+			is_imperial_court_regent_trigger = no
+		}
+		
+		allow = {
+			FROM = {
+				is_adult = yes
+				has_regent = no
+				is_inaccessible_or_incapable_trigger = no
+				trigger_if = {
+					limit = { NOT = { tier = emperor } }
+					can_interact_with_imperial_court_revolt_trigger = yes
+				}
+				hidden_tooltip = {
+					OR = {
+						ai = no
+						AND = {
+							ai = yes
+							NOT = { opinion = { who = ROOT value = 5 } }
+						}
+					}
+				}
+			}
+			ROOT = {
+				war = no
+				OR = {
+					society_influence < 70
+					custom_tooltip = {
+						text = ipc_imprisoned_by_from
+						prisoner = yes
+						host = { character = FROM }
+					}
+				}
+				custom_tooltip = {
+					text = not_recently_granted_imperial_office_tooltip
+					NOR = {
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_1 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_2 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_3 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_4 }
+						has_opinion_modifier = { who = FROM modifier = opinion_granted_imperial_office_5 }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { is_imperial_court_seneschal_trigger = yes }
+				revoke_imperial_seneschal_effect = yes
+			}
+			else_if = {
+				limit = { is_imperial_court_marshal_trigger = yes }
+				revoke_imperial_marshal_effect = yes
+			}
+			else_if = {
+				limit = { is_imperial_court_lawkeeper_trigger = yes }
+				revoke_imperial_lawkeeper_effect = yes
+			}
+			else_if = {
+				limit = { is_imperial_court_spymaster_trigger = yes }
+				revoke_imperial_spymaster_effect = yes
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.05
+			imperial_office_revokation_ai_chance = yes
+		}
+	}
+	
+	#for imperial regent and AI emperors
+	award_imperial_office_seneschal = {
+		is_in_society = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		filter = society
+		ai_target_filter = society
+		
+		from_potential = {
+			OR = {
+				NOT = { tier = emperor }
+				ai = yes
+			}
+			is_society_grandmaster = yes
+			is_imperial_court_member_trigger = yes
+		}
+		potential = { 
+			society_rank == 3 
+			top_liege = {
+				NOR = {
+					has_assigned_minor_title = title_imperial_court_seneschal_christian
+					has_assigned_minor_title = title_imperial_court_seneschal_muslim
+					has_assigned_minor_title = title_imperial_court_seneschal_pagan
+					has_assigned_minor_title = title_imperial_court_seneschal_eastern
+					has_assigned_minor_title = title_imperial_court_seneschal_byzantine
+					has_assigned_minor_title = title_imperial_court_seneschal_hre
+					has_assigned_minor_title = title_imperial_court_seneschal_roman
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				is_adult = yes
+				has_regent = no
+				is_inaccessible_or_incapable_trigger = no
+				can_interact_with_imperial_court_revolt_trigger = yes
+				custom_tooltip = {
+					text = imperial_seneschal_assign_no_revolt
+					NOR = {
+						any_current_enemy = {
+							liege_before_war = { character = PREVPREV }
+							OR = {
+								has_character_flag = revolting_imperial_seneschal
+								any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+							}
+						}
+						top_liege = {
+							any_current_enemy = {
+								liege_before_war = { character = PREVPREV }
+								OR = {
+									has_character_flag = revolting_imperial_seneschal
+									any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+								}
+							}
+						}
+					}
+				}
+				hidden_tooltip = {
+					OR = {
+						ai = no
+						AND = {
+							ai = yes
+							opinion = { who = ROOT value = 5 }
+						}
+					}
+				}
+			}
+			ROOT = {
+				has_unique_imperial_office_trigger = no
+				war = no
+				prisoner = no
+				stewardship >= 8
+				NOT = { trait = incapable }
+				NOR = {
+					custom_tooltip = {
+						text = can_join_byzantine_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_roman_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = { award_imperial_seneschal_effect = yes }
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.2
+			imperial_office_assignment_ai_chance = yes
+			modifier = {
+				factor = 2
+				FROM = { stewardship < 8 }
+			}
+			modifier = {
+				factor = 2
+				stewardship >= 12
+				FROM = { stewardship < 12 }
+			}
+			modifier = {
+				factor = 2
+				stewardship >= 16
+				FROM = { stewardship < 16 }
+			}
+		}
+	}
+	
+	award_imperial_office_marshal = {
+		is_in_society = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		filter = society
+		ai_target_filter = society
+		
+		from_potential = {
+			OR = {
+				NOT = { tier = emperor }
+				ai = yes
+			}
+			is_society_grandmaster = yes
+			is_imperial_court_member_trigger = yes
+		}
+		potential = { 
+			society_rank == 3 
+			top_liege = {
+				NOR = {
+					has_assigned_minor_title = title_imperial_court_marshal_christian
+					has_assigned_minor_title = title_imperial_court_marshal_muslim
+					has_assigned_minor_title = title_imperial_court_marshal_pagan
+					has_assigned_minor_title = title_imperial_court_marshal_eastern
+					has_assigned_minor_title = title_imperial_court_marshal_byzantine
+					has_assigned_minor_title = title_imperial_court_marshal_hre
+					has_assigned_minor_title = title_imperial_court_marshal_roman
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				is_adult = yes
+				has_regent = no
+				is_inaccessible_or_incapable_trigger = no
+				can_interact_with_imperial_court_revolt_trigger = yes
+				custom_tooltip = {
+					text = imperial_marshal_assign_no_revolt
+					NOR = { 
+						any_current_enemy = {
+							liege_before_war = { character = PREVPREV }
+							OR = {
+								has_character_flag = revolting_imperial_marshal
+								any_realm_character = { has_character_flag = revolting_imperial_marshal }
+							}
+						}
+						top_liege = {
+							any_current_enemy = {
+								liege_before_war = { character = PREVPREV }
+								OR = {
+									has_character_flag = revolting_imperial_marshal
+									any_realm_character = { has_character_flag = revolting_imperial_marshal }
+								}
+							}
+						}
+					}
+				}
+				hidden_tooltip = {
+					OR = {
+						ai = no
+						AND = {
+							ai = yes
+							opinion = { who = ROOT value = 5 }
+						}
+					}
+				}
+			}
+			ROOT = {
+				has_unique_imperial_office_trigger = no
+				war = no
+				prisoner = no
+				martial >= 8
+				NOT = { trait = incapable }
+				NOR = {
+					custom_tooltip = {
+						text = can_join_byzantine_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_roman_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = { award_imperial_marshal_effect = yes }
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.2
+			imperial_office_assignment_ai_chance = yes
+			modifier = {
+				factor = 2
+				FROM = { martial < 8 }
+			}
+			modifier = {
+				factor = 2
+				martial >= 12
+				FROM = { martial < 12 }
+			}
+			modifier = {
+				factor = 2
+				martial >= 16
+				FROM = { martial < 16 }
+			}
+		}
+	}
+	
+	award_imperial_office_lawkeeper = {
+		is_in_society = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		filter = society
+		ai_target_filter = society
+		
+		from_potential = {
+			OR = {
+				NOT = { tier = emperor }
+				ai = yes
+			}
+			is_society_grandmaster = yes
+			is_imperial_court_member_trigger = yes
+		}
+		potential = { 
+			society_rank == 3 
+			top_liege = {
+				NOR = {
+					has_assigned_minor_title = title_imperial_court_lawkeeper_christian
+					has_assigned_minor_title = title_imperial_court_lawkeeper_muslim
+					has_assigned_minor_title = title_imperial_court_lawkeeper_pagan
+					has_assigned_minor_title = title_imperial_court_lawkeeper_eastern
+					has_assigned_minor_title = title_imperial_court_lawkeeper_byzantine
+					has_assigned_minor_title = title_imperial_court_lawkeeper_hre
+					has_assigned_minor_title = title_imperial_court_lawkeeper_roman
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				is_adult = yes
+				has_regent = no
+				is_inaccessible_or_incapable_trigger = no
+				can_interact_with_imperial_court_revolt_trigger = yes
+				custom_tooltip = {
+					text = imperial_lawkeeper_assign_no_revolt
+					NOR = { 
+						any_current_enemy = {
+							liege_before_war = { character = PREVPREV }
+							OR = {
+								has_character_flag = revolting_imperial_lawkeeper
+								any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+							}
+						}
+						top_liege = {
+							any_current_enemy = {
+								liege_before_war = { character = PREVPREV }
+								OR = {
+									has_character_flag = revolting_imperial_lawkeeper
+									any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+								}
+							}
+						}
+					}
+				}
+				hidden_tooltip = {
+					OR = {
+						ai = no
+						AND = {
+							ai = yes
+							opinion = { who = ROOT value = 5 }
+						}
+					}
+				}
+			}
+			ROOT = {
+				has_unique_imperial_office_trigger = no
+				war = no
+				prisoner = no
+				diplomacy >= 8
+				NOT = { trait = incapable }
+				NOR = {
+					custom_tooltip = {
+						text = can_join_byzantine_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_roman_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = { award_imperial_lawkeeper_effect = yes }
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.2
+			imperial_office_assignment_ai_chance = yes
+			modifier = {
+				factor = 2
+				FROM = { diplomacy < 8 }
+			}
+			modifier = {
+				factor = 2
+				diplomacy >= 12
+				FROM = { diplomacy < 12 }
+			}
+			modifier = {
+				factor = 2
+				diplomacy >= 16
+				FROM = { diplomacy < 16 }
+			}
+		}
+	}
+	
+	award_imperial_office_spymaster = {
+		is_in_society = yes
+		diplomacy_icon = GFX_GRANT_VICE_ROYALTY_INTERACTION_icon
+		
+		filter = society
+		ai_target_filter = society
+		
+		from_potential = {
+			OR = {
+				NOT = { tier = emperor }
+				ai = yes
+			}
+			is_society_grandmaster = yes
+			is_imperial_court_member_trigger = yes
+		}
+		potential = { 
+			society_rank == 3 
+			top_liege = {
+				NOR = {
+					has_assigned_minor_title = title_imperial_court_spymaster_christian
+					has_assigned_minor_title = title_imperial_court_spymaster_muslim
+					has_assigned_minor_title = title_imperial_court_spymaster_pagan
+					has_assigned_minor_title = title_imperial_court_spymaster_eastern
+					has_assigned_minor_title = title_imperial_court_spymaster_byzantine
+					has_assigned_minor_title = title_imperial_court_spymaster_hre
+					has_assigned_minor_title = title_imperial_court_spymaster_roman
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				is_adult = yes
+				has_regent = no
+				is_inaccessible_or_incapable_trigger = no
+				can_interact_with_imperial_court_revolt_trigger = yes
+				custom_tooltip = {
+					text = imperial_spymaster_assign_no_revolt
+					NOR = { 
+						any_current_enemy = {
+							liege_before_war = { character = PREVPREV }
+							OR = {
+								has_character_flag = revolting_imperial_spymaster
+								any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+							}
+						}
+						top_liege = {
+							any_current_enemy = {
+								liege_before_war = { character = PREVPREV }
+								OR = {
+									has_character_flag = revolting_imperial_spymaster
+									any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+								}
+							}
+						}
+					}
+				}
+				hidden_tooltip = {
+					OR = {
+						ai = no
+						AND = {
+							ai = yes
+							opinion = { who = ROOT value = 5 }
+						}
+					}
+				}
+			}
+			ROOT = {
+				has_unique_imperial_office_trigger = no
+				war = no
+				prisoner = no
+				intrigue >= 8
+				NOT = { trait = incapable }
+				NOR = {
+					custom_tooltip = {
+						text = can_join_byzantine_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+					custom_tooltip = {
+						text = can_join_roman_imperial_court_trigger_castrate_blind
+						top_liege = { 
+							OR = {
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+								reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = { award_imperial_spymaster_effect = yes }
+		
+		ai_check_interval = 24
+		ai_will_do = {
+			factor = 0.2
+			imperial_office_assignment_ai_chance = yes
+			modifier = {
+				factor = 2
+				FROM = { intrigue < 8 }
+			}
+			modifier = {
+				factor = 2
+				intrigue >= 12
+				FROM = { intrigue < 12 }
+			}
+			modifier = {
+				factor = 2
+				intrigue >= 16
+				FROM = { intrigue < 16 }
+			}
+		}
+	}
+
+}

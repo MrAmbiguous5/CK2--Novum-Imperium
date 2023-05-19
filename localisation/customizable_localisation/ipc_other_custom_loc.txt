@@ -1,0 +1,899 @@
+
+####################Titles and Joining####################
+
+defined_text = {
+	name = GetCourtWelcomeLetter
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { tier = emperor }
+		localisation_key = imperial_welcome_letter_emperor
+	}
+	text = {
+		trigger = { NOT = { tier = emperor } }
+		localisation_key = imperial_welcome_letter_regent
+	}
+}
+
+defined_text = {
+	name = GetImperialOfficeAwardIntro
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { tier = emperor }
+		localisation_key = imperial_office_award_intro_emperor
+	}
+	text = {
+		trigger = { NOT = { tier = emperor } }
+		localisation_key = imperial_office_award_intro_regent
+	}
+}
+
+defined_text = {
+	name = GetImperialOfficeAwardOutro
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { tier = emperor }
+		localisation_key = imperial_office_award_outro_emperor
+	}
+	text = {
+		trigger = { NOT = { tier = emperor } }
+		localisation_key = imperial_office_award_outro_regent
+	}
+}
+
+defined_text = {
+	name = GetImperialOfficeRevokeIntro
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { tier = emperor }
+		localisation_key = imperial_office_revoke_intro_emperor
+	}
+	text = {
+		trigger = { NOT = { tier = emperor } }
+		localisation_key = imperial_office_revoke_intro_regent
+	}
+}
+
+defined_text = {
+	name = GetImperialOfficeRevokeOutro
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { tier = emperor }
+		localisation_key = imperial_office_revoke_outro_emperor
+	}
+	text = {
+		trigger = { NOT = { tier = emperor } }
+		localisation_key = imperial_office_revoke_outro_regent
+	}
+}
+
+defined_text = {
+	name = GetImperialRegentAssignableOffice
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_byzantium } 
+				top_liege = { primary_title = { title = e_byzantium } }
+			}
+		}
+		localisation_key = title_imperial_court_regent_byzantine
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_hre } 
+				top_liege = { primary_title = { title = e_hre } }
+			}
+		}
+		localisation_key = title_imperial_court_regent_hre
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_roman_empire } 
+				top_liege = { primary_title = { title = e_roman_empire } }
+			}
+		}
+		localisation_key = title_imperial_court_regent_roman
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_christian_1_title
+						title = event_target:imperial_court_christian_2_title
+						title = event_target:imperial_court_christian_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_regent_christian
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_muslim_1_title
+						title = event_target:imperial_court_muslim_2_title
+						title = event_target:imperial_court_muslim_3_title
+						title = e_arabia
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_regent_muslim
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_pagan_1_title
+						title = event_target:imperial_court_pagan_2_title
+						title = event_target:imperial_court_pagan_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_regent_pagan
+	}
+	text = {
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_eastern_1_title
+						title = event_target:imperial_court_eastern_2_title
+						title = event_target:imperial_court_eastern_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_regent_eastern
+	}
+}
+
+defined_text = {
+	name = GetImperialSeneschalAssignableOffice
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_byzantium } 
+				top_liege = { primary_title = { title = e_byzantium } }
+			}
+		}
+		localisation_key = title_imperial_court_seneschal_byzantine
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_hre } 
+				top_liege = { primary_title = { title = e_hre } }
+			}
+		}
+		localisation_key = title_imperial_court_seneschal_hre
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_roman_empire } 
+				top_liege = { primary_title = { title = e_roman_empire } }
+			}
+		}
+		localisation_key = title_imperial_court_seneschal_roman
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_christian_1_title
+						title = event_target:imperial_court_christian_2_title
+						title = event_target:imperial_court_christian_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_seneschal_christian
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_muslim_1_title
+						title = event_target:imperial_court_muslim_2_title
+						title = event_target:imperial_court_muslim_3_title
+						title = e_arabia
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_seneschal_muslim
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_pagan_1_title
+						title = event_target:imperial_court_pagan_2_title
+						title = event_target:imperial_court_pagan_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_seneschal_pagan
+	}
+	text = {
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_eastern_1_title
+						title = event_target:imperial_court_eastern_2_title
+						title = event_target:imperial_court_eastern_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_seneschal_eastern
+	}
+}
+
+defined_text = {
+	name = GetImperialMarshalAssignableOffice
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_byzantium } 
+				top_liege = { primary_title = { title = e_byzantium } }
+			}
+		}
+		localisation_key = title_imperial_court_marshal_byzantine
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_hre } 
+				top_liege = { primary_title = { title = e_hre } }
+			}
+		}
+		localisation_key = title_imperial_court_marshal_hre
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_roman_empire } 
+				top_liege = { primary_title = { title = e_roman_empire } }
+			}
+		}
+		localisation_key = title_imperial_court_marshal_roman
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_christian_1_title
+						title = event_target:imperial_court_christian_2_title
+						title = event_target:imperial_court_christian_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_marshal_christian
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_muslim_1_title
+						title = event_target:imperial_court_muslim_2_title
+						title = event_target:imperial_court_muslim_3_title
+						title = e_arabia
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_marshal_muslim
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_pagan_1_title
+						title = event_target:imperial_court_pagan_2_title
+						title = event_target:imperial_court_pagan_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_marshal_pagan
+	}
+	text = {
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_eastern_1_title
+						title = event_target:imperial_court_eastern_2_title
+						title = event_target:imperial_court_eastern_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_marshal_eastern
+	}
+}
+
+defined_text = {
+	name = GetImperialLawkeeperAssignableOffice
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_byzantium } 
+				top_liege = { primary_title = { title = e_byzantium } }
+			}
+		}
+		localisation_key = title_imperial_court_lawkeeper_byzantine
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_hre } 
+				top_liege = { primary_title = { title = e_hre } }
+			}
+		}
+		localisation_key = title_imperial_court_lawkeeper_hre
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_roman_empire } 
+				top_liege = { primary_title = { title = e_roman_empire } }
+			}
+		}
+		localisation_key = title_imperial_court_lawkeeper_roman
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_christian_1_title
+						title = event_target:imperial_court_christian_2_title
+						title = event_target:imperial_court_christian_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_lawkeeper_christian
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_muslim_1_title
+						title = event_target:imperial_court_muslim_2_title
+						title = event_target:imperial_court_muslim_3_title
+						title = e_arabia
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_lawkeeper_muslim
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_pagan_1_title
+						title = event_target:imperial_court_pagan_2_title
+						title = event_target:imperial_court_pagan_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_lawkeeper_pagan
+	}
+	text = {
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_eastern_1_title
+						title = event_target:imperial_court_eastern_2_title
+						title = event_target:imperial_court_eastern_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_lawkeeper_eastern
+	}
+	
+	text = {
+		trigger = { always = yes }
+		localisation_key = title_imperial_court_lawkeeper_fallback
+	}
+	
+}
+
+
+defined_text = {
+	name = GetImperialSpymasterAssignableOffice
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_byzantium } 
+				top_liege = { primary_title = { title = e_byzantium } }
+			}
+		}
+		localisation_key = title_imperial_court_spymaster_byzantine
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_hre } 
+				top_liege = { primary_title = { title = e_hre } }
+			}
+		}
+		localisation_key = title_imperial_court_spymaster_hre
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = { title = e_roman_empire } 
+				top_liege = { primary_title = { title = e_roman_empire } }
+			}
+		}
+		localisation_key = title_imperial_court_spymaster_roman
+	}
+	
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_christian_1_title
+						title = event_target:imperial_court_christian_2_title
+						title = event_target:imperial_court_christian_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_spymaster_christian
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_muslim_1_title
+						title = event_target:imperial_court_muslim_2_title
+						title = event_target:imperial_court_muslim_3_title
+						title = e_arabia
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_spymaster_muslim
+	}
+	text = { 
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_pagan_1_title
+						title = event_target:imperial_court_pagan_2_title
+						title = event_target:imperial_court_pagan_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_spymaster_pagan
+	}
+	text = {
+		trigger = { 
+			OR = {
+				primary_title = {
+					OR = {
+						title = event_target:imperial_court_eastern_1_title
+						title = event_target:imperial_court_eastern_2_title
+						title = event_target:imperial_court_eastern_3_title
+					}
+				}
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+		}
+		localisation_key = title_imperial_court_spymaster_eastern
+	}
+}
+
+
+####################Missions####################
+
+defined_text = {
+	name = GetInvestigationHereticSlip
+
+	text = {
+		trigger = { has_secret_religion = yes }
+		localisation_key = mission_tongue_slip_1
+	}
+	text = {
+		trigger = { 
+			is_in_society = yes
+			society_is_devil_worshiper = yes
+		}
+		localisation_key = mission_tongue_slip_2
+	}
+}
+
+defined_text = {
+	name = GetImperialBuildingProgress
+
+	text = {
+		trigger = { has_character_modifier = quest_ipc_improve_imperial_capital_building_notification }
+		localisation_key = capital_building_built_1
+	}
+}
+
+
+
+####################Misc####################
+
+defined_text = {
+	name = GetIpcDonateCooldown
+	
+	text = {
+		trigger = { has_character_modifier = ipc_donate_to_court_power_timer }
+		localisation_key = ipc_donate_to_court_power_cooldown
+	}
+	
+}
+
+defined_text = {
+	name = GetIpcCapitalCooldown
+	
+	text = {
+		trigger = { has_character_modifier = ipc_visit_imperial_capital_power_timer }
+		localisation_key = ipc_visit_imperial_capital_cooldown
+	}
+}
+
+defined_text = {
+	name = GetIpcConscriptCooldown
+	
+	text = {
+		trigger = { has_character_modifier = reduce_ipc_influence_army_levy_timer }
+		localisation_key = reduce_ipc_influence_army_levy_cooldown
+	}
+}
+
+
+
+defined_text = {
+	name = GetIpcCommanderCooldown
+	
+	text = {
+		trigger = { has_character_modifier = ipc_employ_imperial_commander_power_timer }
+		localisation_key = ipc_employ_imperial_commander_power_cooldown
+	}
+}
+
+defined_text = {
+	name = GetIpcTraitorCooldown
+	
+	text = {
+		trigger = { has_character_modifier = ipc_declare_traitor_spymaster_power_timer }
+		localisation_key = ipc_declare_traitor_spymaster_power_cooldown
+	}
+}
+
+defined_text = {
+	name = GetIpcTaxCooldown
+	
+	text = {
+		trigger = { has_character_modifier = ipc_levy_extra_tax_seneschal_power_timer }
+		localisation_key = ipc_levy_extra_tax_seneschal_power_cooldown
+	}
+}
+
+defined_text = {
+	name = GetImperialCourtCurrencyRankUp
+
+	text = {
+		trigger = {  society_rank == 1 }
+		localisation_key = imperial_court_rank_up_1
+	}
+	text = {
+		trigger = { society_rank == 2 }
+		localisation_key = imperial_court_rank_up_2
+	}
+}
+
+
+defined_text = {
+	name = GetImperialGrandmaster
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { 
+			society = {
+				leader = { tier = emperor }
+			}
+		}
+		localisation_key = imperial_court_grandmaster_emperor
+	}
+	text = {
+		trigger = { 
+			society = {
+				leader = { NOT = { tier = emperor } }
+			}
+		}
+		localisation_key = imperial_court_grandmaster_regent
+	}
+}
+
+defined_text = {
+	name = GetNewImperialRegent
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { event_target:imperial_regent_relative_candidate = { always = yes } }
+		localisation_key = new_imperial_regent_relative
+	}
+	text = {
+		trigger = { event_target:imperial_regent_society_candidate = { always = yes } }
+		localisation_key = new_imperial_regent_society
+	}
+}
+
+defined_text = {
+	name = GetCanMoveCourt
+	use_first_valid = yes
+	
+	text = { 
+		trigger = { 
+			NOR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_hre
+				has_landed_title = e_arabia
+				has_landed_title = e_roman_empire
+			}
+			NOR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		localisation_key = can_move_court_modifier_info
+	}
+	text = { 
+		trigger = { 
+			NOR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_hre
+				has_landed_title = e_arabia
+				has_landed_title = e_roman_empire
+			}
+			OR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		localisation_key = can_not_move_court_modifier_info
+	}
+}

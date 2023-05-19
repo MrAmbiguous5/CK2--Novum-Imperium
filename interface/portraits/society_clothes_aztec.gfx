@@ -1,0 +1,239 @@
+spriteTypes = {
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_society_ahuiateteo_clothing_male"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+
+				portrait_society = followers_of_ahuiateteo
+				blg_wear_society_clothing_minimal = yes
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_vodoun_male_clothing_behind:c0"
+			"GFX_society_vodoun_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_society_bacchant_male_headgear_front:c5"
+			"GFX_society_bacchant_male_headgear_behind:c1"
+			"GFX_empty:c7"
+		}
+
+		# Correct rank
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			5 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_society_ahuiateteo_clothing_male_lay"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+
+				portrait_society = followers_of_ahuiateteo
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_vodoun_male_clothing_behind:c0"
+			"GFX_society_vodoun_male_clothing_front:c2"
+		}
+
+		# Correct rank
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+		}
+	}
+
+	portraitType = { #Portraits - Male
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_society_warrior_lodge_aztec_male_clothing"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				portrait_society = warrior_lodge_aztec
+				blg_wear_warrior_lodge_clothing = yes
+			}
+		}
+
+		layer = {
+			"GFX_society_warrior_lodge_african_male_headgear_behind:p5:c1"
+			"GFX_society_bacchant_male_clothing_behind:p3:c0"
+			"GFX_society_bacchant_male_clothing_front:p3:c2"
+			"GFX_empty:c3"
+			"GFX_society_warrior_lodge_african_male_headgear:p5:c5"
+			"GFX_empty:c7"
+		}
+
+		# Correct rank
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			5 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				2 = {
+					OR = {
+						portrait_society_rank = 2
+						portrait_society_rank = 3
+					}
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_society_warrior_lodge_aztec_female_clothing"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				portrait_society = warrior_lodge_aztec
+				blg_wear_warrior_lodge_clothing = yes
+			}
+		}
+
+		layer = {
+			"GFX_society_warrior_lodge_african_male_headgear_behind:p5:c1"
+			"GFX_society_warrior_lodge_norse_female_clothes_behind:p3:c0"
+			"GFX_society_warrior_lodge_norse_female_clothes:p3:c2"
+			"GFX_empty:c3"
+			"GFX_society_warrior_lodge_african_male_headgear:p5:c5"
+			"GFX_empty:c7"
+		}
+
+		# Correct rank
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			5 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				2 = {
+					OR = {
+						portrait_society_rank = 2
+						portrait_society_rank = 3
+					}
+				}
+				3 = {
+					portrait_society_rank = 4
+				}
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+	}
+}

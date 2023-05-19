@@ -1,0 +1,1 @@
+NDefines.NMilitary.MAX_RIVER_MOVEMENT_FORT_LEVEL = 12.0		--increased to allow moment down new rivers.

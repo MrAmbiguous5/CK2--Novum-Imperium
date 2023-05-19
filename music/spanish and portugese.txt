@@ -1,0 +1,359 @@
+song = {
+	name = "Viva_La_Quince_Brigada_Peace.ogg"
+	song_name = "Viva La Quince Brigada"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Viva_La_Quince_Brigada_War.ogg"
+	song_name = "Viva La Quince Brigada"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Saudades_de_Coimbra_Peace.ogg"
+	song_name = "Saudades de Coimbra"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = portuguese }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Saudades_de_Coimbra_War.ogg"
+	song_name = "Saudades de Coimbra"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = portuguese }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Santa Maria, Strela do Dia medieval.ogg"
+	song_name = "Santa Maria, Strela do Dia"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = iberian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantiga de Santa Maria 142 Ena gran coita sempr' acorrer ven.ogg"
+	song_name = "Cantiga de Santa Maria 142"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantiga de Santa Maria 327 Porque ben Santa Maria sabe os seus does dar.ogg"
+	song_name = "Cantiga de Santa Maria 327"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantiga de Santa Maria 231 Vertud' e sabedoria.ogg"
+	song_name = "Cantiga de Santa Maria 231"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantiga de Santa Maria 198 Muitas vezes volv'o demo as gentes por seus pecados.ogg"
+	song_name = "Cantiga de Santa Maria 198"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantiga de Santa Maria 375 En todo no faz mercee.ogg"
+	song_name = "Cantiga de Santa Maria 375"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantiga de Santa Maria 101 Ben pod' a Sennor sen.ogg"
+	song_name = "Cantiga de Santa Maria 101"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Cantiga de Santa Maria 246 A que as portas do ceo abriu.ogg"
+	song_name = "Cantiga de Santa Maria 246"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Spain Theme - Ancient (Civilization 6 OST) Recuerdos de la Alhambra.ogg"
+	song_name = "Recuerdos de la Alhambra (Ancient)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 2
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Spain Theme - Medieval (Civilization 6 OST) Recuerdos de la Alhambra.ogg"
+	song_name = "Recuerdos de la Alhambra (Medieval)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Spain Theme - Industrial (Civilization 6 OST) Recuerdos de la Alhambra.ogg"
+	song_name = "Recuerdos de la Alhambra (Industrial)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 0.5
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Spain Theme - Atomic (Civilization 6 OST) Recuerdos de la Alhambra.ogg"
+	song_name = "Recuerdos de la Alhambra (Atomic)"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = basque }
+			NOT = { culture = castillan }
+			NOT = { culture = catalan }
+			NOT = { culture = visigothic }
+		}
+		modifier = {
+			factor = 0.1
+			war = no
+		}	
+		modifier = {
+			factor = 0.1
+			war = yes
+		}
+	}
+	volume = 2
+}

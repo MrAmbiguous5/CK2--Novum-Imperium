@@ -1,0 +1,13 @@
+# -*- ck2.on_actions -*-
+
+on_new_holder_inheritance = {
+	events = {
+		mta.13 #Religious veneration trait check
+	}
+}
+
+on_character_convert_religion = {
+	events = {
+		mta.14 #Cleanup marked for veneration trait
+	}
+}

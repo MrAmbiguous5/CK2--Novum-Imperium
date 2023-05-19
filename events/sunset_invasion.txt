@@ -103,7 +103,7 @@ province_event = {
 		activate_title = { title = e_mexikha status = yes }
 		owner = { character_event = { id = SSI.74 } }
 		
-		e_hip = {
+		k_papal_state = {
 			holder_scope = {
 				create_random_soldier = {
 					dynasty = 1035000 # Acatl
@@ -112,27 +112,26 @@ province_event = {
 					religion = aztec
 				}
 				new_character = {
-					emf_new_character_noble = yes
 					e_mexikha = {
 						grant_title = PREV
 					}
 					set_government_type = feudal_government
-					set_flag = emf_no_law_penalties
 					e_mexikha = {
-						add_law = succ_aztec_elective
+						add_law = succ_primogeniture
 						add_law = agnatic_succession
-						add_law = crown_authority_2
 						if = {
 							limit = {
 								has_dlc = "Zeus"
 							}
-							add_law = ze_revokation_1
+							add_law = revoke_title_law_2
 						}
-						else = {
-							add_law = revokation_1
+						if = {
+							limit = {
+								NOT = { has_dlc = "Zeus" }
+							}
+							add_law = crown_authority_1
 						}
 					}
-					clr_flag = emf_no_law_penalties
 					set_defacto_liege = THIS
 					narrative_event = { id = SSI.2 days = 7 }
 				}
@@ -211,7 +210,7 @@ narrative_event = {
 			trigger = {
 				OR = {
 					NOT = { has_global_flag = demon_child_to_aztecs }
-					is_devil_worshiper_trigger = no
+					NOT = { society_member_of = the_satanists }
 				}
 			}
 		}
@@ -220,7 +219,7 @@ narrative_event = {
 			text = EVTOPTA_SSI_002_SATANIC
 			trigger = {
 				has_global_flag = demon_child_to_aztecs
-				is_devil_worshiper_trigger = yes
+				society_member_of = the_satanists
 			}
 		}
 	}
@@ -302,8 +301,9 @@ narrative_event = {
 	}
 	
 	immediate = {
-		any_player = {
+		any_playable_ruler = {
 			limit = {
+				ai = no
 				capital_scope = {
 					NOT = { region = world_india }
 				}
@@ -337,7 +337,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -362,7 +361,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -387,7 +385,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -413,7 +410,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -438,7 +434,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -463,7 +458,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -489,7 +483,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -514,7 +507,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -539,7 +531,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -565,7 +556,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -590,7 +580,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -615,7 +604,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -643,7 +631,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -668,7 +655,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -693,7 +679,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -722,7 +707,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -747,7 +731,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -772,7 +755,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -801,7 +783,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -826,7 +807,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -851,7 +831,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -904,9 +883,6 @@ narrative_event = {
 			female = no
 			age = 16
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -915,9 +891,6 @@ narrative_event = {
 			female = no
 			age = 18
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -925,9 +898,6 @@ narrative_event = {
 			culture = nahuatl
 			female = no
 			age = 18
-		}
-		new_character = {
-			emf_new_character_noble = yes
 		}
 		create_character = {
 			random_traits = yes
@@ -936,9 +906,6 @@ narrative_event = {
 			culture = nahuatl
 			female = no
 			age = 20
-		}
-		new_character = {
-			emf_new_character_noble = yes
 		}
 		create_character = {
 			random_traits = yes
@@ -948,9 +915,6 @@ narrative_event = {
 			female = no
 			age = 25
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -958,9 +922,6 @@ narrative_event = {
 			culture = nahuatl
 			female = no
 			age = 26
-		}
-		new_character = {
-			emf_new_character_noble = yes
 		}
 		create_character = {
 			random_traits = yes
@@ -970,9 +931,6 @@ narrative_event = {
 			female = no
 			age = 28
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -980,9 +938,6 @@ narrative_event = {
 			culture = nahuatl
 			female = no
 			age = 16
-		}
-		new_character = {
-			emf_new_character_noble = yes
 		}
 		create_character = {
 			random_traits = yes
@@ -992,9 +947,6 @@ narrative_event = {
 			female = no
 			age = 17
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -1003,9 +955,6 @@ narrative_event = {
 			female = no
 			age = 18
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -1014,9 +963,6 @@ narrative_event = {
 			female = no
 			age = 16
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -1024,9 +970,6 @@ narrative_event = {
 			culture = nahuatl
 			female = yes
 			age = 16
-		}
-		new_character = {
-			emf_new_character_noble = yes
 		}
 		create_character = {
 			random_traits = yes
@@ -1036,9 +979,6 @@ narrative_event = {
 			female = yes
 			age = 17
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -1047,9 +987,6 @@ narrative_event = {
 			female = yes
 			age = 18
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -1057,9 +994,6 @@ narrative_event = {
 			culture = nahuatl
 			female = yes
 			age = 18
-		}
-		new_character = {
-			emf_new_character_noble = yes
 		}
 		create_character = {
 			random_traits = yes
@@ -1069,9 +1003,6 @@ narrative_event = {
 			female = yes
 			age = 20
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -1080,9 +1011,6 @@ narrative_event = {
 			female = yes
 			age = 16
 		}
-		new_character = {
-			emf_new_character_noble = yes
-		}
 		create_character = {
 			random_traits = yes
 			dynasty = random
@@ -1090,12 +1018,10 @@ narrative_event = {
 			culture = nahuatl
 			female = yes
 			age = 16
-		}
-		new_character = {
-			emf_new_character_noble = yes
 		}
 
-		any_player = {
+		any_playable_ruler = {
+			limit = { ai = no }
 			if = {
 				limit = {
 					OR = {
@@ -1119,7 +1045,7 @@ narrative_event = {
 
 	option = { # Monks & Mystics - Hermetics Scrying reaction
 		name = EVTOPTA_SSI_004
-		
+
 		if = { # for safety
 			limit = {
 				OR = {
@@ -1260,7 +1186,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1285,7 +1210,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1310,7 +1234,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1336,7 +1259,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1361,7 +1283,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1386,7 +1307,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1412,7 +1332,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1437,7 +1356,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1462,7 +1380,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1488,7 +1405,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1513,7 +1429,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1538,7 +1453,6 @@ narrative_event = {
 			trait = brilliant_strategist
 		}
 		new_character = {
-			emf_new_character_noble = yes
 			spawn_unit = {
 				province = FROM
 				home = FROM
@@ -1566,7 +1480,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -1591,7 +1504,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -1616,86 +1528,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
-				spawn_unit = {
-					province = FROM
-					home = FROM
-					troops =
-					{
-						heavy_infantry = { 2800 2800 }
-						light_infantry = { 1400 1300 }
-						archers = { 1400 1300 }
-					}
-				}
-			}
-		}
-		
-		random = {
-			chance = 50
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = aztec
-				culture = nahuatl
-				female = no
-				age = 30
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-			}
-			new_character = {
-				emf_new_character_noble = yes
-				spawn_unit = {
-					province = FROM
-					home = FROM
-					troops =
-					{
-						heavy_infantry = { 2800 2800 }
-						light_infantry = { 1400 1300 }
-						archers = { 1400 1300 }
-					}
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = aztec
-				culture = nahuatl
-				female = no
-				age = 25
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-			}
-			new_character = {
-				emf_new_character_noble = yes
-				spawn_unit = {
-					province = FROM
-					home = FROM
-					troops =
-					{
-						heavy_infantry = { 2800 2800 }
-						light_infantry = { 1400 1300 }
-						archers = { 1400 1300 }
-					}
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = aztec
-				culture = nahuatl
-				female = no
-				age = 22
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-			}
-			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -1724,7 +1556,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -1749,7 +1580,6 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -1774,7 +1604,82 @@ narrative_event = {
 				trait = brilliant_strategist
 			}
 			new_character = {
-				emf_new_character_noble = yes
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						light_infantry = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = aztec
+				culture = nahuatl
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						light_infantry = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = aztec
+				culture = nahuatl
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						light_infantry = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = aztec
+				culture = nahuatl
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
 				spawn_unit = {
 					province = FROM
 					home = FROM
@@ -1817,7 +1722,8 @@ narrative_event = {
 				}
 			}
 		}
-		any_player = {
+		any_playable_ruler = {
+			limit = { ai = no }
 			if = {
 				limit = {
 					OR = {
@@ -1841,7 +1747,7 @@ narrative_event = {
 
 	option = { # Monks & Mystics - Hermetics Scrying reaction
 		name = EVTOPTA_SSI_006
-		
+
 		if = { # for safety
 			limit = {
 				OR = {
@@ -2499,13 +2405,21 @@ character_event = {
 	id = SSI.60
 	desc = {
 		trigger = {
-			emf_ritual_sacrifice_religion = no
+			NOR = {
+				religion = aztec
+				religion = aztec_reformed
+				has_religion_feature = religion_ritual_sacrifice
+			}
 		}
 		text = EVTDESC_SSI_060
 	}
 	desc = {
 		trigger = {
-			emf_ritual_sacrifice_religion = yes
+			OR = {
+				religion = aztec
+				religion = aztec_reformed
+				has_religion_feature = religion_ritual_sacrifice
+			}
 		}
 		text = EVTDESC_SSI_060_B
 	}
@@ -2518,13 +2432,21 @@ character_event = {
 	option = {
 		name = EVTOPTA_SSI_060
 		trigger = {
-			emf_ritual_sacrifice_religion = no
+			NOR = {
+				religion = aztec
+				religion = aztec_reformed
+				has_religion_feature = religion_ritual_sacrifice
+			}
 		}
 	}
 	option = {
 		name = EVTOPTB_SSI_060
 		trigger = {
-			emf_ritual_sacrifice_religion = yes
+			OR = {
+				religion = aztec
+				religion = aztec_reformed
+				has_religion_feature = religion_ritual_sacrifice
+			}
 		}
 	}
 }
@@ -2551,11 +2473,7 @@ character_event = {
 		new_character = {
 			OR = {
 				religion = aztec
-				AND = {
-					religion = aztec_reformed
-					has_religion_features = no
-				}
-				has_religion_feature = religion_feature_aztec
+				religion = aztec_reformed
 			}
 		}
 	}

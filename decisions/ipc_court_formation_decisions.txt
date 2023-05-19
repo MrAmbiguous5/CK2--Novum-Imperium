@@ -1,0 +1,3064 @@
+decisions = {
+	
+	establish_imperial_court = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			tier = emperor
+			is_feudal = yes
+			#NOR = {
+			#	government = nomadic_government
+			#	government = tribal_government
+			#}
+			NOT = { any_demesne_title = { has_title_flag = imperial_court_active } }
+			has_unique_court_title_trigger = no
+			OR = {
+				is_alternate_start = no
+				NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+			}
+			NOR = {
+				AND = {
+					OR = {
+						religion_group = christian
+						religion_group = jewish_group
+					}
+					has_global_flag = imperial_court_christian_1_active
+					has_global_flag = imperial_court_christian_2_active
+					has_global_flag = imperial_court_christian_3_active
+				}
+				AND = {
+					OR = {
+						religion_group = muslim
+						religion_group = zoroastrian_group
+					}
+					has_global_flag = imperial_court_muslim_1_active
+					has_global_flag = imperial_court_muslim_2_active
+					has_global_flag = imperial_court_muslim_3_active
+				}
+				AND = {
+					religion_group = pagan_group
+					has_global_flag = imperial_court_pagan_1_active
+					has_global_flag = imperial_court_pagan_2_active
+					has_global_flag = imperial_court_pagan_3_active
+				}
+				AND = {
+					religion_group = indian_group
+					has_global_flag = imperial_court_eastern_1_active
+					has_global_flag = imperial_court_eastern_2_active
+					has_global_flag = imperial_court_eastern_3_active
+				}
+			}
+		}
+		
+		allow = { 
+			primary_title = { NOT = { has_law = succ_feudal_elective } }
+			is_in_society = no
+			war = no
+			is_feudal = yes
+			ruled_years = 10
+			prestige = 2000
+			realm_size = 80
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				OR = {
+					primary_title = { has_law = administration_2 }
+					AND = {
+						primary_title = {
+							has_law = administration_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					primary_title = { has_law = ze_administration_laws_2 }
+					AND = {
+						primary_title = {
+							has_law = ze_administration_laws_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				NOT = { religion_group = pagan_group }
+				is_reformed_religion = yes
+			}
+			hidden_tooltip = { NOT = { has_character_flag = establishing_imperial_court } }
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = establish_imperial_court_effect
+				set_character_flag = establishing_imperial_court
+				character_event = { id = ipcf.000 }
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = { factor = 1 }
+	}
+
+	establish_imperial_court_byzantine = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = { 
+			tier = emperor
+			primary_title = { title = e_byzantium }
+			is_feudal = yes
+			#NOR = {
+			#	government = nomadic_government
+			#	government = tribal_government
+			#}
+			NOT = { any_demesne_title = { has_title_flag = imperial_court_active } }
+			OR = {
+				is_alternate_start = no
+				NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+			}
+		}
+		
+		allow = { 
+			is_in_society = no
+			war = no
+			is_feudal = yes
+			ruled_years = 10
+			prestige = 2000
+			realm_size = 80
+			OR = {
+				religion_group = christian
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				OR = {
+					e_byzantium = { has_law = administration_2 }
+					AND = {
+						e_byzantium = {
+							has_law = administration_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					e_byzantium = { has_law = ze_administration_laws_2 }
+					AND = {
+						e_byzantium = {
+							has_law = ze_administration_laws_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			hidden_tooltip = { NOT = { has_character_flag = establishing_imperial_court } }
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = establish_imperial_court_effect
+				set_character_flag = establishing_imperial_court
+				character_event = { id = ipcf.002 }
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = { factor = 1 }
+	}
+	
+	establish_imperial_court_hre = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = { 
+			tier = emperor
+			primary_title = { title = e_hre }
+			is_feudal = yes
+			#NOR = {
+			#	government = nomadic_government
+			#	government = tribal_government
+			#}
+			NOT = { any_demesne_title = { has_title_flag = imperial_court_active } }
+			OR = {
+				is_alternate_start = no
+				NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+			}
+		}
+		
+		allow = {
+			is_in_society = no
+			war = no
+			is_feudal = yes
+			ruled_years = 10
+			prestige = 2000
+			realm_size = 80
+			religion_group = christian
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				OR = {
+					e_hre = { has_law = administration_2 }
+					AND = {
+						e_hre = {
+							has_law = administration_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					e_hre = { has_law = ze_administration_laws_2 }
+					AND = {
+						e_hre = {
+							has_law = ze_administration_laws_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			hidden_tooltip = { NOT = { has_character_flag = establishing_imperial_court } }
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = establish_imperial_court_effect
+				set_character_flag = establishing_imperial_court
+				character_event = { id = ipcf.004 }
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = { factor = 1 }
+	}
+	
+	establish_imperial_court_arabia = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = { 
+			tier = emperor
+			primary_title = { title = e_arabia }
+			is_feudal = yes
+			#NOR = {
+			#	government = nomadic_government
+			#	government = tribal_government
+			#}
+			NOT = { any_demesne_title = { has_title_flag = imperial_court_active } }
+			OR = {
+				is_alternate_start = no
+				NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+			}
+		}
+		
+		allow = {
+			is_in_society = no
+			war = no
+			is_feudal = yes
+			ruled_years = 10
+			prestige = 2000
+			realm_size = 80
+			religion_group = muslim
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				OR = {
+					e_arabia = { has_law = administration_2 }
+					AND = {
+						e_arabia = {
+							has_law = administration_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					e_arabia = { has_law = ze_administration_laws_2 }
+					AND = {
+						e_arabia = {
+							has_law = ze_administration_laws_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			hidden_tooltip = { NOT = { has_character_flag = establishing_imperial_court } }
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = establish_imperial_court_effect
+				set_character_flag = establishing_imperial_court
+				character_event = { id = ipcf.006 }
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = { factor = 1 }
+	}
+	
+	establish_imperial_court_roman = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = { 
+			tier = emperor
+			primary_title = { title = e_roman_empire }
+			is_feudal = yes
+			#NOR = {
+			#	government = nomadic_government
+			#	government = tribal_government
+			#}
+			NOT = { any_demesne_title = { has_title_flag = imperial_court_active } }
+			OR = {
+				is_alternate_start = no
+				NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+			}
+		}
+		
+		allow = {
+			is_in_society = no
+			war = no
+			is_feudal = yes
+			ruled_years = 10
+			prestige = 2000
+			realm_size = 80
+			OR = {
+				religion_group = christian
+				religion_openly_hellenic_or_reformed_trigger = yes
+			}
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				OR = {
+					e_roman_empire = { has_law = administration_2 }
+					AND = {
+						e_roman_empire = {
+							has_law = administration_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					e_roman_empire = { has_law = ze_administration_laws_2 }
+					AND = {
+						e_roman_empire = {
+							has_law = ze_administration_laws_1
+							has_law = law_voting_power_0
+						}
+						custom_tooltip = {
+							text = establish_imperial_court_allow
+							any_vassal = {
+								is_powerful_vassal = yes
+								opinion = { who = ROOT value = 0 }
+							}
+						}
+					}
+				}
+			}
+			hidden_tooltip = { NOT = { has_character_flag = establishing_imperial_court } }
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = establish_imperial_court_effect
+				set_character_flag = establishing_imperial_court
+				character_event = { id = ipcf.008 }
+			}
+		}
+		
+		ai_check_interval = 24
+		ai_will_do = { factor = 1 }
+	}
+	
+	
+	##forming new empires with unique courts
+	form_the_hre_with_ipc = {
+		only_playable = yes
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_global_flag = ipc_hip_detected } #hip emperors cant create hre
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+			has_global_flag = charlemagne_hre
+			OR = {
+				religion = catholic
+				religion = fraticelli
+			}
+			OR = {
+				culture = german
+				culture = dutch
+			}
+			e_hre = { has_holder = no }
+			e_france = { has_holder = no }
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 1000
+			realm_size = 180
+			has_landed_title = k_germany
+			custom_tooltip = {
+				text = FORM_THE_HRE_TT
+				any_demesne_title = {
+					tier = KING
+					NOT = { title = k_germany }
+				}
+			}
+			conditional_tooltip = {
+				trigger = { ai = no }
+				scaled_wealth = 2
+			}
+			
+			is_imperial_court_member_trigger = yes
+			is_society_grandmaster = yes
+			custom_tooltip = {
+				text = form_the_hre_with_ipc_allow
+				primary_title = {
+					NOR = {
+						has_title_flag = has_imperial_regent
+						has_title_flag = has_imperial_seneschal
+						has_title_flag = has_imperial_marshal
+						has_title_flag = has_imperial_lawkeeper
+						has_title_flag = has_imperial_spymaster
+					}
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = { set_character_flag = ipc_forming_new_empire }
+			if = {
+				limit = { ai = no }
+				scaled_wealth = -2
+			}
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_great
+			}
+			add_artifact = crown_hre
+			primary_title = {
+				e_hre = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					add_law = succ_hre_elective
+				}
+			}
+			hidden_tooltip = { princely_elective_german_elector_setup_effect = yes }
+			any_demesne_title = {
+				limit = {
+					tier = KING
+					NOT = { title = k_germany }
+				}
+				destroy_landed_title = THIS
+			}
+			hidden_tooltip = { character_event = { id = ipcf.012 } }
+		}
+		ai_will_do = { factor = 1000 }
+	}
+	
+	
+	form_the_hre_early_with_ipc = {
+		only_playable = yes
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				conditional_tooltip = {
+					trigger = {
+						is_alternate_start = no
+					}
+					NOR = { 
+						has_global_flag = charlemagne_hre 
+						is_title_active = e_hre
+					}
+				}
+				NOT = { has_global_flag = rome_restored }
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+				emf_has_roman_empire = no
+				emf_hre_has_holder = no
+				has_random_religion_names = no
+				emf_hiprio_decision_basic_potential = yes
+			}
+			trigger_else = {
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				conditional_tooltip = {
+					trigger = { is_alternate_start = no }
+					NOR = {
+						has_global_flag = charlemagne_hre 
+						is_title_active = e_hre 
+					}
+				}
+				NOT = { has_global_flag = rome_restored }
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+				NOT = { has_landed_title = e_byzantium }
+				NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+				e_hre = { has_holder = no }
+			}
+		}
+		allow = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = form_the_hre_early_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				is_adult = yes
+				prisoner = no
+				is_incapable = no
+				prestige = 1000
+				realm_size = 220
+				conditional_tooltip = {
+					trigger = { is_alternate_start = no }
+					custom_tooltip = {
+						text = form_the_hre_early_tooltip_1
+						hidden_tooltip = {
+							OR = {
+								has_landed_title = k_italy
+								has_landed_title = e_italy
+							}
+						}
+					}
+					custom_tooltip = {
+						text = form_the_hre_early_tooltip_2
+						hidden_tooltip = {
+							any_demesne_title = {
+								OR = {
+									title = e_france
+									title = e_germany
+									title = e_britannia
+									title = e_spain
+									AND = {
+										tier = KING
+										NOT = {	title = k_italy	}
+										OR = {
+											title = k_france
+											title = k_aquitaine
+											title = k_brittany
+											title = k_burgundy
+											title = k_lotharingia
+											title = k_germany
+											title = k_bavaria
+											title = k_england
+											title = k_scotland
+											title = k_ireland
+											title = k_wales
+											title = k_aragon
+											title = k_castille
+											title = k_leon
+											title = k_portugal
+											title = k_asturias
+											title = k_valencia
+											title = k_badajoz
+											title = k_andalusia
+											empire = { title = e_france }
+											empire = { title = e_germany }
+											empire = { title = e_britannia }
+											empire = { title = e_spain }
+										}
+									}
+								}
+							}
+						}
+					}
+					custom_tooltip = {
+						text = form_the_hre_early_tooltip_3
+						hidden_tooltip = {
+							OR = {
+								has_landed_title = e_italy
+								e_italy = {	has_holder = no	}
+								e_italy = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_germany
+								e_germany = {	has_holder = no	}
+								e_germany = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_france
+								e_france = { has_holder = no	}
+								e_france = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_spain
+								e_spain = {	has_holder = no	}
+								e_spain = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_britannia
+								e_britannia = {	has_holder = no	}
+								e_britannia = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+						}
+					}
+				}
+				conditional_tooltip = {
+					trigger = { ai = no }
+					religion_head = { opinion = { who = ROOT value = 25 } }
+					scaled_wealth = 2
+				}
+			}
+			trigger_else = {
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = form_the_hre_early_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				is_adult = yes
+				prisoner = no
+				is_incapable = no
+				prestige = 1000
+				realm_size = 220
+				conditional_tooltip = {
+					trigger = { is_alternate_start = no }
+					custom_tooltip = {
+						text = form_the_hre_early_tooltip_1
+						hidden_tooltip = {
+							OR = {
+								has_landed_title = k_italy
+								has_landed_title = e_italy
+							}
+						}
+					}
+					custom_tooltip = {
+						text = form_the_hre_early_tooltip_2
+						hidden_tooltip = {
+							any_demesne_title = {
+								OR = {
+									title = e_france
+									title = e_germany
+									title = e_britannia
+									title = e_spain
+									AND = {
+										tier = KING
+										NOT = {	title = k_italy	}
+										OR = {
+											empire = { title = e_france }
+											empire = { title = e_germany }
+											empire = { title = e_britannia }
+											empire = { title = e_spain }
+										}
+									}
+								}
+							}
+						}
+					}
+					custom_tooltip = {
+						text = form_the_hre_early_tooltip_3
+						hidden_tooltip = {
+							OR = {
+								has_landed_title = e_italy
+								e_italy = {	has_holder = no	}
+								e_italy = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_germany
+								e_germany = {	has_holder = no	}
+								e_germany = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_france
+								e_france = { has_holder = no	}
+								e_france = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_spain
+								e_spain = {	has_holder = no	}
+								e_spain = { holder_scope = { NOT = { religion_group = christian } } }
+							}
+							OR = {
+								has_landed_title = e_britannia
+								e_britannia = {	has_holder = no	}
+								e_britannia = { holder_scope = { NOT = { religion_group = christian } } }
+							} 
+						}
+					}
+				}
+				conditional_tooltip = {
+					trigger = { ai = no }
+					religion_head = { opinion = { who = ROOT value = 25 } }
+					scaled_wealth = 2
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				hidden_tooltip = { set_character_flag = ipc_forming_new_empire }
+				
+				set_global_flag = charlemagne_hre
+				set_flag = emf_context_hre_original_founder
+				set_flag = emf_context_hre_founder
+				activate_title = { title = e_hre status = yes }
+				if = {
+					limit = { ai = no }
+					scaled_wealth = -2
+				}
+				if = {
+					limit = { has_nickname = no }
+					give_nickname = nick_the_great
+				}
+				#Create Electors, depending on capital location:
+				princely_elective_apply_elector_setup_effect = yes
+				primary_title = {
+					show_scope_change = no
+					e_hre = {
+						show_scope_change = no
+						grant_title = ROOT
+						copy_title_laws = PREV
+						set_coa = PREV
+						add_law = { law = succ_hre_elective opinion_effect = no }
+					}
+				}
+				any_demesne_title = {
+					show_scope_change = no
+					limit = { tier = KING }
+					de_jure_liege = e_hre
+				}
+				hidden_tooltip = {
+					any_demesne_title = {
+						limit = { tier = EMPEROR }
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_hre
+						}
+					}
+				}
+				
+				##move the court
+				hidden_tooltip = { character_event = { id = ipcf.012 } }
+				
+				any_demesne_title = {
+					show_scope_change = no
+					limit = {
+						tier = EMPEROR
+						NOT = { title = e_hre }
+					}
+					emf_destroy_title = yes
+					hidden_tooltip = { activate_title = { title = THIS status = no } }
+				}
+				any_demesne_title = {
+					show_scope_change = no
+					limit = { tier = KING }
+					emf_destroy_title = yes
+				}
+				if = {
+					limit = { ai = yes }
+					# Adjust the HRE title's preferred capital based upon owner demesne
+					character_event = { id = emf_empires.71 }
+				}
+				e_byzantium = {
+					show_scope_change = no
+					owner = {
+						show_scope_change = no
+						opinion = { who = ROOT modifier = opinion_unhappy months = 1200 }
+					}
+				}
+				k_papal_state = {
+					show_scope_change = no
+					owner = {
+						show_scope_change = no
+						reverse_opinion = { who = e_byzantium modifier = opinion_unhappy months = 1200 }
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							NOT = {	has_flag = is_charlemagne }
+							has_flag = charlemagne_coronation
+						}
+					}
+					add_artifact = crown_hre
+					hidden_tooltip = { narrative_event = { id = CM.510 } }		# Spread the news
+				}
+				if = {
+					limit = {
+						has_flag = is_charlemagne
+						NOT = { has_flag = charlemagne_coronation }
+					}
+					hidden_tooltip = { narrative_event = { id = CM.1500 } }		# Charlemagne coronation
+				}
+				if = {
+					limit = { ai = no }
+					set_flag = achievement_holy_and_roman
+				}
+				chronicle = {
+					entry = CHRONICLE_FOUNDED_HRE
+					picture = GFX_evt_coronation
+				}
+			}
+			else = {
+				hidden_tooltip = { set_character_flag = ipc_forming_new_empire }
+				set_global_flag = charlemagne_hre
+				activate_title = { title = e_hre status = yes }
+				if = {
+					limit = { ai = no }
+					scaled_wealth = -2
+				}
+				if = {
+					limit = { has_nickname = no }
+					give_nickname = nick_the_great
+				}
+				#Create Electors, depending on capital location:
+				princely_elective_apply_elector_setup_effect = yes
+				primary_title = {
+					show_scope_change = no
+					e_hre = {
+						show_scope_change = no
+						grant_title = ROOT
+						copy_title_laws = PREV
+						set_coa = PREV
+						add_law = succ_hre_elective
+					}
+				}
+				any_demesne_title = {
+					limit = { tier = KING }
+					de_jure_liege = e_hre
+				}
+				hidden_tooltip = {
+					any_demesne_title = {
+						if = {
+							limit = { tier = EMPEROR }
+							any_direct_de_jure_vassal_title = { de_jure_liege = e_hre }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = { tier = KING }
+					destroy_landed_title = THIS
+				}
+				##move the court
+				hidden_tooltip = { character_event = { id = ipcf.012 } }
+				
+				# Give lands to the Pope
+				if = {
+					limit = {
+						any_realm_title = {
+							title = c_roma
+							holder_scope = {
+								OR = {
+									ai = yes
+									any_demesne_title = {
+										tier = COUNT
+										NOT = { title = c_roma }
+									}
+								}
+							}
+						}
+					}
+					c_roma = {
+						ROOT = {
+							religion_head = {
+								grant_title = PREVPREV
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_realm_title = {
+							title = c_ravenna
+							holder_scope = {
+								OR = {
+									ai = yes
+									any_demesne_title = {
+										tier = COUNT
+										NOT = { title = c_ravenna }
+									}
+								}
+							}
+						}
+					}
+					c_ravenna = {
+						ROOT = {
+							religion_head = {
+								grant_title = PREVPREV
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_realm_title = {
+							title = c_ferrara
+							holder_scope = {
+								OR = {
+									ai = yes
+									any_demesne_title = {
+										tier = COUNT
+										NOT = { title = c_ferrara }
+									}
+								}
+							}
+						}
+					}
+					c_ferrara = {
+						ROOT = {
+							religion_head = {
+								grant_title = PREVPREV
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_realm_title = {
+							title = c_urbino
+							holder_scope = {
+								OR = {
+									ai = yes
+									any_demesne_title = {
+										tier = COUNT
+										NOT = { title = c_urbino }
+									}
+								}
+							}
+						}
+					}
+					c_urbino = {
+						ROOT = {
+							religion_head = {
+								grant_title = PREVPREV
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_realm_title = {
+							title = c_spoleto
+							holder_scope = {
+								OR = {
+									ai = yes
+									any_demesne_title = {
+										tier = COUNT
+										NOT = { title = c_spoleto }
+									}
+								}
+							}
+						}
+					}
+					c_spoleto = {
+						ROOT = {
+							religion_head = {
+								grant_title = PREVPREV
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_realm_title = {
+							title = c_perugia
+							holder_scope = {
+								OR = {
+									ai = yes
+									any_demesne_title = {
+										tier = COUNT
+										NOT = { title = c_perugia }
+									}
+								}
+							}
+						}
+					}
+					c_perugia = {
+						ROOT = {
+							religion_head = {
+								grant_title = PREVPREV
+							}
+						}
+					}
+				}
+				e_byzantium = {
+					show_scope_change = no
+					holder_scope = {
+						show_scope_change = no
+						opinion = {
+							who = ROOT
+							modifier = opinion_unhappy
+							months = 1200
+						}
+						hidden_tooltip = {
+							k_papal_state = {
+								holder_scope = {
+									reverse_opinion = {
+										who = PREVPREV
+										modifier = opinion_unhappy
+										months = 1200
+									}
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							NOT = {	has_character_flag = is_charlemagne }
+							has_character_flag = charlemagne_coronation
+						}
+					}
+					add_artifact = crown_hre
+					hidden_tooltip = { narrative_event = { id = CM.510 } }        # Spread the news
+				}
+				if = {
+					limit = {
+						has_character_flag = is_charlemagne
+						NOT = { has_character_flag = charlemagne_coronation }
+					}
+					hidden_tooltip = { narrative_event = { id = CM.1500 } }        # Charlemagne coronation
+				}
+				if = {
+					limit = { ai = no }
+					set_character_flag = achievement_holy_and_roman
+				}
+				chronicle = {
+					entry = CHRONICLE_FOUNDED_HRE
+					picture = GFX_evt_coronation
+				}
+			}
+		}
+		ai_will_do = { factor = 1000 }
+	}
+	
+	
+	restore_roman_empire_with_ipc = {
+		only_playable = yes
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				has_dlc = "Legacy of Rome"
+				primary_title = {
+					OR = {
+						title = e_byzantium
+						title = e_latin_empire
+					}
+					has_title_flag = imperial_court_active
+				}
+				OR = {
+					religion_group = christian
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+				}
+				NOT = { has_global_flag = rome_restored }
+				has_random_religion_names = no
+				emf_hiprio_decision_basic_potential = yes
+			}
+			trigger_else = {
+				e_byzantium = { has_title_flag = imperial_court_active }
+				has_dlc = "Legacy of Rome"
+				has_landed_title = e_byzantium
+				OR = { 
+					religion_group = christian 
+					religion = hellenic_pagan 
+					religion = hellenic_pagan_reformed
+				}
+				is_adult = yes
+				prisoner = no
+				is_incapable = no
+				NOT = { has_global_flag = rome_restored }
+				NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+			}
+		}
+		allow = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = restore_roman_empire_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				is_adult = yes
+				prisoner = no
+				is_incapable = no
+				has_regent = no
+				NOT = { is_inaccessible_trigger = yes }
+				ruled_years = 5
+				prestige >= 3000
+				trigger_if = {
+					limit = { primary_title = { is_de_jure_title = no } }
+					primary_title = { is_de_jure_title = yes }
+				}
+				custom_tooltip = {
+					text = TT_IR_CONTROL_TIER_1
+					NOT = {
+						any_province = {
+							region = emf_region_ir_tier_1
+							owner_under_ROOT = no
+						}
+					}
+				}
+				custom_tooltip = {
+					text = TT_IR_CONTROL_TIER_2
+					NOT = {
+						any_province = {
+							region = emf_region_ir_tier_2
+							owner_under_ROOT = no
+						}
+					}
+				}
+				custom_tooltip = {
+					text = TT_IR_CONTROL_TIER_3
+					NOT = {
+						any_province = {
+							region = emf_region_ir_tier_3
+							owner_under_ROOT = no
+						}
+					}
+				}
+			}
+			trigger_else = {
+				society_member_of = imperial_court_byzantine
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = restore_roman_empire_with_ipc_allow
+					e_byzantium = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				primary_title = { title = e_byzantium }
+				prestige = 3000
+				completely_controls = d_latium
+				completely_controls = d_venice
+				completely_controls = d_ferrara
+				completely_controls = d_sicily
+				completely_controls = d_genoa
+				completely_controls = d_capua
+				completely_controls = d_apulia
+				completely_controls = d_thrace
+				completely_controls = d_antioch
+				completely_controls = d_jerusalem
+				completely_controls = d_alexandria
+				completely_controls = d_athens
+				completely_controls = d_tunis
+				completely_controls = d_croatia
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				set_global_flag = rome_restored #hip event sets this but it's delayed, this is needed to prevent further clicks
+				hidden_tooltip = { 
+					set_character_flag = ipc_forming_new_empire
+					character_event = { id = ipcf.010 }
+				}
+				narrative_event = { id = emf_empires.60 tooltip = EVTTOOLTIPLoR.20 days = 1 }
+			}
+			else = {
+				set_global_flag = rome_restored
+				hidden_tooltip = { 
+					set_character_flag = ipc_forming_new_empire
+					character_event = { id = ipcf.010 } 
+				}
+				narrative_event = { id = LoR.20 tooltip = EVTTOOLTIPLoR.20 days = 1 }
+			}
+		}
+		ai_check_interval = 12
+		ai_will_do = { factor = 1000 }
+	}
+	
+	
+	restore_byzantine_empire_with_ipc = {
+		is_high_prio = yes
+		only_playable = yes
+		
+
+		potential = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				
+				independent = yes
+				c_byzantion = { owner_under_ROOT = yes }
+				emf_formation_byz_restorer_potential = yes
+				emf_formation_byz_restoration_potential = yes
+				has_random_dejure_or_title_names = no
+				emf_hiprio_decision_basic_potential = yes
+			}
+			trigger_else = {
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				
+				culture_group = byzantine
+				OR = {
+					religion_group = christian
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+				}
+				NOT = { has_landed_title = e_hre }
+				NOT = { has_landed_title = e_latin_empire }
+				higher_tier_than = DUKE
+				e_byzantium = { has_holder = no }
+				e_roman_empire = { has_holder = no }
+				e_roman_empire = { is_titular = yes }
+				NOR = {
+					has_alternate_start_setting = {
+						setting = dejure
+						value = random
+					}
+					has_alternate_start_setting = {
+						setting = title_names
+						value = random
+					}
+					has_alternate_start_setting = {
+						setting = title_names
+						value = random_including_duchies
+					}
+				}
+			}
+		}
+
+		allow = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = restore_byzantine_empire_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				# Peace, adulthood, lack of regency or imprisonment, min. wealth/prestige, etc.
+				emf_dj_empire_creation_basic = yes
+				# For Byzantine Empire, require much smaller realm size (120-200 required to form other empires)
+				realm_size >= 50
+				# Must control 100% of the de jure counties of k_byzantium+k_thrace!
+				k_thrace = {
+					show_scope_change = no
+					custom_tooltip = {
+						text = emf_formation_tt_completely_controls_thrace_counties
+						hidden_tooltip = {
+							OR = {
+								AND = {
+									ROOT = { ai = yes }
+									d_thrace = { emf_ROOT_completely_controls_counties = yes }
+								}
+								AND = {
+									ROOT = { ai = no }
+									emf_ROOT_completely_controls_counties = yes
+								}
+							}
+						}
+					}
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = SWMH } }
+					k_byzantium = {
+						show_scope_change = no
+						custom_tooltip = {
+							text = emf_formation_tt_completely_controls_byzantium_counties
+							hidden_tooltip = {
+								OR = {
+									AND = {
+										ROOT = { ai = yes }
+										d_thrace = {
+											emf_ROOT_completely_controls_counties = yes
+										}
+									}
+									AND = {
+										ROOT = { ai = no }
+										emf_ROOT_completely_controls_counties = yes
+									}
+								}
+							}
+						}
+					}
+				}
+				# For Constantinople itself, we require complete holding control, with an exception for Hagia Sophia
+				custom_tooltip = {
+					text = emf_formation_tt_completely_controls_constantinople_besides_hagiasophia
+					hidden_tooltip = {
+						c_byzantion = {
+							NOT = {
+								any_direct_de_jure_vassal_title = {
+									has_holder = yes
+									owner_under_ROOT = no
+									NOT = { title = b_hagiasophia }
+								}
+							}
+						}
+					}
+				}
+				# For Hagia Sophia, we also require control UNLESS the restorer is Orthodox and Hagia Sophia is
+				# controlled by the Ecumenical Patriarchate, whom we'll auto-vassalize upon restoration of the ERE
+				# anyway.
+				custom_tooltip = {
+					text = emf_formation_tt_hagiasophia_under_ROOT_or_held_by_patriarch_if_orthodox
+					hidden_tooltip = {
+						b_hagiasophia = {
+							OR = {
+								owner_under_ROOT = yes
+								AND = {
+									ROOT = { religion = orthodox }
+									owner = { has_landed_title = k_orthodox }
+								}
+							}
+						}
+					}
+				}
+				# Valid culture_group & religion (possibilities for which are expanded if the restorer is a player)
+				emf_formation_byz_restorer_culrel_allow = yes
+			}
+			
+			trigger_else = {
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = restore_byzantine_empire_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				war = no
+				prestige = 4000 
+				has_landed_title = c_byzantion
+				OR = {
+					has_landed_title = c_thrake
+					any_vassal = { has_landed_title = c_thrake }
+				}
+				OR = {
+					has_landed_title = c_kaliopolis
+					any_vassal = { has_landed_title = c_kaliopolis }
+				}
+				completely_controls = d_nikaea
+				completely_controls = d_abydos
+				completely_controls = d_adrianopolis
+			}
+			
+		}
+
+		effect = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				set_character_flag = ipc_forming_new_empire
+				
+				hidden_effect = { log = "INFO: emf_restore_byzantium: [Root.GetTitledName] ([Root.GetID]/[Root.PrimaryTitle.GetID]) restoring the ERE..." }
+				clr_global_flag = emf_byz_restored
+				set_global_flag = emf_byz_restored
+				set_character_flag = emf_context_restored_byzantium
+				emf_create_dj_empire_basic = yes
+				if = {
+					limit = {
+						OR = {
+							religion = orthodox
+							religion = iconoclast
+							religion = bogomilist
+							religion = monothelite
+						}
+						emf_is_crowned = yes
+						NOT = { trait = strong_basileus }
+					}
+					add_trait = strong_basileus
+				}
+				random_list = {
+					40 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_nickname = nick_the_restorer
+								has_nickname = nick_the_lawgiver
+								has_nickname = nick_the_saint
+								has_nickname = nick_the_apostle
+								has_nickname = nick_the_magnanimous
+							}
+						}
+						give_nickname = nick_the_great
+					}
+					50 = { give_nickname = nick_the_restorer }
+					10 = { give_nickname = nick_the_lawgiver }
+				}
+				set_flag = emf_no_law_penalties
+				primary_title = {
+					show_scope_change = no
+					e_byzantium = {
+						show_scope_change = no
+						hidden_effect = {
+							if = {
+								limit = { NOT = { is_title_active = THIS } }
+								activate_title = { title = THIS status = yes }
+							}
+						}
+						grant_title = { target = ROOT type = created }
+						copy_title_laws = PREV
+						if = {
+							limit = { PREV = { NOT = { has_law = administration_2 } } }
+							add_law = administration_2
+						}
+						if = {
+							limit = { PREV = { emf_laws_has_medium_ca_plus = no } }
+							add_law = crown_authority_2
+						}
+						if = {
+							limit = {
+								is_law_potential = ze_revokation_2
+								NOT = { has_law = ze_revokation_2 }
+							}
+							add_law = ze_revokation_2
+						}
+						else_if = {
+							limit = {
+								is_law_potential = revokation_2
+								NOT = { has_law = revokation_2 }
+							}
+							add_law = revokation_2
+						}
+						if = {
+							limit = { PREV = { NOT = { has_law = succ_byzantine_elective } } }
+							add_law = { law = succ_byzantine_elective cooldown = no opinion_effect = no }
+						}
+					}
+				}
+				clr_flag = emf_no_law_penalties
+				
+				#set up byzantine court
+				character_event = { id = ipcf.033 }
+				
+				e_byzantium = { save_event_target_as = emf_new_claim_title }
+				# Destroy any other empires held (only titular are allowed by this decision's `potential`)
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+						NOT = { title = e_byzantium }
+					}
+					any_claimant = {
+						show_scope_change = no
+						limit = { has_strong_pressed_claim = PREV }
+						event_target:emf_new_claim_title = { show_scope_change = no add_claim = PREV }
+					}
+					any_claimant = {
+						show_scope_change = no
+						limit = {
+							has_strong_claim = PREV
+							NOT = { has_strong_pressed_claim = PREV }
+						}
+						event_target:emf_new_claim_title = { show_scope_change = no add_weak_pressed_claim = PREV }
+					}
+					any_claimant = {
+						show_scope_change = no
+						limit = {
+							has_weak_pressed_claim = PREV
+						}
+						event_target:emf_new_claim_title = { show_scope_change = no add_weak_claim = PREV }
+					}
+					emf_destroy_title = yes
+				}
+				# Destroy any imperial kingdoms which may have formed (or started with, in the case of the "Empires"
+				# of Trebizond and Nikaea) in the interim.
+				any_demesne_title = {
+					limit = {
+						tier = KING
+						de_jure_liege = e_byzantium
+						is_landless_type_title = no
+						is_primary_type_title = no
+					}
+					any_claimant = {
+						show_scope_change = no
+						limit = {
+							has_strong_pressed_claim = PREV
+						}
+						event_target:emf_new_claim_title = { show_scope_change = no add_claim = PREV }
+					}
+					any_claimant = {
+						show_scope_change = no
+						limit = {
+							has_strong_claim = PREV
+							NOT = { has_strong_pressed_claim = PREV }
+						}
+						event_target:emf_new_claim_title = { show_scope_change = no add_weak_pressed_claim = PREV }
+					}
+					any_claimant = {
+						show_scope_change = no
+						limit = {
+							has_weak_pressed_claim = PREV
+						}
+						event_target:emf_new_claim_title = { show_scope_change = no add_weak_claim = PREV }
+					}
+					emf_destroy_title = yes
+				}
+				# Set AI capital to Constantinople if not already
+				if = {
+					limit = { ai = yes }
+					c_byzantion = {
+						if = {
+							limit = { NOT = { holder = ROOT } }
+							usurp_title_plus_barony_if_unlanded_and_vassals = ROOT
+						}
+						emf_make_location_ROOT_capital = yes
+					}
+				}
+				hidden_effect = { recalc_succession = yes }
+				# Should the empire disintegrate again, we want the timer to start over for how long the
+				# emf_reclaim_byz_capital CB can be used before expiring.
+				clr_global_flag = emf_reclaim_byz_capital_success
+				# Potentially give Hagia Sophia to our religious head if appropriate and if it's not theirs already,
+				# and vassalize the religious head title (if any)
+				trigger_switch = {
+					on_trigger = religion
+					orthodox =    { k_orthodox =    { owner = { save_event_target_as = emf_relhead } } }
+					paulician =   { d_paulician =   { owner = { save_event_target_as = emf_relhead } } }
+					monothelite = { d_monothelite = { owner = { save_event_target_as = emf_relhead } } }
+					iconoclast =  { d_iconoclast =  { owner = { save_event_target_as = emf_relhead } } }
+					miaphysite =  { d_miaphysite =  { owner = { save_event_target_as = emf_relhead } } }
+					monophysite = { d_monophysite = { owner = { save_event_target_as = emf_relhead } } }
+					nestorian =   { d_nestorian =   { owner = { save_event_target_as = emf_relhead } } }
+				}
+				b_hagiasophia = { owner = { save_event_target_as = emf_temple_owner } }
+				if = {
+					limit = {
+						# The religious head is indeed valid, and no player is liege to them
+						event_target:emf_relhead = {
+							NOT = { any_liege = { ai = no } }
+						}
+					}
+					if = {
+						limit = {
+							event_target:emf_temple_owner = {
+								OR = {
+									under_ROOT = yes
+									ai = yes
+								}
+								NOT = { character = event_target:emf_relhead }
+							}
+						}
+						b_hagiasophia = {
+							grant_title_no_opinion = event_target:emf_relhead
+							hidden_effect = { remove_claim = event_target:emf_temple_owner }
+						}
+					}
+					event_target:emf_relhead = {
+						set_defacto_liege = ROOT
+						emf_liege_change = yes
+					}
+				}
+				# Varangian Guard vassalization, if they have indeed been formed
+				d_varangian_guard = {
+					if = {
+						limit = {
+							is_title_active = THIS
+							has_holder = yes
+						}
+						owner = {
+							set_defacto_liege = ROOT
+							emf_liege_change = yes
+						}
+					}
+					else_if = { # Resurrect the Varangians (otherwise, found them in the first place the normal way)
+						limit = { has_global_flag = varangian_guard_founded }
+						hidden_effect = {
+							ROOT = {
+								if = {
+									limit = { any_playable_ruler = { religion = norse_pagan_reformed } }
+									norse_pagan_reformed = { save_event_target_as = emf_varangian_religion }
+								}
+								else = {
+									orthodox = { save_event_target_as = emf_varangian_religion }
+								}
+								if = {
+									limit = {
+										should_evolve_cultures_trigger = yes
+										has_global_flag = norse_culture_flipping
+										NOT = {
+											any_independent_ruler = { # A culturally unified empire shouldn't shatter norse
+												culture = norse
+												OR = {
+													tier = EMPEROR
+													num_of_king_titles = 2
+												}
+											}
+										}
+										NOT = {
+											any_independent_ruler = {
+												religion = event_target:emf_varangian_religion
+												religion_head = { culture = norse }
+											}
+										}
+									}
+									random_list = {
+										25 = { swedish   = { save_event_target_as = emf_varangian_culture } }
+										25 = { norwegian = { save_event_target_as = emf_varangian_culture } }
+										25 = { danish    = { save_event_target_as = emf_varangian_culture } }
+										25 = { gothic    = { save_event_target_as = emf_varangian_culture } }
+									}
+								}
+								else = {
+									norse = { save_event_target_as = emf_varangian_culture }
+								}
+								d_varangian_guard = {
+									religion = event_target:emf_varangian_religion
+									culture = event_target:emf_varangian_culture
+								}
+								if = {
+									limit = {
+										event_target:emf_varangian_religion = { has_religion_feature = religion_matriarchal }
+									}
+									create_character = {
+										random_traits = yes
+										religion = event_target:emf_varangian_religion
+										culture = event_target:emf_varangian_culture
+										dynasty = actually_culture
+										female = yes
+										age = 28
+										attributes = { martial = 7 }
+									}
+								}
+								else_if = {
+									limit = {
+										OR = {
+											gender_equality_trigger = yes
+											event_target:emf_varangian_religion = { has_religion_feature = religion_equal }
+											event_target:emf_varangian_religion = { has_religion_feature = religion_feature_bon }
+										}
+									}
+									create_character = {
+										random_traits = yes
+										religion = event_target:emf_varangian_religion
+										culture = event_target:emf_varangian_culture
+										dynasty = actually_culture
+										female = 50
+										age = 28
+										attributes = { martial = 7 }
+									}
+								}
+								else = {
+									create_character = {
+										random_traits = yes
+										religion = event_target:emf_varangian_religion
+										culture = event_target:emf_varangian_culture
+										dynasty = actually_culture
+										female = no
+										age = 28
+										attributes = { martial = 7 }
+									}
+								}
+								new_character = {
+									random_list = {
+										60 = { }
+										40 = { change_martial = 1 }
+										20 = { change_martial = 2 }
+										10 = { change_martial = 3 }
+									}
+									remove_trait = weak
+									remove_trait = slow
+									remove_trait = imbecile
+									remove_trait = dull
+									emf_remove_lifestyle_traits = yes
+									random_list = {
+										50 = { }
+										12 = { add_trait = duelist }
+										12 = { add_trait = hunter }
+										12 = { add_trait = strategist }
+										8  = { add_trait = robust }
+										3  = { add_trait = tall }
+										3  = { add_trait = imposing }
+										2  = {
+											add_trait = tall
+											add_trait = imposing
+										}
+									}
+									random = {
+										chance = 1
+										modifier = {
+											factor = 0
+											NOT = { has_dlc = "Reapers" }
+										}
+										add_trait = one_eyed
+									}
+									if = {
+										limit = { is_female = yes }
+										add_trait = shieldmaiden
+									}
+									clear_education_trait = yes
+									random_list = {
+										10 = { add_trait = misguided_warrior }
+										20 = { add_trait = tough_soldier }
+										30 = { add_trait = skilled_tactician }
+										40 = { add_trait = brilliant_strategist }
+									}
+									if = {
+										limit = {
+											trait = brilliant_strategist
+											leader_traits < 1
+										}
+										random_list = {
+											10 = { add_trait = inspiring_leader }
+											10 = { add_trait = siege_leader }
+											10 = { add_trait = organizer }
+											10 = { add_trait = cavalry_leader }
+											10 = { add_trait = heavy_infantry_leader }
+										}
+									}
+									random = { chance = 50 add_trait = brave }
+									health = 1.5
+									random_list = {
+										10 = { add_age = 1 }
+										10 = { add_age = 2 }
+										20 = { add_age = 3 }
+										40 = { add_age = 4 }
+										20 = { add_age = 5 }
+										10 = { add_age = 6 }
+										10 = { add_age = 7 }
+									}
+									add_trait = varangian
+									emf_new_character_noble = yes
+									set_character_flag = is_chosen_varangian_leader
+									d_varangian_guard = {
+										activate_title = { title = THIS status = yes }
+										grant_title = PREV
+									}
+									emf_create_courtiers = yes
+									set_defacto_liege = ROOT
+								}
+							}
+						}
+					}
+				}
+				# TODO: Do similar to the de jure kingdom claim as below with temporarily free access to
+				# king-tier emf_subjugation.
+				hidden_effect = { # TODO: Custom tooltip.
+					if = {
+						limit = { ai = no }
+						add_character_modifier = {
+							name = emf_cb_mod_dejure_kingdom_claim
+							duration = 5475
+						}
+					}
+					if = {
+						limit = { ai = yes }
+						add_character_modifier = {
+							name = emf_cb_mod_dejure_kingdom_claim
+							duration = 10950
+							inherit = yes
+						}
+					}
+				}
+				# Notify world and give byzantines a chance to swear fealty to the restored empire
+				hidden_effect = {
+					ROOT = { narrative_event = { id = HFP.40024 } }
+					any_playable_ruler = {
+						limit = {
+							OR = {
+								independent = yes
+								ai = no
+							}
+							is_within_diplo_range = ROOT
+						}
+						narrative_event = { id = HFP.40024 }
+					}
+				}
+				
+			}
+			else = {
+				set_character_flag = ipc_forming_new_empire
+				
+				custom_tooltip = {
+					text = restore_byzantine_empire_TT
+
+					primary_title = { save_event_target_as = current_primary_title }
+
+					e_byzantium = {
+						copy_title_laws = event_target:current_primary_title
+						add_law = succ_byzantine_elective
+					}
+
+					grant_title = e_byzantium
+
+					c_byzantion = { location = { ROOT = { capital = PREV } } }
+
+					#set up byzantine court
+					character_event = { id = ipcf.033 }
+
+					k_thrace = { de_jure_liege = e_byzantium }
+					
+					#greeks rejoin empire event
+					ROOT = { narrative_event = { id = HFP.40024 } }
+					any_playable_ruler = {
+						limit = {
+							OR = {
+								independent = yes
+								ai = no
+							}
+							is_within_diplo_range = ROOT
+						}
+						narrative_event = { id = HFP.40024 }
+					}
+
+					if = {
+						limit = { religion = orthodox }
+						k_orthodox = {
+							owner = { grant_title_no_opinion = b_hagiasophia }
+							set_defacto_liege = e_byzantium
+						}
+					}
+				}
+			}
+		}
+		ai_check_interval = 12
+		ai_will_do = { factor = 1000 }
+	}
+	
+	
+	####Non-Unique Courts special decisions####
+	
+	adopt_chinese_imperialism_with_ipc = {
+		only_playable = yes
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+			
+			OR = {
+				culture_group = chinese_group
+				culture = khitan
+				culture = tangut
+				culture = jurchen
+			}
+			is_nomadic = no
+			is_feudal = yes
+			NOT = { government = chinese_imperial_government }
+			has_dlc = "Jade Dragon"
+			holy_order = no
+			OR = {
+				ai = no
+				AND = {
+					trait = proud
+					prestige = 40000
+				}
+				AND = {
+					trait = ambitious
+					prestige = 40000
+				}
+				prestige = 120000
+			}
+		}
+		allow = {
+			is_imperial_court_member_trigger = yes
+			is_society_grandmaster = yes
+			custom_tooltip = {
+				text = adopt_chinese_imperialism_with_ipc_allow
+				primary_title = {
+					NOR = {
+						has_title_flag = has_imperial_regent
+						has_title_flag = has_imperial_seneschal
+						has_title_flag = has_imperial_marshal
+						has_title_flag = has_imperial_lawkeeper
+						has_title_flag = has_imperial_spymaster
+					}
+				}
+			}
+			
+			independent = yes
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			is_tributary = no
+			tier = EMPEROR
+			realm_size = 200
+			conditional_tooltip = {
+				trigger = { religion = taoist }
+				prestige = 8000
+				wealth = 500
+			}
+			conditional_tooltip = {
+				trigger = { NOT = { religion = taoist } }
+				prestige = 16000
+				wealth = 1000
+			}
+			offmap_china = {
+				show_scope_change = no
+				offmap_ruler = { NOT = { dynasty = ROOT } }
+			}
+		}
+		effect = {
+			set_character_flag = ipc_forming_new_empire
+			
+			if = {
+			    limit = { religion = taoist }
+			    wealth = -500
+			}
+			else = { wealth = -1000 }
+			
+			#just gives a bloodline
+			if = {
+				limit = {
+					has_dlc = "Holy Fury"
+					NOT = { any_owned_bloodline = { has_bloodline_flag = created_bloodline } }
+				}
+				narrative_event = { id = HF.24240 tooltip = tooltip_evt_hf_24240 }
+			}
+			
+			custom_tooltip = {
+				text = adopt_chinese_imperialism_tt
+				hidden_effect = {
+					create_title = {
+						tier = EMPEROR
+						landless = no
+						temporary = no
+						custom_created = yes
+						culture = ROOT
+						holder = ROOT
+						base_title = THIS
+						short_name = yes
+						copy_title_laws = yes
+					}
+					new_title = {
+						set_title_flag = uses_temple_names_by_script #Titles with this flag give their heirs a temple name via on_death event
+						set_title_flag = pretender_chinese_empire #Blocks all grace interactions
+						adjective = e_china_west_governor_adj #Use WP adj as it is "Chinese" but also gives the right one in different languages
+						random_list = { #Random Empire name that China doesn't have
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = tang_china } } }
+								set_name = "Tang Empire"
+								set_title_flag = china_name_Tang
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_tang
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = jin_china } } }
+								set_name = "Jin Empire"
+								set_title_flag = china_name_Jin
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_jin
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = wei_china } } }
+								set_name = "Wei Empire"
+								set_title_flag = china_name_Wei
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_wei
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = qi_china } } }
+								set_name = "Qi Empire"
+								set_title_flag = china_name_Qi
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_qi
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = zhou_china } } }
+								set_name = "Zhou Empire"
+								set_title_flag = china_name_Zhou
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_zhou
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = han_china } } }
+								set_name = "Han Empire"
+								set_title_flag = china_name_Han
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_han
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = qin_china } } }
+								set_name = "Qin Empire"
+								set_title_flag = china_name_Qin
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_qin
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = yan_china } } }
+								set_name = "Yan Empire"
+								set_title_flag = china_name_Yan
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_yan
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = zhao_china } } }
+								set_name = "Zhao Empire"
+								set_title_flag = china_name_Zhao
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_zhao
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = liao_china } } }
+								set_name = "Liao Empire"
+								set_title_flag = china_name_Liao
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_liao
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = yuan_china } } }
+								set_name = "Yuan Empire"
+								set_title_flag = china_name_Yuan
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_yuan
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = xia_china } } }
+								set_name = "Xia Empire"
+								set_title_flag = china_name_Xia
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_xia
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = qing_china } } }
+								set_name = "Qing Empire"
+								set_title_flag = china_name_Qing
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_qing
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = dai_china } } }
+								set_name = "Dai Empire"
+								set_title_flag = china_name_Dai
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_dai
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = cheng_china } } }
+								set_name = "Cheng Empire"
+								set_title_flag = china_name_Cheng
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_cheng
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = liang_china } } }
+								set_name = "Liang Empire"
+								set_title_flag = china_name_Liang
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_liang
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = song_china } } }
+								set_name = "Song Empire"
+								set_title_flag = china_name_Song
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_song
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = ming_china } } }
+								set_name = "Ming Empire"
+								set_title_flag = china_name_Ming
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_ming
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = shu_china } } }
+								set_name = "Shu Empire"
+								set_title_flag = china_name_Shu
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_shu
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = wu_china } } }
+								set_name = "Wu Empire"
+								set_title_flag = china_name_Wu
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_wu
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = chu_china } } }
+								set_name = "Chu Empire"
+								set_title_flag = china_name_Chu
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_chu
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = yue_china } } }
+								set_name = "Yue Empire"
+								set_title_flag = china_name_Yue
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_yue
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = yin_china } } }
+								set_name = "Yin Empire"
+								set_title_flag = china_name_Yin
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_yin
+								}
+							}
+							1 = { 
+								trigger = { NOT = { offmap_china = { has_offmap_name = shun_china } } }
+								set_name = "Shun Empire"
+								set_title_flag = china_name_Shun
+								if = {
+									limit = { has_global_flag = ipc_hip_detected }
+									set_coa = e_china_shun
+								}
+							}
+						}
+						add_law = {
+							law = succ_primogeniture
+							cooldown = no
+							opinion_effect = no
+						}
+					}
+				}
+			}
+			
+			#move court
+			hidden_tooltip = { character_event = { id = ipcf.032 } }
+			
+			set_government_type = chinese_imperial_government
+			custom_tooltip = { text = adopt_chinese_imperialism_gov_tt }
+			custom_tooltip = {
+				text = adopt_chinese_imperialism_temple_name_tt
+				hidden_effect = {
+					random_list = { #Give a temple name
+						1 = { set_name = Gaozu }
+						1 = { set_name = Taizu }
+						1 = { set_name = Shizu }
+						1 = { set_name = Zhaozu }
+						1 = { set_name = Jingzu }
+						1 = { set_name = Xianzu }
+						1 = { set_name = Liezu }
+						1 = { set_name = Chengzu }
+					}
+					set_character_flag = given_temple_name_by_script
+				}
+			}
+		}
+		
+		ai_will_do = { factor = 1000 }
+		ai_check_interval = 12
+	}
+	
+	
+	
+	form_lcr_with_ipc = {
+		is_high_prio = yes
+		only_playable = yes
+		
+
+		potential = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				
+				higher_tier_than = DUKE
+				primary_title = { is_primary_type_title = no }
+				emf_has_culture_to_create_lechczechrus = yes
+				any_realm_province = {
+					count = 10
+					region = emf_region_lechczechrus
+				}
+				e_lechczechrus = {
+					has_holder = no
+					is_de_jure_title = no
+				}
+				has_random_dejure_or_title_names = no
+				has_random_culture_names = no
+				emf_hiprio_decision_basic_potential = yes
+			}
+			
+			trigger_else = {
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				
+				OR = {		###Must be Slavic of Lech, Czech or Rus lineage
+					culture = russian
+					culture = polish
+					culture = bohemian
+					culture = volhynian
+					culture = ilmenian
+					culture = severian
+					culture = pommeranian
+				}
+				e_lechczechrus = { 
+					is_titular = yes
+					has_holder = no
+				}
+				is_alternate_start = no
+			}
+		}
+
+		allow = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = form_lcr_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				is_adult = yes
+				independent = yes
+				war = no
+				prisoner = no
+				has_regent = no
+				is_incapable = no
+				prestige >= 5000
+				custom_tooltip = {
+					text = NEEDS_2000_GOLD_COST
+					wealth >= 2000
+				}
+				custom_tooltip = {
+					text = CONTROLS_ALL_PROVINCES_IN_LCR_REGION
+					NOT = {
+						any_landed_title = {
+							tier = COUNT
+							region = emf_region_lechczechrus
+							owner_under_ROOT = no
+						}
+					}
+				}
+			}
+			
+			trigger_else = {
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = form_lcr_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				is_adult = yes
+				prestige = 5000
+				war = no
+				NOT = { trait = incapable }
+				#Control Czech, Poland & Rus
+				completely_controls = k_bohemia
+				completely_controls = k_poland
+				completely_controls = k_galicia-volhynia
+				completely_controls = k_ruthenia
+				completely_controls = k_chernigov
+				completely_controls = k_vladimir
+				completely_controls = k_rus
+				is_vice_royalty = no
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				set_character_flag = ipc_forming_new_empire
+				
+				e_lechczechrus = { save_event_target_as = emf_new_title }
+				any_landed_title = {
+					show_scope_change = no
+					limit = {
+						tier = KING
+						emf_is_lechczechrus_kingdom = yes
+						any_direct_de_jure_vassal_title = {
+							any_direct_de_jure_vassal_title = {
+								region = emf_region_lechczechrus
+							}
+						}
+					}
+					de_jure_liege = event_target:emf_new_title
+				}
+				k_pomerania = {
+					show_scope_change = no
+					if = {
+						limit = {
+							is_de_jure_title = yes
+							emf_ROOT_completely_controls_counties = yes
+						}
+						de_jure_liege = event_target:emf_new_title
+					}
+					else = {
+						custom_tooltip = { text = THIS_WOULD_BECOME_PART_OF_NEW_TITLE_IF_YOU_CONTROLLED_IT }
+					}
+				}
+				custom_tooltip = {
+					text = form_lcr_tt
+					primary_title = {
+						e_lechczechrus = {
+							emf_copy_title_state_from_PREV = yes
+							copy_title_laws = PREV
+							copy_title_history = PREV
+							grant_title = ROOT
+						}
+					}
+				}
+				
+				#move the court
+				hidden_tooltip = { character_event = { id = ipcf.030 } }
+				
+				any_demesne_title = {
+					show_scope_change = no
+					limit = {
+						tier = EMPEROR
+						NOT = { title = event_target:emf_new_title }
+					}
+					event_target:emf_new_title = { emf_transfer_claims_from_PREV = yes }
+					emf_destroy_title = yes
+				}
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = { de_jure_liege_or_above = event_target:emf_new_title }
+							event_target:emf_new_title = { set_preferred_capital = PREV }
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_female = yes
+						has_dlc = "Holy Fury"
+					}
+					create_bloodline = { type = lcr_female }
+					new_bloodline = { set_description = "lcr_female_desc" }
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						has_dlc = "Holy Fury"
+					}
+					create_bloodline = { type = lcr_male }
+					new_bloodline = { set_description = "lcr_male_desc" }
+				}
+				set_flag = achievement_lcr
+				hidden_effect = {
+					ROOT = { narrative_event = { id = HFP.99999 } }
+					any_playable_ruler = { narrative_event = { id = HFP.99999 } }
+				}
+			}
+			
+			
+			else = {
+				set_character_flag = ipc_forming_new_empire
+				custom_tooltip = {
+					text = form_lcr_tt
+					grant_title_no_opinion = e_lechczechrus 
+				}
+				
+				if = {
+					limit = {
+						is_female = yes
+						has_dlc = "Holy Fury"
+					}
+					create_bloodline = { type = lcr_female }
+					new_bloodline = { set_description = "lcr_female_desc" }
+				}
+				if = {
+					limit = {
+						is_female = no
+						has_dlc = "Holy Fury"
+					}
+					create_bloodline = { type = lcr_male }
+					new_bloodline = { set_description = "lcr_male_desc" }
+				}
+
+				hidden_tooltip = {
+					if = {
+						limit = { ai = no }
+						set_character_flag = achievement_lcr
+					}
+
+					primary_title = {
+						e_lechczechrus = {
+							copy_title_laws = PREV
+							copy_title_history = PREV
+						}
+					}
+					
+					#move the court
+					hidden_tooltip = { character_event = { id = ipcf.030 } }
+
+					###Slavic kingdoms go to LCR
+					k_bohemia = { de_jure_liege = e_lechczechrus }
+					k_poland = { de_jure_liege = e_lechczechrus }
+					k_galicia-volhynia = { de_jure_liege = e_lechczechrus }
+					k_ruthenia = { de_jure_liege = e_lechczechrus }
+					k_chernigov = { de_jure_liege = e_lechczechrus }
+					k_vladimir = { de_jure_liege = e_lechczechrus }
+					k_rus = { de_jure_liege = e_lechczechrus }
+					
+					###If you also completely control Pomerania, it's added to LCR as well
+					if = {
+						limit = { completely_controls = k_pomerania }
+						k_pomerania = { de_jure_liege = e_lechczechrus }
+					}
+
+					ROOT = { narrative_event = { id = HFP.99999 } }
+					any_playable_ruler = { narrative_event = { id = HFP.99999 } }
+				}
+			}
+		}
+		
+		ai_check_interval = 12
+		ai_will_do = { factor = 10000 }
+	
+	}
+	
+	
+	
+	form_the_outremer_with_ipc = {
+		is_high_prio = yes
+		only_playable = yes
+		ai = no
+		
+		potential = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				
+				emf_western_christian_religion = yes
+				is_heretic = no
+				is_nomadic = no
+				primary_title = {
+					emf_is_roman_empire = no
+					emf_is_hre = no
+					is_primary_type_title = no
+				}
+				e_outremer = {
+					has_holder = no
+					is_de_jure_title = no
+				}
+				any_demesne_title = {
+					higher_tier_than = DUKE
+					any_de_jure_vassal_title = {
+						tier = COUNT
+						region = world_middle_east
+					}
+				}
+				has_random_dejure_or_title_names = no
+				has_random_religion_or_culture_names = no
+				has_random_religion_features = no
+				emf_hiprio_decision_basic_potential = yes
+			}
+			trigger_else = {
+				tier = emperor
+				primary_title = { has_title_flag = imperial_court_active }
+				
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+				any_demesne_title = {
+					OR = {
+						tier = KING
+						tier = EMPEROR
+					}
+					region = world_middle_east
+				}
+				NOR = {
+					has_landed_title = e_byzantium
+					has_landed_title = e_roman_empire
+					has_landed_title = e_hre
+				}
+				e_outremer = { is_titular = yes }
+				e_outremer = { has_holder = no }
+				is_alternate_start = no
+			}
+		}
+
+		allow = {
+			trigger_if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = form_the_outremer_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				is_adult = yes
+				independent = yes
+				war = no
+				prisoner = no
+				has_regent = no
+				is_incapable = no
+				prestige >= 5000
+				piety >= 2000
+				custom_tooltip = {
+					text = NEEDS_2000_GOLD_COST
+					wealth >= 2000
+				}
+				has_landed_title = c_jerusalem
+				custom_tooltip = {
+					text = CONTROLS_ALL_PROVINCES_IN_MIDDLE_EAST_REGION
+					NOT = {
+						any_landed_title = {
+							tier = COUNT
+							region = world_middle_east
+							owner_under_ROOT = no
+						}
+					}
+				}
+			}
+		
+			trigger_else = {
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				custom_tooltip = {
+					text = form_the_outremer_with_ipc_allow
+					primary_title = {
+						NOR = {
+							has_title_flag = has_imperial_regent
+							has_title_flag = has_imperial_seneschal
+							has_title_flag = has_imperial_marshal
+							has_title_flag = has_imperial_lawkeeper
+							has_title_flag = has_imperial_spymaster
+						}
+					}
+				}
+				
+				is_adult = yes
+				independent = yes
+				war = no
+				prestige = 5000
+				custom_tooltip = {
+					text = owns_jerusalem_tt
+					has_landed_title = c_jerusalem
+				}
+				custom_tooltip = {
+					text = completely_control_near_east_TT
+
+					completely_controls_region = world_middle_east
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { has_global_flag = ipc_hip_detected }
+				set_character_flag = ipc_forming_new_empire
+				e_outremer = { save_event_target_as = emf_new_title }
+				wealth = -2000
+				custom_tooltip = {
+					text = create_outremer_tt
+					primary_title = {
+						event_target:emf_new_title = {
+							hidden_effect = {
+								if = {
+									limit = { NOT = { is_title_active = THIS } }
+									activate_title = { title = THIS status = yes }
+								}
+							}
+							copy_title_history = PREV
+							copy_title_laws = PREV
+							grant_title = PREV
+						}
+					}
+				}
+				
+				#move the court
+				hidden_tooltip = { character_event = { id = ipcf.031 } }
+				
+				if = {
+					limit = { capital_scope = { county = { NOT = { title = c_jerusalem } } } }
+					capital = c_jerusalem
+				}
+				any_landed_title = {
+					show_scope_change = no
+					limit = {
+						tier = KING
+						is_de_jure_title = yes
+						NOT = {
+							any_de_jure_vassal_title = {
+								tier = COUNT
+								NOT = { region = world_middle_east }
+							}
+						}
+					}
+					de_jure_liege = event_target:emf_new_title
+				}
+				k_egypt = {
+					show_scope_change = no
+					if = {
+						limit = {
+							is_de_jure_title = yes
+							emf_ROOT_completely_controls_counties = yes
+						}
+						de_jure_liege = event_target:emf_new_title
+					}
+					else = {
+						custom_tooltip = { text = THIS_WOULD_BECOME_PART_OF_NEW_TITLE_IF_YOU_CONTROLLED_IT }
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							d_shiite = { has_holder = yes }
+							d_sunni = { has_holder = yes }
+							d_ibadi = { has_holder = yes }
+							d_kharijite = { has_holder = yes }
+							d_yazidi = { has_holder = yes }
+							d_hurufi = { has_holder = yes }
+							# EMF-unique muslim religious head titles:
+							d_zaydi = { has_holder = yes }
+							d_nabawiyya = { has_holder = yes }
+							d_mahdiyya = { has_holder = yes }
+							d_ismaili = { has_holder = yes }
+							d_druze = { has_holder = yes }
+						}
+						NOR = {
+							d_shiite = { owner = { ai = no } }
+							d_sunni = { owner = { ai = no } }
+							d_ibadi = { owner = { ai = no } }
+							d_kharijite = { owner = { ai = no } }
+							d_yazidi = { owner = { ai = no } }
+							d_hurufi = { owner = { ai = no } }
+							# EMF-unique muslim religious head titles:
+							d_zaydi = { owner = { ai = no } }
+							d_nabawiyya = { owner = { ai = no } }
+							d_mahdiyya = { owner = { ai = no } }
+							d_ismaili = { owner = { ai = no } }
+							d_druze = { owner = { ai = no } }
+						}
+							
+					}
+					custom_tooltip = {
+						text = destroy_muslim_leadership
+						d_shiite = { emf_unsafe_destroy_title = yes }
+						d_sunni = { emf_unsafe_destroy_title = yes }
+						d_ibadi = { emf_unsafe_destroy_title = yes }
+						d_kharijite = { emf_unsafe_destroy_title = yes }
+						d_hurufi = { emf_unsafe_destroy_title = yes }
+						# EMF-unique muslim religious head titles:
+						d_zaydi = { emf_unsafe_destroy_title = yes }
+						d_nabawiyya = { emf_unsafe_destroy_title = yes }
+						d_mahdiyya = { emf_unsafe_destroy_title = yes }
+						d_ismaili = { emf_unsafe_destroy_title = yes }
+						d_druze = { emf_unsafe_destroy_title = yes }
+						set_global_flag = destroyed_caliphates
+					}
+				}
+				any_demesne_title = {
+					show_scope_change = no
+					limit = {
+						tier = EMPEROR
+						NOT = { title = event_target:emf_new_title }
+					}
+					event_target:emf_new_title = { emf_transfer_claims_from_PREV = yes }
+					emf_destroy_title = yes
+				}
+				hidden_effect = {
+					ROOT = { narrative_event = { id = HFP.40027 } }
+					any_playable_ruler = { narrative_event = { id = HFP.40027 } }
+					if = {
+						limit = { ai = no }
+						set_character_flag = achievement_deus_vult
+					}
+				}
+			}
+			
+			
+			
+			else = {
+				set_character_flag = ipc_forming_new_empire
+				hidden_tooltip = {
+					primary_title = {
+						e_outremer = {
+							copy_title_laws = PREV
+							copy_title_history = PREV
+						}
+					}
+				}
+
+				custom_tooltip = {
+					text = create_outremer_tt
+					grant_title_no_opinion = e_outremer 
+				}
+				
+				#move the court
+				hidden_tooltip = { character_event = { id = ipcf.031 } }
+				
+				if = {
+					limit = {
+						OR = {
+							d_shiite = { has_holder = yes }
+							d_sunni = { has_holder = yes }
+							d_ibadi = { has_holder = yes }
+							d_kharijite = { has_holder = yes }
+							d_yazidi = { has_holder = yes }
+							d_hurufi = { has_holder = yes }
+						}
+					}
+					custom_tooltip = {
+						text = destroy_muslim_leadership
+						destroy_landed_title = d_shiite
+						destroy_landed_title = d_sunni
+						destroy_landed_title = d_ibadi
+						destroy_landed_title = d_kharijite
+						destroy_landed_title = d_hurufi
+					}
+				}
+
+				hidden_tooltip = {
+					any_demesne_title = {
+						limit = {
+							tier = EMPEROR
+							NOT = { title = e_outremer }
+						}
+						destroy_landed_title = THIS
+					}
+
+					capital = c_jerusalem
+
+					any_landed_title = {
+						limit = {
+							tier = KING
+							region = world_middle_east
+						}
+						de_jure_liege = e_outremer
+					}
+					if = {
+						limit = {
+							completely_controls = k_egypt }
+						k_egypt = { de_jure_liege = e_outremer }
+					}
+
+					ROOT = { narrative_event = { id = HFP.40027 } }
+					any_playable_ruler = { narrative_event = { id = HFP.40027 } }
+
+					set_global_flag = destroyed_caliphates
+					
+					if = {
+						limit = { ai = no }
+						set_character_flag = achievement_deus_vult
+					}
+				}
+			}
+		}
+	}
+	
+	
+	create_russian_empire_with_ipc = { ##no hip version as of furry3
+		is_high_prio = yes
+		only_playable = yes
+		
+		potential = {
+			NOT = { has_global_flag = ipc_hip_detected } #until hip adds disable to not break stuff
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+		
+			culture = russian
+			has_landed_title = e_russia
+			NOT = { has_landed_title = e_russian_empire }
+		}
+		
+		allow = {
+			is_imperial_court_member_trigger = yes
+			is_society_grandmaster = yes
+			custom_tooltip = {
+				text = create_russian_empire_with_ipc_allow
+				primary_title = {
+					NOR = {
+						has_title_flag = has_imperial_regent
+						has_title_flag = has_imperial_seneschal
+						has_title_flag = has_imperial_marshal
+						has_title_flag = has_imperial_lawkeeper
+						has_title_flag = has_imperial_spymaster
+					}
+				}
+			}
+		
+			completely_controls = k_galicia-volhynia
+			completely_controls = k_ruthenia
+			completely_controls = k_chernigov
+			completely_controls = k_rus
+			completely_controls = k_vladimir
+			completely_controls = k_nenets
+			completely_controls = k_perm
+			completely_controls = k_volga_bulgaria
+			completely_controls = k_khazaria
+			completely_controls = k_alania
+			completely_controls = k_crimea
+		}
+		
+		effect = {
+			activate_title = { title = e_russian_empire status = yes }
+			e_russia = {
+				show_scope_change = no
+				e_russian_empire = {
+					show_scope_change = no
+					grant_title = ROOT
+					hidden_tooltip = { make_primary_title = yes }
+					copy_title_laws = PREV
+				}
+				hidden_tooltip = { any_direct_de_jure_vassal_title = { de_jure_liege = e_russian_empire } }
+			}
+			
+			#move the court
+			hidden_tooltip = { character_event = { id = ipcf.034 } }
+	
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_great
+			}
+			activate_title = { title = e_russia status = no }
+			custom_tooltip = { text = russian_empire_cheaper_tribal_upgrades }
+			
+			k_galicia-volhynia = { de_jure_liege = e_russian_empire }
+			k_ruthenia = { de_jure_liege = e_russian_empire }
+			k_chernigov = { de_jure_liege = e_russian_empire }
+			k_rus = { de_jure_liege = e_russian_empire }
+			k_vladimir = { de_jure_liege = e_russian_empire }
+			k_nenets = { de_jure_liege = e_russian_empire }
+			k_perm = { de_jure_liege = e_russian_empire }
+			k_volga_bulgaria = { de_jure_liege = e_russian_empire }
+			k_khazaria = { de_jure_liege = e_russian_empire }
+			k_alania = { de_jure_liege = e_russian_empire }
+			k_crimea = { de_jure_liege = e_russian_empire }
+			hidden_tooltip = {
+				character_event = { id = HFP.16001 }
+				any_playable_ruler = {
+					limit = { ai = no }
+					character_event = { id = HFP.16002 }
+				}
+			}
+		}
+		ai_will_do = { factor = 100 }
+		ai_check_interval = 12
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	dismantle_imperial_court = {
+		only_playable = yes
+		only_independent = yes
+		
+		potential = {
+			tier = emperor
+			primary_title = { has_title_flag = imperial_court_active }
+		}
+		
+		allow = {
+			is_imperial_court_member_trigger = yes
+			is_society_grandmaster = yes
+			prestige = 2000
+			primary_title = { ruled_years = 5 }
+			custom_tooltip = {
+				text = dismantle_imperial_court_allow
+				primary_title = {
+					NOR = {
+						has_title_flag = has_imperial_regent
+						has_title_flag = has_imperial_seneschal
+						has_title_flag = has_imperial_marshal
+						has_title_flag = has_imperial_lawkeeper
+						has_title_flag = has_imperial_spymaster
+					}
+				}
+			}
+			society_influence < 30
+			hidden_tooltip = {
+				OR = {
+					ai = no
+					AND = {
+						ai = yes
+						is_inaccessible_or_incapable_trigger = no
+						any_vassal = {
+							count = 4
+							NOT = { opinion = { who = ROOT value = 0 } }
+						}
+						NOT = { trait = content }
+					}
+				}
+			}
+		}
+		
+		effect = { primary_title = { dismantle_imperial_court_effect = yes } }
+		
+		ai_check_interval = 24
+		ai_will_do = { factor = 0.01 }
+	}
+	
+}

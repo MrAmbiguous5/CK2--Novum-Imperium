@@ -1,0 +1,408 @@
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+ 
+ #<tag> = {
+ #	desc = description used in the tooltip of the building
+ #	trigger = used for tech requirement of the building, set to 0 if no requirement so it can be build automatically on new games
+ #	gold_cost = cost to build the building
+ #	build_time = time to build, in days
+ #	
+ #	ai_creation_factor = weight that the AI uses to determine what building to build
+ #	extra_tech_building_start = when starting a new game this building will be pre-built if the province has higher tech than the requirement + this + random 0-1
+ #}
+castle = {
+	
+	##for naming, make last rank of some stuff life "Great Library of Constantinople"
+	
+	#barracks, gives heavy inf, pikemen, and archers
+	ipc_imperial_barracks_1 = {
+		desc = ipc_imperial_barracks_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = { 
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		gold_cost = 1000
+		build_time = 182
+		
+		archers = 90
+		heavy_infantry = 60
+		pikemen = 30
+		garrison_size = 0.05
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_barracks_2 = {
+		desc = ipc_imperial_barracks_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_barracks_1
+		prerequisites = { ipc_imperial_barracks_1 }
+		gold_cost = 1000
+		build_time = 182
+		
+		archers = 30
+		heavy_infantry = 30
+		pikemen = 15
+		garrison_size = 0.05
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_barracks_3 = {
+		desc = ipc_imperial_barracks_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = {
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_barracks_2
+		prerequisites = { ipc_imperial_barracks_2 }
+		gold_cost = 1000
+		build_time = 182
+		
+		archers = 30
+		heavy_infantry = 30
+		pikemen = 15
+		garrison_size = 0.05
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	
+	#training grounds, gives levy replen and land_morale, retinuesize?
+	ipc_imperial_training_grounds_1 = {
+		desc = ipc_imperial_training_grounds_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = { 
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		gold_cost = 1000
+		build_time = 182
+		
+		land_morale = 0.15
+		heavy_infantry_offensive = 0.1
+		heavy_infantry_defensive = 0.1
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_training_grounds_2 = {
+		desc = ipc_imperial_training_grounds_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_training_grounds_1
+		prerequisites = { ipc_imperial_training_grounds_1 }
+		gold_cost = 1000
+		build_time = 182
+		
+		land_morale = 0.15
+		heavy_infantry_offensive = 0.1
+		heavy_infantry_defensive = 0.1
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_training_grounds_3 = {
+		desc = ipc_imperial_training_grounds_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = {
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_training_grounds_2
+		prerequisites = { ipc_imperial_training_grounds_2 }
+		gold_cost = 1000
+		build_time = 182
+		
+		land_morale = 0.15
+		heavy_infantry_offensive = 0.1
+		heavy_infantry_defensive = 0.1
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	
+	#tax center for money, maybe last rank give %
+	ipc_imperial_tax_center_1 = {
+		desc = ipc_imperial_tax_center_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = { 
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		gold_cost = 1000
+		build_time = 182
+		
+		tax_income = 3
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_tax_center_2 = {
+		desc = ipc_imperial_tax_center_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_tax_center_1
+		prerequisites = { ipc_imperial_tax_center_1 }
+		gold_cost = 1000
+		build_time = 182
+		
+		tax_income = 3
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_tax_center_3 = {
+		desc = ipc_imperial_tax_center_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = {
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_tax_center_2
+		prerequisites = { ipc_imperial_tax_center_2 }
+		gold_cost = 1000
+		build_time = 182
+		
+		tax_income = 3
+		local_tax_modifier = 0.15
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	
+	#library building, gives tech points
+	ipc_imperial_library_1 = {
+		desc = ipc_imperial_library_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = { 
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		gold_cost = 1000
+		build_time = 182
+		
+		economy_techpoints = 0.05
+		culture_techpoints = 0.1
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+		add_number_to_name = no
+	}
+	ipc_imperial_library_2 = {
+		desc = ipc_imperial_library_2_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_library_1
+		prerequisites = { ipc_imperial_library_1 }
+		gold_cost = 1000
+		build_time = 182
+		
+		economy_techpoints = 0.05
+		culture_techpoints = 0.1
+		tech_growth_modifier = 0.05
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+		add_number_to_name = no
+	}
+	ipc_imperial_library_3 = {
+		desc = ipc_imperial_library_3_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = {
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_library_2
+		prerequisites = { ipc_imperial_library_2 }
+		gold_cost = 1000
+		build_time = 182
+		
+		economy_techpoints = 0.1
+		culture_techpoints = 0.15
+		tech_growth_modifier = 0.2
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+		add_number_to_name = no
+	}
+	
+	
+	#council halls, gives vassal opinion and commander_limit
+	ipc_imperial_council_halls_1 = {
+		desc = ipc_imperial_council_halls_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = { 
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		gold_cost = 1000
+		build_time = 182
+		
+		military_techpoints = 0.05
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_council_halls_2 = {
+		desc = ipc_imperial_council_halls_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_council_halls_1
+		prerequisites = { ipc_imperial_council_halls_1 }
+		gold_cost = 1000
+		build_time = 182
+		
+		military_techpoints = 0.05
+		commander_limit = 1
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	ipc_imperial_council_halls_3 = {
+		desc = ipc_imperial_council_halls_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = {
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_council_halls_2
+		prerequisites = { ipc_imperial_council_halls_2 }
+		gold_cost = 1000
+		build_time = 182
+		
+		military_techpoints = 0.05
+		commander_limit = 1
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+	}
+	
+	
+	#imperial palace, prestige, retinuesize. demesne_size doesnt work
+	ipc_imperial_palace_1 = {
+		desc = ipc_imperial_palace_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = { 
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		gold_cost = 1000
+		build_time = 182
+		
+		fort_level = 0.5
+		liege_prestige = 1
+		retinuesize = 30
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+		add_number_to_name = no
+	}
+	ipc_imperial_palace_2 = {
+		desc = ipc_imperial_palace_1_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = { 
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_palace_1
+		prerequisites = { ipc_imperial_palace_1 }
+		gold_cost = 1000
+		build_time = 182
+		
+		fort_level = 0.5
+		liege_prestige = 1
+		retinuesize = 30
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+		add_number_to_name = no
+	}
+	ipc_imperial_palace_3 = {
+		desc = ipc_imperial_palace_3_desc
+		potential = { FROMFROM = { has_title_flag = is_imperial_capital } }
+		trigger = {
+			custom_tooltip = {
+				text = ipc_imperial_buildings_tooltip 
+				hidden_tooltip = { always = no } 
+			}
+		}
+		upgrades_from = ipc_imperial_palace_2
+		prerequisites = { ipc_imperial_palace_2 }
+		gold_cost = 1000
+		build_time = 182
+		
+		fort_level = 1
+		liege_prestige = 1
+		retinuesize = 30
+		
+		ai_creation_factor = 0
+		extra_tech_building_start = 10
+		add_number_to_name = no
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

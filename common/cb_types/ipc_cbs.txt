@@ -1,0 +1,362 @@
+## normal scopes(including posttitle scopes) ##
+# ROOT = receiver
+# FROM = giver
+# <no scope change> = attacker or receiver
+## title scopes ##
+# ROOT = receiver
+# FROM = giver
+# <no scope change> = thirdparty landed title	
+#
+# the following effects/triggers exists (example execution order: on_success->on_success_title->on_success_posttitle):
+# is_valid, is_valid_title, on_add, on_add_title, on_add_posttitle, on_success, on_success_title, on_success_posttitle, on_fail, on_fail_title, on_fail_posttitle, on_reverse_demand, on_reverse_demand_title, on_reverse_demand_posttitle
+#
+# Added on_attacker_leader_death, on_defender_leader_death and on_thirdparty_death, which all trigger when corresponding character dies
+# These three all have war scopes, which currently has the following scope changes: 
+# attacker, defender, thirdparty(only valid if thirdparty character is involved), thirdparty_title(only valid if thirdparty title is involved)
+#
+# ai_will_do: modifies value AI places on the CB compared to other CBs (default: 1) Note: is in title scope
+# can_use_gui: If otherwise valid, the CB is listed in the Diplo View, but you can't declare war unless 'can_use_gui' is also valid (also shows a trigger tooltip.)
+#
+
+# max_defender_occupation_score/max_attacker_occupation_score - Defines how much war score it is possible for the defender/attacker to gain by occupying provinces. Defaults to 100. Make sure the CB has ticking warscore if using this or you could end up with never-ending wars
+# max_defender_battle_score/max_attacker_battle_score - Defines how much score it is possible for the defender/attacker to gain by fighting battles. Defaults to the defines MAX_WARSCORE_FROM_BATTLE_DEFENDERS/MAX_WARSCORE_FROM_BATTLE_ATTACKERS
+# hostages_block_cb	- Defaults to "yes". If set to "no", the defender having close relatives of yours imprisoned does not prevent you from declaring war
+# attacker_unoccupied_warscore = yes - If attacker completely unoccupied, attacker will get ticking warscore. Only works if no title is targetted
+# defender_unoccupied_warscore = yes - If defender completely unoccupied, defender will get ticking warscore. Only works if no title is targetted
+# capturing_attacker_is_complete_victory - Whether capturing the attacker as a prisoner is considered automatic victory for the defender. Defaults to yes. If set to no, capture instead gives CAPTURED_HEIR_WAR_SCORE warscore
+# capturing_defender_is_complete_victory - Whether capturing the defender as a prisoner is considered automatic victory for the attacker. Defaults to yes. If set to no, capture instead gives CAPTURED_HEIR_WAR_SCORE warscore
+
+#sort_priority = 1000 # Used to override the order CBs appear in the UI. By default a CB has priority 0. Higher priority will make it appear earlier, lower later. Ties are broken by definition order, as before. It is recommended to use numbers with large gaps between them so as to make it easy to slot new CBs in between older ones
+#full_hostility = yes # Use the defender's primary title rather than the 3rd party title to determine hostility to other targets. Anyone else targeting them with a CB with this flag will be hostile, as will anyone targeting the primary title
+#third_party_portrait = some_scope # Optional. Will cause the scoped character to be used as the 3rd party portrait in the war overview. Scopes are the same as can_use
+#diplo_view_region = some_region # Optional. Will override which provinces are highlighted on the map when the CB is selected in the diplomacy view.
+
+
+
+ipc_imperial_conquest = {
+	name = cb_name_ipc_imperial_conquest
+	war_name = war_name_ipc_imperial_conquest
+	sprite = 17
+	truce_days = 3650
+	sort_priority = 1000
+	
+	is_permanent = yes
+	can_call_allies = no
+	can_ask_to_join_war = no
+	check_de_jure_tier = duke
+	hostile_against_others = yes
+	full_hostility = yes
+	
+	can_use = {
+		ROOT = {
+			has_quest = quest_ipc_imperial_conquest
+		}
+	}
+
+	can_use_gui = {
+		ROOT = {
+			war = no
+			can_interact_with_imperial_court_revolt_trigger = yes
+		}
+	}
+
+	can_use_title = {
+		tier = duke
+		is_quest_target_of = ROOT
+	}
+
+	is_valid = {
+		ROOT = {
+			is_imperial_court_member_trigger = yes
+			NOT = { same_realm = FROM }
+			has_quest = quest_ipc_imperial_conquest
+		}
+	}
+	
+	is_valid_title = { tier = duke }
+	
+	on_add = {
+		custom_tooltip = {
+			text = ipc_imperial_conquest_tooltip
+			attacker = { character_event = { id = ipcq.231 } }
+		}
+		if = {
+			limit = { attacker = { society_influence >= 60 } }
+			custom_tooltip = { text = ipc_imperial_conquest_tooltip2 }
+		}
+	}
+	
+	on_success_title = {
+		any_de_jure_vassal_title = {
+			limit = { holder_scope = { same_realm = FROM } }
+			if = {
+				limit = {
+					tier = count
+					NOT = { culture = ROOT }
+				}
+				hidden_tooltip = { conquest_culture = ROOT }
+			}
+			set_title_flag = imperial_conquest_distribute
+			usurp_title = { target = ROOT type = invasion }
+		}
+		if = {
+			limit = { NOT = { culture = ROOT } }
+			hidden_tooltip = { conquest_culture = ROOT }
+		}
+		set_title_flag = imperial_conquest_distribute
+		usurp_title = { target = ROOT type = invasion }
+		if = {
+			limit = { ROOT = { society_influence < 60 } }
+			custom_tooltip = { text = ipc_imperial_conquest_tooltip3 }
+		}
+	}
+	
+	on_success_posttitle = {
+		hidden_tooltip = { 
+			ROOT = { 
+				save_persistent_event_target = { name = champion_enemy scope = FROM } 
+				character_event = { id = ipcq.237 }
+				character_event = { id = ipcq.238 days = 3 }
+			}
+		}
+	}
+	
+	on_fail = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -200
+			character_event = { id = ipcq.239 days = 3 }
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 100
+		}
+		FROM = {
+			show_scope_change = no
+			participation_scaled_prestige = 100
+		}
+	}
+	
+	on_reverse_demand = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -200
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 1.5
+			}
+			character_event = { id = ipcq.240 days = 3 }
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 200
+		}
+		FROM = {
+			show_scope_change = no
+			participation_scaled_prestige = 100
+		}
+	}
+	
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+	
+	ai_will_do = { factor = 1000 }
+	
+	
+}
+
+
+
+
+ipc_faction_takeover_war = { #Started from faction
+	name = cb_name_ipc_faction_takeover
+	war_name = war_name_ipc_faction_takeover
+	sprite = 6
+	truce_days = 3650
+	can_call_allies = no
+	can_ask_to_join_war = no
+	major_revolt = yes
+	
+	can_use = { ROOT = { vassal_of = FROM } }
+	
+	can_use_title = {
+		tier = emperor
+		has_title_flag = imperial_court_active
+	}
+	
+	is_valid = {
+		FROM = {
+			in_revolt = no
+			has_character_flag = ipc_takeover_target
+		}
+		ROOT = {
+			OR = {
+				liege = {
+					character = PREV # either independent
+				}
+				liege = { 
+					FROM = { 
+						is_liege_or_above = PREV # or have shared liege
+					}
+				}
+			}
+		}
+	}
+
+	#on_add = {}
+
+	on_success = {
+		any_attacker = {
+			participation_scaled_prestige = 100
+			hidden_tooltip = { disband_event_forces = faction_revolters }
+		}
+		FROM = { hidden_tooltip = { disband_event_forces = faction_loyalists } }
+	}
+
+	on_success_title = { #This is the target title of the faction
+		
+		holder_scope = {
+			clr_character_flag = ipc_takeover_target
+			most_popular_vassal = {
+				limit = {
+					is_in_society = yes
+					is_imperial_court_member_trigger = yes
+					higher_tier_than = BARON
+					is_feudal = yes
+					prisoner = no
+					OR = {
+						society_rank == 3
+						AND = {
+							is_society_grandmaster = yes
+							is_imperial_court_regent_trigger = yes
+						}
+					}
+					NOR = {
+						is_inaccessible_trigger = yes
+						trait = incapable
+						trait = eunuch
+					}
+					is_adult = yes
+					OR = {
+						is_female = no
+						AND = {
+							is_female = yes
+							ROOT = { has_law = true_cognatic_succession }
+						}
+					}
+				}
+				usurp_title = {
+					target = PREVPREV
+					type = faction_demand
+				}
+				save_event_target_as = new_title_holder
+				hidden_tooltip = {
+					any_attacker = {
+						limit = { NOT = { character = PREV } }
+						set_character_flag = helped_win_war
+					}
+				}
+				character_event = { id = ipc.156 days = 1 }
+			}
+		}
+	}
+	
+	on_fail = {
+		ROOT = { prestige = -100 }
+		FROM = { participation_scaled_prestige = 50 }
+		
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 50 }
+		}
+		
+		hidden_tooltip = {
+			any_attacker = {
+				disband_event_forces = faction_revolters
+				add_character_modifier = {
+					name = faction_ipc_takeover_ultimatum_timer
+					hidden = yes
+					duration = 3650
+				}
+			}
+		}
+		FROM = { 
+			hidden_tooltip = { 
+				disband_event_forces = faction_loyalists
+				clr_character_flag = ipc_takeover_target
+			}
+		}
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			prestige = -200
+			prisoner = FROM
+		}
+
+		FROM = {
+			participation_scaled_prestige = 100
+			hidden_tooltip = { 
+				if = { 
+					limit = { NOT = { has_opinion_modifier = { modifier = opinion_traitor who = ROOT } } } #Allow free revocation of a title.
+					opinion = {
+						who = ROOT
+						modifier = opinion_traitor
+					}
+				}
+			}
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 100 }
+		}
+		
+		hidden_tooltip = {
+			any_attacker = {
+				limit = { liege = { character = FROM } }
+				prisoner = FROM
+				disband_event_forces = faction_revolters
+				add_character_modifier = {
+					name = faction_ipc_takeover_ultimatum_timer
+					hidden = yes
+					duration = 3650
+				}
+			}
+		}
+		FROM = {
+			hidden_tooltip = { 
+				disband_event_forces = faction_loyalists
+				clr_character_flag = ipc_takeover_target
+			}
+		}
+	}
+
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+}

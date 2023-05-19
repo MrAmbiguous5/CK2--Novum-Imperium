@@ -1,0 +1,140 @@
+song = {
+	name = "Civilization V OST Ashurbanipal Peace Theme Ancient Assyrian Chant.ogg"
+	song_name = "Ancient Assyrian Chant"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = assyrian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Civilization V OST Ashurbanipal War Theme Ancient Assyrian Chant.ogg"
+	song_name = "Ancient Assyrian Chant"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = assyrian }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "The Epic Of Gilgamesh In Sumerian.ogg"
+	song_name = "Epic of Gilgamesh"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = assyrian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Ancient Mesopotamian Music - Assyrian Fortress.ogg"
+	song_name = "Assyrian Fortress"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = assyrian }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Ancient Mesopotamian Music - Hittite Chariots.ogg"
+	song_name = "Hittite Chariots"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = assyrian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Ancient Mesopotamian Music - Babylon.ogg"
+	song_name = "Babylon"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = assyrian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Ancient Mesopotamian Music - Sumerians.ogg"
+	song_name = "Sumerians"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = assyrian }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}

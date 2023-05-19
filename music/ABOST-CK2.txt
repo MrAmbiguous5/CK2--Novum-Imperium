@@ -1,0 +1,219 @@
+###INTRODUCTIONS###
+
+#THE MUSIC IN THIS MOD IS PROTECTED BY INTERNATIONAL COPYRIGHT. SHARING, COPYING, EXTRACTING, DOWNLOADING, EDITING OR OTHERWISE OBTAINING THE MUSIC FROM THIS MOD IS ILLEGAL.
+#YOUTUBERS & STREAMERS: BE ADVISED THAT VIDEOS WITH THIS MUSIC IN IT MAY BE COPYRIGHT CLAIMED. PLEASE CONTACT THE COMPOSER IF THIS HAPPENS.
+#A sample of the Composer's standard YouTube licensing agreement can be found here: https://docs.google.com/document/d/1ClCKLxe-2Ef7-mjQIQTtPyg2uOxrUXW6jhSkR2Qvv-8/edit?usp=sharing
+
+#Music from the album "Ante Bellum Original Soundtrack": Released worldwide on digital streaming services 4 February 2022.
+#Used with permission from New Zealand composer Utopia.
+#Written specifically for the EU4 mod: Ante Bellum.
+#Check out the Ante Bellum alternate history mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1908400374
+
+
+#If you like the music in this mod, please go support the composer!
+#Composed August 2021 - November 2021.
+#Website: www.utopiamusic.net/utopia
+#Discord: https://discord.gg/SdQhfBM
+#Spotify: https://sptfy.com/utopia
+#YouTube: https://www.youtube.com/channel/UCKfQv7M94LPdACI2e4AmVww
+#SoundCloud: https://soundcloud.com/utopia-nz
+#BandCamp: https://utopiamusicnz.bandcamp.com
+#Email: utopiamusicnz@gmail.com
+#Donate: https://www.buymeacoffee.com/utopia
+
+#THIS MUSIC IS AVAILABLE ON SPOTIFY, YOUTUBE MUSIC, APPLE MUSIC & MORE:
+#Spotify: https://open.spotify.com/album/1dC9Y3AHjcNVbPj9QqvzYj
+#Apple Music: https://music.apple.com/nz/album/ante-bellum-original-soundtrack/1600624749
+#Youtube Music: https://music.youtube.com/playlist?list=OLAK5uy_mJ_G9xCIkHcOgTrfn-id-fyKUrukUKNDY&feature=share
+#Amazon Music: https://music.amazon.com/albums/B09NWCBWYC?marketplaceId=A15PK738MTQHSO&musicTerritory=NZ&ref=dm_sh_yHalvhAFiYkv4H6HFz83dfUgt
+
+#This mod is available on
+#EU4:
+#CK2:
+#CK3:
+#HOI4:
+#IR:
+#STEL: tba
+
+
+#Shout out to Parmelion for an awesome mod, epic hard work & being so based he does it all solo. See you in Guantanamo!
+
+
+#Join my music modding Discord and keep up to date on coming projects @ https://discord.gg/SdQhfBM
+
+
+###THE MOD AND THE MUSIC###
+
+#Situational music:
+#Various triggers for various tracks, but mostly themed around catholic & sunni religions. Go explore!
+#Have fun, happy listening!
+
+#Into the Beyond (Main Theme)
+song = {
+	name = "1_Into the Beyond.ogg"
+	song_name = "Into the Beyond" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+	}
+}
+#Empire's Downfall
+song = {
+	name = "2_Empire's Downfall.ogg"
+	song_name = "Empire's Downfall" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+		modifier = { factor = 0.1 NOT = { religion_group = christian } }
+	}
+}
+#The Dragon Throne
+song = {
+	name = "3_The Dragon Throne.ogg"
+	song_name = "The Dragon Throne" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+		modifier = { factor = 0.1 NOT = { religion_group = pagan_group } }
+	}
+}
+#Legacy of Seljuk
+song = {
+	name = "4_Legacy of Seljuk.ogg"
+	song_name = "Legacy of Seljuk" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+		modifier = { factor = 0.1 NOT = { religion_group = muslim } }
+	}
+}
+#Requiem for a King
+song = {
+	name = "5_Requiem for a King.ogg"
+	song_name = "Requiem for a King" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+	}
+}
+#Tension at the Border
+song = {
+	name = "6_Tension at the Border.ogg"
+	song_name = "Tension at the Border" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+	}
+}
+#Shield of Islam
+song = {
+	name = "7_Shield of Islam.ogg"
+	song_name = "Shield of Islam" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+		modifier = { factor = 0.1 NOT = { religion_group = muslim } }
+	}
+}
+#The Streets of Rome
+song = {
+	name = "8_The Streets of Rome.ogg"
+	song_name = "The Streets of Rome" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+		modifier = { factor = 0.1 NOT = { religion_group = christian } }
+	}
+}
+#Mediterranean Sun
+song = {
+	name = "9_Mediterranean Sun.ogg"
+	song_name = "Mediterranean Sun" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+	}
+}
+#Nocte Ante Bellum
+song = {
+	name = "10_Nocte Ante Bellum.ogg"
+	song_name = "Nocte Ante Bellum" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+	}
+}
+#Lothair's Memento
+song = {
+	name = "11_Lothair's Memento.ogg"
+	song_name = "Lothair's Memento" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+	}
+}
+#Sword of Islam
+song = {
+	name = "12_Sword of Islam.ogg"
+	song_name = "Sword of Islam" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+		modifier = { factor = 0.1 NOT = { religion_group = muslim } }
+	}
+}
+#Nicene Legions
+song = {
+	name = "13_Nicene Legions.ogg"
+	song_name = "Nicene Legions" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+		modifier = { factor = 0.1 NOT = { religion_group = christian } }
+	}
+}
+#Battle of Valencia
+song = {
+	name = "14_Battle of Valencia.ogg"
+	song_name = "Battle of Valencia" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+		modifier = { factor = 0.1 NOT = { OR = { religion_group = muslim religion_group = christian } }
+	}
+}
+#Commiserations
+song = {
+	name = "15_Commiserations.ogg"
+	song_name = "Commiserations" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = yes }
+	}
+}
+
+#Victorious War
+song = {
+	name = "16_Victorious War.ogg"
+	song_name = "Victorious War" 
+	volume = 0.48
+	chance = {
+		modifier = { factor = 1 }
+		modifier = { factor = 0 war = no }
+	}
+}

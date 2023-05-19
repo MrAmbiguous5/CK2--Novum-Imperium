@@ -1,0 +1,53 @@
+namespace = mta
+
+# New_holder event: Religious veneration trait check
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+character_event = {
+	id = mta.13
+	has_dlc = "Holy Fury"
+	hide_window = yes
+	
+	only_playable = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { mta_reformed_religious_leader_title = yes }
+		FROMFROM = { trait = mta_used_mark_for_veneration }
+		FROMFROM = { NOT = { trait = mta_marked_for_sainthood } }
+	}
+	
+	immediate = {
+		add_trait = mta_used_mark_for_veneration
+	}
+}
+
+# on_character_convert_religion event: Cleanup marked for veneration trait
+# ROOT is the character after conversion, FROM scope has the old religion
+character_event = {
+	id = mta.14
+	has_dlc = "Holy Fury"
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = mta_marked_for_sainthood
+	}
+	
+	immediate = {
+		remove_trait = mta_marked_for_sainthood
+		
+		any_player = { 
+			limit = { 
+				religion = FROM 
+				has_character_modifier = mta_recently_used_veneration
+			}
+			remove_trait = mta_used_mark_for_veneration
+			remove_character_modifier = mta_recently_used_veneration
+			save_event_target_as = former_religion_head
+		}
+		
+		remove_opinion = { who = event_target:former_religion_head modifier = opinion_marked_for_veneration }
+	}
+}

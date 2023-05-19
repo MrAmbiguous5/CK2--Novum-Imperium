@@ -1,0 +1,4494 @@
+
+#20-30 joining and rank up
+#100-299 decision/power related events
+#300-499 generic flavor tombola events
+#500-699 emperor flavor tombola events
+#700-899 misc flavor events
+
+namespace = ipc
+
+
+
+#########Joining and Ranking Up#########
+
+#From on_character_ask_to_join_society for player only
+character_event = {
+    id = ipc.020
+	
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+    	FROM = { leader = { is_imperial_court_member_trigger = yes } }
+    }
+	
+    immediate = {
+    	set_character_flag = society_join_block
+		FROM = {
+			leader = { character_event = { id = ipc.021 } } 
+		}
+    }
+}
+
+#Ping event
+character_event = {
+    id = ipc.021
+	
+	hide_window = yes
+    is_triggered_only = yes
+	
+    immediate = {
+    	FROM = { letter_event = { id = ipc.022 days = 3 } }
+    }
+}
+
+#Welcome letter
+letter_event = {
+    id = ipc.022
+    desc = EVTDESAipc.022
+    border = GFX_event_letter_frame_diplomacy
+	
+    is_triggered_only = yes
+	is_friendly = yes
+	
+    option = {
+		name = EVTOPTAipc.022
+		join_realm_imperial_court_effect = yes
+		clr_character_flag = society_join_block
+    }
+}
+
+####Ranking up
+
+#rank 1 use vanilla system
+character_event = {
+	id = ipc.023
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { has_character_flag = has_sent_request_to_rank_up }
+	
+	immediate = {
+		if = {
+			limit = { is_in_society = yes }
+			random_society_member = {
+				limit = {
+					is_society_grandmaster = yes
+					same_society_as = ROOT
+				}
+				character_event = { id = ipc.024 }
+			}
+		}
+		else_if = {
+			limit = { is_in_society = no }
+			clr_character_flag = has_sent_request_to_rank_up
+		}
+	}
+}
+
+#Grandmaster gets the rank-up request
+character_event = {
+	id = ipc.024
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = { event_target:rank_up_target = { letter_event = { id = ipc.025 } } }
+}
+
+#Grand master approves my request
+letter_event = {
+	id = ipc.025
+	desc = EVTDESAipc.025
+	border = GFX_event_letter_frame_diplomacy
+
+	is_triggered_only = yes
+
+	trigger = {
+		society_rank < 3
+		has_character_flag = has_sent_request_to_rank_up
+	}
+	
+	option = {
+		name = EVTOPTAipc.025
+		society_rank_up = 1
+		clr_character_flag = has_sent_request_to_rank_up
+	}
+}
+
+
+#rank 2 must be approved by grandmaster
+character_event = {
+	id = ipc.026
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { has_character_flag = has_sent_request_to_rank_up }
+	
+	immediate = {
+		if = {
+			limit = { 
+				is_in_society = yes 
+				is_imperial_court_member_trigger = yes
+			}
+			random_society_member = {
+				limit = {
+					is_society_grandmaster = yes
+					same_society_as = ROOT
+				}
+				letter_event = { id = ipc.027 }
+			}
+		}
+		else_if = {
+			limit = { is_in_society = no }
+			clr_character_flag = has_sent_request_to_rank_up
+		}
+	}
+}
+
+#allow or deny
+letter_event = {
+	id = ipc.027
+	desc = EVTDESAipc.027
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_imperial_court_member_trigger = yes
+		is_society_grandmaster = yes
+	}
+	
+	#allow
+	option = {
+		name = EVTOPTAipc.027
+		custom_tooltip = {
+			text = EVTTOOLTIPAipc.027
+			event_target:rank_up_target = { set_character_flag = imperial_court_approve_rank_up }
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 1.5
+				dynasty = FROM
+			}
+			modifier = {
+				factor = 2
+				is_friend = FROM
+			}
+		}
+	}
+	
+	#deny
+	option = {
+		name = EVTOPTBipc.027
+		custom_tooltip = {
+			text = EVTTOOLTIPBipc.027
+			event_target:rank_up_target = { set_character_flag = imperial_court_deny_rank_up }
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = 5 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 1.75
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 1.75
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 1.75
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+			modifier = {
+				factor = 2
+				FROM = { tier = baron }
+			}
+		}
+	}
+	
+	after = { hidden_tooltip = { FROM = { letter_event = { id = ipc.028 } } } }
+}
+
+#get response
+letter_event = {
+	id = ipc.028
+	desc = {
+		trigger = { has_character_flag = imperial_court_approve_rank_up }
+		text = EVTDESAipc.028
+	}
+	desc = {
+		trigger = { has_character_flag = imperial_court_deny_rank_up }
+		text = EVTDESBipc.028
+	}
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	trigger = { is_imperial_court_member_trigger = yes }
+	
+	option = {
+		trigger = { has_character_flag = imperial_court_approve_rank_up }
+		name = EVTOPTAipc.028
+		hidden_tooltip = { set_character_flag = ipc_approved_rank_3 }
+		society_rank_up = 1
+	}
+	
+	option = {
+		trigger = { has_character_flag = imperial_court_deny_rank_up }
+		name = EVTOPTBipc.028
+		change_society_currency = 750
+	}
+	
+	after = {
+		clr_character_flag = has_sent_request_to_rank_up
+		clr_character_flag = imperial_court_approve_rank_up
+		clr_character_flag = imperial_court_deny_rank_up
+	}
+}
+
+
+##############Decision/Power Events##############
+
+
+###visiting imperial capital chain
+character_event = {
+	id = ipc.100
+	desc = EVTDESAipc.100
+	picture = GFX_evt_merchant_caravan
+	
+	is_triggered_only = yes
+	
+	immediate = { get_imperial_capital_effect = yes }
+	
+	option = {
+		name = EVTOPTAipc.100
+		hidden_tooltip = { character_event = { id = ipc.102 days = 50 random = 20 } }
+	}
+	
+	option = {
+		name = EVTOPTBipc.100
+		change_society_currency = 200
+		hidden_tooltip = { 
+			clr_character_flag = visiting_imperial_capital
+			remove_character_modifier = ipc_visit_imperial_capital_power_timer 
+		}
+	}
+}
+
+###capital lost failsafe
+character_event = {
+	id = ipc.101
+	desc = EVTDESAipc.100
+	picture = GFX_evt_end_of_days
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = visiting_imperial_capital
+		clr_character_flag = visit_first_branch
+		clr_character_flag = visit_second_branch
+		clr_character_flag = visit_third_branch
+		clr_character_flag = bar_fight
+		clr_character_flag = emperor_present
+		clear_delayed_event = { id = ipc.102 }
+		clear_delayed_event = { id = ipc.103 }
+		clear_delayed_event = { id = ipc.104 }
+		clear_delayed_event = { id = ipc.105 }
+		clear_delayed_event = { id = ipc.106 }
+		clear_delayed_event = { id = ipc.107 }
+		clear_delayed_event = { id = ipc.108 }
+		clear_delayed_event = { id = ipc.109 }
+		clear_delayed_event = { id = ipc.110 }
+		#clear_delayed_event = { id = ipc.115 }
+		clear_delayed_event = { id = ipc.120 }
+	}
+	
+	option = { name = EVTOPTAipc.101 }
+}
+
+
+###first branch
+character_event = {
+	id = ipc.102
+	desc = EVTDESAipc.102
+	picture = GFX_evt_magnificent_castle
+	
+	is_triggered_only = yes
+	
+	immediate = { set_character_flag = visit_first_branch }
+	
+	#visit the market
+	option = {
+		name = EVTOPTAipc.102
+		hidden_tooltip = { character_event = { id = ipc.103 days = 10 random = 4 } }
+	}
+	
+	#have a look at the training fields+barracks
+	option = {
+		trigger = {
+			event_target:imperial_capital = {
+				OR = {
+					has_building = ipc_imperial_barracks_1
+					has_building = ipc_imperial_training_grounds_1
+				}
+			}
+		}
+		name = EVTOPTBipc.102
+		hidden_tooltip = { character_event = { id = ipc.104 days = 10 random = 4 } }
+	}
+	
+	#wander aimlessly
+	#option = {
+	#	name = EVTOPTCipc.102
+	#	hidden_tooltip = { character_event = { id = ipc.115 days = 10 random = 4 } }
+	#}
+}
+
+###visiting market
+character_event = {
+	id = ipc.103
+	desc = EVTDESAipc.103
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+	
+	#buy some random things
+	option = {
+		name = EVTOPTAipc.103
+		scaled_wealth = { value = -0.15 max = -100 }
+		add_character_modifier = { modifier = big_spender years = 3 }
+	}
+	#buy a gift for spouse
+	option = {
+		trigger = { is_married = yes }
+		name = EVTOPTBipc.103
+		scaled_wealth = { value = -0.25 max = -200 }
+		spouse = {
+			opinion = { modifier = opinion_rekindle_love who = ROOT years = 5 } 
+			if = {
+				limit = { NOT = { trait = lustful } }
+				random = { chance = 33 add_trait = lustful }
+			}
+			else = { random = { chance = 33 fertility = 0.1 } }
+		}
+	}
+	#buy a gift for kids
+	option = {
+		trigger = { 
+			any_child = {
+				is_adult = no
+				age > 4
+			}
+		}
+		name = EVTOPTBipc.103
+		scaled_wealth = { value = -0.25 max = -200 }
+		random_child = {
+			limit = {
+				is_adult = no
+				age > 4
+			}
+			opinion = { modifier = opinion_happy who = ROOT years = 5 } 
+			if = {
+				limit = { NOT = { trait = affectionate } }
+				random = { chance = 33 add_trait = affectionate }
+			}
+			else_if = {
+				limit = { NOT = { trait = idolizer } }
+				random = { chance = 33 add_trait = idolizer }
+			}
+		}
+	}
+	#don't buy anything
+	option = { name = EVTOPTDipc.103 }
+	
+	after = { hidden_tooltip = { character_event = { id = ipc.105 days = 10 random = 3 } } }
+}
+
+##visiting barracks+training grounds
+character_event = {
+	id = ipc.104
+	desc = EVTDESAipc.104
+	picture = GFX_evt_china_expansionist
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = { has_minor_title = title_commander }
+			save_event_target_as = commander_to_train
+		}
+	}
+	
+	
+	#mingle/spar with soldiers
+	option = {
+		trigger = { event_target:imperial_capital = { has_building = ipc_imperial_barracks_1 } }
+		name = EVTOPTAipc.104
+		random_list = {
+			30 = { }
+			30 = { change_martial = 1 }
+			30 = { change_martial = 2 }
+			10 = { add_trait_wounded_effect = yes }
+		}
+	}
+	
+	#watch training excercise
+	option = {
+		trigger = { event_target:imperial_capital = { has_building = ipc_imperial_training_grounds_1 } }
+		name = EVTOPTBipc.104
+		if = {
+			limit = {
+				NOT = { trait = organizer }
+				can_have_more_leadership_traits = yes
+			}
+			random = { chance = 33 add_trait = organizer }
+		}
+		else = { capital_scope = { add_province_modifier = { modifier = war_knowledge years = 3 } } }
+	}
+	
+	#have local commander teach one of yours
+	option = {
+		trigger = {
+			event_target:commander_to_train = { always = yes }
+			event_target:imperial_capital = {
+				OR = {
+					has_building = ipc_imperial_barracks_2
+					has_building = ipc_imperial_training_grounds_2
+				}
+			}
+		}
+		name = EVTOPTCipc.104
+		event_target:commander_to_train = {
+			random_list = {
+				20 = { change_martial = 2 }
+				20 = { change_martial = 3 }
+				20 = {
+					trigger = { leader_traits < 2 }
+					add_trait = experimenter
+				}
+				20 = {
+					trigger = { leader_traits < 2 } 
+					add_trait = flanker
+				}
+				20 = {
+					trigger = { leader_traits < 2 }
+					add_trait = heavy_infantry_leader
+				}
+			}
+		}
+	}
+	
+	#admire might of empire
+	option = {
+		trigger = {
+			event_target:imperial_capital = {
+				OR = {
+					has_building = ipc_imperial_barracks_3
+					has_building = ipc_imperial_training_grounds_3
+				}
+			}
+		}
+		name = EVTOPTDipc.104
+		if = {
+			limit = { tier = king }
+			prestige = 250
+			change_society_currency = 150
+		}
+		else_if = {
+			limit = { tier = duke }
+			prestige = 175
+			change_society_currency = 100
+		}
+		else_if = {
+			limit = { tier = count }
+			prestige = 100
+			change_society_currency = 50
+			
+		}
+		if = {
+			limit = { NOT = { trait = proud } }
+			random = { chance = 33 add_trait = proud } 
+		}
+	}
+	
+	after = { hidden_tooltip = { character_event = { id = ipc.105 days = 10 random = 3 } } }
+}
+
+
+####second branch
+character_event = {
+	id = ipc.105
+	desc = EVTDESAipc.105
+	picture = GFX_evt_magnificent_castle
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		clr_character_flag = visit_first_branch
+		set_character_flag = visit_second_branch 
+	}
+	
+	#rest in a bathhouse
+	option = {
+		name = EVTOPTAipc.105
+		hidden_tooltip = { character_event = { id = ipc.106 days = 10 random = 4 } }
+	}
+	
+	#have a look at the library or council halls
+	option = {
+		trigger = {
+			event_target:imperial_capital = {
+				OR = {
+					has_building = ipc_imperial_library_1
+					has_building = ipc_imperial_council_halls_1
+				}
+			}
+		}
+		name = EVTOPTBipc.105
+		hidden_tooltip = { character_event = { id = ipc.107 days = 10 random = 4 } }
+	}
+	
+	#wander aimlessly
+	#option = {
+	#	name = EVTOPTCipc.105
+	#	hidden_tooltip = { character_event = { id = ipc.115 days = 10 random = 4 } }
+	#}
+}
+
+####bathhouse
+character_event = {
+	id = ipc.106
+	desc = EVTDESAipc.106
+	picture = GFX_evt_secret_ceremony
+
+	is_triggered_only = yes
+	
+	#get cleaned
+	option = {
+		name = EVTOPTAipc.106
+		random_list = {
+			20 = { health = 0.1 }
+			20 = {
+				trigger = { trait = uncouth }
+				remove_trait = uncouth
+			}
+			20 = {
+				trigger = {
+					NOR = {
+						trait = uncouth
+						trait = groomed
+					}
+				}
+				add_trait = groomed
+			}
+			20 = { fertility = 0.1 }
+			20 = { 
+				trigger = { trait = infection }
+				remove_trait = infection
+			}
+			20 = { 
+				trigger = { trait = stressed }
+				remove_trait = stressed
+			}
+			20 = { 
+				trigger = { trait = depressed }
+				remove_trait = depressed
+			}
+		}
+	}
+	
+	#servant girl
+	option = {
+		trigger = { is_female = no NOT = { trait = eunuch } }
+		name = EVTOPTBipc.106
+		if = {
+			limit = { trait = chaste }
+			remove_trait = chaste
+		}
+		else_if = {
+			limit = { NOT = { trait = lustful } }
+			random = { chance = 75 add_trait = lustful }
+		}
+		add_character_modifier = { modifier = irresistible years = 3 }
+	}
+	
+	after = { hidden_tooltip = { character_event = { id = ipc.108 days = 10 random = 3 } } }
+}
+
+
+###library and council halls
+character_event = {
+	id = ipc.107
+	desc = EVTDESAipc.107
+	picture = GFX_evt_open_book_hf
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_child = {
+			limit = { 
+				is_adult = no 
+				host = { character = ROOT }
+			}
+			preferred_limit = { is_primary_heir = yes }
+			preferred_limit = { is_female = no }
+			save_event_target_as = child_to_teach
+		}
+	}
+	
+	#read some books
+	option = {
+		trigger = { event_target:imperial_capital = { has_building = ipc_imperial_library_1 } }
+		name = EVTOPTAipc.107
+		random_list = {
+			20 = { change_diplomacy = 1 }
+			20 = { change_martial = 1 }
+			20 = { change_stewardship = 1 }
+			20 = { change_intrigue = 1 }
+			20 = { change_learning = 1 }
+			20 = { 
+				trigger = { NOT = { trait = erudite } }
+				add_trait = erudite
+			}
+			50 = {
+				modifier = {
+					factor = 0.8
+					event_target:imperial_capital = { has_building = ipc_imperial_library_2 }
+				}
+				modifier = {
+					factor = 0.8
+					event_target:imperial_capital = { has_building = ipc_imperial_library_3 }
+				}
+			}
+		}
+	}
+	
+	#meet with emperor's council
+	option = {
+		trigger = {
+			event_target:imperial_capital = { has_building = ipc_imperial_council_halls_1 } 
+			OR = {
+				higher_tier_than = count
+				liege = { tier = emperor }
+			}
+		}
+		name = EVTOPTBipc.107
+		random_list = {
+			20 = { 
+				trigger = { NOT = { trait = gregarious } }
+				if = { 
+					limit = { trait = shy }
+					remove_trait = shy
+				}
+				else = { add_trait = gregarious }
+			}
+			20 = {
+				top_liege = {
+					show_scope_change = no
+					random_courtier_or_vassal = {
+						limit = { 
+							is_councillor = yes 
+							liege = { tier = emperor } 
+						}
+						preferred_limit = { is_playable = yes }
+						preferred_limit = { is_landed = yes }
+						opinion = { modifier = opinion_delighted who = ROOT years = 10 }
+					}
+				}
+			}
+			20 = { change_diplomacy = 2 }
+			20 = { change_intrigue = 2 }
+		}
+	}
+	
+	#have a scholar tutor your child
+	option = {
+		trigger = {
+			event_target:imperial_capital = {
+				OR = {
+					has_building = ipc_imperial_library_2
+					has_building = ipc_imperial_council_halls_2
+				}
+			}
+		}
+		name = EVTOPTCipc.107
+		scaled_wealth = { value = -0.5 min = -20 max = -200 }
+		event_target:child_to_teach = {
+			random_list = {
+				20 = { change_diplomacy = 1 }
+				20 = { change_martial = 1 }
+				20 = { change_stewardship = 1 }
+				20 = { change_intrigue = 1 }
+				20 = { change_learning = 1 }
+				40 = {
+					trigger = { trait = slow }
+					remove_trait = slow
+				}
+				60 = {
+					trigger = { trait = imbecile }
+					remove_trait = imbecile
+					add_trait = slow
+				}
+			}
+		}
+	}
+	
+	#study the finer points of realm management
+	option = {
+		trigger = {
+			event_target:imperial_capital = {
+				OR = {
+					has_building = ipc_imperial_library_3
+					has_building = ipc_imperial_council_halls_3
+				}
+			}
+		}
+		name = EVTOPTDipc.107
+		random = { chance = 75 military_techpoints = 50 }
+		random = { chance = 75 economy_techpoints = 50 }
+		random = { chance = 75 culture_techpoints = 50 }
+	}
+	
+	after = { hidden_tooltip = { character_event = { id = ipc.108 days = 10 random = 3 } } }
+}
+
+
+
+###third and final branch
+character_event = {
+	id = ipc.108
+	desc = EVTDESAipc.108
+	picture = GFX_evt_magnificent_castle
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		clr_character_flag = visit_second_branch
+		set_character_flag = visit_third_branch 
+	}
+	
+	#go to bar
+	option = {
+		name = EVTOPTAipc.108
+		hidden_tooltip = { character_event = { id = ipc.109 days = 10 random = 4 } }
+	}
+	
+	#visit imperial palace
+	option = {
+		trigger = { event_target:imperial_capital = { has_building = ipc_imperial_palace_1 } }
+		name = EVTOPTBipc.108
+		show_portrait = top_liege
+		hidden_tooltip = { character_event = { id = ipc.110 days = 10 random = 4 } }
+	}
+	
+	#wander aimlessly
+	#option = {
+	#	name = EVTOPTCipc.108
+	#	hidden_tooltip = { character_event = { id = ipc.115 days = 10 random = 4 } }
+	#}
+}
+
+####go to bar
+character_event = {
+	id = ipc.109
+	desc = { 
+		trigger = { NOT = { has_character_flag = bar_fight } }
+		text = EVTDESAipc.109
+	}
+	desc = { 
+		trigger = { has_character_flag = bar_fight }
+		text = EVTDESBipc.109
+	}
+	picture = GFX_evt_secret_ceremony
+
+	is_triggered_only = yes
+	
+	immediate = { random = { chance = 10 set_character_flag = bar_fight } }
+	
+	
+	#just drink
+	option = {
+		trigger = { NOT = { has_character_flag = bar_fight } }
+		name = EVTOPTAipc.109
+		scaled_wealth = { value = -0.02 min = -5 max = -20 }
+		add_character_modifier = { modifier = good_times years = 1 }
+		if = {
+			limit = { NOT = { trait = drunkard } }
+			random = { chance = 5 add_trait = drunkard }
+		}
+	}
+	
+	#dinner
+	option = {
+		trigger = { NOT = { has_character_flag = bar_fight } }
+		name = EVTOPTBipc.109
+		scaled_wealth = { value = -0.04 min = -10 max = -40 }
+		add_character_modifier = { modifier = well_fed years = 2 }
+		random = { chance = 10 gain_weight_small_effect = yes weight_trait_check_effect = yes }
+	}
+	
+	#bar fight
+	option = {
+		trigger = { has_character_flag = bar_fight }
+		name = EVTOPTCipc.109
+		random_list = {
+			75 = { }
+			20 = { add_trait_wounded_effect = yes }
+			5 = { add_trait_severely_injured_effect = yes }
+		}
+	}
+	
+	after = { 
+		hidden_tooltip = { 
+			clr_character_flag = bar_fight
+			character_event = { id = ipc.120 days = 10 random = 3 } 
+		} 
+	}
+}
+
+####visiting palace
+character_event = {
+	id = ipc.110
+	desc = { 
+		trigger = { NOT = { has_character_flag = emperor_present } }
+		text = EVTDESAipc.110
+	}
+	desc = { 
+		trigger = { has_character_flag = emperor_present }
+		text = EVTDESBipc.110
+	}
+	picture = GFX_evt_secret_ceremony
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				top_liege = {
+					at_location = ROOT
+					in_command = no
+					NOR = {
+						has_regent = yes
+						is_inaccessible_trigger = yes
+					}
+				}
+			}
+			set_character_flag = emperor_present
+		}
+	}
+	
+	
+	
+	
+	#emperor is away
+	option = {
+		trigger = { NOT = { has_character_flag = emperor_present } }
+		name = EVTOPTAipc.110
+	}
+	
+	#pay your respects
+	option = {
+		trigger = { has_character_flag = emperor_present }
+		name = EVTOPTBipc.110
+		if = {
+			limit = {
+				top_liege = { 
+					OR = {
+						opinion = { who = ROOT value = 100 } 
+						is_friend = ROOT
+					}
+				}
+			}
+			change_society_currency = 100
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 90 } } }
+			change_society_currency = 90
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 80 } } }
+			change_society_currency = 80
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 70 } } }
+			change_society_currency = 70
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 60 } } }
+			change_society_currency = 60
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 50 } } }
+			change_society_currency = 50
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 40 } } }
+			change_society_currency = 40
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 30 } } }
+			change_society_currency = 30
+		}
+		else_if = {
+			limit = { top_liege = { opinion = { who = ROOT value = 20 } } }
+			change_society_currency = 20
+		}
+		else = { change_society_currency = 10 }
+		top_liege = {
+			opinion = { modifier = opinion_pleased who = ROOT years = 3 }
+		}
+	}
+	
+	#speak with local nobles
+	option = {
+		trigger = { event_target:imperial_capital = { has_building = ipc_imperial_palace_2 } }
+		name = EVTOPTCipc.110
+		add_character_modifier = { modifier = intrigue_advice years = 3 }
+		random_list = {
+			50 = {}
+			25 = {
+				trigger = { trait = shy }
+				remove_trait = shy
+			}
+			25 = { change_diplomacy = 1 }
+			25 = { change_intrigue = 1 }
+		}
+	}
+	
+	#speak with foreigners
+	option = {
+		trigger = { event_target:imperial_capital = { has_building = ipc_imperial_palace_3 } }
+		name = EVTOPTDipc.110
+		add_character_modifier = { modifier = multilingual years = 3 }
+		prestige = 100
+		random_list = {
+			50 = { }
+			25 = {
+				trigger = { trait = shy }
+				remove_trait = shy
+			}
+			25 = { change_diplomacy = 1 }
+			25 = { change_learning = 1 }
+		}
+	}
+	after = { 
+		hidden_tooltip = { 
+			clr_character_flag = emperor_present
+			character_event = { id = ipc.120 days = 10 random = 3 } 
+		} 
+	}
+}
+
+####wander aimlessly tombola
+#character_event = {
+	#id = ipc.115
+	
+	#hide_window = yes
+	#is_triggered_only = yes
+	
+	#immediate = {
+	#	random_list = {
+	#	
+	#	
+	#	}
+	#}
+	
+	###dead body event
+#}
+
+
+####end of visit
+character_event = {
+	id = ipc.120
+	desc = EVTDESAipc.120
+	picture = GFX_evt_magnificent_castle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipc.120
+		hidden_tooltip = {
+			clr_character_flag = visit_third_branch
+			clr_character_flag = visiting_imperial_capital
+		}
+	}
+}
+
+
+
+
+
+####force favor notification for target
+character_event	= {
+	id = ipc.130
+	desc = EVTDESAipc.130
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+	notification = yes
+	show_from_from = yes
+	
+	option = { name = OK }
+}
+
+####force out of faction lawkeeper notification for target
+character_event	= {
+	id = ipc.131
+	desc = EVTDESAipc.131
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+	notification = yes
+	show_from_from = yes
+	
+	option = { name = OK }
+}
+
+####invite imperial commander
+character_event = {
+	id = ipc.132
+	desc = EVTDESAipc.132
+	picture = GFX_evt_emissary
+
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			create_character = {
+				age = 30
+				random_traits = yes
+				dynasty = random
+				female = no
+				religion = THIS
+				culture = THIS
+				attributes = {
+					diplomacy = 4
+					martial = 10
+					stewardship = 3
+					intrigue = 4
+					learning = 3
+				}
+			}
+			new_character = {
+				remove_trait = weak
+				remove_trait = slow
+				remove_trait = imbecile
+				remove_trait = dull
+				
+				remove_trait = mystic
+				remove_trait = socializer
+				remove_trait = gamer
+				remove_trait = hedonist
+				remove_trait = duelist
+				remove_trait = hunter
+				remove_trait = strategist
+				remove_trait = administrator
+				remove_trait = architect
+				remove_trait = gardener
+				remove_trait = schemer
+				remove_trait = impaler
+				remove_trait = seducer
+				remove_trait = seductress
+				remove_trait = theologian
+				remove_trait = scholar
+				
+				remove_trait = naive_appeaser
+				remove_trait = underhanded_rogue
+				remove_trait = charismatic_negotiator
+				remove_trait = grey_eminence
+				
+				remove_trait = misguided_warrior
+				remove_trait = tough_soldier
+				remove_trait = skilled_tactician
+				remove_trait = brilliant_strategist
+				
+				remove_trait = indulgent_wastrel
+				remove_trait = thrifty_clerk
+				remove_trait = fortune_builder
+				remove_trait = midas_touched
+				
+				remove_trait = amateurish_plotter
+				remove_trait = flamboyant_schemer
+				remove_trait = intricate_webweaver
+				remove_trait = elusive_shadow
+				
+				remove_trait = detached_priest
+				remove_trait = martial_cleric
+				remove_trait = scholarly_theologian
+				remove_trait = mastermind_theologian
+				
+				set_character_flag = ai_flag_refuse_conversion
+				set_character_flag = no_court_invites
+				set_character_flag = ipc_special_commander
+				
+				random_list = {
+					50 = { add_trait = skilled_tactician }
+					50 = { add_trait = brilliant_strategist }
+				}
+				
+				add_trait = ipc_imperial_commander
+				
+				random_list = {
+					25 = { change_martial = 2 }
+					25 = { change_martial = 3 }
+					25 = { change_martial = 4 }
+					25 = { change_martial = 5 }
+				}
+				
+				#initial command trait
+				random_list = {
+					20 = { add_trait = heavy_infantry_leader }
+					20 = { add_trait = cavalry_leader }
+					20 = { add_trait = organizer }
+					20 = { add_trait = siege_leader }
+					20 = { add_trait = experimenter }
+					20 = { add_trait = flanker }
+					20 = {
+						trigger = { culture_group = chinese_group }
+						add_trait = logistics_expert
+					}
+					20 = {
+						trigger = { culture_group = chinese_group }
+						add_trait = master_of_flame
+					}
+					20 = {
+						trigger = { culture_group = chinese_group }
+						add_trait = sapper
+					}
+					20 = {
+						trigger = { culture_group = chinese_group }
+						add_trait = levy_coordinator
+					}
+					20 = {
+						trigger = { 
+							OR = { 
+								culture_group = indo_aryan_group 
+								culture_group = dravidian_group
+							}
+						}
+						add_trait = war_elephant_leader
+					}
+				}
+				#secondary command trait
+				random_list = {
+					40 = { }
+					20 = { add_trait = aggressive_leader }
+					20 = { add_trait = defensive_leader }
+					20 = { add_trait = inspiring_leader }
+					20 = { add_trait = unyielding_leader }
+					20 = { add_trait = unyielding_leader }
+				}
+				
+				
+				hidden_tooltip = {
+					if = {
+						limit = {
+							has_dharmic_religion_trigger = yes
+						}
+						add_trait = kshatriya
+						character_event = { id = RoI.30121 }
+					}
+				}
+				save_event_target_as = invited_character
+				move_character = ROOT
+			}
+		}
+	}
+	
+	option = {
+		trigger = { event_target:invited_character = { can_hold_title = title_commander } }
+		name = EVTOPTAipc.132
+		event_target:invited_character = { give_minor_title = title_commander }
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EXCELLENT
+		ai_chance = { factor = 0 } 
+	}
+}
+
+####declare traitor spymaster notification for target
+character_event	= {
+	id = ipc.133
+	desc = EVTDESAipc.133
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+	notification = yes
+	show_from_from = yes
+	
+	option = { name = OK }
+}
+
+####choose bureaucratic focus
+character_event = {
+	id = ipc.134
+	desc = EVTDESAipc.134
+	picture = GFX_evt_scientist
+
+	is_triggered_only = yes
+	
+	#administrator
+	option = {
+		trigger = { NOT = { trait = ipc_imperial_administrator } }
+		name = EVTOPTAipc.134
+		add_trait = ipc_imperial_administrator
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				ipc_has_education_stewardship_trigger = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_focus = focus_rulership
+					has_focus = focus_business
+					has_focus = focus_scholarship
+				}
+			}
+			modifier = {
+				factor = 0.5
+				demesne_size < 2
+			}
+			modifier = {
+				factor = 1.5 
+				trait = content
+			}
+		}
+	}
+	
+	#aristrocrat
+	option = {
+		trigger = { NOT = { trait = ipc_imperial_aristrocrat } }
+		name = EVTOPTBipc.134
+		add_trait = ipc_imperial_aristrocrat
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				OR = {
+					ipc_has_education_diplomacy_trigger = yes
+					ipc_has_education_intrigue_trigger = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_focus = focus_seduction
+					has_focus = focus_intrigue
+					has_focus = focus_carousing
+					has_focus = focus_family
+				}
+			}
+			modifier = {
+				factor = 0.5
+				num_of_dynasty_members = 5
+			}
+			modifier = {
+				factor = 1.5
+				dynastic_prestige = 100
+			}
+			modifier = {
+				factor = 1.5
+				trait = ambitious
+			}
+		}
+	}
+	
+	#commander
+	option = {
+		trigger = { NOT = { trait = ipc_imperial_commander } }
+		name = EVTOPTCipc.134
+		add_trait = ipc_imperial_commander
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 2
+				ipc_has_education_martial_trigger = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_focus = focus_hunting
+					has_focus = focus_war
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					has_minor_title = title_commander
+					martial = 15
+				}
+			}
+		}
+	}
+	
+	option = { 
+		name = EVTOPTDipc.134 
+		change_society_currency = 200
+	}
+	after = { hidden_tooltip = { clr_character_flag = choosing_imperial_focus } }
+}
+
+##fix bordergore power
+character_event = {
+	id = ipc.135
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		clear_event_target = relinquish_titles_top_liege
+		clear_event_target = relinquish_titles_title
+		top_liege = { save_event_target_as = relinquish_titles_top_liege }
+		primary_title = { save_event_target_as = relinquish_titles_title }
+		
+		##kings
+		if = {
+			limit = { tier = king }	
+			
+			#get rid of non dejure demesne titles
+			any_demesne_title = {
+				limit = {
+					tier = count
+					can_be_relinquished_trigger = yes
+					NOT = { de_jure_liege_or_above = event_target:relinquish_titles_title }
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					female = no
+					religion = event_target:relinquish_titles_top_liege
+					culture = event_target:relinquish_titles_top_liege
+				}
+				new_character = {
+					set_defacto_liege = ROOT
+					grant_title = PREV
+				}
+			}
+			#get rid of dejure vassal's non dejure demesne titles
+			any_vassal = {
+				limit = { 
+					ai = yes 
+					any_demesne_title = {
+						tier = count
+						can_be_relinquished_trigger = yes
+						de_jure_liege_or_above = event_target:relinquish_titles_title
+					}
+					any_demesne_title = {
+						tier = count
+						can_be_relinquished_trigger = yes
+						NOT = { de_jure_liege_or_above = event_target:relinquish_titles_title }
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = count
+						can_be_relinquished_trigger = yes
+						NOT = { de_jure_liege_or_above = event_target:relinquish_titles_title }
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						female = no
+						religion = event_target:relinquish_titles_top_liege
+						culture = event_target:relinquish_titles_top_liege
+					}
+					new_character = {
+						set_defacto_liege = ROOT
+						grant_title = PREV
+					}
+				}
+			}
+			#give non-dejure duchies away
+			if = {
+				limit = {
+					any_demesne_title = {
+						tier = duke
+						can_be_relinquished_trigger = yes
+						NOT = { de_jure_liege = event_target:relinquish_titles_title }
+					}
+				}
+				while = {
+					limit = {
+						any_demesne_title = {
+							tier = duke
+							can_be_relinquished_trigger = yes
+							NOT = { de_jure_liege = event_target:relinquish_titles_title }
+						}
+					}
+					random_demesne_title = {
+						limit = {
+							tier = duke
+							can_be_relinquished_trigger = yes
+							NOT = { de_jure_liege = event_target:relinquish_titles_title }
+						}
+						ROOT = {
+							random_vassal = {
+								limit = {
+									primary_title = { de_jure_liege = PREVPREVPREV }
+								}
+								
+								#check if the kingdom exists, if yes, set the leige to the king and not emperor
+								set_defacto_liege = event_target:relinquish_titles_top_liege
+								grant_title = PREVPREV
+								if = {
+									limit = {
+										primary_title = {
+											kingdom = {
+												has_holder = yes
+												holder_scope = { 
+													same_realm = event_target:relinquish_titles_top_liege 
+													NOR = { 
+														character = event_target:relinquish_titles_top_liege 
+														character = ROOT
+													}
+												}
+											}
+										}
+									}
+									character_event = { id = ipc.136 }
+								}
+							}
+						}
+					}
+				}
+			}
+			#get rid of non-dejure dukes
+			if = {
+				limit = {
+					any_vassal = {
+						tier = duke
+						primary_title = { NOT = { de_jure_liege = event_target:relinquish_titles_title } }
+					}
+				}
+				any_vassal = {
+					limit = {
+						tier = duke
+						primary_title = { NOT = { de_jure_liege = event_target:relinquish_titles_title } }
+					}
+					set_defacto_liege = event_target:relinquish_titles_top_liege
+					if = {
+						limit = {
+							primary_title = {
+								kingdom = {
+									has_holder = yes
+									holder_scope = {
+										same_realm = event_target:relinquish_titles_top_liege 
+										NOR = { 
+											character = event_target:relinquish_titles_top_liege 
+											character = ROOT
+										}
+									}
+								}
+							}
+						}
+						character_event = { id = ipc.136 }
+					}
+				}
+			}
+			#get rid of non-dejure counts
+			if = {
+				limit = {
+					any_vassal = {
+						tier = count
+						primary_title = { NOT = { de_jure_liege_or_above = event_target:relinquish_titles_title } }
+					}
+				}
+				any_vassal = {
+					limit = {
+						tier = count
+						primary_title = { NOT = { de_jure_liege_or_above = event_target:relinquish_titles_title } }
+					}
+					set_defacto_liege = event_target:relinquish_titles_top_liege
+					if = {
+						limit = {
+							primary_title = {
+								dejure_liege_title = {
+									has_holder = yes
+									holder_scope = { 
+										same_realm = event_target:relinquish_titles_top_liege 
+										NOT = { character = event_target:relinquish_titles_top_liege }
+									}
+								}
+							}
+						}
+						character_event = { id = ipc.136 }
+					}
+				}
+			}
+			#give extra kingdoms away
+			if = {
+				limit = {
+					any_demesne_title = {
+						tier = king
+						can_be_relinquished_trigger = yes
+						NOT = { title = event_target:relinquish_titles_title }
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = king
+						can_be_relinquished_trigger = yes
+						NOT = { title = event_target:relinquish_titles_title }
+					}
+					set_title_flag = ipc_give_away
+					grant_title = event_target:relinquish_titles_top_liege
+				}
+				event_target:relinquish_titles_top_liege = {
+					any_demesne_title = {
+						limit = {
+							tier = king
+							has_title_flag = ipc_give_away
+						}
+						clr_title_flag = ipc_give_away
+						event_target:relinquish_titles_top_liege = {
+							if = {
+								limit = {
+									any_vassal = {
+										primary_title = { de_jure_liege_or_above = PREVPREVPREV }
+										NOT = { any_demesne_title = { is_vice_royalty = yes } }
+									}
+								}
+								random_vassal = {
+									limit = {
+										primary_title = { de_jure_liege_or_above = PREVPREVPREV }
+										NOT = { any_demesne_title = { is_vice_royalty = yes } }
+									}
+									set_defacto_liege = event_target:relinquish_titles_top_liege
+									grant_title = PREVPREV
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		
+		####dukes
+		if = {
+			limit = { tier = duke }
+			
+			#get rid of non dejure demesne titles
+			any_demesne_title = {
+				limit = {
+					tier = count
+					can_be_relinquished_trigger = yes
+					NOT = { de_jure_liege = event_target:relinquish_titles_title }
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					female = no
+					religion = event_target:relinquish_titles_top_liege
+					culture = event_target:relinquish_titles_top_liege
+				}
+				new_character = {
+					set_defacto_liege = ROOT
+					grant_title = PREV
+				}
+			}
+			#get rid of dejure vassal's non dejure demesne titles
+			any_vassal = {
+				limit = { 
+					ai = yes 
+					any_demesne_title = {
+						tier = count
+						can_be_relinquished_trigger = yes
+						de_jure_liege = event_target:relinquish_titles_title
+					}
+					any_demesne_title = {
+						tier = count
+						can_be_relinquished_trigger = yes
+						NOT = { de_jure_liege = event_target:relinquish_titles_title }
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = count
+						can_be_relinquished_trigger = yes
+						NOT = { de_jure_liege = event_target:relinquish_titles_title }
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						female = no
+						religion = event_target:relinquish_titles_top_liege
+						culture = event_target:relinquish_titles_top_liege
+					}
+					new_character = {
+						set_defacto_liege = ROOT
+						grant_title = PREV
+					}
+				}
+			}
+			#give extra duchies away
+			if = {
+				limit = {
+					any_demesne_title = {
+						tier = duke
+						can_be_relinquished_trigger = yes
+						NOT = { title = event_target:relinquish_titles_title }
+					}
+				}
+				while = {
+					limit = {
+						any_demesne_title = {
+							count = 2
+							tier = duke
+							can_be_relinquished_trigger = yes
+						}
+					}
+					random_demesne_title = {
+						limit = {
+							tier = duke
+							can_be_relinquished_trigger = yes
+							NOT = { title = event_target:relinquish_titles_title }
+						}
+						ROOT = {
+							random_vassal = {
+								limit = {
+									primary_title = { de_jure_liege = PREVPREVPREV }
+									OR = {
+										demesne_size = 1
+										any_demesne_title = {
+											dejure_liege_title = { 
+												has_holder = no
+											}
+										}
+									}
+								}
+								
+								#check if the kingdom exists, if yes, set the leige to the king and not emperor
+								set_defacto_liege = event_target:relinquish_titles_top_liege
+								grant_title = PREVPREV
+								if = {
+									limit = {
+										primary_title = {
+											kingdom = {
+												has_holder = yes
+												holder_scope = { 
+													same_realm = event_target:relinquish_titles_top_liege 
+													NOT = { character = event_target:relinquish_titles_top_liege }
+												}
+											}
+										}
+									}
+									character_event = { id = ipc.136 }
+								}
+							}
+						}
+					}
+				}
+			}
+			#get rid of non-dejure counts
+			if = {
+				limit = {
+					any_vassal = {
+						tier = count
+						primary_title = { NOT = { de_jure_liege = event_target:relinquish_titles_title } }
+					}
+				}
+				any_vassal = {
+					limit = {
+						tier = count
+						primary_title = { NOT = { de_jure_liege = event_target:relinquish_titles_title } }
+					}
+					set_defacto_liege = event_target:relinquish_titles_top_liege
+					if = {
+						limit = {
+							primary_title = {
+								dejure_liege_title = {
+									has_holder = yes
+									holder_scope = { 
+										same_realm = event_target:relinquish_titles_top_liege 
+										NOT = { character = event_target:relinquish_titles_top_liege }
+									}
+								}
+							}
+						}
+						character_event = { id = ipc.136 }
+					}
+				}
+			}
+		}
+		
+		###counts
+		else_if = {
+			limit = { tier = count }
+			
+			#get rid of extra counties
+			any_demesne_title = {
+				limit = {
+					tier = count
+					can_be_relinquished_trigger = yes
+					NOT = { de_jure_liege = event_target:relinquish_titles_title }
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					female = no
+					religion = event_target:relinquish_titles_top_liege
+					culture = event_target:relinquish_titles_top_liege
+				}
+				new_character = {
+					set_defacto_liege = event_target:relinquish_titles_top_liege
+					grant_title = PREV
+					if = {
+						limit = {
+							primary_title = {
+								dejure_liege_title = {
+									has_holder = yes
+									holder_scope = { 
+										same_realm = event_target:relinquish_titles_top_liege 
+										NOT = { character = event_target:relinquish_titles_top_liege }
+									}
+								}
+							}
+						}
+						character_event = { id = ipc.136 }
+					}
+				}
+			}
+			#get rid of extra barons
+			any_vassal = {
+				limit = {
+					tier = baron
+					primary_title = { NOT = { de_jure_liege = event_target:relinquish_titles_top_liege } }
+				}
+				character_event = { id = ipc.136 }
+			}
+		}
+	}
+}
+
+###relinquish titles power, setting vassals to dejure lieges
+character_event = {
+	id = ipc.136
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { tier = duke }
+			primary_title = {
+				kingdom = {
+					holder_scope = {
+						ROOT = { set_defacto_liege = PREV }
+					}
+				}
+			}
+		}
+		
+		else_if = {
+			limit = { 
+				OR = { 
+					tier = count 
+					tier = baron
+				}
+			}
+			primary_title = {
+				dejure_liege_title = { 
+					holder_scope = { 
+						ROOT = { set_defacto_liege = PREV }
+					}
+				}
+			}
+		}
+	}
+}
+
+
+###relinquish titles power, high influence choice
+character_event = {
+	id = ipc.137
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	#accept
+	option = {
+		set_character_flag = accept_relinquish
+		FROMFROM = { letter_event = { id = ipc.138 days = 10 random = 3 } }
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 1.5
+				trait = content
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				dynasty = FROMFROM
+			}
+			modifier = {
+				factor = 2
+				is_loyal_to_empire_trigger = yes
+			}
+		}
+	}
+	
+	#refuse
+	option = {
+		FROMFROM = { letter_event = { id = ipc.138 days = 10 random = 3 } }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.5
+				tier = duke
+			}
+			modifier = {
+				factor = 2
+				tier = king
+			}
+			modifier = {
+				factor = 1.25
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.25
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = proud
+			}
+			modifier = {
+				factor = 1.25
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.25
+				trait = stubborn
+			}
+			modifier = {
+				factor = 1.5
+				trait = lunatic
+			}
+			modifier = {
+				factor = 1.5
+				trait = possessed
+			}
+			modifier = {
+				factor = 1.25
+				trait = zealous
+				FROMFROM = { NOT = { religion = ROOT } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { culture_group = FROMFROM }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { culture = FROMFROM }
+			}
+			modifier = {
+				factor = 1.25
+				is_imperial_court_member_trigger = yes
+				society_influence > 70
+			}
+			modifier = {
+				factor = 1.25
+				is_imperial_court_member_trigger = yes
+				society_influence > 80
+			}
+			modifier = {
+				factor = 1.25
+				is_imperial_court_member_trigger = yes
+				society_influence > 90
+			}
+			modifier = {
+				factor = 1.25
+				is_imperial_court_member_trigger = yes
+				has_unique_imperial_office_trigger = yes
+			}
+		}
+	}
+}
+
+###relinquish titles power, get response
+letter_event = {
+	id = ipc.138
+	desc = {
+		trigger = { FROM = { has_character_flag = accept_relinquish } }
+		text = EVTDESAipc.138
+	}
+	desc = {
+		trigger = { FROM = { NOT = { has_character_flag = accept_relinquish } } }
+		text = EVTDESBipc.138
+	}
+	
+	is_triggered_only = yes
+	
+	#accepted
+	option = {
+		trigger = { FROM = { has_character_flag = accept_relinquish } }
+		name = EVTOPTAipc.138
+		hidden_tooltip = { FROM = { character_event = { id = ipc.135 } } }
+		opinion = { modifier = opinion_pleased who = FROM years = 5 }
+	}
+	
+	#revolt
+	option = {
+		trigger = { FROM = { NOT = { has_character_flag = accept_relinquish } } }
+		name = EVTOPTBipc.138
+		change_society_currency = 375
+		reverse_war = { target = FROM casus_belli = overthrow_ruler }
+	}
+	
+	after = {
+		FROM = {
+			clr_character_flag = accept_relinquish
+			clr_character_flag = awaiting_relinquish_response
+		}
+	}
+}
+
+####hereditary viceroyalty notification
+character_event = {
+	id = ipc.139
+	desc = EVTDESAipc.139
+	picture = GFX_evt_suspicious_noble
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipc.139
+		opinion = { modifier = opinion_outraged who = FROM years = 10 }
+	}
+}
+
+
+##moving imperial capital
+character_event = {
+	id = ipc.140
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		##get capital buildings
+		any_demesne_title = {
+			limit = { has_title_flag = is_imperial_capital }
+			
+			if = {
+				limit = { has_building = ipc_imperial_barracks_1 }
+				ROOT = { set_character_flag = ipc_imperial_barracks_1 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_barracks_2 }
+				ROOT = { set_character_flag = ipc_imperial_barracks_2 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_barracks_3 }
+				ROOT = { set_character_flag = ipc_imperial_barracks_3 }
+			}
+			
+			if = {
+				limit = { has_building = ipc_imperial_training_grounds_1 }
+				ROOT = { set_character_flag = ipc_imperial_training_grounds_1 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_training_grounds_2 }
+				ROOT = { set_character_flag = ipc_imperial_training_grounds_2 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_training_grounds_3 }
+				ROOT = { set_character_flag = ipc_imperial_training_grounds_3 }
+			}
+			
+			if = {
+				limit = { has_building = ipc_imperial_tax_center_1 }
+				ROOT = { set_character_flag = ipc_imperial_tax_center_1 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_tax_center_2 }
+				ROOT = { set_character_flag = ipc_imperial_tax_center_2 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_tax_center_3 }
+				ROOT = { set_character_flag = ipc_imperial_tax_center_3 }
+			}
+			
+			if = {
+				limit = { has_building = ipc_imperial_library_1 }
+				ROOT = { set_character_flag = ipc_imperial_library_1 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_library_2 }
+				ROOT = { set_character_flag = ipc_imperial_library_2 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_library_3 }
+				ROOT = { set_character_flag = ipc_imperial_library_3 }
+			}
+			
+			if = {
+				limit = { has_building = ipc_imperial_council_halls_1 }
+				ROOT = { set_character_flag = ipc_imperial_council_halls_1 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_council_halls_2 }
+				ROOT = { set_character_flag = ipc_imperial_council_halls_2 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_council_halls_3 }
+				ROOT = { set_character_flag = ipc_imperial_council_halls_3 }
+			}
+			
+			if = {
+				limit = { has_building = ipc_imperial_palace_1 }
+				ROOT = { set_character_flag = ipc_imperial_palace_1 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_palace_2 }
+				ROOT = { set_character_flag = ipc_imperial_palace_2 }
+			}
+			if = {
+				limit = { has_building = ipc_imperial_palace_3 }
+				ROOT = { set_character_flag = ipc_imperial_palace_3 }
+			}
+			
+			clr_title_flag = is_imperial_capital
+		}
+		
+		capital_holding = {
+			set_title_flag = is_imperial_capital
+			
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_barracks_1 } }
+				ROOT = { clr_character_flag = ipc_imperial_barracks_1 }
+				add_building = ipc_imperial_barracks_1
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_barracks_2 } }
+				ROOT = { clr_character_flag = ipc_imperial_barracks_2 }
+				add_building = ipc_imperial_barracks_2
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_barracks_3 } }
+				ROOT = { clr_character_flag = ipc_imperial_barracks_3 }
+				add_building = ipc_imperial_barracks_3
+			}
+			
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_training_grounds_1 } }
+				ROOT = { clr_character_flag = ipc_imperial_training_grounds_1 }
+				add_building = ipc_imperial_training_grounds_1
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_training_grounds_2 } }
+				ROOT = { clr_character_flag = ipc_imperial_training_grounds_2 }
+				add_building = ipc_imperial_training_grounds_2
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_training_grounds_3 } }
+				ROOT = { clr_character_flag = ipc_imperial_training_grounds_3 }
+				add_building = ipc_imperial_training_grounds_3
+			}
+			
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_tax_center_1 } }
+				ROOT = { clr_character_flag = ipc_imperial_tax_center_1 }
+				add_building = ipc_imperial_tax_center_1
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_tax_center_2 } }
+				ROOT = { clr_character_flag = ipc_imperial_tax_center_2 }
+				add_building = ipc_imperial_tax_center_2
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_tax_center_3 } }
+				ROOT = { clr_character_flag = ipc_imperial_tax_center_3 }
+				add_building = ipc_imperial_tax_center_3
+			}
+		
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_library_1 } }
+				ROOT = { clr_character_flag = ipc_imperial_library_1 }
+				add_building = ipc_imperial_library_1
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_library_2 } }
+				ROOT = { clr_character_flag = ipc_imperial_library_2 }
+				add_building = ipc_imperial_library_2
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_library_3 } }
+				ROOT = { clr_character_flag = ipc_imperial_library_3 }
+				add_building = ipc_imperial_library_3
+			}
+			
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_council_halls_1 } }
+				ROOT = { clr_character_flag = ipc_imperial_council_halls_1 }
+				add_building = ipc_imperial_council_halls_1
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_council_halls_2 } }
+				ROOT = { clr_character_flag = ipc_imperial_council_halls_2 }
+				add_building = ipc_imperial_council_halls_2
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_council_halls_3 } }
+				ROOT = { clr_character_flag = ipc_imperial_council_halls_3 }
+				add_building = ipc_imperial_council_halls_3
+			}
+		
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_palace_1 } }
+				ROOT = { clr_character_flag = ipc_imperial_palace_1 }
+				add_building = ipc_imperial_palace_1
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_palace_2 } }
+				ROOT = { clr_character_flag = ipc_imperial_palace_2 }
+				add_building = ipc_imperial_palace_2
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = ipc_imperial_palace_3 } }
+				ROOT = { clr_character_flag = ipc_imperial_palace_3 }
+				add_building = ipc_imperial_palace_3
+			}
+		}
+	}
+}
+
+
+###ipc faction takeover ultimatum
+letter_event = {
+	id = ipc.150
+	desc = EVTDESAipc.150
+	
+	is_triggered_only = yes
+	
+	trigger = { FROM = { in_faction = faction_ipc_takeover } }
+	
+	immediate = {
+		FROM = {
+			diplomatic_immunity = yes 
+			any_faction_backer = {
+				faction = faction_ipc_takeover
+				diplomatic_immunity = yes
+			}
+		}
+		most_popular_vassal = {
+			limit = {
+				same_society_as = FROM
+				OR = {
+					society_rank == 3
+					AND = {
+						is_society_grandmaster = yes
+						is_imperial_court_regent_trigger = yes
+					}
+				}
+				NOR = {
+					is_inaccessible_trigger = yes
+					trait = incapable
+					trait = eunuch
+				}
+				is_adult = yes
+				OR = {
+					is_female = no
+					AND = {
+						is_female = yes
+						ROOT = { has_law = true_cognatic_succession }
+					}
+				}
+			}
+			set_character_flag = new_title_holder
+			save_event_target_as = new_title_holder
+		}
+	}
+	
+	#accept demands
+	option = {
+		name = EVTOPTAipc.150
+		hidden_tooltip = {
+			any_vassal = {
+				limit = {
+					ai = no
+					NOT = { in_faction = faction_ipc_takeover }
+				}
+				character_event = { id = ipc.151 }
+			}
+			FROM = {
+				letter_event = { id = ipc.152 }
+				any_faction_backer = {
+					faction = faction_ipc_takeover
+					letter_event = { id = ipc.153 }
+					diplomatic_immunity = no
+				}
+				diplomatic_immunity = no
+			}
+		}
+		FROM = {
+			#to clear faction
+			opinion = { modifier = opinion_abdicated who = ROOT months = 12 }
+			add_society_modifier = 	{ modifier = ipc_successful_faction_takeover years = 5 }
+			faction_ipc_takeover = { # The target (title) of the faction
+				holder_scope = {
+					any_vassal = {
+						limit = { has_character_flag = new_title_holder }
+						usurp_title = {
+							target = PREVPREV
+							type = faction_demand
+						}
+						clr_character_flag = new_title_holder
+						job_chancellor = { remove_title = job_chancellor }
+						job_marshal = { remove_title = job_marshal }
+						job_treasurer = { remove_title = job_treasurer }
+						job_spymaster = { remove_title = job_spymaster }
+						job_spiritual = { remove_title = job_spiritual }
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0	
+				NOT = { FROM = { faction_power = { faction = faction_ipc_takeover power = 1.0 } } }
+			}			
+			modifier = {
+				factor = 1.25
+				is_weak_trigger = yes
+			}
+			modifier = {
+				factor = 1.25
+				trait = craven
+			}
+			modifier = {
+				factor = 1.25
+				trait = humble
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 1.25
+				trait = charitable
+			}
+			modifier = {
+				factor = 1.25
+				trait = patient
+			}
+			modifier = {
+				factor = 1.25
+				trait = content
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBipc.150
+		hidden_tooltip = {
+			if = {
+				limit = { FROM = { faction_power = { faction = faction_ipc_takeover power = 1.0 } } }
+				random = {
+					chance = 25
+					character_event = { id = 45002 days = 120 } # Loyalists flock to the liege's banner
+				}
+			}
+		}
+		FROM = {
+			letter_event = { id = ipc.154 days = 3 tooltip = EVTTOOLTIPBipc.150 }
+			tooltip = { any_faction_backer = { faction = faction_ipc_takeover } }
+			hidden_tooltip = {
+				if = {
+					limit = {
+						NOT = { faction_power = { faction = faction_ipc_takeover power = 0.75 } }
+					}
+					random_list = {
+						50 = {
+						}
+						30 = {
+							character_event = { id = 45000 days = 17 } # A great number of rebels flock to the revolter's banner
+						}
+						20 = {
+							character_event = { id = 45004 days = 17 } # Rebels flock to the revolter's banner
+						}
+					}
+				}
+				if = {
+					limit = {
+						faction_power = { faction = faction_ipc_takeover power = 0.75 }
+						NOT = { faction_power = { faction = faction_ipc_takeover power = 1.5 } }
+					}
+					random_list = {
+						75 = {
+						}
+						5 = {
+							character_event = { id = 45000 days = 17 } # A great number of rebels flock to the revolter's banner
+						}
+						20 = {
+							character_event = { id = 45004 days = 17 } # Rebels flock to the revolter's banner
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 1.25
+				is_strong_trigger = yes
+			}
+			modifier = {
+				factor = 1.25
+				trait = brave
+			}
+			modifier = {
+				factor = 1.25
+				trait = proud
+			}
+			modifier = {
+				factor = 1.25
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.25
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.25
+				trait = stubborn
+			}
+			modifier = {
+				factor = 0.75
+				FROM = { faction_power = { faction = faction_ipc_takeover power = 1.5 } }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { faction_power = { faction = faction_ipc_takeover power = 1.0 } }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { faction_power = { faction = faction_ipc_takeover power = 2.0 } }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { faction_power = { faction = faction_ipc_takeover power = 3.0 } }
+			}	
+			modifier = {
+				factor = 0.5
+				FROM = { faction_power = { faction = faction_ipc_takeover power = 4.0 } }
+			}	
+		}
+	}
+}
+
+##inform other vassals
+character_event = {
+	id = ipc.151
+	desc = EVTDESAipc.151
+	
+	notification = yes
+	
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_intrigue
+	
+	show_from_from = yes
+	
+	is_triggered_only = yes
+	
+	option = { name = "I_SEE" }
+}
+
+## Demand accepted - Powerful Vassal Takeover
+letter_event = {
+	id = ipc.152
+	desc = EVTDESAipc.152
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EXCELLENT"
+		clr_character_flag = faction_ipc_takeover_ultimatum_taken
+		
+		if = {
+			limit = { event_target:new_title_holder = { NOT = { character = ROOT } } }
+			add_favor = event_target:new_title_holder
+			opinion = {
+				who = event_target:new_title_holder
+				modifier = opinion_favorite
+				years = 5
+			}
+		}
+		
+		add_character_modifier = {
+			name = faction_ipc_takeover_ultimatum_timer
+			hidden = yes
+			duration = 3650
+		}
+	}
+}
+
+## Inform faction backers of success - Ipc Vassal Takeover
+letter_event = {
+	id = ipc.153
+	desc = EVTDESAipc.153
+	
+	show_from_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "GOOD"
+		reverse_opinion = {
+			modifier = opinion_grateful
+			who = FROMFROM
+			years = 5
+		}
+
+		if = {
+			limit = { event_target:new_title_holder = { NOT = { character = ROOT } } }
+			add_favor = event_target:new_title_holder
+			opinion = {
+				who = event_target:new_title_holder
+				modifier = opinion_favorite
+				years = 5
+			}
+		}
+
+		add_character_modifier = {
+			name = faction_ipc_takeover_ultimatum_timer
+			hidden = yes
+			duration = 3650
+		}
+	}
+}
+
+#Demand rejected - Ipc Vassal Takeover
+letter_event = {
+	id = ipc.154
+	desc = EVTDESAipc.154
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipc.154
+		
+		clr_character_flag = faction_ipc_takeover_ultimatum_taken
+
+		FROM = { set_character_flag = ipc_takeover_target }
+		
+		faction_ipc_takeover = { # The target (title) of the faction
+			reverse_war = {
+				target = ROOT
+				casus_belli = ipc_faction_takeover_war
+				faction = faction_ipc_takeover
+			}
+		}
+	}
+}
+
+# Winning war notification - Ipc vassal takeover
+letter_event = {
+	id = ipc.155
+	desc = EVTDESipc.155
+
+	immediate = { clr_character_flag = helped_win_war }
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipc.155
+		opinion = {
+			who = FROM
+			modifier = opinion_favorite
+			years = 5
+		}
+		add_favor = FROM
+	}
+}
+
+# Winning war notification - New title holder
+character_event = {
+	id = ipc.156
+	desc = EVTDESAipc.156
+	picture = GFX_evt_coronation
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTAipc.156
+		clr_character_flag = new_title_holder
+		job_chancellor = { remove_title = job_chancellor }
+		job_marshal = { remove_title = job_marshal }
+		job_treasurer = { remove_title = job_treasurer }
+		job_spymaster = { remove_title = job_spymaster }
+		job_spiritual = { remove_title = job_spiritual }
+		any_vassal = {
+			limit = { has_character_flag = helped_win_war }
+			letter_event = { id = ipc.155 days = 1 }
+			tooltip = {
+				opinion = {
+					who = ROOT
+					modifier = opinion_favorite
+					years = 5
+				}
+				reverse_add_favor = ROOT
+			}
+		}
+	}
+}
+
+
+
+####reducing society influence, levies
+long_character_event = {
+	id = ipc.200
+	desc = EVTDESAipc.200
+	picture = GFX_evt_diplomat_hf
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		get_imperial_capital_effect = yes 
+	}
+	
+	option = {
+		trigger = { NOT = { trait = content } }
+		name = EVTOPTAipc.200
+		opinion = { modifier = opinion_reduced_court_power who = FROM years = 5 }
+		capital_holding = { 
+			add_holding_modifier = { modifier = conscripted_imperial_army years = 5 }
+		}
+	}
+	
+	option = {
+		tooltip_info = content
+		trigger = { trait = content }
+		name = EVTOPTBipc.200
+		capital_holding = { 
+			add_holding_modifier = { modifier = conscripted_imperial_army years = 5 }
+		}
+	}
+}
+
+
+
+
+##############Society Flavor Events##############
+
+##flavor tombola 
+character_event = {
+	id = ipc.300
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		is_imperial_court_member_trigger = yes
+		can_interact_with_imperial_court_revolt_trigger = yes
+		NOT = { tier = emperor }
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			OR = {
+				war = yes
+				liege = { war = yes }
+			}
+		}
+	}
+	
+	immediate = {
+		random_list = {
+			
+			#get insulted
+			20 = { 
+				trigger = { society_rank > 1 }
+				society = {
+					random_society_member = {
+						limit = {
+							NOT = { has_character_modifier = ipc_recently_insulted_timer }
+							OR = {
+								AND = {
+									ROOT = { society_rank == 2 }
+									society_rank < 2
+								}
+								AND = {
+									ROOT = { society_rank >= 3 }
+ 									society_rank < 3
+								}
+							}
+						}
+						add_character_modifier = { modifier = ipc_recently_insulted_timer years = 5 hidden = yes }
+						character_event = { id = ipc.301 days = 2 }
+					}
+				}
+			}
+			
+			#paperwork
+			20 = {
+				trigger = { is_playable = yes }
+				character_event = { id = ipc.304 days = 2 }
+			}
+			
+			#ill, hard to work
+			15 = { 
+				trigger = { 
+					is_ill = yes 
+					NOT = { trait = incapable }
+				}
+				character_event = { id = ipc.305 days = 2 }
+			}
+			
+			#private feast
+			20 = {
+				trigger = {
+					is_landed = yes 
+					society = {
+						any_society_member = {
+							is_playable = yes
+							NOT = { tier = emperor }
+							is_inaccessible_trigger = no
+							in_command = no
+							opinion = { who = ROOT value = 0 }
+						}
+					}
+				}
+				society = {
+					random_society_member = {
+						limit = { 
+							is_playable = yes
+							NOT = { tier = emperor }
+							is_inaccessible_trigger = no
+							in_command = no
+							opinion = { who = ROOT value = 0 }
+						}
+						preferred_limit = { is_friend = ROOT }
+						preferred_limit = { opinion = { who = ROOT value = 75 } }
+						preferred_limit = { opinion = { who = ROOT value = 50 } }
+						preferred_limit = { opinion = { who = ROOT value = 25 } }
+						character_event = { id = ipc.306 days = 2 }
+					}
+				}
+			}
+			
+			
+			#nothing
+			150 = {}
+		}
+		
+	}
+}
+
+
+###ping to insulted character
+character_event = {
+	id = ipc.301
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { character_event = { id = ipc.302 } } }
+}
+
+###insult lower rank member?
+character_event = {
+	id = ipc.302
+	desc = EVTDESAipc.302
+	picture = GFX_evt_council_agreement
+	
+	is_triggered_only = yes
+	
+	#insult
+	option = {
+		name = EVTOPTAipc.302
+		reverse_opinion = { modifier = insulted who = FROM years = 5 }
+		change_society_currency = 25
+		hidden_tooltip = { 
+			set_character_flag = insult_1
+			FROM = { character_event = { id = ipc.303 days = 2 } } 
+		}
+		ai_chance = { factor = 25 }
+	}
+	
+	#another insult
+	option = {
+		name = EVTOPTBipc.302
+		reverse_opinion = { modifier = insulted who = FROM years = 5 }
+		change_society_currency = 25
+		hidden_tooltip = { 
+			set_character_flag = insult_2
+			FROM = { character_event = { id = ipc.303 days = 2 } } 
+		}
+		ai_chance = { factor = 25 }
+	}
+	
+	#no
+	option = {
+		name = EVTOPTCipc.302
+		reverse_opinion = { modifier = opinion_delighted who = FROM years = 5 }
+		prestige = -50
+		if = {
+			limit = { trait = proud }
+			remove_trait = proud
+		}
+		else_if = {
+			limit = { NOT = { trait = humble } }
+			random = { chance = 50 add_trait = humble }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_foe = FROM
+			}
+			modifier = {
+				factor = 0
+				trait = proud
+			}
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.6
+				tier = duke
+			}
+			modifier = {
+				factor = 0.2
+				tier = king
+			}
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+			modifier = {
+				factor = 1.5
+				trait = feeble
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 5
+				trait = shy
+			}
+		}
+	}
+}
+
+###insulted person event
+character_event = {
+	id = ipc.303
+	desc = {
+		trigger = { FROM = { has_character_flag = insult_1 } }
+		text = EVTDESAipc.303
+	}
+	desc = {
+		trigger = { FROM = { has_character_flag = insult_2 } }
+		text = EVTDESBipc.303
+	}
+	picture = GFX_evt_council_quarrelling
+	
+	is_triggered_only = yes
+	
+	immediate = { remove_opinion = { modifier = insulted who = FROM } }
+	
+	option = {
+		name = EVTOPTAipc.303
+		opinion = { modifier = insulted who = FROM years = 5 }
+		change_society_currency = -25
+	}
+	
+	after = { 
+		hidden_tooltip = { 
+			FROM = { 
+				clr_character_flag = insult_1
+				clr_character_flag = insult_2
+			}
+		}
+	}
+}
+
+###mountain of paperwork
+character_event = {
+	id = ipc.304
+	desc = EVTDESAipc.304
+	picture = GFX_evt_stressed_ruler
+	
+	is_triggered_only = yes
+	
+	#work work work
+	option = {
+		name = EVTOPTAipc.304
+		if = {
+			limit = { trait = slothful }
+			random = { chance = 75 remove_trait = slothful }
+		}
+		else_if = {
+			limit = { NOT = { trait = diligent } }
+			random = { chance = 10 add_trait = diligent }
+		}
+		else = { prestige = 50 }
+		random_list = {
+			25 = {}
+			25 = { change_society_currency = 10 }
+			25 = { change_society_currency = 20 }
+			25 = { change_society_currency = 30 }
+		}
+		if = {
+			limit = { NOT = { trait = stressed } }
+			random = { chance = 50 add_trait = stressed }
+		}
+		else_if = { 
+			limit = { NOT = { trait = depressed } }
+			random = { chance = 50 add_trait = depressed }
+		}
+	}
+	
+	#be lazy
+	option = {
+		name = EVTOPTBipc.304
+		if = {
+			limit = { trait = depressed }
+			remove_trait = depressed
+		}
+		else_if = {
+			limit = { trait = stressed }
+			remove_trait = stressed
+		}
+		add_character_modifier = { modifier = good_times years = 3 }
+		add_character_modifier = { modifier = taking_it_easy years = 1 }
+	}
+}
+
+###sick work
+character_event = {
+	id = ipc.305
+	desc = EVTDESAipc.305
+	picture = GFX_evt_daughter_asking_father
+	
+	is_triggered_only = yes
+	
+	#relax
+	option = {
+		name = EVTOPTAipc.305
+		if = {
+			limit = { trait = stressed }
+			random = { chance = 50 remove_trait = stressed }
+		}
+		add_character_modifier = { modifier = taking_it_easy years = 2 }
+		ai_chance = {
+			factor = 75
+			modifier = { 
+				factor = 2
+				trait = stressed
+			}
+		}
+	}
+
+	#push on
+	option = {
+		name = EVTOPTBipc.305
+		if = {
+			limit = { NOT = { trait = stressed } }
+			add_trait = stressed
+		}
+		random = { chance = 25 health = -0.25 }
+		random_list = {
+			33 = { change_society_currency = 50 }
+			33 = { change_society_currency = 100 }
+			33 = { change_society_currency = 200 }
+		}
+		ai_chance = { 
+			factor = 25 
+			modifier = {
+				factor = 0
+				health <= 4
+			}
+			modifier = {
+				factor = 3
+				age < 40
+				trait = ambitious
+			}
+		}
+	}
+}
+
+
+###small feast ping
+character_event = {
+	id = ipc.306
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { character_event = { id = ipc.307 } } }
+}
+
+###small feast
+character_event = {
+	id = ipc.307
+	desc = EVTDESAipc.307
+	picture = GFX_evt_fancy_feast
+	
+	is_triggered_only = yes
+	
+	#om nom nom
+	option = {
+		name = EVTOPTAipc.307
+		if = {
+			limit = { NOT = { trait = gluttonous } }
+			add_trait = gluttonous
+		}
+		else_if = {
+			limit = {
+				NOR = { 
+					trait = is_fat 
+					trait = is_malnourished
+				}
+			}
+			show_trait = is_fat
+			custom_tooltip = {
+				text = EVTTOOLTIPAipc.307
+				gain_weight_small_effect = yes
+				weight_trait_check_effect = yes
+			}
+		}
+		else_if = {
+			limit = { trait = is_malnourished }
+			show_trait = is_malnourished
+			custom_tooltip = {
+				text = EVTTOOLTIPBipc.307
+				gain_weight_small_effect = yes
+				weight_trait_check_effect = yes
+			}
+		}
+		else_if = {
+			limit = { trait = is_fat }
+			random = { 
+				chance = 50 
+				hidden_tooltip = { set_variable = { which = physique_variable value = 35 } }
+				add_character_modifier = { modifier = obese_modifier duration = -1 } 
+			}
+		}
+		reverse_opinion = { modifier = opinion_pleased who = FROM years = 3 }
+	}
+	
+	#no more
+	option = {
+		name = EVTOPTBipc.307
+		if = {
+			limit = { trait = gluttonous }
+			random = { chance = 75 remove_trait = gluttonous }
+		}
+		else = { 
+			trigger_switch = {
+				on_trigger = tier
+				
+				baron = { prestige = -50 }
+				count = { prestige = -75 }
+				duke = { prestige = -100 }
+				king = { prestige = -150 }
+			}
+		}
+		reverse_opinion = { modifier = opinion_insulted who = FROM years = 3 }
+	}
+}
+
+
+
+
+##############Emperor Flavor Events##############
+
+##flavor tombola 
+character_event = {
+	id = ipc.500
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	trigger = {
+		tier = emperor
+		primary_title = { has_title_flag = imperial_court_active }
+		is_inaccessible_trigger = no
+	}
+	
+	###need to add a bunch of these
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 0.5
+			war = yes
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_focus = focus_rulership
+				has_focus = focus_intrigue
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_ambition = obj_see_the_realm_prosper
+		}
+		modifier = {
+			factor = 1.5
+			has_character_modifier = imperial_court_influence_3
+		}
+		modifier = {
+			factor = 2
+			has_character_modifier = imperial_court_influence_4
+		}
+		modifier = {
+			factor = 2.5
+			has_character_modifier = imperial_court_influence_5
+		}
+	}
+	
+	immediate = {
+		update_emperor_imperial_court_modifiers_effect = yes
+		
+		random_list = {
+			
+			#foreign duke or king sends tribute
+			20 = {
+				trigger = {
+					any_neighbor_independent_ruler = {
+						OR = {
+							tier = duke
+							tier = king
+							is_nomadic = yes
+						}
+						NOR = {
+							has_non_aggression_pact_with = ROOT
+							has_character_flag = paid_ipc_tribute
+							war_with = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					is_strong_emperor_trigger = yes
+				}
+				
+				random_neighbor_independent_ruler = {
+					limit = {
+						OR = {
+							tier = duke
+							tier = king
+							is_nomadic = yes
+						}
+						NOR = {
+							has_non_aggression_pact_with = ROOT
+							has_character_flag = paid_ipc_tribute
+							war_with = ROOT
+						}
+					}
+					preferred_limit = { tier = king }
+					preferred_limit = { realm_size = 100 }
+					preferred_limit = { realm_size = 50 }
+					character_event = { id = ipc.501 days = 2 }
+				}
+			}
+			
+			#court asks for council power
+			20 = {
+				trigger = {
+					NOT = { has_character_modifier = imperial_court_influence_1 } #has to be higher than 20%
+					primary_title = {
+						NAND = {
+							has_law = law_voting_power_1
+							has_law = war_voting_power_1
+							has_law = revoke_title_voting_power_1
+							has_law = imprison_voting_power_1
+							has_law = grant_title_voting_power_1
+							has_law = banish_voting_power_1
+							has_law = execution_voting_power_1
+						}
+					}
+				}
+				modifier = {
+					factor = 0.5
+					is_strong_emperor_trigger = yes 
+				}
+				modifier = {
+					factor = 0.75
+					primary_title = {
+						calc_true_if = {
+							amount = 2
+							has_law = revoke_title_voting_power_1
+							has_law = imprison_voting_power_1
+							has_law = grant_title_voting_power_1
+							has_law = banish_voting_power_1
+							has_law = execution_voting_power_1
+						}
+					}
+				}
+				
+				modifier = {
+					factor = 2
+					primary_title = { has_title_flag = has_imperial_regent }
+				}
+				modifier = {
+					factor = 2
+					is_weak_emperor_trigger = yes
+				}
+				modifier = {
+					factor = 3
+					primary_title = { has_law = law_voting_power_0 }
+				}
+				modifier = {
+					factor = 2
+					primary_title = { has_law = war_voting_power_0 }
+				}
+				
+				
+				###choose who should demand
+				##regent
+				if = {
+					limit = { 
+						primary_title = { has_title_flag = has_imperial_regent } 
+						any_realm_character = { is_imperial_court_regent_trigger = yes }
+					}
+					random_realm_character = {
+						limit = { is_imperial_court_regent_trigger = yes }
+						character_event = { id = ipc.505 }
+					}
+				}
+				##other office holder
+				else_if = {
+					limit = {
+						primary_title = { 
+							OR = {
+								has_title_flag = has_imperial_seneschal
+								has_title_flag = has_imperial_marshal
+								has_title_flag = has_imperial_lawkeeper
+								has_title_flag = has_imperial_spymaster
+							}
+						}
+					}
+					random_list = {
+						20 = {
+							trigger = { primary_title = { has_title_flag = has_imperial_seneschal } }
+							random_realm_character = {
+								limit = { is_imperial_court_seneschal_trigger = yes }
+								character_event = { id = ipc.505 }
+							}
+						}
+						20 = {
+							trigger = { primary_title = { has_title_flag = has_imperial_marshal } }
+							random_realm_character = {
+								limit = { is_imperial_court_marshal_trigger = yes }
+								character_event = { id = ipc.505 }
+							}
+						}
+						20 = {
+							trigger = { primary_title = { has_title_flag = has_imperial_lawkeeper } }
+							random_realm_character = {
+								limit = { is_imperial_court_lawkeeper_trigger = yes }
+								character_event = { id = ipc.505 }
+							}
+						}
+						20 = {
+							trigger = { primary_title = { has_title_flag = has_imperial_spymaster } }
+							random_realm_character = {
+								limit = { is_imperial_court_spymaster_trigger = yes }
+								character_event = { id = ipc.505 }
+							}
+						}
+					}
+				}
+				##random rank 3
+				else = {
+					random_realm_character = {
+						limit = { is_imperial_court_member_trigger = yes }
+						society = {
+							random_society_member = {
+								limit = { society_rank == 3 }
+								character_event = { id = ipc.505 }
+							}
+						}
+					}
+				}
+			}
+			
+			#just rule lowers court influence
+			20 = {
+				trigger = {
+					ruled_years = 5
+					NOR = {
+						trait = incapable
+						trait = lunatic
+						trait = possessed
+						trait = drunkard
+						trait = dull
+						trait = hedonist
+						trait = arbitrary
+						trait = decadent
+					}
+				}
+				modifier = {
+					factor = 0.5
+					primary_title = { has_law = law_voting_power_0 }
+				}
+				modifier = {
+					factor = 1.5
+					trait = just
+				}
+				modifier = {
+					factor = 1.5
+					trait = grey_eminence
+				}
+				modifier = {
+					factor = 2
+					NOT = {
+						any_vassal = {
+							NOT = { opinion = { who = ROOT value = 0 } }
+						}
+					}
+				}
+				character_event = { id = ipc.508 days = 7 random = 3 }
+			}
+			
+			#wandering jester joins
+			20 = {
+				trigger = {
+					OR = {
+						religion_group = christian
+						religion_group = jewish_group
+						religion_group = pagan_group
+						has_dharmic_religion_trigger = yes
+					}
+					NOT = { has_assigned_minor_title = title_court_jester }
+				}
+				character_event = { id = ipc.509 days = 7 random = 3 }
+			}
+			
+			
+			#son asks for vacant office
+			#20 = {
+			#
+			#}
+			
+			
+			#nothing
+			100 = { }
+		}
+	}
+}
+
+
+
+####foreign tribute
+character_event = {
+	id = ipc.501
+	desc = EVTDESAipc.501
+	picture = GFX_evt_powerful_ruler
+	
+	is_triggered_only = yes
+	
+	trigger = { FROM = { tier = emperor } }
+	
+	immediate = {
+		
+		set_character_flag = paid_ipc_tribute
+		
+		##choose child to wed
+		#emperor/empress is unmarried
+		if = {
+			limit = { FROM = { is_married = no } }
+			if = {
+				limit = { FROM = { is_female = no } }
+				random_child = {
+					limit = {
+						is_female = yes
+						is_married = no
+						is_adult = yes
+						prisoner = no
+						age < 35
+						NOT = { trait = celibate }
+					}
+					preferred_limit = { is_primary_heir = no }
+					save_event_target_as = offered_child
+				}
+			}
+			else_if = {
+				limit = { FROM = { is_female = yes } }
+				random_child = {
+					limit = {
+						is_female = no
+						is_married = no
+						is_adult = yes
+						prisoner = no
+						NOT = { trait = celibate }
+					}
+					preferred_limit = { is_primary_heir = no }
+					save_event_target_as = offered_child
+				}
+			}
+		}
+		
+		#get random relative of emperor/empress
+		if = {
+			limit = {
+				FROM = { 
+					any_child = {
+						is_female = no
+						is_married = no
+						is_adult = yes
+						prisoner = no
+						NOT = { trait = celibate }
+					}
+				}
+			}
+			FROM = {
+				random_child = {
+					limit = {
+						is_female = no
+						is_married = no
+						is_adult = yes
+						prisoner = no
+						NOT = { trait = celibate }
+					}
+					preferred_limit = { is_primary_heir = no }
+					save_event_target_as = relative_marriage_candidate
+				}
+			}
+			random_child = {
+				limit = {
+					is_female = yes
+					is_married = no
+					is_adult = yes
+					prisoner = no
+					age < 35
+					NOT = { trait = celibate }
+				}
+				preferred_limit = { is_primary_heir = no }
+				save_event_target_as = offered_child2
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					any_close_relative = {
+						dynasty = PREV
+						same_realm = PREV
+						is_female = no
+						is_married = no
+						is_adult = yes
+						prisoner = no
+						NOT = { trait = celibate }
+					}
+				}
+			}
+			FROM = {
+				random_close_relative = {
+					limit = {
+						dynasty = PREV
+						same_realm = PREV
+						is_female = no
+						is_married = no
+						is_adult = yes
+						prisoner = no
+						NOT = { trait = celibate }
+					}
+					save_event_target_as = relative_marriage_candidate
+				}
+			}
+			random_child = {
+				limit = {
+					is_female = yes
+					is_married = no
+					is_adult = yes
+					prisoner = no
+					age < 35
+					NOT = { trait = celibate }
+				}
+				preferred_limit = { is_primary_heir = no }
+				save_event_target_as = offered_child2
+			}
+		}
+	}
+	
+	#offer treasure
+	option = {
+		name = EVTOPTAipc.501
+		scaled_wealth = { value = -1 min = -300 max = -1000 }
+		hidden_tooltip = { 
+			set_character_flag = offered_treasure 
+			FROM = { character_event = { id = ipc.502 days = 5 } }
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.5
+				trait = greedy
+			}
+			modifier = {
+				factor = 0.9
+				scaled_wealth <= 1
+			}
+			modifier = {
+				factor = 0.6
+				scaled_wealth <= 0.6
+			}
+		}
+	}
+	
+	#offer child for marriage
+	option = {
+		trigger = {
+			OR = {
+				event_target:offered_child = { always = yes }
+				event_target:offered_child2 = { always = yes }
+			}
+		}
+		name = EVTOPTBipc.501
+		if = {
+			limit = { FROM = { is_married = no } }
+			show_portrait = event_target:offered_child
+		}
+		else = { show_portrait = event_target:offered_child2 }
+		hidden_tooltip = {
+			set_character_flag = offered_marriage
+			FROM = { character_event = { id = ipc.502 days = 5 } }
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.8
+				num_of_children <= 3
+			}
+			modifier = {
+				factor = 0.7
+				trait = kind
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_character_modifier = wol_patriarch_1
+					has_character_modifier = wol_patriarch_2
+					has_character_modifier = wol_matriarch_1
+					has_character_modifier = wol_matriarch_2
+				}
+			}
+		}
+	}
+	
+	#use diplomacy
+	option = {
+		tooltip_info = diplomacy
+		trigger = { diplomacy >= 14 }
+		name = EVTOPTCipc.501
+		random_list = {
+			60 = {
+				modifier = {
+					factor = 1.25 
+					diplomacy = 16
+				}
+				modifier = {
+					factor = 1.25 
+					diplomacy = 18
+				}
+				modifier = {
+					factor = 1.3 
+					diplomacy = 20
+				}
+				modifier = {
+					factor = 1.3
+					diplomacy = 22
+				}
+				modifier = {
+					factor = 1.3 
+					diplomacy = 24
+				}
+				modifier = {
+					factor = 1.4 
+					diplomacy = 26
+				}
+				modifier = {
+					factor = 1.25
+					trait = grey_eminence
+				}
+				modifier = {
+					factor = 1.2
+					trait = gregarious
+				}
+				modifier = {
+					factor = 1.2
+					trait = socializer
+				}
+				modifier = {
+					factor = 1.2
+					FROM = { trait = proud }
+				}
+				modifier = {
+					factor = 1.2
+					FROM = { trait = shy }
+				}
+				custom_tooltip = {
+					text = EVTTOOLTIPCipc.501
+					set_character_flag = offered_diplomacy
+					FROM = { character_event = { id = ipc.502 days = 5 } }
+				}
+			}
+			
+			40 = {
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 4 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 6 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 8 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 10 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 12 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 14 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 16 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 18 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 20 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 22 }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = { diplomacy = 24 }
+				}
+				modifier = {
+					factor = 1.2
+					FROM = { trait = grey_eminence }
+				}
+				modifier = {
+					factor = 1.2
+					FROM = { trait = gregarious }
+				}
+				modifier = {
+					factor = 1.2
+					FROM = { trait = socializer }
+				}
+				modifier = {
+					factor = 1.5
+					FROM = { religion_group = pagan_group }
+				}
+				prestige = -100
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.5
+				FROM = { religion_group = pagan_group }
+			}
+			modifier = {
+				factor = 2
+				diplomacy = 20
+			}
+			modifier = {
+				factor = 1.25
+				trait = grey_eminence
+			}
+			modifier = {
+				factor = 1.2
+				trait = gregarious
+			}
+			modifier = {
+				factor = 1.2
+				FROM = { trait = shy }
+			}
+		}
+	}
+	
+	#do nothing
+	option = {
+		name = EVTOPTDipc.501
+		ai_chance = { 
+			factor = 40
+			modifier = {
+				factor = 0.8
+				war = yes
+			}
+			modifier = {
+				factor = 0.5
+				trait = craven
+			}
+			modifier = {
+				factor = 0.5
+				NOT = {
+					relative_power = {
+						who = FROM
+						power = 0.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0.4
+				NOT = {
+					relative_power = {
+						who = FROM
+						power = 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 0.3
+				NOT = {
+					relative_power = {
+						who = FROM
+						power = 0.1
+					}
+				}
+			}
+			modifier = {
+				factor = 3
+				relative_power = {
+					who = FROM
+					power = 0.8
+				}
+			}
+			modifier = {
+				factor = 5
+				is_rival = FROM
+			}
+		}
+	}
+}
+
+###emperor recieves tribute
+character_event = {
+	id = ipc.502
+	desc = {
+		trigger = { FROM = { has_character_flag = offered_treasure } }
+		text = EVTDESAipc.502
+	}
+	desc = {
+		trigger = { FROM = { has_character_flag = offered_marriage } }
+		text = EVTDESBipc.502
+	}
+	desc = {
+		trigger = { FROM = { has_character_flag = offered_diplomacy } }
+		text = EVTDESCipc.502
+	}
+	picture = GFX_evt_diplomat_hf
+	
+	is_triggered_only = yes
+	
+	#accept treasure
+	option = {
+		trigger = { FROM = { has_character_flag = offered_treasure } }
+		name = EVTOPTAipc.502
+		random_list = {
+			33 = {
+				trigger = {
+					NOT = {
+						any_artifact = {
+							artifact_type = empire_tribute_chest
+							count = 5
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = { has_artifact = empire_tribute_chest }
+				}
+				add_artifact = empire_tribute_chest
+				hidden_tooltip = { 
+					new_artifact = {
+						set_original_owner = FROM
+						set_name = empire_tribute_chest_custom
+					}
+				}
+			}
+			
+			33 = {
+				trigger = { is_imperial_court_member_trigger = yes }
+				change_society_currency = 250
+			}
+			
+			33 = {
+				scaled_wealth = { value = 0.75 min = 300 max = 800 } 
+			}
+		}
+		custom_tooltip = {
+			text = EVTTOOLTIPAipc.502
+			opinion = {
+				modifier = ipc_in_non_aggression_pact
+				years = 20
+				who = FROM
+				origin_description = ipc_foreign_nap_agreement
+			}
+			FROM = {
+				opinion = {
+					modifier = ipc_in_non_aggression_pact
+					years = 20
+					who = ROOT
+					origin_description = ipc_foreign_nap_agreement
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				war = yes
+			}
+			modifier = {
+				factor = 2
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.5
+				is_imperial_court_member_trigger = yes
+			}
+		}
+	}
+	
+	#accept personal marriage
+	option = {
+		trigger = { 
+			FROM = { has_character_flag = offered_marriage } 
+			event_target:offered_child = { always = yes }
+		}
+		name = EVTOPTBipc.502
+		if = {
+			limit = { is_female = no }
+			add_spouse = event_target:offered_child
+		}
+		else = { add_spouse_matrilineal = event_target:offered_child }
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			change_society_currency = 200
+		}
+		hidden_tooltip = { 
+			opinion = {
+				modifier = ipc_in_non_aggression_pact
+				duration = -1
+				who = FROM
+				origin_description = ipc_foreign_nap_agreement_marriage
+			}
+			FROM = {
+				opinion = {
+					modifier = ipc_in_non_aggression_pact
+					duration = -1
+					who = ROOT
+					origin_description = ipc_foreign_nap_agreement_marriage
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.75
+				FROM = { tier = duke }
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { trait = cynical }
+				FROM = { NOT = { religion_group = ROOT } }
+			}
+			modifier = {
+				factor = 2
+				event_target:offered_child = {
+					OR = {
+						trait = fair
+						trait = genius
+						trait = quick
+						trait = strong
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				trait = lustful
+			}
+		}
+	}
+	
+	#accept relative marriage
+	option = {
+		trigger = { 
+			FROM = { has_character_flag = offered_marriage } 
+			event_target:offered_child2 = { always = yes }
+		}
+		name = EVTOPTCipc.502
+		event_target:relative_marriage_candidate = { add_spouse = event_target:offered_child2 }
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			change_society_currency = 200
+		}
+		hidden_tooltip = { 
+			opinion = {
+				modifier = ipc_in_non_aggression_pact
+				duration = -1
+				who = FROM
+				origin_description = ipc_foreign_nap_agreement_marriage
+			}
+			FROM = {
+				opinion = {
+					modifier = ipc_in_non_aggression_pact
+					duration = -1
+					who = ROOT
+					origin_description = ipc_foreign_nap_agreement_marriage
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { trait = cynical }
+				FROM = { NOT = { religion_group = ROOT } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:relative_marriage_candidate = { has_ambition = obj_get_married }
+			}
+		}
+	}
+	
+	#diplomacy succeeded
+	option = {
+		trigger = { FROM = { has_character_flag = offered_diplomacy } }
+		name = EVTOPTDipc.502
+		custom_tooltip = {
+			text = EVTTOOLTIPAipc.502
+			opinion = {
+				modifier = ipc_in_non_aggression_pact
+				years = 10
+				who = FROM
+				origin_description = ipc_foreign_nap_agreement_diplomacy
+			}
+			FROM = {
+				opinion = {
+					modifier = ipc_in_non_aggression_pact
+					years = 10
+					who = ROOT
+					origin_description = ipc_foreign_nap_agreement_diplomacy
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			change_society_currency = 100
+		}
+		ai_chance = { factor = 100 }
+	}
+	
+	#no
+	option = {
+		trigger = { FROM = { NOT = { has_character_flag = offered_diplomacy } } }
+		name = EVTOPTEipc.502
+		reverse_opinion = { modifier = opinion_very_disappointed who = FROM years = 5 }
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0.75
+				trait = content
+			}
+			modifier = {
+				factor = 1.25
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				FROM = { any_demesne_title = { claimed_by = ROOT } }
+			}
+		}
+	}
+	
+	after = { hidden_tooltip = { FROM = { character_event = { id = ipc.503 days = 5 } } } }
+}
+
+###get response
+character_event = {
+	id = ipc.503
+	desc = {
+		trigger = { has_non_aggression_pact_with = FROM }
+		text = EVTDESAipc.503
+	}
+	desc = {
+		trigger = { NOT = { has_non_aggression_pact_with = FROM } }
+		text = EVTDESBipc.503
+	}
+	picture = GFX_evt_powerful_ruler
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = { has_non_aggression_pact_with = FROM }
+		name = EVTOPTAipc.503
+		custom_tooltip = { text = EVTTOOLTIPAipc.503 }
+	}
+	
+	option = {
+		trigger = { NOT = { has_non_aggression_pact_with = FROM } }
+		name = EVTOPTBipc.503
+		if = {
+			limit = { has_character_flag = offered_treasure }
+			scaled_wealth = { value = 1 min = 300 max = 1000 }
+		}
+	}
+	
+	after = {
+		clr_character_flag = offered_treasure
+		clr_character_flag = offered_marriage
+		clr_character_flag = offered_diplomacy
+	}
+}
+
+
+###court member asks for more council power
+character_event = {
+	id = ipc.505
+	desc = EVTDESAipc.505
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipc.505
+		custom_tooltip = {
+			text = EVTTOOLTIPAipc.505
+			FROM = { letter_event = { id = ipc.506 days = 7 random = 2 } }
+		}
+		ai_chance = { factor = 75 }
+	}
+	
+	option = {
+		name = EVTOPTBipc.505
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.8
+				FROM = { war = yes }
+			}
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				is_loyal_to_empire_trigger = yes
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				is_close_relative = FROM
+			}
+			modifier = {
+				factor = 4
+				is_primary_heir = FROM
+			}
+		}
+	}
+}
+
+##emperor gets request
+letter_event = {
+	id = ipc.506
+	desc = {
+		trigger = {
+			NOR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		text = EVTDESAipc.506
+	}
+	desc = {
+		trigger = {
+			OR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		text = EVTDESBipc.506
+	}
+	
+	is_triggered_only = yes
+	
+	#yes
+	option = {
+		trigger = {
+			NOR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		name = EVTOPTAipc.506
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			change_society_currency = 250
+		}
+		add_magnanimous_emperor_influence_effect = yes
+		
+		#add the new law
+		primary_title = {
+			if = {
+				limit = { has_law = law_voting_power_0 }
+				add_law = law_voting_power_1
+			}
+			else_if = {
+				limit = { has_law = war_voting_power_0 }
+				add_law = war_voting_power_1
+			}
+			else = {
+				random_list = {
+					20 = {
+						trigger = { has_law = revoke_title_voting_power_0 }
+						add_law = revoke_title_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = imprison_voting_power_0 }
+						add_law = imprison_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = grant_title_voting_power_0 }
+						add_law = grant_title_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = banish_voting_power_0 }
+						add_law = banish_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = execution_voting_power_0 }
+						add_law = execution_voting_power_1
+					}
+				}
+			}
+		}
+		hidden_tooltip = { set_character_flag = ipc_accepted_request }
+	}
+	
+	#forced yes
+	option = {
+		tooltip_info_custom = ipc_high_influence_info
+		trigger = {
+			OR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		name = EVTOPTBipc.506
+		prestige = -250
+		#add the new law
+		primary_title = {
+			if = {
+				limit = { has_law = law_voting_power_0 }
+				add_law = law_voting_power_1
+			}
+			else_if = {
+				limit = { has_law = war_voting_power_0 }
+				add_law = war_voting_power_1
+			}
+			else = {
+				random_list = {
+					20 = {
+						trigger = { has_law = revoke_title_voting_power_0 }
+						add_law = revoke_title_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = imprison_voting_power_0 }
+						add_law = imprison_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = grant_title_voting_power_0 }
+						add_law = grant_title_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = banish_voting_power_0 }
+						add_law = banish_voting_power_1
+					}
+					20 = {
+						trigger = { has_law = execution_voting_power_0 }
+						add_law = execution_voting_power_1
+					}
+				}
+			}
+		}
+	}
+	
+	
+	#no
+	option = {
+		trigger = {
+			NOR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+		name = EVTOPTCipc.506
+		add_character_modifier = { modifier = ipc_refused_court_request years = 3 }
+		tooltip = { FROM = { show_scope_change = no opinion = { modifier = opinion_furious who = ROOT years = 5 } } }
+		hidden_tooltip = { set_character_flag = ipc_refused_request }
+	}
+	
+	after = { FROM = { letter_event = { id = ipc.507 days = 7 random = 3 } } }
+}
+
+##court member gets reply
+letter_event = {
+	id = ipc.507
+	desc = {
+		trigger = { 
+			FROM = {
+				OR = {
+					has_character_flag = ipc_accepted_request
+					has_character_modifier = imperial_court_influence_4
+					has_character_modifier = imperial_court_influence_5
+				}
+			}
+		}
+		text = EVTDESAipc.507
+	}
+	desc = {
+		trigger = { FROM = { has_character_flag = ipc_refused_request } }
+		text = EVTDESBipc.507
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			FROM = {
+				OR = {
+					has_character_flag = ipc_accepted_request
+					has_character_modifier = imperial_court_influence_4
+					has_character_modifier = imperial_court_influence_5
+				}
+			}
+		}
+		name = EVTOPTAipc.507
+	}
+	
+	
+	option = {
+		trigger = { FROM = { has_character_flag = ipc_refused_request } }
+		name = EVTOPTBipc.507
+		opinion = { modifier = opinion_furious who = FROM years = 5 }
+	}
+	
+	after = { 
+		hidden_tooltip = {
+			FROM = {
+				clr_character_flag = ipc_accepted_request
+				clr_character_flag = ipc_refused_request
+			}
+		}
+	}
+}
+
+
+###just rule lowers court influence
+character_event = {
+	id = ipc.508
+	desc = EVTDESAipc.508
+	picture = GFX_evt_prospering_province
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipc.508
+		prestige = 100
+		add_magnanimous_emperor_influence_effect = yes
+	}
+}
+
+
+character_event = {
+	id = ipc.509
+	desc = EVTDESAipc.509
+	picture = GFX_evt_jugglers
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_character = {
+			random_traits = no
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 26
+			attributes = {
+				diplomacy = 6
+				martial = 6
+				stewardship = 8
+				intrigue = 8
+				learning = 6
+			}
+		}
+		new_character = { 
+			add_character_modifier = { modifier = popular_modifier duration = -1 } 
+			save_event_target_as = new_jester
+		}
+	}
+	
+	option = {
+		name = EVTOPTAipc.509
+		event_target:new_jester = { give_minor_title = title_court_jester }
+		prestige = 50
+		if = {
+			limit = { trait = dull }
+			random = { chance = 50 remove_trait = dull }
+		}
+		ai_chance = { factor = 75 }
+	}
+	
+	option = {
+		name = EVTOPTBipc.509
+		prestige = -25
+		piety = 10
+		hidden_tooltip = { event_target:new_jester = { death = { death_reason = death_missing } } }
+		ai_chance = { factor = 25 }
+	}
+}
+
+
+
+
+##############Misc Flavor Events##############
+
+##society heir gets claim when influence is too high, triggers on_death for the emperor
+character_event = {
+	id = ipc.700
+	
+	only_playable = yes
+	only_independent = yes
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tier = emperor
+		primary_title = { has_title_flag = imperial_court_active }
+		OR = {
+			has_character_modifier = imperial_court_influence_4
+			has_character_modifier = imperial_court_influence_5
+		}
+	}
+	
+	immediate = {
+		primary_title = { save_event_target_as = claimed_title }
+		random_realm_character = {
+			limit = {
+				is_in_society = yes
+				is_imperial_court_member_trigger = yes
+				NOR = {
+					is_imperial_court_regent_trigger = yes
+					is_primary_heir = ROOT
+				}
+				society_rank >= 3
+			}
+			preferred_limit = { is_society_grandmaster = yes }
+			preferred_limit = { diplomacy = 20 }
+			preferred_limit = { diplomacy = 16 }
+			preferred_limit = { diplomacy = 12 }
+			preferred_limit = { trait = grey_eminence }
+			event_target:claimed_title = { add_claim = PREV }
+		}
+	}
+}
+
+
+##imperial road needs maintenance
+province_event = {
+	id = ipc.701
+	desc = EVTDESAipc.701
+	picture = GFX_evt_culture_change
+	
+	trigger = {
+		has_province_modifier = ipc_imperial_road
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.8
+			holder_scope = { stewardship < 6 }
+		}
+		modifier = {
+			factor = 1.2
+			holder_scope = { stewardship > 12 }
+		}
+		modifier = {
+			factor = 1.2
+			holder_scope = { has_education_stewardship_trigger = yes }
+		}
+	}
+	
+	option = {
+		name = EVTOPTAipc.701
+		holder_scope = { show_scope_change = no scaled_wealth = { value = -0.4 min = -20 max = -75 } }
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 0.5
+				holder_scope = { scaled_wealth <= 0.4 }
+			}
+			modifier = {
+				factor = 1.5
+				holder_scope = { is_loyal_to_empire_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				holder_scope = { trait = diligent }
+			}
+			modifier = {
+				factor = 1.5
+				holder_scope = {
+					top_liege = {
+						OR = {
+							has_landed_title = e_byzantium
+							has_landed_title = e_roman_empire
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTBipc.701
+		remove_province_modifier = ipc_imperial_road
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 2
+				holder_scope = { trait = greedy }
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+

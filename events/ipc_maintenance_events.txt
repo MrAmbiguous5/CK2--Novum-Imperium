@@ -1,0 +1,5825 @@
+#
+#0-9 startup
+#10-29 new holders
+#30-59 minor titles
+#60-80 Misc
+#
+
+
+namespace = ipcm
+
+
+#startup
+character_event = {
+	id = ipcm.000
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	
+	trigger = {
+		OR = {
+			has_landed_title = k_papal_state
+			AND = {
+				is_alternate_start = yes
+				OR = {
+					multiplayer = no
+					is_multiplayer_host_character = yes
+				}
+			}
+		}
+		NOR = {
+			has_global_flag = ipc_initializing
+			has_global_flag = ipc_initialized 
+		}
+	}
+	
+	immediate = {
+		set_global_flag = ipc_initializing
+		
+		##ck2+
+		if = {
+			limit = {
+				e_placeholder = { has_title_flag = secondary_startup }
+			}
+			set_global_flag = ipc_plus_detected
+		}
+		
+		##HIP
+		else_if = {
+			limit = { e_hip = { has_holder = yes } }
+			set_global_flag = ipc_hip_detected
+		}
+		
+		if = {
+			limit = { is_alternate_start = no }
+			character_event = { id = ipcm.001 days = 1 }
+		}
+		else_if = {
+			limit = { is_alternate_start = yes }
+			set_global_flag = ipc_initialized
+		}
+	}
+}
+
+character_event = {
+	id = ipcm.001
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { 
+				has_game_rule = { name = starting_ipc_courts_byzantine value = default } 
+				e_byzantium = { has_holder = yes }
+			}
+			e_byzantium = {
+				set_title_flag = imperial_court_active
+				if = {
+					limit = { NOT = { has_law = law_voting_power_1 } }
+					add_law = law_voting_power_1
+				}
+				if = {
+					limit = { NOT = { has_law = war_voting_power_1 } }
+					add_law = war_voting_power_1
+				}
+				holder_scope = {
+					if = {
+						limit = { is_in_society = yes }
+						leave_society = yes
+					}
+					join_society = imperial_court_byzantine
+					set_society_grandmaster = yes
+					change_society_currency = 500
+					any_realm_character = {
+						limit = { can_join_byzantine_imperial_court_trigger = yes }
+						if = {
+							limit = {
+								among_most_powerful_vassals = 5
+								liege = { character = PREVPREV }
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_byzantine
+										rank = 3
+									}
+								}
+							}
+							join_society = imperial_court_byzantine
+							change_society_currency = 100
+							set_character_flag = ipc_approved_rank_3
+							society_rank_up = 2
+						}
+						else_if = {
+							limit = {
+								higher_tier_than = count
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_byzantine
+										rank = 2
+									}
+								}
+							}
+							join_society = imperial_court_byzantine
+							society_rank_up = 1
+						}
+						else_if = {
+							limit = {
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_byzantine
+										rank = 1
+									}
+								}
+							}
+							join_society = imperial_court_byzantine
+						}
+					}
+					update_emperor_imperial_court_modifiers_effect = yes
+				}
+			}
+			b_constantinople = { 
+				set_title_flag = is_imperial_capital 
+				if = {
+					limit = { 
+						holder_scope = { 
+							ai = yes 
+							NOT = { tier = emperor }
+						}
+					}
+					holder_scope = { 
+						top_liege = { 
+							b_constantinople = { usurp_title = PREV }
+							capital = b_constantinople
+						}
+					}
+				}
+				else = { holder_scope = { capital = PREV } }
+			}
+		}
+		if = {
+			limit = { 
+				has_game_rule = { name = starting_ipc_courts_hre value = default }
+				e_hre = { has_holder = yes }
+			}
+			e_hre = {
+				set_title_flag = imperial_court_active
+				holder_scope = {
+					if = { 
+						limit = { is_in_society = yes }
+						leave_society = yes
+					}
+					join_society = imperial_court_hre
+					set_society_grandmaster = yes
+					change_society_currency = 500
+					any_realm_character = {
+						limit = { can_join_hre_imperial_court_trigger = yes }
+						if = {
+							limit = {
+								among_most_powerful_vassals = 5
+								liege = { character = PREVPREV }
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_hre
+										rank = 3
+									}
+								}
+							}
+							join_society = imperial_court_hre
+							change_society_currency = 100
+							set_character_flag = ipc_approved_rank_3
+							society_rank_up = 2
+						}
+						else_if = {
+							limit = {
+								higher_tier_than = count
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_hre
+										rank = 2
+									}
+								}
+							}
+							join_society = imperial_court_hre
+							society_rank_up = 1
+						}
+						else_if = {
+							limit = {
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_hre
+										rank = 1
+									}
+								}
+							}
+							join_society = imperial_court_hre
+						}
+					}
+					update_emperor_imperial_court_modifiers_effect = yes
+				}
+			}
+			b_nassau = { 
+				set_title_flag = is_imperial_capital 
+				if = {
+					limit = { 
+						holder_scope = { 
+							ai = yes 
+							NOT = { tier = emperor }
+						}
+					}
+					holder_scope = { 
+						top_liege = { 
+							b_nassau = { usurp_title = PREV }
+							capital = b_nassau
+						}
+					}
+				}
+				else = { holder_scope = { capital = PREV } }
+			}
+		}
+		if = {
+			limit = { 
+				has_game_rule = { name = starting_ipc_courts_arabia value = default } 
+				e_arabia = { has_holder = yes }
+			}
+			e_arabia = {
+				set_title_flag = imperial_court_active
+				holder_scope = {
+					if = { 
+						limit = { is_in_society = yes }
+						leave_society = yes
+					}
+					join_society = imperial_court_arabia
+					set_society_grandmaster = yes
+					change_society_currency = 500
+					any_realm_character = {
+						limit = { can_join_muslim_imperial_court_trigger = yes }
+						if = {
+							limit = {
+								among_most_powerful_vassals = 5
+								liege = { character = PREVPREV }
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_arabia
+										rank = 3
+									}
+								}
+							}
+							join_society = imperial_court_arabia
+							change_society_currency = 100
+							set_character_flag = ipc_approved_rank_3
+							society_rank_up = 2
+						}
+						else_if = {
+							limit = {
+								higher_tier_than = count
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_arabia
+										rank = 2
+									}
+								}
+							}
+							join_society = imperial_court_arabia
+							society_rank_up = 1
+						}
+						else_if = {
+							limit = {
+								NOT = { 
+									is_society_rank_full = {
+										society = imperial_court_arabia
+										rank = 1
+									}
+								}
+							}
+							join_society = imperial_court_arabia
+						}
+					}
+					update_emperor_imperial_court_modifiers_effect = yes
+				}
+			}
+			b_baqubah = { 
+				set_title_flag = is_imperial_capital 
+				if = {
+					limit = { 
+						holder_scope = { 
+							ai = yes 
+							NOT = { tier = emperor }
+						}
+					}
+					holder_scope = { 
+						top_liege = { 
+							b_baqubah = { usurp_title = PREV }
+							capital = b_baqubah
+						}
+					}
+				}
+				else = { holder_scope = { capital = PREV } }
+			}
+		}
+		
+		set_global_flag = ipc_initialized
+		clr_global_flag = ipc_initializing
+	}
+}
+
+
+###new society leader notification for members
+character_event = {
+	id = ipcm.010
+	desc = {
+		trigger = { FROM = { is_adult = no } }
+		text = EVTDESAipcm.010
+	}
+	desc = {
+		trigger = { 
+			FROM = { 
+				is_adult = yes 
+				primary_title = { NOT = { title = event_target:usurped_imperial_title } }
+				same_society_as = ROOT
+				NOR = {
+					has_character_flag = took_control
+					has_character_flag = new_regent
+				}
+			}
+		}
+		text = EVTDESBipcm.010
+	}
+	desc = {
+		trigger = { 
+			FROM = { 
+				is_adult = yes 
+				primary_title = { NOT = { title = event_target:usurped_imperial_title } }
+				NOT = { same_society_as = ROOT }
+				NOR = {
+					has_character_flag = took_control
+					has_character_flag = new_regent
+				}
+			}
+		}
+		text = EVTDESCipcm.010
+	}
+	desc = {
+		trigger = {
+			FROM = { 
+				is_adult = yes 
+				primary_title = { title = event_target:usurped_imperial_title }
+				same_society_as = ROOT
+				NOR = {
+					has_character_flag = took_control
+					has_character_flag = new_regent
+				}
+			}
+		}
+		text = EVTDESDipcm.010
+	}
+	desc = {
+		trigger = {
+			FROM = { 
+				is_adult = yes 
+				primary_title = { title = event_target:usurped_imperial_title }
+				NOT = { same_society_as = ROOT }
+				NOR = {
+					has_character_flag = took_control
+					has_character_flag = new_regent
+				}
+			}
+		}
+		text = EVTDESEipcm.010
+	}
+	desc = {
+		trigger = { FROM = { has_character_flag = took_control } } 
+		text = EVTDESFipcm.010
+	}
+	desc = {
+		trigger = { FROM = { has_character_flag = new_regent } } 
+		text = EVTDESGipcm.010
+	}
+	picture = GFX_evt_coronation
+	
+	is_triggered_only = yes
+
+	trigger = { ai = no }
+	
+	option = { 
+		name = EVTOPTAipcm.010 
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { is_imperial_court_regent_trigger = yes } }
+			show_portrait = event_target:imperial_regent_relative_candidate
+		}
+		else_if = {
+			limit = { event_target:imperial_regent_society_candidate = { is_imperial_court_regent_trigger = yes } }
+			show_portrait = event_target:imperial_regent_society_candidate
+		}
+		else_if = {
+			limit = { event_target:imperial_society_heir = { is_imperial_court_regent_trigger = yes } }
+			show_portrait = event_target:imperial_society_heir
+		}
+		else_if = {
+			limit = { event_target:new_regent = { is_imperial_court_regent_trigger = yes } }
+			show_portrait = event_target:new_regent
+		}
+	}
+}
+
+###new emperor, inheritance
+character_event = {
+	id = ipcm.011
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	only_independent = yes
+	
+	trigger = { FROM = { has_title_flag = imperial_court_active } }
+	
+	immediate = {
+		FROM = { save_event_target_as = inherited_imperial_title }
+		update_emperor_imperial_court_modifiers_effect = yes
+		if = {
+			limit = { FROMFROM = { is_alive = yes } }
+			FROMFROM = { save_event_target_as = previous_emperor }
+		}
+		
+		#clr up false imperial regency
+		if = {
+			limit = {
+				is_imperial_court_member_trigger = yes 
+				society = { leader = { is_imperial_court_regent_trigger = no } }
+			}
+			set_society_grandmaster = yes
+			#was actual regent, similar effect in minor_titles file
+			if = {
+				limit = { any_realm_character = { is_imperial_court_regent_trigger = no } }
+				event_target:inherited_imperial_title = { clr_title_flag = has_imperial_regent }
+			}
+		}
+		
+		if = {
+			limit = { is_adult = no }
+			character_event = { id = ipcm.012 days = 1 }
+		}
+		else = { character_event = { id = ipcm.013 days = 1 } }
+	}
+}
+
+###new emperor, child inheritance
+character_event = {
+	id = ipcm.012
+	desc = EVTDESAipcm.012
+	picture = GFX_evt_child_play
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = child_imperial_regency
+		get_imperial_regent_relative_candidate_effect = yes
+		get_imperial_regent_society_candidate_effect = yes
+		
+		if = {
+			limit = { event_target:inherited_imperial_title = { has_title_flag = has_imperial_regent } }
+			random_realm_character = {
+				limit = { is_imperial_court_regent_trigger = yes }
+				save_event_target_as = imperial_regent
+			}
+		}
+		#grab the previous society heir(now grandmaster), if it exists
+		else_if = {
+			limit = { event_target:inherited_imperial_title = { NOT = { has_title_flag = has_imperial_regent } } }
+			random_realm_character = {
+				limit = {
+					is_imperial_court_member_trigger = yes
+					same_realm = ROOT
+				}
+				society = {
+					leader = {
+						if = {
+							limit = {
+								NOR = {
+									character = ROOT 
+									character = event_target:previous_emperor
+								}
+							}
+							save_event_target_as = imperial_society_heir
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	#keep current regent
+	option = {
+		trigger = { event_target:inherited_imperial_title = { has_title_flag = has_imperial_regent } }
+		name = EVTOPTAipcm.012
+		reverse_opinion = { who = event_target:imperial_regent modifier = opinion_retained_imperial_office years = 5 }
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 10 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 20 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 30 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 40 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 50 }
+			}
+		}
+	}
+	
+	#choose new regent
+	option = {
+		name = EVTOPTBipcm.012
+		hidden_tooltip = { set_character_flag = changing_imperial_regent }
+		if = {
+			limit = { event_target:imperial_regent = { always = yes } }
+			event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		}
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { always = yes } }
+			event_target:imperial_regent_relative_candidate = { award_imperial_regent_effect = yes }
+		}
+		else = {
+			event_target:imperial_regent_society_candidate = { award_imperial_regent_effect = yes }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 10 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 10 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 20 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 20 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 30 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 30 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 40 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 40 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 50 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 50 }
+				}
+			}
+		}
+	}
+	
+	#let society heir
+	option = {
+		trigger = { 
+			event_target:inherited_imperial_title = { NOT = { has_title_flag = has_imperial_regent } } 
+			event_target:imperial_society_heir = { always = yes }
+		}
+		name = EVTOPTCipcm.012
+		event_target:imperial_society_heir = { award_imperial_regent_effect = yes }
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 10 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 20 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 30 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 40 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 50 }
+			}
+		}
+	}
+	
+	after = {
+		hidden_tooltip = {
+			update_emperor_imperial_court_modifiers_effect = yes
+			if = {
+				limit = { event_target:previous_emperor = { always = yes } }
+				event_target:previous_emperor = {
+					if = {
+						limit = { is_imperial_court_member_trigger = yes }
+						leave_society = yes
+					}
+					set_character_flag = imperial_court_previous_emperor_block
+					update_emperor_imperial_court_modifiers_effect = yes
+				}
+			}
+			random_realm_character = {
+				limit = {
+					is_imperial_court_member_trigger = yes
+					same_realm = ROOT
+				}
+				society = {
+					any_society_member = { character_event = { id = ipcm.010 days = 1 } }
+				}
+			}
+		}
+	}
+}
+
+
+###new emperor, regular inheritance
+character_event = {
+	id = ipcm.013
+	desc = EVTDESAipcm.013
+	picture = GFX_evt_coronation
+
+	is_triggered_only = yes
+	
+	immediate = {
+		get_imperial_regent_relative_candidate_effect = yes
+		get_imperial_regent_society_candidate_effect = yes
+		if = {
+			limit = { event_target:inherited_imperial_title = { has_title_flag = has_imperial_regent } }
+			random_realm_character = {
+				limit = { is_imperial_court_regent_trigger = yes }
+				save_event_target_as = imperial_regent
+			}
+		}
+		#grab the previous society heir(now grandmaster), if it exists
+		else_if = {
+			limit = { event_target:inherited_imperial_title = { NOT = { has_title_flag = has_imperial_regent } } }
+			random_realm_character = {
+				limit = {
+					is_imperial_court_member_trigger = yes
+					same_realm = ROOT
+				}
+				society = {
+					leader = {
+						if = {
+							limit = {
+								NOR = {
+									character = ROOT 
+									character = event_target:previous_emperor
+								}
+							}
+							save_event_target_as = imperial_society_heir
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	#do it myself
+	option = {
+		trigger = { is_imperial_court_member_trigger = no }
+		name = EVTOPTAipcm.013
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes
+		}
+		if = {
+			limit = { event_target:inherited_imperial_title = { has_title_flag = has_imperial_regent } }
+			event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		}
+		else = {
+			join_realm_imperial_court_effect = yes 
+			set_society_grandmaster = yes
+			change_society_currency = 500
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.5
+				trait = shy
+			}
+			modifier = {
+				factor = 0.5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = stubborn
+			}
+			modifier = {
+				factor = 2
+				trait = strong
+			}
+			modifier = {
+				factor = 2
+				trait = shrewd
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+		}
+	}
+	
+	#was already in society and society heir
+	option = {
+		trigger = { is_imperial_court_member_trigger = yes }
+		name = EVTOPTBipcm.013
+		if = {
+			limit = { event_target:inherited_imperial_title = { has_title_flag = has_imperial_regent } }
+			event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		}
+		else_if = {
+			limit = { is_society_grandmaster = no }
+			set_society_grandmaster = yes
+		}
+		
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.5
+				trait = shy
+			}
+			modifier = {
+				factor = 0.5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = stubborn
+			}
+			modifier = {
+				factor = 2
+				trait = strong
+			}
+			modifier = {
+				factor = 2
+				trait = shrewd
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+		}
+	}
+	
+	#keep regent
+	option = {
+		trigger = { event_target:inherited_imperial_title = { has_title_flag = has_imperial_regent } }
+		name = EVTOPTCipcm.013
+		reverse_opinion = { who = event_target:imperial_regent modifier = opinion_retained_imperial_office years = 5 }
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 10 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 20 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 30 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 40 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 50 }
+			}
+		}
+	}
+	
+	#choose new regent
+	option = {
+		name = EVTOPTDipcm.013
+		hidden_tooltip = { set_character_flag = changing_imperial_regent }
+		if = {
+			limit = { event_target:imperial_regent = { always = yes } }
+			event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		}
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { always = yes } }
+			event_target:imperial_regent_relative_candidate = { award_imperial_regent_effect = yes }
+		}
+		else = {
+			event_target:imperial_regent_society_candidate = { award_imperial_regent_effect = yes }
+		}
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 10 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 10 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 20 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 20 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 30 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 30 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 40 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 40 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 50 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 50 }
+				}
+			}
+		}
+	}
+	
+	#let society heir
+	option = {
+		trigger = { 
+			event_target:inherited_imperial_title = { NOT = { has_title_flag = has_imperial_regent } } 
+			event_target:imperial_society_heir = { always = yes }
+		}
+		name = EVTOPTEipcm.013
+		event_target:imperial_society_heir = { award_imperial_regent_effect = yes }
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 10 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 20 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 30 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 40 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_society_heir value > 50 }
+			}
+		}
+	}
+
+	
+
+	after = {
+		hidden_tooltip = {
+			update_emperor_imperial_court_modifiers_effect = yes
+			if = {
+				limit = { event_target:previous_emperor = { always = yes } }
+				event_target:previous_emperor = {
+					if = {
+						limit = { is_imperial_court_member_trigger = yes }
+						leave_society = yes
+					}
+					set_character_flag = imperial_court_previous_emperor_block
+					update_emperor_imperial_court_modifiers_effect = yes
+				}
+			}
+			random_realm_character = {
+				limit = {
+					is_imperial_court_member_trigger = yes
+					same_realm = ROOT
+				}
+				society = {
+					any_society_member = { 
+						limit = { NOT = { character = ROOT } }
+						character_event = { id = ipcm.010 days = 1 } 
+					}
+				}
+			}
+		}
+	}
+}
+
+####child emperor grows up
+character_event = {
+	id = ipcm.014
+	desc = EVTDESAipcm.014
+	picture = GFX_evt_coronation 
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	only_independent = yes
+	has_character_flag = child_imperial_regency
+
+	trigger = {
+		primary_title = { has_title_flag = has_imperial_regent }
+	}
+	
+	immediate = {
+		random_realm_character = {
+			limit = { is_imperial_court_regent_trigger = yes }
+			save_event_target_as = imperial_regent
+		}
+	}
+	
+	#take control
+	option = {
+		name = EVTOPTAipcm.014
+		event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.5
+				trait = shy
+			}
+			modifier = {
+				factor = 0.5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = stubborn
+			}
+			modifier = {
+				factor = 2
+				trait = strong
+			}
+			modifier = {
+				factor = 2
+				trait = shrewd
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+		}
+	}
+	
+	#keep regent
+	option = {
+		name = EVTOPTBipcm.014
+		reverse_opinion = { who = event_target:imperial_regent modifier = opinion_retained_imperial_office years = 5 }
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 10 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 20 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 30 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 40 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 50 }
+			}
+		}
+	}
+	
+	after = { update_emperor_imperial_court_modifiers_effect = yes }
+}
+
+
+
+
+
+###new emperor, usurped by non-emperor tier
+character_event = {
+	id = ipcm.015
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_nomadic = no
+		is_tribal = no
+		OR = {
+			NOT = { tier = emperor }
+			AND = {
+				rebel = yes
+				tier = emperor
+			}
+		}
+		FROM = {
+			tier = emperor
+			has_title_flag = imperial_court_active 
+		}
+		any_demesne_title = {
+			temporary = no
+			OR = {
+				title = FROM
+				NOT = { tier = emperor }
+			}
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = usurped_imperial_title }
+		if = {
+			limit = { FROMFROM = { is_alive = yes } }
+			FROMFROM = { save_event_target_as = previous_emperor }
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			set_society_grandmaster = yes
+			if = {
+				limit = { any_realm_character = { is_imperial_court_regent_trigger = no } }
+				FROM = { clr_title_flag = has_imperial_regent }
+			}
+		}
+		character_event = { id = ipcm.016 days = 1 }
+	}
+}
+
+###continue usurped
+character_event = {
+	id = ipcm.016
+	desc = EVTDESAipcm.016
+	picture = GFX_evt_powerful_ruler 
+
+	is_triggered_only = yes
+	
+	immediate = {
+		get_imperial_regent_relative_candidate_effect = yes
+		get_imperial_regent_society_candidate_effect = yes
+		if = {
+			limit = { event_target:usurped_imperial_title = { has_title_flag = has_imperial_regent } }
+			random_realm_character = {
+				limit = { is_imperial_court_regent_trigger = yes }
+				save_event_target_as = imperial_regent
+			}
+		}
+	}
+	
+	
+	#do it myself
+	option = {
+		trigger = { is_imperial_court_member_trigger = no }
+		name = EVTOPTAipcm.016
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes
+		}
+		if = {
+			limit = { event_target:usurped_imperial_title = { has_title_flag = has_imperial_regent } }
+			event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		}
+		else = {
+			join_realm_imperial_court_effect = yes 
+			set_society_grandmaster = yes
+			change_society_currency = 500
+		}
+		
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.5
+				trait = shy
+			}
+			modifier = {
+				factor = 0.5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = stubborn
+			}
+			modifier = {
+				factor = 2
+				trait = strong
+			}
+			modifier = {
+				factor = 2
+				trait = shrewd
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+		}
+	}
+	
+	#was already in ipc society
+	option = {
+		trigger = { is_imperial_court_member_trigger = yes }
+		name = EVTOPTBipcm.016
+		if = {
+			limit = { event_target:usurped_imperial_title = { has_title_flag = has_imperial_regent } }
+			event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		}
+		else_if = {
+			limit = { is_society_grandmaster = no }
+			set_society_grandmaster = yes
+		}
+		
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 0.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.5
+				trait = shy
+			}
+			modifier = {
+				factor = 0.5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = stubborn
+			}
+			modifier = {
+				factor = 2
+				trait = strong
+			}
+			modifier = {
+				factor = 2
+				trait = shrewd
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+		}
+	}
+	
+
+	#keep regent
+	option = {
+		trigger = { event_target:usurped_imperial_title = { has_title_flag = has_imperial_regent } }
+		name = EVTOPTCipcm.016
+		reverse_opinion = { who = event_target:imperial_regent modifier = opinion_retained_imperial_office years = 5 }
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 10 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 20 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 30 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 40 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:imperial_regent value > 50 }
+			}
+		}
+	}
+	
+
+	#choose new regent
+	option = {
+		name = EVTOPTDipcm.016
+		hidden_tooltip = { set_character_flag = changing_imperial_regent }
+		if = {
+			limit = { event_target:imperial_regent = { always = yes } }
+			event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		}
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { always = yes } }
+			event_target:imperial_regent_relative_candidate = { award_imperial_regent_effect = yes }
+		}
+		else = {
+			event_target:imperial_regent_society_candidate = { award_imperial_regent_effect = yes }
+		}
+		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 10 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 10 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 20 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 20 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 30 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 30 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 40 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 40 }
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					opinion = { who = event_target:imperial_regent_relative_candidate value > 50 }
+					opinion = { who = event_target:imperial_regent_society_candidate value > 50 }
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_tooltip = {
+			update_emperor_imperial_court_modifiers_effect = yes
+			if = {
+				limit = { event_target:previous_emperor = { always = yes } }
+				event_target:previous_emperor = {
+					if = {
+						limit = { is_imperial_court_member_trigger = yes }
+						leave_society = yes
+					}
+					set_character_flag = imperial_court_previous_emperor_block
+					update_emperor_imperial_court_modifiers_effect = yes
+				}
+			}
+			random_realm_character = {
+				limit = {
+					is_imperial_court_member_trigger = yes
+					same_realm = ROOT
+				}
+				society = {
+					any_society_member = { 
+						limit = { NOT = { character = ROOT } }
+						character_event = { id = ipcm.010 days = 1 } 
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#multi empire management
+character_event = {
+	id = ipcm.017
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	only_independent = yes
+	
+	trigger = {
+		NOT = { has_character_flag = ipc_forming_new_empire }
+		rebel = no
+		FROM = {
+			tier = EMPEROR
+			temporary = no
+			OR = {
+				NOR = {
+					has_global_flag = ipc_plus_detected
+					has_global_flag = ipc_hip_detected
+				}
+				AND = {
+					has_global_flag = ipc_plus_detected
+					NOT = { has_title_flag = emergency_empire_title }
+				}
+				#AND = {
+				#	has_global_flag = ipc_hip_detected
+				#	is_primary_holder_title = no
+				#}
+			}
+		}
+		any_demesne_title = {
+			tier = EMPEROR
+			temporary = no
+			NOT = { title = FROM }
+			OR = {
+				NOT = { has_global_flag = ipc_plus_detected }
+				AND = {
+					has_global_flag = ipc_plus_detected
+					NOT = { has_title_flag = emergency_empire_title }
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		set_character_flag = ipc_multi_empire_maintenance
+		#disable both ck2+/hip versions, their effects have been intergrated
+		if = {
+			limit = { has_global_flag = ipc_plus_detected }
+			clear_delayed_event = { id = Plus.1854 }
+		}
+		else_if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			clear_delayed_event = { id = emf_imperial.1886 }
+		}
+		
+		
+		random_demesne_title = {
+			limit = {
+				tier = EMPEROR
+				NOT = { title = FROM }
+			}
+			save_event_target_as = current_empire
+		}
+		FROM = { save_event_target_as = new_empire }
+		FROMFROM = {
+			if = {
+				limit = { is_alive = yes }
+				save_event_target_as = previous_empire_holder
+			}
+		}
+		
+		#no courts
+		if = {
+			limit = {
+				NOR = {
+					event_target:current_empire = { has_title_flag = imperial_court_active }
+					event_target:new_empire = { has_title_flag = imperial_court_active }
+				}
+			}
+			character_event = { id = ipcm.018 days = 1 }
+		}
+		#both courts
+		else_if = { 
+			limit = { 
+				event_target:current_empire = { has_title_flag = imperial_court_active }
+				event_target:new_empire = { has_title_flag = imperial_court_active }
+			}
+			character_event = { id = ipcm.020 days = 1 } 
+		}
+		
+		else = { character_event = { id = ipcm.019 days = 1 }  }
+	}
+}
+
+#continue empire destruction for no courts
+character_event = {
+	id = ipcm.018
+	desc = EVTDESAipcm.018
+	picture = GFX_evt_powerful_ruler
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = event_target:current_empire
+		has_landed_title = event_target:new_empire
+	}
+	
+	
+	#keep current
+	option = {
+		name = EVTOPTAipcm.018
+		
+		##hip
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			
+			hidden_tooltip = {
+				if = {
+					limit = { event_target:new_empire = { is_primary_holder_title = yes } }
+					event_target:current_empire = { emf_make_primary_title = yes }
+				}
+			}
+			event_target:new_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				else_if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		##vanilla and ck2+ 
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag
+			}
+			if = {
+				limit = { event_target:new_empire = { is_landless_type_title = no } }
+				event_target:new_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:new_empire = { is_landless_type_title = yes } }
+				event_target:new_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		ai_chance = {
+			factor = 50
+			
+			#ck2+
+			modifier = {
+				factor = 0
+				event_target:new_empire = { culture = ROOT }
+			}
+			modifier = {
+				factor = 0.1
+				event_target:new_empire = {
+					capital_scope = { culture = ROOT }
+				}
+			}
+			modifier = {
+				factor = 0
+				event_target:current_empire = { is_titular = yes }
+				event_target:new_empire = { is_titular = no }
+			}
+			
+			#hip
+			modifier = {
+				factor = 0
+				NOR = {
+					event_target:current_empire = { is_de_jure_title = yes }
+					event_target:new_empire = { is_de_jure_title = no }
+				}
+			}
+		}
+	}
+	
+	
+	#take new
+	option = {
+		name = EVTOPTBipcm.018
+		
+		#hip
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			hidden_tooltip = {
+				event_target:new_empire = { emf_make_primary_title = yes }
+				# When assuming new title, ensure that the new title's ID rating is at least as high as any held empire titles
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+						NOT = { title = event_target:new_empire }
+						check_variable = { which = "imperial_decay" which = event_target:new_empire }
+					}
+					ROOT = { set_character_flag = decay_change_tmp }
+					set_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					event_target:new_empire = {
+						set_variable = { which = "imperial_decay_change" which = PREV }
+						subtract_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					}
+					set_variable = { which = "imperial_decay_change" value = 0 }
+				}
+				if = {
+					limit = { has_character_flag = decay_change_tmp }
+					clr_character_flag = decay_change_tmp
+					character_event = { id = emf_imperial.1852 } # Update modifiers & notify
+				}
+			}
+			event_target:current_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		#vanilla and ck2+
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag
+				event_target:new_empire = { make_primary_title = yes }
+			}
+			if = {
+				limit = { event_target:current_empire = { is_landless_type_title = no } }
+				event_target:current_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:current_empire = { is_landless_type_title = yes } }
+				event_target:current_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		ai_chance = {
+			factor = 20
+			#ck2+
+			modifier = {
+				factor = 0
+				event_target:current_empire = { culture = ROOT }
+			}
+			modifier = {
+				factor = 0.1
+				event_target:current_empire = {
+					capital_scope = { culture = ROOT }
+				}
+			}
+			modifier = {
+				factor = 0
+				event_target:current_empire = { is_titular = no }
+				event_target:new_empire = { is_titular = yes }
+			}
+			#hip
+			modifier = {
+				factor = 0
+				OR = {
+					event_target:current_empire = { is_de_jure_title = yes }
+					event_target:new_empire = { is_de_jure_title = no }
+				}
+			}
+		}
+	}
+	
+	after = { clr_character_flag = ipc_multi_empire_maintenance }
+}
+	
+	
+
+####continue empire destruction for courts
+character_event = {
+	id = ipcm.019
+	#current empire has court, new doesnt
+	desc = {
+		trigger = {
+			event_target:current_empire = { has_title_flag = imperial_court_active }
+			event_target:new_empire = { NOT = { has_title_flag = imperial_court_active } }
+		}
+		text = EVTDESAipcm.019
+	}
+	#current empire has no court, new has one
+	desc = {
+		trigger = {
+			event_target:current_empire = { NOT = { has_title_flag = imperial_court_active } }
+			event_target:new_empire = { has_title_flag = imperial_court_active }
+		}
+		text = EVTDESBipcm.019
+	}
+	desc = {
+		trigger = {
+			OR = {
+				is_nomadic = yes
+				is_tribal = yes
+			}
+			event_target:new_empire = { has_title_flag = imperial_court_active }
+		}
+		text = EVTDESCipcm.019
+	}
+	picture = GFX_evt_powerful_ruler
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = event_target:current_empire
+		has_landed_title = event_target:new_empire
+	}
+	
+	##current empire has court, new doesnt, keep current empire
+	option = {
+		trigger = {
+			event_target:current_empire = { has_title_flag = imperial_court_active }
+			event_target:new_empire = { NOT = { has_title_flag = imperial_court_active } }
+		}
+		name = EVTOPTAipcm.019
+		##hip
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			
+			hidden_tooltip = {
+				if = {
+					limit = { event_target:new_empire = { is_primary_holder_title = yes } }
+					event_target:current_empire = { emf_make_primary_title = yes }
+				}
+			}
+			event_target:new_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				else_if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		##vanilla and ck2+ 
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag
+			}
+			if = {
+				limit = { event_target:new_empire = { is_landless_type_title = no } }
+				event_target:new_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:new_empire = { is_landless_type_title = yes } }
+				event_target:new_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		ai_chance = { 
+			factor = 100 
+			modifier = {
+				factor = 10
+				event_target:current_empire = { 
+					OR = {
+						title = e_byzantium
+						title = e_hre
+						title = e_arabia
+						title = e_roman_empire
+					}
+				}
+			}
+		}
+	}
+	
+	##current empire has court, new doesnt, move court to new empire
+	option = {
+		trigger = {
+			NOR = {
+				has_character_modifier = imperial_court_influence_3
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+			event_target:current_empire = { 
+				has_title_flag = imperial_court_active 
+				NOR = {
+					title = e_byzantium
+					title = e_hre
+					title = e_arabia
+					title = e_roman_empire
+				}
+			}
+			event_target:new_empire = { NOT = { has_title_flag = imperial_court_active } }
+		}
+		name = EVTOPTBipcm.019
+		
+		#move the society
+		hidden_tooltip = {
+			save_imperial_court_membership_effect = yes
+			event_target:current_empire = { dismantle_imperial_court_effect = yes }
+			set_as_new_imperial_court_effect = yes
+			event_target:new_empire = {
+				if = {
+					limit = { has_global_flag = ipc_hip_detected }
+					emf_make_primary_title = yes
+				}
+				else = { make_primary_title = yes }
+			}
+			restore_imperial_court_membership_effect = yes
+		}
+		
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			hidden_tooltip = {
+				
+				# When assuming new title, ensure that the new title's ID rating is at least as high as any held empire titles
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+						NOT = { title = event_target:new_empire }
+						check_variable = { which = "imperial_decay" which = event_target:new_empire }
+					}
+					ROOT = { set_character_flag = decay_change_tmp }
+					set_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					event_target:new_empire = {
+						set_variable = { which = "imperial_decay_change" which = PREV }
+						subtract_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					}
+					set_variable = { which = "imperial_decay_change" value = 0 }
+				}
+				if = {
+					limit = { has_character_flag = decay_change_tmp }
+					clr_character_flag = decay_change_tmp
+					character_event = { id = emf_imperial.1852 } # Update modifiers & notify
+				}
+			}
+			event_target:current_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		#vanilla and ck2+
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag
+			}
+			if = {
+				limit = { event_target:current_empire = { is_landless_type_title = no } }
+				event_target:current_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:current_empire = { is_landless_type_title = yes } }
+				event_target:current_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 100
+				event_target:new_empire = { 
+					OR = {
+						title = e_byzantium
+						title = e_hre
+						title = e_arabia
+						title = e_roman_empire
+					}
+				}
+			}
+		}
+	}
+	
+	
+	#current empire has no court, new does, must move to new empire
+	option = {
+		trigger = {
+			is_nomadic = no
+			is_tribal = no
+			event_target:current_empire = { NOT = { has_title_flag = imperial_court_active } }
+			event_target:new_empire = { has_title_flag = imperial_court_active }
+		}
+		name = EVTOPTCipcm.019
+		#hip
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			hidden_tooltip = {
+				event_target:new_empire = { emf_make_primary_title = yes }
+				# When assuming new title, ensure that the new title's ID rating is at least as high as any held empire titles
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+						NOT = { title = event_target:new_empire }
+						check_variable = { which = "imperial_decay" which = event_target:new_empire }
+					}
+					ROOT = { set_character_flag = decay_change_tmp }
+					set_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					event_target:new_empire = {
+						set_variable = { which = "imperial_decay_change" which = PREV }
+						subtract_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					}
+					set_variable = { which = "imperial_decay_change" value = 0 }
+				}
+				if = {
+					limit = { has_character_flag = decay_change_tmp }
+					clr_character_flag = decay_change_tmp
+					character_event = { id = emf_imperial.1852 } # Update modifiers & notify
+				}
+			}
+			event_target:current_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		#vanilla and ck2+
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag'
+				event_target:new_empire = { make_primary_title = yes }
+			}
+			if = {
+				limit = { event_target:current_empire = { is_landless_type_title = no } }
+				event_target:current_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:current_empire = { is_landless_type_title = yes } }
+				event_target:current_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		
+		hidden_tooltip = {
+			if = {
+				limit = { is_in_society = yes }
+				random_realm_character = {
+					show_scope_change = no
+					limit = {
+						is_imperial_court_member_trigger = yes
+						same_realm = ROOT
+						NOT = { character = event_target:previous_empire_holder }
+					}
+					preferred_limit = { is_society_grandmaster = yes }
+					preferred_limit = { society_rank == 3 }
+					award_imperial_regent_effect = yes
+				}
+			}
+			else_if = {
+				limit = { is_in_society = no }
+				join_realm_imperial_court_effect = yes
+				set_society_grandmaster = yes
+			}
+			update_emperor_imperial_court_modifiers_effect = yes
+		}
+		
+		ai_chance = {
+			factor = 20
+			#ck2+
+			modifier = {
+				factor = 0
+				event_target:current_empire = { culture = ROOT }
+			}
+			modifier = {
+				factor = 0.1
+				event_target:current_empire = {
+					capital_scope = { culture = ROOT }
+				}
+			}
+			modifier = {
+				factor = 0
+				event_target:current_empire = { is_titular = no }
+				event_target:new_empire = { is_titular = yes }
+			}
+			#hip
+			modifier = {
+				factor = 0
+				OR = {
+					event_target:current_empire = { is_de_jure_title = yes }
+					event_target:new_empire = { is_de_jure_title = no }
+				}
+			}
+		}
+	}
+	
+	##nomads/tribals must destroy the new empire
+	option = {
+		trigger = {
+			OR = {
+				is_nomadic = yes
+				is_tribal = yes
+			}
+			event_target:new_empire = { has_title_flag = imperial_court_active }
+		}
+		name = EVTOPTDipcm.019
+		##hip
+		event_target:new_empire = { dismantle_imperial_court_effect = yes }
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			
+			hidden_tooltip = {
+				if = {
+					limit = { event_target:new_empire = { is_primary_holder_title = yes } }
+					event_target:current_empire = { emf_make_primary_title = yes }
+				}
+			}
+			event_target:new_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				else_if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		##vanilla and ck2+ 
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag
+			}
+			if = {
+				limit = { event_target:new_empire = { is_landless_type_title = no } }
+				event_target:new_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:new_empire = { is_landless_type_title = yes } }
+				event_target:new_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		
+		hidden_tooltip = {
+			any_realm_lord = {
+				any_demesne_title = { 
+					limit = { has_title_flag = is_imperial_capital } 
+					clr_title_flag = is_imperial_capital
+				}
+			}
+			any_demesne_title = {
+				limit = { has_title_flag = is_imperial_capital }
+				clr_title_flag = is_imperial_capital
+			}
+		}
+		ai_chance = { factor = 1000 }
+	}
+	
+	
+	after = { clr_character_flag = ipc_multi_empire_maintenance }
+}
+
+
+
+###both have courts
+character_event = {
+	id = ipcm.020
+	#both have a court, choose one and dismantle the other
+	desc = EVTDESAipcm.020
+	picture = GFX_evt_powerful_ruler
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = event_target:current_empire
+		has_landed_title = event_target:new_empire
+	}
+	
+	#keep current
+	option = {
+		name = EVTOPTAipcm.020
+		event_target:new_empire = { dismantle_imperial_court_effect = yes }
+		
+		##hip
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			
+			hidden_tooltip = {
+				if = {
+					limit = { event_target:new_empire = { is_primary_holder_title = yes } }
+					event_target:current_empire = { emf_make_primary_title = yes }
+				}
+			}
+			event_target:new_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				else_if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		##vanilla and ck2+ 
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag
+			}
+			if = {
+				limit = { event_target:new_empire = { is_landless_type_title = no } }
+				event_target:new_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:new_empire = { is_landless_type_title = yes } }
+				event_target:new_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		
+		hidden_tooltip = {
+			any_realm_lord = {
+				any_demesne_title = { 
+					limit = { has_title_flag = is_imperial_capital } 
+					clr_title_flag = is_imperial_capital
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					has_title_flag = is_imperial_capital
+					ROOT = { capital_holding = { NOT = { title = PREVPREV } } }
+				}
+				clr_title_flag = is_imperial_capital
+			}
+		}
+		
+		ai_chance = { 
+			factor = 100 
+			modifier = {
+				factor = 10
+				event_target:current_empire = { 
+					OR = {
+						title = e_byzantium
+						title = e_hre
+						title = e_arabia
+						title = e_roman_empire
+					}
+				}
+			}
+		}
+	}
+	
+	#take new
+	option = {
+		name = EVTOPTBipcm.020
+		event_target:current_empire = { dismantle_imperial_court_effect = yes }
+		
+		#hip
+		if = {
+			limit = { has_global_flag = ipc_hip_detected }
+			hidden_tooltip = {
+				event_target:new_empire = { emf_make_primary_title = yes }
+				# When assuming new title, ensure that the new title's ID rating is at least as high as any held empire titles
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+						NOT = { title = event_target:new_empire }
+						check_variable = { which = "imperial_decay" which = event_target:new_empire }
+					}
+					ROOT = { set_character_flag = decay_change_tmp }
+					set_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					event_target:new_empire = {
+						set_variable = { which = "imperial_decay_change" which = PREV }
+						subtract_variable = { which = "imperial_decay_change" which = "imperial_decay" }
+					}
+					set_variable = { which = "imperial_decay_change" value = 0 }
+				}
+				if = {
+					limit = { has_character_flag = decay_change_tmp }
+					clr_character_flag = decay_change_tmp
+					character_event = { id = emf_imperial.1852 } # Update modifiers & notify
+				}
+			}
+			event_target:current_empire = {
+				if = {
+					limit = { is_landless_type_title = no }
+					emf_destroy_title = yes
+				}
+				if = {
+					limit = { is_landless_type_title = yes }
+					emf_unsafe_destroy_title = yes
+				}
+			}
+		}
+		#vanilla and ck2+
+		else = {
+			hidden_tooltip = {
+				any_vassal = { set_defacto_liege = ROOT }
+				clr_character_flag = must_grant_empire_flag
+				event_target:new_empire = { make_primary_title = yes }
+			}
+			if = {
+				limit = { event_target:current_empire = { is_landless_type_title = no } }
+				event_target:current_empire = { destroy_landed_title = THIS }
+			}
+			else_if = {
+				limit = { event_target:current_empire = { is_landless_type_title = yes } }
+				event_target:current_empire = { unsafe_destroy_landed_title = THIS }
+			}
+		}
+		
+		#removing capital and setting new grandmaster
+		hidden_tooltip = {
+			any_realm_lord = {
+				any_demesne_title = { 
+					limit = { has_title_flag = is_imperial_capital } 
+					clr_title_flag = is_imperial_capital
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					has_title_flag = is_imperial_capital
+					ROOT = { capital_holding = { NOT = { title = PREVPREV } } }
+				}
+				clr_title_flag = is_imperial_capital
+			}
+			
+			if = {
+				limit = { 
+					is_in_society = yes 
+					is_imperial_court_member_trigger = no
+				}
+				random_realm_character = {
+					show_scope_change = no
+					limit = {
+						is_imperial_court_member_trigger = yes
+						same_realm = ROOT
+						NOT = { character = event_target:previous_empire_holder }
+					}
+					preferred_limit = { is_society_grandmaster = yes }
+					preferred_limit = { society_rank == 3 }
+					award_imperial_regent_effect = yes
+				}
+			}
+			else_if = {
+				limit = { is_in_society = no }
+				join_realm_imperial_court_effect = yes
+				set_society_grandmaster = yes
+			}
+			update_emperor_imperial_court_modifiers_effect = yes
+		}
+		
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 100
+				event_target:new_empire = { 
+					OR = {
+						title = e_byzantium
+						title = e_hre
+						title = e_arabia
+						title = e_roman_empire
+					}
+				}
+			}
+		}
+	}
+	after = { clr_character_flag = ipc_multi_empire_maintenance }
+}
+
+
+
+
+
+####Imperial Capitals changing hands
+
+###lost imperial capital, clearing missions and character flags is done in victor event
+character_event = {
+	id = ipcm.021
+	desc = EVTDESAipcm.021
+	picture = GFX_evt_magnificent_castle
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		primary_title = { has_title_flag = imperial_court_active }
+		OR = {
+			AND = {
+				tier = emperor
+				NOT = { any_realm_title = { tier = baron has_title_flag = is_imperial_capital } }
+			}
+			AND = {
+				NOT = { tier = emperor }
+				NOT = { top_liege = { any_realm_title = { tier = baron has_title_flag = is_imperial_capital } } }
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = { tier = emperor }
+			capital_holding = { save_event_target_as = new_imperial_capital }
+		}
+		else = {
+			top_liege = { capital_holding = { save_event_target_as = new_imperial_capital } }
+		}
+	}
+	
+	option = {
+		name = EVTOPTAipcm.021
+		hidden_tooltip = { event_target:new_imperial_capital = { set_title_flag = is_imperial_capital } }
+	}
+}
+
+###victor gained an Imperial Capital
+#add clearing visiting imperial capital flag, and mission effects for the lost capital
+character_event = {
+	id = ipcm.022
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ROOT = { primary_title = { has_title_flag = imperial_court_active } }
+		FROM = {
+			OR = {
+				AND = { 
+					NOR = {
+						primary_title = { has_title_flag = imperial_court_active }
+						AND = {
+							independent = no
+							top_liege = { primary_title = { has_title_flag = imperial_court_active } }
+						}
+					}
+					any_realm_title = { tier = baron has_title_flag = is_imperial_capital }
+				}
+				any_realm_title = { 
+					count = 2
+					tier = baron
+					has_title_flag = is_imperial_capital 
+				}
+			}
+		}
+	}
+
+	immediate = {
+		FROM = {
+			save_event_target_as = imperial_capital_conqueror
+			
+			#victor is emperor and has imperial court
+			if = {
+				limit = { 
+					tier = emperor
+					primary_title = { has_title_flag = imperial_court_active }
+				}
+				any_realm_title = {
+					limit = { 
+						tier = baron
+						has_title_flag = is_imperial_capital
+						event_target:imperial_capital_conqueror = { capital_holding = { NOT = { title = PREVPREV } } }
+					}
+					clr_title_flag = is_imperial_capital
+					if = {
+						limit = { is_quest_target = yes }
+						any_quester_targetting_this = {
+							limit = { has_quest = quest_ipc_improve_imperial_capital }
+							character_event = { id = ipcq.111 }
+						}
+					}
+					ROOT = {
+						any_realm_character = {
+							limit = { has_character_flag = visiting_imperial_capital }
+							character_event = { id = ipc.101 } 
+						}
+					}
+				}
+			}
+			
+			#victor is vassal and liege has imperial court
+			else_if = {
+				limit = { 
+					NOT = { tier = emperor }
+					top_liege = { primary_title = { has_title_flag = imperial_court_active } }
+				}
+				top_liege = {
+					any_realm_title = {
+						limit = { 
+							tier = baron
+							has_title_flag = is_imperial_capital
+							event_target:imperial_capital_conqueror = { capital_holding = { NOT = { title = PREVPREV } } }
+						}
+						clr_title_flag = is_imperial_capital
+						if = {
+							limit = { is_quest_target = yes }
+							any_quester_targetting_this = {
+								limit = { has_quest = quest_ipc_improve_imperial_capital }
+								character_event = { id = ipcq.111 }
+							}
+						}
+						ROOT = {
+							any_realm_character = {
+								limit = { has_character_flag = visiting_imperial_capital }
+								character_event = { id = ipc.101 } 
+							}
+						}
+					}
+				}
+			}
+			
+			#victor's realm does not have an imperial court
+			else = {
+				if = {
+					limit = { independent = yes }
+					any_realm_title = {
+						limit = { 
+							tier = baron
+							has_title_flag = is_imperial_capital
+							event_target:imperial_capital_conqueror = { capital_holding = { NOT = { title = PREVPREV } } }
+						}
+						clr_title_flag = is_imperial_capital
+						if = {
+							limit = { is_quest_target = yes }
+							any_quester_targetting_this = {
+								limit = { has_quest = quest_ipc_improve_imperial_capital }
+								character_event = { id = ipcq.111 }
+							}
+						}
+						ROOT = {
+							any_realm_character = {
+								limit = { has_character_flag = visiting_imperial_capital }
+								character_event = { id = ipc.101 } 
+							}
+						}
+					}
+				}
+				else = {
+					top_liege = {
+						any_realm_title = {
+							limit = { 
+								tier = baron
+								has_title_flag = is_imperial_capital
+								event_target:imperial_capital_conqueror = { capital_holding = { NOT = { title = PREVPREV } } }
+							}
+							clr_title_flag = is_imperial_capital
+							if = {
+								limit = { is_quest_target = yes }
+								any_quester_targetting_this = {
+									limit = { has_quest = quest_ipc_improve_imperial_capital }
+									character_event = { id = ipcq.111 }
+								}
+							}
+							ROOT = {
+								any_realm_character = {
+									limit = { has_character_flag = visiting_imperial_capital }
+									character_event = { id = ipc.101 } 
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################Minor Titles####################
+
+##becoming imperial regent
+letter_event = {
+	id = ipcm.030
+	desc = EVTDESAipcm.030
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_regent } }
+	
+	#yes
+	option = {
+		name = EVTOPTAipcm.030
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.030
+			top_liege = { primary_title = { set_title_flag = has_imperial_regent } }
+			if = {
+				limit = { is_in_society = no }
+				join_realm_imperial_court_effect = yes
+			}
+			else_if = {
+				limit = {
+					is_imperial_court_member_trigger = yes 
+					society_rank < 3
+				}
+				if = {
+					limit = { society_rank == 2 }
+					set_character_flag = previous_rank_2_regent
+				}
+				else = { set_character_flag = previous_rank_1_regent }
+			}
+			set_society_grandmaster = yes
+			top_liege = {
+				if = {
+					limit = { is_imperial_court_member_trigger = yes }
+					leave_society = yes
+				}
+				if = {
+					limit = { has_character_flag = changing_imperial_regent }
+					clr_character_flag = changing_imperial_regent
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_seneschal_trigger = yes }
+			revoke_imperial_seneschal_effect = yes
+		}
+		else_if = {
+			limit = { is_imperial_court_marshal_trigger = yes }
+			revoke_imperial_marshal_effect = yes
+		}
+		else_if = {
+			limit = { is_imperial_court_lawkeeper_trigger = yes }
+			revoke_imperial_lawkeeper_effect = yes
+		}
+		else_if = {
+			limit = { is_imperial_court_spymaster_trigger = yes }
+			revoke_imperial_spymaster_effect = yes
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_regent_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_regent scope = ROOT } }
+	}
+}
+
+###losing imperial regent
+letter_event = {
+	id = ipcm.031
+	desc = {
+		trigger = { 
+			top_liege = { NOT = { has_character_flag = child_imperial_regency } } 
+			same_realm = FROMFROM
+		}
+		text = EVTDESAipcm.031
+	}
+	desc = {
+		trigger = { 
+			top_liege = { has_character_flag = child_imperial_regency } 
+			same_realm = FROMFROM
+		}
+		text = EVTDESBipcm.031
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESCipcm.031
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESDipcm.031
+	}
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_regent } }
+	
+	option = {
+		trigger = { 
+			top_liege = { NOT = { has_character_flag = child_imperial_regency } } 
+			same_realm = FROMFROM
+		}
+		name = EVTOPTAipcm.031
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.031
+			top_liege = {
+				primary_title = { clr_title_flag = has_imperial_regent }
+				if = {
+					limit = { NOT = { has_character_flag = changing_imperial_regent } }
+					if = {
+						limit = { 
+							is_in_society = yes 
+							is_imperial_court_member_trigger = no
+						}
+						leave_society = yes
+					}
+					join_realm_imperial_court_effect = yes
+					change_society_currency = 250
+					set_society_grandmaster = yes
+				}
+				clr_character_flag = changing_imperial_regent
+			}
+			if = {
+				limit = { NOT = { tier = emperor } }
+				if = {
+					limit = { has_character_flag = previous_rank_2_regent }
+					society_rank_down = 1
+					clr_character_flag = previous_rank_2_regent
+				}
+				else_if = {
+					limit = { has_character_flag = previous_rank_1_regent }
+					society_rank_down = 2
+					clr_character_flag = previous_rank_1_regent
+				}
+			}
+		}
+		top_liege = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_regent_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_regent }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	
+	#forced to use regent because emperor was child
+	option = {
+		trigger = { 
+			top_liege = { has_character_flag = child_imperial_regency } 
+			same_realm = FROMFROM
+		}
+		name = EVTOPTBipcm.031
+		custom_tooltip = {
+			text = EVTTOOLTIPBipcm.031
+			top_liege = {
+				primary_title = { clr_title_flag = has_imperial_regent }
+				if = {
+					limit = { NOT = { has_character_flag = changing_imperial_regent } }
+					if = {
+						limit = { 
+							is_in_society = yes 
+							is_imperial_court_member_trigger = no
+						}
+						leave_society = yes
+					}
+					join_realm_imperial_court_effect = yes
+					change_society_currency = 250
+					set_society_grandmaster = yes
+				}
+				clr_character_flag = changing_imperial_regent
+				clr_character_flag = child_imperial_regency
+			}
+			if = {
+				limit = { NOT = { tier = emperor } }
+				if = {
+					limit = { has_character_flag = previous_rank_2_regent }
+					society_rank_down = 1
+					clr_character_flag = previous_rank_2_regent
+				}
+				else_if = {
+					limit = { has_character_flag = previous_rank_1_regent }
+					society_rank_down = 2
+					clr_character_flag = previous_rank_1_regent
+				}
+			}
+		}
+		top_liege = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_regent_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_regent }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTCipcm.031
+		remove_character_modifier = imperial_regent_modifier
+		society = { clear_persistent_event_target = current_imperial_regent }
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			FROMFROM = { 
+				primary_title = { clr_title_flag = has_imperial_regent }
+				character_event = { id = ipcm.034 } 
+			}
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTDipcm.031
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialRegentAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_regent
+		}
+	}
+}
+
+
+###imperial regent dead
+character_event = {
+	id = ipcm.032
+	desc = EVTDESAipcm.032
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		get_imperial_regent_relative_candidate_effect = yes
+		get_imperial_regent_society_candidate_effect = yes
+		society = { clear_persistent_event_target = current_imperial_regent }
+	}
+	
+	#do it myself
+	option = {
+		name = EVTOPTAipcm.032
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes
+		}
+		join_realm_imperial_court_effect = yes
+		set_society_grandmaster = yes
+		change_society_currency = 250
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_in_society = yes
+				is_society_grandmaster = yes
+			}
+			modifier = {
+				factor = 0.25
+				is_in_society = yes
+				society_rank == 3
+			}
+			modifier = {
+				factor = 0.5
+				is_in_society = yes
+				society_rank == 2
+			}
+			modifier = {
+				factor = 0.5
+				is_in_society = yes
+				society_rank == 1
+			}
+			modifier = {
+				factor = 1.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = stubborn
+			}
+			modifier = {
+				factor = 1.5
+				age >= 30
+			}
+		}
+	}
+	
+	#choose new regent
+	option = {
+		name = EVTOPTBipcm.032
+		hidden_tooltip = { set_character_flag = changing_imperial_regent }
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { always = yes } }
+			event_target:imperial_regent_relative_candidate = { award_imperial_regent_effect = yes }
+		}
+		else = {
+			event_target:imperial_regent_society_candidate = { award_imperial_regent_effect = yes }
+		}
+		ai_chance = { factor = 50 }
+	}
+	
+	
+}
+
+###imperial regent revoked by decision
+character_event = {
+	id = ipcm.033
+	desc = EVTDESAipcm.033
+	picture = GFX_evt_coronation
+
+	is_triggered_only = yes
+	
+	immediate = {
+		get_imperial_regent_relative_candidate_effect = yes
+		get_imperial_regent_society_candidate_effect = yes
+		random_realm_character = {
+			limit = { is_imperial_court_regent_trigger = yes }
+			save_event_target_as = imperial_regent
+		}
+	}
+	
+	
+	#do it myself
+	option = {
+		name = EVTOPTAipcm.033
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes
+		}
+		event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		hidden_tooltip = {
+			set_character_flag = took_control
+			society = {
+				any_society_member = {
+					limit = { NOT = { character = ROOT } }
+					character_event = { id = ipcm.010 }
+				}
+			}
+		}
+	}
+	
+	#choose new regent
+	option = {
+		name = EVTOPTBipcm.033
+		hidden_tooltip = { set_character_flag = changing_imperial_regent }
+		event_target:imperial_regent = { revoke_imperial_regent_effect = yes }
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { always = yes } }
+			event_target:imperial_regent_relative_candidate = { 
+				award_imperial_regent_effect = yes 
+				save_event_target_as = new_regent
+			}
+		}
+		else = {
+			event_target:imperial_regent_society_candidate = { 
+				award_imperial_regent_effect = yes 
+				save_event_target_as = new_regent
+			}
+		}
+		hidden_tooltip = {
+			set_character_flag = new_regent
+			event_target:new_regent = {
+				society = {
+					any_society_member = {
+						limit = { 
+							NOR = { 
+								character = ROOT 
+								character = event_target:new_regent
+							}
+						}
+						character_event = { id = ipcm.010 }
+					}
+				}
+			}
+		}
+	}
+	
+	#keep regent
+	option = { name = EVTOPTCipcm.033 }
+	
+	after = { 
+		update_emperor_imperial_court_modifiers_effect = yes 
+		clr_character_flag = took_control
+		clr_character_flag = new_regent
+	}
+}
+
+
+
+
+
+###imperial regent no longer in same realm
+character_event = {
+	id = ipcm.034
+	desc = EVTDESAipcm.034
+	picture = GFX_evt_coronation
+
+	is_triggered_only = yes
+	
+	immediate = {
+		get_imperial_regent_relative_candidate_effect = yes
+		get_imperial_regent_society_candidate_effect = yes
+		random_realm_character = {
+			limit = {
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = yes
+				same_realm = ROOT
+			}
+			save_event_target_as = imperial_society_heir
+		}
+	}
+	
+	#do it myself
+	option = {
+		name = EVTOPTAipcm.034
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes
+		}
+		join_realm_imperial_court_effect = yes
+		set_society_grandmaster = yes
+		change_society_currency = 250
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_in_society = yes
+				is_society_grandmaster = yes
+			}
+			modifier = {
+				factor = 0.25
+				is_in_society = yes
+				society_rank == 3
+			}
+			modifier = {
+				factor = 0.5
+				is_in_society = yes
+				society_rank == 2
+			}
+			modifier = {
+				factor = 0.5
+				is_in_society = yes
+				society_rank == 1
+			}
+			modifier = {
+				factor = 1.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = stubborn
+			}
+			modifier = {
+				factor = 1.5
+				age >= 30
+			}
+		}
+	}
+	
+	#choose new regent
+	option = {
+		name = EVTOPTBipcm.034
+		hidden_tooltip = { set_character_flag = changing_imperial_regent }
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { always = yes } }
+			event_target:imperial_regent_relative_candidate = { award_imperial_regent_effect = yes }
+		}
+		else = {
+			event_target:imperial_regent_society_candidate = { award_imperial_regent_effect = yes }
+		}
+		ai_chance = { factor = 25 }
+	}
+	
+	option = {
+		trigger = { event_target:imperial_society_heir = { always = yes } }
+		name = EVTOPTCipcm.034
+		event_target:imperial_society_heir = { award_imperial_regent_effect = yes }
+		ai_chance = { factor = 25 }
+	}
+	
+	
+	after = { update_emperor_imperial_court_modifiers_effect = yes }
+}
+
+
+
+
+############Imperial Seneschal############
+
+##becoming imperial seneschal
+letter_event = {
+	id = ipcm.040
+	desc = EVTDESAipcm.040
+	
+	is_triggered_only = yes
+
+	trigger = { NOT = { has_character_flag = moving_imperial_seneschal } }
+	
+	option = {
+		name = EVTOPTAipcm.040
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.040
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_seneschal } }
+				
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_seneschal_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_seneschal scope = ROOT } }
+	}
+}
+
+###losing imperial seneschal
+letter_event = {
+	id = ipcm.041
+	desc = {
+		trigger = { same_realm = FROMFROM }
+		text = EVTDESAipcm.041
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.041
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESCipcm.041
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_seneschal } }
+	
+	option = {
+		trigger = { same_realm = FROMFROM }
+		name = EVTOPTAipcm.041
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.041
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_seneschal }
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_seneschal_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_seneschal }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.041
+		remove_character_modifier = imperial_seneschal_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_seneschal
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_seneschal }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_seneschal } } }
+					character_event = { id = ipcm.047 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTCipcm.041
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialSeneschalAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_seneschal
+		}
+	}
+}
+
+###imperial seneschal dead
+character_event = {
+	id = ipcm.042
+	desc = EVTDESAipcm.042
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTAipcm.042
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.042
+			if = {
+				limit = { tier = emperor }
+				primary_title = { clr_title_flag = has_imperial_seneschal }
+			}
+			else = { top_liege = { primary_title = { clr_title_flag = has_imperial_seneschal } } }
+			society = { clear_persistent_event_target = current_imperial_seneschal }
+		}
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.043
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.044 } } }
+}
+
+##becoming imperial seneschal, via regent
+letter_event = {
+	id = ipcm.044
+	desc = EVTDESAipcm.044
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_seneschal } }
+	
+	option = {
+		name = EVTOPTAipcm.044
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.044
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_seneschal } }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_seneschal_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_seneschal scope = ROOT } }
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.045
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.046 } } }
+}
+
+###losing imperial seneschal, via regent
+letter_event = {
+	id = ipcm.046
+	desc = {
+		trigger = { same_realm = FROM }
+		text = EVTDESAipcm.046
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.046
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			NOT = { same_realm = FROM }
+		}
+		text = EVTDESCipcm.046
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			same_realm = FROM
+		}
+		text = EVTDESDipcm.046
+	}
+	
+	
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_seneschal } }
+	
+	option = {
+		name = EVTOPTAipcm.046
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.046
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_seneschal }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_seneschal_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_seneschal }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.046
+		remove_character_modifier = imperial_seneschal_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_seneschal
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_seneschal }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_seneschal } } }
+					character_event = { id = ipcm.047 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTCipcm.046
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTDipcm.046
+		}
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialSeneschalAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_seneschal
+		}
+	}
+	
+	
+	
+}
+
+###no longer in same realm
+character_event = {
+	id = ipcm.047
+	desc = EVTDESAipcm.047
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcm.047
+		custom_tooltip = { text = EVTTOOLTIPAipcm.047 }
+	}
+}
+
+############Imperial Marshal############
+
+
+##becoming imperial marshal
+letter_event = {
+	id = ipcm.050
+	desc = EVTDESAipcm.050
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_marshal } }
+	
+	option = {
+		name = EVTOPTAipcm.050
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.050
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_marshal } }
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_marshal_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_marshal scope = ROOT } }
+	}
+}
+
+###losing imperial marshal
+letter_event = {
+	id = ipcm.051
+	desc = {
+		trigger = { same_realm = FROMFROM }
+		text = EVTDESAipcm.051
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.051
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESCipcm.051
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_marshal } }
+	
+	option = {
+		trigger = { same_realm = FROMFROM }
+		name = EVTOPTAipcm.051
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.051
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_marshal }
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_marshal_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_marshal }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.051
+		remove_character_modifier = imperial_marshal_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_marshal
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_marshal }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_marshal } } }
+					character_event = { id = ipcm.057 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTCipcm.051
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialMarshalAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_marshal
+		}
+	}
+}
+
+###imperial marshal dead
+character_event = {
+	id = ipcm.052
+	desc = EVTDESAipcm.052
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcm.052
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.052
+			if = {
+				limit = { tier = emperor }
+				primary_title = { clr_title_flag = has_imperial_marshal }
+			}
+			else = { top_liege = { primary_title = { clr_title_flag = has_imperial_marshal } } }
+			society = { clear_persistent_event_target = current_imperial_marshal }
+		}
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.053
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.054 } } }
+}
+
+##becoming imperial marshal, via regent
+letter_event = {
+	id = ipcm.054
+	desc = EVTDESAipcm.054
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_marshal } }
+	
+	option = {
+		name = EVTOPTAipcm.054
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.054
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_marshal } }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_marshal_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_marshal scope = ROOT } }
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.055
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.056 } } }
+}
+
+###losing imperial marshal, via regent
+letter_event = {
+	id = ipcm.056
+	desc = {
+		trigger = { same_realm = FROM }
+		text = EVTDESAipcm.056
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.056
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			NOT = { same_realm = FROM }
+		}
+		text = EVTDESCipcm.056
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			same_realm = FROM
+		}
+		text = EVTDESDipcm.056
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_marshal } }
+	
+	option = {
+		trigger = { same_realm = FROM }
+		name = EVTOPTAipcm.056
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.056
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_marshal }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_marshal_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_marshal }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.056
+		remove_character_modifier = imperial_marshal_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_marshal
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_marshal }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_marshal } } }
+					character_event = { id = ipcm.057 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTCipcm.056
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTDipcm.056
+		}
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialMarshalAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_marshal
+		}
+	}
+	
+}
+
+
+###no longer in same realm
+character_event = {
+	id = ipcm.057
+	desc = EVTDESAipcm.057
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcm.057
+		custom_tooltip = { text = EVTTOOLTIPAipcm.057 }
+	}
+}
+
+
+############Imperial Lawkeeper############
+
+
+##becoming imperial lawkeeper
+letter_event = {
+	id = ipcm.060
+	desc = EVTDESAipcm.060
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_lawkeeper } }
+	
+	option = {
+		name = EVTOPTAipcm.060
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.060
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_lawkeeper } }
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_lawkeeper_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_lawkeeper scope = ROOT } }
+	}
+}
+
+###losing imperial lawkeeper
+letter_event = {
+	id = ipcm.061
+	desc = {
+		trigger = { same_realm = FROMFROM }
+		text = EVTDESAipcm.061
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.061
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESCipcm.061
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_lawkeeper } }
+	
+	option = {
+		trigger = { same_realm = FROMFROM }
+		name = EVTOPTAipcm.061
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.061
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_lawkeeper }
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_lawkeeper_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_lawkeeper }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.061
+		remove_character_modifier = imperial_lawkeeper_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_lawkeeper
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_lawkeeper }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_lawkeeper } } }
+					character_event = { id = ipcm.067 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTCipcm.061
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialLawkeeperAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_lawkeeper
+		}
+	}
+}
+
+###imperial lawkeeper dead
+character_event = {
+	id = ipcm.062
+	desc = EVTDESAipcm.062
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcm.062
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.062
+			if = {
+				limit = { tier = emperor }
+				primary_title = { clr_title_flag = has_imperial_lawkeeper }
+			}
+			else = { top_liege = { primary_title = { clr_title_flag = has_imperial_lawkeeper } } }
+			society = { clear_persistent_event_target = current_imperial_lawkeeper }
+		}
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.063
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.064 } } }
+}
+
+##becoming imperial lawkeeper, via regent
+letter_event = {
+	id = ipcm.064
+	desc = EVTDESAipcm.064
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_lawkeeper } }
+	
+	option = {
+		name = EVTOPTAipcm.064
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.064
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_lawkeeper } }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_lawkeeper_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_lawkeeper scope = ROOT } }
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.065
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.066 } } }
+}
+
+###losing imperial lawkeeper, via regent
+letter_event = {
+	id = ipcm.066
+	desc = {
+		trigger = { same_realm = FROM }
+		text = EVTDESAipcm.066
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.066
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			NOT = { same_realm = FROM }
+		}
+		text = EVTDESCipcm.066
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			same_realm = FROM
+		}
+		text = EVTDESDipcm.066
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_lawkeeper } }
+	
+	option = {
+		trigger = { same_realm = FROM }
+		name = EVTOPTAipcm.066
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.066
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_lawkeeper }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_lawkeeper_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_lawkeeper }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.066
+		remove_character_modifier = imperial_lawkeeper_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_lawkeeper
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_lawkeeper }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_lawkeeper } } }
+					character_event = { id = ipcm.067 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTCipcm.066
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTDipcm.066
+		}
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialLawkeeperAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_lawkeeper
+		}
+	}
+}
+
+
+###no longer in same realm
+character_event = {
+	id = ipcm.067
+	desc = EVTDESAipcm.067
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcm.067
+		custom_tooltip = { text = EVTTOOLTIPAipcm.067 }
+	}
+}
+
+
+
+############Imperial Spymaster############
+
+
+##becoming imperial spymaster
+letter_event = {
+	id = ipcm.070
+	desc = EVTDESAipcm.070
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_spymaster } }
+	
+	option = {
+		name = EVTOPTAipcm.070
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.070
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_spymaster } }
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_spymaster_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_spymaster scope = ROOT } }
+	}
+}
+
+###losing imperial spymaster
+letter_event = {
+	id = ipcm.071
+	desc = {
+		trigger = { same_realm = FROMFROM }
+		text = EVTDESAipcm.071
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.071
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESCipcm.071
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_spymaster } }
+
+	option = {
+		trigger = { same_realm = FROMFROM }
+		name = EVTOPTAipcm.071
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.071
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_spymaster }
+			}
+		}
+		FROMFROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_spymaster_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_spymaster }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROMFROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.071
+		remove_character_modifier = imperial_spymaster_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_spymaster
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_spymaster }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_spymaster } } }
+					character_event = { id = ipcm.077 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTCipcm.071
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialSpymasterAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_spymaster
+		}
+	}
+}
+
+###imperial spymaster dead
+character_event = {
+	id = ipcm.072
+	desc = EVTDESAipcm.072
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcm.072
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.072
+			if = {
+				limit = { tier = emperor }
+				primary_title = { clr_title_flag = has_imperial_spymaster }
+			}
+			else = { top_liege = { primary_title = { clr_title_flag = has_imperial_spymaster } } }
+			society = { clear_persistent_event_target = current_imperial_spymaster }
+		}
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.073
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.074 } } }
+}
+
+##becoming imperial spymaster, via regent
+letter_event = {
+	id = ipcm.074
+	desc = EVTDESAipcm.074
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_spymaster } }
+	
+	option = {
+		name = EVTOPTAipcm.074
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.074
+			top_liege = {
+				show_scope_change = no
+				hidden_tooltip = { primary_title = { set_title_flag = has_imperial_spymaster } }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_granted_imperial_office_opinion_effect = yes } }
+		add_character_modifier = { modifier = imperial_spymaster_modifier duration = -1 }
+		add_imperial_office_currency_effect = yes
+		society = { save_persistent_event_target = { name = current_imperial_spymaster scope = ROOT } }
+	}
+}
+
+###regent ping
+character_event = {
+	id = ipcm.075
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { FROM = { letter_event = { id = ipcm.076 } } }
+}
+
+###losing imperial spymaster, via regent
+letter_event = {
+	id = ipcm.076
+	desc = {
+		trigger = { same_realm = FROM }
+		text = EVTDESAipcm.076
+	}
+	desc = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		text = EVTDESBipcm.076
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			NOT = { same_realm = FROM }
+		}
+		text = EVTDESCipcm.076
+	}
+	desc = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+			same_realm = FROM
+		}
+		text = EVTDESDipcm.076
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_character_flag = moving_imperial_spymaster } }
+	
+	option = {
+		trigger = { same_realm = FROM }
+		name = EVTOPTAipcm.076
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.076
+			top_liege = {
+				show_scope_change = no
+				primary_title = { clr_title_flag = has_imperial_spymaster }
+			}
+		}
+		FROM = { show_scope_change = no ROOT = { show_scope_change = no add_revoked_imperial_office_opinion_effect = yes } }
+		remove_character_modifier = imperial_spymaster_modifier
+		remove_imperial_office_currency_effect = yes
+		society = { clear_persistent_event_target = current_imperial_spymaster }
+		hidden_tooltip = { remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } }
+	}
+	
+	#no longer in same realm
+	option = {
+		trigger = { 
+			NOT = { same_realm = FROM } 
+			NOR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			NOR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = EVTOPTBipcm.076
+		remove_character_modifier = imperial_spymaster_modifier
+		hidden_tooltip = {
+			remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 } 
+			society = {
+				clear_persistent_event_target = current_imperial_spymaster
+				leader = {
+					if = {
+						limit = { tier = emperor }
+						primary_title = { clr_title_flag = has_imperial_spymaster }
+					}
+					else = { top_liege = { primary_title = { clr_title_flag = has_imperial_spymaster } } }
+					character_event = { id = ipcm.077 }
+				}
+			}
+		}
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			leave_society = yes
+		}
+	}
+	
+	#in revolt
+	option = {
+		trigger = { 
+			OR = {
+				in_revolt = yes
+				top_liege = { in_revolt = yes }
+			}
+			OR = {
+				liege_before_war = { primary_title = { has_title_flag = imperial_court_active } }
+				top_liege = { liege_before_war = { primary_title = { has_title_flag = imperial_court_active } } }
+			}
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTCipcm.076
+		}
+		name = {
+			trigger = { NOT = { same_realm = FROM } }
+			text = EVTOPTDipcm.076
+		}
+		hidden_tooltip = {
+			if = {
+				limit = { tier = emperor }
+				liege_before_war = { 
+					save_event_target_as = rename_this 
+					ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+				}
+			}
+			else = { 
+				top_liege = { 
+					liege_before_war = { 
+						save_event_target_as = rename_this 
+						ROOT = { save_persistent_event_target = { name = office_revolt_emperor scope = PREV } }
+					}
+				}
+			}
+			set_name = "[rename_this.GetImperialSpymasterAssignableOffice] [Root.GetFirstNameWithNick]"
+			set_character_flag = revolting_imperial_spymaster
+		}
+	}
+}
+
+###no longer in same realm
+character_event = {
+	id = ipcm.077
+	desc = EVTDESAipcm.077
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAipcm.077
+		custom_tooltip = { text = EVTTOOLTIPAipcm.077 }
+	}
+}
+
+
+
+####Misc
+
+#AI court joining.  + ranking if no mystics
+character_event = {
+	id = ipcm.080
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	only_playable = yes
+	only_independent = yes
+	
+	trigger = {
+		tier = emperor
+		primary_title = { has_title_flag = imperial_court_active }
+	}
+	
+	immediate = {
+		any_realm_character = {
+			limit = {
+				ai = yes
+				is_adult = yes
+				is_inaccessible_or_incapable_trigger = no
+			}
+			
+			#vanilla has similar effect for all societies but only for dlc users
+			if = {
+				limit = {
+					is_in_society = yes
+					NOT = { has_dlc = "Mystics" } 
+					is_imperial_court_member_trigger = yes
+					society_rank < 3
+					society_can_rank_up = yes
+				}
+				random_list = {
+					75 = {}
+					25 = { society_rank_up = 1	}
+				}
+			}
+			
+		}
+		if = {
+			limit = { ROOT = { is_imperial_court_member_trigger = yes } }
+			character_event = { id = ipcm.081 }
+		}
+		else = {
+			random_realm_character = {
+				limit = { is_imperial_court_regent_trigger = yes }
+				character_event = { id = ipcm.081 } 
+			}
+		}
+	}
+}
+
+
+##ping to society leader for sending invites and rank ups
+character_event = {
+	id = ipcm.081
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		#send invites
+		top_liege = {
+			any_realm_character = {
+				limit = {
+					is_in_society = no
+					can_join_imperial_court_trigger = yes
+				}
+				character_event = { id = ipcm.082 }
+			}
+		}
+		
+		set_variable = { which = ipc_while_counter value = 0 }
+		#rank 3 requests
+		society = {
+			any_society_member = {
+				limit = { society_rank == 3 }
+				ROOT = { change_variable = { which = ipc_while_counter value = 1 } }
+			}
+			while = {
+				limit = { ROOT = { check_variable = { which = ipc_while_counter value < 10 } } }
+				ROOT = { change_variable = { which = ipc_while_counter value = 1 } }
+				any_society_member = {
+					limit = {
+						society_rank == 2
+						society_can_rank_up = yes
+						can_interact_with_imperial_court_revolt_trigger = yes
+						NOT = { has_character_flag = ipc_ranking_up }
+						liege = { primary_title = { has_title_flag = imperial_court_active } }
+					}
+					score_value = { 
+						value = 1 
+						additive_modifier = { 
+							tier = duke
+							value = 5
+						}
+						additive_modifier = { 
+							tier = king
+							value = 10
+						}
+						additive_modifier = { 
+							dynasty = ROOT
+							value = 10
+						}
+						additive_modifier = { 
+							trait = ambitious
+							value = 10
+						}
+					}
+					count = 1
+					set_character_flag = ipc_ranking_up
+					random_list = {
+						50 = { clr_character_flag = ipc_ranking_up }
+						50 = { character_event = { id = ipcm.083 days = 60 random = 30 } }
+					}
+				}
+			}
+		}
+		set_variable = { which = ipc_while_counter value = 0 }
+	}
+}
+
+
+##ai actual joining event
+character_event = {
+	id = ipcm.082
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					##unique courts
+					AND = {
+						FROM = { society_member_of = imperial_court_byzantine }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_byzantine
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_hre }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_hre
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_arabia }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_arabia
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_roman_empire }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_roman_empire
+								rank = 1
+							}
+						}
+					}
+					##christians
+					AND = {
+						FROM = { society_member_of = imperial_court_christian_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_christian_1
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_christian_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_christian_2
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_christian_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_christian_3
+								rank = 1
+							}
+						}
+					}
+					##muslims
+					AND = {
+						FROM = { society_member_of = imperial_court_muslim_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_muslim_1
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_muslim_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_muslim_2
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_muslim_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_muslim_3
+								rank = 1
+							}
+						}
+					}
+					##pagans
+					AND = {
+						FROM = { society_member_of = imperial_court_pagan_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_pagan_1
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_pagan_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_pagan_2
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_pagan_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_pagan_3
+								rank = 1
+							}
+						}
+					}
+					##eastern
+					AND = {
+						FROM = { society_member_of = imperial_court_eastern_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_eastern_1
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_eastern_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_eastern_2
+								rank = 1
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_eastern_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_eastern_3
+								rank = 1
+							}
+						}
+					}
+				}
+			}
+			random_list = {
+				90 = {}
+				10 = {
+					
+					##government and tiers
+					modifier = {
+						factor = 0.75
+						is_republic = yes
+						NOR = {
+							is_merchant_republic = yes
+							is_patrician = yes
+						}
+					}
+					modifier = {
+						factor = 0.75
+						is_theocracy = yes
+						FROM = {
+							NOR = {
+								is_christian_imperial_court_member_trigger = yes
+								society_member_of = imperial_court_hre
+								society_member_of = imperial_court_byzantine
+							}
+						}
+					}
+					modifier = {
+						factor = 0.5
+						NOT = { top_liege = { ROOT = { dynasty = PREV } } }
+						is_landed = no
+					}
+					modifier = {
+						factor = 0.75
+						tier = baron
+					}
+					modifier = {
+						factor = 1.5
+						tier = count
+					}
+					modifier = {
+						factor = 2.5
+						tier = duke
+					}
+					modifier = {
+						factor = 4
+						tier = king
+					}
+					
+					
+					
+					#is an unlanded spouse
+					modifier = {
+						factor = 0
+						is_landed = no
+						spouse = { tier = baron }
+					}
+					modifier = {
+						factor = 0.5
+						is_landed = no
+						spouse = { tier = count }
+					}
+					modifier = {
+						factor = 1.5
+						is_landed = no
+						spouse = { tier = duke }
+					}
+					modifier = {
+						factor = 2.5
+						is_landed = no
+						spouse = { tier = king }
+					}
+					modifier = {
+						factor = 5
+						is_landed = no
+						spouse = { tier = emperor }
+					}
+					
+					##traits
+					modifier = {
+						factor = 1.5
+						has_3rd_tier_education_trait_trigger = yes
+					}
+					modifier = {
+						factor = 3
+						has_top_tier_education_trait_trigger = yes
+					}
+					modifier = {
+						factor = 3
+						trait = strong
+					}
+					modifier = {
+						factor = 3
+						trait = quick
+					}
+					modifier = {
+						factor = 5
+						trait = genius
+					}
+					modifier = {
+						factor = 3
+						trait = ambitious
+					}
+					join_realm_imperial_court_effect = yes
+				}
+			}
+		}
+	}
+}
+
+
+
+##send rank up request to leader
+character_event = {
+	id = ipcm.083
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					##unique courts
+					AND = {
+						FROM = { society_member_of = imperial_court_byzantine }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_byzantine
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_hre }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_hre
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_arabia }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_arabia
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_roman_empire }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_roman_empire
+								rank = 3
+							}
+						}
+					}
+					##christians
+					AND = {
+						FROM = { society_member_of = imperial_court_christian_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_christian_1
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_christian_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_christian_2
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_christian_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_christian_3
+								rank = 3
+							}
+						}
+					}
+					##muslims
+					AND = {
+						FROM = { society_member_of = imperial_court_muslim_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_muslim_1
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_muslim_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_muslim_2
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_muslim_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_muslim_3
+								rank = 3
+							}
+						}
+					}
+					##pagans
+					AND = {
+						FROM = { society_member_of = imperial_court_pagan_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_pagan_1
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_pagan_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_pagan_2
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_pagan_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_pagan_3
+								rank = 3
+							}
+						}
+					}
+					##eastern
+					AND = {
+						FROM = { society_member_of = imperial_court_eastern_1 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_eastern_1
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_eastern_2 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_eastern_2
+								rank = 3
+							}
+						}
+					}
+					AND = {
+						FROM = { society_member_of = imperial_court_eastern_3 }
+						NOT = {
+							is_society_rank_full = { 
+								society = imperial_court_eastern_3
+								rank = 3
+							}
+						}
+					}
+				}
+			}
+			set_character_flag = has_sent_request_to_rank_up
+			society = {
+				leader = {
+					letter_event = { id = ipc.027 days = 30 random = 15 }
+				}
+			}
+		}
+		clr_character_flag = ipc_ranking_up
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###player emperor clicks leave society button
+character_event = {
+	id = ipcm.084
+	desc = EVTDESAipcm.084
+	picture = GFX_evt_council_speaker
+	
+	is_triggered_only = yes
+	
+	ai = no
+	only_playable = yes
+	only_independent = yes
+	
+	trigger = {
+		tier = emperor
+		is_imperial_court_member_trigger = yes
+		NOT = { has_character_flag = ipc_multi_empire_maintenance }
+		NOT = { primary_title = { has_title_flag = has_imperial_regent } }
+		NOT = { has_character_flag = ipc_forming_new_empire }
+		primary_title = { has_title_flag = imperial_court_active }
+	}
+	
+	option = {
+		name = EVTOPTAipcm.084
+		custom_tooltip = {
+			text = EVTTOOLTIPAipcm.084
+			join_realm_imperial_court_effect = yes
+			set_society_grandmaster = yes
+		}
+	}
+}
+
+###player regent clicks leave society button
+character_event = {
+	id = ipcm.085
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	ai = no
+	only_playable = yes
+	
+	trigger = {
+		is_imperial_court_member_trigger = yes
+		is_imperial_court_regent_trigger = yes
+	}
+	
+	immediate = { revoke_imperial_regent_effect = yes }
+}
+
+#kicked from society because not in same realm anymore
+character_event = {
+	id = ipcm.086
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { is_imperial_court_member_trigger = yes }
+
+	immediate = {
+		##modifiers
+		#already removed by lose_effect, just incase
+		remove_character_modifier = imperial_regent_modifier
+		remove_character_modifier = imperial_seneschal_modifier
+		remove_character_modifier = imperial_marshal_modifier
+		remove_character_modifier = imperial_lawkeeper_modifier
+		remove_character_modifier = imperial_spymaster_modifier
+		remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+		clr_character_flag = ipc_member
+		clr_character_flag = ipc_approved_rank_3
+	}
+}
+
+#emperor maintenance
+character_event = {
+	id = ipcm.087
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	only_playable = yes
+	only_independent = yes
+	
+	trigger = {
+		tier = emperor
+		primary_title = { has_title_flag = imperial_court_active }
+	}
+	
+	immediate = { 
+		update_emperor_imperial_court_modifiers_effect = yes 
+		if = {
+			limit = {
+				is_in_society = yes
+				is_imperial_court_member_trigger = yes
+				is_society_grandmaster = no
+			}
+			if = {
+				limit = {
+					primary_title = { has_title_flag = has_imperial_regent }
+					society = { any_society_member = { is_imperial_court_regent_trigger = yes } }
+				}
+				leave_society = yes
+			}
+			else_if = {
+				limit = { NOT = { society = { any_society_member = { is_imperial_court_regent_trigger = yes } } } }
+				set_society_grandmaster = yes
+				primary_title = { clr_title_flag = has_imperial_regent }
+			}
+		}
+	}
+}
+
+
+
+##destroying tribute chests on inheritance
+character_event = {
+	id = ipcm.088
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { FROM = { artifact_type = empire_tribute_chest } }
+	
+	immediate = { FROM = { destroy_artifact = yes } }
+}
+
+
+##revolting office holders war ended, fired from all on_war_ended on_actions
+character_event = {
+	id = ipcm.089
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			ROOT = { primary_title = { has_title_flag = imperial_court_active } }
+			FROM = { primary_title = { has_title_flag = imperial_court_active } }
+		}
+	}
+	
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { primary_title = { has_title_flag = imperial_court_active } }
+				OR = {
+					has_character_flag = revolting_imperial_regent
+					has_character_flag = revolting_imperial_seneschal
+					has_character_flag = revolting_imperial_marshal
+					has_character_flag = revolting_imperial_lawkeeper
+					has_character_flag = revolting_imperial_spymaster
+				}
+			}
+			save_event_target_as = main_revolter
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					NOT = { primary_title = { has_title_flag = imperial_court_active } }
+					OR = {
+						has_character_flag = revolting_imperial_regent
+						has_character_flag = revolting_imperial_seneschal
+						has_character_flag = revolting_imperial_marshal
+						has_character_flag = revolting_imperial_lawkeeper
+						has_character_flag = revolting_imperial_spymaster
+						top_liege = {
+							any_realm_character = {
+								OR = {
+									has_character_flag = revolting_imperial_regent
+									has_character_flag = revolting_imperial_seneschal
+									has_character_flag = revolting_imperial_marshal
+									has_character_flag = revolting_imperial_lawkeeper
+									has_character_flag = revolting_imperial_spymaster
+								}
+							}
+						}
+					}
+				}
+			}
+			FROM = { save_event_target_as = main_revolter }
+		}
+		character_event = { id = ipcm.090 }
+	}
+}
+
+
+##revolting office holder cont.
+character_event = {
+	id = ipcm.090
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:main_revolter = {
+			if = {
+				limit = {
+					OR = {
+						has_character_flag = revolting_imperial_regent
+						has_character_flag = revolting_imperial_seneschal
+						has_character_flag = revolting_imperial_marshal
+						has_character_flag = revolting_imperial_lawkeeper
+						has_character_flag = revolting_imperial_spymaster
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_character_flag
+					
+					revolting_imperial_regent = {
+						clr_character_flag = revolting_imperial_regent
+						remove_character_modifier = imperial_regent_modifier
+						remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+						society = { clear_persistent_event_target = current_imperial_regent }
+						persistent_event_target:office_revolt_emperor = { 
+							primary_title = { 
+								clr_title_flag = has_imperial_regent 
+								holder_scope = { character_event = { id = ipcm.091 } }
+							}
+						}
+					}
+					revolting_imperial_seneschal = {
+						clr_character_flag = revolting_imperial_seneschal
+						remove_character_modifier = imperial_seneschal_modifier
+						remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+						society = { clear_persistent_event_target = current_imperial_seneschal }
+						persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_seneschal } }
+					}
+					revolting_imperial_marshal = {
+						clr_character_flag = revolting_imperial_marshal
+						remove_character_modifier = imperial_marshal_modifier
+						remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+						society = { clear_persistent_event_target = current_imperial_marshal }
+						persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_marshal } }
+					}
+					revolting_imperial_lawkeeper = {
+						clr_character_flag = revolting_imperial_lawkeeper
+						remove_character_modifier = imperial_lawkeeper_modifier
+						remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+						society = { clear_persistent_event_target = current_imperial_lawkeeper }
+						persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_lawkeeper } }
+					}
+					revolting_imperial_spymaster = {
+						clr_character_flag = revolting_imperial_spymaster
+						remove_character_modifier = imperial_spymaster_modifier
+						remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+						society = { clear_persistent_event_target = current_imperial_spymaster }
+						persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_spymaster } }
+					}
+				}
+				set_name = ""
+			}
+			top_liege = {
+				any_realm_character = {
+					limit = {
+						is_in_society = yes
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							has_character_flag = revolting_imperial_seneschal
+							has_character_flag = revolting_imperial_marshal
+							has_character_flag = revolting_imperial_lawkeeper
+							has_character_flag = revolting_imperial_spymaster
+						}
+						NOT = { character = event_target:main_revolter }
+					}
+					trigger_switch = {
+						on_trigger = has_character_flag
+						
+						revolting_imperial_regent = {
+							clr_character_flag = revolting_imperial_regent
+							remove_character_modifier = imperial_regent_modifier
+							remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+							society = { clear_persistent_event_target = current_imperial_regent }
+							persistent_event_target:office_revolt_emperor = { 
+								primary_title = { 
+									clr_title_flag = has_imperial_regent 
+									holder_scope = { character_event = { id = ipcm.091 } }
+								}
+							}
+						}
+						revolting_imperial_seneschal = {
+							clr_character_flag = revolting_imperial_seneschal
+							remove_character_modifier = imperial_seneschal_modifier
+							remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+							society = { clear_persistent_event_target = current_imperial_seneschal }
+							persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_seneschal } }
+						}
+						revolting_imperial_marshal = {
+							clr_character_flag = revolting_imperial_marshal
+							remove_character_modifier = imperial_marshal_modifier
+							remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+							society = { clear_persistent_event_target = current_imperial_marshal }
+							persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_marshal } }
+						}
+						revolting_imperial_lawkeeper = {
+							clr_character_flag = revolting_imperial_lawkeeper
+							remove_character_modifier = imperial_lawkeeper_modifier
+							remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+							society = { clear_persistent_event_target = current_imperial_lawkeeper }
+							persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_lawkeeper } }
+						}
+						revolting_imperial_spymaster = {
+							clr_character_flag = revolting_imperial_spymaster
+							remove_character_modifier = imperial_spymaster_modifier
+							remove_character_modifiers = { modifier = imperial_office_bonus amount = 999 }
+							society = { clear_persistent_event_target = current_imperial_spymaster }
+							persistent_event_target:office_revolt_emperor = { primary_title = { clr_title_flag = has_imperial_spymaster } }
+						}
+					}
+					set_name = ""
+				}
+			}
+		}
+	}
+}
+
+###choose new regent
+character_event = {
+	id = ipcm.091
+	desc = EVTDESAipcm.091
+	picture = GFX_evt_coronation
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		get_imperial_regent_relative_candidate_effect = yes
+		get_imperial_regent_society_candidate_effect = yes
+	}
+	
+	#do it myself
+	option = {
+		name = EVTOPTAipcm.091
+		if = {
+			limit = { is_in_society = yes }
+			leave_society = yes
+		}
+		join_realm_imperial_court_effect = yes
+		set_society_grandmaster = yes
+		change_society_currency = 250
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_in_society = yes
+				is_society_grandmaster = yes
+			}
+			modifier = {
+				factor = 0.25
+				is_in_society = yes
+				society_rank == 3
+			}
+			modifier = {
+				factor = 0.5
+				is_in_society = yes
+				society_rank == 2
+			}
+			modifier = {
+				factor = 0.5
+				is_in_society = yes
+				society_rank == 1
+			}
+			modifier = {
+				factor = 1.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = stubborn
+			}
+			modifier = {
+				factor = 1.5
+				age >= 30
+			}
+		}
+	}
+	
+	#choose new regent
+	option = {
+		name = EVTOPTBipcm.091
+		hidden_tooltip = { set_character_flag = changing_imperial_regent }
+		if = {
+			limit = { event_target:imperial_regent_relative_candidate = { always = yes } }
+			event_target:imperial_regent_relative_candidate = { award_imperial_regent_effect = yes }
+		}
+		else = {
+			event_target:imperial_regent_society_candidate = { award_imperial_regent_effect = yes }
+		}
+		ai_chance = { factor = 50 }
+	}
+
+}
+
+
+###revolting office holder dies
+character_event = {
+	id = ipcm.092
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	is_in_society = yes
+	
+	trigger = {
+		is_imperial_court_member_trigger = yes
+		OR = {
+			has_character_flag = revolting_imperial_regent
+			has_character_flag = revolting_imperial_seneschal
+			has_character_flag = revolting_imperial_marshal
+			has_character_flag = revolting_imperial_lawkeeper
+			has_character_flag = revolting_imperial_spymaster
+		}
+	}
+	
+	immediate = {
+		set_name = ""
+		persistent_event_target:office_revolt_emperor = {
+			primary_title = {
+				if = {
+					limit = { ROOT = { has_character_flag = revolting_imperial_regent } }
+					clr_title_flag = has_imperial_regent
+					ROOT = { society = { clear_persistent_event_target = current_imperial_regent } }
+				}
+				else_if = {
+					limit = { ROOT = { has_character_flag = revolting_imperial_seneschal } }
+					clr_title_flag = has_imperial_seneschal
+					ROOT = { society = { clear_persistent_event_target = current_imperial_seneschal } }
+				}
+				else_if = {
+					limit = { ROOT = { has_character_flag = revolting_imperial_marshal } }
+					clr_title_flag = has_imperial_marshal
+					ROOT = { society = { clear_persistent_event_target = current_imperial_marshal } }
+				}
+				else_if = {
+					limit = { ROOT = { has_character_flag = revolting_imperial_lawkeeper } }
+					clr_title_flag = has_imperial_lawkeeper
+					ROOT = { society = { clear_persistent_event_target = current_imperial_lawkeeper } }
+				}
+				else_if = {
+					limit = { ROOT = { has_character_flag = revolting_imperial_spymaster } }
+					clr_title_flag = has_imperial_spymaster
+					ROOT = { society = { clear_persistent_event_target = current_imperial_spymaster } }
+				}
+			}
+		}
+	}
+}
+
+###rank 3 member no longer direct vassal
+character_event = {
+	id = ipcm.093
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	is_in_society = yes
+	
+	trigger = {
+		society_rank == 3
+		is_imperial_court_member_trigger = yes
+		NOT = { liege = { primary_title = { has_title_flag = imperial_court_active } } }
+	}
+	
+	immediate = {
+		if = {
+			limit = { is_imperial_court_regent_trigger = yes }
+			revoke_imperial_regent_effect = yes
+		}
+		else_if = {
+			limit = { is_imperial_court_seneschal_trigger = yes }
+			revoke_imperial_seneschal_effect = yes
+		}
+		else_if = {
+			limit = { is_imperial_court_marshal_trigger = yes }
+			revoke_imperial_marshal_effect = yes
+		}
+		else_if = {
+			limit = { is_imperial_court_lawkeeper_trigger = yes }
+			revoke_imperial_lawkeeper_effect = yes
+		}
+		else_if = {
+			limit = { is_imperial_court_spymaster_trigger = yes }
+			revoke_imperial_spymaster_effect = yes
+		}
+		
+		if = {
+			limit = { society_rank == 3 }
+			clr_character_flag = ipc_approved_rank_3
+			society_rank_down = 1
+		}
+	}
+}
+
+
+
+##society influence modifiers 
+#character_event = {
+#	id = ipcm.064
+#	
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	is_in_society = yes
+#
+#	trigger = {
+#		is_society_grandmaster = yes
+#		is_imperial_court_member_trigger = yes
+#		NOT = { has_character_modifier = influence_modifier_timer }
+#	}
+#	
+#	immediate = { 
+#		add_character_modifier = { modifier = influence_modifier_timer days = 360 } 
+#		top_liege = {
+#			primary_title = {
+#				if = {
+#					limit = { has_title_flag = has_imperial_regent }
+#					ROOT = { add_society_modifier = { modifier = imperial_regent_modifier days = 370 } }
+#				}
+#				if = {
+#					limit = { has_title_flag = has_imperial_seneschal }
+#					ROOT = { add_society_modifier = { modifier = imperial_seneschal_modifier days = 370 } }
+#				}
+#				if = {
+#					limit = { has_title_flag = has_imperial_marshal }
+#					ROOT = { add_society_modifier = { modifier = imperial_marshal_modifier days = 370 } }
+#				}
+#				if = {
+#					limit = { has_title_flag = has_imperial_lawkeeper }
+#					ROOT = { add_society_modifier = { modifier = imperial_lawkeeper_modifier days = 370 } }
+#				}
+#			}
+#		}
+#	}
+#}
+
+##china shatter CB
+#character_event = {
+#	id = ipcm.094
+#	
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		FROM = {
+#			destabilization_china_cb
+#		}
+#	}
+#	
+#	immediate = {
+#		
+#	
+#	}
+#	
+#}
+
+
+
+####clr false flags on startup, just incase
+character_event = {
+	id = ipcm.900
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	has_global_flag = ipc_initialized
+	
+	trigger = {
+		is_save_game = yes
+		tier = emperor
+		primary_title = { has_title_flag = imperial_court_active }
+	}
+	
+	immediate = {
+		primary_title = {
+			if = {
+				limit = {
+					has_title_flag = has_imperial_regent 
+					ROOT = {
+						NOT = { any_realm_character = { is_imperial_court_regent_trigger = yes } }
+						NOR = {
+							any_current_enemy = { has_character_flag = revolting_imperial_regent }
+							any_current_enemy = {
+								tier = emperor
+								NOT = { primary_title = { has_title_flag = imperial_court_active } }
+								any_realm_character = { has_character_flag = revolting_imperial_regent }
+							}
+						}
+					}
+				}
+				clr_title_flag = has_imperial_regent
+				ROOT = {
+					if = {
+						limit = { is_imperial_court_member_trigger = no }
+						if = {
+							limit = { is_in_society = yes }
+							leave_society = yes
+						}
+						join_realm_imperial_court_effect = yes
+						set_society_grandmaster = yes
+						change_society_currency = 500
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					has_title_flag = has_imperial_seneschal 
+					ROOT = {
+						NOT = { any_realm_character = { is_imperial_court_seneschal_trigger = yes } }
+						NOR = {
+							any_current_enemy = { has_character_flag = revolting_imperial_seneschal }
+							any_current_enemy = {
+								tier = emperor
+								NOT = { primary_title = { has_title_flag = imperial_court_active } }
+								any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+							}
+						}
+					}
+				}
+				clr_title_flag = has_imperial_seneschal
+			}
+			else_if = {
+				limit = { 
+					has_title_flag = has_imperial_marshal
+					ROOT = {
+						NOT = { any_realm_character = { is_imperial_court_marshal_trigger = yes } }
+						NOR = {
+							any_current_enemy = { has_character_flag = revolting_imperial_marshal }
+							any_current_enemy = {
+								tier = emperor
+								NOT = { primary_title = { has_title_flag = imperial_court_active } }
+								any_realm_character = { has_character_flag = revolting_imperial_marshal }
+							}
+						}
+					}
+				}
+				clr_title_flag = has_imperial_marshal
+			}
+			else_if = {
+				limit = { 
+					has_title_flag = has_imperial_lawkeeper
+					ROOT = {
+						NOT = { any_realm_character = { is_imperial_court_lawkeeper_trigger = yes } }
+						NOR = {
+							any_current_enemy = { has_character_flag = revolting_imperial_lawkeeper }
+							any_current_enemy = {
+								tier = emperor
+								NOT = { primary_title = { has_title_flag = imperial_court_active } }
+								any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+							}
+						}
+					}
+				}
+				clr_title_flag = has_imperial_lawkeeper
+			}
+			else_if = {
+				limit = { 
+					has_title_flag = has_imperial_spymaster
+					ROOT = {
+						NOT = { any_realm_character = { is_imperial_court_spymaster_trigger = yes } }
+						NOR = {
+							any_current_enemy = { has_character_flag = revolting_imperial_spymaster }
+							any_current_enemy = {
+								tier = emperor
+								NOT = { primary_title = { has_title_flag = imperial_court_active } }
+								any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+							}
+						}
+					}
+				}
+				clr_title_flag = has_imperial_spymaster
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+mta_reformer_bloodline = {
+	picture = GFX_bloodlines_placeholder_symbol
+	inheritance = patrilineal
+	allow_bastards = yes
+	same_religion_opinion = 5
+	monthly_character_piety = 0.3
+	monthly_character_prestige = 0.2
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+	bloodline_effect_better_inquisition = 1
+	bloodline_effect_religious_liberation = 1
+	flags = { ancestor_worship_bloodline bloodline_reformer bloodline_better_inquisition bloodline_religious_liberation }
+}
+
+mta_reformer_bloodline_peaceful = {
+	picture = GFX_bloodlines_placeholder_symbol_2
+	inheritance = patrilineal
+	allow_bastards = yes
+	same_religion_opinion = 5
+	monthly_character_piety = 0.3
+	monthly_character_prestige = 0.2
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+	bloodline_effect_better_inquisition = 1
+	saintly_theologians_bloodline = 1
+	flags = { ancestor_worship_bloodline bloodline_reformer bloodline_better_inquisition theologian_saintly_bloodline }
+}

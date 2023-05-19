@@ -1,0 +1,9 @@
+
+ipc_monthly_currency_gain = { 
+	show_as_percent = no
+	is_good = yes			
+	is_monthly = yes			
+	is_hidden = no			
+	max_decimals = 2		
+	show_value = yes			
+}

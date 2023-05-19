@@ -7,32 +7,39 @@ d_oxford = { # Oxford
 	capital = 22 # Oxford
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_chester = { # Chester
 	color = { 121 29 29 }
 	capital = 59 # Chester
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_gloucester = { # Hwicce
 	color = { 57 21 209 }
 	capital = 21 # Gloucester
 	allow = { title_duke_basic_allow = yes }
 }
+
 b_zussow = {}
+
 d_yaroslavl = { # Yaroslavl
 	color = { 178 192 134 }
 	capital = 572 # Yaroslavl
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_vitebsk = { # Vitebsk
 	color = { 196 33 55 }
 	capital = 417 # Vitebsk
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_pronsk = { # Pronsk
 	color = { 23 132 81 }
 	capital = 577 # Pronsk
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_aosta = { # Aosta
 	color = { 120 170 220 }
 	color2 = { 255 255 255 }
@@ -40,20 +47,23 @@ d_aosta = { # Aosta
 	culture = arpitan
 	allow = { title_duke_basic_allow = yes }
 }
+
 # TITULAR SWMH
 e_ulm = { # Ulm
 	color = { 110 110 110 }
 	capital = 1034 # Helfenstein
-	title = ULM
-	foa = ULM_FOA
-	short_name = yes
 	allow = {
 		has_landed_title = c_helfenstein
 		c_ferrara = { owner_under_ROOT = yes }
 		prestige = 2000
 		title_emperor_basic_allow = yes
 	}
+	title = ULM
+	title_female = ULM
+	foa = ULM_FOA
+	short_name = yes
 }
+
 e_outremer = {
 	color = { 180 180 180 }
 	color2 = { 255 255 255 }
@@ -92,10 +102,10 @@ e_outremer = {
 		title_emperor_basic_allow = yes
 	}
 } # end e_outremer
+
 e_lechczechrus = {
 	color = { 0 90 30 }
 	color2 = { 255 255 255 }
-	short_name = yes
 	capital = 547 # Kiev
 	allow = {
 		trigger_if = {
@@ -104,7 +114,9 @@ e_lechczechrus = {
 		}
 		title_emperor_basic_allow = yes
 	}
+	short_name = yes
 } # end e_lechczechrus
+
 e_bulgaria = {
 	color = { 108 78 110 }
 	color2 = { 255 255 255 }
@@ -119,81 +131,25 @@ e_bulgaria = {
 		title_emperor_basic_allow = yes
 	}
 } # end e_bulgaria
+
 e_cordoba = {
 	color = { 255 218 185 }
 	color2 = { 255 255 255 }
 	# NOTE: TODO: capital unchecked for SWMH map
 	capital = 181 # Cordoba
-	title = CALIPH
-	title_female = CALIPHA
-	foa = CALIPH_FOA
 	#short_name = yes
 	religion = sunni
 	assimilate = no
 	caliphate = yes
 	allow = { always = no }
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
 }
+
 e_khazaria = { # Qasarstan
 	color = { 200 157 81 }
 	capital = 620 # Itil
-	mongol = "Xäzärstan"
-	kirghiz = "Xäzärstan"
-	bedouin_arabic = "Khazarstan"
-	hijazi = "Khazarstan"
-	yemeni = "Khazarstan"
-	maghreb_arabic = "Khazarstan"
-	levantine_arabic = "Khazarstan"
-	egyptian_arabic = "Khazarstan"
-	andalusian_arabic = "Khazarstan"
-	sicilian_arabic = "Khazarstan"
-	sanhaja = "Khazarstan"
-	tagelmust = "Khazarstan"
-	tuareg = "Khazarstan"
-	masmuda = "Khazarstan"
-	zanata = "Khazarstan"
-	pahlavi = "Xazarstán"
-	persian = "Xazarstán"
-	adhari = "Xazarstán"
-	khorasani = "Xazarstán"
-	tajik = "Xazarstán"
-	daylamite = "Xazarstán"
-	khalaj = "Xazarstán"
-	sogdian = "Xazarstán"
-	khwarezmi = "Xazarstán"
-	kurdish = "Xazarstán"
-	afghan = "Xazarstán"
-	qufs = "Xazarstán"
-	baloch = "Xazarstán"
-	alan = "Chazaria"
-	arberian = "Chazaria"
-	armenian = "Chazaria"
-	georgian = "Chazaria"
-	greek = "Chazaria"
-	crimean_gothic = "Chazaria"
-	dalmatian = "Cassaria"
-	italian = "Cassaria"
-	sardinian = "Cassaria"
-	sicilian = "Cassaria"
-	umbrian = "Cassaria"
-	laziale = "Cassaria"
-	neapolitan = "Cassaria"
-	tuscan = "Cassaria"
-	ligurian = "Cassaria"
-	langobardisch = "Cassaria"
-	venetian = "Cassaria"
-	turkish = "Hazarstan"
-	turkmen = "Hazarstan"
-	oghuz = "Hazarstan"
-	polish = "Kozariaia"
-	bohemian = "Kozaria"
-	pommeranian = "Kozaria"
-	slovieni = "Kozaria"
-	russian = "Kozarye"
-	serbian = "Kozaria"
-	croatian = "Kozaria"
-	bulgarian = "Kozaria"
-	carantanian = "Kozaria"
-	bosnian = "Kozaria"
 	allow = {
 		hidden_tooltip = {
 			OR = {
@@ -207,82 +163,101 @@ e_khazaria = { # Qasarstan
 		FROM = { is_de_jure_title = yes }
 		title_emperor_basic_allow = yes
 	}
+	sardinian = "Gazaria"
+	sicilian = "Gazaria"
+	umbrian = "Gazaria"
+	laziale = "Gazaria"
+	neapolitan = "Gazaria"
+	tuscan = "Gazaria"
+	ligurian = "Gazaria"
+	langobardisch = "Gazaria"
+	italian = "Gazaria"
+	venetian = "Gazaria"
+	dalmatian = "Gazaria"
 } # end e_khazaria
+
 e_khitan = { # Huldji Qidai Gur # Kara Khitai
 	color = { 130 10 50 }
 	capital = 1572 # Balasaghun
-	short_name = yes
 	allow = {
 		FROM = { is_de_jure_title = yes }
 		title_emperor_basic_allow = yes
 	}
+	short_name = yes
 }
+
 k_qipchaq = { # Qipchaqlar # Wild Cumans
 	color = { 45 92 150 }
 	color2 = { 255 255 255 }
 	capital = 619 # Saray
-	dynasty_title_names = no
 	culture = cuman
 	allow = {
 		FROM = { is_de_jure_title = yes }
 		title_king_basic_allow = yes
 	}
+	dynasty_title_names = no
 }
+
 k_cuman = { # Kumanlar # Non wild Cumans
 	color = { 166 76 99 }
 	color2 = { 255 255 255 }
 	capital = 557 # Tokmak
-	dynasty_title_names = no
 	culture = cuman
 	allow = {
 		FROM = { is_de_jure_title = yes }
 		title_king_basic_allow = yes
 	}
+	dynasty_title_names = no
 }
+
 k_qangli = { # Qanglilar # Qangli
 	color = { 25 130 65 }
 	color2 = { 255 255 255 }
 	capital = 893 # Turgay
-	dynasty_title_names = no
 	culture = cuman
 	allow = {
 		FROM = { is_de_jure_title = yes }
 		title_king_basic_allow = yes
 	}
+	dynasty_title_names = no
 }
+
 k_pechenegs = { # Beçeneklar
 	color = { 79 116 79 }
 	color2 = { 255 255 255 }
 	capital = 618 # Saray-Jük # Little Sarai
-	dynasty_title_names = no
 	culture = pecheneg
 	allow = {
 		FROM = { is_de_jure_title = yes }
 		title_king_basic_allow = yes
 	}
+	dynasty_title_names = no
 }
+
 k_qangar = { # Qangar
 	color = { 45 99 180 }
 	color2 = { 255 255 255 }
-	dynasty_title_names = no
 	capital = 557 # Tokmak
 	culture = pecheneg
 	allow = {
 		FROM = { is_de_jure_title = yes }
 		title_king_basic_allow = yes
 	}
+	dynasty_title_names = no
 }
+
 k_uzes = { # Uzlar
 	color = { 220 158 121 }
 	color2 = { 255 255 255 }
-	dynasty_title_names = no
 	capital = 895 # Yaik
 	culture = oghuz
 	allow = {
 		FROM = { is_de_jure_title = yes }
 		title_king_basic_allow = yes
 	}
+	dynasty_title_names = no
 }
+
 #d_black_caps = { # Karakalpaklar
 #	color = { 189 121 13 }
 #	color2 = { 255 255 255 }
@@ -306,6 +281,7 @@ e_kaleva = { # Kalevala
 		title_emperor_basic_allow = yes
 	}
 }
+
 k_geats = { # Gautaríki
 	color = { 208 191 99 }
 	capital = 293 # Östergötland # Ostrogothia
@@ -327,6 +303,7 @@ k_geats = { # Gautaríki
 		title_king_basic_allow = yes
 	}
 }
+
 e_germany = { # Germania
 	color = { 190 200 190 }
 	color2 = { 220 220 20 }
@@ -337,35 +314,38 @@ e_germany = { # Germania
 		title_emperor_basic_allow = yes
 	}
 }
+
 k_avaria = { # Avaria
 	color = { 250 120 90 } # Only for the CoA
 	culture = avar
 	capital = 444 # Visegrád # Esztergom
 	allow = { always = no }
 }
+
 k_lombardy = { # Lombardy
 	color = { 234 217 110 } # Only for the CoA
 	culture = lombard
 	capital = 234 # Pavia
 	allow = { always = no }
 }
+
 d_sangermano = { # Terra Sancti Benedicti
 	capital = 1318 # Bosco # Aquino # Sangermano
 	color = { 77 127 196 }
 	color2 = { 255 255 255 }
-	short_name = yes
 	allow = {
 		religion_group = christian
 		is_theocracy = yes
 		piety = 500
 		title_duke_basic_allow = yes
 	}
+	short_name = yes
 }
+
 k_salerno = { # Principato di Salerno
 	color = { 0 132 250 }
 	culture = langobardisch
 	capital = 336 # Principato # Salerno
-	short_name = yes
 	allow = {
 		hidden_tooltip = {
 			OR = {
@@ -380,15 +360,13 @@ k_salerno = { # Principato di Salerno
 		has_landed_title = d_salerno
 		title_king_basic_allow = yes
 	}
+	short_name = yes
 }
+
 d_krain = { # Krain # Marcher County of Krain/Carniola
 	color = { 4 33 122 }
 	culture = german
 	capital = 457 # Krain # Carniola
-	title = MARGRAVE
-	title_female = MARGRAVINE
-	foa = MARGRAVE_FOA
-	title_prefix = MARGRAVE_OF
 	allow = {
 		culture_group = central_germanic
 		religion_group = christian
@@ -396,7 +374,12 @@ d_krain = { # Krain # Marcher County of Krain/Carniola
 		has_landed_title = c_krain
 		title_duke_basic_allow = yes
 	}
+	title = MARGRAVE
+	title_female = MARGRAVINE
+	foa = MARGRAVE_FOA
+	title_prefix = MARGRAVE_OF
 }
+
 d_austrialombardic = { # Austria
 	color = { 4 33 122 }
 	culture = langobardisch
@@ -409,6 +392,7 @@ d_austrialombardic = { # Austria
 		title_duke_basic_allow = yes
 	}
 }
+
 d_neustria = { # Neustria
 	color = { 4 33 11 }
 	culture = langobardisch
@@ -424,6 +408,7 @@ d_neustria = { # Neustria
 		title_duke_basic_allow = yes
 	}
 }
+
 d_tuscia = { # Tuscia
 	color = { 250 241 220 }
 	culture = langobardisch
@@ -436,6 +421,7 @@ d_tuscia = { # Tuscia
 		title_duke_basic_allow = yes
 	}
 }
+
 k_duklja = { # Duklja
 	color = { 224 186 36 }
 	culture = serbian
@@ -447,11 +433,11 @@ k_duklja = { # Duklja
 		title_king_basic_allow = yes
 	}
 }
+
 k_switzerland = {
 	color = { 255 80 80 }
 	color2 = { 200 50 50 }
 	capital = 245 # c_schwyz
-	short_name = yes
 	allow = {
 		trigger_if = {
 			limit = { FROM = { is_de_jure_title = no } }
@@ -459,11 +445,12 @@ k_switzerland = {
 		}
 		title_king_basic_allow = yes
 	}
+	short_name = yes
 } # end k_switzerland
+
 d_smaland = { # Småland
 	color = { 88 138 70 }
 	capital = 298 # Njudung # Småland
-	norse = "Smáland"
 	allow = {
 		OR = {
 			has_landed_title = c_smaland
@@ -474,6 +461,7 @@ d_smaland = { # Småland
 		title_duke_basic_allow = yes
 	}
 }
+
 e_occitania = { # Occitània
 	color = { 230 0 70 }
 	color2 = { 255 255 255 }
@@ -494,6 +482,7 @@ e_occitania = { # Occitània
 		title_emperor_basic_allow = yes
 	}
 }
+
 # Titular Darrigan
 # The county of Flanders had more autonomy than other regions under the French crown. They did lose the independence wars # in the 13th and 14th century. But what if they had won?
 k_flanders = { # Vlaanderen
@@ -515,6 +504,7 @@ k_flanders = { # Vlaanderen
 		title_king_basic_allow = yes
 	}
 }
+
 # ARKO
 d_narbonne = { # Narbona # titre porté par les ducs de Toulouse pour affirmer leur pouvoir sur les vassaux de la côte mais sans succès. # Oh, obviously, yeah, +1.
 	color = { 0 20 188 }
@@ -523,15 +513,12 @@ d_narbonne = { # Narbona # titre porté par les ducs de Toulouse pour affirmer le
 	culture = occitan
 	allow = { title_duke_basic_allow = yes }
 }
+
 # King
 d_saxon_ostmark = { # Ostmark # March of the East or March of Gero
 	color = { 94 83 162 }
 	capital = 311 # Plauen
 	culture = german
-	title = MARGRAVE
-	title_female = MARGRAVINE
-	foa = MARGRAVE_FOA
-	title_prefix = MARGRAVE_OF
 	allow = {
 		OR = {
 			AND = {
@@ -548,15 +535,16 @@ d_saxon_ostmark = { # Ostmark # March of the East or March of Gero
 		}
 		title_king_basic_allow = yes
 	}
-}
-d_billungmark = { # Billungmark # March of the Billungs
-	color = { 120 7 188 }
-	capital = 263 # Holstein
-	culture = german
 	title = MARGRAVE
 	title_female = MARGRAVINE
 	foa = MARGRAVE_FOA
 	title_prefix = MARGRAVE_OF
+}
+
+d_billungmark = { # Billungmark # March of the Billungs
+	color = { 120 7 188 }
+	capital = 263 # Holstein
+	culture = german
 	allow = {
 		OR = {
 			AND = {
@@ -567,12 +555,18 @@ d_billungmark = { # Billungmark # March of the Billungs
 		}
 		title_king_basic_allow = yes
 	}
+	title = MARGRAVE
+	title_female = MARGRAVINE
+	foa = MARGRAVE_FOA
+	title_prefix = MARGRAVE_OF
 }
+
 d_paulicians = { # Paulikianoi
 	color = { 78 33 125 }
 	capital = 944 # Tephrike
 	allow = { always = no }
 }
+
 #d_melitene = {
 #	color = { 11 34 128 }
 #	culture = levantine_arabic
@@ -613,6 +607,7 @@ k_armenia_minor = { # Mikrá Armenia
 		title_king_basic_allow = yes
 	}
 }
+
 d_pagania = { # Neretljani
 	color = { 114 230 1 }
 	capital = 1330 # Omis
@@ -625,12 +620,10 @@ d_pagania = { # Neretljani
 		title_duke_basic_allow = yes
 	}
 }
+
 d_rhodos = { # Rhodos
 	color = { 144 230 19 }
 	capital = 483 # Dodekánisa # Rhodos
-	title = CAESAR
-	foa = CAESAR_FOA
-	title_prefix = CAESAR_OF
 	allow = {
 		OR = {
 			culture = greek
@@ -640,27 +633,35 @@ d_rhodos = { # Rhodos
 		has_landed_title = c_rhodos
 		title_duke_basic_allow = yes
 	}
+	title = CAESAR
+	title_female = CAESAR
+	foa = CAESAR_FOA
+	title_prefix = CAESAR_OF
 }
+
 d_amiralarab = { # Arabiyya # Amir-al-Arab
 	color = { 217 96 63 }
 	capital = 730 # Palmyra
-	title = AMIR_AL_ARAB
 	allow = {
 		culture = bedouin_arabic
 		religion_group = muslim
 		title_duke_basic_allow = yes
 	}
+	title = AMIR_AL_ARAB
+	title_female = AMIR_AL_ARAB
 }
+
 d_norman_apulia = { # Apulia
 	color = { 124 30 77 }
 	capital = 347 # Melfi # Apulia
-	name_tier = count
 	allow = {
 		culture = frankish
 		religion_group = christian
 		title_duke_basic_allow = yes
 	}
+	name_tier = count
 }
+
 e_chagatai = { # Chagatai
 	color = { 200 200 200 }
 	color2 = { 0 250 250 }
@@ -672,6 +673,7 @@ e_chagatai = { # Chagatai
 		title_emperor_basic_allow = yes
 	}
 }
+
 d_tiflis = { # Tiflis
 	color = { 104 20 12 }
 	capital = 1357 # Tbilisi
@@ -680,6 +682,7 @@ d_tiflis = { # Tiflis
 		title_duke_basic_allow = yes
 	}
 }
+
 k_vaspurakan = { # Vaspurakan
 	color = { 175 5 102 }
 	culture = armenian
@@ -695,6 +698,7 @@ k_vaspurakan = { # Vaspurakan
 		title_king_basic_allow = yes
 	}
 }
+
 d_vanand = { # Vanand
 	color = { 155 100 7 }
 	culture = armenian
@@ -705,6 +709,7 @@ d_vanand = { # Vanand
 		title_duke_basic_allow = yes
 	}
 }
+
 d_mingrelia = { # Samegrelo
 	color = { 25 183 33 }
 	culture = georgian
@@ -715,6 +720,7 @@ d_mingrelia = { # Samegrelo
 		title_duke_basic_allow = yes
 	}
 }
+
 d_theodoro = { # Gotthías # Gothia
 	color = { 82 199 44 }
 	culture = crimean_gothic
@@ -724,6 +730,7 @@ d_theodoro = { # Gotthías # Gothia
 		title_duke_basic_allow = yes
 	}
 }
+
 d_meshketi = { # Meskheti
 	color = { 99 152 44 }
 	culture = georgian
@@ -734,12 +741,10 @@ d_meshketi = { # Meskheti
 		title_duke_basic_allow = yes
 	}
 }
+
 k_abkhazia = { # Apkhazeti
 	color = { 99 175 4 }
 	capital = 601 # Imereti # Imeretia
-	title = MEPE
-	foa = MEPE_FOA
-	title_prefix = MEPE_OF
 	allow = {
 		OR = {
 			AND = {
@@ -754,13 +759,15 @@ k_abkhazia = { # Apkhazeti
 		}
 		title_king_basic_allow = yes
 	}
+	title = MEPE
+	title_female = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
 }
+
 k_imereti = { # Imereti
 	color = { 99 175 4 }
 	capital = 601 # Imereti # Imeretia
-	title = MEPE
-	foa = MEPE_FOA
-	title_prefix = MEPE_OF
 	allow = {
 		OR = {
 			AND = {
@@ -771,13 +778,15 @@ k_imereti = { # Imereti
 		}
 		title_king_basic_allow = yes
 	}
+	title = MEPE
+	title_female = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
 }
+
 k_kakheti = { # Kakheti
 	color = { 194 110 67 }
 	capital = 676 # Kakheti
-	title = MEPE
-	foa = MEPE_FOA
-	title_prefix = MEPE_OF
 	allow = {
 		OR = {
 			AND = {
@@ -788,13 +797,15 @@ k_kakheti = { # Kakheti
 		}
 		title_king_basic_allow = yes
 	}
+	title = MEPE
+	title_female = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
 }
+
 k_iberia = { # Kartli
 	color = { 44 215 119 }
 	capital = 679 # Kartli
-	title = MEPE
-	foa = MEPE_FOA
-	title_prefix = MEPE_OF
 	allow = {
 		OR = {
 			AND = {
@@ -809,12 +820,18 @@ k_iberia = { # Kartli
 		}
 		title_king_basic_allow = yes
 	}
+	title = MEPE
+	title_female = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
 }
+
 d_dahlak = { # Dahlak
 	color = { 255 164 17 }
 	capital = 1509 # Saho # Dahlak
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_sadah = { # Sadah
 	color = { 155 114 99 }
 	capital = 865 # Sadah # Rafha
@@ -834,6 +851,7 @@ d_sadah = { # Sadah
 		title_duke_basic_allow = yes
 	}
 }
+
 d_sharif_medina = { # Madinah # Medina
 	color = { 71 159 102 }
 	capital = 718 # Madinah # Medina
@@ -853,6 +871,7 @@ d_sharif_medina = { # Madinah # Medina
 		title_duke_basic_allow = yes
 	}
 }
+
 d_sharif_mecca = { # Makkah # Mecca
 	color = { 188 6 133 }
 	capital = 719 # Makkah # Mecca
@@ -872,6 +891,7 @@ d_sharif_mecca = { # Makkah # Mecca
 		title_duke_basic_allow = yes
 	}
 }
+
 d_siraf = { # Siráf
 	color = { 40 200 200 }
 	capital = 642 # Irahistan
@@ -885,37 +905,21 @@ d_siraf = { # Siráf
 		title_duke_basic_allow = yes
 	}
 }
+
 e_egypt = { # Misr
 	color = { 200 255 200 }
 	color2 = { 255 255 255 }
 	capital = 796 # Cairo
-	roman = "Aegyptus"
-	greek = "Aigyptos"
-	coptic = "Khemi"
-	nubian = "Khemi"
-	ethiopian = "Gibs"
-	falashim = "Misrayim"
-	sanhaja = "Igibt"
-	tagelmust = "Igibt"
-	tuareg = "Igibt"
-	masmuda = "Igibt"
-	zanata = "Igibt"
 	allow = {
 		has_landed_title = k_egypt
 		FROM = { is_de_jure_title = yes }
 		title_emperor_basic_allow = yes
 	}
 } # end e_egypt
+
 e_wendish_empire = { # Wendish Empire
 	color = { 65 25 125 }
 	capital = 441 # Brno # Boruy
-	short_name = yes
-	bohemian = "Velké Czechy"
-	slovieni = "Velká Morava"
-	polish = "Wiêksza Polska"
-	pommeranian = "Vendia"
-	carantanian = "Vendia"
-	croatian = "Vendia"
 	allow = {
 		has_landed_title = k_moravia
 		OR = {
@@ -927,90 +931,65 @@ e_wendish_empire = { # Wendish Empire
 		FROM = { is_de_jure_title = yes }
 		title_emperor_basic_allow = yes
 	}
+	short_name = yes
+	pommeranian = "Wends"
+	polish = "Great Poland"
+	bohemian = "Great Bohemia"
+	slovieni = "Great Moravia"
+	carantanian = "Wends"
+	croatian = "Wends"
 } # end e_wendish_empire
+
 # Ireland
 d_breifne = { # Breifne
 	color = { 54 135 39 }
 	color2 = { 136 0 21 }
-	irish = "Bréifne"
-	scottish = "Bréifne"
-	norsegaelic = "Bréifne"
-	welsh = "Bréifne"
-	cumbric = "Bréifne"
-	cornish = "Bréifne"
-	breton = "Bréifne"
-	saxon = "Breffny"
-	anglonorse = "Breffny"
-	norse = "Breffny"
-	norwegian = "Breffny"
-	danish = "Breffny"
-	swedish = "Breffny"
-	gothic = "Breffny"
-	icelandic = "Breffny"
 	capital = 8 # Leitrim
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_thomond = { # Thomond
 	color = { 30 100 80 }
 	color2 = { 255 255 255 }
-	irish = "Tuadhmhumhain"
-	scottish = "Tuadhmhumhain"
-	norsegaelic = "Tuadhmhumhain"
-	welsh = "Tuadhmhumhain"
-	cumbric = "Tuadhmhumhain"
-	breton = "Tuadhmhumhain"
-	cornish = "Tuadhmhumhain"
 	capital = 13 # Clare # Thomond
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_ossory = { # Ossory
 	color = { 60 200 10 }
 	color2 = { 255 255 255 }
-	irish = "Osraige"
-	scottish = "Osraige"
-	norsegaelic = "Osraige"
-	welsh = "Osraige"
-	cumbric = "Osraige"
-	breton = "Osraige"
-	cornish = "Osraige"
 	capital = 12 # Ossory
 	allow = { title_duke_basic_allow = yes }
+	irish = "Osraige"
+	scottish = "Osraige"
+	cumbric = "Osraige"
+	cornish = "Osraige"
+	welsh = "Osraige"
+	breton = "Osraige"
+	norsegaelic = "Osraige"
 }
+
 d_oneill = { # O'Neill
 	color = { 70 106 21 }
 	color2 = { 255 255 255 }
 	capital = 4 # Tyrone
+	allow = { title_duke_basic_allow = yes }
 	irish = "Uí Néill"
 	scottish = "Uí Néill"
-	norsegaelic = "Uí Néill"
-	cornish = "Uí Néill"
-	breton = "Uí Néill"
 	cumbric = "Uí Néill"
+	cornish = "Uí Néill"
 	welsh = "Uí Néill"
-	allow = { title_duke_basic_allow = yes }
+	breton = "Uí Néill"
+	norsegaelic = "Uí Néill"
 }
+
 d_airgialla = { # Airgíalla
 	color = { 30 180 20 }
 	color2 = { 251 140 17 }
-	irish = "Airgíalla"
-	scottish = "Oirialla"
-	norsegaelic = "Airgíalla"
-	welsh = "Airgíalla"
-	cornish = "Airgíalla"
-	breton = "Airgíalla"
-	cumbric = "Airgíalla"
-	saxon = "Oriel"
-	anglonorse = "Oriel"
-	english = "Oriel"
-	norse = "Oriel"
-	norwegian = "Oriel"
-	danish = "Oriel"
-	swedish = "Oriel"
-	gothic = "Oriel"
-	icelandic = "Oriel"
 	capital = 7 # Oriel
 	allow = { title_duke_basic_allow = yes }
 }
+
 d_khawarij = { # Khawarij # (used for the Kharijite Rebellion)
 	color = { 70 130 10 }
 	color2 = { 255 255 255 }
@@ -1020,6 +999,7 @@ d_khawarij = { # Khawarij # (used for the Kharijite Rebellion)
 		title_duke_basic_allow = yes
 	}
 }
+
 # moved from k_asturias to fix usurpation bug
 d_asturias = { # Asturias
 	color = { 41 83 180 }

@@ -1,0 +1,240 @@
+song = {
+	name = "Adoremus.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "AveMaris.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "DiesIrae.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "AgnusDei.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Sanctimissa.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "RussianChant.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "SalveMater.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "CatholicChant.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Spiritus.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Templar.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+	}		
+}
+
+song = {
+	name = "Halflight.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+	}		
+}
+
+song = {
+	name = "Pontiff.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+	}		
+}
+
+song = {
+	name = "Deacons.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					religion_group = christian
+					
+					
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+	}		
+}

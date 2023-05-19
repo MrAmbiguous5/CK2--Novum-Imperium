@@ -1,0 +1,385 @@
+song = {
+	name = "Slavic Music - Slava, Moy Brat.ogg"
+	song_name = "Slava, Moy Brat"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Percival - Jarilo.ogg"
+	song_name = "Jarilo"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Slavic Music - Seredina Zimy.ogg"
+	song_name = "Seredina Zimy"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Russian Folk Music - The Bogatyr.ogg"
+	song_name = "The Bogatyr"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 1
+}
+song = {
+	name = "Epic Spiritual Slavic Pagan Music Land Of The Gods.ogg"
+	song_name = "Land Of The Gods"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Dzivia - Uzniasiennie (Ascension).ogg"
+	song_name = "Uzniasiennie"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Percival - Zozulja.ogg"
+	song_name = "Zozulja"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Dzivia - Dzikaje Palavannie (Wild Hunt).ogg"
+	song_name = "Dzikaje Palavannie"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 0.8
+}
+song = {
+	name = "Russian Folk Music - Night in Russia.ogg"
+	song_name = "Night in Russia"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Dzivia - Spieu Dazdzu & Karahody (The Rain Song & Roundelays).ogg"
+	song_name = "Spieu Daždžu & Karahody"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Slavic folk music - Frozen Sun.ogg"
+	song_name = "Frozen Sun"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Thomas Bergersen - Rada.ogg"
+	song_name = "Rada"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}	
+		modifier = {
+			factor = 4
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Slavic Folk Music - Belobog.ogg"
+	song_name = "Belobog"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Slavic Folk Music - Devana.ogg"
+	song_name = "Devana"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Slavic Folk Music - Forest Vila.ogg"
+	song_name = "Forest Vila"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+
+song = {
+	name = "Gopnik McBlyat - Snakes in Tracksuits.ogg"
+	song_name = "Snakes in Tracksuits"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture_group = east_slavic }
+			NOT = { culture_group = west_slavic }
+			NOT = { culture_group = south_slavic }
+			NOT = { religion = slavic_pagan_reformed }
+			NOT = { religion = slavic_pagan }
+		}
+		modifier = {
+			factor = 0.1
+			war = no
+		}	
+		modifier = {
+			factor = 0.1
+			war = yes
+		}
+	}
+	volume = 2
+}

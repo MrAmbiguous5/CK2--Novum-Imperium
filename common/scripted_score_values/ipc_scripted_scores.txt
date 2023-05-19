@@ -1,0 +1,551 @@
+# Can be utilized in ai_chance, ai_will_do, random list weighting and anything that utilizes the triggered modifiers to calculate a value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############Mission Assigning############
+
+seneschal_mission_candidate_score_value = {
+	additive_modifier = {
+		value = 5
+		FROMFROM = { 
+			show_scope_change = no
+			stewardship = 4
+			hidden_tooltip = { NOT = { stewardship = 8 } }
+		}
+	}
+	additive_modifier = {
+		value = 10
+		FROMFROM = { 
+			show_scope_change = no
+			stewardship = 8
+			hidden_tooltip = { NOT = { stewardship = 12 } }
+		}
+	}
+	additive_modifier = {
+		value = 15
+		FROMFROM = { 
+			show_scope_change = no
+			stewardship = 12
+			hidden_tooltip = { NOT = { stewardship = 16 } }
+		}
+	}
+	additive_modifier = {
+		value = 20
+		FROMFROM = { 
+			show_scope_change = no
+			stewardship = 16
+			hidden_tooltip = { NOT = { stewardship = 20 } }
+		}
+	}
+	additive_modifier = {
+		value = 25
+		FROMFROM = {
+			show_scope_change = no
+			stewardship = 20
+		}
+	}
+}
+
+marshal_mission_candidate_score_value = {
+	additive_modifier = {
+		value = 5
+		FROMFROM = { 
+			show_scope_change = no
+			martial = 4
+			hidden_tooltip = { NOT = { martial = 8 } }
+		}
+	}
+	additive_modifier = {
+		value = 10
+		FROMFROM = { 
+			show_scope_change = no
+			martial = 8
+			hidden_tooltip = { NOT = { martial = 12 } }
+		}
+	}
+	additive_modifier = {
+		value = 15
+		FROMFROM = { 
+			show_scope_change = no
+			martial = 12
+			hidden_tooltip = { NOT = { martial = 16 } }
+		}
+	}
+	additive_modifier = {
+		value = 20
+		FROMFROM = { 
+			show_scope_change = no
+			martial = 16
+			hidden_tooltip = { NOT = { martial = 20 } }
+		}
+	}
+	additive_modifier = {
+		value = 25
+		FROMFROM = {
+			show_scope_change = no
+			martial = 20
+		}
+	}
+}
+
+lawkeeper_mission_candidate_score_value = {
+	additive_modifier = {
+		value = 5
+		FROMFROM = { 
+			show_scope_change = no
+			diplomacy = 4
+			hidden_tooltip = { NOT = { diplomacy = 8 } }
+		}
+	}
+	additive_modifier = {
+		value = 10
+		FROMFROM = { 
+			show_scope_change = no
+			diplomacy = 8
+			hidden_tooltip = { NOT = { diplomacy = 12 } }
+		}
+	}
+	additive_modifier = {
+		value = 15
+		FROMFROM = { 
+			show_scope_change = no
+			diplomacy = 12
+			hidden_tooltip = { NOT = { diplomacy = 16 } }
+		}
+	}
+	additive_modifier = {
+		value = 20
+		FROMFROM = { 
+			show_scope_change = no
+			diplomacy = 16
+			hidden_tooltip = { NOT = { diplomacy = 20 } }
+		}
+	}
+	additive_modifier = {
+		value = 25
+		FROMFROM = {
+			show_scope_change = no
+			diplomacy = 20
+		}
+	}
+}
+
+
+lawkeeper_dual_mission_candidate_score_value = {
+	additive_modifier = {
+		value = 5
+		FROMFROM = { 
+			show_scope_change = no
+			OR = {
+				diplomacy = 4
+				learning = 4
+			}
+			hidden_tooltip = {
+				OR = {
+					AND = {
+						diplomacy = 4
+						NOT = { diplomacy = 8 }
+					}
+					AND = {
+						learning = 4
+						NOT = { learning = 8 }
+					}
+				}
+			}
+		}
+	}
+	additive_modifier = {
+		value = 10
+		FROMFROM = { 
+			show_scope_change = no
+			OR = {
+				diplomacy = 8
+				learning = 8
+			}
+			hidden_tooltip = {
+				OR = {
+					AND = {
+						diplomacy = 8
+						NOT = { diplomacy = 12 }
+					}
+					AND = {
+						learning = 8
+						NOT = { learning = 12 }
+					}
+				}
+			}
+		}
+	}
+	additive_modifier = {
+		value = 15
+		FROMFROM = { 
+			show_scope_change = no
+			OR = {
+				diplomacy = 12
+				learning = 12
+			}
+			hidden_tooltip = {
+				OR = {
+					AND = {
+						diplomacy = 12
+						NOT = { diplomacy = 16 }
+					}
+					AND = {
+						learning = 12
+						NOT = { learning = 16 }
+					}
+				}
+			}
+		}
+	}
+	additive_modifier = {
+		value = 20
+		FROMFROM = { 
+			show_scope_change = no
+			OR = {
+				diplomacy = 16
+				learning = 16
+			}
+			hidden_tooltip = {
+				OR = {
+					AND = {
+						diplomacy = 16
+						NOT = { diplomacy = 20 }
+					}
+					AND = {
+						learning = 16
+						NOT = { learning = 20 }
+					}
+				}
+			}
+		}
+	}
+	additive_modifier = {
+		value = 25
+		FROMFROM = {
+			show_scope_change = no
+			OR = {
+				diplomacy = 20
+				learning = 20
+			}
+			hidden_tooltip = {
+				OR = {
+					AND = {
+						diplomacy = 4
+						NOT = { diplomacy = 8 }
+					}
+					AND = {
+						learning = 4
+						NOT = { learning = 8 }
+					}
+				}
+			}
+		}
+	}
+}
+
+
+spymaster_mission_candidate_score_value = {
+	additive_modifier = {
+		value = 5
+		FROMFROM = { 
+			show_scope_change = no
+			intrigue = 4
+			hidden_tooltip = { NOT = { intrigue = 8 } }
+		}
+	}
+	additive_modifier = {
+		value = 10
+		FROMFROM = { 
+			show_scope_change = no
+			intrigue = 8
+			hidden_tooltip = { NOT = { intrigue = 12 } }
+		}
+	}
+	additive_modifier = {
+		value = 15
+		FROMFROM = { 
+			show_scope_change = no
+			intrigue = 12
+			hidden_tooltip = { NOT = { intrigue = 16 } }
+		}
+	}
+	additive_modifier = {
+		value = 20
+		FROMFROM = { 
+			show_scope_change = no
+			intrigue = 16
+			hidden_tooltip = { NOT = { intrigue = 20 } }
+		}
+	}
+	additive_modifier = {
+		value = 25
+		FROMFROM = {
+			show_scope_change = no
+			intrigue = 20
+		}
+	}
+}
+
+
+ipc_combat_rating_mission_score_value = {
+	additive_modifier = {
+		value = -5
+		FROMFROM = { show_scope_change = no is_the_worst_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 0
+		FROMFROM = { show_scope_change = no is_terrible_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 5
+		FROMFROM = { show_scope_change = no is_bad_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 10
+		FROMFROM = { show_scope_change = no is_ok_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 15
+		FROMFROM = { show_scope_change = no is_decent_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 20
+		FROMFROM = { show_scope_change = no is_good_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 25
+		FROMFROM = { show_scope_change = no is_great_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 30
+		FROMFROM = { show_scope_change = no is_fantastic_duelist_trigger = yes }
+	}
+	additive_modifier = {
+		value = 35
+		FROMFROM = { show_scope_change = no is_the_best_duelist_trigger = yes }
+	}
+}
+
+#########AI chance##########
+
+
+imperial_office_missions_ai_chance = {
+	modifier = {
+		factor = 1.5
+		FROM = { society_influence < 10 }
+	}
+	modifier = {
+		factor = 1.25
+		FROM = { society_influence < 20 }
+	}
+	modifier = {
+		factor = 1.25
+		FROM = { society_influence < 30 }
+	}
+	modifier = {
+		factor = 1.25
+		FROM = { society_influence < 40 }
+	}
+	modifier = {
+		factor = 1.25
+		FROM = { society_influence < 50 }
+	}
+	modifier = {
+		factor = 0.75
+		FROM = { society_influence >= 50 }
+	}
+	modifier = {
+		factor = 0.75
+		FROM = { society_influence >= 60 }
+	}
+	modifier = {
+		factor = 0.75
+		FROM = { society_influence >= 70 }
+	}
+	modifier = {
+		factor = 0.75
+		FROM = { society_influence >= 80 }
+	}
+	modifier = {
+		factor = 0.5
+		FROM = { society_influence >= 90 }
+	}
+	modifier = {
+		factor = 0.9
+		FROM = { society_currency < 200 }
+	}
+	modifier = {
+		factor = 0.9
+		FROM = { society_currency < 400 }
+	}
+	modifier = {
+		factor = 0.9
+		FROM = { society_currency < 600 }
+	}
+	modifier = {
+		factor = 0.9
+		FROM = { society_currency < 800 }
+	}
+	modifier = {
+		factor = 0.75
+		FROM = { trait = ambitious }
+	}
+	modifier = {
+		factor = 2
+		FROM = { trait = diligent }
+	}
+	modifier = {
+		factor = 2
+		FROM = { trait = just }
+	}
+	modifier = {
+		factor = 2
+		FROM = { trait = content }
+	}
+	modifier = {
+		factor = 2
+		FROM = { 
+			NOT = { tier = emperor }
+			is_loyal_to_empire_trigger = yes 
+		}
+	}
+	modifier = {
+		factor = 0.75
+		FROM = {
+			tier = emperor
+			OR = {
+				has_character_modifier = imperial_court_influence_4
+				has_character_modifier = imperial_court_influence_5
+			}
+		}
+	}
+}
+
+
+imperial_office_assignment_ai_chance = {
+	modifier = {
+		factor = 0.5
+		society_influence >= 80
+	}
+	modifier = {
+		factor = 0.75
+		society_influence >= 60
+	}
+	modifier = {
+		factor = 0.75
+		society_influence >= 40
+	}
+	modifier = {
+		factor = 1.25
+		society_influence < 20
+	}
+	modifier = {
+		factor = 0.25
+		has_bottom_tier_education_trait_trigger = yes
+	}
+	modifier = {
+		factor = 0.5
+		has_2nd_tier_education_trait_trigger = yes
+	}
+	modifier = {
+		factor = 0.5
+		NOR = {
+			religion_group = FROM
+			religion = FROM
+			culture_group = FROM
+			culture = FROM
+		}
+	}
+	modifier = {
+		factor = 1.25
+		trait = content
+	}
+	modifier = {
+		factor = 1.5
+		is_loyal_to_empire_trigger = yes
+	}
+	modifier = {
+		factor = 2
+		is_friend = FROM
+	}
+	modifier = {
+		factor = 0
+		OR = {
+			is_foe = FROM
+			FROM = { is_foe = ROOT }
+		}
+	}
+}
+
+imperial_office_revokation_ai_chance = {
+	modifier = {
+		factor = 0.1
+		has_instances_of_character_modifier = { modifier = imperial_office_bonus amount >= 9 }
+	}
+	modifier = {
+		factor = 0.3
+		has_instances_of_character_modifier = { modifier = imperial_office_bonus amount >= 7 }
+	}
+	modifier = {
+		factor = 0.5
+		has_instances_of_character_modifier = { modifier = imperial_office_bonus amount >= 5 }
+	}
+	modifier = {
+		factor = 0.7
+		has_instances_of_character_modifier = { modifier = imperial_office_bonus amount >= 3 }
+	}
+	modifier = {
+		factor = 0.8
+		has_instances_of_character_modifier = { modifier = imperial_office_bonus amount >= 1 }
+	}
+	modifier = {
+		factor = 10
+		OR = {
+			is_foe = FROM
+			FROM = { is_foe = ROOT }
+		}
+	}
+	modifier = {
+		factor = 10
+		prisoner = yes
+		host = { character = FROM }
+	}
+	modifier = {
+		factor = 1.5
+		trait = slothful
+	}
+	modifier = {
+		factor = 1.5
+		trait = ambitious
+	}
+}
+
+
+
+
+
+
+
+
+

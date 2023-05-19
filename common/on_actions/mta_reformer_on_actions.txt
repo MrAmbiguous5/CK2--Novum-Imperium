@@ -1,0 +1,7 @@
+# -*- ck2.on_actions -*-
+
+on_reform_religion = {
+	events = {
+		mta.24 # Reformer is venerated and added to the list of gods
+	}
+}

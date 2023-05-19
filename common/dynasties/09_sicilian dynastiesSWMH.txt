@@ -33,17 +33,6 @@ name="Majorana-Calatabiano"
 1000035506 = {
 name="d'Paternò"
  culture = sicilian
-   	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 175
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035507 = {
 name="Aceto"
@@ -76,17 +65,6 @@ name="Fardella"
 1000035514 = {
 name="di Gravina"
  culture = neapolitan
-   	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 168
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}   
 }
 1000035515 = {
 name="di Ragusa"
@@ -115,17 +93,6 @@ name="Montaperto"
 1000035521 = {
 name="Peralta"
  culture = sicilian
-   	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 179
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	} 
 }
 1000035522 = {
 name="Perollo"
@@ -170,17 +137,6 @@ name="Gioeni"
 1000035532 = {
 name="Grifeo"
  culture = sicilian
-   	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 181
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}   
 }
 1000035533 = {
 name="La Grua"
@@ -253,32 +209,10 @@ name="Podio Ricciardi"
 1000035550 = {
 name="Abbate"
  culture = sicilian
-   	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 180
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035551 = {
 name="d'Ocrea"
  culture = sicilian
-   	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 182
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 ######################################
 #Generic dynasites

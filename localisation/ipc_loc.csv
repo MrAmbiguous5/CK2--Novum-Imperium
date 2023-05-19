@@ -1,0 +1,617 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+
+
+############Game rules############
+RULE_GROUP_IPC;IPC;;;;;;;;;;;;;x
+
+rule_starting_ipc_courts_byzantine;§BIPC:§! Byzantine Imperial Court;;;;;;;;;;;;;x
+rule_starting_ipc_courts_byzantine_default_desc;If it exists, the Byzantine Empire will start with an Imperial Court.;;;;;;;;;;;;;x
+rule_starting_ipc_courts_byzantine_off_desc;The Byzantine Empire will §RNOT§! start with an Imperial Court.;;;;;;;;;;;;;x
+
+rule_starting_ipc_courts_hre;§BIPC:§! HRE Imperial Court;;;;;;;;;;;;;x
+rule_starting_ipc_courts_hre_default_desc;If it exists, the Holy Roman Empire will start with an Imperial Court.;;;;;;;;;;;;;x
+rule_starting_ipc_courts_hre_off_desc;The Holy Roman Empire will §RNOT§! start with an Imperial Court.;;;;;;;;;;;;;x
+
+rule_starting_ipc_courts_arabia;§BIPC:§! Arabian Imperial Court;;;;;;;;;;;;;x
+rule_starting_ipc_courts_arabia_default_desc;If it exists, the Arabian Empire will start with an Imperial Court.;;;;;;;;;;;;;x
+rule_starting_ipc_courts_arabia_off_desc;The Arabian Empire will §RNOT§! start with an Imperial Court.;;;;;;;;;;;;;x
+
+############Artifacts############
+empire_tribute_chest;Tribute Chest;;;;;;;;;;;;;x
+empire_tribute_chest_custom;Tribute Chest of [From.OriginalOwner.GetTitledFirstName];;;;;;;;;;;;;x
+empire_tribute_chest_desc;A large chest brimming with gold and silver coins, given by [From.OriginalOwner.GetTitledFirstName] to [From.Owner.GetTitledFirstName].;;;;;;;;;;;;;x
+
+
+############Buildings############
+ipc_imperial_buildings_tooltip;Must be built by members of the Imperial Court through the §YImprove the Imperial Capital§! mission;;;;;;;;;;;;;x
+ipc_imperial_barracks_1;Imperial Barracks;;;;;;;;;;;;;x
+ipc_imperial_barracks_2;Imperial Barracks;;;;;;;;;;;;;x
+ipc_imperial_barracks_3;Imperial Barracks;;;;;;;;;;;;;x
+ipc_imperial_barracks_1_desc;This building trains and houses an elite corps of professional soldiers loyal only to the will of their liege.;;;;;;;;;;;;;x
+ipc_imperial_training_grounds_1;Imperial Mustering Grounds;;;;;;;;;;;;;x
+ipc_imperial_training_grounds_2;Imperial Mustering Grounds;;;;;;;;;;;;;x
+ipc_imperial_training_grounds_3;Imperial Mustering Grounds;;;;;;;;;;;;;x
+ipc_imperial_training_grounds_1_desc;The vast fields of the Drill Grounds are where the great armies of the realm gather to drill and prepare for war.;;;;;;;;;;;;;x
+ipc_imperial_tax_center_1;Imperial Tax Office;;;;;;;;;;;;;x
+ipc_imperial_tax_center_2;Imperial Tax Center;;;;;;;;;;;;;x
+ipc_imperial_tax_center_3;Imperial Tax Bureau;;;;;;;;;;;;;x
+ipc_imperial_tax_center_1_desc;All great empires run on coin. This building centralises the realm's taxation bureaucracy so that they can more effectively perform their duties.;;;;;;;;;;;;;x
+ipc_imperial_library_1;Imperial Library;;;;;;;;;;;;;x
+ipc_imperial_library_2;Imperial Archives;;;;;;;;;;;;;x
+ipc_imperial_library_3;Great Library of [FromFrom.GetName];;;;;;;;;;;;;x
+ipc_imperial_library_1_desc;A somewhat impressive library containing knowledge gathered from all corners of the realm.;;;;;;;;;;;;;x
+ipc_imperial_library_2_desc;In addition to more common titles, this magnificent building houses a good number of rare and delicate texts.;;;;;;;;;;;;;x
+ipc_imperial_library_3_desc;The incomparable collections housed within this great library draw scholars from all across the known world.;;;;;;;;;;;;;x
+ipc_imperial_council_halls_1;Imperial Council Halls;;;;;;;;;;;;;x
+ipc_imperial_council_halls_2;Imperial Council Halls;;;;;;;;;;;;;x
+ipc_imperial_council_halls_3;Imperial Council Halls;;;;;;;;;;;;;x
+ipc_imperial_council_halls_1_desc;Located close to the [FromFrom.Holder.GetTitle]'s residence, these corridors of power are filled with the sounds of bickering elites and functionaries jostling for position at court.;;;;;;;;;;;;;x
+ipc_imperial_palace_1;Imperial Palace;;;;;;;;;;;;;x
+ipc_imperial_palace_2;Magnificent Imperial Palace;;;;;;;;;;;;;x
+ipc_imperial_palace_3;Great Palace of [FromFrom.GetName];;;;;;;;;;;;;x
+ipc_imperial_palace_1_desc;A large palace constructed for the [FromFrom.Holder.GetTitle] to serve as the administrative seat of power in the empire.;;;;;;;;;;;;;x
+ipc_imperial_palace_3_desc;The jewel of the empire, this building is vast, beautiful, and very impressive, and serves as the realm's seat of power.;;;;;;;;;;;;;x
+
+
+############Traits############
+ipc_imperial_administrator;Imperial Bureaucrat;;;;;;;;;;;;;x
+ipc_imperial_administrator_desc;Prefering an administrative role to a military one, this character excels at keeping the wheels of empire turning.;;;;;;;;;;;;;x
+ipc_imperial_aristrocrat;Imperial Aristrocrat;;;;;;;;;;;;;x
+ipc_imperial_aristrocrat_desc;This character excels at politicking - whether in service of the realm or to raise their dynasty's status at court.;;;;;;;;;;;;;x
+ipc_imperial_commander;Imperial Commander;;;;;;;;;;;;;x
+ipc_imperial_commander_desc;This character is a renowned commander of the empire whose military skill earns them fame at court - and plenty of rivals.;;;;;;;;;;;;;x
+
+ipc_infiltrator_trait;ipc infiltrator;;;;;;;;;;;;;x
+ipc_infiltrator_trait_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+
+############Factions############
+faction_ipc_takeover_short;Palace Coup;;;;;;;;;;;;;x
+faction_ipc_takeover_title;Palace Coup of [From.Liege.PrimaryTitle.GetName];;;;;;;;;;;;;x
+faction_ipc_takeover_desc;Influential members of the imperial court seek to remove §Y[From.Liege.GetBestName]§! from power and replace [From.Liege.GetHerHim] with one of their own. Once this faction is sufficiently powerful, §Y[From.GetBestName]§! may present an ultimatum to §Y[From.Liege.GetBestName]§!.;;;;;;;;;;;;;x
+
+############Casus Belli############
+cb_name_ipc_faction_takeover;Oust Ruler;;;;;;;;;;;;;x
+war_name_ipc_faction_takeover;$ORDER$Imperial Court war to oust $DEFENDER$ from Power;;;;;;;;;;;;;x
+ipc_faction_takeover_war_desc;The time has come for the court to take control of [Root.TopLiege.PrimaryTitle.GetName]!;;;;;;;;;;;;;x
+
+cb_name_ipc_imperial_conquest;Imperial Conquest of [Title.GetBaseName];;;;;;;;;;;;;x
+war_name_ipc_imperial_conquest;$ORDER$$FIRST_ADJ$ Imperial Conquest of $OTHER_TITLE$;;;;;;;;;;;;;x
+ipc_imperial_conquest_desc;The time has come for glory!;;;;;;;;;;;;;x
+ipc_imperial_conquest_tooltip;The Imperial Court will send you aid.;;;;;;;;;;;;;x
+ipc_imperial_conquest_tooltip2;You will be able to pick a dynasty member to hold the duchy if you succeed.;;;;;;;;;;;;;x
+ipc_imperial_conquest_tooltip3;§GAll land will go to the [Root.TopLiege.GetTitle]§!;;;;;;;;;;;;;x
+
+
+
+############Opinions############
+opinion_granted_imperial_office_1;Granted Imperial Office;;;;;;;;;;;;;x
+opinion_granted_imperial_office_2;Granted Imperial Office;;;;;;;;;;;;;x
+opinion_granted_imperial_office_3;Granted Imperial Office;;;;;;;;;;;;;x
+opinion_granted_imperial_office_4;Granted Imperial Office;;;;;;;;;;;;;x
+opinion_granted_imperial_office_5;Granted Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_1;Revoked My Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_2;Revoked My Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_3;Revoked My Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_4;Revoked My Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_5;Revoked My Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_other_2;Revoked A Member's Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_other_3;Revoked A Member's Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_other_4;Revoked A Member's Imperial Office;;;;;;;;;;;;;x
+opinion_revoked_imperial_office_other_5;Revoked A Member's Imperial Office;;;;;;;;;;;;;x
+
+
+opinion_retained_imperial_office;Retained Imperial Office;;;;;;;;;;;;;x
+opinion_dismantled_imperial_court;Dismantled the Imperial Court;;;;;;;;;;;;;x
+
+opinion_reduced_court_power;Reduced Court Power;;;;;;;;;;;;;x
+
+opinion_imperial_service;Imperial Service;;;;;;;;;;;;;x
+opinion_failed_empire;Failed the Empire;;;;;;;;;;;;;x
+
+
+opinion_ipc_infiltrator;Imperial Court Agent;;;;;;;;;;;;;x
+
+ipc_in_non_aggression_pact;In a pact of non-aggression;;;;;;;;;;;;;x
+
+############Event Modifiers############
+
+ipc_monthly_currency_gain;Monthly Court Currency;;;;;;;;;;;;;x
+
+imperial_court_influence_1;Weak Imperial Court;;;;;;;;;;;;;x
+imperial_court_influence_1_desc;The Imperial Court is functional but has no real influence over the realm. Most of the power is in the [Root.GetTitle]'s hands.\n\n§Y*§! The [Root.GetTitle] may freely introduce [Root.GetHerHis] children to the court.[Root.GetCanMoveCourt]\n§Y*§! Vassals cannot refuse an order to relinquish non-dejure titles from the [Root.GetTitle].\n§Y*§! Following an Imperial Conquest, all conquered titles go to the [Root.GetTitle].;;;;;;;;;;;;;x
+imperial_court_influence_2;Adequate Imperial Court;;;;;;;;;;;;;x
+imperial_court_influence_2_desc;The Imperial Court is growing in influence but the [Root.GetTitle]'s power is still strong.\n\n§Y*§! The [Root.GetTitle] may freely introduce [Root.GetHerHis] children to the court.[Root.GetCanMoveCourt]\n§Y*§! Vassals cannot refuse an order to relinquish non-dejure titles from the [Root.GetTitle].\n§Y*§! Following an Imperial Conquest, all conquered titles go to the [Root.GetTitle].;;;;;;;;;;;;;x
+imperial_court_influence_3;Influential Imperial Court;;;;;;;;;;;;;x
+imperial_court_influence_3_desc;The Imperial Court has become influential enough that the [Root.GetTitle] has diverted some resources to contain the threat.\n\n§Y*§! The [Root.GetTitle] may freely introduce [Root.GetHerHis] children to the court.[Root.GetCanMoveCourt]\n§Y*§! Vassals may §Rrebel§! when ordered to relinquish non-dejure titles by the [Root.GetTitle].\n§Y*§! Following an Imperial Conquest, all conquered titles get divided amongst the most influential participants.\n§Y*§! Viceroys may use the §YMake Viceroyalty Hereditary power§!.;;;;;;;;;;;;;x
+imperial_court_influence_4;Strong Imperial Court;;;;;;;;;;;;;x
+imperial_court_influence_4_desc;The Imperial Court holds enough power to withhold some of their taxes and levies forcing the [Root.GetTitle] to rely on personal resources.\n\n§Y*§! The [Root.GetTitle] §Rcannot§! introduce [Root.GetHerHis] children to the court.[Root.GetCanMoveCourt]\n§Y*§! Vassals may §Rrebel§! when ordered to relinquish non-de jure titles by the [Root.GetTitle].\n§Y*§! Following an Imperial Conquest, all conquered titles get divided amongst the most influential participants.\n§Y*§! Viceroys may use the §YMake Viceroyalty Hereditary power§!.\n§Y*§! The most influential member of the court will §Rrecieve a claim on the empire§! after succession.;;;;;;;;;;;;;x
+imperial_court_influence_5;Dangerous Imperial Court;;;;;;;;;;;;;x
+imperial_court_influence_5_desc;The court has become the true power in the realm. Unless its power is checked, it will eventually overthrow the [Root.GetTitle].\n\n§Y*§! The [Root.GetTitle] §Rcannot§! introduce [Root.GetHerHis] children to the court.[Root.GetCanMoveCourt]\n§Y*§! Vassals may §Rrebel§! when ordered to relinquish non-dejure titles by the [Root.GetTitle].\n§Y*§! Following an Imperial Conquest, all conquered titles get divided amongst the most influential participants.\n§Y*§! Viceroys may use the §YMake Viceroyalty Hereditary power§!.\n§Y*§! The most influential member of the court will §Rrecieve a claim on the empire§! after succession.\n§Y*§! §RMembers of the court may start a faction to initiate a coup!§!;;;;;;;;;;;;;x
+
+can_move_court_modifier_info;\n§Y*§! The Imperial Court can be moved when a new empire is obtained.;;;;;;;;;;;;;x
+can_not_move_court_modifier_info;\n§Y*§! The Imperial Court §Rcannot§! be moved when a new empire is obtained.;;;;;;;;;;;;;x
+
+ipc_imperial_champion;Champion of the Empire;;;;;;;;;;;;;x
+ipc_imperial_champion_desc;[Root.GetBestName] has led the armies of the [champion_realm.GetFullBaseName] to victory against [champion_enemy.GetTitledName], earning [Root.GetHerHim] the admiration and awe of the people of [champion_realm.GetName].;;;;;;;;;;;;;x
+ipc_refused_court_request;Refused Court Request;;;;;;;;;;;;;x
+ipc_refused_court_request_desc;This [Root.GetTitle] has refused a request from the court, which has upset many vassals.;;;;;;;;;;;;;x
+
+
+building_imperial_road;Building Imperial Road;;;;;;;;;;;;;x
+building_imperial_road_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_imperial_road;Imperial Road;;;;;;;;;;;;;x
+ipc_imperial_road_desc;An Imperial Road has been constructed in this province.;;;;;;;;;;;;;x
+peasants_forced_road_building;Peasants busy building an Imperial Road;;;;;;;;;;;;;x
+peasants_forced_road_building_desc;The peasants of this province are disgruntled by having to build an Imperial Road in another province.;;;;;;;;;;;;;x
+soldiers_guarding_road;Soldiers Patroling an Imperial Road;;;;;;;;;;;;;x
+soldiers_guarding_road_desc;The soldiers of this provice are busy patroling a newly built Imperial Road in another province.;;;;;;;;;;;;;x
+soldiers_guarding_road_2;Soldiers Patroling an Imperial Road;;;;;;;;;;;;;x
+soldiers_guarding_road_2_desc;The soldiers of this provice are busy patroling a newly built Imperial Road in another province.;;;;;;;;;;;;;x
+ipc_military_drill;Imperial Military Drill;;;;;;;;;;;;;x
+ipc_military_drill_desc;This province's ruler and [This.Holder.GetHerHis] soldiers have participated in a military drill at the capital.;;;;;;;;;;;;;x
+pledged_to_imperial_conquest;Maintaining Court Army;;;;;;;;;;;;;x
+pledged_to_imperial_conquest_desc;The ruler of this province has pledged troops to the ongoing Imperial Conquest.;;;;;;;;;;;;;x
+ipc_festival;Festive Cheer;;;;;;;;;;;;;x
+ipc_festival_desc;The peasants of this province have recently enjoyed themselves at a nearby festival.;;;;;;;;;;;;;x
+
+
+conscripted_imperial_army;Conscripted Levies;;;;;;;;;;;;;x
+conscripted_imperial_army_desc;The [Root.Holder.TopLiege.GetTitle] has conscripted most of the soldiers stationed here.;;;;;;;;;;;;;x
+conscripted_imperial_army_emperor;Conscript Recruits;;;;;;;;;;;;;x
+conscripted_imperial_army_emperor_desc;The imperial capital is recieving an influx of recruits due to the [Root.Holder.GetTitle]'s recent mass conscription.;;;;;;;;;;;;;x
+
+
+
+ipc_missions_list_modifier;Assignable Missions;;;;;;;;;;;;;x
+ipc_missions_list_modifier_desc;\n§Y*§! §YMission:§! Build Imperial Road, can be assigned by §Gright-clicking§! on a county's title shield.\n§Y*§! §YMission:§! Improve Imperial Capital, can be assigned by §Gright-clicking§! on your own portrait.\n§Y*§! §YMission:§! Organize Military Drill, can be assigned by §Gright-clicking§! on on your own portrait.\n§Y*§! §YMission:§! Distribute Levy Recompense, can be assigned by §Gright-clicking§! on your own portrait.\n§Y*§! §YMission:§! Imperial Conquest, can be assigned by §Gright-clicking§! on a foreign non-titular duchy title.\n§Y*§! §YMission:§! Convert to Liege Culture, can be assigned by §Gright-clicking§! on a vassal's portrait.\n§Y*§! §YMission:§! Organize Festival, can be assigned by §Gright-clicking§! on your own portrait.\n§Y*§! §YMission:§! Investigate Secret Cults, can be assigned by §Gright-clicking§! on your own portrait.\n§Y*§! §YMission:§! Infiltrate Court, can be assigned by §Gright-clicking§! on a foreign independent ruler.;;;;;;;;;;;;;x
+
+imperial_regent_modifier;Imperial Regent;;;;;;;;;;;;;x
+imperial_regent_modifier_desc;\n§Y*§! Can assign and revoke §MImperial Offices§! to rank 3 members by §Gright-clicking§! on their portraits;;;;;;;;;;;;;x
+imperial_seneschal_modifier;Imperial Seneschal;;;;;;;;;;;;;x
+imperial_seneschal_modifier_desc;\n§Y*§! §YPower:§! Levy Extra Tax\n§Y*§! §YMission:§! Build Imperial Road, can be assigned by §Gright-clicking§! on a county's title shield.\n§Y*§! §YMission:§! Improve the Imperial Capital, can be assigned by §Gright-clicking§! on your own portrait.;;;;;;;;;;;;;x
+imperial_marshal_modifier;Imperial Marshal;;;;;;;;;;;;;x
+imperial_marshal_modifier_desc;\n§Y*§! §YPower:§! Invite Imperial Commander\n§Y*§! §YMission:§! Organize Military Drill, can be assigned by §Gright-clicking§! on on your own portrait.\n§Y*§! §YMission:§! Distribute Levy Recompense, can be assigned by §Gright-clicking§! on your own portrait.\n§Y*§! §YMission:§! Imperial Conquest, can be assigned by §Gright-clicking§! on a foreign non-titular duchy title.;;;;;;;;;;;;;x
+imperial_lawkeeper_modifier;Imperial Lawkeeper;;;;;;;;;;;;;x
+imperial_lawkeeper_modifier_desc;\n§Y*§! §YPower:§! Order to Leave Factions, can be accessed by §Gright-clicking§! on the portrait of a vassal in your realm.\n§Y*§! §YMission:§! Convert to Liege Culture, can be assigned by §Gright-clicking§! on a vassal's portrait.\n§Y*§! §YMission:§! Organize Festival, can be assigned by §Gright-clicking§! on your own portrait.;;;;;;;;;;;;;x
+imperial_spymaster_modifier;Imperial Spymaster;;;;;;;;;;;;;x
+imperial_spymaster_modifier_desc;\n§Y*§! §YPower:§! Declare Traitor, can be accessed by §Gright-clicking§! on the portrait of a vassal in your realm.\n§Y*§! §YMission:§! Investigate Secret Cults, can be assigned by §Gright-clicking§! on your own portrait.\n§Y*§! §YMission:§! Infiltrate Court, can be assigned by §Gright-clicking§! on a foreign independent ruler.;;;;;;;;;;;;;x
+
+imperial_office_bonus;Imperial Office Efficiency;;;;;;;;;;;;;x
+imperial_office_bonus_desc;As this character keeps issuing successful missions, [Root.GetSheHe] becomes more adept at choosing the correct person for the job.;;;;;;;;;;;;;x
+
+
+
+
+###society modifiers
+#imperial_regent_modifier;Imperial Regent leads the Court;;;;;;;;;;;;;x
+#imperial_seneschal_modifier;An Imperial Seneschal is Assigned;;;;;;;;;;;;;x
+#imperial_marshal_modifier;An Imperial Marshal is Assigned;;;;;;;;;;;;;x
+#imperial_lawkeeper_modifier;An Imperial Lawkeeper is Assigned;;;;;;;;;;;;;x
+ipc_successful_generic_mission;Successful Minor Missions;;;;;;;;;;;;;x
+ipc_successful_generic_mission_stacked;Successful Minor Missions;;;;;;;;;;;;;x
+ipc_failed_generic_mission;Failed Minor Missions;;;;;;;;;;;;;x
+ipc_failed_generic_mission_stacked;Failed Minor Missions;;;;;;;;;;;;;x
+ipc_successful_realm_mission;Successful Realm Missions;;;;;;;;;;;;;x
+ipc_successful_realm_mission_stacked;Successful Realm Missions;;;;;;;;;;;;;x
+ipc_failed_realm_mission;Failed Realm Missions;;;;;;;;;;;;;x
+ipc_failed_realm_mission_stacked;Failed Realm Missions;;;;;;;;;;;;;x
+ipc_successful_foreign_mission;Successful Foreign Missions;;;;;;;;;;;;;x
+ipc_successful_foreign_mission_stacked;Successful Foreign Missions;;;;;;;;;;;;;x
+ipc_failed_foreign_mission;Failed Foreign Missions;;;;;;;;;;;;;x
+ipc_failed_foreign_mission_stacked;Failed Foreign Missions;;;;;;;;;;;;;x
+ipc_successful_imperial_conquest;Successful Imperial Conquests;;;;;;;;;;;;;x
+ipc_successful_imperial_conquest_stacked;Successful Imperial Conquests;;;;;;;;;;;;;x
+ipc_failed_imperial_conquest;Failed Imperial Conquests;;;;;;;;;;;;;x
+ipc_failed_imperial_conquest_stacked;Failed Imperial Conquests;;;;;;;;;;;;;x
+
+
+ipc_successful_faction_takeover;Successful Palace Coup;;;;;;;;;;;;;x
+ipc_successful_faction_takeover_stacked;Successful Palace Coup;;;;;;;;;;;;;x
+ipc_failed_faction_takeover;Failed Palace Coup;;;;;;;;;;;;;x
+ipc_failed_faction_takeover_stacked;Failed Palace Coup;;;;;;;;;;;;;x
+
+
+ipc_conscripted_court_levies;Conscripted Court Levies;;;;;;;;;;;;;x
+ipc_conscripted_court_levies_stacked;Conscripted Court Levies;;;;;;;;;;;;;x
+ipc_magnanimous_emperor;Magnanimous [Root.TopLiege.GetTitle];;;;;;;;;;;;;x
+ipc_magnanimous_emperor_stacked;Magnanimous [Root.TopLiege.GetTitle];;;;;;;;;;;;;x
+
+####timers####
+influence_modifier_timer;society influence timer;;;;;;;;;;;;;x
+influence_modifier_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_random_mission_timer;random mission timer;;;;;;;;;;;;;x
+ipc_random_mission_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_donate_to_court_power_timer;donation timer;;;;;;;;;;;;;x
+ipc_donate_to_court_power_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_visit_imperial_capital_power_timer;visit capital timer;;;;;;;;;;;;;x
+ipc_visit_imperial_capital_power_timer_desc;;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_employ_imperial_commander_power_timer;invite imperial commander timer;;;;;;;;;;;;;x
+ipc_employ_imperial_commander_power_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_declare_traitor_spymaster_power_timer;declare traitor timer;;;;;;;;;;;;;x
+ipc_declare_traitor_spymaster_power_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_levy_extra_tax_seneschal_power_timer;extra tax timer;;;;;;;;;;;;;x
+ipc_levy_extra_tax_seneschal_power_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+faction_ipc_takeover_ultimatum_timer;ipc takeover timer;;;;;;;;;;;;;x
+faction_ipc_takeover_ultimatum_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_recently_insulted_timer;recently insulted;;;;;;;;;;;;;x
+ipc_recently_insulted_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+fix_bordergore_character_modifier;temp ipc modifier;;;;;;;;;;;;;x
+fix_bordergore_character_modifier_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+reduce_ipc_influence_army_levy_timer;conscription timer;;;;;;;;;;;;;x
+reduce_ipc_influence_army_levy_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+recompense_timer;Recompense Timer;;;;;;;;;;;;;x
+recompense_timer_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+####mission notification timers####
+#seneschal
+quest_ipc_build_imperial_road_success_notification;road success notification;;;;;;;;;;;;;x
+quest_ipc_build_imperial_road_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_success_notification;capital success notification;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_failure_notification;capital failure notification;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_building_notification;capital building notification;;;;;;;;;;;;;x
+quest_ipc_improve_imperial_capital_building_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+
+#marshal
+quest_ipc_military_drill_success_notification;drill success notification;;;;;;;;;;;;;x
+quest_ipc_military_drill_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_military_drill_failure_notification;drill failure notification;;;;;;;;;;;;;x
+quest_ipc_military_drill_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_distribute_levy_recompense_success_notification;recompense success notification;;;;;;;;;;;;;x
+quest_ipc_distribute_levy_recompense_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_distribute_levy_recompense_failure_notification;recompense failure notification;;;;;;;;;;;;;x
+quest_ipc_distribute_levy_recompense_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_imperial_conquest_success_notification;conquest success;;;;;;;;;;;;;x
+quest_ipc_imperial_conquest_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_imperial_conquest_failure_notification;conquest failure;;;;;;;;;;;;;x
+quest_ipc_imperial_conquest_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+
+#lawkeeper
+quest_ipc_change_culture_success_notification;change culture success;;;;;;;;;;;;;x
+quest_ipc_change_culture_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_change_culture_failure_notification;change culture failure;;;;;;;;;;;;;x
+quest_ipc_change_culture_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_organize_festival_success_notification;festival success;;;;;;;;;;;;;x
+quest_ipc_organize_festival_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_organize_festival_failure_notification;festival failure;;;;;;;;;;;;;x
+quest_ipc_organize_festival_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+#spymaster
+quest_ipc_investigate_secret_religions_success_notification;investigate success;;;;;;;;;;;;;x
+quest_ipc_investigate_secret_religions_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_investigate_secret_religions_failure_notification;investigate failure;;;;;;;;;;;;;x
+quest_ipc_investigate_secret_religions_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+quest_ipc_infiltrate_court_success_notification;infiltrate success;;;;;;;;;;;;;x
+quest_ipc_infiltrate_court_success_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+quest_ipc_infiltrate_court_failure_notification;infiltrate failure;;;;;;;;;;;;;x
+quest_ipc_infiltrate_court_failure_notification_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+####Misc Timers####
+ipc_large_pledge;large pledge;;;;;;;;;;;;;x
+ipc_large_pledge_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_medium_pledge;medium pledge;;;;;;;;;;;;;x
+ipc_medium_pledge_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ipc_small_pledge;small pledge;;;;;;;;;;;;;x
+ipc_small_pledge_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+imperial_conquest_chose_dynasty;chosen dynasty member;;;;;;;;;;;;;x
+imperial_conquest_chose_dynasty_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+imperial_conquest_dynasty_candidate;dynasty candidate;;;;;;;;;;;;;x
+imperial_conquest_dynasty_candidate_desc;if you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+
+############Scripted Triggers############
+is_imperial_court_member_trigger_tooltip;Is a member of the Imperial Court;;;;;;;;;;;;;x
+is_christian_imperial_court_member_trigger_tooltip;Is a member of a Christian Imperial Court;;;;;;;;;;;;;x
+is_muslim_imperial_court_member_trigger_tooltip;Is a member of a Muslim Imperial Court;;;;;;;;;;;;;x
+is_pagan_imperial_court_member_trigger_tooltip;Is a member of a Pagan Imperial Court;;;;;;;;;;;;;x
+is_eastern_imperial_court_member_trigger_tooltip;Is a member of an Eastern Imperial Court;;;;;;;;;;;;;x
+is_unique_imperial_court_member_trigger_tooltip;Is a member of an Unique Imperial Court;;;;;;;;;;;;;x
+
+
+imperial_court_female_membership_trigger_tooltip;Either a §YParent§! or a §YSpouse§! is the §Y[Root.TopLiege.GetTitle]§!;;;;;;;;;;;;;x
+can_join_imperial_court_spouse;§Y[Root.Spouse.GetBestName]§! is landed;;;;;;;;;;;;;x
+can_join_imperial_court_heir;Is the heir to a landed title;;;;;;;;;;;;;x
+can_join_imperial_court_claim;Has a claim of at least §YDuchy§! rank;;;;;;;;;;;;;x
+can_join_imperial_court_castrate_blind;Has NOT been castrated or blinded by the current §Y[Root.TopLiege.GetTitle]§!;;;;;;;;;;;;;x
+can_join_imperial_court_trigger_tooltip;Was NOT the previous §Y[Root.TopLiege.GetTitle]§!;;;;;;;;;;;;;x
+can_join_imperial_court_trigger_tooltip2;The current §Y[Root.TopLiege.GetTitle]§! must revoke the §MImperial Office§! of [Root.TopLiege.GetImperialRegentAssignableOffice] to join;;;;;;;;;;;;;x
+
+can_join_byzantine_imperial_court_trigger_castrate_blind;Has been castrated or blinded by the current §YBasileus§! or §YBasilissa§!;;;;;;;;;;;;;x
+can_join_byzantine_imperial_court_trigger_castrate_blind_NOT;Has NOT been castrated or blinded by the current §YBasileus§! or §YBasilissa§!;;;;;;;;;;;;;x
+can_join_roman_imperial_court_trigger_castrate_blind;Has been castrated or blinded by the current §YAugustus§! or §YAugusta§!;;;;;;;;;;;;;x
+can_join_roman_imperial_court_trigger_castrate_blind_NOT;Has NOT been castrated or blinded by the current §YAugustus§! or §YAugusta§!;;;;;;;;;;;;;x
+
+has_unique_imperial_office_trigger_tooltip;Does NOT hold an §MImperial Office§!;;;;;;;;;;;;;x
+is_imperial_court_regent_trigger_tooltip;Is the [This.GetImperialRegentAssignableOffice];;;;;;;;;;;;;x
+is_imperial_court_seneschal_trigger_tooltip;Is the [This.GetImperialSeneschalAssignableOffice];;;;;;;;;;;;;x
+is_imperial_court_marshal_trigger_tooltip;Is the [This.GetImperialMarshalAssignableOffice];;;;;;;;;;;;;x
+is_imperial_court_lawkeeper_trigger_tooltip;Is the [This.GetImperialLawkeeperAssignableOffice];;;;;;;;;;;;;x
+is_imperial_court_spymaster_trigger_tooltip;Is the [This.GetImperialSpymasterAssignableOffice];;;;;;;;;;;;;x
+
+
+can_assign_seneschal_missions_trigger_tooltip;A [This.GetImperialSeneschalAssignableOffice] has NOT been assigned;;;;;;;;;;;;;x
+can_assign_marshal_missions_trigger_tooltip;A [This.GetImperialMarshalAssignableOffice] has NOT been assigned;;;;;;;;;;;;;x
+can_assign_lawkeeper_missions_trigger_tooltip;A [This.GetImperialLawkeeperAssignableOffice] has NOT been assigned;;;;;;;;;;;;;x
+can_assign_spymaster_missions_trigger_tooltip;A [This.GetImperialSpymasterAssignableOffice] has NOT been assigned;;;;;;;;;;;;;x
+can_be_assigned_ipc_mission_trigger_tooltip;Has NOT recently completed or declined a mission;;;;;;;;;;;;;x
+
+ipc_has_education_diplomacy_trigger_tooltip;Has a §YDiplomacy§! education;;;;;;;;;;;;;x
+ipc_has_education_stewardship_trigger_tooltip;Has a §YStewardship§! education;;;;;;;;;;;;;x
+ipc_has_education_intrigue_trigger_tooltip;Has an §YIntrigue§! education;;;;;;;;;;;;;x
+ipc_has_education_learning_trigger_tooltip;Has a §YLearning§! education;;;;;;;;;;;;;x
+
+is_loyal_to_empire_trigger_tooltip;Is loyal to the [This.TopLiege.GetTitle];;;;;;;;;;;;;x
+
+can_interact_with_imperial_court_revolt_trigger_tooltip;Is NOT in revolt against the empire;;;;;;;;;;;;;x
+
+
+############Scripted Effects############
+add_revoked_imperial_office_opinion_effect_tooltip1;Other members of the Imperial Court are irritated;;;;;;;;;;;;;x
+add_revoked_imperial_office_opinion_effect_tooltip2;Other members of the Imperial Court are displeased;;;;;;;;;;;;;x
+add_revoked_imperial_office_opinion_effect_tooltip3;Other members of the Imperial Court are greatly displeased;;;;;;;;;;;;;x
+add_revoked_imperial_office_opinion_effect_tooltip4;Other members of the Imperial Court are outraged;;;;;;;;;;;;;x
+
+award_imperial_regent_effect_tooltip;Is granted the Imperial Office of [This.TopLiege.GetImperialRegentAssignableOffice];;;;;;;;;;;;;x
+revoke_imperial_regent_effect_tooltip;Will no longer hold the Imperial Office of [This.TopLiege.GetImperialRegentAssignableOffice];;;;;;;;;;;;;x
+revoke_imperial_regent_effect_tooltip2;You will take direct control of the Imperial Court;;;;;;;;;;;;;x
+award_imperial_seneschal_effect_tooltip;Is granted the Imperial Office of [This.TopLiege.GetImperialSeneschalAssignableOffice];;;;;;;;;;;;;x
+revoke_imperial_seneschal_effect_tooltip;Will no longer hold the Imperial Office of [This.TopLiege.GetImperialSeneschalAssignableOffice];;;;;;;;;;;;;x
+award_imperial_marshal_effect_tooltip;Is granted the Imperial Office of [This.TopLiege.GetImperialMarshalAssignableOffice];;;;;;;;;;;;;x
+revoke_imperial_marshal_effect_tooltip;Will no longer hold the Imperial Office of [This.TopLiege.GetImperialMarshalAssignableOffice];;;;;;;;;;;;;x
+award_imperial_lawkeeper_effect_tooltip;Is granted the Imperial Office of [This.TopLiege.GetImperialLawkeeperAssignableOffice];;;;;;;;;;;;;x
+revoke_imperial_lawkeeper_effect_tooltip;Will no longer hold the Imperial Office of [This.TopLiege.GetImperialLawkeeperAssignableOffice];;;;;;;;;;;;;x
+award_imperial_spymaster_effect_tooltip;Is granted the Imperial Office of [This.TopLiege.GetImperialSpymasterAssignableOffice];;;;;;;;;;;;;x
+revoke_imperial_spymaster_effect_tooltip;Will no longer hold the Imperial Office of [This.TopLiege.GetImperialSpymasterAssignableOffice];;;;;;;;;;;;;x
+
+add_magnanimous_emperor_influence_effect_tooltip;The §YImperial Court's§! influence will be §Greduced§!;;;;;;;;;;;;;x
+
+############Misc Custom Loc############
+new_imperial_regent_relative;[imperial_regent_relative_candidate.GetTitledFirstName];;;;;;;;;;;;;x
+new_imperial_regent_society;[imperial_regent_society_candidate.GetTitledFirstName];;;;;;;;;;;;;x
+
+imperial_court_grandmaster_emperor;[This.TopLiege.GetTitle];;;;;;;;;;;;;x
+imperial_court_grandmaster_regent;[This.TopLiege.GetImperialRegentAssignableOffice];;;;;;;;;;;;;x
+
+############Decisions############
+fix_special_court_bug;Click Me!;;;;;;;;;;;;;x
+fix_special_court_bug_desc;Fixes a bug with leaderless special Imperial Courts;;;;;;;;;;;;;x
+
+ipc_imprisoned_by_from;Is imprisoned by [From.GetBestName];;;;;;;;;;;;;x
+ipc_no_viceroyalty;Does NOT hold any viceroyalties;;;;;;;;;;;;;x
+
+establish_imperial_court;Establish an Imperial Court;;;;;;;;;;;;;x
+establish_imperial_court_desc;By establishing an Imperial Court you will introduce your realm to a whole new administrative system. The more power you give away, the higher the benefits - but the more dangerous realm politics become. Balance must be maintained.;;;;;;;;;;;;;x
+establish_imperial_court_allow;No Powerful Vassal has a negative opinion of you;;;;;;;;;;;;;x
+establish_imperial_court_effect;An Imperial Court will be established;;;;;;;;;;;;;x
+establish_imperial_court_byzantine;Establish the Byzantine Imperial Court;;;;;;;;;;;;;x
+establish_imperial_court_byzantine_desc;By establishing an Imperial Court you will introduce your realm to a whole new administrative system. The more power you give away, the higher the benefits - but the more dangerous realm politics become. Balance must be maintained.;;;;;;;;;;;;;x
+establish_imperial_court_hre;Establish the Holy Roman Imperial Court;;;;;;;;;;;;;x
+establish_imperial_court_hre_desc;By establishing an Imperial Court you will introduce your realm to a whole new administrative system. The more power you give away, the higher the benefits - but the more dangerous realm politics become. Balance must be maintained.;;;;;;;;;;;;;x
+establish_imperial_court_arabia;Establish the Arabian Imperial Court;;;;;;;;;;;;;x
+establish_imperial_court_arabia_desc;By establishing an Imperial Court you will introduce your realm to a whole new administrative system. The more power you give away, the higher the benefits - but the more dangerous realm politics become. Balance must be maintained.;;;;;;;;;;;;;x
+establish_imperial_court_roman;Establish the Roman Imperial Court;;;;;;;;;;;;;x
+establish_imperial_court_roman_desc;By establishing an Imperial Court you will introduce your realm to a whole new administrative system. The more power you give away, the higher the benefits - but the more dangerous realm politics become. Balance must be maintained.;;;;;;;;;;;;;x
+form_the_hre_with_ipc;Form the Holy Roman Empire and Imperial Court;;;;;;;;;;;;;x
+form_the_hre_with_ipc_desc;With a realm to rival that of Charlemagne, I could be recognized as his true successor and, invoking Translatio Imperii, have [Root.RelHead.GetBestName] crown me Emperor of a new Roman Empire in the west!\n§RIf you don't use this decision instead of the regular "Form the Holy Roman Empire" decision, your game may break!§!;;;;;;;;;;;;;x
+form_the_hre_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+form_the_hre_early_with_ipc;Found the Holy Roman Empire and Imperial Court;;;;;;;;;;;;;x
+form_the_hre_early_with_ipc_desc;Is it not every [Root.GetTitle]'s dream to be recognized as the true successor to the Caesars? I can invoke the translatio imperii and have [Root.RelHead.GetBestName] crown me as ruler of a new Roman Empire in the west!\n§RIf you don't use this decision instead of the regular "Found the Holy Roman Empire" decision, your game may break!§!;;;;;;;;;;;;;x
+form_the_hre_early_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+restore_roman_empire_with_ipc;Restore the Roman Empire and the Roman Imperial Court;;;;;;;;;;;;;x
+restore_roman_empire_with_ipc_desc;If Rome and other key territories of the old empire could be reclaimed, the Byzantine Empire would win recognition in the eyes of the West as the true and rightful continuation of the Roman State.\n§RIf you don't use this decision instead of the regular "Restore the Roman Empire" decision, your game may break!§!;;;;;;;;;;;;;x
+restore_roman_empire_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+restore_byzantine_empire_with_ipc;Restore Byzantium and the Byzantine Imperial Court;;;;;;;;;;;;;x
+restore_byzantine_empire_with_ipc_desc;I will gather the crown lands of Byzantium, and raise the old banners of Rome once more.\n§RIf you don't use this decision instead of the regular "Restore Byzantium" decision, your game may break!§!;;;;;;;;;;;;;x
+restore_byzantine_empire_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+
+adopt_chinese_imperialism_with_ipc;Adopt Chinese Imperialism and move the Court;;;;;;;;;;;;;x
+adopt_chinese_imperialism_with_ipc_desc;Adopt a system of Chinese Imperialism which has one divine Emperor ruling over multiple vassals in a system of regulations and bureaucracy.\n§RIf you don't use this decision instead of the regular "Adopt Chinese Imperialism" decision, your game may break!§!;;;;;;;;;;;;;x
+adopt_chinese_imperialism_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+form_lcr_with_ipc;Form the Slavic Union and move the Court;;;;;;;;;;;;;x
+form_lcr_with_ipc_desc;Ancestral legends tell of a time when the three brothers, Lech, Czech, and Rus, went their own way to find fertile lands for their people. Today, countless generations later, all the children of this same ancestral blood are united under my rule, so it is only fit that we rid ourselves of our old and petty borders and formally establish one land in which all slavs will be as brothers and sisters.\n§RIf you don't use this decision instead of the regular "Form the Slavic Union" decision, your game may break!§!;;;;;;;;;;;;;x
+form_lcr_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+form_the_outremer_with_ipc;Form an Empire of the Outremer and move the Court;;;;;;;;;;;;;x
+form_the_outremer_with_ipc_desc;I will not stop until the dream of reconquering everything that was once Christian has been fulfilled. I will make sure the Holy Land stays safe and Christian to the end of times.\n§RIf you don't use this decision instead of the regular "Form an Empire of the Outremer" decision, your game may break!§!;;;;;;;;;;;;;x
+form_the_outremer_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+
+create_russian_empire_with_ipc;Create the Empire of Russia and move the Court;;;;;;;;;;;;;x
+create_russian_empire_with_ipc_desc;Holding the Empire of Rus is not enough – some are starting to think that 'the Empire of Russia' has a better ring to it...\n§RIf you don't use this decision instead of the regular "Create the Empire of Russia" decision, your game may break!§!;;;;;;;;;;;;;x
+create_russian_empire_with_ipc_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+
+dismantle_imperial_court;Dismantle the Imperial Court;;;;;;;;;;;;;x
+dismantle_imperial_court_desc;The Imperial Court served its purpose, for a time. But the power plays of my subjects have caused more harm than good.  It is time for power to return to where it belongs.;;;;;;;;;;;;;x
+dismantle_imperial_court_allow;Has NOT assigned any §MImperial Offices§!;;;;;;;;;;;;;x
+dismantle_imperial_court_effect;§RThe Imperial Court will be dismantled!§!;;;;;;;;;;;;;x
+
+
+
+move_imperial_capital;Move the Imperial Capital;;;;;;;;;;;;;x
+move_imperial_capital_desc;Your current capital is not considered to be the Imperial Capital of [Root.PrimaryTitle.GetName]. This should be remedied.;;;;;;;;;;;;;x
+move_imperial_capital_allow;The current Imperial Capital is NOT targeted by any mission;;;;;;;;;;;;;x
+move_imperial_capital_effect;[Root.Capital.GetName] becomes the new Imperial Capital.\nAll Imperial buildings will be transferred;;;;;;;;;;;;;x
+claim_imperial_capital;Claim the Imperial Capital;;;;;;;;;;;;;x
+claim_imperial_capital_desc;You are in control of the empire but not its current Imperial Capital. As [Root.GetTitle] it is yours by right.;;;;;;;;;;;;;x
+claim_imperial_capital_allow;NOT in control of the Imperial Capital;;;;;;;;;;;;;x
+
+
+reduce_ipc_influence_army_levy;Conscript from Imperial Court;;;;;;;;;;;;;x
+reduce_ipc_influence_army_levy_desc;The court is growing strong. One way to reduce some of its influence is to take control of some of your vassals' levies. This will of course make most of them rather unhappy...;;;;;;;;;;;;;x
+reduce_ipc_influence_army_levy_allow;Have NOT taken conscripts in the last decade[Root.GetIpcConscriptCooldown];;;;;;;;;;;;;x
+reduce_ipc_influence_army_levy_cooldown;   §YReady on: [This.reduce_ipc_influence_army_levy_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+reduce_ipc_influence_army_levy_effect;The Imperial Court's influence will be reduced!;;;;;;;;;;;;;x
+reduce_ipc_influence_army_levy_effect2;Landed members will be furious.;;;;;;;;;;;;;x
+
+
+
+
+#targeted
+ipc_emperor_introduce_child;Introduce to the Imperial Court;;;;;;;;;;;;;x
+ipc_emperor_introduce_child_desc;As [From.GetTitle] your children can easily join the Imperial Court. [Root.GetFirstName] will also be immediately promoted to the second rank.;;;;;;;;;;;;;x
+ipc_introduce_child_power;Introduce to the Imperial Court;;;;;;;;;;;;;x
+ipc_introduce_child_power_desc;By using some of your influence, you are able to bypass some of the usual requirements and secure a position at court for [Root.GetFirstName].;;;;;;;;;;;;;x
+ipc_gain_favor_power;Force Favor;;;;;;;;;;;;;x
+ipc_gain_favor_power_desc;Due to your rank and influence at the Imperial Court, you are able to force [Root.GetBestName] to owe you a favor.;;;;;;;;;;;;;x
+ipc_leave_faction_lawkeeper_power;Order to Leave Factions;;;;;;;;;;;;;x
+ipc_leave_faction_lawkeeper_power_desc;As [Root.GetImperialLawkeeperAssignableOffice] of [Root.TopLiege.PrimaryTitle.GetName], you are able to command [Root.GetBestName] to leave all factions.;;;;;;;;;;;;;x
+ipc_leave_faction_lawkeeper_power_effect;[Root.GetBestName] will leave all factions and will not be able to join any for some time.;;;;;;;;;;;;;x
+ipc_declare_traitor_spymaster_power;Declare Traitor;;;;;;;;;;;;;x
+ipc_declare_traitor_spymaster_power_desc;Using your influence as [This.GetImperialSpymasterAssignableOffice] you are able to accuse [Root.GetBestName] of treason.;;;;;;;;;;;;;x
+ipc_declare_traitor_spymaster_power_allow;Have NOT recently declared a traitor[Root.GetIpcTraitorCooldown];;;;;;;;;;;;;x
+ipc_declare_traitor_spymaster_power_cooldown;   §YReady on: [This.ipc_declare_traitor_spymaster_power_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+ipc_declare_traitor_spymaster_power_effect;Will give [Root.GetFirstName]'s liege just cause to imprison [Root.GetHerHim].;;;;;;;;;;;;;x
+ipc_relinquish_titles_power;Relinquish Non-De Jure Titles;;;;;;;;;;;;;x
+ipc_relinquish_titles_power_desc;[Root.GetBestName] has titles within [Root.GetHerHis] realm that are not rightfully [Root.GetHersHis]. Order [Root.GetHerHim] to release all such lands and vassals to their de jure lieges.;;;;;;;;;;;;;x
+ipc_relinquish_titles_power_allow;Has titles that are NOT de jure of §Y[Root.PrimaryTitle.GetName]§!;;;;;;;;;;;;;x
+ipc_relinquish_titles_power_allow2;Neither §Y[Root.GetFirstName]§! or [Root.GetHerHis] §Yvassals§! are at war;;;;;;;;;;;;;x
+ipc_relinquish_titles_power_allow3;You are NOT currently waiting for a response from [Root.GetFirstName];;;;;;;;;;;;;x
+ipc_relinquish_titles_power_effect;Since the Imperial Court's influence is high enough, [Root.GetFirstName] might rebel against this demand;;;;;;;;;;;;;x
+ipc_relinquish_titles_power_effect2;[Root.GetFirstName] will release all lands and vassals of which [Root.GetSheHe] is not the §Yde jure§! liege.;;;;;;;;;;;;;x
+
+
+
+#society
+request_to_rank_up_within_society_imperial_court;Request a Higher Position.;;;;;;;;;;;;;x
+request_to_rank_up_within_society_imperial_court_desc;necessary?;;;;;;;;;;;;;x
+
+request_to_rank_up_within_society_imperial_court_currency_tooltip;Has §Y[Root.Society.GetCurrency]§! greater or equal to [Root.GetImperialCourtCurrencyRankUp];;;;;;;;;;;;;x
+imperial_court_rank_up_1;§Y750§!;;;;;;;;;;;;;x
+imperial_court_rank_up_2;§Y1250§!;;;;;;;;;;;;;x
+request_to_rank_up_within_society_imperial_court_vassal_tooltip;Must be a direct vassal of the [Root.TopLiege.GetTitle];;;;;;;;;;;;;x
+request_to_rank_up_within_society_imperial_court_close_relative_tooltip;Is an unlanded close relative of the [Root.TopLiege.GetTitle];;;;;;;;;;;;;x
+request_to_rank_up_within_society_imperial_court_tooltip_days;Must have been at the §Y[Root.GetSocietyRank]§! rank for at least five years;;;;;;;;;;;;;x
+request_to_rank_up_within_society_imperial_court_effect;The [Root.GetImperialGrandmaster] must approve your request;;;;;;;;;;;;;x
+
+ipc_donate_to_court_power;Donate Funds to the Imperial Court;;;;;;;;;;;;;x
+ipc_donate_to_court_power_desc;By donating some funds to the Imperial Court you will be able to obtain some §Y[Root.Society.GetCurrency]§!. The higher your ranking at court, the less effective this is.;;;;;;;;;;;;;x
+ipc_donate_to_court_power_allow;Have NOT recently donated to the Imperial Court[Root.GetIpcDonateCooldown];;;;;;;;;;;;;x
+ipc_donate_to_court_power_cooldown;   §YReady on: [This.ipc_donate_to_court_power_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+ipc_visit_imperial_capital_power;Visit the Imperial Capital;;;;;;;;;;;;;x
+ipc_visit_imperial_capital_power_desc;The Imperial Capital is a bustling metropolis where fortunes can be made - and broken. Why not spend some time exploring the city?;;;;;;;;;;;;;x
+ipc_visit_imperial_capital_power_allow;Have NOT recently visited the Imperial Capital[Root.GetIpcCapitalCooldown];;;;;;;;;;;;;x
+ipc_visit_imperial_capital_cooldown;   §YReady on: [This.ipc_visit_imperial_capital_power_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+
+ipc_hereditary_viceroyalty_power;Make Viceroyalty Hereditary;;;;;;;;;;;;;x
+ipc_hereditary_viceroyalty_power_desc;By using a considerable amount of your influence, you will be able to turn one of your ducal viceroyalties into a hereditary one.;;;;;;;;;;;;;x
+ipc_hereditary_viceroyalty_power_allow;NOT enacted this decision before;;;;;;;;;;;;;x
+ipc_hereditary_viceroyalty_power_effect;will become hereditary;;;;;;;;;;;;;x
+ipc_hereditary_viceroyalty_power_effect2;The [Root.TopLiege.GetTitle] will be outraged;;;;;;;;;;;;;x
+
+
+ipc_choose_imperial_focus_power;Choose Court Focus;;;;;;;;;;;;;x
+ipc_choose_imperial_focus_power_desc;Having obtained a high rank at court, you might find it worthwhile to focus on one area of expertise.;;;;;;;;;;;;;x
+ipc_levy_extra_tax_seneschal_power;Levy Extra Tax;;;;;;;;;;;;;x
+ipc_levy_extra_tax_seneschal_power_desc;As [This.GetImperialSeneschalAssignableOffice], you may use some of your influence to levy an extra tax from your demesne.;;;;;;;;;;;;;x
+ipc_levy_extra_tax_seneschal_power_allow;Have NOT recently taken extra taxes[Root.GetIpcTaxCooldown];;;;;;;;;;;;;x
+ipc_levy_extra_tax_seneschal_power_cooldown;   §YReady on: [This.ipc_levy_extra_tax_seneschal_power_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+ipc_employ_imperial_commander_power;Invite Imperial Commander;;;;;;;;;;;;;x
+ipc_employ_imperial_commander_power_desc;Due to your status as [This.GetImperialMarshalAssignableOffice], you are able to invite a commander from the Imperial Army to serve you personally.;;;;;;;;;;;;;x
+ipc_employ_imperial_commander_power_allow;Have NOT recently invited an Imperial Commander[Root.GetIpcCommanderCooldown];;;;;;;;;;;;;x
+ipc_employ_imperial_commander_power_cooldown;   §YReady on: [This.ipc_employ_imperial_commander_power_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+
+faction_ipc_takeover_ultimatum;Demand Abdication;Demander l'abdication;Forderungsverzicht;;Exigir abdicación;;;;;;;;;x
+faction_ipc_takeover_ultimatum_desc;Present an ultimatum to §Y[Root.Liege.GetBestName]§!, demanding that [Root.Liege.GetSheHe] abdicates in favor of the most influential member of the Imperial Court. If [Root.Liege.GetSubjectPronoun] refuses to comply, your Faction will rise in revolt.;;;;;;;;;;;;;x
+faction_ipc_takeover_ultimatum_effect;[Root.Liege.GetTitledName] receives an ultimatum.;;;;;;;;;;;;;x
+
+
+###mission assigning
+ipc_show_assignable_missions;Show Assignable Missions;;;;;;;;;;;;;x
+ipc_show_assignable_missions_desc;Adds a modifier that shows all missions you could potentially assign.;;;;;;;;;;;;;x
+ipc_hide_assignable_missions;Hide Assignable Missions;;;;;;;;;;;;;x
+ipc_hide_assignable_missions_desc;Removes the modifier;;;;;;;;;;;;;x
+assigned_ipc_mission_effect;[FromFrom.GetBestName] will be assigned the mission;;;;;;;;;;;;;x
+
+#seneschal
+build_imperial_road_mission_decision;Build Imperial Road;;;;;;;;;;;;;x
+build_imperial_road_mission_decision_desc;Having an Imperial Road in the province would make travel easier and improve trade.;;;;;;;;;;;;;x
+build_imperial_road_mission_decision_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+build_imperial_road_mission_decision_allow;Is the current Imperial Capital;;;;;;;;;;;;;x
+build_imperial_road_mission_decision_allow_2;A neighboring province has an Imperial Road;;;;;;;;;;;;;x
+build_imperial_road_mission_decision_allow_3;A road is NOT already under construction in the province;;;;;;;;;;;;;x
+build_imperial_road_mission_decision_modifier;Is the owner of the province;;;;;;;;;;;;;x
+improve_imperial_capital_mission_decision;Improve Imperial Capital;;;;;;;;;;;;;x
+improve_imperial_capital_mission_decision_desc;As the center of the empire, the Imperial Capital must be prosperous. The assigned character will work to increase the progress of court construction projects in the capital.;;;;;;;;;;;;;x
+improve_imperial_capital_mission_decision_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+improve_imperial_capital_mission_decision_allow;A member of the Imperial Court is NOT already assigned this mission;;;;;;;;;;;;;x
+improve_imperial_capital_mission_decision_allow_2;All possible buildings are NOT already built in the Imperial Capital;;;;;;;;;;;;;x
+
+#marshal
+organize_military_drill_mission_decision;Organize Military Drill;;;;;;;;;;;;;x
+organize_military_drill_mission_decision_desc;This will have various effects on all Lords and Commanders that attend the Military Drill. The strength of these effects depend on the assigned character's abilities.;;;;;;;;;;;;;x
+organize_military_drill_mission_decision_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+organize_military_drill_mission_decision_allow;A military drill is NOT already being organized;;;;;;;;;;;;;x
+distribute_levy_recompense_mission_decision;Distribute Levy Recompense;;;;;;;;;;;;;x
+distribute_levy_recompense_mission_decision_desc;The empire is at war, and the elites are irritated at having to pay upkeep for their levies. Let the empire compensate these nobles, and renew their loyalty!;;;;;;;;;;;;;x
+distribute_levy_recompense_mission_decision_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+distribute_levy_recompense_mission_decision_allow;[Root.TopLiege.PrimaryTitle.GetName] is at war;;;;;;;;;;;;;x
+distribute_levy_recompense_mission_decision_allow2;At least §Y5§! direct vassals of the §Y[Root.TopLiege.GetTitle]§! are upset about raised levies;;;;;;;;;;;;;x
+imperial_conquest_mission_decision;Imperial Conquest;;;;;;;;;;;;;x
+imperial_conquest_mission_decision_desc;The empire must grow! Order a vassal to conquer a duchy with aid from the Imperial Court.;;;;;;;;;;;;;x
+imperial_conquest_mission_decision_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+imperial_conquest_mission_decision_allow;Borders [From.TopLiege.PrimaryTitle.GetName];;;;;;;;;;;;;x
+imperial_conquest_mission_decision_allow2;There is NOT an ongoing Imperial Conquest;;;;;;;;;;;;;x
+imperial_conquest_mission_decision_modifier;Is likely to gain support from fellow members;;;;;;;;;;;;;x
+imperial_conquest_mission_decision_modifier2;Is very likely to gain support from fellow members;;;;;;;;;;;;;x
+imperial_conquest_mission_decision_modifier3;Is extremely likely to gain support from fellow members;;;;;;;;;;;;;x
+
+
+#lawkeeper
+change_culture_mission_decision;Convert to Liege Culture;;;;;;;;;;;;;x
+change_culture_mission_decision_desc;[Root.GetBestName]'s culture differs from [Root.TopLiege.GetBestName], which is a cause of unneccessary conflict within the realm. Perhaps a member of the Imperial Court can convince [Root.GetHerHim] to adopt our ways and in turn, [Root.GetSheHe] might also win over [Root.GetHerHis] heir.;;;;;;;;;;;;;x
+change_culture_mission_decision_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+organize_festival_mission_decision;Organize Festival;;;;;;;;;;;;;x
+organize_festival_mission_decision_desc;As any ruler knows, a disgruntled peasant can easily spark rebellion. By assigning someone to organize a festival, the peasants will be able to forget their woes for a time.;;;;;;;;;;;;;x
+organize_festival_mission_decision_allow;There is a risk of a revolt in the empire;;;;;;;;;;;;;x
+organize_festival_mission_decision_allow2;There is NOT an ongoing festival;;;;;;;;;;;;;x
+
+
+
+
+#spymaster
+investigate_secret_religions_mission_decision;Investigate Secret Cults;;;;;;;;;;;;;x
+investigate_secret_religions_mission_decision_desc;Many people claim to confess the one true faith, but the realm must be constantly vigilant lest corruption and heresy enter the hearts of the populace. Launch an empire wide investigation to root out secret cults.;;;;;;;;;;;;;x
+investigate_secret_religions_mission_decision_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+investigate_secret_religions_mission_decision_allow;An investigation is NOT already in progress;;;;;;;;;;;;;x
+
+infiltrate_court_mission;Infiltrate Court;;;;;;;;;;;;;x
+infiltrate_court_mission_desc;Send a member of the court to plant an agent in [Root.GetFirstName]'s court, making plots easier against [Root.GetFirstName] and [Root.GetHerHis] courtiers.;;;;;;;;;;;;;x
+infiltrate_court_mission_third_party;§YAssignable Character Requirements§!:;;;;;;;;;;;;;x
+infiltrate_court_mission_allow;Is NOT already targeted by this mission;;;;;;;;;;;;;x
+infiltrate_court_mission_allow2;An Imperial Court infiltrator is NOT already present;;;;;;;;;;;;;x
+infiltrate_court_mission_modifier;[Root.GetBestName] considers [This.GetFirstName] attractive;;;;;;;;;;;;;x
+
+#AI and Office decisions
+ai_move_to_imperial_capital;AI moving to imperial capital;;;;;;;;;;;;;x
+ai_move_to_imperial_capital_desc;If you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ai_assign_imperial_regent;AI regent assigning;;;;;;;;;;;;;x
+ai_assign_imperial_regent_desc;If you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+ai_revoke_imperial_regent;AI regent revoking;;;;;;;;;;;;;x
+ai_revoke_imperial_regent_desc;If you see this please report it on the Imperial Courts mod page;;;;;;;;;;;;;x
+
+revoke_imperial_regent;Revoke Imperial Office;;;;;;;;;;;;;x
+revoke_imperial_regent_desc;[Root.GetBestName] is currently overseeing court life. But perhaps it is time for someone else to take on these duties.;;;;;;;;;;;;;x
+revoke_imperial_office;Revoke Imperial Office;;;;;;;;;;;;;x
+revoke_imperial_office_desc;[Root.GetBestName] currently holds high office at court. But perhaps it is time to relieve [Root.GetHerHim] of these duties.;;;;;;;;;;;;;x
+award_imperial_office_seneschal;Award the Imperial Office of [Root.TopLiege.GetImperialSeneschalAssignableOffice];;;;;;;;;;;;;x
+award_imperial_office_seneschal_desc;By granting the Imperial Office of [Root.TopLiege.GetImperialSeneschalAssignableOffice] to [Root.GetBestName], [Root.GetSheHe] will be responsible for handling the finances and economic growth of the realm. This would make it easier for you to focus on other tasks.;;;;;;;;;;;;;x
+award_imperial_office_marshal;Award the Imperial Office of [Root.TopLiege.GetImperialMarshalAssignableOffice];;;;;;;;;;;;;x
+award_imperial_office_marshal_desc;By granting the Imperial Office of [Root.TopLiege.GetImperialMarshalAssignableOffice] to [Root.GetBestName], [Root.GetSheHe] will be responsible for commanding and maintaining the realm's armies. This would make it easier for you to focus on other tasks.;;;;;;;;;;;;;x
+award_imperial_office_lawkeeper;Award the Imperial Office of [Root.TopLiege.GetImperialLawkeeperAssignableOffice];;;;;;;;;;;;;x
+award_imperial_office_lawkeeper_desc;By granting the Imperial Office of [Root.TopLiege.GetImperialLawkeeperAssignableOffice] to [Root.GetBestName], [Root.GetSheHe] will act as intermediary between you and your subjects. This would make it easier for you to focus on other tasks.;;;;;;;;;;;;;x
+award_imperial_office_spymaster;Award the Imperial Office of [Root.TopLiege.GetImperialSpymasterAssignableOffice];;;;;;;;;;;;;x
+award_imperial_office_spymaster_desc;By granting the Imperial Office of [Root.TopLiege.GetImperialSpymasterAssignableOffice] to [Root.GetBestName], [Root.GetSheHe] will be responsible for the realm's more subtle affairs. This would make it easier for you to focus on other tasks.;;;;;;;;;;;;;x
+
+
+
+#test_man;[Root.Society.GetSocietyNameCap];;;;;;;;;;;;;x
+#test_man_desc;[Root.GetSocietyNameCap];;;;;;;;;;;;;x
+
+
+
+
+
+

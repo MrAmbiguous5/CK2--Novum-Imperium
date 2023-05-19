@@ -10,6 +10,7 @@ d_swabia = { # Schwaben
 	dignity = 100
 	allow = { title_duke_basic_allow = yes }
 }
+
 # Lower Lorraine
 d_lower_lorraine = { # Niederlothringen
 	color = { 37 114 179 }
@@ -18,6 +19,7 @@ d_lower_lorraine = { # Niederlothringen
 	dignity = 5
 	allow = { title_duke_basic_allow = yes }
 }
+
 # Bavaria
 d_bavaria = { # Baiern
 	color = { 56 67 158 }
@@ -26,6 +28,7 @@ d_bavaria = { # Baiern
 	dignity = 100
 	allow = { title_duke_basic_allow = yes }
 }
+
 # Saxony
 d_saxony = { # Sachsen
 	color = { 78 98 40 }
@@ -34,6 +37,7 @@ d_saxony = { # Sachsen
 	capital = 258 # Lüneburg
 	allow = { title_duke_basic_allow = yes }
 }
+
 # Franconia
 d_franconia = { # Franken
 	color = { 130 100 100 }

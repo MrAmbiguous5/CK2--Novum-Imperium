@@ -1,0 +1,304 @@
+
+####Character Triggers
+
+ipc_has_education_diplomacy_trigger = {
+	custom_tooltip = {
+		text = ipc_has_education_diplomacy_trigger_tooltip
+		OR = {
+			trait = naive_appeaser
+			trait = underhanded_rogue
+			trait = charismatic_negotiator
+			trait = grey_eminence
+		}
+	}
+}
+
+ipc_has_education_martial_trigger = {
+	custom_tooltip = {
+		text = has_martial_education_tt
+		OR = {
+			trait = misguided_warrior
+			trait = tough_soldier
+			trait = skilled_tactician
+			trait = brilliant_strategist
+		}
+	}
+}
+
+ipc_has_education_stewardship_trigger = {
+	custom_tooltip = {
+		text = ipc_has_education_stewardship_trigger_tooltip
+		OR = {
+			trait = indulgent_wastrel
+			trait = thrifty_clerk
+			trait = fortune_builder
+			trait = midas_touched
+		}
+	}
+}
+
+ipc_has_education_intrigue_trigger = {
+	custom_tooltip = {
+		text = ipc_has_education_intrigue_trigger_tooltip
+		OR = {
+			trait = amateurish_plotter
+			trait = flamboyant_schemer
+			trait = intricate_webweaver
+			trait = elusive_shadow
+		}
+	}
+}
+
+ipc_has_education_learning_trigger = {
+	custom_tooltip = {
+		text = ipc_has_education_learning_trigger_tooltip
+		OR = {
+			trait = detached_priest
+			trait = martial_cleric
+			trait = scholarly_theologian
+			trait = mastermind_theologian
+		}
+	}
+}
+
+
+can_interact_with_imperial_court_revolt_trigger = {
+	trigger_if = {
+		limit = {
+			NAND = {
+				tier = emperor
+				any_demesne_title = { temporary = no }
+			}
+		}
+		custom_tooltip = {
+			text = can_interact_with_imperial_court_revolt_trigger_tooltip
+			NOR = {
+				liege_before_war = { war_with = PREV }
+				top_liege = { liege_before_war = { war_with = PREV } }
+			}
+		}
+	}
+}
+
+is_loyal_to_empire_trigger = {
+	custom_tooltip = {
+		text = is_loyal_to_empire_trigger_tooltip
+		NOT = { top_liege = { PREV = { is_foe = PREV } } }
+		OR = {
+			trait = content
+			in_faction = no
+			AND = {
+				liege = { tier = emperor }
+				has_position = loyalist
+			}
+			AND = {
+				top_liege = { is_council_content = yes }
+				is_powerful_vassal = yes
+				is_councillor = yes
+			}
+		}
+		OR = {
+			opinion = { who = top_liege value = 50 }
+			has_opinion_modifier = { who = top_liege modifier = opinion_loyal_servant }
+			top_liege = { is_friend = PREV }
+			AND = {
+				dynasty = top_liege
+				opinion = { who = top_liege value = 25 }
+			}
+		}
+	}
+}
+
+is_strong_emperor_trigger = {
+	is_weak_emperor_trigger = no
+	
+	#accepted by religion
+	OR = {
+		AND = {
+			religion_group = christian
+			OR = {
+				trait = crowned_by_pope
+				trait = crowned_by_myself
+				trait = baptized_by_pope
+				trait = born_in_the_purple
+			}
+		}
+		AND = {
+			OR = {
+				religion_group = jewish_group
+				religion_group = zoroastrian_group
+			}
+			OR = {
+				trait = saoshyant
+				trait = saoshyant_descendant
+				has_top_tier_education_trait_trigger = yes
+			}
+		}
+		AND = {
+			religion_group = muslim
+			NOR = { 
+				trait = drunkard
+				trait = hedonist
+				trait = decadent
+				trait = bad_priest_muslim
+			}
+			OR = {
+				controls_religion = yes
+				decadence <= 23
+				trait = faqih
+				trait = hafiz
+			}
+		}
+		AND = {
+			religion_group = pagan_group
+			OR = {
+				controls_religion = yes
+				trait = strong
+				trait = robust
+				trait = shieldmaiden
+				AND = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+					OR = {
+						trait = bloodthirsty_gods_2
+						trait = bloodthirsty_gods_3
+					}
+				}
+				AND = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+					OR = {
+						trait = ravager
+						trait = seaking
+						trait = sea_queen
+					}
+				}
+			}
+		}
+		AND = {
+			religion_group = indian_group
+			OR = {
+				is_benevolent_trigger = yes
+				is_pious_trigger = yes
+			}
+		}
+	}
+	
+	##strong realm presence
+	OR = {
+		demesne_size >= 4
+		NOT = { any_vassal = { relative_power_to_liege = 0.2 } }
+		primary_title = { has_law = law_voting_power_0 }
+		any_voter = {
+			count = 2
+			has_position = loyalist
+			higher_tier_than = count
+		}
+ 	}
+}
+
+
+is_weak_emperor_trigger = {
+	OR = {
+		calc_true_if = {
+			amount = 2
+			is_adult = no
+			trait = infirm
+			trait = imbecile
+			trait = slow
+			trait = weak
+			trait = feeble
+			trait = blinded
+			is_any_kinslayer_trigger = yes
+			has_character_modifier = bedridden_illness
+			demesne_size <= 2
+		}
+		trait = incapable
+		trait = eunuch
+	}
+}
+
+has_offensive_leadership_trait_trigger = {
+	OR = {
+		trait = light_foot_leader
+		trait = heavy_infantry_leader
+		trait = cavalry_leader
+		trait = organizer
+		trait = experimenter
+		trait = flanker
+		trait = aggressive_leader
+		trait = siege_leader
+		trait = holy_warrior
+		trait = war_elephant_leader
+		trait = master_of_flame
+		trait = sapper
+	}
+}
+
+has_defensive_leadership_trait_trigger = {
+	OR = {
+		trait = inspiring_leader
+		trait = trickster
+		trait = defensive_leader
+		trait = unyielding_leader
+		trait = narrow_flank_leader
+		trait = logistics_expert
+		trait = levy_coordinator
+	}
+}
+
+has_terrain_leadership_trait_trigger = {
+	OR = {
+		trait = flat_terrain_leader
+		trait = rough_terrain_leader
+		trait = mountain_terrain_leader
+		trait = desert_terrain_leader
+		trait = jungle_terrain_leader
+		trait = winter_soldier
+	}
+}
+
+can_be_given_imperial_conquest_land_trigger = {
+	NOT = { character = ROOT }
+	is_landed = no
+	is_heir = no
+	is_lowborn = no
+	prisoner = no
+	#age >= 12
+	#age < 60
+	same_realm = ROOT
+	
+	#no people that cant generate heirs
+	OR = {
+		can_marry = yes
+		is_married = yes
+	}
+	imperial_court_female_membership_trigger = yes
+}
+
+
+####Misc
+
+#title
+can_be_relinquished_trigger = {
+	is_patrician = no
+	is_landless_type_title = no
+	mercenary = no
+	holy_order = no
+	temporary = no
+}
+
+
+
+
+
+
+
+

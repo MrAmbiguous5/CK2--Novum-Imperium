@@ -12,107 +12,30 @@
 1000035186 = {
 	name="Carroz"
 	culture ="catalan"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 5
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}	
 }
 1000035187 = {
 	name="di Sardegna"
 	culture ="italian"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 1
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}
 }
 1000035188 = {
 	name="d'Evoli"
 	culture ="neapolitan"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 172
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}		
 }
 1000035189 = {
 	name="d'Sangineto"
 	culture ="neapolitan"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 173
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}		
 }
 1000035190 = {
 	name="Pipino"
 	culture ="neapolitan"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 171
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}	
 }
 1000035191 = {
 	name="Scalafani"
 	culture ="sicilian"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 177
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}		
 }
 1000035192 = {
 	name="de Mari"	
 	culture ="ligurian"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 12
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}
 }
 1000035193 = {
 	name="di Tarsia"	
@@ -157,17 +80,6 @@
 1000035203 = {
 	name="Papafava"	
 	culture ="venetian"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 59
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}
 }
 1000035204 = {
 	name="de'Conti"	
@@ -180,17 +92,6 @@
 1000035206 = {
 	name="Arzignani"	
 	culture ="venetian"
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 60
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}
 }
 1000035207 = {
 	name="di Ganzera"	

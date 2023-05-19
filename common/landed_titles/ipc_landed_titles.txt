@@ -1,0 +1,107 @@
+
+#moved to later update
+
+#####generic imperial guards#####
+
+#d_imperial_guard_christian_1 = {
+#	color={ 100 100 100 }
+#	color2={ 255 255 255 }
+#	
+#	primary = yes
+#	landless = yes
+#	can_be_claimed = no
+#	can_be_usurped = no
+#	extra_ai_eval_troops = 10000
+#	dignity = 100
+#	
+#	short_name = yes 
+#	dynasty_title_names = no
+#	creation_requires_capital = no
+#	
+#	title = imperial_guard_christian_male
+#	title_female = imperial_guard_christian_female
+#	foa = imperial_guard_christian_foa
+#	
+#	gain_effect = { set_government_type = imperial_guard_government }
+#	allow = { always = no }
+#}
+
+#d_imperial_guard_christian_2 = {
+#	color={ 100 100 100 }
+#	color2={ 255 255 255 }
+#	
+#	primary = yes
+#	landless = yes
+#	can_be_claimed = no
+#	can_be_usurped = no
+#	extra_ai_eval_troops = 10000
+#	dignity = 100
+#	
+#	short_name = yes 
+#	dynasty_title_names = no
+#	creation_requires_capital = no
+#	
+#	title = imperial_guard_christian_male
+#	title_female = imperial_guard_christian_female
+#	foa = imperial_guard_christian_foa
+#	
+#	gain_effect = { set_government_type = imperial_guard_government }
+#	allow = { always = no }
+#}
+
+#d_imperial_guard_christian_3 = {
+#	color={ 100 100 100 }
+#	color2={ 255 255 255 }
+#	
+#	primary = yes
+#	landless = yes
+#	can_be_claimed = no
+#	can_be_usurped = no
+#	extra_ai_eval_troops = 10000
+#	dignity = 100
+#	
+#	short_name = yes 
+#	dynasty_title_names = no
+#	creation_requires_capital = no
+#	
+#	title = imperial_guard_christian_male
+#	title_female = imperial_guard_christian_female
+#	foa = imperial_guard_christian_foa
+#	
+#	gain_effect = { set_government_type = imperial_guard_government }
+#	allow = { always = no }
+#}
+
+#capital = 
+
+
+
+#d_imperial_guard_byzantine = {
+#	color={ 100 100 100 }
+#	color2={ 255 255 255 }
+#	
+#	primary = yes
+#	landless = yes
+#	can_be_claimed = no
+#	can_be_usurped = no
+#	extra_ai_eval_troops = 10000
+#	dignity = 100
+#	
+#	short_name = yes 
+#	dynasty_title_names = no
+#	creation_requires_capital = no
+#	
+#	title = imperial_guard_byzantine_male
+#	title_female = imperial_guard_byzantine_female
+#	foa = imperial_guard_byzantine_foa
+#	
+#	gain_effect = { set_government_type = imperial_guard_government }
+#	allow = { always = no }
+#}
+
+
+
+
+
+
+

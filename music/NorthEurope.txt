@@ -1,0 +1,265 @@
+song = {
+	name = "1125666250.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+					culture_group = finno-ugric
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "1257785082.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "3418012797.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "4022743040.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Bismarck2.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Bismark.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "German1.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "German2.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "France1.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+					culture_group = latin
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "France2.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+					culture_group = latin
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "France3.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+					culture_group = latin
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Napoleon1.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+					culture_group = latin
+				}
+			}
+		}
+	}		
+}
+song = {
+	name = "Napoleon2.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+					culture_group = latin
+				}
+			}
+		}
+	}		
+}
+song = {
+	name = "1086430505.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = north_germanic
+					culture_group = central_germanic
+					culture_group = west_germanic
+					culture_group = celtic
+					culture_group = latin
+				}
+			}
+		}
+	}		
+}

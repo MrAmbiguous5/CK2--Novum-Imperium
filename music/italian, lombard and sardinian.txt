@@ -1,0 +1,154 @@
+song = {
+	name = "Italian Medieval song 7.ogg"
+	song_name = "Ecco la Primavera"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = italian }
+			NOT = { culture = sardinian }
+			NOT = { culture = lombard }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Italian Medieval song 8.ogg"
+	song_name = "Saltarello La Regina"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = italian }
+			NOT = { culture = sardinian }
+			NOT = { culture = lombard }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 0.6
+}
+song = {
+	name = "Italy 14th c. Anon Amor mi fa cantar alla francesca.ogg"
+	song_name = "Amor Mi Fa Cantar"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = italian }
+			NOT = { culture = sardinian }
+			NOT = { culture = lombard }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Jacopo da Bologna (c.1335-1355) Lux purpurata Diligite justitiam.ogg"
+	song_name = "Lux Purpurata/Diligite Justitiam"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = italian }
+			NOT = { culture = sardinian }
+			NOT = { culture = lombard }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Vincenzo da Rimini (14th c.) Nell'acqua chiara.ogg"
+	song_name = "Nell'acqua Chiara"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = italian }
+			NOT = { culture = sardinian }
+			NOT = { culture = lombard }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Francesco Landini (c.1325-1397) Adiu, adiu dous dame.ogg"
+	song_name = "Adiu, Adiu Dous Dame"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = italian }
+			NOT = { culture = sardinian }
+			NOT = { culture = lombard }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}
+song = {
+	name = "Maestro Piero (c.1300-1350) Or qua, compagni.ogg"
+	song_name = "Or Qua, Compagni"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { culture = italian }
+			NOT = { culture = sardinian }
+			NOT = { culture = lombard }
+		}
+		modifier = {
+			factor = 4
+			war = no
+		}	
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+	volume = 2
+}

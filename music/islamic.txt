@@ -1,0 +1,876 @@
+song = {
+	name = "101.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.2
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+					}
+				}
+			}
+	}		
+}
+
+song = {
+	name = "102.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}
+				
+}
+
+song = {
+	name = "2033818485.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "2849154923.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "3279857999.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Ahmed1.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Ahmed2.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Arabia1.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Arabia2.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Arabia3.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Assyria.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+					culture = turkish
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Atonement.ogg"
+	
+	chance = {
+		factor = 1.5
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = altaic
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture_group = altaic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Nascence.ogg"
+	
+	chance = {
+		factor = 1.25
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = altaic
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture_group = altaic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Confluence.ogg"
+	
+	chance = {
+		factor = 1.25
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = altaic
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture_group = altaic
+				}
+			}
+		}
+	}		
+}
+song = {
+	name = "Caravanserai.ogg"
+	
+	chance = {
+		factor = 1.25
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Dreamcatcher.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 2
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Persia2.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 2
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+song = {
+	name = "Persia3.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 2
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+song = {
+	name = "Egypt1.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.2
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Egypt2.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.3
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 2
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.2
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Harun1.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 2
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Harun2.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 2
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Hasret.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+
+song = {
+	name = "Marco.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Sun.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = arabic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = arabic
+					culture = assyrian
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Pashto.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = indo-aryan
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = altaic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture = assyrian
+					culture_group = indo-aryan
+					culture_group = altaic
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Supplication.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = indo-aryan
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = altaic
+		}
+		modifier = {
+			factor = 1.5
+			culture_group = iranian
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					culture_group = iranian
+					culture_group = altaic
+					culture_group = indo-aryan
+				}
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Blackrock.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 2
+			culture_group = altaic
+		}
+	}		
+}
+
+song = {
+	name = "3308115358.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			culture_group = altaic
+		}
+		modifier = {
+			factor = 2.5
+			culture_group = Tibeto-Burman
+			culture_group = chinese
+		}
+	}		
+}
+
+song = {
+	name = "3308115358.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 2
+			culture_group = altaic
+		}
+		modifier = {
+			factor = 2.5
+			culture_group = tibeto-burman
+			culture_group = chinese
+		}
+	}		
+}

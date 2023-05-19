@@ -17,17 +17,6 @@ name="Carraresi"
 1000035222 = {
 name="di Camposampiero"
  culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 51
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035223 = {
 name="Barbarigo"
@@ -60,17 +49,6 @@ name="Transalgardi"
 1000035230 = {
 name="Dunio"
  culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 57
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035231 = {
 name="Loredan"
@@ -119,17 +97,6 @@ name="Caiselli"
 1000035242 = {
 name="Colloredo"
  culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 58
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}   
 }
 1000035243 = {
 name="Lanthieri"
@@ -166,17 +133,6 @@ name="Carbonara"
 1000035251 = {
 name="di Collalto"
  culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 52
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035252 = {
 name="Tempesta"
@@ -257,17 +213,6 @@ name="Briani"
 1000035271 = {
 name="Arneri"
  culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 56
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}  
 }
 1000035272 = {
 name="Barbaran"
@@ -344,47 +289,14 @@ name="Erizzo"
 1000035290 = {
 name="Valaresso"
  culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 55
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}   
 }
 1000035315 = {
 name="Ragogna"
   culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 53
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}   
 }
 1000035314 = {
 name="Strassoldo"
   culture = venetian
-	coat_of_arms = {
-		template = 0
-		layer = {
-			texture = 17
-			texture_internal = 54
-			emblem = 0
-			color = 0
-			color = 0
-			color = 0
-		}
-	}   
 }
 1000035316 = {
 name="da Romano"

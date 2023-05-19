@@ -1,0 +1,533 @@
+# Messalian
+
+saintly_bloodline_messalian_01 = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = no
+	flags = { saintly_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_cross_messalian
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_messalian_02 = {
+	monthly_character_piety = 0.05
+	christian_church_opinion = 5
+	saintly_monastic_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = no
+	flags = { saintly_bloodline monastic_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_cross_messalian
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_messalian_03 = {
+	monthly_character_piety = 0.2
+	saintly_cultural_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = no
+	flags = { saintly_bloodline cultural_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_cross_messalian
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_culture_TT
+			FROM = {
+				founder = {
+					culture = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_messalian_04 = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	christian_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = no
+	flags = { saintly_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_cross_messalian
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_messalian_05 = {
+	monthly_character_piety = 0.2
+	jewish_group_opinion = 15
+	saintly_jewish_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = no
+	flags = { saintly_bloodline jewish_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_cross_messalian
+	active = {
+		religion_group = christian
+	}
+}
+
+saintly_bloodline_messalian_06 = {
+	saintly_theologians_bloodline = 1
+	monthly_character_piety = 0.2
+	inheritance = patrilineal
+	allow_bastards = no
+	flags = { saintly_bloodline theologian_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_cross_messalian
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+# Ancestor Worship
+
+mta_ancestor_worship_bloodline_01_generic = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_generic_pagan
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_norse = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_norse
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_slavic = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_slavic_arrow
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_baltic = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_romuva_tree
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_finnish = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_finnish_bearpaw
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_hellenic = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_stoics
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_african = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_african_waves
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_bon = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_bon_candle
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_01_tengri = {
+	monthly_character_piety = 0.2
+	command_modifier = {
+		religious_enemy = 0.15
+	}	
+	saintly_defender_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_tengri_eagle
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_generic = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_generic_pagan
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_norse = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_norse
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_slavic = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_slavic_arrow
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_baltic = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_romuva_tree
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_finnish = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_finnish_bearpaw
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_hellenic = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_stoics
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_african = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_african_waves
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_bon = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_bon_candle
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_02_tengri = {
+	command_modifier = {
+		religious_enemy = 0.05
+	}	
+	pagan_church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_tengri_eagle
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+mta_ancestor_worship_bloodline_03_generic = {
+	saintly_theologians_bloodline = 1
+	monthly_character_piety = 0.2
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_peace
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}

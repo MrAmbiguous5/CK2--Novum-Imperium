@@ -1,0 +1,6322 @@
+
+########Pagan Courts########
+imperial_court_pagan_1 = {
+	primary_attribute = diplomacy
+	is_secret = no
+	criminal = no
+	devil_worshipper = no
+	
+	opinion_to_other_members = 0
+	opinion_per_rank_above = +2
+	
+	society_rank_up_decision = request_to_rank_up_within_society_imperial_court
+	society_ranks_gfx = generic_ranks
+	sound = imperial_court_pagan_interface
+	
+	non_interference = { always = no }
+	
+	active = { has_global_flag = imperial_court_pagan_1_active }
+	indestructible = no
+
+	can_join_society = { can_join_pagan_imperial_court_trigger = yes }
+	
+	show_society = {
+		OR = {
+			primary_title = { title = event_target:imperial_court_pagan_1_title }
+			top_liege = {
+				primary_title = { title = event_target:imperial_court_pagan_1_title }
+			}
+			liege_before_war = {
+				primary_title = { title = event_target:imperial_court_pagan_1_title }
+			}
+			top_liege = {
+				liege_before_war = { 
+					primary_title = { title = event_target:imperial_court_pagan_1_title }
+				}
+			}
+		}
+	}
+	potential = {
+		OR = {
+			primary_title = { title = event_target:imperial_court_pagan_1_title }
+			top_liege = {
+				primary_title = { title = event_target:imperial_court_pagan_1_title }
+			}
+			liege_before_war = {
+				primary_title = { title = event_target:imperial_court_pagan_1_title }
+			}
+			top_liege = {
+				liege_before_war = { 
+					primary_title = { title = event_target:imperial_court_pagan_1_title }
+				}
+			}
+		}
+	}
+	
+	society_rank = {
+		level = 1
+		limit = 100
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.1
+		}
+		powers = {
+			ipc_donate_to_court_power
+			ipc_visit_imperial_capital_power
+		}
+	}
+	
+	society_rank = {
+		level = 2
+		limit = 50
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.25
+			global_tax_modifier = 0.05
+		}
+		powers = {
+			ipc_introduce_child_power
+			ipc_hereditary_viceroyalty_power
+		}
+	}
+	
+	society_rank = {
+		level = 3
+		limit = 10 
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.5
+			global_tax_modifier = 0.1
+			global_levy_size = 0.05
+		}
+		powers = {
+			ipc_gain_favor_power
+			ipc_choose_imperial_focus_power
+		}
+		custom_tooltip = imperial_office_power_tooltip
+	}
+
+	society_rank = {
+		level = 4
+		limit = 1
+		startup_limit = 0
+		modifier = { 
+			monthly_character_prestige = 1
+			vassal_opinion = 10
+		}
+		powers = {
+			ipc_relinquish_titles_power
+		}
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_imperial_court_pagan
+    	
+		#vanilla uses 1 stat with 0.5
+		per_attribute = {
+    		name = diplomacy
+    		value = 0.15
+    	}
+		per_attribute = {
+    		name = martial
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = stewardship
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = intrigue
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = learning
+    		value = 0.05
+    	}
+		
+		###rank
+		triggered_gain = {
+			desc = ipc_emperor_gain
+			trigger = {
+				tier = emperor
+				is_society_grandmaster = yes
+			}
+			value = 10
+		}
+		triggered_gain = {
+			desc = ipc_regent_gain
+			trigger = {
+				NOT = { tier = emperor }
+				is_society_grandmaster = yes
+			}
+			value = 5
+		}
+		
+		###emperor only
+		#influence
+		triggered_gain = {
+			desc = ipc_emperor_influence_1
+			trigger = { has_character_modifier = imperial_court_influence_1 }
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_2
+			trigger = { has_character_modifier = imperial_court_influence_2 }
+			value = 1.5
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_4
+			trigger = { has_character_modifier = imperial_court_influence_4 }
+			value = -1.5
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_5
+			trigger = { has_character_modifier = imperial_court_influence_5 }
+			value = -3
+		}
+		
+		#tribute chests
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 2
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count = 2
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 3
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count = 3
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 4
+					}
+				}
+			}
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count == 4
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 5
+					}
+				}
+			}
+			value = 4
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count == 5
+				}
+			}
+			value = 5
+		}
+		
+		###office efficiency
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 1
+				}
+			}
+			value = 0.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 2
+				}
+			}
+			value = 0.5
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 3
+				}
+			}
+			value = 0.75
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 4
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 5
+				}
+			}
+			value = 1.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 6
+				}
+			}
+			value = 1.5
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 7
+				}
+			}
+			value = 1.75
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 8
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 9
+				}
+			}
+			value = 2.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 10
+				}
+			}
+			value = 2.5
+		}	
+		##education
+		triggered_gain = {
+			desc = ipc_poor_education_gain
+			trigger = {
+				OR = {
+					trait = naive_appeaser
+					trait = misguided_warrior
+					trait = indulgent_wastrel
+					trait = amateurish_plotter
+					trait = detached_priest
+				}
+			}
+			value = -1
+		}
+		
+		triggered_gain = {
+			desc = ipc_good_education_gain
+			trigger = {
+				OR = {
+					trait = charismatic_negotiator
+					trait = skilled_tactician
+					trait = fortune_builder
+					trait = intricate_webweaver
+					trait = scholarly_theologian
+				}
+			}
+			value = 1
+		}
+		
+		triggered_gain = {
+			desc = ipc_excellent_education_gain
+			trigger = {
+				OR = {
+					trait = grey_eminence
+					trait = brilliant_strategist
+					trait = midas_touched
+					trait = elusive_shadow
+					trait = mastermind_theologian
+				}
+			}
+			value = 2
+		}
+		
+		
+		#health and condition
+		has_trait = {
+			trait = stressed
+			value = -1
+		}
+		has_trait = {
+			trait = depressed
+			value = -1
+		}
+		has_trait = {
+			trait = lunatic
+			value = -2
+		}
+		has_trait = {
+			trait = possessed
+			value = -2
+		}
+		has_trait = {
+			trait = drunkard
+			value = -2
+		}
+		has_trait = {
+			trait = infirm
+			value = -3
+		}
+		triggered_gain = {
+			desc = ipc_illness_gain
+			trigger = {
+				is_ill = yes
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_disfigured_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = disfigured
+				top_liege = { trait = disfigured }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_eyed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_eyed
+				top_liege = { trait = one_eyed }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_handed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_handed
+				top_liege = { trait = one_handed }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_legged_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_legged
+				top_liege = { trait = one_legged }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_fat_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = is_fat
+				top_liege = { trait = is_fat }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_fat_dislikes_gain
+			trigger = {
+				trait = is_fat
+				top_liege = { NOT = { trait = is_fat } }
+			}
+			value = -1
+		}
+		
+		
+		
+		##genetics
+		triggered_gain = {
+			desc = ipc_fair_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = fair
+				top_liege = { is_valid_attraction = ROOT }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_quick_gain
+			trigger = { trait = quick }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_slow_gain
+			trigger = { trait = slow }
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_genius_gain
+			trigger = { trait = genius }
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_imbecile_gain
+			trigger = { trait = imbecile }
+			value = -3
+		}
+		triggered_gain = {
+			desc = ipc_inbred_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = inbred 
+				top_liege = {
+					NOR = {
+						religion = messalian
+						religion = zoroastrian
+						has_religion_feature = religion_holy_family
+						has_religion_feature = religion_feature_zun
+					}
+				}
+			}
+			value = -2
+		}
+		triggered_gain = {
+			desc = ipc_robust_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = robust 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_sturdy_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = sturdy 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_feeble_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = feeble 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_shrewd_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shrewd 
+				top_liege = { NOT = { trait = dull } }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shrewd_dislikes_gain
+			trigger = {
+				trait = shrewd 
+				top_liege = { trait = dull }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_dull_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = dull 
+				top_liege = { trait = dull }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_dull_dislikes_gain
+			trigger = {
+				trait = dull 
+				top_liege = { NOT = { trait = dull } }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_groomed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = groomed 
+				top_liege = { 
+					OR = {
+						trait = groomed 
+						AND = {
+							NOT = { trait = uncouth }
+							is_valid_attraction = ROOT
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_groomed_dislikes_gain
+			trigger = {
+				trait = groomed 
+				top_liege = { trait = uncouth }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_uncouth_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = uncouth 
+				top_liege = { trait = uncouth }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_uncouth_dislikes_gain
+			trigger = {
+				trait = uncouth 
+				top_liege = { trait = groomed }
+			}
+			value = -1
+		}
+		
+		
+		
+		##lifestyles
+		triggered_gain = {
+			desc = ipc_court_lifestyle_gain
+			trigger = {
+				OR = {
+					trait = ipc_imperial_administrator
+					trait = ipc_imperial_aristrocrat
+					trait = ipc_imperial_commander
+				}
+			}
+			value = 2
+		}
+		
+		triggered_gain = {
+			desc = ipc_administrator_lifestyle_gain
+			trigger = { trait = administrator }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_architect_lifestyle_gain
+			trigger = { trait = architect }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_duelist_lifestyle_gain
+			trigger = { trait = duelist }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_hedonist_lifestyle_gain
+			trigger = { trait = hedonist }
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_hunter_lifestyle_gain
+			trigger = { trait = hunter }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_impaler_lifestyle_gain
+			trigger = { 
+				trait = impaler 
+				top_liege = {
+					NOR = {
+						trait = impaler
+						trait = cruel
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_scholar_lifestyle_gain
+			trigger = { trait = scholar }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_strategist_lifestyle_gain
+			trigger = { trait = strategist }
+			value = 1
+		}
+		
+		
+		##virtues
+		triggered_gain = {
+			desc = ipc_chaste_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = chaste 
+				top_liege = { trait = chaste }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_chaste_dislikes_gain
+			trigger = {
+				trait = chaste 
+				top_liege = { trait = lustful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_temperate_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = temperate 
+				top_liege = { trait = temperate }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_temperate_dislikes_gain
+			trigger = {
+				trait = temperate 
+				top_liege = { trait = gluttonous }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_charitable_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = charitable 
+				top_liege = { trait = charitable }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_charitable_dislikes_gain
+			trigger = {
+				trait = charitable 
+				top_liege = { trait = greedy }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_diligent_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = diligent 
+				top_liege = { trait = diligent }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_diligent_dislikes_gain
+			trigger = {
+				trait = diligent 
+				top_liege = { trait = slothful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_patient_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = patient 
+				top_liege = { trait = patient }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_patient_dislikes_gain
+			trigger = {
+				trait = patient 
+				top_liege = { trait = wroth }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_kind_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = kind 
+				top_liege = { trait = kind }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_kind_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = kind 
+				top_liege = { 
+					OR = {
+						trait = envious 
+						trait = cruel 
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_humble_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = humble 
+				top_liege = { trait = humble }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_humble_dislikes_gain
+			trigger = {
+				trait = humble 
+				top_liege = { trait = proud }
+			}
+			value = -1
+		}
+		
+		
+		##sins
+		triggered_gain = {
+			desc = ipc_lustful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = lustful 
+				top_liege = { trait = lustful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_lustful_dislikes_gain
+			trigger = {
+				trait = lustful 
+				top_liege = { trait = chaste }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_gluttonous_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = gluttonous 
+				top_liege = { trait = gluttonous }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gluttonous_dislikes_gain
+			trigger = {
+				trait = gluttonous 
+				top_liege = { trait = temperate }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_greedy_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = greedy 
+				top_liege = { trait = greedy }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_greedy_dislikes_gain
+			trigger = {
+				trait = greedy 
+				top_liege = { trait = charitable }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_slothful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = slothful 
+				top_liege = { trait = slothful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_slothful_dislikes_gain
+			trigger = {
+				trait = slothful 
+				top_liege = { trait = diligent }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_wroth_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = wroth 
+				top_liege = { trait = wroth }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_wroth_dislikes_gain
+			trigger = {
+				trait = wroth 
+				top_liege = { trait = patient }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_envious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = envious 
+				top_liege = { trait = envious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_envious_dislikes_gain
+			trigger = {
+				trait = envious 
+				top_liege = { trait = kind }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_proud_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = proud 
+				top_liege = { trait = proud }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_proud_dislikes_gain
+			trigger = {
+				trait = proud 
+				top_liege = { trait = humble }
+			}
+			value = -1
+		}
+		
+		
+		##misc
+		triggered_gain = {
+			desc = ipc_ambitious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = ambitious 
+				top_liege = { trait = ambitious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_ambitious_dislikes_gain
+			trigger = {
+				trait = ambitious 
+				top_liege = { trait = content }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_arbitrary_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = arbitrary 
+				top_liege = { trait = arbitrary }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_arbitrary_dislikes_gain
+			trigger = {
+				trait = arbitrary 
+				top_liege = { trait = just }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_brave_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = brave 
+				top_liege = { trait = brave }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_brave_dislikes_gain
+			trigger = {
+				trait = brave 
+				top_liege = { trait = craven }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_content_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = content 
+				top_liege = { trait = content }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_content_dislikes_gain
+			trigger = {
+				trait = content 
+				top_liege = { trait = ambitious }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_craven_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = craven 
+				top_liege = { trait = craven }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_craven_dislikes_gain
+			trigger = {
+				trait = craven 
+				top_liege = { trait = brave }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_cruel_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = cruel 
+				top_liege = { trait = cruel }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_cruel_dislikes_gain
+			trigger = {
+				trait = cruel 
+				top_liege = { trait = kind }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_cynical_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = cynical 
+				top_liege = { trait = cynical }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_cynical_dislikes_gain
+			trigger = {
+				trait = cynical 
+				top_liege = { trait = zealous }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_deceitful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = deceitful 
+				top_liege = { trait = deceitful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_deceitful_dislikes_gain
+			trigger = {
+				trait = deceitful 
+				top_liege = { trait = honest }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_erudite_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = erudite 
+				top_liege = { trait = erudite }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gregarious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = gregarious 
+				top_liege = { trait = gregarious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gregarious_dislikes_gain
+			trigger = {
+				trait = gregarious 
+				top_liege = { trait = shy }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_honest_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = honest 
+				top_liege = { trait = honest }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_honest_dislikes_gain
+			trigger = {
+				trait = honest 
+				top_liege = { trait = deceitful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_just_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = just 
+				top_liege = { trait = just }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_just_dislikes_gain
+			trigger = {
+				trait = just 
+				top_liege = { trait = arbitrary }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_paranoid_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = paranoid 
+				top_liege = { trait = paranoid }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_paranoid_dislikes_gain
+			trigger = {
+				trait = paranoid 
+				top_liege = { trait = trusting }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_shy_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shy 
+				top_liege = { trait = shy }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shy_dislikes_gain
+			trigger = {
+				trait = shy 
+				top_liege = { trait = gregarious }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_stubborn_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = stubborn 
+				top_liege = { trait = stubborn }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_trusting_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = trusting 
+				top_liege = { trait = trusting }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_trusting_dislikes_gain
+			trigger = {
+				trait = trusting 
+				top_liege = { trait = paranoid }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_zealous_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zealous 
+				top_liege = { trait = zealous }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zealous_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zealous 
+				top_liege = { 
+					OR = {
+						trait = cynical 
+						trait = sympathy_christendom 
+						trait = sympathy_indian 
+						trait = sympathy_islam 
+						trait = sympathy_judaism 
+						trait = sympathy_pagans 
+						trait = sympathy_zoroastrianism 
+					}
+				}
+			}
+			value = -1
+		}
+		
+		
+		##misc
+		triggered_gain = {
+			desc = ipc_bad_priest_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = bad_priest_zoroastrian 
+					trait = bad_priest_aztec
+					trait = bad_priest_norse
+					trait = bad_priest_tengri
+					trait = bad_priest_muslim
+					trait = bad_priest_christian
+				}
+				top_liege = { religion = ROOT }
+			}
+			value = -2
+		}
+		
+		triggered_gain = {
+			desc = ipc_crusader_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = ares_own 
+					trait = crusader 
+					trait = eagle_warrior 
+					trait = gondi_shahansha 
+					trait = romuvas_own 
+					trait = shaddai 
+					trait = mujahid 
+					trait = nyames_shield 
+					trait = peruns_chosen 
+					trait = tengri_warrior 
+					trait = ukkos_shield 
+					trait = valhalla_bound 
+					trait = sun_warrior 
+				}
+				top_liege = { 
+					religion = ROOT
+					NOR = {
+						trait = cynical 
+						trait = sympathy_christendom 
+						trait = sympathy_indian 
+						trait = sympathy_islam 
+						trait = sympathy_judaism 
+						trait = sympathy_pagans 
+						trait = sympathy_zoroastrianism 
+					}
+				}
+			}
+			value = 2
+		}
+		
+		triggered_gain = {
+			desc = ipc_kow_tow_dislikes_gain
+			trigger = {
+				OR = {
+					trait = kow_tow_completed_tier_1 
+					trait = kow_tow_completed_tier_2
+					trait = kow_tow_completed_tier_3
+				}
+			}
+			value = -3
+		}
+		
+		triggered_gain = {
+			desc = ipc_kinslayer_dislikes_gain
+			trigger = {
+				OR = {
+					trait = kinslayer 
+					trait = familial_kinslayer
+					trait = dynastic_kinslayer
+					trait = tribal_kinslayer
+				}
+			}
+			value = -3
+		}
+		has_trait = {
+			trait = blinded
+			value = -2
+		}
+		has_trait = {
+			trait = cannibal_trait
+			value = -3
+		}
+		has_trait = {
+			trait = eunuch
+			value = 5
+		}
+		triggered_gain = {
+			desc = ipc_excommunicated_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = excommunicated
+				top_liege = { religion = ROOT }
+			}
+			value = -3
+		}
+		has_trait = {
+			trait = in_hiding
+			value = -3
+		}
+		has_trait = {
+			trait = varangian
+			value = 2
+		}
+		
+		#####Society Specific#####
+		####pagans
+		triggered_gain = {
+			desc = ipc_berserker_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = berserker
+				top_liege = { religion_openly_norse_or_reformed_trigger = yes }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shieldmaiden_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shieldmaiden
+				top_liege = { religion_group = pagan_group }
+			}
+			value = 1
+		}
+		##zodiacs
+		#aries
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_aries
+				top_liege = { 
+					OR = {
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_leo
+						trait = zodiac_sagittarius
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_aries
+				top_liege = {
+					OR = {
+						trait = zodiac_libra
+						trait = zodiac_cancer
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = -1
+		}
+		#taurus
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_taurus
+				top_liege = { 
+					OR = {
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_virgo
+						trait = zodiac_capricorn
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_taurus
+				top_liege = {
+					OR = {
+						trait = zodiac_scorpio
+						trait = zodiac_leo
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = -1
+		}
+		#gemini
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_gemini
+				top_liege = { 
+					OR = {
+						trait = zodiac_gemini
+						trait = zodiac_aries
+						trait = zodiac_leo
+						trait = zodiac_libra
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_gemini
+				top_liege = {
+					OR = {
+						trait = zodiac_sagittarius
+						trait = zodiac_virgo
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = -1
+		}
+		#cancer
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_cancer
+				top_liege = { 
+					OR = {
+						trait = zodiac_cancer
+						trait = zodiac_taurus
+						trait = zodiac_virgo
+						trait = zodiac_scorpio
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_cancer
+				top_liege = {
+					OR = {
+						trait = zodiac_capricorn
+						trait = zodiac_aries
+						trait = zodiac_libra
+					}
+				}
+			}
+			value = -1
+		}
+		#leo
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_leo
+				top_liege = { 
+					OR = {
+						trait = zodiac_leo
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_libra
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_leo
+				top_liege = {
+					OR = {
+						trait = zodiac_aquarius
+						trait = zodiac_taurus
+						trait = zodiac_scorpio
+					}
+				}
+			}
+			value = -1
+		}
+		#virgo
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_virgo
+				top_liege = { 
+					OR = {
+						trait = zodiac_virgo
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_scorpio
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_virgo
+				top_liege = {
+					OR = {
+						trait = zodiac_pisces
+						trait = zodiac_gemini
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = -1
+		}
+		#libra
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_libra
+				top_liege = { 
+					OR = {
+						trait = zodiac_libra
+						trait = zodiac_gemini
+						trait = zodiac_leo
+						trait = zodiac_sagittarius
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_libra
+				top_liege = {
+					OR = {
+						trait = zodiac_aries
+						trait = zodiac_cancer
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = -1
+		}
+		#scorpio
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_scorpio
+				top_liege = { 
+					OR = {
+						trait = zodiac_scorpio
+						trait = zodiac_cancer
+						trait = zodiac_virgo
+						trait = zodiac_capricorn
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_scorpio
+				top_liege = {
+					OR = {
+						trait = zodiac_taurus
+						trait = zodiac_leo
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = -1
+		}
+		#sagittarius
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_sagittarius
+				top_liege = { 
+					OR = {
+						trait = zodiac_sagittarius
+						trait = zodiac_aries
+						trait = zodiac_leo
+						trait = zodiac_libra
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_sagittarius
+				top_liege = {
+					OR = {
+						trait = zodiac_gemini
+						trait = zodiac_virgo
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = -1
+		}
+		#capricorn
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_capricorn
+				top_liege = { 
+					OR = {
+						trait = zodiac_capricorn
+						trait = zodiac_taurus
+						trait = zodiac_virgo
+						trait = zodiac_scorpio
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_capricorn
+				top_liege = {
+					OR = {
+						trait = zodiac_cancer
+						trait = zodiac_aries
+						trait = zodiac_libra
+					}
+				}
+			}
+			value = -1
+		}
+		#aquarius
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_aquarius
+				top_liege = { 
+					OR = {
+						trait = zodiac_aquarius
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_libra
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_aquarius
+				top_liege = {
+					OR = {
+						trait = zodiac_leo
+						trait = zodiac_taurus
+						trait = zodiac_scorpio
+					}
+				}
+			}
+			value = -1
+		}
+		#pisces
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_pisces
+				top_liege = { 
+					OR = {
+						trait = zodiac_pisces
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_scorpio
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_pisces
+				top_liege = {
+					OR = {
+						trait = zodiac_virgo
+						trait = zodiac_gemini
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = -1
+		}
+		
+		##bloodthirsty gods
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_1_likes_gain
+			trigger = {
+				trait = bloodthirsty_gods_1
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_2_likes_gain
+			trigger = {
+				trait = bloodthirsty_gods_2
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_3_likes_gain
+			trigger = { 
+				trait = bloodthirsty_gods_3
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_dislikes_gain
+			trigger = { 
+				OR = {
+					trait = bloodthirsty_gods_1
+					trait = bloodthirsty_gods_2
+					trait = bloodthirsty_gods_3
+				}
+				top_liege = {
+					NOR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = -3
+		}
+		##branches
+		triggered_gain = {
+			desc = ipc_pagan_branch_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					AND = {
+						trait = pagan_branch_1
+						top_liege = { trait = pagan_branch_1 }
+					}
+					AND = {
+						trait = pagan_branch_2
+						top_liege = { trait = pagan_branch_2 }
+					}
+					AND = {
+						trait = pagan_branch_3
+						top_liege = { trait = pagan_branch_3 }
+					}
+					AND = {
+						trait = pagan_branch_4
+						top_liege = { trait = pagan_branch_4 }
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_pagan_branch_dislikes_gain
+			trigger = {
+				OR = {
+					AND = {
+						trait = pagan_branch_1
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_2
+								trait = pagan_branch_3
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_2
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_3
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_3
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_2
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_4
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_2
+								trait = pagan_branch_3
+							}
+						}
+					}
+				}
+			}
+			value = -1
+		}
+		##raiding
+		triggered_gain = {
+			desc = ipc_raiding_1_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = viking
+					trait = pirate
+				}
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_raiding_2_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = ravager
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_raiding_3_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = seaking
+					trait = sea_queen
+				}
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		#####HIP#####
+		has_trait = {
+			trait = commander2
+			value = 1
+		}
+		has_trait = {
+			trait = commander3
+			value = 2
+		}
+		has_trait = {
+			trait = commander4
+			value = 3
+		}
+		
+		has_trait = {
+			trait = trained_diplomat
+			value = 1
+		}
+		has_trait = {
+			trait = skilled_diplomat
+			value = 2
+		}
+		has_trait = {
+			trait = master_diplomat
+			value = 3
+		}
+		has_trait = {
+			trait = perceptive
+			value = 1
+		}
+		has_trait = {
+			trait = melodious_voice
+			value = 2
+		}
+		has_trait = {
+			trait = powerful_voice
+			value = 2
+		}
+		has_trait = {
+			trait = calm_voice
+			value = 1
+		}
+		has_trait = {
+			trait = absentminded
+			value = -2
+		}
+		has_trait = {
+			trait = deaf
+			value = -2
+		}
+	}
+
+	member_score_per_attribute = 5
+	member_score_per_rank = 0
+
+	member_score = {
+		value = 10
+
+		modifier = {
+			factor = 5
+			society_rank == 3
+		}
+		modifier = {
+			factor = 15
+			top_liege = { show_scope_change = no ROOT = { show_scope_change = no is_primary_heir = PREV } }
+		}
+		
+		modifier = {
+			factor = 2
+			tier = duke
+		}
+		modifier = {
+			factor = 3
+			tier = king
+		}
+		
+		modifier = {
+			factor = 1.25
+			trait = quick
+		}
+		modifier = {
+			factor = 1.75
+			trait = genius
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_administrator
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_aristrocrat
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_commander
+		}
+		modifier = {
+			factor = 1.25
+			trait = administrator
+		}
+		modifier = {
+			factor = 1.25
+			trait = architect
+		}
+		modifier = {
+			factor = 1.25
+			trait = schemer
+		}
+		modifier = {
+			factor = 1.25
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.25
+			trait = strategist
+		}
+		modifier = {
+			factor = 1.25
+			trait = theologian
+		}
+	}
+	
+	startup_populate = {
+	    trigger = {
+			always = no
+		}
+	}
+}
+
+imperial_court_pagan_2 = {
+	primary_attribute = diplomacy
+	is_secret = no
+	criminal = no
+	devil_worshipper = no
+	
+	opinion_to_other_members = 0
+	opinion_per_rank_above = +2
+	
+	society_rank_up_decision = request_to_rank_up_within_society_imperial_court
+	society_ranks_gfx = generic_ranks
+	sound = imperial_court_pagan_interface
+	
+	non_interference = { always = no }
+	
+	active = { has_global_flag = imperial_court_pagan_2_active }
+	indestructible = no
+
+	can_join_society = { can_join_pagan_imperial_court_trigger = yes }
+	
+	show_society = {
+		OR = {
+			primary_title = { title = event_target:imperial_court_pagan_2_title }
+			top_liege = {
+				primary_title = { title = event_target:imperial_court_pagan_2_title }
+			}
+			liege_before_war = {
+				primary_title = { title = event_target:imperial_court_pagan_2_title }
+			}
+			top_liege = {
+				liege_before_war = { 
+					primary_title = { title = event_target:imperial_court_pagan_2_title }
+				}
+			}
+		}
+	}
+	potential = {
+		OR = {
+			primary_title = { title = event_target:imperial_court_pagan_2_title }
+			top_liege = {
+				primary_title = { title = event_target:imperial_court_pagan_2_title }
+			}
+			liege_before_war = {
+				primary_title = { title = event_target:imperial_court_pagan_2_title }
+			}
+			top_liege = {
+				liege_before_war = { 
+					primary_title = { title = event_target:imperial_court_pagan_2_title }
+				}
+			}
+		}
+	}
+	
+	society_rank = {
+		level = 1
+		limit = 100
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.1
+		}
+		powers = {
+			ipc_donate_to_court_power
+			ipc_visit_imperial_capital_power
+		}
+	}
+	
+	society_rank = {
+		level = 2
+		limit = 50
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.25
+			global_tax_modifier = 0.05
+		}
+		powers = {
+			ipc_introduce_child_power
+			ipc_hereditary_viceroyalty_power
+		}
+	}
+	
+	society_rank = {
+		level = 3
+		limit = 10 
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.5
+			global_tax_modifier = 0.1
+			global_levy_size = 0.05
+		}
+		powers = {
+			ipc_gain_favor_power
+			ipc_choose_imperial_focus_power
+		}
+		custom_tooltip = imperial_office_power_tooltip
+	}
+
+	society_rank = {
+		level = 4
+		limit = 1
+		startup_limit = 0
+		modifier = { 
+			monthly_character_prestige = 1
+			vassal_opinion = 10
+		}
+		powers = {
+			ipc_relinquish_titles_power
+		}
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_imperial_court_pagan
+    	
+		#vanilla uses 1 stat with 0.5
+		per_attribute = {
+    		name = diplomacy
+    		value = 0.15
+    	}
+		per_attribute = {
+    		name = martial
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = stewardship
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = intrigue
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = learning
+    		value = 0.05
+    	}
+		
+		###rank
+		triggered_gain = {
+			desc = ipc_emperor_gain
+			trigger = {
+				tier = emperor
+				is_society_grandmaster = yes
+			}
+			value = 10
+		}
+		triggered_gain = {
+			desc = ipc_regent_gain
+			trigger = {
+				NOT = { tier = emperor }
+				is_society_grandmaster = yes
+			}
+			value = 5
+		}
+		
+		###emperor only
+		#influence
+		triggered_gain = {
+			desc = ipc_emperor_influence_1
+			trigger = { has_character_modifier = imperial_court_influence_1 }
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_2
+			trigger = { has_character_modifier = imperial_court_influence_2 }
+			value = 1.5
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_4
+			trigger = { has_character_modifier = imperial_court_influence_4 }
+			value = -1.5
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_5
+			trigger = { has_character_modifier = imperial_court_influence_5 }
+			value = -3
+		}
+		
+		#tribute chests
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 2
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count = 2
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 3
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count = 3
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 4
+					}
+				}
+			}
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count == 4
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 5
+					}
+				}
+			}
+			value = 4
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count == 5
+				}
+			}
+			value = 5
+		}
+		
+		###office efficiency
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 1
+				}
+			}
+			value = 0.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 2
+				}
+			}
+			value = 0.5
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 3
+				}
+			}
+			value = 0.75
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 4
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 5
+				}
+			}
+			value = 1.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 6
+				}
+			}
+			value = 1.5
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 7
+				}
+			}
+			value = 1.75
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 8
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 9
+				}
+			}
+			value = 2.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 10
+				}
+			}
+			value = 2.5
+		}	
+		##education
+		triggered_gain = {
+			desc = ipc_poor_education_gain
+			trigger = {
+				OR = {
+					trait = naive_appeaser
+					trait = misguided_warrior
+					trait = indulgent_wastrel
+					trait = amateurish_plotter
+					trait = detached_priest
+				}
+			}
+			value = -1
+		}
+		
+		triggered_gain = {
+			desc = ipc_good_education_gain
+			trigger = {
+				OR = {
+					trait = charismatic_negotiator
+					trait = skilled_tactician
+					trait = fortune_builder
+					trait = intricate_webweaver
+					trait = scholarly_theologian
+				}
+			}
+			value = 1
+		}
+		
+		triggered_gain = {
+			desc = ipc_excellent_education_gain
+			trigger = {
+				OR = {
+					trait = grey_eminence
+					trait = brilliant_strategist
+					trait = midas_touched
+					trait = elusive_shadow
+					trait = mastermind_theologian
+				}
+			}
+			value = 2
+		}
+		
+		
+		#health and condition
+		has_trait = {
+			trait = stressed
+			value = -1
+		}
+		has_trait = {
+			trait = depressed
+			value = -1
+		}
+		has_trait = {
+			trait = lunatic
+			value = -2
+		}
+		has_trait = {
+			trait = possessed
+			value = -2
+		}
+		has_trait = {
+			trait = drunkard
+			value = -2
+		}
+		has_trait = {
+			trait = infirm
+			value = -3
+		}
+		triggered_gain = {
+			desc = ipc_illness_gain
+			trigger = {
+				is_ill = yes
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_disfigured_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = disfigured
+				top_liege = { trait = disfigured }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_eyed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_eyed
+				top_liege = { trait = one_eyed }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_handed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_handed
+				top_liege = { trait = one_handed }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_legged_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_legged
+				top_liege = { trait = one_legged }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_fat_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = is_fat
+				top_liege = { trait = is_fat }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_fat_dislikes_gain
+			trigger = {
+				trait = is_fat
+				top_liege = { NOT = { trait = is_fat } }
+			}
+			value = -1
+		}
+		
+		
+		
+		##genetics
+		triggered_gain = {
+			desc = ipc_fair_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = fair
+				top_liege = { is_valid_attraction = ROOT }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_quick_gain
+			trigger = { trait = quick }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_slow_gain
+			trigger = { trait = slow }
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_genius_gain
+			trigger = { trait = genius }
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_imbecile_gain
+			trigger = { trait = imbecile }
+			value = -3
+		}
+		triggered_gain = {
+			desc = ipc_inbred_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = inbred 
+				top_liege = {
+					NOR = {
+						religion = messalian
+						religion = zoroastrian
+						has_religion_feature = religion_holy_family
+						has_religion_feature = religion_feature_zun
+					}
+				}
+			}
+			value = -2
+		}
+		triggered_gain = {
+			desc = ipc_robust_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = robust 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_sturdy_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = sturdy 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_feeble_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = feeble 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_shrewd_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shrewd 
+				top_liege = { NOT = { trait = dull } }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shrewd_dislikes_gain
+			trigger = {
+				trait = shrewd 
+				top_liege = { trait = dull }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_dull_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = dull 
+				top_liege = { trait = dull }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_dull_dislikes_gain
+			trigger = {
+				trait = dull 
+				top_liege = { NOT = { trait = dull } }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_groomed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = groomed 
+				top_liege = { 
+					OR = {
+						trait = groomed 
+						AND = {
+							NOT = { trait = uncouth }
+							is_valid_attraction = ROOT
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_groomed_dislikes_gain
+			trigger = {
+				trait = groomed 
+				top_liege = { trait = uncouth }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_uncouth_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = uncouth 
+				top_liege = { trait = uncouth }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_uncouth_dislikes_gain
+			trigger = {
+				trait = uncouth 
+				top_liege = { trait = groomed }
+			}
+			value = -1
+		}
+		
+		
+		
+		##lifestyles
+		triggered_gain = {
+			desc = ipc_court_lifestyle_gain
+			trigger = {
+				OR = {
+					trait = ipc_imperial_administrator
+					trait = ipc_imperial_aristrocrat
+					trait = ipc_imperial_commander
+				}
+			}
+			value = 2
+		}
+		
+		triggered_gain = {
+			desc = ipc_administrator_lifestyle_gain
+			trigger = { trait = administrator }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_architect_lifestyle_gain
+			trigger = { trait = architect }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_duelist_lifestyle_gain
+			trigger = { trait = duelist }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_hedonist_lifestyle_gain
+			trigger = { trait = hedonist }
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_hunter_lifestyle_gain
+			trigger = { trait = hunter }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_impaler_lifestyle_gain
+			trigger = { 
+				trait = impaler 
+				top_liege = {
+					NOR = {
+						trait = impaler
+						trait = cruel
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_scholar_lifestyle_gain
+			trigger = { trait = scholar }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_strategist_lifestyle_gain
+			trigger = { trait = strategist }
+			value = 1
+		}
+		
+		
+		##virtues
+		triggered_gain = {
+			desc = ipc_chaste_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = chaste 
+				top_liege = { trait = chaste }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_chaste_dislikes_gain
+			trigger = {
+				trait = chaste 
+				top_liege = { trait = lustful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_temperate_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = temperate 
+				top_liege = { trait = temperate }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_temperate_dislikes_gain
+			trigger = {
+				trait = temperate 
+				top_liege = { trait = gluttonous }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_charitable_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = charitable 
+				top_liege = { trait = charitable }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_charitable_dislikes_gain
+			trigger = {
+				trait = charitable 
+				top_liege = { trait = greedy }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_diligent_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = diligent 
+				top_liege = { trait = diligent }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_diligent_dislikes_gain
+			trigger = {
+				trait = diligent 
+				top_liege = { trait = slothful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_patient_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = patient 
+				top_liege = { trait = patient }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_patient_dislikes_gain
+			trigger = {
+				trait = patient 
+				top_liege = { trait = wroth }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_kind_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = kind 
+				top_liege = { trait = kind }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_kind_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = kind 
+				top_liege = { 
+					OR = {
+						trait = envious 
+						trait = cruel 
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_humble_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = humble 
+				top_liege = { trait = humble }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_humble_dislikes_gain
+			trigger = {
+				trait = humble 
+				top_liege = { trait = proud }
+			}
+			value = -1
+		}
+		
+		
+		##sins
+		triggered_gain = {
+			desc = ipc_lustful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = lustful 
+				top_liege = { trait = lustful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_lustful_dislikes_gain
+			trigger = {
+				trait = lustful 
+				top_liege = { trait = chaste }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_gluttonous_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = gluttonous 
+				top_liege = { trait = gluttonous }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gluttonous_dislikes_gain
+			trigger = {
+				trait = gluttonous 
+				top_liege = { trait = temperate }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_greedy_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = greedy 
+				top_liege = { trait = greedy }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_greedy_dislikes_gain
+			trigger = {
+				trait = greedy 
+				top_liege = { trait = charitable }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_slothful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = slothful 
+				top_liege = { trait = slothful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_slothful_dislikes_gain
+			trigger = {
+				trait = slothful 
+				top_liege = { trait = diligent }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_wroth_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = wroth 
+				top_liege = { trait = wroth }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_wroth_dislikes_gain
+			trigger = {
+				trait = wroth 
+				top_liege = { trait = patient }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_envious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = envious 
+				top_liege = { trait = envious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_envious_dislikes_gain
+			trigger = {
+				trait = envious 
+				top_liege = { trait = kind }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_proud_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = proud 
+				top_liege = { trait = proud }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_proud_dislikes_gain
+			trigger = {
+				trait = proud 
+				top_liege = { trait = humble }
+			}
+			value = -1
+		}
+		
+		
+		##misc
+		triggered_gain = {
+			desc = ipc_ambitious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = ambitious 
+				top_liege = { trait = ambitious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_ambitious_dislikes_gain
+			trigger = {
+				trait = ambitious 
+				top_liege = { trait = content }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_arbitrary_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = arbitrary 
+				top_liege = { trait = arbitrary }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_arbitrary_dislikes_gain
+			trigger = {
+				trait = arbitrary 
+				top_liege = { trait = just }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_brave_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = brave 
+				top_liege = { trait = brave }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_brave_dislikes_gain
+			trigger = {
+				trait = brave 
+				top_liege = { trait = craven }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_content_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = content 
+				top_liege = { trait = content }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_content_dislikes_gain
+			trigger = {
+				trait = content 
+				top_liege = { trait = ambitious }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_craven_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = craven 
+				top_liege = { trait = craven }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_craven_dislikes_gain
+			trigger = {
+				trait = craven 
+				top_liege = { trait = brave }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_cruel_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = cruel 
+				top_liege = { trait = cruel }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_cruel_dislikes_gain
+			trigger = {
+				trait = cruel 
+				top_liege = { trait = kind }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_cynical_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = cynical 
+				top_liege = { trait = cynical }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_cynical_dislikes_gain
+			trigger = {
+				trait = cynical 
+				top_liege = { trait = zealous }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_deceitful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = deceitful 
+				top_liege = { trait = deceitful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_deceitful_dislikes_gain
+			trigger = {
+				trait = deceitful 
+				top_liege = { trait = honest }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_erudite_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = erudite 
+				top_liege = { trait = erudite }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gregarious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = gregarious 
+				top_liege = { trait = gregarious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gregarious_dislikes_gain
+			trigger = {
+				trait = gregarious 
+				top_liege = { trait = shy }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_honest_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = honest 
+				top_liege = { trait = honest }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_honest_dislikes_gain
+			trigger = {
+				trait = honest 
+				top_liege = { trait = deceitful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_just_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = just 
+				top_liege = { trait = just }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_just_dislikes_gain
+			trigger = {
+				trait = just 
+				top_liege = { trait = arbitrary }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_paranoid_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = paranoid 
+				top_liege = { trait = paranoid }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_paranoid_dislikes_gain
+			trigger = {
+				trait = paranoid 
+				top_liege = { trait = trusting }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_shy_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shy 
+				top_liege = { trait = shy }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shy_dislikes_gain
+			trigger = {
+				trait = shy 
+				top_liege = { trait = gregarious }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_stubborn_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = stubborn 
+				top_liege = { trait = stubborn }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_trusting_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = trusting 
+				top_liege = { trait = trusting }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_trusting_dislikes_gain
+			trigger = {
+				trait = trusting 
+				top_liege = { trait = paranoid }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_zealous_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zealous 
+				top_liege = { trait = zealous }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zealous_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zealous 
+				top_liege = { 
+					OR = {
+						trait = cynical 
+						trait = sympathy_christendom 
+						trait = sympathy_indian 
+						trait = sympathy_islam 
+						trait = sympathy_judaism 
+						trait = sympathy_pagans 
+						trait = sympathy_zoroastrianism 
+					}
+				}
+			}
+			value = -1
+		}
+		
+		
+		##misc
+		triggered_gain = {
+			desc = ipc_bad_priest_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = bad_priest_zoroastrian 
+					trait = bad_priest_aztec
+					trait = bad_priest_norse
+					trait = bad_priest_tengri
+					trait = bad_priest_muslim
+					trait = bad_priest_christian
+				}
+				top_liege = { religion = ROOT }
+			}
+			value = -2
+		}
+		
+		triggered_gain = {
+			desc = ipc_crusader_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = ares_own 
+					trait = crusader 
+					trait = eagle_warrior 
+					trait = gondi_shahansha 
+					trait = romuvas_own 
+					trait = shaddai 
+					trait = mujahid 
+					trait = nyames_shield 
+					trait = peruns_chosen 
+					trait = tengri_warrior 
+					trait = ukkos_shield 
+					trait = valhalla_bound 
+					trait = sun_warrior 
+				}
+				top_liege = { 
+					religion = ROOT
+					NOR = {
+						trait = cynical 
+						trait = sympathy_christendom 
+						trait = sympathy_indian 
+						trait = sympathy_islam 
+						trait = sympathy_judaism 
+						trait = sympathy_pagans 
+						trait = sympathy_zoroastrianism 
+					}
+				}
+			}
+			value = 2
+		}
+		
+		triggered_gain = {
+			desc = ipc_kow_tow_dislikes_gain
+			trigger = {
+				OR = {
+					trait = kow_tow_completed_tier_1 
+					trait = kow_tow_completed_tier_2
+					trait = kow_tow_completed_tier_3
+				}
+			}
+			value = -3
+		}
+		
+		triggered_gain = {
+			desc = ipc_kinslayer_dislikes_gain
+			trigger = {
+				OR = {
+					trait = kinslayer 
+					trait = familial_kinslayer
+					trait = dynastic_kinslayer
+					trait = tribal_kinslayer
+				}
+			}
+			value = -3
+		}
+		has_trait = {
+			trait = blinded
+			value = -2
+		}
+		has_trait = {
+			trait = cannibal_trait
+			value = -3
+		}
+		has_trait = {
+			trait = eunuch
+			value = 5
+		}
+		triggered_gain = {
+			desc = ipc_excommunicated_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = excommunicated
+				top_liege = { religion = ROOT }
+			}
+			value = -3
+		}
+		has_trait = {
+			trait = in_hiding
+			value = -3
+		}
+		has_trait = {
+			trait = varangian
+			value = 2
+		}
+		
+		#####Society Specific#####
+		####pagans
+		triggered_gain = {
+			desc = ipc_berserker_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = berserker
+				top_liege = { religion_openly_norse_or_reformed_trigger = yes }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shieldmaiden_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shieldmaiden
+				top_liege = { religion_group = pagan_group }
+			}
+			value = 1
+		}
+		##zodiacs
+		#aries
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_aries
+				top_liege = { 
+					OR = {
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_leo
+						trait = zodiac_sagittarius
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_aries
+				top_liege = {
+					OR = {
+						trait = zodiac_libra
+						trait = zodiac_cancer
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = -1
+		}
+		#taurus
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_taurus
+				top_liege = { 
+					OR = {
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_virgo
+						trait = zodiac_capricorn
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_taurus
+				top_liege = {
+					OR = {
+						trait = zodiac_scorpio
+						trait = zodiac_leo
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = -1
+		}
+		#gemini
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_gemini
+				top_liege = { 
+					OR = {
+						trait = zodiac_gemini
+						trait = zodiac_aries
+						trait = zodiac_leo
+						trait = zodiac_libra
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_gemini
+				top_liege = {
+					OR = {
+						trait = zodiac_sagittarius
+						trait = zodiac_virgo
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = -1
+		}
+		#cancer
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_cancer
+				top_liege = { 
+					OR = {
+						trait = zodiac_cancer
+						trait = zodiac_taurus
+						trait = zodiac_virgo
+						trait = zodiac_scorpio
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_cancer
+				top_liege = {
+					OR = {
+						trait = zodiac_capricorn
+						trait = zodiac_aries
+						trait = zodiac_libra
+					}
+				}
+			}
+			value = -1
+		}
+		#leo
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_leo
+				top_liege = { 
+					OR = {
+						trait = zodiac_leo
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_libra
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_leo
+				top_liege = {
+					OR = {
+						trait = zodiac_aquarius
+						trait = zodiac_taurus
+						trait = zodiac_scorpio
+					}
+				}
+			}
+			value = -1
+		}
+		#virgo
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_virgo
+				top_liege = { 
+					OR = {
+						trait = zodiac_virgo
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_scorpio
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_virgo
+				top_liege = {
+					OR = {
+						trait = zodiac_pisces
+						trait = zodiac_gemini
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = -1
+		}
+		#libra
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_libra
+				top_liege = { 
+					OR = {
+						trait = zodiac_libra
+						trait = zodiac_gemini
+						trait = zodiac_leo
+						trait = zodiac_sagittarius
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_libra
+				top_liege = {
+					OR = {
+						trait = zodiac_aries
+						trait = zodiac_cancer
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = -1
+		}
+		#scorpio
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_scorpio
+				top_liege = { 
+					OR = {
+						trait = zodiac_scorpio
+						trait = zodiac_cancer
+						trait = zodiac_virgo
+						trait = zodiac_capricorn
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_scorpio
+				top_liege = {
+					OR = {
+						trait = zodiac_taurus
+						trait = zodiac_leo
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = -1
+		}
+		#sagittarius
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_sagittarius
+				top_liege = { 
+					OR = {
+						trait = zodiac_sagittarius
+						trait = zodiac_aries
+						trait = zodiac_leo
+						trait = zodiac_libra
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_sagittarius
+				top_liege = {
+					OR = {
+						trait = zodiac_gemini
+						trait = zodiac_virgo
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = -1
+		}
+		#capricorn
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_capricorn
+				top_liege = { 
+					OR = {
+						trait = zodiac_capricorn
+						trait = zodiac_taurus
+						trait = zodiac_virgo
+						trait = zodiac_scorpio
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_capricorn
+				top_liege = {
+					OR = {
+						trait = zodiac_cancer
+						trait = zodiac_aries
+						trait = zodiac_libra
+					}
+				}
+			}
+			value = -1
+		}
+		#aquarius
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_aquarius
+				top_liege = { 
+					OR = {
+						trait = zodiac_aquarius
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_libra
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_aquarius
+				top_liege = {
+					OR = {
+						trait = zodiac_leo
+						trait = zodiac_taurus
+						trait = zodiac_scorpio
+					}
+				}
+			}
+			value = -1
+		}
+		#pisces
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_pisces
+				top_liege = { 
+					OR = {
+						trait = zodiac_pisces
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_scorpio
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_pisces
+				top_liege = {
+					OR = {
+						trait = zodiac_virgo
+						trait = zodiac_gemini
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = -1
+		}
+		
+		##bloodthirsty gods
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_1_likes_gain
+			trigger = {
+				trait = bloodthirsty_gods_1
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_2_likes_gain
+			trigger = {
+				trait = bloodthirsty_gods_2
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_3_likes_gain
+			trigger = { 
+				trait = bloodthirsty_gods_3
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_dislikes_gain
+			trigger = { 
+				OR = {
+					trait = bloodthirsty_gods_1
+					trait = bloodthirsty_gods_2
+					trait = bloodthirsty_gods_3
+				}
+				top_liege = {
+					NOR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = -3
+		}
+		##branches
+		triggered_gain = {
+			desc = ipc_pagan_branch_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					AND = {
+						trait = pagan_branch_1
+						top_liege = { trait = pagan_branch_1 }
+					}
+					AND = {
+						trait = pagan_branch_2
+						top_liege = { trait = pagan_branch_2 }
+					}
+					AND = {
+						trait = pagan_branch_3
+						top_liege = { trait = pagan_branch_3 }
+					}
+					AND = {
+						trait = pagan_branch_4
+						top_liege = { trait = pagan_branch_4 }
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_pagan_branch_dislikes_gain
+			trigger = {
+				OR = {
+					AND = {
+						trait = pagan_branch_1
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_2
+								trait = pagan_branch_3
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_2
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_3
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_3
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_2
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_4
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_2
+								trait = pagan_branch_3
+							}
+						}
+					}
+				}
+			}
+			value = -1
+		}
+		##raiding
+		triggered_gain = {
+			desc = ipc_raiding_1_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = viking
+					trait = pirate
+				}
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_raiding_2_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = ravager
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_raiding_3_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = seaking
+					trait = sea_queen
+				}
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		#####HIP#####
+		has_trait = {
+			trait = commander2
+			value = 1
+		}
+		has_trait = {
+			trait = commander3
+			value = 2
+		}
+		has_trait = {
+			trait = commander4
+			value = 3
+		}
+		
+		has_trait = {
+			trait = trained_diplomat
+			value = 1
+		}
+		has_trait = {
+			trait = skilled_diplomat
+			value = 2
+		}
+		has_trait = {
+			trait = master_diplomat
+			value = 3
+		}
+		has_trait = {
+			trait = perceptive
+			value = 1
+		}
+		has_trait = {
+			trait = melodious_voice
+			value = 2
+		}
+		has_trait = {
+			trait = powerful_voice
+			value = 2
+		}
+		has_trait = {
+			trait = calm_voice
+			value = 1
+		}
+		has_trait = {
+			trait = absentminded
+			value = -2
+		}
+		has_trait = {
+			trait = deaf
+			value = -2
+		}
+	}
+
+	member_score_per_attribute = 5
+	member_score_per_rank = 0
+
+	member_score = {
+		value = 10
+
+		modifier = {
+			factor = 5
+			society_rank == 3
+		}
+		modifier = {
+			factor = 15
+			top_liege = { show_scope_change = no ROOT = { show_scope_change = no is_primary_heir = PREV } }
+		}
+		
+		modifier = {
+			factor = 2
+			tier = duke
+		}
+		modifier = {
+			factor = 3
+			tier = king
+		}
+		
+		modifier = {
+			factor = 1.25
+			trait = quick
+		}
+		modifier = {
+			factor = 1.75
+			trait = genius
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_administrator
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_aristrocrat
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_commander
+		}
+		modifier = {
+			factor = 1.25
+			trait = administrator
+		}
+		modifier = {
+			factor = 1.25
+			trait = architect
+		}
+		modifier = {
+			factor = 1.25
+			trait = schemer
+		}
+		modifier = {
+			factor = 1.25
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.25
+			trait = strategist
+		}
+		modifier = {
+			factor = 1.25
+			trait = theologian
+		}
+	}
+	
+	startup_populate = {
+	    trigger = {
+			always = no
+		}
+	}
+}
+
+imperial_court_pagan_3 = {
+	primary_attribute = diplomacy
+	is_secret = no
+	criminal = no
+	devil_worshipper = no
+	
+	opinion_to_other_members = 0
+	opinion_per_rank_above = +2
+	
+	society_rank_up_decision = request_to_rank_up_within_society_imperial_court
+	society_ranks_gfx = generic_ranks
+	sound = imperial_court_pagan_interface
+	
+	non_interference = { always = no }
+	
+	active = { has_global_flag = imperial_court_pagan_3_active }
+	indestructible = no
+
+	can_join_society = { can_join_pagan_imperial_court_trigger = yes }
+	
+	show_society = {
+		OR = {
+			primary_title = { title = event_target:imperial_court_pagan_3_title }
+			top_liege = {
+				primary_title = { title = event_target:imperial_court_pagan_3_title }
+			}
+			liege_before_war = {
+				primary_title = { title = event_target:imperial_court_pagan_3_title }
+			}
+			top_liege = {
+				liege_before_war = { 
+					primary_title = { title = event_target:imperial_court_pagan_3_title }
+				}
+			}
+		}
+	}
+	potential = {
+		OR = {
+			primary_title = { title = event_target:imperial_court_pagan_3_title }
+			top_liege = {
+				primary_title = { title = event_target:imperial_court_pagan_3_title }
+			}
+			liege_before_war = {
+				primary_title = { title = event_target:imperial_court_pagan_3_title }
+			}
+			top_liege = {
+				liege_before_war = { 
+					primary_title = { title = event_target:imperial_court_pagan_3_title }
+				}
+			}
+		}
+	}
+	
+	society_rank = {
+		level = 1
+		limit = 100
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.1
+		}
+		powers = {
+			ipc_donate_to_court_power
+			ipc_visit_imperial_capital_power
+		}
+	}
+	
+	society_rank = {
+		level = 2
+		limit = 50
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.25
+			global_tax_modifier = 0.05
+		}
+		powers = {
+			ipc_introduce_child_power
+			ipc_hereditary_viceroyalty_power
+		}
+	}
+	
+	society_rank = {
+		level = 3
+		limit = 10 
+		startup_limit = 0
+		modifier = {
+			monthly_character_prestige = 0.5
+			global_tax_modifier = 0.1
+			global_levy_size = 0.05
+		}
+		powers = {
+			ipc_gain_favor_power
+			ipc_choose_imperial_focus_power
+		}
+		custom_tooltip = imperial_office_power_tooltip
+	}
+
+	society_rank = {
+		level = 4
+		limit = 1
+		startup_limit = 0
+		modifier = { 
+			monthly_character_prestige = 1
+			vassal_opinion = 10
+		}
+		powers = {
+			ipc_relinquish_titles_power
+		}
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_imperial_court_pagan
+    	
+		#vanilla uses 1 stat with 0.5
+		per_attribute = {
+    		name = diplomacy
+    		value = 0.15
+    	}
+		per_attribute = {
+    		name = martial
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = stewardship
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = intrigue
+    		value = 0.1
+    	}
+		per_attribute = {
+    		name = learning
+    		value = 0.05
+    	}
+		
+		###rank
+		triggered_gain = {
+			desc = ipc_emperor_gain
+			trigger = {
+				tier = emperor
+				is_society_grandmaster = yes
+			}
+			value = 10
+		}
+		triggered_gain = {
+			desc = ipc_regent_gain
+			trigger = {
+				NOT = { tier = emperor }
+				is_society_grandmaster = yes
+			}
+			value = 5
+		}
+		
+		###emperor only
+		#influence
+		triggered_gain = {
+			desc = ipc_emperor_influence_1
+			trigger = { has_character_modifier = imperial_court_influence_1 }
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_2
+			trigger = { has_character_modifier = imperial_court_influence_2 }
+			value = 1.5
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_4
+			trigger = { has_character_modifier = imperial_court_influence_4 }
+			value = -1.5
+		}
+		triggered_gain = {
+			desc = ipc_emperor_influence_5
+			trigger = { has_character_modifier = imperial_court_influence_5 }
+			value = -3
+		}
+		
+		#tribute chests
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 2
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count = 2
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 3
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count = 3
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 4
+					}
+				}
+			}
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count == 4
+				}
+				NOT = {
+					any_artifact = {
+						artifact_type = empire_tribute_chest
+						is_artifact_active = yes
+						count = 5
+					}
+				}
+			}
+			value = 4
+		}
+		triggered_gain = {
+			desc = ipc_emperor_tribute_gain
+			trigger = {
+				tier = emperor
+				any_artifact = {
+					artifact_type = empire_tribute_chest
+					is_artifact_active = yes
+					count == 5
+				}
+			}
+			value = 5
+		}
+		
+		###office efficiency
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 1
+				}
+			}
+			value = 0.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 2
+				}
+			}
+			value = 0.5
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 3
+				}
+			}
+			value = 0.75
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 4
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 5
+				}
+			}
+			value = 1.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 6
+				}
+			}
+			value = 1.5
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 7
+				}
+			}
+			value = 1.75
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 8
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 9
+				}
+			}
+			value = 2.25
+		}
+		triggered_gain = {
+			desc = ipc_efficiency_gain
+			trigger = {
+				society_rank > 2
+				has_instances_of_character_modifier = {
+					modifier = imperial_office_bonus
+					amount == 10
+				}
+			}
+			value = 2.5
+		}	
+		##education
+		triggered_gain = {
+			desc = ipc_poor_education_gain
+			trigger = {
+				OR = {
+					trait = naive_appeaser
+					trait = misguided_warrior
+					trait = indulgent_wastrel
+					trait = amateurish_plotter
+					trait = detached_priest
+				}
+			}
+			value = -1
+		}
+		
+		triggered_gain = {
+			desc = ipc_good_education_gain
+			trigger = {
+				OR = {
+					trait = charismatic_negotiator
+					trait = skilled_tactician
+					trait = fortune_builder
+					trait = intricate_webweaver
+					trait = scholarly_theologian
+				}
+			}
+			value = 1
+		}
+		
+		triggered_gain = {
+			desc = ipc_excellent_education_gain
+			trigger = {
+				OR = {
+					trait = grey_eminence
+					trait = brilliant_strategist
+					trait = midas_touched
+					trait = elusive_shadow
+					trait = mastermind_theologian
+				}
+			}
+			value = 2
+		}
+		
+		
+		#health and condition
+		has_trait = {
+			trait = stressed
+			value = -1
+		}
+		has_trait = {
+			trait = depressed
+			value = -1
+		}
+		has_trait = {
+			trait = lunatic
+			value = -2
+		}
+		has_trait = {
+			trait = possessed
+			value = -2
+		}
+		has_trait = {
+			trait = drunkard
+			value = -2
+		}
+		has_trait = {
+			trait = infirm
+			value = -3
+		}
+		triggered_gain = {
+			desc = ipc_illness_gain
+			trigger = {
+				is_ill = yes
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_disfigured_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = disfigured
+				top_liege = { trait = disfigured }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_eyed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_eyed
+				top_liege = { trait = one_eyed }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_handed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_handed
+				top_liege = { trait = one_handed }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_one_legged_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = one_legged
+				top_liege = { trait = one_legged }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_fat_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = is_fat
+				top_liege = { trait = is_fat }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_fat_dislikes_gain
+			trigger = {
+				trait = is_fat
+				top_liege = { NOT = { trait = is_fat } }
+			}
+			value = -1
+		}
+		
+		
+		
+		##genetics
+		triggered_gain = {
+			desc = ipc_fair_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = fair
+				top_liege = { is_valid_attraction = ROOT }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_quick_gain
+			trigger = { trait = quick }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_slow_gain
+			trigger = { trait = slow }
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_genius_gain
+			trigger = { trait = genius }
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_imbecile_gain
+			trigger = { trait = imbecile }
+			value = -3
+		}
+		triggered_gain = {
+			desc = ipc_inbred_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = inbred 
+				top_liege = {
+					NOR = {
+						religion = messalian
+						religion = zoroastrian
+						has_religion_feature = religion_holy_family
+						has_religion_feature = religion_feature_zun
+					}
+				}
+			}
+			value = -2
+		}
+		triggered_gain = {
+			desc = ipc_robust_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = robust 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_sturdy_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = sturdy 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_feeble_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = feeble 
+				top_liege = {
+					OR = {
+						government = tribal_government
+						religion_group = pagan_group
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_shrewd_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shrewd 
+				top_liege = { NOT = { trait = dull } }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shrewd_dislikes_gain
+			trigger = {
+				trait = shrewd 
+				top_liege = { trait = dull }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_dull_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = dull 
+				top_liege = { trait = dull }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_dull_dislikes_gain
+			trigger = {
+				trait = dull 
+				top_liege = { NOT = { trait = dull } }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_groomed_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = groomed 
+				top_liege = { 
+					OR = {
+						trait = groomed 
+						AND = {
+							NOT = { trait = uncouth }
+							is_valid_attraction = ROOT
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_groomed_dislikes_gain
+			trigger = {
+				trait = groomed 
+				top_liege = { trait = uncouth }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_uncouth_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = uncouth 
+				top_liege = { trait = uncouth }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_uncouth_dislikes_gain
+			trigger = {
+				trait = uncouth 
+				top_liege = { trait = groomed }
+			}
+			value = -1
+		}
+		
+		
+		
+		##lifestyles
+		triggered_gain = {
+			desc = ipc_court_lifestyle_gain
+			trigger = {
+				OR = {
+					trait = ipc_imperial_administrator
+					trait = ipc_imperial_aristrocrat
+					trait = ipc_imperial_commander
+				}
+			}
+			value = 2
+		}
+		
+		triggered_gain = {
+			desc = ipc_administrator_lifestyle_gain
+			trigger = { trait = administrator }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_architect_lifestyle_gain
+			trigger = { trait = architect }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_duelist_lifestyle_gain
+			trigger = { trait = duelist }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_hedonist_lifestyle_gain
+			trigger = { trait = hedonist }
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_hunter_lifestyle_gain
+			trigger = { trait = hunter }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_impaler_lifestyle_gain
+			trigger = { 
+				trait = impaler 
+				top_liege = {
+					NOR = {
+						trait = impaler
+						trait = cruel
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_scholar_lifestyle_gain
+			trigger = { trait = scholar }
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_strategist_lifestyle_gain
+			trigger = { trait = strategist }
+			value = 1
+		}
+		
+		
+		##virtues
+		triggered_gain = {
+			desc = ipc_chaste_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = chaste 
+				top_liege = { trait = chaste }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_chaste_dislikes_gain
+			trigger = {
+				trait = chaste 
+				top_liege = { trait = lustful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_temperate_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = temperate 
+				top_liege = { trait = temperate }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_temperate_dislikes_gain
+			trigger = {
+				trait = temperate 
+				top_liege = { trait = gluttonous }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_charitable_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = charitable 
+				top_liege = { trait = charitable }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_charitable_dislikes_gain
+			trigger = {
+				trait = charitable 
+				top_liege = { trait = greedy }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_diligent_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = diligent 
+				top_liege = { trait = diligent }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_diligent_dislikes_gain
+			trigger = {
+				trait = diligent 
+				top_liege = { trait = slothful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_patient_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = patient 
+				top_liege = { trait = patient }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_patient_dislikes_gain
+			trigger = {
+				trait = patient 
+				top_liege = { trait = wroth }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_kind_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = kind 
+				top_liege = { trait = kind }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_kind_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = kind 
+				top_liege = { 
+					OR = {
+						trait = envious 
+						trait = cruel 
+					}
+				}
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_humble_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = humble 
+				top_liege = { trait = humble }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_humble_dislikes_gain
+			trigger = {
+				trait = humble 
+				top_liege = { trait = proud }
+			}
+			value = -1
+		}
+		
+		
+		##sins
+		triggered_gain = {
+			desc = ipc_lustful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = lustful 
+				top_liege = { trait = lustful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_lustful_dislikes_gain
+			trigger = {
+				trait = lustful 
+				top_liege = { trait = chaste }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_gluttonous_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = gluttonous 
+				top_liege = { trait = gluttonous }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gluttonous_dislikes_gain
+			trigger = {
+				trait = gluttonous 
+				top_liege = { trait = temperate }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_greedy_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = greedy 
+				top_liege = { trait = greedy }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_greedy_dislikes_gain
+			trigger = {
+				trait = greedy 
+				top_liege = { trait = charitable }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_slothful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = slothful 
+				top_liege = { trait = slothful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_slothful_dislikes_gain
+			trigger = {
+				trait = slothful 
+				top_liege = { trait = diligent }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_wroth_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = wroth 
+				top_liege = { trait = wroth }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_wroth_dislikes_gain
+			trigger = {
+				trait = wroth 
+				top_liege = { trait = patient }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_envious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = envious 
+				top_liege = { trait = envious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_envious_dislikes_gain
+			trigger = {
+				trait = envious 
+				top_liege = { trait = kind }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_proud_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = proud 
+				top_liege = { trait = proud }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_proud_dislikes_gain
+			trigger = {
+				trait = proud 
+				top_liege = { trait = humble }
+			}
+			value = -1
+		}
+		
+		
+		##misc
+		triggered_gain = {
+			desc = ipc_ambitious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = ambitious 
+				top_liege = { trait = ambitious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_ambitious_dislikes_gain
+			trigger = {
+				trait = ambitious 
+				top_liege = { trait = content }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_arbitrary_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = arbitrary 
+				top_liege = { trait = arbitrary }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_arbitrary_dislikes_gain
+			trigger = {
+				trait = arbitrary 
+				top_liege = { trait = just }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_brave_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = brave 
+				top_liege = { trait = brave }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_brave_dislikes_gain
+			trigger = {
+				trait = brave 
+				top_liege = { trait = craven }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_content_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = content 
+				top_liege = { trait = content }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_content_dislikes_gain
+			trigger = {
+				trait = content 
+				top_liege = { trait = ambitious }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_craven_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = craven 
+				top_liege = { trait = craven }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_craven_dislikes_gain
+			trigger = {
+				trait = craven 
+				top_liege = { trait = brave }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_cruel_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = cruel 
+				top_liege = { trait = cruel }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_cruel_dislikes_gain
+			trigger = {
+				trait = cruel 
+				top_liege = { trait = kind }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_cynical_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = cynical 
+				top_liege = { trait = cynical }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_cynical_dislikes_gain
+			trigger = {
+				trait = cynical 
+				top_liege = { trait = zealous }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_deceitful_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = deceitful 
+				top_liege = { trait = deceitful }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_deceitful_dislikes_gain
+			trigger = {
+				trait = deceitful 
+				top_liege = { trait = honest }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_erudite_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = erudite 
+				top_liege = { trait = erudite }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gregarious_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = gregarious 
+				top_liege = { trait = gregarious }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_gregarious_dislikes_gain
+			trigger = {
+				trait = gregarious 
+				top_liege = { trait = shy }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_honest_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = honest 
+				top_liege = { trait = honest }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_honest_dislikes_gain
+			trigger = {
+				trait = honest 
+				top_liege = { trait = deceitful }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_just_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = just 
+				top_liege = { trait = just }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_just_dislikes_gain
+			trigger = {
+				trait = just 
+				top_liege = { trait = arbitrary }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_paranoid_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = paranoid 
+				top_liege = { trait = paranoid }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_paranoid_dislikes_gain
+			trigger = {
+				trait = paranoid 
+				top_liege = { trait = trusting }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_shy_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shy 
+				top_liege = { trait = shy }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shy_dislikes_gain
+			trigger = {
+				trait = shy 
+				top_liege = { trait = gregarious }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_stubborn_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = stubborn 
+				top_liege = { trait = stubborn }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_trusting_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = trusting 
+				top_liege = { trait = trusting }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_trusting_dislikes_gain
+			trigger = {
+				trait = trusting 
+				top_liege = { trait = paranoid }
+			}
+			value = -1
+		}
+		triggered_gain = {
+			desc = ipc_zealous_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zealous 
+				top_liege = { trait = zealous }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zealous_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zealous 
+				top_liege = { 
+					OR = {
+						trait = cynical 
+						trait = sympathy_christendom 
+						trait = sympathy_indian 
+						trait = sympathy_islam 
+						trait = sympathy_judaism 
+						trait = sympathy_pagans 
+						trait = sympathy_zoroastrianism 
+					}
+				}
+			}
+			value = -1
+		}
+		
+		
+		##misc
+		triggered_gain = {
+			desc = ipc_bad_priest_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = bad_priest_zoroastrian 
+					trait = bad_priest_aztec
+					trait = bad_priest_norse
+					trait = bad_priest_tengri
+					trait = bad_priest_muslim
+					trait = bad_priest_christian
+				}
+				top_liege = { religion = ROOT }
+			}
+			value = -2
+		}
+		
+		triggered_gain = {
+			desc = ipc_crusader_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = ares_own 
+					trait = crusader 
+					trait = eagle_warrior 
+					trait = gondi_shahansha 
+					trait = romuvas_own 
+					trait = shaddai 
+					trait = mujahid 
+					trait = nyames_shield 
+					trait = peruns_chosen 
+					trait = tengri_warrior 
+					trait = ukkos_shield 
+					trait = valhalla_bound 
+					trait = sun_warrior 
+				}
+				top_liege = { 
+					religion = ROOT
+					NOR = {
+						trait = cynical 
+						trait = sympathy_christendom 
+						trait = sympathy_indian 
+						trait = sympathy_islam 
+						trait = sympathy_judaism 
+						trait = sympathy_pagans 
+						trait = sympathy_zoroastrianism 
+					}
+				}
+			}
+			value = 2
+		}
+		
+		triggered_gain = {
+			desc = ipc_kow_tow_dislikes_gain
+			trigger = {
+				OR = {
+					trait = kow_tow_completed_tier_1 
+					trait = kow_tow_completed_tier_2
+					trait = kow_tow_completed_tier_3
+				}
+			}
+			value = -3
+		}
+		
+		triggered_gain = {
+			desc = ipc_kinslayer_dislikes_gain
+			trigger = {
+				OR = {
+					trait = kinslayer 
+					trait = familial_kinslayer
+					trait = dynastic_kinslayer
+					trait = tribal_kinslayer
+				}
+			}
+			value = -3
+		}
+		has_trait = {
+			trait = blinded
+			value = -2
+		}
+		has_trait = {
+			trait = cannibal_trait
+			value = -3
+		}
+		has_trait = {
+			trait = eunuch
+			value = 5
+		}
+		triggered_gain = {
+			desc = ipc_excommunicated_dislikes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = excommunicated
+				top_liege = { religion = ROOT }
+			}
+			value = -3
+		}
+		has_trait = {
+			trait = in_hiding
+			value = -3
+		}
+		has_trait = {
+			trait = varangian
+			value = 2
+		}
+		
+		#####Society Specific#####
+		####pagans
+		triggered_gain = {
+			desc = ipc_berserker_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = berserker
+				top_liege = { religion_openly_norse_or_reformed_trigger = yes }
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_shieldmaiden_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = shieldmaiden
+				top_liege = { religion_group = pagan_group }
+			}
+			value = 1
+		}
+		##zodiacs
+		#aries
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_aries
+				top_liege = { 
+					OR = {
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_leo
+						trait = zodiac_sagittarius
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_aries
+				top_liege = {
+					OR = {
+						trait = zodiac_libra
+						trait = zodiac_cancer
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = -1
+		}
+		#taurus
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_taurus
+				top_liege = { 
+					OR = {
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_virgo
+						trait = zodiac_capricorn
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_taurus
+				top_liege = {
+					OR = {
+						trait = zodiac_scorpio
+						trait = zodiac_leo
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = -1
+		}
+		#gemini
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_gemini
+				top_liege = { 
+					OR = {
+						trait = zodiac_gemini
+						trait = zodiac_aries
+						trait = zodiac_leo
+						trait = zodiac_libra
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_gemini
+				top_liege = {
+					OR = {
+						trait = zodiac_sagittarius
+						trait = zodiac_virgo
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = -1
+		}
+		#cancer
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_cancer
+				top_liege = { 
+					OR = {
+						trait = zodiac_cancer
+						trait = zodiac_taurus
+						trait = zodiac_virgo
+						trait = zodiac_scorpio
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_cancer
+				top_liege = {
+					OR = {
+						trait = zodiac_capricorn
+						trait = zodiac_aries
+						trait = zodiac_libra
+					}
+				}
+			}
+			value = -1
+		}
+		#leo
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_leo
+				top_liege = { 
+					OR = {
+						trait = zodiac_leo
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_libra
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_leo
+				top_liege = {
+					OR = {
+						trait = zodiac_aquarius
+						trait = zodiac_taurus
+						trait = zodiac_scorpio
+					}
+				}
+			}
+			value = -1
+		}
+		#virgo
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_virgo
+				top_liege = { 
+					OR = {
+						trait = zodiac_virgo
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_scorpio
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_virgo
+				top_liege = {
+					OR = {
+						trait = zodiac_pisces
+						trait = zodiac_gemini
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = -1
+		}
+		#libra
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_libra
+				top_liege = { 
+					OR = {
+						trait = zodiac_libra
+						trait = zodiac_gemini
+						trait = zodiac_leo
+						trait = zodiac_sagittarius
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_libra
+				top_liege = {
+					OR = {
+						trait = zodiac_aries
+						trait = zodiac_cancer
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = -1
+		}
+		#scorpio
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_scorpio
+				top_liege = { 
+					OR = {
+						trait = zodiac_scorpio
+						trait = zodiac_cancer
+						trait = zodiac_virgo
+						trait = zodiac_capricorn
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_scorpio
+				top_liege = {
+					OR = {
+						trait = zodiac_taurus
+						trait = zodiac_leo
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = -1
+		}
+		#sagittarius
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_sagittarius
+				top_liege = { 
+					OR = {
+						trait = zodiac_sagittarius
+						trait = zodiac_aries
+						trait = zodiac_leo
+						trait = zodiac_libra
+						trait = zodiac_aquarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_sagittarius
+				top_liege = {
+					OR = {
+						trait = zodiac_gemini
+						trait = zodiac_virgo
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = -1
+		}
+		#capricorn
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_capricorn
+				top_liege = { 
+					OR = {
+						trait = zodiac_capricorn
+						trait = zodiac_taurus
+						trait = zodiac_virgo
+						trait = zodiac_scorpio
+						trait = zodiac_pisces
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_capricorn
+				top_liege = {
+					OR = {
+						trait = zodiac_cancer
+						trait = zodiac_aries
+						trait = zodiac_libra
+					}
+				}
+			}
+			value = -1
+		}
+		#aquarius
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_aquarius
+				top_liege = { 
+					OR = {
+						trait = zodiac_aquarius
+						trait = zodiac_aries
+						trait = zodiac_gemini
+						trait = zodiac_libra
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_aquarius
+				top_liege = {
+					OR = {
+						trait = zodiac_leo
+						trait = zodiac_taurus
+						trait = zodiac_scorpio
+					}
+				}
+			}
+			value = -1
+		}
+		#pisces
+		triggered_gain = {
+			desc = ipc_zodiac_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = zodiac_pisces
+				top_liege = { 
+					OR = {
+						trait = zodiac_pisces
+						trait = zodiac_taurus
+						trait = zodiac_cancer
+						trait = zodiac_scorpio
+						trait = zodiac_capricorn
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_zodiac_dislikes_gain
+			trigger = {
+				trait = zodiac_pisces
+				top_liege = {
+					OR = {
+						trait = zodiac_virgo
+						trait = zodiac_gemini
+						trait = zodiac_sagittarius
+					}
+				}
+			}
+			value = -1
+		}
+		
+		##bloodthirsty gods
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_1_likes_gain
+			trigger = {
+				trait = bloodthirsty_gods_1
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_2_likes_gain
+			trigger = {
+				trait = bloodthirsty_gods_2
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 2
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_3_likes_gain
+			trigger = { 
+				trait = bloodthirsty_gods_3
+				top_liege = {
+					OR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = 3
+		}
+		triggered_gain = {
+			desc = ipc_bloodthirsty_gods_dislikes_gain
+			trigger = { 
+				OR = {
+					trait = bloodthirsty_gods_1
+					trait = bloodthirsty_gods_2
+					trait = bloodthirsty_gods_3
+				}
+				top_liege = {
+					NOR = {
+						has_religion_feature = religion_ritual_sacrifice
+						has_religion_feature = religion_feature_aztec
+					}
+				}
+			}
+			value = -3
+		}
+		##branches
+		triggered_gain = {
+			desc = ipc_pagan_branch_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					AND = {
+						trait = pagan_branch_1
+						top_liege = { trait = pagan_branch_1 }
+					}
+					AND = {
+						trait = pagan_branch_2
+						top_liege = { trait = pagan_branch_2 }
+					}
+					AND = {
+						trait = pagan_branch_3
+						top_liege = { trait = pagan_branch_3 }
+					}
+					AND = {
+						trait = pagan_branch_4
+						top_liege = { trait = pagan_branch_4 }
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_pagan_branch_dislikes_gain
+			trigger = {
+				OR = {
+					AND = {
+						trait = pagan_branch_1
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_2
+								trait = pagan_branch_3
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_2
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_3
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_3
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_2
+								trait = pagan_branch_4
+							}
+						}
+					}
+					AND = {
+						trait = pagan_branch_4
+						top_liege = { 
+							OR = {
+								trait = pagan_branch_1
+								trait = pagan_branch_2
+								trait = pagan_branch_3
+							}
+						}
+					}
+				}
+			}
+			value = -1
+		}
+		##raiding
+		triggered_gain = {
+			desc = ipc_raiding_1_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = viking
+					trait = pirate
+				}
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_raiding_2_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				trait = ravager
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		triggered_gain = {
+			desc = ipc_raiding_3_likes_gain
+			trigger = {
+				NOT = { tier = emperor }
+				OR = {
+					trait = seaking
+					trait = sea_queen
+				}
+				top_liege = {
+					OR = {
+						religion_openly_norse_or_reformed_trigger = yes 
+						AND = {
+							has_religion_feature = religion_adventuring
+							has_religion_feature = religion_seafaring
+						}
+					}
+				}
+			}
+			value = 1
+		}
+		#####HIP#####
+		has_trait = {
+			trait = commander2
+			value = 1
+		}
+		has_trait = {
+			trait = commander3
+			value = 2
+		}
+		has_trait = {
+			trait = commander4
+			value = 3
+		}
+		
+		has_trait = {
+			trait = trained_diplomat
+			value = 1
+		}
+		has_trait = {
+			trait = skilled_diplomat
+			value = 2
+		}
+		has_trait = {
+			trait = master_diplomat
+			value = 3
+		}
+		has_trait = {
+			trait = perceptive
+			value = 1
+		}
+		has_trait = {
+			trait = melodious_voice
+			value = 2
+		}
+		has_trait = {
+			trait = powerful_voice
+			value = 2
+		}
+		has_trait = {
+			trait = calm_voice
+			value = 1
+		}
+		has_trait = {
+			trait = absentminded
+			value = -2
+		}
+		has_trait = {
+			trait = deaf
+			value = -2
+		}
+	}
+
+	member_score_per_attribute = 5
+	member_score_per_rank = 0
+
+	member_score = {
+		value = 10
+
+		modifier = {
+			factor = 5
+			society_rank == 3
+		}
+		modifier = {
+			factor = 15
+			top_liege = { show_scope_change = no ROOT = { show_scope_change = no is_primary_heir = PREV } }
+		}
+		
+		modifier = {
+			factor = 2
+			tier = duke
+		}
+		modifier = {
+			factor = 3
+			tier = king
+		}
+		
+		modifier = {
+			factor = 1.25
+			trait = quick
+		}
+		modifier = {
+			factor = 1.75
+			trait = genius
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_administrator
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_aristrocrat
+		}
+		modifier = {
+			factor = 1.5
+			trait = ipc_imperial_commander
+		}
+		modifier = {
+			factor = 1.25
+			trait = administrator
+		}
+		modifier = {
+			factor = 1.25
+			trait = architect
+		}
+		modifier = {
+			factor = 1.25
+			trait = schemer
+		}
+		modifier = {
+			factor = 1.25
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.25
+			trait = strategist
+		}
+		modifier = {
+			factor = 1.25
+			trait = theologian
+		}
+	}
+	
+	startup_populate = {
+	    trigger = {
+			always = no
+		}
+	}
+}

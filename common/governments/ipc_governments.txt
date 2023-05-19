@@ -1,0 +1,33 @@
+#feudal_governments = {
+#
+#	imperial_guard_government = {
+#		color = { 91 133 207 }
+#		
+#		preferred_holdings = { CASTLE }
+#		allowed_holdings = { }
+#		accepts_liege_governments = {
+#			feudal_government
+#			muslim_government
+#			theocratic_feudal_government
+#			chinese_imperial_government
+#		}
+#		
+#		potential = { liege = { primary_title = { has_title_flag = has_imperial_guard } } }
+#		
+#		dukes_called_kings = no
+#		barons_need_dynasty = no
+#		
+#		can_build_holdings = no
+#		can_build_forts = no
+#		can_build_hospitals = no
+#		
+#		can_create_kingdoms = no					
+#		can_create_empires = no
+#		can_usurp_kingdoms_and_empires = no
+#		can_be_granted_kingdoms_and_empires_by_other_government = no
+#		can_inherit = no
+#		have_gender_laws = no
+#		
+#		capital_move_delay = 600
+#	}
+#}

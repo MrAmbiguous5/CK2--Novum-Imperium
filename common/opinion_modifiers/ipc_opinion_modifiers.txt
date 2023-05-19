@@ -1,0 +1,79 @@
+opinion_granted_imperial_office_1 = {
+	opinion = 50
+}
+opinion_granted_imperial_office_2 = {
+	opinion = 40
+}
+opinion_granted_imperial_office_3 = {
+	opinion = 30
+}
+opinion_granted_imperial_office_4 = {
+	opinion = 20
+}
+opinion_granted_imperial_office_5 = {
+	opinion = 10
+}
+
+opinion_revoked_imperial_office_1 = {
+	opinion = -10
+}
+opinion_revoked_imperial_office_2 = {
+	opinion = -20
+}
+opinion_revoked_imperial_office_3 = {
+	opinion = -30
+}
+opinion_revoked_imperial_office_4 = {
+	opinion = -40
+}
+opinion_revoked_imperial_office_5 = {
+	opinion = -50
+}
+
+opinion_revoked_imperial_office_other_2 = {
+	opinion = -5
+}
+opinion_revoked_imperial_office_other_3 = {
+	opinion = -10
+}
+opinion_revoked_imperial_office_other_4 = {
+	opinion = -15
+}
+opinion_revoked_imperial_office_other_5 = {
+	opinion = -20
+}
+
+
+opinion_retained_imperial_office = {
+	opinion = 25
+}
+
+opinion_dismantled_imperial_court = {
+	opinion = -60
+}
+
+opinion_reduced_court_power = {
+	opinion = -50
+}
+
+
+
+opinion_imperial_service = {
+	opinion = 20
+}
+
+opinion_failed_empire = {
+	opinion = -20
+}
+
+opinion_ipc_infiltrator = {
+	opinion = 75
+}
+
+
+ipc_in_non_aggression_pact = {
+	opinion = 10
+	non_aggression_pact = yes
+}
+
+	

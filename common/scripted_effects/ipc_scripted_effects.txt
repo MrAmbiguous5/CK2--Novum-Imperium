@@ -1,0 +1,2071 @@
+
+join_realm_imperial_court_effect = {
+	if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_christian_1_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_christian_1_title } } 
+			}
+		}
+		join_society = imperial_court_christian_1
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_christian_2_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_christian_2_title } } 
+			}
+		}
+		join_society = imperial_court_christian_2
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_christian_3_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_christian_3_title } } 
+			}
+		}
+		join_society = imperial_court_christian_3
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_muslim_1_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_muslim_1_title } } 
+			}
+		}
+		join_society = imperial_court_muslim_1
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_muslim_2_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_muslim_2_title } } 
+			}
+		}
+		join_society = imperial_court_muslim_2
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_muslim_3_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_muslim_3_title } } 
+			}
+		}
+		join_society = imperial_court_muslim_3
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_pagan_1_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_pagan_1_title } } 
+			}
+		}
+		join_society = imperial_court_pagan_1
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_pagan_2_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_pagan_2_title } } 
+			}
+		}
+		join_society = imperial_court_pagan_2
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_pagan_3_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_pagan_3_title } } 
+			}
+		}
+		join_society = imperial_court_pagan_3
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_eastern_1_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_eastern_1_title } } 
+			}
+		}
+		join_society = imperial_court_eastern_1
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_eastern_2_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_eastern_2_title } } 
+			}
+		}
+		join_society = imperial_court_eastern_2
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = event_target:imperial_court_eastern_3_title }
+				top_liege = { primary_title = { title = event_target:imperial_court_eastern_3_title } } 
+			}
+		}
+		join_society = imperial_court_eastern_3
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = e_byzantium }
+				top_liege = { primary_title = { title = e_byzantium } } 
+			}
+		}
+		join_society = imperial_court_byzantine
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = e_hre }
+				top_liege = { primary_title = { title = e_hre } } 
+			}
+		}
+		join_society = imperial_court_hre
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = e_arabia }
+				top_liege = { primary_title = { title = e_arabia } } 
+			}
+		}
+		join_society = imperial_court_arabia
+	}
+	else_if = {
+		limit = { 
+			OR = {
+				primary_title = { title = e_roman_empire }
+				top_liege = { primary_title = { title = e_roman_empire } } 
+			}
+		}
+		join_society = imperial_court_roman_empire
+	}
+}
+
+
+##must be in the emperor's scope
+save_imperial_court_membership_effect = {
+	hidden_tooltip = {
+		set_character_flag = moving_imperial_court
+		if = {
+			limit = {
+				is_in_society = yes
+				is_society_grandmaster = yes
+				is_imperial_court_member_trigger = yes
+			}
+			set_character_flag = emperor_ipc_grandmaster
+		}
+		
+	
+		any_realm_character = {
+			limit = { 
+				is_in_society = yes
+				is_imperial_court_member_trigger = yes
+			}
+			if = {
+				limit = { is_imperial_court_regent_trigger = yes }
+				set_character_flag = moving_imperial_regent
+				revoke_imperial_regent_effect = yes
+			}
+			else_if = {
+				limit = { is_imperial_court_seneschal_trigger = yes }
+				set_character_flag = moving_imperial_seneschal
+				revoke_imperial_seneschal_effect = yes
+			}
+			else_if = {
+				limit = { is_imperial_court_marshal_trigger = yes }
+				set_character_flag = moving_imperial_marshal
+				revoke_imperial_marshal_effect = yes
+			}
+			else_if = {
+				limit = { is_imperial_court_lawkeeper_trigger = yes }
+				set_character_flag = moving_imperial_lawkeeper
+				revoke_imperial_lawkeeper_effect = yes
+			}
+			else_if = {
+				limit = { is_imperial_court_spymaster_trigger = yes }
+				set_character_flag = moving_imperial_spymaster
+				revoke_imperial_spymaster_effect = yes
+			}
+		
+			else_if = {
+				limit = { society_rank = 3 }
+				set_character_flag = court_rank_3
+			}
+			else_if = {
+				limit = { society_rank = 2 }
+				set_character_flag = court_rank_1
+			}
+			else = { set_character_flag = court_rank_1 }
+		}
+	}
+}
+
+#must be in emperor's scope, do after dismantling old one but before changing primary title 
+set_as_new_imperial_court_effect = {
+	hidden_tooltip = {
+		if = {
+			limit = {
+				OR = {
+					religion_group = christian
+					religion_group = jewish_group
+				}
+			}
+			event_target:new_empire = {
+				set_title_flag = imperial_court_active
+				if = {
+					limit = { NOT = { has_global_flag = imperial_court_christian_1_active } }
+					set_global_flag = imperial_court_christian_1_active
+					save_global_event_target_as = imperial_court_christian_1_title
+				}
+				else_if = {
+					limit = { NOT = { has_global_flag = imperial_court_christian_2_active } }
+					set_global_flag = imperial_court_christian_2_active
+					save_global_event_target_as = imperial_court_christian_2_title
+				}
+				else = {
+					set_global_flag = imperial_court_christian_3_active
+					save_global_event_target_as = imperial_court_christian_3_title
+				}
+			}
+		}
+		
+		##muslim courts
+		else_if = {
+			limit = {
+				OR = {
+					religion_group = muslim
+					religion_group = zoroastrian_group
+				}
+			}
+			event_target:new_empire = {
+				set_title_flag = imperial_court_active
+				if = {
+					limit = { NOT = { has_global_flag = imperial_court_muslim_1_active } }
+					set_global_flag = imperial_court_muslim_1_active
+					save_global_event_target_as = imperial_court_muslim_1_title
+				}
+				else_if = {
+					limit = { NOT = { has_global_flag = imperial_court_muslim_2_active } }
+					set_global_flag = imperial_court_muslim_2_active
+					save_global_event_target_as = imperial_court_muslim_2_title
+				}
+				else = {
+					set_global_flag = imperial_court_muslim_3_active
+					save_global_event_target_as = imperial_court_muslim_3_title
+				}
+			}
+		}
+		
+		##pagan courts
+		else_if = {
+			limit = { religion_group = pagan_group }
+			event_target:new_empire = {
+				set_title_flag = imperial_court_active
+				if = {
+					limit = { NOT = { has_global_flag = imperial_court_pagan_1_active } }
+					set_global_flag = imperial_court_pagan_1_active
+					save_global_event_target_as = imperial_court_pagan_1_title
+				}
+				else_if = {
+					limit = { NOT = { has_global_flag = imperial_court_pagan_2_active } }
+					set_global_flag = imperial_court_pagan_2_active
+					save_global_event_target_as = imperial_court_pagan_2_title
+				}
+				else = {
+					set_global_flag = imperial_court_pagan_3_active
+					save_global_event_target_as = imperial_court_pagan_3_title
+				}
+			}
+		}
+		
+		##eastern courts
+		else_if = {
+			limit = { religion_group = indian_group }
+			event_target:new_empire = {
+				set_title_flag = imperial_court_active
+				if = {
+					limit = { NOT = { has_global_flag = imperial_court_eastern_1_active } }
+					set_global_flag = imperial_court_eastern_1_active
+					save_global_event_target_as = imperial_court_eastern_1_title
+				}
+				else_if = {
+					limit = { NOT = { has_global_flag = imperial_court_eastern_2_active } }
+					set_global_flag = imperial_court_eastern_2_active
+					save_global_event_target_as = imperial_court_eastern_2_title
+				}
+				else = {
+					set_global_flag = imperial_court_eastern_3_active
+					save_global_event_target_as = imperial_court_eastern_3_title
+				}
+			}
+		}
+	}
+}
+
+
+##must be in the emperor's scope, to be done after creating the new court
+restore_imperial_court_membership_effect = {
+	hidden_tooltip = {
+		if = {
+			limit = { has_character_flag = emperor_ipc_grandmaster }
+			primary_title = {
+				trigger_switch = {
+					on_trigger = title
+					
+					event_target:imperial_court_christian_1_title = {
+						ROOT = {
+							join_society = imperial_court_christian_1
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_christian_2_title = {
+						ROOT = {
+							join_society = imperial_court_christian_2
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_christian_3_title = {
+						ROOT = {
+							join_society = imperial_court_christian_3
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					
+					event_target:imperial_court_muslim_1_title = {
+						ROOT = {
+							join_society = imperial_court_muslim_1
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_muslim_2_title = {
+						ROOT = {
+							join_society = imperial_court_muslim_2
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_muslim_3_title = {
+						ROOT = {
+							join_society = imperial_court_muslim_3
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					
+					event_target:imperial_court_pagan_1_title = {
+						ROOT = {
+							join_society = imperial_court_pagan_1
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_pagan_2_title = {
+						ROOT = {
+							join_society = imperial_court_pagan_2
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_pagan_3_title = {
+						ROOT = {
+							join_society = imperial_court_pagan_3
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					
+					event_target:imperial_court_eastern_1_title = {
+						ROOT = {
+							join_society = imperial_court_eastern_1
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_eastern_2_title = {
+						ROOT = {
+							join_society = imperial_court_eastern_2
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+					event_target:imperial_court_eastern_3_title = {
+						ROOT = {
+							join_society = imperial_court_eastern_3
+							set_society_grandmaster = yes
+							change_society_currency = 500
+						}
+					}
+				}
+			}
+			clr_character_flag = emperor_ipc_grandmaster
+		}
+		
+	
+		any_realm_character = {
+			limit = { 
+				OR = {
+					has_character_flag = moving_imperial_regent
+					has_character_flag = moving_imperial_seneschal
+					has_character_flag = moving_imperial_marshal
+					has_character_flag = moving_imperial_lawkeeper
+					has_character_flag = moving_imperial_spymaster
+					has_character_flag = court_rank_3
+					has_character_flag = court_rank_2
+					has_character_flag = court_rank_1
+				}
+			}
+			if = {
+				limit = { has_character_flag = moving_imperial_regent }
+				join_realm_imperial_court_effect = yes
+				if = {
+					limit = { is_christian_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_regent_christian
+				}
+				else_if = {
+					limit = { is_muslim_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_regent_muslim
+				}
+				else_if = {
+					limit = { is_pagan_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_regent_pagan
+				}
+				else_if = {
+					limit = { is_eastern_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_regent_eastern
+				}
+				set_society_grandmaster = yes
+				change_society_currency = 300
+				event_target:new_empire = { set_title_flag = has_imperial_regent }
+				clr_character_flag = moving_imperial_regent
+			}
+			
+			else_if = {
+				limit = { has_character_flag = moving_imperial_seneschal }
+				join_realm_imperial_court_effect = yes
+				if = {
+					limit = { is_christian_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_seneschal_christian
+				}
+				else_if = {
+					limit = { is_muslim_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_seneschal_muslim
+				}
+				else_if = {
+					limit = { is_pagan_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_seneschal_pagan
+				}
+				else_if = {
+					limit = { is_eastern_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_seneschal_eastern
+				}
+				event_target:new_empire = { set_title_flag = has_imperial_seneschal }
+				clr_character_flag = moving_imperial_seneschal
+				society_rank_up = 2
+				change_society_currency = 300
+			}
+			
+			else_if = {
+				limit = { has_character_flag = moving_imperial_marshal }
+				join_realm_imperial_court_effect = yes
+				if = {
+					limit = { is_christian_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_marshal_christian
+				}
+				else_if = {
+					limit = { is_muslim_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_marshal_muslim
+				}
+				else_if = {
+					limit = { is_pagan_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_marshal_pagan
+				}
+				else_if = {
+					limit = { is_eastern_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_marshal_eastern
+				}
+				event_target:new_empire = { set_title_flag = has_imperial_marshal }
+				clr_character_flag = moving_imperial_marshal
+				society_rank_up = 2
+				change_society_currency = 300
+			}
+			
+			else_if = {
+				limit = { has_character_flag = moving_imperial_lawkeeper }
+				join_realm_imperial_court_effect = yes
+				if = {
+					limit = { is_christian_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_lawkeeper_christian
+				}
+				else_if = {
+					limit = { is_muslim_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_lawkeeper_muslim
+				}
+				else_if = {
+					limit = { is_pagan_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_lawkeeper_pagan
+				}
+				else_if = {
+					limit = { is_eastern_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_lawkeeper_eastern
+				}
+				event_target:new_empire = { set_title_flag = has_imperial_lawkeeper }
+				clr_character_flag = moving_imperial_lawkeeper
+				society_rank_up = 2
+				change_society_currency = 300
+			}
+			
+			else_if = {
+				limit = { has_character_flag = moving_imperial_spymaster }
+				join_realm_imperial_court_effect = yes
+				if = {
+					limit = { is_christian_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_spymaster_christian
+				}
+				else_if = {
+					limit = { is_muslim_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_spymaster_muslim
+				}
+				else_if = {
+					limit = { is_pagan_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_spymaster_pagan
+				}
+				else_if = {
+					limit = { is_eastern_imperial_court_member_trigger = yes }
+					give_minor_title = title_imperial_court_spymaster_eastern
+				}
+				event_target:new_empire = { set_title_flag = has_imperial_spymaster }
+				clr_character_flag = moving_imperial_spymaster
+				society_rank_up = 2
+				change_society_currency = 300
+			}
+		
+			else_if = {
+				limit = { has_character_flag = court_rank_3 }
+				join_realm_imperial_court_effect = yes
+				society_rank_up = 2
+				change_society_currency = 200
+				clr_character_flag = court_rank_3
+			}
+			else_if = {
+				limit = { has_character_flag = court_rank_2 }
+				join_realm_imperial_court_effect = yes
+				society_rank_up = 1
+				change_society_currency = 100
+				clr_character_flag = court_rank_2
+			}
+			else_if = {
+				limit = { has_character_flag = court_rank_1 }
+				join_realm_imperial_court_effect = yes
+				change_society_currency = 100
+				clr_character_flag = court_rank_1
+			}
+		}
+		clr_character_flag = moving_imperial_court
+	}
+}
+
+
+
+##must be in the title scope, clearing imperial capital flag should be done seperate
+dismantle_imperial_court_effect = {
+	custom_tooltip = {
+		text = dismantle_imperial_court_effect
+		
+		clr_title_flag = has_imperial_seneschal
+		clr_title_flag = has_imperial_marshal
+		clr_title_flag = has_imperial_lawkeeper
+		clr_title_flag = has_imperial_spymaster
+		clr_title_flag = has_imperial_regent
+		
+		trigger_switch = {
+			on_trigger = title
+			
+			#christian
+			event_target:imperial_court_christian_1_title = { 
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_christian_1 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_christian_1 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_christian_1_title 
+				clr_global_flag = imperial_court_christian_1_active
+			}
+			event_target:imperial_court_christian_2_title = { 
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_christian_2 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_christian_2 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_christian_2_title 
+				clr_global_flag = imperial_court_christian_2_active
+			}
+			event_target:imperial_court_christian_3_title = { 
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_christian_3 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_christian_3 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_christian_3_title 
+				clr_global_flag = imperial_court_christian_3_active
+			}
+			
+			#muslim
+			event_target:imperial_court_muslim_1_title = { 
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_muslim_1 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_muslim_1 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_muslim_1_title 
+				clr_global_flag = imperial_court_muslim_1_active
+			}
+			event_target:imperial_court_muslim_2_title = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_muslim_2 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_muslim_2 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_muslim_2_title
+				clr_global_flag = imperial_court_muslim_2_active 
+			}
+			event_target:imperial_court_muslim_3_title = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_muslim_3 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_muslim_3 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_muslim_3_title 
+				clr_global_flag = imperial_court_muslim_3_active 
+			}
+			
+			#pagan
+			event_target:imperial_court_pagan_1_title = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_pagan_1 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_pagan_1 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_pagan_1_title 
+				clr_global_flag = imperial_court_pagan_1_active 
+			}
+			event_target:imperial_court_pagan_2_title = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_pagan_2 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_pagan_2 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_pagan_2_title 
+				clr_global_flag = imperial_court_pagan_2_active 
+			} 
+			event_target:imperial_court_pagan_3_title = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_pagan_3 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_pagan_3 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_pagan_3_title 
+				clr_global_flag = imperial_court_pagan_3_active 
+			}
+			
+			#eastern
+			event_target:imperial_court_eastern_1_title = { 
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_eastern_1 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_eastern_1 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_pagan_1_title 
+				clr_global_flag = imperial_court_pagan_1_active 
+				clear_global_event_target = imperial_court_eastern_1_title 
+				clr_global_flag = imperial_court_eastern_1_active 
+			}
+			event_target:imperial_court_eastern_2_title = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_eastern_2 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_eastern_2 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_eastern_2_title 
+				clr_global_flag = imperial_court_eastern_2_active 
+			}
+			event_target:imperial_court_eastern_3_title = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_eastern_3 }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_eastern_3 }
+						leave_society = yes
+					}
+				}
+				clear_global_event_target = imperial_court_eastern_3_title 
+				clr_global_flag = imperial_court_eastern_3_active 
+			}
+			
+			e_byzantium = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_byzantine }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_byzantine }
+						leave_society = yes
+					}
+				}
+			}
+			e_hre = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_hre }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_hre }
+						leave_society = yes
+					}
+				}
+			}
+			
+			e_arabia = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_arabia }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_arabia }
+						leave_society = yes
+					}
+				}
+			}
+			e_roman_empire = {
+				holder_scope = {
+					any_realm_character = {
+						limit = { society_member_of = imperial_court_roman_empire }
+						if = {
+							limit = {
+								NOR = {
+									has_character_flag = moving_imperial_regent
+									has_character_flag = moving_imperial_seneschal
+									has_character_flag = moving_imperial_marshal
+									has_character_flag = moving_imperial_lawkeeper
+									has_character_flag = moving_imperial_spymaster
+									has_character_flag = court_rank_3
+									has_character_flag = court_rank_2
+									has_character_flag = court_rank_1
+								}
+							}
+							character_event = { id = ipcf.019 }
+						}
+						#if = {
+						#	limit = { has_any_quest = yes }
+						#	clr_quest = { id = quest_id	failure = yes }
+						#}
+						leave_society = yes
+					}
+					if = {
+						limit = { society_member_of = imperial_court_roman_empire }
+						leave_society = yes
+					}
+				}
+			}
+		}
+		clr_title_flag = imperial_court_active
+		holder_scope = { update_emperor_imperial_court_modifiers_effect = yes }
+		if = {
+			limit = { event_target:previous_empire_holder = { always = yes } }
+			event_target:previous_empire_holder = { update_emperor_imperial_court_modifiers_effect = yes }
+		}
+	}
+}
+
+
+
+#############Minor Titles#############
+
+##make sure previous scope is always the emperor/regent
+add_granted_imperial_office_opinion_effect = {
+	if = {
+		limit = { society_influence >= 80 }
+		opinion = { who = PREV modifier = opinion_granted_imperial_office_5 years = 4 }
+	}
+	else_if = {
+		limit = { society_influence >= 60 }
+		opinion = { who = PREV modifier = opinion_granted_imperial_office_4 years = 4 }
+	}
+	else_if = {
+		limit = { society_influence >= 40 }
+		opinion = { who = PREV modifier = opinion_granted_imperial_office_3 years = 4 }
+	}
+	else_if = {
+		limit = { society_influence >= 20 }
+		opinion = { who = PREV modifier = opinion_granted_imperial_office_2 years = 4 }
+	}
+	else = { opinion = { who = PREV modifier = opinion_granted_imperial_office_1 years = 4 } }
+}
+
+##make sure previous scope is always the emperor/regent
+add_revoked_imperial_office_opinion_effect = {
+	if = {
+		limit = { society_influence >= 80 }
+		opinion = { who = PREV modifier = opinion_revoked_imperial_office_5 years = 5 }
+		custom_tooltip = {
+			text = add_revoked_imperial_office_opinion_effect_tooltip1
+			society = {
+				any_society_member = {
+					limit = {
+						NOR = {
+							character = PREVPREV
+							character = ROOT
+						}
+					}
+					opinion = { who = PREVPREV modifier = opinion_revoked_imperial_office_other_5 years = 5 }
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { society_influence >= 60 }
+		opinion = { who = PREV modifier = opinion_revoked_imperial_office_4 years = 5 }
+		custom_tooltip = {
+			text = add_revoked_imperial_office_opinion_effect_tooltip2
+			society = {
+				any_society_member = {
+					limit = {
+						NOR = {
+							character = PREVPREV
+							character = ROOT
+						}
+					}
+					opinion = { who = PREVPREV modifier = opinion_revoked_imperial_office_other_4 years = 5 }
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { society_influence >= 40 }
+		opinion = { who = PREV modifier = opinion_revoked_imperial_office_3 years = 5 }
+		custom_tooltip = {
+			text = add_revoked_imperial_office_opinion_effect_tooltip3
+			society = {
+				any_society_member = {
+					limit = {
+						NOR = {
+							character = PREVPREV
+							character = ROOT
+						}
+					}
+					opinion = { who = PREVPREV modifier = opinion_revoked_imperial_office_other_3 years = 5 }
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { society_influence >= 20 }
+		opinion = { who = PREV modifier = opinion_revoked_imperial_office_2 years = 5 }
+		custom_tooltip = {
+			text = add_revoked_imperial_office_opinion_effect_tooltip4
+			society = {
+				any_society_member = {
+					limit = {
+						NOR = {
+							character = PREVPREV
+							character = ROOT
+						}
+					}
+					opinion = { who = PREVPREV modifier = opinion_revoked_imperial_office_other_2 years = 5 }
+				}
+			}
+		}
+	}
+	else = { opinion = { who = PREV modifier = opinion_revoked_imperial_office_1 years = 5 } }
+}
+
+add_imperial_office_currency_effect = {
+	if = {
+		limit = { society_influence >= 80 }
+		change_society_currency = 500
+	}
+	else_if = {
+		limit = { society_influence >= 60 }
+		change_society_currency = 400
+	}
+	else_if = {
+		limit = { society_influence >= 40 }
+		change_society_currency = 300
+	}
+	else_if = {
+		limit = { society_influence >= 20 }
+		change_society_currency = 200
+	}
+	else = { change_society_currency = 100 }
+}
+
+remove_imperial_office_currency_effect = {
+	if = {
+		limit = { society_influence >= 80 }
+		change_society_currency = -50
+	}
+	else_if = {
+		limit = { society_influence >= 60 }
+		change_society_currency = -100
+	}
+	else_if = {
+		limit = { society_influence >= 40 }
+		change_society_currency = -150
+	}
+	else_if = {
+		limit = { society_influence >= 20 }
+		change_society_currency = -200
+	}
+	else = { change_society_currency = -250 }
+}
+
+
+get_imperial_regent_relative_candidate_effect = {
+	random_close_relative  = {
+		limit = {
+			is_alive = yes
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			OR = {
+				is_in_society = no
+				is_imperial_court_member_trigger = yes
+			}
+			liege = { character = ROOT }
+			OR = {
+				is_female = no
+				AND = {
+					is_female = yes
+					primary_title = { 	
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+							title = e_hre
+							NOT = { has_law = status_of_women_0 }
+						}
+					}
+				}
+			}
+			NOR = { 
+				character = event_target:imperial_society_heir
+				character = event_target:imperial_regent
+			}
+		}
+		save_event_target_as = imperial_regent_relative_candidate
+	}
+}
+
+get_imperial_regent_society_candidate_effect = {
+	random_realm_character = {
+		show_scope_change = no
+		limit = {
+			is_alive = yes
+			is_imperial_court_member_trigger = yes
+			prisoner = no
+			society_rank == 3
+			NOT = { trait = incapable }
+			NOR = {
+				character = event_target:imperial_society_heir
+				character = event_target:imperial_regent_relative_candidate
+			}
+		}
+		preferred_limit = { diplomacy >= 18 }
+		preferred_limit = { diplomacy >= 14 }
+		preferred_limit = { diplomacy >= 8 }
+		save_event_target_as = imperial_regent_society_candidate
+	}
+}
+
+
+#get_imperial_regent_effect = {
+#}
+
+
+award_imperial_regent_effect = {
+	custom_tooltip = {
+		text = award_imperial_regent_effect_tooltip
+		if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_regent_christian
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_regent_muslim
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_regent_pagan
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_regent_eastern
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_byzantium } } }
+			give_minor_title = title_imperial_court_regent_byzantine
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_hre } } }
+			give_minor_title = title_imperial_court_regent_hre
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_roman_empire } } }
+			give_minor_title = title_imperial_court_regent_roman
+		}
+	}
+}
+
+revoke_imperial_regent_effect = {
+	custom_tooltip = {
+		text = revoke_imperial_regent_effect_tooltip
+		remove_title = title_imperial_court_regent_christian
+		remove_title = title_imperial_court_regent_muslim
+		remove_title = title_imperial_court_regent_pagan
+		remove_title = title_imperial_court_regent_eastern
+		remove_title = title_imperial_court_regent_byzantine
+		remove_title = title_imperial_court_regent_hre
+		remove_title = title_imperial_court_regent_roman
+	}
+}
+
+imperial_regent_lose_effect = {
+	
+	#ascended to emperor
+	if = {
+		limit = { primary_title = { has_title_flag = imperial_court_active } }
+		primary_title = { clr_title_flag = has_imperial_regent }
+		remove_character_modifier = imperial_regent_modifier
+	}
+	
+	#revoked or no longer in same realm/revolting
+	else = { letter_event = { id = ipcm.031 } }
+}
+
+award_imperial_seneschal_effect = {
+	custom_tooltip = {
+		text = award_imperial_seneschal_effect_tooltip
+		if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_seneschal_christian
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_seneschal_muslim
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_seneschal_pagan
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_seneschal_eastern
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_byzantium } } }
+			give_minor_title = title_imperial_court_seneschal_byzantine
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_hre } } }
+			give_minor_title = title_imperial_court_seneschal_hre
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_roman_empire } } }
+			give_minor_title = title_imperial_court_seneschal_roman
+		}
+	}
+}
+
+revoke_imperial_seneschal_effect = {
+	custom_tooltip = {
+		text = revoke_imperial_seneschal_effect_tooltip
+		remove_title = title_imperial_court_seneschal_christian
+		remove_title = title_imperial_court_seneschal_muslim
+		remove_title = title_imperial_court_seneschal_pagan
+		remove_title = title_imperial_court_seneschal_eastern
+		remove_title = title_imperial_court_seneschal_byzantine
+		remove_title = title_imperial_court_seneschal_hre
+		remove_title = title_imperial_court_seneschal_roman
+	}
+}
+
+imperial_seneschal_gain_effect = {
+	if = { 
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.040 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.043 } } } }
+}
+
+imperial_seneschal_lose_effect = {
+	if = { 
+		limit = { is_imperial_court_regent_trigger = yes }
+		top_liege = { primary_title = { clr_title_flag = has_imperial_seneschal } }
+		remove_character_modifier = imperial_seneschal_modifier
+	}
+	else_if = {
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.041 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.045 } } } }
+}
+
+imperial_seneschal_death_effect = {
+	society = { leader = { character_event = { id = ipcm.042 } } }
+}
+
+award_imperial_marshal_effect = {
+	custom_tooltip = {
+		text = award_imperial_marshal_effect_tooltip
+		if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_marshal_christian
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_marshal_muslim
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_marshal_pagan
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_marshal_eastern
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_byzantium } } }
+			give_minor_title = title_imperial_court_marshal_byzantine
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_hre } } }
+			give_minor_title = title_imperial_court_marshal_hre
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_roman_empire } } }
+			give_minor_title = title_imperial_court_marshal_roman
+		}
+	}
+}
+
+revoke_imperial_marshal_effect = {
+	custom_tooltip = {
+		text = revoke_imperial_marshal_effect_tooltip
+		remove_title = title_imperial_court_marshal_christian
+		remove_title = title_imperial_court_marshal_muslim
+		remove_title = title_imperial_court_marshal_pagan
+		remove_title = title_imperial_court_marshal_eastern
+		remove_title = title_imperial_court_marshal_byzantine
+		remove_title = title_imperial_court_marshal_hre
+		remove_title = title_imperial_court_marshal_roman
+	}
+}
+
+imperial_marshal_gain_effect = {
+	if = { 
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.050 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.053 } } } }
+}
+
+imperial_marshal_lose_effect = {
+	if = { 
+		limit = { is_imperial_court_regent_trigger = yes }
+		top_liege = { primary_title = { clr_title_flag = has_imperial_marshal } }
+		remove_character_modifier = imperial_marshal_modifier
+	}
+	else_if = {
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.051 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.055 } } } }
+}
+
+imperial_marshal_death_effect = {
+	society = { leader = { character_event = { id = ipcm.052 } } }
+}
+
+
+award_imperial_lawkeeper_effect = {
+	custom_tooltip = {
+		text = award_imperial_lawkeeper_effect_tooltip
+		if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_lawkeeper_christian
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_lawkeeper_muslim
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_lawkeeper_pagan
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_lawkeeper_eastern
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_byzantium } } }
+			give_minor_title = title_imperial_court_lawkeeper_byzantine
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_hre } } }
+			give_minor_title = title_imperial_court_lawkeeper_hre
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_roman_empire } } }
+			give_minor_title = title_imperial_court_lawkeeper_roman
+		}
+	}
+}
+
+revoke_imperial_lawkeeper_effect = {
+	custom_tooltip = {
+		text = revoke_imperial_lawkeeper_effect_tooltip
+		remove_title = title_imperial_court_lawkeeper_christian
+		remove_title = title_imperial_court_lawkeeper_muslim
+		remove_title = title_imperial_court_lawkeeper_pagan
+		remove_title = title_imperial_court_lawkeeper_eastern
+		remove_title = title_imperial_court_lawkeeper_byzantine
+		remove_title = title_imperial_court_lawkeeper_hre
+		remove_title = title_imperial_court_lawkeeper_roman
+	}
+}
+
+imperial_lawkeeper_gain_effect = {
+	if = { 
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.060 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.063 } } } }
+}
+
+imperial_lawkeeper_lose_effect = {
+	if = { 
+		limit = { is_imperial_court_regent_trigger = yes }
+		top_liege = { primary_title = { clr_title_flag = has_imperial_lawkeeper } }
+		remove_character_modifier = imperial_lawkeeper_modifier
+	}
+	else_if = {
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.061 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.065 } } } }
+}
+
+imperial_lawkeeper_death_effect = {
+	society = { leader = { character_event = { id = ipcm.062 } } }
+}
+
+
+award_imperial_spymaster_effect = {
+	custom_tooltip = {
+		text = award_imperial_spymaster_effect_tooltip
+		if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_christian_1_title
+							title = event_target:imperial_court_christian_2_title
+							title = event_target:imperial_court_christian_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_spymaster_christian
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_muslim_1_title
+							title = event_target:imperial_court_muslim_2_title
+							title = event_target:imperial_court_muslim_3_title
+							title = e_arabia
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_spymaster_muslim
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_pagan_1_title
+							title = event_target:imperial_court_pagan_2_title
+							title = event_target:imperial_court_pagan_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_spymaster_pagan
+		}
+		else_if = {
+			limit = {
+				top_liege = {
+					primary_title = {
+						OR = {
+							title = event_target:imperial_court_eastern_1_title
+							title = event_target:imperial_court_eastern_2_title
+							title = event_target:imperial_court_eastern_3_title
+						}
+					}
+				}
+			}
+			give_minor_title = title_imperial_court_spymaster_eastern
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_byzantium } } }
+			give_minor_title = title_imperial_court_spymaster_byzantine
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_hre } } }
+			give_minor_title = title_imperial_court_spymaster_hre
+		}
+		else_if = {
+			limit = { top_liege = { primary_title = { title = e_roman_empire } } }
+			give_minor_title = title_imperial_court_spymaster_roman
+		}
+	}
+}
+
+revoke_imperial_spymaster_effect = {
+	custom_tooltip = {
+		text = revoke_imperial_spymaster_effect_tooltip
+		remove_title = title_imperial_court_spymaster_christian
+		remove_title = title_imperial_court_spymaster_muslim
+		remove_title = title_imperial_court_spymaster_pagan
+		remove_title = title_imperial_court_spymaster_eastern
+		remove_title = title_imperial_court_spymaster_byzantine
+		remove_title = title_imperial_court_spymaster_hre
+		remove_title = title_imperial_court_spymaster_roman
+	}
+}
+
+imperial_spymaster_gain_effect = {
+	if = { 
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.070 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.073 } } } }
+}
+
+imperial_spymaster_lose_effect = {
+	if = { 
+		limit = { is_imperial_court_regent_trigger = yes }
+		top_liege = { primary_title = { clr_title_flag = has_spymaster_lawkeeper } }
+		remove_character_modifier = imperial_spymaster_modifier
+	}
+	else_if = {
+		limit = { society = { leader = { tier = emperor } } }
+		letter_event = { id = ipcm.071 } 
+	}
+	else = { society = { leader = { character_event = { id = ipcm.075 } } } }
+}
+
+imperial_spymaster_death_effect = {
+	society = { leader = { character_event = { id = ipcm.072 } } }
+}
+
+
+
+
+
+####Misc
+
+get_imperial_capital_effect = {
+	hidden_tooltip = {
+		if = {
+			limit = { tier = emperor }
+			random_demesne_title = {
+				limit = { has_title_flag = is_imperial_capital }
+				save_event_target_as = imperial_capital
+			}
+		}
+		else = {
+			top_liege = {
+				random_demesne_title = {
+					limit = { has_title_flag = is_imperial_capital }
+					save_event_target_as = imperial_capital
+				}
+			}
+		}
+	}
+}
+
+#character scope
+update_emperor_imperial_court_modifiers_effect = {
+	hidden_tooltip = {
+		if = {
+			limit = {
+				tier = emperor 
+				primary_title = { has_title_flag = imperial_court_active }
+			}
+			remove_character_modifier = imperial_court_influence_1
+			remove_character_modifier = imperial_court_influence_2
+			remove_character_modifier = imperial_court_influence_3
+			remove_character_modifier = imperial_court_influence_4
+			remove_character_modifier = imperial_court_influence_5
+			
+			if = {
+				limit = { is_imperial_court_member_trigger = yes }
+				if = {
+					limit = { society_influence >= 80 }
+					add_character_modifier = { modifier = imperial_court_influence_5 duration = -1 }
+				}
+				else_if = {
+					limit = { society_influence >= 60 }
+					add_character_modifier = { modifier = imperial_court_influence_4 duration = -1 }
+				}
+				else_if = {
+					limit = { society_influence >= 40 }
+					add_character_modifier = { modifier = imperial_court_influence_3 duration = -1 }
+				}
+				else_if = {
+					limit = { society_influence >= 20 }
+					add_character_modifier = { modifier = imperial_court_influence_2 duration = -1 }
+				}
+				else = { add_character_modifier = { modifier = imperial_court_influence_1 duration = -1 } }
+			}
+			
+			else = {
+				random_realm_character = {
+					show_scope_change = no
+					limit = { 
+						is_in_society = yes
+						is_imperial_court_regent_trigger = yes 
+					}
+					if = {
+						limit = { society_influence >= 80 }
+						top_liege = { add_character_modifier = { modifier = imperial_court_influence_5 duration = -1 } }
+					}
+					else_if = {
+						limit = { society_influence >= 60 }
+						top_liege = { add_character_modifier = { modifier = imperial_court_influence_4 duration = -1 } }
+					}
+					else_if = {
+						limit = { society_influence >= 40 }
+						top_liege = { add_character_modifier = { modifier = imperial_court_influence_3 duration = -1 } }
+					}
+					else_if = {
+						limit = { society_influence >= 20 }
+						top_liege = { add_character_modifier = { modifier = imperial_court_influence_2 duration = -1 } }
+					}
+					else = { top_liege = { add_character_modifier = { modifier = imperial_court_influence_1 duration = -1 } } }
+				}
+			}
+		}
+		
+		else_if = {
+			limit = { is_imperial_court_regent_trigger = yes }
+			top_liege = {
+				show_scope_change = no
+				remove_character_modifier = imperial_court_influence_1
+				remove_character_modifier = imperial_court_influence_2
+				remove_character_modifier = imperial_court_influence_3
+				remove_character_modifier = imperial_court_influence_4
+				remove_character_modifier = imperial_court_influence_5
+			}
+			
+			if = {
+				limit = { society_influence >= 80 }
+				top_liege = { show_scope_change = no add_character_modifier = { modifier = imperial_court_influence_5 duration = -1 } }
+			}
+			else_if = {
+				limit = { society_influence >= 60 }
+				top_liege = { show_scope_change = no add_character_modifier = { modifier = imperial_court_influence_4 duration = -1 } }
+			}
+			else_if = {
+				limit = { society_influence >= 40 }
+				top_liege = { show_scope_change = no add_character_modifier = { modifier = imperial_court_influence_3 duration = -1 } }
+			}
+			else_if = {
+				limit = { society_influence >= 20 }
+				top_liege = { show_scope_change = no add_character_modifier = { modifier = imperial_court_influence_2 duration = -1 } }
+			}
+			else = { top_liege = { show_scope_change = no add_character_modifier = { modifier = imperial_court_influence_1 duration = -1 } } }
+		}
+		
+		else = {
+			remove_character_modifier = imperial_court_influence_1
+			remove_character_modifier = imperial_court_influence_2
+			remove_character_modifier = imperial_court_influence_3
+			remove_character_modifier = imperial_court_influence_4
+			remove_character_modifier = imperial_court_influence_5
+		}
+	}
+}
+
+#should be mostly for emperor events
+add_magnanimous_emperor_influence_effect = {
+	custom_tooltip = {
+		text = add_magnanimous_emperor_influence_effect_tooltip
+		if = {
+			limit = { is_imperial_court_member_trigger = yes }
+			add_society_modifier = 	{ modifier = ipc_magnanimous_emperor years = 5 }
+		}
+		else = {
+			random_realm_character = {
+				limit = { is_imperial_court_member_trigger = yes }
+				add_society_modifier = 	{ modifier = ipc_magnanimous_emperor years = 5 }
+			}
+		}
+	}
+}
+
+
+
+#############Missions#############
+
+
+add_imperial_service_opinion_effect = {
+	show_portrait = top_liege
+	reverse_opinion = { modifier = opinion_imperial_service who = top_liege years = 5 }
+}
+
+add_failed_empire_opinion_effect = {
+	show_portrait = top_liege
+	reverse_opinion = { modifier = opinion_failed_empire who = top_liege years = 5 }
+}
+
+reset_ipc_mission_variables_effect = {
+	hidden_tooltip = {
+		set_variable = { which = ipc_mission_score value = 0 } 
+		set_variable = { which = ipc_mission_flavor_counter value = 0 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

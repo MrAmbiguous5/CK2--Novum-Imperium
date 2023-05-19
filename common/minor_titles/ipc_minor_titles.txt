@@ -1,0 +1,2737 @@
+##############Imperial Regents##############
+title_imperial_court_regent_christian = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 1
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = { 
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_christian_1_title
+				title = event_target:imperial_court_christian_2_title
+				title = event_target:imperial_court_christian_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		OR = {
+			AND = {
+				is_close_relative = FROM
+				is_in_society = no
+				diplomacy = 10
+			}
+			AND = {
+				is_imperial_court_member_trigger = yes
+				society_rank == 3
+			}
+			hidden_tooltip = { is_imperial_court_regent_trigger = yes }
+		}
+		NOT = { trait = incapable }
+		prisoner = no
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = imperial_regent_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							any_realm_character = { has_character_flag = revolting_imperial_regent }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = { 
+			liege = { 
+				NOR = { 
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_regent_christian 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { letter_event = { id = ipcm.030 } }
+	lose_effect = { imperial_regent_lose_effect = yes }
+	death_effect = { liege = { character_event = { id = ipcm.032 } } }
+}
+
+
+title_imperial_court_regent_muslim = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 1
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_muslim_1_title
+				title = event_target:imperial_court_muslim_2_title
+				title = event_target:imperial_court_muslim_3_title
+				title = e_arabia
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		OR = {
+			AND = {
+				is_close_relative = FROM
+				is_in_society = no
+				diplomacy = 10
+				OR = {
+					is_female = no
+					AND = {
+						is_female = yes
+						FROM = { primary_title = { NOT = { has_law = status_of_women_0 } } }
+					}
+				}
+			}
+			AND = {
+				is_imperial_court_member_trigger = yes
+				society_rank == 3
+			}
+			hidden_tooltip = { is_imperial_court_regent_trigger = yes }
+		}
+		NOT = { trait = incapable }
+		prisoner = no
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = imperial_regent_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							any_realm_character = { has_character_flag = revolting_imperial_regent }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = { 
+			liege = { 
+				NOR = { 
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_regent_muslim 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { letter_event = { id = ipcm.030 } }
+	lose_effect = { imperial_regent_lose_effect = yes }
+	death_effect = { liege = { character_event = { id = ipcm.032 } } }
+}
+
+
+title_imperial_court_regent_pagan = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 1
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = { 
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_pagan_1_title
+				title = event_target:imperial_court_pagan_2_title
+				title = event_target:imperial_court_pagan_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		OR = {
+			AND = {
+				is_close_relative = FROM
+				is_in_society = no
+				diplomacy = 10
+				OR = {
+					is_female = no
+					AND = {
+						is_female = yes
+						FROM = { primary_title = { NOT = { has_law = status_of_women_0 } } }
+					}
+				}
+			}
+			AND = {
+				is_imperial_court_member_trigger = yes
+				society_rank == 3
+			}
+			hidden_tooltip = { is_imperial_court_regent_trigger = yes }
+		}
+		NOT = { trait = incapable }
+		prisoner = no
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = imperial_regent_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							any_realm_character = { has_character_flag = revolting_imperial_regent }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = { 
+			liege = { 
+				NOR = { 
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_regent_pagan 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { letter_event = { id = ipcm.030 } }
+	lose_effect = { imperial_regent_lose_effect = yes }
+	death_effect = { liege = { character_event = { id = ipcm.032 } } }
+}
+
+
+title_imperial_court_regent_eastern = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 1
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = { 
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_eastern_1_title
+				title = event_target:imperial_court_eastern_2_title
+				title = event_target:imperial_court_eastern_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		OR = {
+			AND = {
+				is_close_relative = FROM
+				is_in_society = no
+				diplomacy = 10
+				OR = {
+					is_female = no
+					AND = {
+						is_female = yes
+						FROM = { primary_title = { NOT = { has_law = status_of_women_0 } } }
+					}
+				}
+			}
+			AND = {
+				is_imperial_court_member_trigger = yes
+				society_rank == 3
+			}
+			hidden_tooltip = { is_imperial_court_regent_trigger = yes }
+		}
+		NOT = { trait = incapable }
+		prisoner = no
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = imperial_regent_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							any_realm_character = { has_character_flag = revolting_imperial_regent }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = { 
+			liege = { 
+				NOR = { 
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_regent_eastern 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { letter_event = { id = ipcm.030 } }
+	lose_effect = { imperial_regent_lose_effect = yes }
+	death_effect = { liege = { character_event = { id = ipcm.032 } } }
+}
+
+
+title_imperial_court_regent_byzantine = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 1
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = { 
+			title = e_byzantium
+			has_title_flag = imperial_court_active 
+		}
+	}
+	
+	allowed_to_hold = {
+		OR = {
+			AND = {
+				is_close_relative = FROM
+				is_in_society = no
+				diplomacy = 10
+				OR = {
+					is_female = no
+					AND = {
+						is_female = yes
+						e_byzantium = { NOT = { has_law = status_of_women_0 } }
+					}
+				}
+			}
+			AND = {
+				is_imperial_court_member_trigger = yes
+				society_rank == 3
+			}
+			hidden_tooltip = { is_imperial_court_regent_trigger = yes }
+		}
+		NOT = { trait = incapable }
+		custom_tooltip = {
+			text = can_join_byzantine_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		prisoner = no
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = imperial_regent_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							any_realm_character = { has_character_flag = revolting_imperial_regent }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = { 
+			liege = { 
+				NOR = { 
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_regent_byzantine 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { letter_event = { id = ipcm.030 } }
+	lose_effect = { imperial_regent_lose_effect = yes }
+	death_effect = { liege = { character_event = { id = ipcm.032 } } }
+}
+
+title_imperial_court_regent_hre = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 1
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = { 
+			title = e_hre
+			has_title_flag = imperial_court_active 
+		}
+	}
+	
+	allowed_to_hold = {
+		OR = {
+			AND = {
+				is_close_relative = FROM
+				is_in_society = no
+				diplomacy = 10
+			}
+			AND = {
+				is_imperial_court_member_trigger = yes
+				society_rank == 3
+			}
+			hidden_tooltip = { is_imperial_court_regent_trigger = yes }
+		}
+		NOT = { trait = incapable }
+		prisoner = no
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = imperial_regent_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							any_realm_character = { has_character_flag = revolting_imperial_regent }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = { 
+			liege = { 
+				NOR = { 
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_regent_hre 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { letter_event = { id = ipcm.030 } }
+	lose_effect = { imperial_regent_lose_effect = yes }
+	death_effect = { liege = { character_event = { id = ipcm.032 } } }
+}
+
+
+title_imperial_court_regent_roman = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 15
+	
+	monthly_salary = 1
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = { 
+			title = e_roman_empire
+			has_title_flag = imperial_court_active 
+		}
+	}
+	
+	allowed_to_hold = {
+		OR = {
+			AND = {
+				is_close_relative = FROM
+				is_in_society = no
+				diplomacy = 10
+				OR = {
+					is_female = no
+					AND = {
+						is_female = yes
+						e_roman_empire = { NOT = { has_law = status_of_women_0 } }
+					}
+				}
+			}
+			AND = {
+				is_imperial_court_member_trigger = yes
+				society_rank == 3
+			}
+			hidden_tooltip = { is_imperial_court_regent_trigger = yes }
+		}
+		NOT = { trait = incapable }
+		custom_tooltip = {
+			text = can_join_roman_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		prisoner = no
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = imperial_regent_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_regent
+							any_realm_character = { has_character_flag = revolting_imperial_regent }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = { 
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_regent_roman 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { letter_event = { id = ipcm.030 } }
+	lose_effect = { imperial_regent_lose_effect = yes }
+	death_effect = { liege = { character_event = { id = ipcm.032 } } }
+}
+
+
+
+
+##############Imperial Seneschal##############
+title_imperial_court_seneschal_christian = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = stewardship
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_christian_1_title
+				title = event_target:imperial_court_christian_2_title
+				title = event_target:imperial_court_christian_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		stewardship >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_christian } }
+		custom_tooltip = {
+			text = imperial_seneschal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_seneschal
+							any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_seneschal_christian 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_seneschal_gain_effect = yes }
+	lose_effect = { imperial_seneschal_lose_effect = yes }
+	death_effect = { imperial_seneschal_death_effect = yes }
+}
+
+title_imperial_court_seneschal_muslim = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = stewardship
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_muslim_1_title
+				title = event_target:imperial_court_muslim_2_title
+				title = event_target:imperial_court_muslim_3_title
+				title = e_arabia
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		stewardship >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_muslim } }
+		custom_tooltip = {
+			text = imperial_seneschal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_seneschal
+							any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_seneschal_muslim 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_seneschal_gain_effect = yes }
+	lose_effect = { imperial_seneschal_lose_effect = yes }
+	death_effect = { imperial_seneschal_death_effect = yes }
+}
+
+title_imperial_court_seneschal_pagan = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = stewardship
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_pagan_1_title
+				title = event_target:imperial_court_pagan_2_title
+				title = event_target:imperial_court_pagan_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		stewardship >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_pagan } }
+		custom_tooltip = {
+			text = imperial_seneschal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_seneschal
+							any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_seneschal_pagan 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_seneschal_gain_effect = yes }
+	lose_effect = { imperial_seneschal_lose_effect = yes }
+	death_effect = { imperial_seneschal_death_effect = yes }
+}
+
+title_imperial_court_seneschal_eastern = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = stewardship
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_eastern_1_title
+				title = event_target:imperial_court_eastern_2_title
+				title = event_target:imperial_court_eastern_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		stewardship >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_eastern } }
+		custom_tooltip = {
+			text = imperial_seneschal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_seneschal
+							any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_seneschal_eastern 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_seneschal_gain_effect = yes }
+	lose_effect = { imperial_seneschal_lose_effect = yes }
+	death_effect = { imperial_seneschal_death_effect = yes }
+}
+
+title_imperial_court_seneschal_byzantine = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = stewardship
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_byzantium
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		stewardship >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_byzantine_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_byzantine } }
+		custom_tooltip = {
+			text = imperial_seneschal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_seneschal
+							any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_seneschal_byzantine 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_seneschal_gain_effect = yes }
+	lose_effect = { imperial_seneschal_lose_effect = yes }
+	death_effect = { imperial_seneschal_death_effect = yes }
+}
+
+title_imperial_court_seneschal_hre = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = stewardship
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_hre
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		stewardship >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_hre } }
+		custom_tooltip = {
+			text = imperial_seneschal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_seneschal
+							any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_seneschal_hre 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_seneschal_gain_effect = yes }
+	lose_effect = { imperial_seneschal_lose_effect = yes }
+	death_effect = { imperial_seneschal_death_effect = yes }
+}
+
+title_imperial_court_seneschal_roman = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = stewardship
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_roman_empire
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		stewardship >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_roman_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_roman } }
+		custom_tooltip = {
+			text = imperial_seneschal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_seneschal
+							any_realm_character = { has_character_flag = revolting_imperial_seneschal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_seneschal_roman 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_seneschal_gain_effect = yes }
+	lose_effect = { imperial_seneschal_lose_effect = yes }
+	death_effect = { imperial_seneschal_death_effect = yes }
+}
+
+
+
+
+
+##############Imperial Marshal##############
+title_imperial_court_marshal_christian = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = martial
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_christian_1_title
+				title = event_target:imperial_court_christian_2_title
+				title = event_target:imperial_court_christian_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		martial >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_christian } }
+		custom_tooltip = {
+			text = imperial_marshal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_marshal
+							any_realm_character = { has_character_flag = revolting_imperial_marshal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_christian 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_marshal_gain_effect = yes }
+	lose_effect = { imperial_marshal_lose_effect = yes }
+	death_effect = { imperial_marshal_death_effect = yes }
+}
+
+title_imperial_court_marshal_muslim = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = martial
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_muslim_1_title
+				title = event_target:imperial_court_muslim_2_title
+				title = event_target:imperial_court_muslim_3_title
+				title = e_arabia
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		martial >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_muslim } }
+		custom_tooltip = {
+			text = imperial_marshal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_marshal
+							any_realm_character = { has_character_flag = revolting_imperial_marshal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_muslim 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_marshal_gain_effect = yes }
+	lose_effect = { imperial_marshal_lose_effect = yes }
+	death_effect = { imperial_marshal_death_effect = yes }
+}
+
+title_imperial_court_marshal_pagan = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = martial
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_pagan_1_title
+				title = event_target:imperial_court_pagan_2_title
+				title = event_target:imperial_court_pagan_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		martial >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_pagan } }
+		custom_tooltip = {
+			text = imperial_marshal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_marshal
+							any_realm_character = { has_character_flag = revolting_imperial_marshal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_pagan 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_marshal_gain_effect = yes }
+	lose_effect = { imperial_marshal_lose_effect = yes }
+	death_effect = { imperial_marshal_death_effect = yes }
+}
+
+title_imperial_court_marshal_eastern = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = martial
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_eastern_1_title
+				title = event_target:imperial_court_eastern_2_title
+				title = event_target:imperial_court_eastern_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		martial >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_eastern } }
+		custom_tooltip = {
+			text = imperial_marshal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_marshal
+							any_realm_character = { has_character_flag = revolting_imperial_marshal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_eastern 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_marshal_gain_effect = yes }
+	lose_effect = { imperial_marshal_lose_effect = yes }
+	death_effect = { imperial_marshal_death_effect = yes }
+}
+
+title_imperial_court_marshal_byzantine = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = martial
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_byzantium
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		martial >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_byzantine_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_byzantine } }
+		custom_tooltip = {
+			text = imperial_marshal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_marshal
+							any_realm_character = { has_character_flag = revolting_imperial_marshal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_byzantine 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_marshal_gain_effect = yes }
+	lose_effect = { imperial_marshal_lose_effect = yes }
+	death_effect = { imperial_marshal_death_effect = yes }
+}
+
+title_imperial_court_marshal_hre = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = martial
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_hre
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		martial >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_hre } }
+		custom_tooltip = {
+			text = imperial_marshal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_marshal
+							any_realm_character = { has_character_flag = revolting_imperial_marshal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_hre 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_marshal_gain_effect = yes }
+	lose_effect = { imperial_marshal_lose_effect = yes }
+	death_effect = { imperial_marshal_death_effect = yes }
+}
+
+title_imperial_court_marshal_roman = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = martial
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_roman_empire
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		martial >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_roman_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_roman } }
+		custom_tooltip = {
+			text = imperial_marshal_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_marshal
+							any_realm_character = { has_character_flag = revolting_imperial_marshal }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_roman 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_marshal_gain_effect = yes }
+	lose_effect = { imperial_marshal_lose_effect = yes }
+	death_effect = { imperial_marshal_death_effect = yes }
+}
+
+
+
+##############Imperial Lawkeeper##############
+
+title_imperial_court_lawkeeper_christian = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_christian_1_title
+				title = event_target:imperial_court_christian_2_title
+				title = event_target:imperial_court_christian_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		diplomacy >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_christian } }
+		custom_tooltip = {
+			text = imperial_lawkeeper_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_lawkeeper
+							any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_lawkeeper_christian 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_lawkeeper_gain_effect = yes }
+	lose_effect = { imperial_lawkeeper_lose_effect = yes }
+	death_effect = { imperial_lawkeeper_death_effect = yes }
+}
+
+title_imperial_court_lawkeeper_muslim = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_muslim_1_title
+				title = event_target:imperial_court_muslim_2_title
+				title = event_target:imperial_court_muslim_3_title
+				title = e_arabia
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		diplomacy >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_muslim } }
+		custom_tooltip = {
+			text = imperial_lawkeeper_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_lawkeeper
+							any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_lawkeeper_muslim 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_lawkeeper_gain_effect = yes }
+	lose_effect = { imperial_lawkeeper_lose_effect = yes }
+	death_effect = { imperial_lawkeeper_death_effect = yes }
+}
+
+title_imperial_court_lawkeeper_pagan = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_pagan_1_title
+				title = event_target:imperial_court_pagan_2_title
+				title = event_target:imperial_court_pagan_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		diplomacy >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_pagan } }
+		custom_tooltip = {
+			text = imperial_lawkeeper_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_lawkeeper
+							any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_lawkeeper_pagan 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_lawkeeper_gain_effect = yes }
+	lose_effect = { imperial_lawkeeper_lose_effect = yes }
+	death_effect = { imperial_lawkeeper_death_effect = yes }
+}
+
+title_imperial_court_lawkeeper_eastern = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_eastern_1_title
+				title = event_target:imperial_court_eastern_2_title
+				title = event_target:imperial_court_eastern_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		diplomacy >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_eastern } }
+		custom_tooltip = {
+			text = imperial_lawkeeper_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_lawkeeper
+							any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_lawkeeper_eastern 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_lawkeeper_gain_effect = yes }
+	lose_effect = { imperial_lawkeeper_lose_effect = yes }
+	death_effect = { imperial_lawkeeper_death_effect = yes }
+}
+
+title_imperial_court_lawkeeper_byzantine = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_byzantium
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		diplomacy >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_byzantine_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_byzantine } }
+		custom_tooltip = {
+			text = imperial_lawkeeper_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_lawkeeper
+							any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_lawkeeper_byzantine 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_lawkeeper_gain_effect = yes }
+	lose_effect = { imperial_lawkeeper_lose_effect = yes }
+	death_effect = { imperial_lawkeeper_death_effect = yes }
+}
+
+title_imperial_court_lawkeeper_hre = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_hre
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		diplomacy >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_hre } }
+		custom_tooltip = {
+			text = imperial_lawkeeper_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_lawkeeper
+							any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_lawkeeper_hre 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_lawkeeper_gain_effect = yes }
+	lose_effect = { imperial_lawkeeper_lose_effect = yes }
+	death_effect = { imperial_lawkeeper_death_effect = yes }
+}
+
+title_imperial_court_lawkeeper_roman = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = diplomacy
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_roman_empire
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		diplomacy >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_roman_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_lawkeeper_roman } }
+		custom_tooltip = {
+			text = imperial_lawkeeper_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_lawkeeper
+							any_realm_character = { has_character_flag = revolting_imperial_lawkeeper }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_roman 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_lawkeeper_gain_effect = yes }
+	lose_effect = { imperial_lawkeeper_lose_effect = yes }
+	death_effect = { imperial_lawkeeper_death_effect = yes }
+}
+
+
+##############Imperial Spymaster##############
+
+title_imperial_court_spymaster_christian = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = intrigue
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_christian_1_title
+				title = event_target:imperial_court_christian_2_title
+				title = event_target:imperial_court_christian_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		intrigue >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_christian } }
+		custom_tooltip = {
+			text = imperial_spymaster_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_spymaster
+							any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_spymaster_christian 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_spymaster_gain_effect = yes }
+	lose_effect = { imperial_spymaster_lose_effect = yes }
+	death_effect = { imperial_spymaster_death_effect = yes }
+}
+
+title_imperial_court_spymaster_muslim = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = intrigue
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_muslim_1_title
+				title = event_target:imperial_court_muslim_2_title
+				title = event_target:imperial_court_muslim_3_title
+				title = e_arabia
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		intrigue >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_muslim } }
+		custom_tooltip = {
+			text = imperial_spymaster_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_spymaster
+							any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_spymaster_muslim 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_spymaster_gain_effect = yes }
+	lose_effect = { imperial_spymaster_lose_effect = yes }
+	death_effect = { imperial_spymaster_death_effect = yes }
+}
+
+title_imperial_court_spymaster_pagan = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = intrigue
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_pagan_1_title
+				title = event_target:imperial_court_pagan_2_title
+				title = event_target:imperial_court_pagan_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		intrigue >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_pagan } }
+		custom_tooltip = {
+			text = imperial_spymaster_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_spymaster
+							any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_spymaster_pagan 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_spymaster_gain_effect = yes }
+	lose_effect = { imperial_spymaster_lose_effect = yes }
+	death_effect = { imperial_spymaster_death_effect = yes }
+}
+
+title_imperial_court_spymaster_eastern = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = intrigue
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		has_unique_court_title_trigger = no
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			OR = {
+				title = event_target:imperial_court_eastern_1_title
+				title = event_target:imperial_court_eastern_2_title
+				title = event_target:imperial_court_eastern_3_title
+			}
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		intrigue >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_eastern } }
+		custom_tooltip = {
+			text = imperial_spymaster_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_spymaster
+							any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_spymaster_eastern 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_spymaster_gain_effect = yes }
+	lose_effect = { imperial_spymaster_lose_effect = yes }
+	death_effect = { imperial_spymaster_death_effect = yes }
+}
+
+title_imperial_court_spymaster_byzantine = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = intrigue
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_byzantium
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		intrigue >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_byzantine_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_byzantine } }
+		custom_tooltip = {
+			text = imperial_spymaster_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_spymaster
+							any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_spymaster_byzantine 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_spymaster_gain_effect = yes }
+	lose_effect = { imperial_spymaster_lose_effect = yes }
+	death_effect = { imperial_spymaster_death_effect = yes }
+}
+
+title_imperial_court_spymaster_hre = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = intrigue
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_hre
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		intrigue >= 8
+		has_unique_imperial_office_trigger = no
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_regent_hre } }
+		custom_tooltip = {
+			text = imperial_spymaster_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_spymaster
+							any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_spymaster_hre 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_spymaster_gain_effect = yes }
+	lose_effect = { imperial_spymaster_lose_effect = yes }
+	death_effect = { imperial_spymaster_death_effect = yes }
+}
+
+title_imperial_court_spymaster_roman = {
+	
+	
+	show_as_title = yes
+	realm_in_name = yes
+	is_unique = no
+	revoke_allowed = no
+	
+	dignity = 5
+	attribute = intrigue
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.5
+	monthly_prestige = 0.25
+	
+	allowed_to_grant = {
+		tier = emperor
+		primary_title = {
+			has_title_flag = imperial_court_active 
+			title = e_roman_empire
+		}
+	}
+	
+	allowed_to_hold = {
+		is_imperial_court_member_trigger = yes
+		society_rank == 3
+		NOT = { trait = incapable }
+		prisoner = no
+		intrigue >= 8
+		has_unique_imperial_office_trigger = no
+		custom_tooltip = {
+			text = can_join_roman_imperial_court_trigger_castrate_blind_NOT
+			top_liege = { 
+				NOR = {
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_castrated_me }
+					reverse_has_opinion_modifier = { who = ROOT  modifier = opinion_blinded_me }
+				}
+			}
+		}
+		FROM = { show_scope_change = no NOT = { has_assigned_minor_title = title_imperial_court_spymaster_roman } }
+		custom_tooltip = {
+			text = imperial_spymaster_assign_no_revolt
+			FROM = { 
+				NOT = { 
+					any_current_enemy = {
+						liege_before_war = { character = PREVPREV }
+						OR = {
+							has_character_flag = revolting_imperial_spymaster
+							any_realm_character = { has_character_flag = revolting_imperial_spymaster }
+						}
+					}
+				} 
+			}
+		}
+		hidden_tooltip = {
+			liege = {
+				NOR = {
+					ai = yes
+					has_assigned_minor_title = title_imperial_court_marshal_roman 
+				}
+			}
+		}
+	}
+	
+	revoke_trigger = {
+		custom_tooltip = {
+			text = imperial_office_revoke_tooltip
+			always = no
+		}
+	}
+
+	gain_effect = { imperial_spymaster_gain_effect = yes }
+	lose_effect = { imperial_spymaster_lose_effect = yes }
+	death_effect = { imperial_spymaster_death_effect = yes }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##############Imperial Guards##############
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

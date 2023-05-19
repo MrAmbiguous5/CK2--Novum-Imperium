@@ -1,0 +1,34 @@
+lmmial_army_leader_m = {
+	icon = 13
+	
+	martial = 2
+	monthly_character_prestige = 2
+	vassal_opinion = 5
+	fertility = -0.5
+	health = -0.2
+	diplomacy = -3
+	stewardship = -2
+	intrigue = -1
+}
+
+lmmial_army_leader_ai_m = {
+	icon = 13
+	
+	martial = 2
+	monthly_character_prestige = 2
+	vassal_opinion = 5
+	fertility = -0.2
+	health = -0.1
+	diplomacy = -3
+	stewardship = -2
+	intrigue = -1
+}
+
+lmmial_war_cowardice_m = {
+	icon = 31
+	
+	monthly_character_prestige = -2
+	vassal_opinion = -5
+	tribal_opinion = -10
+	unreformed_tribal_opinion = -15
+}

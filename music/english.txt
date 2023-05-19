@@ -1,0 +1,223 @@
+song = {
+	name = "1125666250.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 2
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+song = {
+	name = "3418012797.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 2
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+
+song = {
+	name = "4234493789.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 2
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+
+song = {
+	name = "616601010.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 2
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Elizabeth1.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 2
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+
+song = {
+	name = "Elizabeth2.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 1.5
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+
+song = {
+	name = "England1.ogg"
+	
+	chance = {
+		factor = 1
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 2
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+
+song = {
+	name = "England2.ogg"
+	
+	chance = {
+		factor = 1.5
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 1.5
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+song = {
+	name = "Greensleeves.ogg"
+	
+	chance = {
+		factor = 2
+		modifier = {
+		factor = 0.2
+		NOT = {
+			OR = {
+			culture_group = celtic
+			culture_group = north_germanic
+			culture_group = central_germanic
+			culture_group = west_germanic
+			}
+			}
+		}
+		modifier = {
+		factor = 1.5
+		NOT = {
+			culture_group = west_germanic
+			}
+		}
+	}		
+}
+
