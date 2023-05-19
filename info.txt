@@ -1,0 +1,57 @@
+1. Vassal Culture Spread
+2. unique government type for viceroys
+3. Knights of Lazarus
+4. Heirs of Rome
+5. Cadet Dynasty Tools
+6. Safavid Order
+7. RDU
+8. Qizilbash
+9. Map Painter
+10. Knights of Jerusalem
+11. Join all the Wars
+12. Grivpanar
+13. Knights of Constatine
+14. Fritz's Flagas
+15. Darigan
+16. Buy Artifact
+17. Akiritai
+18. 99 more book slots
+19. Arsiyah
+20. Crusader Amazons
+## 21. Atlantis Invasion
+## 22. Indo Rome Mod Revived
+23. Viet Events
+24. Historical Events reborn HIP Compatch
+25. Order of Dobryzn
+26. Sicarii
+27. Dark Ages
+28. Regional Portraits
+29. Path of Destruction
+30. Lesbocracy
+31. Order of James Altopascio
+
+32. Add Holding Slot
+
+#### Assets/Content From ####
+
+33. WTWSMS
+34. Diadochi Kings
+35. The Winter King
+36. Pharoahs and Consuls
+37. Rise of Islam
+38. Patrum Scuta coat of arms and title flags
+
+#### Various In-house mods I'd make focusing on this: ####
+
+1. Holy Orders
+2. Titles
+3. Mercenaries
+4. Cultures
+5. Religions
+6. Decisions
+7. Events
+8. Provinces
+9. Bookmarks
+10. CB's
+11. Societies
+12. Bloodlines
