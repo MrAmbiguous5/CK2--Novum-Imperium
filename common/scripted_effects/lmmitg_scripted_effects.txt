@@ -1,0 +1,113 @@
+lmmitg_apply_tech_culture_flex_effect = {
+	event_target:lmmitg_prev_holder = {
+		capital_scope = {
+			if = {
+				limit = { TECH_CULTURE_FLEX = 8	}
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -4 } }
+			}
+			else_if = {
+				limit = { TECH_CULTURE_FLEX = 6	}
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -3 } }
+			}
+			else_if = {
+				limit = { TECH_CULTURE_FLEX = 4	}
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -2 } }
+			}
+			else_if = {
+				limit = { TECH_CULTURE_FLEX = 2	}
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -1 } }
+			}
+		}
+	}
+}
+
+lmmitg_apply_tech_noble_customs_effect = {
+	event_target:lmmitg_prev_holder = {
+		capital_scope = {
+			if = {
+				limit = { TECH_NOBLE_CUSTOMS = 8 }
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -4 } }
+			}
+			else_if = {
+				limit = { TECH_NOBLE_CUSTOMS = 6 }
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -3 } }
+			}
+			else_if = {
+				limit = { TECH_NOBLE_CUSTOMS = 4 }
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -2 } }
+			}
+			else_if = {
+				limit = { TECH_NOBLE_CUSTOMS = 2 }
+				ROOT = { change_variable = { which = lmmitg_loop_counter value = -1 } }
+			}
+		}
+	}
+}
+
+lmmitg_personal_reasons_effect = {
+	if = {
+		limit = { trait = proud }
+		change_variable = { which = lmmitg_loop_counter value = 1 }
+	}
+	if = { 
+		limit = { trait = ambitious }
+		change_variable = { which = lmmitg_loop_counter value = 1 }
+	}
+	if = { 
+		limit = { trait = content }
+		change_variable = { which = lmmitg_loop_counter value = -1 }
+	}
+	if = { 
+		limit = { trait = humble }
+		change_variable = { which = lmmitg_loop_counter value = -1 }
+	}
+}
+
+lmmitg_religious_reasons_effect = {
+	if = { 
+		limit = { trait = zealous }
+		change_variable = { which = lmmitg_loop_counter value = 2 }
+	}
+	if = { 
+		limit = { trait = holy_warrior }
+		change_variable = { which = lmmitg_loop_counter value = 1 }
+	}			
+	if = { 
+		limit = { trait = cynical }
+		change_variable = { which = lmmitg_loop_counter value = -1 }
+	}
+	if = { 
+		limit = { is_theocracy = yes  }
+		change_variable = { which = lmmitg_loop_counter value = 2 }
+	}
+	if = { 
+		limit = { has_character_flag = lmmitg_heresy_flag }
+		change_variable = { which = lmmitg_loop_counter value = 4 }
+	}
+	else_if = { 
+		limit = { religion_group = event_target:lmmitg_new_holder  }
+		change_variable = { which = lmmitg_loop_counter value = -1 }
+	}
+}
+
+lmmitg_cultural_reasons_effect = {
+	if = { 
+		limit = { trait = proud }
+		change_variable = { which = lmmitg_loop_counter value = 1 }
+	}
+	if = { 
+		limit = { trait = ambitious }
+		change_variable = { which = lmmitg_loop_counter value = 1 }
+	}
+	if = { 
+		limit = { trait = content }
+		change_variable = { which = lmmitg_loop_counter value = -1 }
+	}
+}
+
+lmmitg_landless_counter_effect = {
+	if = {
+		limit = { NOT = { is_landed = yes } }
+		divide_variable = { which = lmmitg_loop_counter value = 3 }
+	}
+}
