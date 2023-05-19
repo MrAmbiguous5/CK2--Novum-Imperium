@@ -1,0 +1,431 @@
+african_group;African;;;;;;;;;;;;;x
+bori;Bori;;;;;;;;;;;;;x
+a_tag_roog;West Sahelian;;;;;;;;;;;;;x
+a_tag_roog_reformed;West Sahelian;;;;;;;;;;;;;x
+amazigh;Amazigh;;;;;;;;;;;;;x
+amazigh_reformed;Amazigh;;;;;;;;;;;;;x
+bori_DESC;Among the people of Hausaland and the region of the great Lake Chad, there is an old faith in which mortals enter communion with eternal spirits. These spiritual forces are known as bori and exist in their own spiritual realm known as Jan Gari, but can be summoned by skilled individuals who offer their bodies for the spirits to possess. With the right ritual, spirits will offer guidance to those who summon them.;;;;;;;;;;;;;x
+a_tag_roog_DESC;Many are the faiths practiced among the peoples of the Western Sahel, but a common pattern resonates among most of them. A supreme creator god, who watches mankind from abode, a primordial set of twins who play a role in creating the world, and a fascination with the Sirius star that guides the destinies of man.;;;;;;;;;;;;;x
+a_tag_roog_reformed_DESC;Many are the faiths practiced among the peoples of the Western Sahel, but a common pattern resonates among most of them. A supreme creator god, who watches mankind from abode, a primordial set of twins who play a role in creating the world, and a fascination with the Sirius star that guides the destinies of man.;;;;;;;;;;;;;x
+amazigh_DESC;Many are the gods worshiped by the Berbers through their history. At one time or another they prayed to the old gods of Egypt and Phoenicia, or even Greece and Rome. But they also prayed to gods of their own making, and made others pray to them as well, from Numidia to old Carthage.;;;;;;;;;;;;;x
+amazigh_reformed_DESC;Many are the gods worshiped by the Berbers through their history. At one time or another they prayed to the old gods of Egypt and Phoenicia, or even Greece and Rome. But they also prayed to gods of their own making, and made others pray to them as well, from Numidia to old Carthage.;;;;;;;;;;;;;x
+KIRARI_OF_MAGIRO;The Kirari of Magiro;;;;;;;;;;;;;x
+NAGA_REETU_REET;Naga Reetu Reet;;;;;;;;;;;;;x
+BAAL_CYCLE;The Baal Cycle;;;;;;;;;;;;;x
+MAGADJA;magadja;;;;;;;;;;;;;x
+SALTIGUE;saltigue;;;;;;;;;;;;;x
+MARABOUT;marabout;;;;;;;;;;;;;x
+GOD_MAGIRO;Magiro;;;;;;;;;;;;;x
+GOD_MAI_JA_CIKI;Mai-Ja-Ciki;;;;;;;;;;;;;x
+GOD_GARKI_BABA;Garki Baba;;;;;;;;;;;;;x
+GOD_ZAKI;Zaki;;;;;;;;;;;;;x
+GOD_THE_YAYAN_ZANZANNA;The yayan zanzanna;;;;;;;;;;;;;x
+GOD_ROOG;Roog;;;;;;;;;;;;;x
+GOD_DONGO;Dongo;;;;;;;;;;;;;x
+GOD_KONDOLON;Kondolon;;;;;;;;;;;;;x
+GOD_SANE;Sané;;;;;;;;;;;;;x
+MOUSSO_KORONI;Mousso Koroni;;;;;;;;;;;;;x
+GOD_THE_EVIL_PANGOOLS;The evil pangools;;;;;;;;;;;;;x
+GOD_TANIT;Tanit;;;;;;;;;;;;;x
+GOD_ANTI;Änti;;;;;;;;;;;;;x
+GOD_GURZIL;Gurzil;;;;;;;;;;;;;x
+GOD_MAGEC;Magec;;;;;;;;;;;;;x
+GOD_SET;Set;;;;;;;;;;;;;x
+GOD_GUAYOTA;Guayota;;;;;;;;;;;;;x
+INNA;Inna;;;;;;;;;;;;;x
+INNA_FOA;Mother of us all;;;;;;;;;;;;;x
+SUPREME_SALTIGUE;Supreme Saltigue;;;;;;;;;;;;;x
+SUPREME_SALTIGUE_FOA;Your Holiness;;;;;;;;;;;;;x
+GUANAMENE;Guañameñe;;;;;;;;;;;;;x
+GUANAMENE_FOA;Your Holiness;;;;;;;;;;;;;x
+k_bori;The Bori Matriarchy;;;;;;;;;;;;;x
+k_bori_adj;Matriarchal;;;;;;;;;;;;;x
+d_a_tag_roog;The Order of the Saltigue;;;;;;;;;;;;;x
+d_a_tag_roog_adj;Saltigue;;;;;;;;;;;;;x
+d_amazigh;The Church of the Amazigh People;;;;;;;;;;;;;x
+d_amazigh_adj;Holy Amazigh;;;;;;;;;;;;;x
+d_living_tan_garki;Living Tan Garki;;;;;;;;;;;;;x
+d_living_tan_garki_adj;Tan Garki;;;;;;;;;;;;;x
+d_sacred_tyeddo;Sacred Tyeddo;;;;;;;;;;;;;x
+d_sacred_tyeddo_adj;Tyeddo;;;;;;;;;;;;;x
+d_orphans_of_numidia;Orphans of Numidia;;;;;;;;;;;;;x
+d_orphans_of_numidia_adj;Orphan;;;;;;;;;;;;;x
+e_carthage;Carthaginian Empire;;;;;;;;;;;;;x
+e_carthage_adj;Carthaginian;;;;;;;;;;;;;x
+temple_baron_female_bori;Magadja;;;;;;;;;;;;;x
+temple_count_female_bori;Chief Magadja;;;;;;;;;;;;;x
+temple_duke_female_bori;Great Magadja;;;;;;;;;;;;;x
+temple_king_female_bori;Great Magadja;;;;;;;;;;;;;x
+temple_emperor_female_bori;Supreme Magadja;;;;;;;;;;;;;x
+temple_baron_a_tag_roog;Saltigue;;;;;;;;;;;;;x
+temple_baron_female_a_tag_roog;Saltigue;;;;;;;;;;;;;x
+temple_baron_a_tag_roog_reformed;Saltigue;;;;;;;;;;;;;x
+temple_baron_female_a_tag_roog_reformed;Saltigue;;;;;;;;;;;;;x
+temple_count_a_tag_roog;Chief Saltigue;;;;;;;;;;;;;x
+temple_count_female_a_tag_roog;Chief Saltigue;;;;;;;;;;;;;x
+temple_count_a_tag_roog_reformed;Chief Saltigue;;;;;;;;;;;;;x
+temple_count_female_a_tag_roog_reformed;Chief Saltigue;;;;;;;;;;;;;x
+temple_duke_a_tag_roog;Great Saltigue;;;;;;;;;;;;;x
+temple_duke_female_a_tag_roog;Great Saltigue;;;;;;;;;;;;;x
+temple_duke_a_tag_roog_reformed;Great Saltigue;;;;;;;;;;;;;x
+temple_duke_female_a_tag_roog_reformed;Great Saltigue;;;;;;;;;;;;;x
+temple_king_a_tag_roog;Great Saltigue;;;;;;;;;;;;;x
+temple_king_female_a_tag_roog;Great Saltigue;;;;;;;;;;;;;x
+temple_king_a_tag_roog_reformed;Great Saltigue;;;;;;;;;;;;;x
+temple_king_female_a_tag_roog_reformed;Great Saltigue;;;;;;;;;;;;;x
+temple_emperor_a_tag_roog;Emperor Saltigue;;;;;;;;;;;;;x
+temple_emperor_female_a_tag_roog;Emperess Saltigue;;;;;;;;;;;;;x
+temple_emperor_a_tag_roog_reformed;Emperor Saltigue;;;;;;;;;;;;;x
+temple_emperor_female_a_tag_roog_reformed;Emperess Saltigue;;;;;;;;;;;;;x
+temple_baron_amazigh;Marabout;;;;;;;;;;;;;x
+temple_baron_female_amazigh;Marabout;;;;;;;;;;;;;x
+temple_baron_amazigh_reformed;Marabout;;;;;;;;;;;;;x
+temple_baron_female_amazigh_reformed;Marabout;;;;;;;;;;;;;x
+temple_count_amazigh;Chief Marabout;;;;;;;;;;;;;x
+temple_count_female_amazigh;Chief Marabout;;;;;;;;;;;;;x
+temple_count_amazigh_reformed;Chief Marabout;;;;;;;;;;;;;x
+temple_count_female_amazigh_reformed;Chief Marabout;;;;;;;;;;;;;x
+temple_duke_amazigh;Great Marabout;;;;;;;;;;;;;x
+temple_duke_female_amazigh;Great Marabout;;;;;;;;;;;;;x
+temple_duke_amazigh_reformed;Great Marabout;;;;;;;;;;;;;x
+temple_duke_female_amazigh_reformed;Great Marabout;;;;;;;;;;;;;x
+temple_king_amazigh;Great Marabout;;;;;;;;;;;;;x
+temple_king_female_amazigh;Great Marabout;;;;;;;;;;;;;x
+temple_king_amazigh_reformed;Great Marabout;;;;;;;;;;;;;x
+temple_king_female_amazigh_reformed;Great Marabout;;;;;;;;;;;;;x
+temple_emperor_amazigh;Emperor Marabout;;;;;;;;;;;;;x
+temple_emperor_female_amazigh;Emperess Marabout;;;;;;;;;;;;;x
+temple_emperor_amazigh_reformed;Emperor Marabout;;;;;;;;;;;;;x
+temple_emperor_female_amazigh_reformed;Emperess Marabout;;;;;;;;;;;;;x
+temple_barony_of_african_group;Temple of;;;;;;;;;;;;;x
+temple_county_of_african_group;Theocracy of;;;;;;;;;;;;;x
+temple_duchy_of_african_group;Theocracy of;;;;;;;;;;;;;x
+temple_kingdom_of_african_group;Theocracy of;;;;;;;;;;;;;x
+temple_empire_of_african_group;Empire of;;;;;;;;;;;;;x
+temple_barony_african_group;Temple;;;;;;;;;;;;;x
+temple_county_african_group;Theocracy;;;;;;;;;;;;;x
+temple_duchy_african_group;Theocracy;;;;;;;;;;;;;x
+temple_kingdom_african_group;Theocracy;;;;;;;;;;;;;x
+temple_empire_african_group;Empire;;;;;;;;;;;;;x
+emperor_manden;Mansa;;;;;;;;;;;;;x
+emperor_female_manden;Qasa;;;;;;;;;;;;;x
+tribal_emperor_manden;Mansa;;;;;;;;;;;;;x
+tribal_emperor_female_manden;Qasa;;;;;;;;;;;;;x
+king_songhay;Dia;;;;;;;;;;;;;x
+tribal_king_songhay;Dia;;;;;;;;;;;;;x
+emperor_songhay;Dia;;;;;;;;;;;;;x
+tribal_emperor_songhay;Dia;;;;;;;;;;;;;x
+king_soninke;Ghana;;;;;;;;;;;;;x
+tribal_king_soninke;Ghana;;;;;;;;;;;;;x
+emperor_soninke;Kaya Maga;;;;;;;;;;;;;x
+tribal_emperor_soninke;Kaya Maga;;;;;;;;;;;;;x
+AGELLID;Agellid;;;;;;;;;;;;;x
+TAGELLIDT;Tagellidt;;;;;;;;;;;;;x
+AMENKAD;Amenkad;;;;;;;;;;;;;x
+SUFFETE;Suffete;;;;;;;;;;;;;x
+KAYA_MAGA;Kaya Maga;;;;;;;;;;;;;x
+king_maghreb_arabic;Agellid;;;;;;;;;;;;;x
+king_female_maghreb_arabic;Tagellidt;;;;;;;;;;;;;x
+emperor_maghreb_arabic;Amenkad;;;;;;;;;;;;;x
+emperor_female_maghreb_arabic;Tagellidt;;;;;;;;;;;;;x
+tribal_king_maghreb_arabic;Agellid;;;;;;;;;;;;;x
+tribal_king_female_maghreb_arabic;Tagellidt;;;;;;;;;;;;;x
+tribal_emperor_maghreb_arabic;Amenkad;;;;;;;;;;;;;x
+tribal_emperor_female_maghreb_arabic;Tagellidt;;;;;;;;;;;;;x
+kingdom_of_maghreb_arabic;Kingdom of;;;;;;;;;;;;;x
+tribal_kingdom_of_maghreb_arabic;Kingdom of;;;;;;;;;;;;;x
+kingdom_maghreb_arabic;Kingdom;;;;;;;;;;;;;x
+tribal_kingdom_maghreb_arabic;Kingdom;;;;;;;;;;;;;x
+job_spiritual_bori;Court Magadja;;;;;;;;;;;;;x
+job_spiritual_a_tag_roog;Hogon;;;;;;;;;;;;;x
+job_spiritual_a_tag_roog_reformed;Hogon;;;;;;;;;;;;;x
+job_spiritual_amazigh;Court Marabout;;;;;;;;;;;;;x
+job_spiritual_amazigh_reformed;Court Marabout;;;;;;;;;;;;;x
+job_marshal_west_african;Farima;;;;;;;;;;;;;x
+job_treasurer_west_african;Farba;;;;;;;;;;;;;x
+job_chancellor_central_african;Wakili;;;;;;;;;;;;;x
+job_marshal_central_african;Zerma;;;;;;;;;;;;;x
+job_treasurer_central_african;Midala;;;;;;;;;;;;;x
+title_champion_afr;Champion;Champion;Champion;;Campeón;;;;;;;;;x
+title_champion_afr_desc;The person that this title is bestowed upon is considered to be the Champion of the Realm. There is surely no greater honor for mortal men to aspire to.;La personne à qui ce titre est décerné est considérée comme le champion du royaume. Aucun mortel ne saurait espérer titre plus honorable.;Die Person, die diesen Titel erhalten hat, wird als Champion des Reiches angesehen. Es gibt wahrlich keine größere Ehre für Sterbliche.;;La persona a la que se le otorga este título es considerada como el Campeón del Reino. No se puede aspirar a un honor mayor para los hombres mortales.;;;;;;;;;x
+title_master_of_the_blade_afr;Master of the Blade;Maître de la lame;Meister des Schwertes;;Maestro de la Espada;;;;;;;;;x
+title_master_of_the_blade_afr_desc;The Master of the Blade is a prestigious honorific usually granted to those with demonstrated ability in swordsmanship.;Le maître de la lame est un titre prestigieux habituellement décerné à ceux qui ont démontré leur habileté à manier l'épée.;Der Meister des Schwertes ist eine prestigeträchtige Ehrung, die nur den Erfahrensten im Umgang mit dem Schwert zuteil wird.;;El Maestro de la Espada es un prestigioso título honorífico concedido a aquellas personas con demostrada capacidad en el manejo de la espada.;;;;;;;;;x
+title_master_of_the_bow_afr;Master of the Bow;Maître de l'arc;Meister des Bogens;;Maestro del Arco;;;;;;;;;x
+title_master_of_the_bow_afr_desc;The Master of the Bow is a prestigious honorific usually granted to those with demonstrated ability in bowmanship.;Le maître de l'arc est un titre prestigieux habituellement décerné à ceux qui ont démontré leur habileté à manier l'arc.;Der Meister des Bogens ist eine prestigeträchtige Ehrung, die nur den Erfahrensten im Umgang mit dem Bogen zuteil wird.;;El Maestro del Arco es un prestigioso título honorífico concedido a aquellas personas con demostrada capacidad en el manejo del Arco.;;;;;;;;;x
+title_venerable_elder_afr;Venerable Elder;Vénérable aîné;Ehrwürdiger Älterer;;Venerable Anciano;;;;;;;;;x
+title_venerable_elder_afr_desc;This honorific can only be granted to those who have reached the age of fifty. Their wisdom and the sorely needed guidance they offer the younger generations is deserving of great respect.;Ce titre honorifique ne peut être accordé qu'à ceux qui ont atteint l'âge de cinquante ans. Leur sagesse et leurs conseils, dont ont grandement besoin les générations plus jeunes, appellent à un grand respect.;Diese Ehrung können nur jene erhalten, die das fünfzigste Lebensjahr erreicht haben. Ihre Weisheit und ihr dringend benötigter Rat für jüngere Generationen verdienen den höchstmöglichen Respekt.;;Este título honorífico sólo puede concederse a quienes hayan alcanzado la edad de cincuenta. Su sabiduría y la muy necesaria guía que ofrecen a las nuevas generaciones se merecen un gran respeto.;;;;;;;;;x
+title_magajiya_yaljigari;Magajiya Yaljigari;;;;;;;;;;;;;x
+title_magajiya_yaljigari_desc;The Magajiya Yaljigari is a trusted woman who is in charge of informing the ruler of the news around the capital.;;;;;;;;;;;;x
+title_griot;Griot;;;;;;;;;;;;;x
+title_griot_desc;A griot is a historian, a storyteller and a poet. A very trusted position in any West African court.;;;;;;;;;;;;x
+title_chiroma;Chiroma;;;;;;;;;;;;;x
+title_chiroma_desc;The chiroma is the traditional title held by the heir apparent in the lands of Kanem. Holding it may be enough to persuade the court to back the candidate in the eventual succession.;;;;;;;;;;;;x
+W_L_251180;https://en.wikipedia.org/wiki/Bayajidda;;;;;;;;;;;;;x
+W_L_251187;https://en.wikipedia.org/wiki/Daurama;;;;;;;;;;;;;x
+W_L_1060003;https://en.wikipedia.org/wiki/Bilal_ibn_Rabah;;;;;;;;;;;;;x
+bayajidda;Blood of Bayajidda;;;;;;;;;;;;;x
+bayajidda_desc;Bayajidda was a Baghdadi prince who was exiled to Africa. After reaching Hausaland, he gained the locals' favor by killing the monstrous snake Sarki.;;;;;;;;;;;;;x
+daurama;Blood of Daurama;;;;;;;;;;;;;x
+daurama_desc;Daurama was a great matriarch of the Hausa people. She ruled as a celibate religious leader but broke her vows to marry the hero Bayajidda as a reward for his bravery.;;;;;;;;;;;;;x
+bilal_ibn_rabah;Blood of Bilal ibn Rabah;;;;;;;;;;;;;x
+bilal_ibn_rabah_desc;Born into slavery, Bilal was the son of an exiled Ethiopian princess. After befriending the prophet Muhammad he became the first muezzin in islamic history.;;;;;;;;;;;;;x
+mari_djata;Blood of Mari-Djata;;;;;;;;;;;;;x
+mari_djata_desc;Prince Mari-Djata was born disabled and exiled from Niani by his jealous stepmother. However, he would return to reclaim his birthright, becoming the first Mansa of Mali.;;;;;;;;;;;;;x
+set_bloodline;Blood of Set;;;;;;;;;;;;;x
+set_bloodline_desc;Set was a leader of the Zaghawa people, who left the nomadic lifestyle of his nation and founded the city of Djimi, governing as the first ruler of the Duguwa dynasty.;;;;;;;;;;;;;x
+dinga_cisse;Blood of Dinga Cisse;;;;;;;;;;;;;x
+dinga_cisse_desc;Warrior-sorcerer Dinga Cisse is considered the first ruler of Wagadou, an Empire which grew to be one of richest in the the world.;;;;;;;;;;;;;x
+tunka_manin;Blood of Tunka Manin;;;;;;;;;;;;;x
+tunka_manin_desc;The last pagan ruler of the Wagadou, Manin stubbornly refused to convert to Islam despite the threat of an Almoravid jihad.;;;;;;;;;;;;;x
+alayaman;Blood of Alayaman;;;;;;;;;;;;;x
+alayaman_desc;The first king of the Zuwa dynasty, Alayaman helped establish Gao as a trading powerhouse of the Sahel.;;;;;;;;;;;;;x
+carthage_bloodline;Blood of [This.GetFirstNameWithNick];;;;;;;;;;;;;x
+carthage_bloodline_desc;[This.GetTitledNameWithNick] was the magnificent ruler who presided over the rebirth of the Carthaginian Empire from the very ashes.;;;;;;;;;;;;;x
+string_reformed_religion_a_tag_roog; the ancient spiritual traditions of the Western Sahel have been unified into a single and true way of the divine, capable of resisting any foreign incursion.;;;;;;;;;;;;;x
+string_reformed_religion_amazigh; the faith of Carthage and Numidia will return the old gods to their place of honor and liberate the people of North Africa from the Abrahamic yoke.;;;;;;;;;;;;;x
+controls_holy_sites_tooltip;Controls all five holy sites;;;;;;;;;;;;;x
+vassalize_inna_tooltip;Vassalize §Y[Root.RelHead.GetBestName]§!;;;;;;;;;;;;;x
+beatification_tooltip;Ancestors can now be beatified and canonized;;;;;;;;;;;;;x
+has_griot_tooltip;You have appointed a §YGriot§!;;;;;;;;;;;;;x
+learned_griot_tooltip;Your §YGriot§! has §YLearning§! greater than or equal to 12;;;;;;;;;;;;;x
+CTT_AFRICAN_GHWS_UNLOCKED;African Great Holy Wars are unlocked;;;;;;;;;;;;;x
+is_reformed_amazigh_tooltip;Publicly practices the Reformed §YAmazigh§! religion;;;;;;;;;;;;;x
+carthage_is_restored_tooltip;The Carthaginian Empire is restored;;;;;;;;;;;;;x
+is_empire_of_maghreb_tooltip;Is the Empire of §YMaghreb§!;;;;;;;;;;;;;x
+tooltip_bori_elector_vote_possessed;[From.GetSheHeCap] has the wisdom of a bori spirit who has possessed [From.GetHerHim];;;;;;;;;;;;;x
+tooltip_bori_elector_possessed_ruler;The bori spirit possessing my liege surely knows best;;;;;;;;;;;;;x
+tooltip_elector_vote_chiroma;[From.GetSheHeCap] is the §YChiroma§!, the position traditionally held by the heir apparent;;;;;;;;;;;;;x
+baptism_sponsor_sympathetic_afr;§Y[Root.GetTitledFirstName]§! is sympathetic towards §YAfricans§!;;;;;;;;;;;;;x
+baptism_sponsor_african;§Y[Root.GetTitledFirstName]§! is a §YReformed African§!;;;;;;;;;;;;;x
+salt_county_succ_tooltip;§Y[Root.GetTitledFirstName]§! takes all occupied territory.;;;;;;;;;;;;;x
+salt_rome_tooltip;The §YChristian§! world is outraged by your actions.\nThe destruction of the city and the §YHoly See§! has gravely affected the §YMoral Authority§! of the §YCatholic Church§!, as well as the faith of Rome's former owner.\nYou loot §Y2000§! gold from the city.;;;;;;;;;;;;;x
+salt_constantinople_tooltip;The §YChristian§! world is outraged by your actions.\nThe destruction of the city has gravely affected the §YMoral Authority§! of the §YOrthodox Church§!, as well as the faith of Constantinople's former owner.\nYou loot §Y2000§! gold from the city.;;;;;;;;;;;;;x
+salt_carthage_capital_tooltip;The §YAmazigh§! world is outraged by your actions.\nThe destruction of the city has gravely affected the §YMoral Authority§! of the §YChurch of the Amazigh People§!.\nYou loot §Y2000§! gold from the city.;;;;;;;;;;;;;x
+pick_religious_tradition_tooltip;Choose a religious tradition to follow.;;;;;;;;;;;;;x
+tooltip_change_a_tag_roog_branch;You will choose a new path.;;;;;;;;;;;;;x
+bida_sacrifice_peasant_tooltip;A peasant girl will be selected as the sacrifice.;;;;;;;;;;;;;x
+bida_sacrifice_courtier_tooltip;§Y[bida_sacrifice_courtier.GetTitledName]§! will be selected as the sacrifice.;;;;;;;;;;;;;x
+bida_sacrifice_daughter_tooltip;§Y[bida_sacrifice_daughter.GetTitledName]§! will be selected as the sacrifice.;;;;;;;;;;;;;x
+bida_sacrifice_prisoner_tooltip;§Y[bida_sacrifice_prisoner.GetTitledName]§! will be selected as the sacrifice.;;;;;;;;;;;;;x
+bida_self_sacrifice_tooltip;§YYou§! will be selected as the sacrifice.;;;;;;;;;;;;;x
+bida_sacrifice_ends_early_tooltip;The sacrifice will be canceled and all of the guests will go home.;;;;;;;;;;;;;x
+bida_sacrifice_continues_tooltip;The sacrifice will continue as originally planned.;;;;;;;;;;;;;x
+bida_sacrifice_replacement_courtier_tooltip;§Y[bida_sacrifice_replacement.GetTitledName]§! will be sacrificed in place of §Y[bida_sacrifice.GetTitledName]§!;;;;;;;;;;;;;x
+bida_sacrifice_replacement_peasant_tooltip;A different girl will be sacrificed in her place.;;;;;;;;;;;;;x
+bida_self_sacrifice_tooltip_info;[Root.BidaSelfSacrificeTooltipInfo];;;;;;;;;;;;;x
+bida_self_sacrifice_zealous;This option is available because you have the §YZealous§! trait.;;;;;;;;;;;;;x
+bida_self_sacrifice_lunatic;This option is available because you have the §YLunatic§! trait.;;;;;;;;;;;;;x
+bida_self_sacrifice_dumb;This option is available because you are dumb.;;;;;;;;;;;;x
+hawan_sallah_elephant_prepare_tooltip;You will prepare an elephant for the parade.;;;;;;;;;;;;;x
+hawan_sallah_bet_arabian;You bet §Y[Root.hawan_sallah_bet_winnings.GetValue]§! gold on the white Arabian.;;;;;;;;;;;;;x
+hawan_sallah_bet_palomino;You bet §Y[Root.hawan_sallah_bet_winnings.GetValue]§! gold on the palomino barb.;;;;;;;;;;;;;x
+hawan_sallah_bet_andalusian;You bet §Y[Root.hawan_sallah_bet_winnings.GetValue]§! gold on the bay Andalusian.;;;;;;;;;;;;;x
+hawan_sallah_military_speech;You will give a speech about your achievements as a commander.;;;;;;;;;;;;;x
+hawan_sallah_religious_speech;You will give a speech about the virtues of a pious soul.;;;;;;;;;;;;;x
+hawan_sallah_smart_speech;You will give a poetic speech showing your true brilliance.;;;;;;;;;;;;;x
+eldership_rules_afr;Eldership;;;;;;;;;;;;;x
+religion_feature_a_tag_roog;Way of the Divine;;;;;;;;;;;;;x
+religion_feature_a_tag_roog_desc;In order to edify the faith we shall unify the many traditions of life and divination practiced by the different nations of the land.;;;;;;;;;;;;;x
+religion_feature_amazigh;Numidian Faith;;;;;;;;;;;;;x
+religion_feature_amazigh_desc;As the heirs of an antique land we must revive all the customs practiced by the kings of Carthage and Numidia.;;;;;;;;;;;;;x
+vassalize_inna;Vassalize the Inna;;;;;;;;;;;;;x
+vassalize_inna_desc;The Inna, our spiritual mother, deserves the loving protection of a faithful ruler. As her liege I shall provide that protection.;;;;;;;;;;;;;x
+exalt_inna;Exalt the Inna;;;;;;;;;;;;;x
+exalt_inna_desc;For too long our spiritual mother, the Inna, has seen her power limited by secular rulers. We must grant her full religious sovereignty, which will bring prosperity and glory to our realms.;;;;;;;;;;;;;x
+hold_carnival_of_awussu;Hold the Carnival of Awussu;;;;;;;;;;;;;x
+hold_carnival_of_awussu_desc;During Awussu's heat wave the festival of the same name is celebrated. It is a tradition that dates back to the Phoenician times.;;;;;;;;;;;;;x
+become_foro;Forge an Ancestry;;;;;;;;;;;;;x
+become_foro_desc;[ChangeATagRoogCasteDesc];;;;;;;;;;;;;x
+become_wangara;Forge an Ancestry;;;;;;;;;;;;;x
+become_wangara_desc;[ChangeATagRoogCasteDesc];;;;;;;;;;;;;x
+reform_carthage;Restore the Carthaginian Empire;;;;;;;;;;;;;x
+reform_carthage_desc;Long ago the great Carthaginian empire perished under the Roman sword. The time has come to see its glory reborn.;;;;;;;;;;;;;x
+vanilla_pick_main_deity;Pick Patron Deity;;;;;;;;;;;;x
+vanilla_pick_main_deity_desc;There are many gods and goddesses who rule over different aspects of our life. While all of them should be honored properly, it is common for people to pick a deity whom they pray and sacrifice to more often.;;;;;;;;;;;;x
+bori_pick_main_deity;Pick Patron Bori;;;;;;;;;;;;x
+bori_pick_main_deity_desc;It is good to have a protective spirit, therefore it would be a good idea to choose one.;;;;;;;;;;;;x
+change_caste_griot;In your court as well as among the common people, gossips say that you do not deserve your titles. After all, a person of your ancestry is not made to occupy such a position. Only prejudices and superstitions, certainly, but enough for people to speak ill of you.\n\nYour Court Griot, however proposes a solution - he will compose a great poem in which he will say that all your ancestors were in fact of the correct caste. A little fib for the greater good.;;;;;;;;;;;;;x
+change_caste_no_griot;In your court as well as among the common people, gossips say that you do not deserve your titles. After all, a person of your ancestry is not made to occupy such a position. Only prejudices and superstitions, certainly, but enough for people to speak ill of you.\n\nYou will need the advice of a learned Court Griot.;;;;;;;;;;;;;x
+secretly_convert_to_bori_holy_site;Secretly Convert to Bori;;;;;;;;;;;;;x
+secretly_convert_to_bori_holy_site_desc;The §YBori§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;;x
+secretly_convert_to_a_tag_roog_holy_site;Secretly Convert to A Tat Roog;;;;;;;;;;;;;x
+secretly_convert_to_a_tag_roog_holy_site_desc;The §YA Tat Roog§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;;x
+secretly_convert_to_a_tag_roog_reformed_holy_site;Secretly Convert to A Tat Roog;;;;;;;;;;;;;x
+secretly_convert_to_a_tag_roog_reformed_holy_site_desc;The §YA Tat Roog§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;;x
+secretly_convert_to_amazigh_holy_site;Secretly Convert to Amazigh;;;;;;;;;;;;;x
+secretly_convert_to_amazigh_holy_site_desc;The §YAmazigh§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;;x
+pick_a_tat_roog_religious_tradition;Choose a Religious Tradition;;;;;;;;;;;;;x
+pick_a_tat_roog_religious_tradition_desc;There are many religious traditions in the Western Sahel, each with its own internal organization. It is possible to dedicate yourself fully to one of them.;;;;;;;;;;;;;x
+change_a_tat_roog_branch;Choose a Religious Tradition;;;;;;;;;;;;;x
+change_a_tat_roog_branch_desc;Many are the religious traditions of the Western Sahel.  Once per lifetime a ruler may choose different path.;;;;;;;;;;;;;x
+hold_bida_sacrifice;Hold a Feast for Human Sacrifice;;;;;;;;;;;;;x
+hold_bida_sacrifice_desc;Every year a young woman must be offered in sacrifice to Bida the snake. This year I could hold a great feast to commemorate the occasion.;;;;;;;;;;;;;x
+DEATH_BY_BIDA_SACRIFICE;was offered in sacrifice to the snake god Bida by $KILLER$;;;;;;;;;;;;;x
+hold_hawan_sallah;Hold the Hawan Sallah;;;;;;;;;;;;;x
+hold_hawan_sallah_desc;The Hawan Sallah is an equestrian parade and sporting event. It is a great opportunity to show the prosperity of the ruling class.;;;;;;;;;;;;;x
+african_revival;African Revival;;;;;;;;;;;;;x
+amazigh_resurgence;Amazigh Resurgence;;;;;;;;;;;;;x
+constantinople_destroyed;Constantinople Burned;;;;;;;;;;;;;x
+carthage_capital_destroyed;Carthage Burned;;;;;;;;;;;;;x
+bori_opinion;Bori Opinion;;;;;;;;;;;;;x
+amazigh_opinion;[amazigh.GetName] Opinion;;;;;;;;;;;;;x
+amazigh_reformed_opinion;[amazigh_reformed.GetName] Opinion;;;;;;;;;;;;;x
+a_tag_roog_opinion;[a_tag_roog.GetName] Opinion;;;;;;;;;;;;;x
+a_tag_roog_reformed_opinion;Reformed [a_tag_roog_reformed.GetName] Opinion;;;;;;;;;;;;;x
+songhay_opinion;Songhay Opinion;;;;;;;;;;;;;x
+soninke_opinion;Soninke Opinion;;;;;;;;;;;;;x
+follower_of_yan_riga;Follower of Yan Riga;;;;;;;;;;;;;x
+follower_of_yan_riga_desc;The Yan Riga, those who wear clothes, are the most civilized spirits. It is said that they live in cities and know about the wisdom of men who can read. Their king is Mallam Alhaji.;;;;;;;;;;;;;x
+follower_of_babbaku;Follower of Babbaku;;;;;;;;;;;;;x
+follower_of_babbaku_desc;The Babbaku, that is, the black ones, are inhabitants of rural villages. Some are farmers and other hunters. Their king is Mai-Ja-Ciki.;;;;;;;;;;;;;x
+follower_of_tan_garki;Follower of Tan Garki;;;;;;;;;;;;;x
+follower_of_tan_garki_desc;The Tan Garki, that is, the sons of the shield, are the great warriors among the spirits. Their king is Garki Baba.;;;;;;;;;;;;;x
+follower_of_samari;Follower of Samari;;;;;;;;;;;;;x
+follower_of_samari_desc;Samari, the spirits of youth but also of femininity. It's a very colorful group. Their king is Ba-Gudu.;;;;;;;;;;;;;x
+follower_of_yayan_zanzanna;Follower of Yanyan Zanzanna;;;;;;;;;;;;;x
+follower_of_yayan_zanzanna_desc;The Yayan Zanzanna, the children of the plague, are child spirits with dominion over any disease, spreading smallpox and other evils among mortals, Their queen is Nana Mariyamu.;;;;;;;;;;;;;x
+follower_of_tan_dowa;Follower of Tan Dowa;;;;;;;;;;;;;x
+follower_of_tan_dowa_desc;The Tan Dowa are spirits of the jungle, they do not resemble any human but are nature in its purest state. Zaki the lion is the first among them.;;;;;;;;;;;;x
+follower_of_tanit;Follower of Tanit;;;;;;;;;;;;;x
+follower_of_tanit_desc;Tanit is the mother goddess who brings the rains to the arid lands and gives fertility to women without children. The protector of old Carthage brings blessing an protection to one’s family.;;;;;;;;;;;;;x
+follower_of_anti;Follower of Änti;;;;;;;;;;;;;x
+follower_of_anti_desc;Änti or Antaeus was a powerful giant, born of the very earth, who became the most formidable fighter in the whole world because while he was in contact with his mother he became invincible.;;;;;;;;;;;;;x
+follower_of_gurzil;Follower of Gurzil;;;;;;;;;;;;;x
+follower_of_gurzil_desc;Gurzil is the great god-bull of war. Many have been the warriors who have sought his blessing on the battlefield.;;;;;;;;;;;;;x	
+follower_of_magec;Follower of Magec;;;;;;;;;;;;;x
+follower_of_magec_desc;The sun Magec is beautiful like no other and full of blessings even to those who do not revere her. He spirit is well known in the Guanche Islands, where men speak in whistles.;;;;;;;;;;;;;x
+follower_of_set;Follower of Set;;;;;;;;;;;;;x
+follower_of_set_desc;Set is a god of chaos, the desert, the wild storms and of violence among men. Set is a trickster but also a protector who fights a constant battle against death itself.;;;;;;;;;;;;;x
+tanit_blessing;Blessing of Tanit;;;;;;;;;;;;;x
+voice_of_samari;Voice of the Samari;;;;;;;;;;;;;x
+voice_of_tanit;Voice of Tanit;;;;;;;;;;;;;x
+honor_alkali;Honored Alkali;;;;;;;;;;;;;x
+blessing_of_magec;Blessing of Magec;;;;;;;;;;;;;x
+blessing_of_ayu;Blessing of Ayu;;;;;;;;;;;;;x
+blessing_of_kadda;Blessing of Kadda;;;;;;;;;;;;;x
+blessing_of_gurzil;Blessing of Gurzil;;;;;;;;;;;;;x
+secret_bori_community;Secret Bori Community;;;;;;;;;;;;;x
+secret_bori_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;;;;;;;;;;;;;x
+secret_a_tag_roog_community;Secret [a_tag_roog.GetName] Community;;;;;;;;;;;;;x
+secret_a_tag_roog_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;;;;;;;;;;;;;x
+secret_a_tag_roog_reformed_community;Secret [a_tag_roog_reformed.GetName] Community;;;;;;;;;;;;;x
+secret_a_tag_roog_reformed_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;;;;;;;;;;;;;x
+secret_amazigh_community;Secret [amazigh.GetName] Community;;;;;;;;;;;;;x
+secret_amazigh_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;;;;;;;;;;;;;x
+secret_amazigh_reformed_community;Secret [amazigh_reformed.GetName] Community;;;;;;;;;;;;;x
+secret_amazigh_reformed_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;;;;;;;;;;;;;x
+good_bida_sacrifice;Embrace of the Serpent;;;;;;;;;;;;;x
+good_bida_sacrifice_desc;This province is enjoying the benefits of a bridal sacrifice to the snake god Bida.;;;;;;;;;;;;;x
+bad_bida_sacrifice;Embrace of the Serpent;;;;;;;;;;;;;x
+bad_bida_sacrifice_desc;This province is enjoying the benefits of a bridal sacrifice to the snake god Bida.;;;;;;;;;;;;;x
+canceled_bida_sacrifice;Fury of the Serpent;;;;;;;;;;;;;x
+canceled_bida_sacrifice_desc;This province is suffering as a result of a failed sacrifice to the snake god Bida.;;;;;;;;;;;;;x
+bida_sacrifice_tax_good;Blessed Rains of Bida;;;;;;;;;;;;;x
+bida_sacrifice_tax_good_desc;The god Bida has blessed this land, bringing prosperity to his most faithful.;;;;;;;;;;;;;x
+bida_sacrifice_tax_bad;The Snake’s Disdain;;;;;;;;;;;;;x
+bida_sacrifice_tax_bad_desc;The snake god Bida has left this land to its own fate, making it unproductive.;;;;;;;;;;;;;x
+holding_hawan_sallah;Holding a Hawan Sallah parade;;;;;;;;;;;;;x
+arrested_town_fool;Arrested Town Fool;;;;;;;;;;;;;x
+arrested_town_fool_desc;This ruler angered the populace by arresting the beloved town fool.;;;;;;;;;;;;;x
+silver_tongue;Silver Tongue;;;;;;;;;;;;;x
+silver_tongue_desc;This person is known for being talented with words.;;;;;;;;;;;;;x
+babbling;Babbling Speech;;;;;;;;;;;;;x
+babbling_desc;This person has being publicly humiliated by their clumsy words.;;;;;;;;;;;;;x
+sympathy_african;Sympathy for Africans;;;;;;;;;;;;;x
+sympathy_african_desc;This character, though not a worshipper of the African gods, has a special sympathy and understanding for the African faiths and their practitioners.;;;;;;;;;;;;;x
+foro;Foro;;;;;;;;;;;;;x
+foro_desc;This character belongs to the Foro caste, the West African caste of rulers and landowners.;;;;;;;;;;;;;x
+jakhanke;Jakhanke;;;;;;;;;;;;;x
+jakhanke_desc;This character belongs to the Jakhanke caste, the West African caste of religious scholars and educators.;;;;;;;;;;;;;x
+wangara;Wangara;;;;;;;;;;;;;x
+wangara_desc;This character belongs to the Wangara caste, the West African caste of merchants and traders.;;;;;;;;;;;;;x
+child_of_garki_baba;Child of Garki Baba;;;;;;;;;;;;;x
+child_of_garki_baba_desc;This character has fought in a great holy war while possessed by warrior bori.;;;;;;;;;;;;;x
+shield_of_roog;Shield of Roog;;;;;;;;;;;;;x
+shield_of_roog_desc;This character has fought in a great holy war in the name of Roog the merciful.;;;;;;;;;;;;;x
+heir_of_dihya;Heir of Dihya;;;;;;;;;;;;;x
+heir_of_dihya_desc;This character has fought for the Amazigh faith as Queen Dihya did in the days of yore.;;;;;;;;;;;;;x
+suffete;Suffete;;;;;;;;;;;;;x
+suffete_desc;This character is the highest magistrate of the Carthaginian Empire.;;;;;;;;;;;;;x
+serer;Serer;;;;;;;;;;;;;x
+serer_desc;This character follows the Serer religious tradition, “The way of the Divine”. The faith is founded around the interaction between the different planes of existence.;;;;;;;;;;;;;x
+dogon;Dogon;;;;;;;;;;;;;x
+dogon_desc;This character follows the Dogon religious tradition. The doctrine is based around a deep knowledge of the stars and the blessings of mysterious spirits.;;;;;;;;;;;;;x
+malinke;Malinke;;;;;;;;;;;;;x
+malinke_desc;This character follows the Malinke religious tradition. This creed of blacksmiths and craftsmen is centered on the manipulation of Nyama, the fundamental life force of all things.;;;;;;;;;;;;;x
+sarakole;Sarakole;;;;;;;;;;;;;x
+sarakole_desc;This character follows the Sarakole religious tradition, the cult of Bida the snake. This mysterious cult offers regular human sacrifices, expecting the viper’s blessing in return.;;;;;;;;;;;;;x
+HEIR_OF_HANNIBAL;heir of Hannibal;;;;;;;;;;;;;x
+HEIR_OF_DIDO;heir of Dido;;;;;;;;;;;;;x
+FAKE_PHOENICIAN;fake Phoenician;;;;;;;;;;;;;x
+AFRICAN_PETTY_KING;African Petty King;;;;;;;;;;;;;x
+AFRICAN_PETTY_QUEEN;African Petty Queen;;;;;;;;;;;;;x
+nick_the_beloved;the Beloved;;;;;;;;;;;;;x
+nick_the_thunderbolt;the Thunderbolt;;;;;;;;;;;;;x
+nick_africanus;Africanus;;;;;;;;;;;;;x
+CB_NAME_IMPERIAL_CARTHAGE;Reconquest of [Title.GetBaseName];;;;;;;;;;;;;x
+imperial_reconquest_carthage_desc;The lost territory of the Carthaginian Empire must be reclaimed! §Y$CLAIMANT$§! can use this Casus Belli to seize all titles held by §Y$TARGET$§! within the de jure §Y$TITLE$§!.;;;;;;;;;;;;;x
+WAR_NAME_IMPERIAL_CARTHAGE;$ORDER$$FIRST_ADJ$ Imperial Reconquest of $OTHER_TITLE$;;;;;;;;;;;;;x
+CB_NAME_SALT_COUNTY;Salt [Title.GetBaseName];;;;;;;;;;;;;x
+salt_county_desc;This casus belli allows §Y$CLAIMANT$§! to declare war on the old imperial nemesis controlled by §Y$TARGET$§! to annex all conquered land and completely destroy their mighty metropolis.;;;;;;;;;;;;;x
+WAR_NAME_SALT_COUNTY;$ORDER$$FIRST_ADJ$ War to Salt $OTHER_TITLE$;;;;;;;;;;;;;x
+secret_religious_society_bori;The Maguzawa;;;;;;;;;;;;;x
+secret_religious_society_bori_desc;With the arrival of new faiths, the traditional followers of the bori spirits have seen the old ways threatened. However, despite the displacement, people still speak of those living in the outskirts of society, practicing secret ceremonies in which ancient specters are summoned.  These are the Maguzawa, as they are called by the unfaithful.;;;;;;;;;;;;;x
+secret_religious_society_bori_leader_desc;[GetSocietyLeaderDesc];;;;;;;;;;;;;x
+secret_religious_society_bori_currency;Devotion;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_1_male;Faithful;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_1_female;Faithful;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_2_male;Adherent;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_2_female;Adherent;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_3_male;Preacher;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_3_female;Preacher;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_4_male;Herald;;;;;;;;;;;;;x
+secret_religious_society_bori_rank_4_female;Herald;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog;Roog's Keepers;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_desc;While some preach the word of the creator in the open, others do so in the shadows. Seeing themselves as the keepers of the one true god, there are followers of Roog who refuse to give up their faith in the face of any adversity and in secret continue whispering songs in the Sigui So tongue. After all, the Yoonir start shine better on those who seek the protection of the night.;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_leader_desc;[GetSocietyLeaderDesc];;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_currency;Devotion;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_1_male;Faithful;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_1_female;Faithful;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_2_male;Adherent;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_2_female;Adherent;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_3_male;Preacher;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_3_female;Preacher;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_4_male;Herald;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_rank_4_female;Herald;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed;Roog's Keepers;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_desc;While some preach the word of the creator in the open, others do so in the shadows. Seeing themselves as the keepers of the one true god, there are followers of Roog who refuse to give up their faith in the face of any adversity and in secret continue whispering songs in the Sigui So tongue. After all, the Yoonir start shine better on those who seek the protection of the night.;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_leader_desc;[GetSocietyLeaderDesc];;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_currency;Devotion;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_1_male;Faithful;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_1_female;Faithful;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_2_male;Adherent;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_2_female;Adherent;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_3_male;Preacher;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_3_female;Preacher;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_4_male;Herald;;;;;;;;;;;;;x
+secret_religious_society_a_tag_roog_reformed_rank_4_female;Herald;;;;;;;;;;;;;x
+secret_religious_society_amazigh;Tanit's Faithful;;;;;;;;;;;;;x
+secret_religious_society_amazigh_desc;Many have tried to steal the Amazigh faith away from its believers. In bygone eras the temples of Tanit stood magnificent and proud all over the Mediterranean, only to be consumed by the flames of persecution. For these reasons, there are those who seek to preserve the faith in secret, hoping that in the desert nights the old tales will survive safe from those who wish to destroy them.;;;;;;;;;;;;;x
+secret_religious_society_amazigh_leader_desc;[GetSocietyLeaderDesc];;;;;;;;;;;;;x
+secret_religious_society_amazigh_currency;Devotion;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_1_male;Faithful;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_1_female;Faithful;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_2_male;Adherent;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_2_female;Adherent;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_3_male;Preacher;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_3_female;Preacher;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_4_male;Herald;;;;;;;;;;;;;x
+secret_religious_society_amazigh_rank_4_female;Herald;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed;Tanit's Faithful;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_desc;Many have tried to steal the Amazigh faith away from its believers. In bygone eras the temples of Tanit stood magnificent and proud all over the Mediterranean, only to be consumed by the flames of persecution. For these reasons, there are those who seek to preserve the faith in secret, hoping that in the desert nights the old tales will survive safe from those who wish to destroy them.;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_leader_desc;[GetSocietyLeaderDesc];;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_currency;Devotion;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_1_male;Faithful;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_1_female;Faithful;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_2_male;Adherent;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_2_female;Adherent;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_3_male;Preacher;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_3_female;Preacher;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_4_male;Herald;;;;;;;;;;;;;x
+secret_religious_society_amazigh_reformed_rank_4_female;Herald;;;;;;;;;;;;;x

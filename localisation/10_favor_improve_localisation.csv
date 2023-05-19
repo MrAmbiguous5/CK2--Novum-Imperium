@@ -1,0 +1,51 @@
+#CODE;ENGLISH;FRENCH;GERMAN;SPANISH;;;;;;;;;x
+
+#;;;;;;;;;;;;;;x
+
+#Decisions
+offer_favor;Offer a favor;Offrir une faveur;;;;;;;;;;;;x
+offer_favor_desc;Offer an immediate or future favor.;Offrir une faveur immédiate ou future.;;;;;;;;;;;;x
+sell_favor;Sell a favor;Vendre une faveur;;;;;;;;;;;;x
+sell_favor_desc;Sell the favor of [Root.GetTitledName].;Vendre la faveur due de [Root.GetTitledName].;;;;;;;;;;;;x
+war_favor;Offer to join the war;Offrir de se joindre à la guerre;;;;;;;;;;;;x
+war_favor_desc;Offer to join the war of [Root.GetTitledName] in exchange for a favor.;Offrir de se joindre à la guerre de [Root.GetTitledName] en échange d'une faveur.;;;;;;;;;;;;x
+ask_war_favor;Invite to join my war;Inviter à rejoindre ma guerre;;;;;;;;;;;;x
+ask_war_favor_desc;Request military aid in exchange for a favor;Demander une aide militaire en échange d'une faveur.;;;;;;;;;;;;x
+release_prison;Favor of release;Faveur de liberation;;;;;;;;;;;;x
+release_prison_desc;;Faveur de liberation;;;;;;;;;;;;x
+favor_offer;Favour Offered;Faveur Offerte;;;;;;;;;;;;x
+
+
+#Modifiers
+dishonored_favor_1;Dishonored Favor;Faveur Déshonorée;;;;;;;;;;;;x
+
+#Events
+EVTDESC_favor_1;dear [Root.GetTitledName] in accordance with our agreements, please receive by this official letter a favor from [FromFrom.GetTitledName].;Cher [Root.GetTitledName] conformément à nos accords, veuillez recevoir par cette lettre officielle une faveur du [FromFrom.GetTitledName].;;;;;;;;;;;;x
+EVTDESC_favor_2;dear [Root.GetTitledName] I acknowledge receipt of this favor.;Cher [Root.GetTitledName] j'accuse bonne réception de cette faveur.;;;;;;;;;;;;x
+EVTDESC_favor_3;dear [Root.GetTitledName] I don't have to do your favor.;Cher [Root.GetTitledName], je n'ai que faire de votre faveur.;;;;;;;;;;;;x
+EVTDESC_favor_4;dear [Root.GetTitledName] I have no intention of using this favor for a political purpose, so I would like to exchange it for a nice sum.;Cher [Root.GetTitledName] je n'ai nullement l'intention d'utiliser cette faveur dans un but politique, je souhaiterai donc l'échanger pour une belle somme.;;;;;;;;;;;;x
+EVTDESC_favor_5;dear [Root.GetTitledName] I will naturally accept your request.;Cher [Root.GetTitledName], je vais naturellement accepter votre demande.;;;;;;;;;;;;x
+EVTDESC_favor_6;dear [Root.GetTitledName] I regret to announce that for the moment, it is impossible for me to accept your request.;Cher [Root.GetTitledName], je suis au regret de vous annoncer que pour l'heure, il m'est impossible d'accepter votre demande.;;;;;;;;;;;;x
+EVTDESC_favor_7;dear [Root.GetTitledName] I would like to join you in this war in exchange for a favor. Now is the time to draw the sword together.;Cher [Root.GetTitledName] je souhaiterai vous rejoindre dans cette guerre en échange d'une faveur. Voici venue l'heure de tirer l'épée ensemble.;;;;;;;;;;;;x
+EVTDESC_favor_8;Brother in arms, I accept.;Frère d'arme, j'accepte..;;;;;;;;;;;;x
+EVTDESC_favor_9;dear [Root.GetTitledName] I don't need your blade. Your request is rejected.;Cher [Root.GetTitledName], je n'ai nul besoin de votre lame. Votre demande est rejetée.;;;;;;;;;;;;x
+EVTDESC_favor_10;dear [Root.GetTitledName] I would like you to give me your military support in exchange for a favor, let us show these peasants what we are capable of.;Cher [Root.GetTitledName] je souhaiterai que vous m'apportiez votre soutien militaire en échange d'une faveur, montrons à ces manants de quoi nous sommes capable.;;;;;;;;;;;;x
+EVTDESC_favor_11;Brother in arms, I accept.;Frère d'arme, j'accepte.;;;;;;;;;;;;x
+EVTDESC_favor_12;dear [Root.GetTitledName] my sword will stay in the scabbard.;Cher [Root.GetTitledName], mon épée restera au fourreau.;;;;;;;;;;;;x
+EVTDESC_favor_13;dear [Root.GetTitledName] I will be indebted to you for a favor if you agreed to release me.;Cher [Root.GetTitledName] Je vous serai redevable d'une faveur si vous acceptiez de me libérer.;;;;;;;;;;;;x
+EVTDESC_favor_14;dear [Root.GetTitledName] I accept your request. You are free.;Cher [Root.GetTitledName], je vais accepter votre demande. Vous éte libre.;;;;;;;;;;;;x
+EVTDESC_favor_15;dear [Root.GetTitledName] I don't have to do your favor.;Cher [Root.GetTitledName], je n'ai que faire de votre faveur.;;;;;;;;;;;;x
+
+#A
+EVTOPTA_favor_1;I acknowledge receipt of this favor.;J'accuse bonne réception de cette faveur.;;;;;;;;;;;;x
+EVTOPTA_favor_4;I will naturally accept your request.;Je vais naturellement accepter votre demande.;;;;;;;;;;;;x
+EVTOPTA_favor_7;Brother in arms, I accept;Frère d'arme, j'accepte;;;;;;;;;;;;x
+EVTOPTA_favor_10;Brother in arms, I accept;Frère d'arme, j'accepte;;;;;;;;;;;;x
+EVTOPTA_favor_13;I will accept your request. You are free.;Je vais accepter votre demande. Vous éte libre.;;;;;;;;;;;;x
+
+#B
+EVTOPTB_favor_1;I don't care about your favor;Je n'ai que faire de votre faveur;;;;;;;;;;;;x
+EVTOPTB_favor_4;At the moment, it is impossible for me to accept your request.;Pour l'heure, il m'est impossible d'accepter votre demande.;;;;;;;;;;;;x
+EVTOPTB_favor_7;I don't need your blade. Your request is rejected;Je n'ai nul besoin de votre lame. Votre demande est rejetée;;;;;;;;;;;;x
+EVTOPTB_favor_10;My sword will stay in the sheath;Mon épée restera au fourreau;;;;;;;;;;;;x
+EVTOPTB_favor_13;I don't care about your favor;Je n'ai que faire de votre faveur;;;;;;;;;;;;x
