@@ -1,0 +1,52 @@
+spriteTypes = {
+  spriteType = {
+    name = "GFX_form_bavaria_lombardy"
+    texturefile = "gfx\\interface\\decision_icon_form_bavaria_lombardy.dds"
+  }
+  spriteType = {
+    name = "GFX_form_greater_sicily"
+    texturefile = "gfx\\interface\\decision_icon_form_greater_sicily.dds"
+  }
+  spriteType = {
+    name = "GFX_form_balkan_empire"
+    texturefile = "gfx\\interface\\decision_icon_form_balkan_empire.dds"
+  }
+  spriteType = {
+    name = "GFX_icon_bavarian_imperial_government"
+    texturefile = "gfx\\interface\\government_icon_bayern_imperial.tga"
+  }
+  spriteType = {
+    name = "GFX_form_greater_mumu"
+    texturefile = "gfx\\interface\\decision_icon_form_greater_mumu.dds"
+  }
+  spriteType = {
+    name = "GFX_icon_mumu_feudal_government"
+    texturefile = "gfx\\interface\\government_icon_mumu_feudal.tga"
+  }
+  spriteType = {
+    name = "GFX_icon_ingstate_dictatorship_government"
+    texturefile = "gfx\\interface\\government_icon_ingstate_imperial.tga"
+  }
+  spriteType = {
+    name = "GFX_form_the_vague_empire"
+    texturefile = "gfx\\interface\\decision_icon_form_the_vague_empire.dds"
+  }
+  spriteType = {
+    name = "GFX_form_ingstate"
+    texturefile = "gfx\\interface\\decision_icon_form_the_ingstate.dds"
+  }
+  
+  spriteType = {
+    name = "GFX_rebrand_to_lechina"
+    texturefile = "gfx\\interface\\decision_icon_form_lechina.dds"
+  }
+  
+  spriteType = {
+    name = "GFX_icon_late_empire_imperial_government"
+    texturefile = "gfx\\interface\\government_icon_the_late_empire.tga"
+  }
+  spriteType = {
+    name = "GFX_form_western_medi_empire"
+    texturefile = "gfx\\interface\\decision_icon_form_the_western_medi_empire.dds"
+  }
+}

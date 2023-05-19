@@ -1,0 +1,63 @@
+namespace = Bavaria_lombardy_Event
+
+character_event = {
+	id = Bavaria_lombardy_Event.1 #There's definitely a better way to do this, but unfortunately I don't have the time or expertise to figure it out...
+	hide_window = yes
+	
+	trigger = {
+	has_landed_title = e_bavaria_lombardy
+	government = feudal_government
+	}
+	
+	immediate = {
+	set_government_type = bavarian_imperial_government
+	}
+}
+
+character_event = {
+	id = Bavaria_lombardy_Event.2
+	hide_window = yes
+	
+	trigger = {
+	has_landed_title = e_greater_mumu
+	OR = {
+	government = feudal_government
+	government = tribal_government
+	}
+	}
+	
+	immediate = {
+	set_government_type = mumu_feudal_government
+	}
+}
+
+character_event = {
+	id = Bavaria_lombardy_Event.3
+	hide_window = yes
+	
+	trigger = {
+	OR = {
+	has_landed_title = e_empire_no_subtitle
+	has_landed_title = e_western_medi_empire
+	}
+	government = feudal_government
+	}
+	
+	immediate = {
+	set_government_type = late_empire_imperial_government
+	}
+}
+
+character_event = {
+	id = Bavaria_lombardy_Event.4
+	hide_window = yes
+	
+	trigger = {
+	has_landed_title = e_ingstate
+	government = feudal_government
+	}
+	
+	immediate = {
+	set_government_type = ingstate_dictatorship_government
+	}
+}
