@@ -1,0 +1,1141 @@
+##################################################################
+# 
+# ANCIENT RELIGIONS
+# - Celtic changelings
+#
+# Event IDs ancrel.211-244 are used
+#
+##################################################################
+
+namespace = ancrel
+
+### Druidic warnings
+
+#Druid warns about child (choose AI spouse)
+character_event = {
+	id = ancrel.214
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	
+	trigger = {
+		is_married = yes
+		spouse = {
+			is_pregnant = yes
+			NOT = {
+				has_character_flag = child_stolen_sidhe
+			}
+		}
+		any_courtier = {
+			trait = druid
+		}
+		has_game_rule = {
+			name = supernatural_events
+			value = on
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 550
+	}
+	
+	immediate = {
+		spouse = {
+			character_event = {
+				id = ancrel.211
+			}
+		}
+	}
+	
+}
+
+# Druid Warns About Child (AI Spouse)
+character_event = {
+	id = ancrel.211
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = child_stolen_sidhe
+		spouse = {
+			random_courtier = { 
+				limit = { trait = druid }
+				character_event = { id = ancrel.212 }
+			}
+		}
+	}
+}
+
+# Druid Warns About Child (AI Druid)
+character_event = {
+	id = ancrel.212
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			character_event = { id = ancrel.213 }
+		}
+	}
+}
+
+# Druid Warns About Child
+character_event = {
+	id = ancrel.213
+	desc = EVTDESCancrel.0213
+	picture = GFX_evt_pregnancy
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0213
+		FROM = {
+			opinion = {
+				modifier = opinion_disappointed
+				years = 1
+				who = ROOT
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBancrel.0213
+		FROMFROM = {
+			opinion = {
+				modifier = opinion_disappointed
+				years = 1
+				who = ROOT
+			}
+		}
+	}
+}
+
+### Changeling events
+
+# Child is stolen by Sidhe
+character_event = {
+	id = ancrel.215
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		mother = { has_character_flag = child_stolen_sidhe }
+	}
+	
+	immediate = {
+		random_list = {
+			50 = { set_character_flag = changeling_child }
+			50 = { set_character_flag = changeling_child_fake }
+		}
+		mother = { clr_character_flag = child_stolen_sidhe }
+	}
+}
+
+# Child acts strange I (selection)
+character_event = {
+	id = ancrel.242
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		any_child = {
+			has_character_flag = changeling_child
+			host = {
+				character = ROOT
+			}
+			age = 4
+			NOR = {
+				age = 16
+				has_character_flag = changeling_child_strange_1
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 220
+	}
+	
+	immediate = {
+		random_child = {
+			limit = {
+				has_character_flag = changeling_child
+				host = {
+					character = ROOT
+				}
+				age = 4
+				NOR = {
+					age = 16
+					has_character_flag = changeling_child_strange_1
+				}
+			}
+			character_event = {
+				id = ancrel.216
+			}
+		}
+	}
+}
+
+# Child acts strange I (AI)
+character_event = {
+	id = ancrel.216
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = changeling_child_strange_1
+		FROM = { character_event = { id = ancrel.217 } }
+	}
+}
+
+# Child acts strange I
+character_event = {
+	id = ancrel.217
+	desc = EVTDESCancrel.0217
+	picture = GFX_evt_child_play
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0217
+		custom_tooltip = { text = changeling_child_acts_strange }
+	}
+}
+
+# Child acts strange II (selection)
+character_event = {
+	id = ancrel.243
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		any_child = {
+			has_character_flag = changeling_child
+			host = {
+				character = ROOT
+			}
+			age = 4
+			NOR = {
+				age = 16
+				has_character_flag = changeling_child_strange_2
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 220
+	}
+	
+	immediate = {
+		random_child = {
+			limit = {
+				has_character_flag = changeling_child
+				host = {
+					character = ROOT
+				}
+				age = 4
+				NOR = {
+					age = 16
+					has_character_flag = changeling_child_strange_2
+				}
+			}
+			character_event = {
+				id = ancrel.218
+			}
+		}
+	}
+}
+
+# Child acts strange II (AI)
+character_event = {
+	id = ancrel.218
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = changeling_child_strange_2
+		father = { character_event = { id = ancrel.219 } }
+	}
+}
+
+# Child acts strange II
+character_event = {
+	id = ancrel.219
+	desc = EVTDESCancrel.0219
+	picture = GFX_evt_child_play
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0219
+		custom_tooltip = { text = changeling_child_acts_strange }
+	}
+}
+
+# Child acts strange III (selection)
+character_event = {
+	id = ancrel.244
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		any_child = {
+			has_character_flag = changeling_child
+			host = {
+				character = ROOT
+			}
+			age = 4
+			NOR = {
+				age = 16
+				has_character_flag = changeling_child_strange_3
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 220
+	}
+	
+	immediate = {
+		random_child = {
+			limit = {
+				has_character_flag = changeling_child
+				host = {
+					character = ROOT
+				}
+				age = 4
+				NOR = {
+					age = 16
+					has_character_flag = changeling_child_strange_3
+				}
+			}
+			character_event = {
+				id = ancrel.220
+			}
+		}
+	}
+}
+
+# Child acts strange III (AI)
+character_event = {
+	id = ancrel.220
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = changeling_child_strange_3
+		father = { character_event = { id = ancrel.221 } }
+	}
+}
+
+# Child acts strange III
+character_event = {
+	id = ancrel.221
+	desc = EVTDESCancrel.0221
+	picture = GFX_evt_child_play
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0221
+		custom_tooltip = { text = changeling_child_acts_strange }
+	}
+}
+
+# Child kills Courtier I (Child's father)
+character_event = {
+	id = ancrel.222
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		any_child = {
+			has_character_flag = changeling_child
+			age = 4
+			NOR = {
+				age = 16
+				has_character_flag = changeling_child_kills_1
+			}
+			OR = {
+				has_character_flag = changeling_child_strange_1
+				has_character_flag = changeling_child_strange_2
+				has_character_flag = changeling_child_strange_3
+			}
+			ROOT = {
+				any_courtier = {
+					NOR = { 
+						character = PREVPREV
+						is_close_relative = PREVPREV
+						spouse = { character = ROOT }
+					}
+					host = { 
+						character = ROOT
+						prisoner = no
+					}
+					ai = yes
+					is_primary_heir = no
+					is_pretender = no
+					prisoner = no
+					age = 13
+					in_command = no
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 320
+	}
+	
+	immediate = {
+		random_child = {
+			limit = {
+				has_character_flag = changeling_child
+				age = 4
+				NOR = {
+					age = 16
+					has_character_flag = changeling_child_kills_1
+				}
+				OR = {
+					has_character_flag = changeling_child_strange_1
+					has_character_flag = changeling_child_strange_2
+					has_character_flag = changeling_child_strange_3
+				}
+				ROOT = {
+					any_courtier = {
+						NOR = { 
+							character = PREVPREV
+							is_close_relative = PREVPREV
+							spouse = { character = ROOT }
+						}
+						host = { 
+							character = ROOT
+							prisoner = no
+						}
+						ai = yes
+						is_primary_heir = no
+						is_pretender = no
+						prisoner = no
+						age = 13
+						in_command = no
+					}
+				}
+			}
+			set_character_flag = changeling_child_kills_1
+			ROOT = { 
+				random_courtier = {
+					limit = {
+						NOR = { 
+							character = PREVPREV
+							is_close_relative = PREVPREV
+							spouse = { character = ROOT }
+						}
+						host = { 
+							character = ROOT
+							prisoner = no
+						}
+						ai = yes
+						is_primary_heir = no
+						is_pretender = no
+						prisoner = no
+						age = 13
+						in_command = no
+					}
+					character_event = { id = ancrel.223 } 
+				}
+			}
+		}
+	}
+}
+
+# Child kills Courtier I (AI Courtier)
+character_event = {
+	id = ancrel.223
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { character_event = { id = ancrel.224 } }
+	}
+}
+
+#Child kills Courtier I
+character_event = {
+	id = ancrel.224
+	desc = EVTDESCancrel.0224
+	picture = GFX_evt_viking_funeral_oldgods
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0224
+		FROM = {
+			death = {
+				death_reason = death_murder_unknown
+			}
+		}
+	}
+}
+
+# Child kills Courtier II (AI Child)
+character_event = {
+	id = ancrel.225
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		any_child = {
+			has_character_flag = changeling_child
+			age = 4
+			NOR = {
+				age = 16
+				has_character_flag = changeling_child_kills_2
+			}
+			OR = {
+				has_character_flag = changeling_child_strange_1
+				has_character_flag = changeling_child_strange_2
+				has_character_flag = changeling_child_strange_3
+			}
+			ROOT = {
+				any_courtier = {
+					NOR = { 
+						character = ROOT
+						is_close_relative = ROOT
+						spouse = {
+							character = ROOT
+						}
+					}
+					host = { 
+						character = ROOT
+						prisoner = no
+					}
+					ai = yes
+					is_primary_heir = no
+					is_pretender = no
+					prisoner = no
+					age = 13
+					in_command = no
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 320
+	}
+	
+	immediate = {
+		random_child = {
+			limit = {
+				has_character_flag = changeling_child
+				age = 4
+				NOR = {
+					age = 16
+					has_character_flag = changeling_child_kills_2
+				}
+				OR = {
+					has_character_flag = changeling_child_strange_1
+					has_character_flag = changeling_child_strange_2
+					has_character_flag = changeling_child_strange_3
+				}
+				ROOT = {
+					any_courtier = {
+						NOR = { 
+							character = ROOT
+							is_close_relative = ROOT
+							spouse = {
+								character = ROOT
+							}
+						}
+						host = { 
+							character = ROOT
+							prisoner = no
+						}
+						ai = yes
+						is_primary_heir = no
+						is_pretender = no
+						prisoner = no
+						age = 13
+						in_command = no
+					}
+				}
+			}
+			set_character_flag = changeling_child_kills_2
+			ROOT = {
+				random_courtier = {
+					limit = {
+						NOR = { 
+							character = PREVPREV
+							is_close_relative = PREVPREV 
+							spouse = {
+								character = ROOT
+							}
+						}
+						host = { 
+							character = ROOT
+							prisoner = no
+						}
+						ai = yes
+						is_primary_heir = no
+						is_pretender = no
+						prisoner = no
+						age = 13
+						in_command = no
+					}
+					character_event = { id = ancrel.226 } 
+				}
+			}
+		}
+	}
+}
+
+# Child kills Courtier II (AI Courtier)
+character_event = {
+	id = ancrel.226
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = { character_event = { id = ancrel.227 } }
+	}
+}
+
+#Child kills Courtier II
+character_event = {
+	id = ancrel.227
+	desc = EVTDESCancrel.0227
+	picture = GFX_evt_viking_funeral_oldgods
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0227
+		FROM = {
+			death = {
+				death_reason = death_murder_unknown
+			}
+		}
+	}
+}
+
+# Child kills Courtier III (AI Child)
+character_event = {
+	id = ancrel.228
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		any_child = {
+			has_character_flag = changeling_child
+			age = 4
+			NOR = {
+				age = 16
+				has_character_flag = changeling_child_kills_3
+			}
+			OR = {
+				has_character_flag = changeling_child_strange_1
+				has_character_flag = changeling_child_strange_2
+				has_character_flag = changeling_child_strange_3
+			}
+			ROOT = {
+				any_courtier = {
+					NOR = { 
+						character = PREVPREV
+						is_close_relative = PREVPREV 
+						spouse = {
+							character = ROOT
+						}
+					}
+					host = { 
+						character = ROOT
+						prisoner = no
+					}
+					ai = yes
+					is_primary_heir = no
+					is_pretender = no
+					prisoner = no
+					age = 13
+					in_command = no
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 320
+	}
+	
+	immediate = {
+		random_child = {
+			limit = {
+				has_character_flag = changeling_child
+				age = 4
+				NOR = {
+					age = 16
+					has_character_flag = changeling_child_kills_3
+				}
+				OR = {
+					has_character_flag = changeling_child_strange_1
+					has_character_flag = changeling_child_strange_2
+					has_character_flag = changeling_child_strange_3
+				}
+				ROOT = {
+					any_courtier = {
+						NOR = { 
+							character = PREVPREV
+							is_close_relative = PREVPREV 
+							spouse = {
+								character = ROOT
+							}
+						}
+						host = { 
+							character = ROOT
+							prisoner = no
+						}
+						ai = yes
+						is_primary_heir = no
+						is_pretender = no
+						prisoner = no
+						age = 13
+						in_command = no
+					}
+				}
+			}
+		}
+		set_character_flag = changeling_child_kills_3
+		ROOT = { 
+			random_courtier = {
+				limit = {
+					NOR = { 
+						character = PREVPREV
+						is_close_relative = PREVPREV 
+						spouse = {
+							character = ROOT
+						}
+					}
+					host = { 
+						character = ROOT
+						prisoner = no
+					}
+					ai = yes
+					is_primary_heir = no
+					is_pretender = no
+					prisoner = no
+					age = 13
+					in_command = no
+				}
+				character_event = { id = ancrel.229 } 
+			}
+		}
+	}
+}
+
+# Child kills Courtier III (AI Courtier)
+character_event = {
+	id = ancrel.229
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = { character_event = { id = ancrel.230 } }
+	}
+}
+
+#Child kills Courtier III
+character_event = {
+	id = ancrel.230
+	desc = EVTDESCancrel.0230
+	picture = GFX_evt_viking_funeral_oldgods
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0230
+		FROM = {
+			death = {
+				death_reason = death_murder_unknown
+			}
+		}
+	}
+}
+
+# Druid offers to save child (selection)
+character_event = {
+	id = ancrel.231
+	hide_window = yes
+	
+	only_playable = yes
+	only_men = yes
+	has_dlc = "The Old Gods"
+	
+	trigger = {
+		any_child = {
+			age = 4
+			NOR = {
+				age = 16
+				has_character_flag = changeling_trade
+			}
+			OR = {
+				has_character_flag = changeling_child
+				has_character_flag = changeling_child_fake
+			}
+		}
+		any_courtier = {
+			trait = druid
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 680
+	}
+	
+	immediate = {
+		random_child = {
+			limit = {
+				age = 4
+				NOR = {
+					age = 16
+					has_character_flag = changeling_trade
+				}
+				OR = {
+					has_character_flag = changeling_child
+					has_character_flag = changeling_child_fake
+				}
+			}
+			set_character_flag = changeling_trade
+			save_event_target_as = changeling_trade
+		}
+		father = {
+			random_courtier = {
+				limit = { trait = druid }
+				save_event_target_as = changeling_druid
+				character_event = { id = ancrel.232 }
+			}
+		}
+	}
+}
+
+# Druid offers to save child (AI Druid)
+character_event = {
+	id = ancrel.232
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			character_event = { id = ancrel.233 }
+		}
+	}
+}
+
+# Druid offers to save child
+character_event = {
+	id = ancrel.233
+	desc = EVTDESCancrel.0233
+	picture = GFX_evt_viking_throneroom_oldgods
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0233
+		hidden_tooltip = {
+			character_event = { id = ancrel.234 days = 7 }
+		}
+		custom_tooltip = { text = changeling_trade_approved }
+	}
+	option = {
+		name = EVTOPTBancrel.0233
+		FROM = {
+			opinion = {
+				modifier = opinion_very_disappointed
+				years = 2
+				who = ROOT
+			}
+		}
+		custom_tooltip = { text = changeling_trade_denied }
+	}
+}
+
+# Changeling Trade Begins
+character_event = {
+	id = ancrel.234
+	desc = EVTDESCancrel.0234
+	picture = GFX_evt_pagan
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTAancrel.0234
+		
+		custom_tooltip = {
+			text = changeling_trade_begins
+			hidden_tooltip = {
+				event_target:changeling_trade = {
+					character_event = { id = ancrel.235 days = 3 }
+				}
+			}
+		}
+	}
+}
+
+# Changeling Trade Begins (AI Child)
+character_event = {
+	id = ancrel.235
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:changeling_druid = {
+			character_event = { id = ancrel.236 }
+		}
+	}
+}
+
+# Changeling Trade Begins (AI Druid)
+character_event = {
+	id = ancrel.236
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			random_list = {
+				20 = { character_event = { id = ancrel.237 days = 3 } }
+				20 = { character_event = { id = ancrel.238 days = 3 } }
+				40 = { character_event = { id = ancrel.239 days = 3 } }
+				20 = { character_event = { id = ancrel.240 days = 3 } }
+			}
+		}
+	}
+}
+
+# Changeling Trade Completed - Druid Dies
+character_event = {
+	id = ancrel.237
+	desc = EVTDESCancrel.0237
+	picture = GFX_evt_child_play
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0237
+		FROM = {
+			death = {
+				death_reason = death_murder_unknown
+			}
+		}
+		FROMFROM = { # Flags removed, no more events
+			clr_character_flag = changeling_trade
+			clr_character_flag = changeling_child
+			clr_character_flag = changeling_child_fake
+		}
+	}
+}
+
+# Changeling Trade Completed - Child Dies
+character_event = {
+	id = ancrel.238
+	desc = EVTDESCancrel.0238
+	picture = GFX_evt_viking_funeral_oldgods
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0238
+		FROMFROM = {
+			death = {
+				death_reason = death_sacrificed
+			}
+		}
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBancrel.0238
+		FROMFROM = {
+			death = {
+				death_reason = death_sacrificed
+			}
+		}
+		FROM = {
+			banish = yes
+		}
+	}
+	option = {
+		name = EVTOPTCancrel.0238
+		FROMFROM = {
+			death = {
+				death_reason = death_sacrificed
+			}
+		}
+	}
+}
+
+# Changeling Trade Completed - Child is Unharmed
+character_event = {
+	id = ancrel.239
+	desc = EVTDESCancrel.0239
+	picture = GFX_evt_pagan
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAancrel.0239
+		FROMFROM = {
+			clr_character_flag = changeling_child
+			clr_character_flag = changeling_child_fake
+			clr_character_flag = changeling_trade
+			remove_trait = possessed
+		}
+	}
+}
+
+# Changeling Trade Completed - Child is Hurt
+character_event = {
+	id = ancrel.240
+	desc = EVTDESCancrel.0240
+	picture = GFX_evt_pagan
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTBancrel.0238
+		FROMFROM = {
+			clr_character_flag = changeling_child
+			clr_character_flag = changeling_child_fake
+			clr_character_flag = changeling_trade
+			remove_trait = possessed
+			add_trait = wounded
+		}
+		FROM = {
+			banish = yes
+		}
+	}
+	option = {
+		name = EVTOPTCancrel.0238
+		FROMFROM = {
+			clr_character_flag = changeling_child
+			clr_character_flag = changeling_child_fake
+			clr_character_flag = changeling_trade
+			remove_trait = possessed
+			add_trait = wounded
+		}
+	}
+}
+
+#[on_adulthood] Changeling child becomes and adult (Trait makes character more keen to go on adventures and harder to kill)
+character_event = {
+	id = ancrel.241
+	desc = EVTDESCancrel.0241
+	picture = GFX_evt_the_changeling_fuseli
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_flag = changeling_child
+	}
+	
+	immediate = {
+		clr_character_flag = changeling_child
+		clr_character_flag = changeling_child_fake
+		clr_character_flag = changeling_trade
+	}
+	
+	option = {
+		name = EVTOPTAancrel.0241
+		add_trait = changeling
+		hidden_tooltip = {
+			random_list = {
+				50 = {    # Born from Fomorian
+					remove_trait = chaste
+					remove_trait = kind
+					remove_trait = honest
+					remove_trait = content
+					remove_trait = charitable
+					remove_trait = just
+					remove_trait = humble
+					remove_trait = slow
+					remove_trait = imbecile
+					remove_trait = weak
+					remove_trait = shy
+					remove_trait = trusting
+					add_trait = lustful
+					add_trait = envious
+					add_trait = deceitful
+					add_trait = ambitious
+					add_trait = cruel
+					add_trait = wroth
+					add_trait = lunatic
+				}
+				50 = { 		# Born from Sidhe
+					remove_trait = cruel
+					remove_trait = wroth
+					remove_trait = envious
+					remove_trait = content
+					remove_trait = slow
+					remove_trait = imbecile
+					remove_trait = weak
+					remove_trait = shy
+					remove_trait = trusting
+					add_trait = kind
+					add_trait = patient
+					add_trait = lunatic
+					add_trait = charitable
+					add_trait = lustful
+					add_trait = deceitful
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,149 @@
+namespace = prisoners
+
+#Your captor has demanded your hand in marriage.
+letter_event = {
+	id = prisoners.1
+	desc = "EVTDESCprisoners.1"
+#	picture = GFX_evt_bed
+	#hide_from = yes
+	is_triggered_only = yes
+	
+	option = {			#I guess I have no choice...
+		name = "EVTOPTAprisoners.1"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				trait = proud
+			}
+			modifier = {
+				factor = 0.1
+				trait = moody
+			}
+			modifier = {
+				factor = 0.1
+				trait = arrogant
+			}
+			modifier = {
+				factor = 0.3
+				trait = confident
+			}
+			modifier = {
+				factor = 0.3
+				trait = pompous
+			}
+			modifier = {
+				factor = 0.3
+				trait = constant
+			}
+			modifier = {
+				factor = 2
+				trait = submissive
+			}
+			modifier = {
+				factor = 0.1
+				trait = rigid
+			}
+		}
+		FROM = {
+			letter_event = {
+				id = prisoners.2
+				days = 1
+#				tooltip = EVTTOOLTIPprisoners.2
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBprisoners.1" #I'd rather kiss a toad
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 30
+				trait = rude
+			}
+			modifier = {
+				factor = 30
+				trait = irrational
+			}
+			modifier = {
+				factor = 30
+				trait = moody
+			}
+			modifier = {
+				factor = 30
+				trait = rebellious
+			}
+			modifier = {
+				factor = 30
+				trait = tactless
+			}
+			modifier = {
+				factor = 30
+				trait = impulsive
+			}
+		}
+		FROM = {
+			letter_event = {
+				id = prisoners.3
+				days = 5
+#				tooltip = EVTTOOLTIPprisoners.3
+			}
+		}
+	}
+}
+
+#Prisoner accepted marriage offer
+letter_event = {
+	id = prisoners.2
+	desc = "EVTDESCprisoners.2"
+#	picture = GFX_evt_bed
+	#hide_from = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAprisoners.2"
+		add_spouse = FROM
+		FROM = {
+			letter_event = {
+				id = prisoners.4
+				days = 3
+			}
+			opinion = {
+				modifier = forced_marriage
+				who = ROOT
+				months = 60
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBprisoners.2"
+	}
+}
+
+#Refused offer
+letter_event = {
+	id = prisoners.3
+	desc = "EVTDESCprisoners.3"
+#	picture = GFX_evt_bed
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTDESCprisoners.3"
+	}
+}
+
+#Forced into marriage
+letter_event = {
+	id = prisoners.4
+	desc = "EVTDESCprisoners.4"
+#	picture = GFX_evt_bed
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTDESCprisoners.4"
+	}
+}

@@ -1,0 +1,241 @@
+namespace = AFRREL
+
+# Tolerant character making African friend
+character_event = {
+	id = AFRREL.012
+	desc = EVTDESC_AFRREL012
+	picture = GFX_evt_courtiers_talking
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	min_age = 16
+	
+	trigger = {
+		trait = sympathy_african
+		has_dlc = "Sons of Abraham"
+		any_courtier = {
+			religion_group = african_group
+			prisoner = no
+			is_adult = yes
+			NOT = { trait = incapable }
+			NOT = { is_friend = ROOT }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = EVTOPTA_SoA_5414
+		random_courtier = {
+			limit = {
+				religion_group = african_group
+				prisoner = no
+				is_adult = yes
+				NOT = { trait = incapable }
+				NOT = { is_friend = ROOT }
+			}
+			add_friend = ROOT
+		}
+	}
+}
+
+# Test event for testing conditions with the console, never triggered
+character_event = {
+    id = AFRREL.013
+    #hide_window = yes
+    is_triggered_only = yes
+    
+    immediate = {
+        export_to_variable = { which = variable_one value = scaled_wealth }
+        export_to_variable = { which = variable_two value = yearly_income }
+    }
+    
+    option = {
+        name = some_option
+        wealth = variable_one
+    }
+    option = {
+        name = other_option
+        wealth = variable_two
+    }
+    option = {
+        name = true_scaled_wealth
+        scaled_wealth = 1
+    }
+}
+
+# Event that enables GHWs for Africans
+narrative_event = {
+    id = AFRREL.014
+    title = EVTTITLE_AFRREL014
+    desc = EVTDESC_AFRREL014
+    picture = GFX_evt_battle_african
+    border = GFX_event_narrative_frame_religion
+    
+    major = yes
+	
+	show_ROOT = yes
+	hide_new = yes
+	
+	only_playable = yes
+	min_age = 16
+	religion_group = african_group
+    
+    trigger = {
+        controls_religion = yes
+        OR = {
+            NOT = { religion = bori }
+            has_global_flag = bori_psuedo_reformation
+        }
+        NOT = { has_global_flag = african_ghws_unlocked }
+        has_global_flag = muslim_jihads_unlocked
+    }
+    
+    mean_time_to_happen = {
+        months = 120
+    }
+    
+    immediate = {
+        set_global_flag = african_ghws_unlocked
+    }
+    
+    option = {
+        name = EVTOPTA_AFRREL014
+        trigger = {
+            religion = ROOT
+        }
+    }
+    
+    option = {
+        name = EVTOPTB_AFRREL014
+        trigger = {
+            NOT = { religion = ROOT }
+            religion_group = african_group
+        }
+    }
+    
+    option = {
+        name = EVTOPTC_AFRREL014
+        trigger = {
+            NOT = { religion_group = african_group }
+        }
+    }
+}
+
+# Event to switch west_african_pagan characters to a proper religion
+character_event = {
+    id = AFRREL.031
+    hide_window = yes
+    
+    religion = west_african_pagan
+    
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    immediate = {
+        if = {
+            limit = { culture_group = central_african }
+            religion = bori
+        }
+        else_if = {
+            limit = { culture_group = west_african }
+            if = {
+                limit = { has_global_flag = a_tag_roog_reformation }
+                religion = a_tag_roog_reformed
+            }
+            else = {
+                religion = a_tag_roog
+            }
+        }
+        else_if = {
+            limit = { culture = maghreb_arabic }
+            if = {
+                limit = { has_global_flag = amazigh_reformation }
+                religion = amazigh_reformed
+            }
+            else = {
+                religion = amazigh
+            }
+        }
+        else = {
+            random_list = {
+                10 = {
+                    religion = bori
+                }
+                10 = {
+                    if = {
+                        limit = { has_global_flag = a_tag_roog_reformation }
+                        religion = a_tag_roog_reformed
+                    }
+                    else = {
+                        religion = a_tag_roog
+                    }
+                }
+                10 = {
+                    if = {
+                        limit = { has_global_flag = amazigh_reformation }
+                        religion = amazigh_reformed
+                    }
+                    else = {
+                        religion = amazigh
+                    }
+                }
+            }
+        }
+    }
+}
+
+# First ping event to fire events for courtiers on startup - fired on_startup, targets Pope
+character_event = {
+    id = AFRREL.033
+    hide_window = yes
+    is_triggered_only = yes
+    
+    religion = catholic
+    
+    trigger = {
+        controls_religion = yes
+    }
+    
+    immediate = {
+        character_event = { id = AFRREL.034 days = 1 }
+    }
+}
+
+# Second ping event - actually fires the events
+character_event = {
+    id = AFRREL.034
+    hide_window = yes
+    is_triggered_only = yes
+    
+    immediate = {
+        any_character = {
+            limit = {
+                OR = {
+                    religion = a_tag_roog
+                    religion = a_tag_roog_reformed
+                }
+                is_landed = no
+            }
+            character_event = { id = AFRREL.100 }  # branch fix
+        }
+        any_character = {
+            limit = {
+                OR = {
+                    religion = a_tag_roog
+                    religion = a_tag_roog_reformed
+                    religion = hindu
+                    religion = buddhist
+                    religion = jain
+                }
+                is_landed = no
+            }
+            character_event = { id = AFRREL.032 }  # caste fix
+        }
+    }
+}

@@ -1,0 +1,436 @@
+namespace = favor
+
+#################################
+####### Offrir une Faveur #######
+#################################
+
+character_event = {
+	id = favor.1
+	desc = EVTDESC_favor_1
+    picture = GFX_evt_treasure_chamber
+    border = GFX_event_normal_frame_economy
+
+	is_triggered_only = yes
+
+	option = { # Accepter
+		name = EVTOPTA_favor_1
+		    
+			if = {
+				limit = { owes_favor_to = FROMFROM }
+				    reverse_remove_favor = FROMFROM
+		    }
+			else = {
+			    add_favor = FROMFROM
+		    }
+		    FROMFROM = {
+			    letter_event = {
+				    id = favor.2
+					days = 1
+				}
+				clr_character_flag = offer_favor_flag
+			}
+			ROOT = {
+				opinion = { modifier = favor_offer  who = FROMFROM  months = 360 }
+			}
+			
+			ai_chance = {
+			    factor = 0
+		    }
+	}
+	option = { # Refuser
+		name = EVTOPTB_favor_1
+
+			FROMFROM = {
+			    letter_event = {
+				    id = favor.3
+					days = 1
+				}
+			    clr_character_flag = offer_favor_flag
+			}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+letter_event = { # Confirmation Accepter
+	id = favor.2
+	desc = EVTDESC_favor_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+letter_event = { # Confirmation Refuser
+	id = favor.3
+	desc = EVTDESC_favor_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#################################
+####### Vendre une Faveur #######
+#################################
+
+character_event = {
+	id = favor.4
+	desc = EVTDESC_favor_4
+    picture = GFX_evt_treasure_chamber
+    border = GFX_event_normal_frame_economy
+
+	is_triggered_only = yes
+
+	option = { # Accepter
+		name = EVTOPTA_favor_4
+
+			if = {
+				limit = {
+					tier = baron
+				}
+				transfer_scaled_wealth = { to = FROMFROM value = 2 min = 20 }
+			}
+			
+			if = {
+				limit = {
+					tier = count
+				}
+				transfer_scaled_wealth = { to = FROMFROM value = 2 min = 30 }
+			}
+			
+			if = {
+				limit = {
+					tier = duke
+				}
+				transfer_scaled_wealth = { to = FROMFROM value = 2 min = 50 }
+			}
+			
+			if = {
+				limit = {
+					tier = king
+				}
+				transfer_scaled_wealth = { to = FROMFROM value = 2 min = 75 }
+			}
+			
+			if = {
+				limit = {
+					tier = emperor
+				}
+				transfer_scaled_wealth = { to = FROMFROM value = 2 min = 125 }
+			}
+			FROMFROM = { 
+			    remove_favor = FROM
+			}
+			
+			FROMFROM = {
+			    letter_event = {
+				    id = favor.5
+					days = 1
+				}
+				clr_character_flag = sell_favor_flag
+			}
+			
+			ai_chance = {
+			    factor = 1
+			    modifier = {
+			    	factor = 100
+			    	wealth = 250
+			    }
+				modifier = {
+			    	factor = 50
+					NOT = { trait = greedy }
+			    }
+				modifier = {
+			    	factor = 100
+			    	ROOT = { owes_favor_to = FROMFROM  }
+			    }
+		    }
+	}
+	option = { # Refuser
+		name = EVTOPTB_favor_4
+		    
+			FROMFROM = { opinion = { modifier = opinion_dishonorable_scum who = ROOT years = 15 } }
+			hidden_tooltip = { add_character_modifier = { name = dishonored_favor duration = 360 hidden = yes } }
+			add_character_modifier = { name = dishonored_favor_1 duration = 3650 stacking = yes }
+
+		    FROMFROM = {
+			    letter_event = {
+				    id = favor.6
+					days = 1
+				}
+				clr_character_flag = sell_favor_flag
+			}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 75
+				wealth <= 0
+			}
+		}
+	}
+}
+
+letter_event = { # Confirmation Accepter
+	id = favor.5
+	desc = EVTDESC_favor_5
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+letter_event = { # Confirmation Refuser
+	id = favor.6
+	desc = EVTDESC_favor_6
+
+	is_triggered_only = yes
+
+	option = {
+		name = CURSES
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+################################################
+####### Offrir de se joindre à la guerre #######
+################################################
+
+character_event = {
+	id = favor.7
+	desc = EVTDESC_favor_7
+    picture = GFX_evt_treasure_chamber
+    border = GFX_event_normal_frame_economy
+
+	is_triggered_only = yes
+
+	option = { # Accepter
+		name = EVTOPTA_favor_7
+
+		    FROMFROM = {
+			    if = {
+				    limit = { FROM = { is_primary_war_attacker = yes } }
+			        join_attacker_wars = FROM
+				}
+				if = {
+				    limit = { FROM = { is_primary_war_defender = yes } }
+			        join_defender_wars = FROM
+				}
+				if = {
+				    limit = { owes_favor_to = FROM }
+				    reverse_remove_favor = FROM
+		        }
+			    if = {
+			    	limit = { NOT = { owes_favor_to = FROM } }
+			    	add_favor = FROM
+			    }
+				letter_event = {
+				    id = favor.8
+					days = 1
+				}
+				clr_character_flag = war_favor_flag
+			}
+			
+			ai_chance = {
+			    factor = 0.2
+				
+				modifier = {
+			    	factor = 100
+			    	FROMFROM = { owes_favor_to = FROM }
+			    }
+		    }
+	}
+	option = { # Refuser
+		name = EVTOPTB_favor_7
+
+			FROMFROM = {
+			    letter_event = {
+				    id = favor.9
+					days = 1
+				}
+			    clr_character_flag = war_favor_flag
+				opinion = {
+			        who = FROM
+			        modifier = favor_timer_1
+			        months = 1
+		        }
+			}
+
+		    ai_chance = {
+			    factor = 1
+		    }
+	}
+}
+
+letter_event = { # Confirmation Accepter
+	id = favor.8
+	desc = EVTDESC_favor_8
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+letter_event = { # Confirmation Refuser
+	id = favor.9
+	desc = EVTDESC_favor_9
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#############################################
+####### Inviter à rejoindre ma guerre #######
+#############################################
+
+character_event = {
+	id = favor.10
+	desc = EVTDESC_favor_10
+    picture = GFX_evt_treasure_chamber
+    border = GFX_event_normal_frame_economy
+
+	is_triggered_only = yes
+
+	option = { # Accepter
+		name = EVTOPTA_favor_10
+
+		    ROOT = {
+			    if = {
+				    limit = { FROMFROM = { is_primary_war_attacker = yes } }
+			        join_attacker_wars = FROMFROM
+				}
+				if = {
+				    limit = { FROMFROM = { is_primary_war_defender = yes } }
+			        join_defender_wars = FROMFROM
+				}
+				if = {
+				    limit = { owes_favor_to = FROMFROM }
+				    reverse_remove_favor = FROMFROM
+		        }
+			    if = {
+			    	limit = { NOT = { owes_favor_to = FROMFROM } }
+			    	add_favor = FROMFROM
+			    }
+			}
+			FROMFROM = {
+			    letter_event = {
+				    id = favor.11
+					days = 1
+				}
+			    clr_character_flag = ask_war_favor_flag
+				opinion = {
+			        who = ROOT
+			        modifier = favor_timer_2
+			        months = 1
+		        }
+			}
+			
+			ai_chance = {
+			    factor = 1
+				
+				modifier = {
+					factor = 2
+					FROMFROM = { is_primary_war_defender = yes }
+					}
+			    modifier = {
+			    	factor = 2
+			    	ROOT = { owes_favor_to = FROMFROM  }
+			    }
+		    }
+	}
+	option = { # Refuser
+		name = EVTOPTB_favor_10
+		
+			if = {
+			    limit = { owes_favor_to = FROMFROM }
+			    FROMFROM = { opinion = { modifier = opinion_dishonorable_scum who = ROOT years = 15 } }
+			    hidden_tooltip = { add_character_modifier = { name = dishonored_favor duration = 360 hidden = yes } }
+			    add_character_modifier = { name = dishonored_favor_1 duration = 3650 stacking = yes }
+			}
+
+			FROMFROM = {
+			    letter_event = {
+				    id = favor.12
+					days = 1
+				}
+			    clr_character_flag = ask_war_favor_flag
+			}
+
+		    ai_chance = {
+			    factor = 0.5
+				
+				modifier = {
+					factor = 4
+					is_rival = FROM
+					NOT = { trait = honest }
+			    }
+		    }
+	}
+}
+
+letter_event = { # Confirmation Accepter
+	id = favor.11
+	desc = EVTDESC_favor_11
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+letter_event = { # Confirmation Refuser
+	id = favor.12
+	desc = EVTDESC_favor_12
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
