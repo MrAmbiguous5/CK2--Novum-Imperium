@@ -1856,7 +1856,12 @@ monastic_order_buddhist = {
 		}
 	}
 
-	potential = { religion = buddhist }
+	potential = { 
+		OR = {
+			religion = buddhist  
+			religion = taoist
+		}
+	}
 
 	society_rank = {
 		level = 1
@@ -2367,6 +2372,8 @@ monastic_order_stoics = {
 		OR = { 
 			religion = hellenic_pagan 
 			religion = hellenic_pagan_reformed
+			religion = promethean_pagan
+			trait = stoic
 			AND = { 
 				culture = roman
 				OR = { #Somewhat compatible when mixed with Roman culture.
@@ -2378,7 +2385,11 @@ monastic_order_stoics = {
 				}
 			}
 		}
-		NOT = { trait = excommunicated }
+		NOR = {
+			trait = excommunicated
+			trait = skeptic
+			trait = epicurean
+		}
 		custom_tooltip = {
 			text = did_not_betray_society
 			NOT = { has_character_flag = betrayed_monastic_order_stoics }
@@ -2400,6 +2411,8 @@ monastic_order_stoics = {
 		OR = { 
 			religion = hellenic_pagan 
 			religion = hellenic_pagan_reformed
+			religion = promethean_pagan
+			trait = stoic
 			AND = { 
 				culture = roman
 				OR = { #Somewhat compatible when mixed with Roman culture.
@@ -2502,6 +2515,14 @@ monastic_order_stoics = {
     		name = learning
     		value = 0.5
     	}
+		per_attribute = {
+			name = diplomacy
+			value = 0.2
+		}
+		has_trait = {
+			trait = stoic
+			value = 5
+		}
 		has_trait = {
 			trait = scholar
 			value = 4
@@ -2585,7 +2606,10 @@ monastic_order_stoics = {
 
 	member_score = {
 		value = 10
-
+		modifier = {
+			trait = stoic
+			factor = 5
+		}
 		modifier = {
 			trait = scholar
 			factor = 5
@@ -2653,6 +2677,7 @@ monastic_order_stoics = {
 				is_nomadic = yes
 			}
 			OR = { 
+				trait = stoic
 				religion = hellenic_pagan 
 				religion = hellenic_pagan_reformed
 				AND = { 
@@ -2673,7 +2698,11 @@ monastic_order_stoics = {
 				mercenary = yes
 				holy_order = yes
 			}
-			NOT = { trait = excommunicated }
+			NOR = {
+				trait = excommunicated
+				trait = skeptic
+				trait = epicurean
+			}
 			has_secret_religion_trait_trigger = no
 			OR = {
 				trait = zealous
@@ -2720,6 +2749,7 @@ hermetics = {
 		learning = 10
 		OR = {
 			emf_astrology_religion = yes
+			religion = promethean_pagan
 			religion_group = christian
 			religion_group = muslim
 			religion_group = jewish_group
@@ -2868,6 +2898,18 @@ hermetics = {
 		has_trait = {
 			value = 1
 			trait = just
+		}
+		has_trait = {
+			value = 1
+			trait = skeptic
+		}
+		has_trait = {
+			value = 1
+			trait = stoic
+		}
+		has_trait = {
+			value = 1
+			trait = epicurean
 		}
 		society_rank = {
 			rank = 4
@@ -6392,6 +6434,34 @@ warrior_lodge_norse = {
 			trait = kailash_guardian
 			value = 1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
+			value = 1
+		}
 		#NEGATIVE modifiers
 		has_trait = {
 			trait = craven
@@ -6970,6 +7040,34 @@ warrior_lodge_tengri = { # Also generally for Nomads
 			trait = kailash_guardian
 			value = 1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
+			value = 1
+		}
 		#NEGATIVE modifiers
 		has_trait = {
 			trait = craven
@@ -7155,6 +7253,34 @@ warrior_lodge_tengri = { # Also generally for Nomads
 		modifier = {
 			trait = tengri_warrior
 			factor = 1.1
+		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
+			value = 1
 		}
 		#NEGATIVE modifiers
 		modifier = {
@@ -7547,6 +7673,34 @@ warrior_lodge_baltic = {
 		}
 		has_trait = {
 			trait = kailash_guardian
+			value = 1
+		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
 			value = 1
 		}
 		#NEGATIVE modifiers
@@ -8125,6 +8279,34 @@ warrior_lodge_finnish = {
 			trait = kailash_guardian
 			value = 1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
+			value = 1
+		}
 		#NEGATIVE modifiers
 		has_trait = {
 			trait = craven
@@ -8701,6 +8883,34 @@ warrior_lodge_slavic = {
 			trait = kailash_guardian
 			value = 1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
+			value = 1
+		}
 		#NEGATIVE modifiers
 		has_trait = {
 			trait = craven
@@ -8985,6 +9195,7 @@ warrior_lodge_west_african = {
 		}
 		OR = {
 			religion_openly_west_african_or_reformed_trigger = yes
+			religion_group = african_group
 			AND = {
 				custom_tooltip = {
 					text = society_has_at_least_10_members_tt
@@ -9003,20 +9214,37 @@ warrior_lodge_west_african = {
 	show_society = {
 		OR = {
 			#You are this religion: will show only this lodge (the other "show_society"'s will make sure)
-			religion_openly_west_african_or_reformed_trigger = yes	
+			religion_openly_west_african_or_reformed_trigger = yes
+			religion_group = african_group
 			AND = {
 				#You are of a religion that doesn't match *any* warrior lodge
 				has_religion_matching_available_warrior_lodge_trigger = no
 				
 				OR = {
 					#You have neighbors, etc, of the correct religion...
-					any_vassal = { religion_openly_west_african_or_reformed_trigger = yes }
-					any_liege = { religion_openly_west_african_or_reformed_trigger = yes }
-					any_neighbor_independent_ruler = { religion_openly_west_african_or_reformed_trigger = yes }
+					any_vassal = {
+                        OR = {
+                            religion_openly_west_african_or_reformed_trigger = yes
+                            religion_group = african_group
+                        }
+                    }
+					any_liege = {
+                        OR = {
+                            religion_openly_west_african_or_reformed_trigger = yes
+                            religion_group = african_group
+                        }
+                    }
+					any_neighbor_independent_ruler = {
+                        OR = {
+                            religion_openly_west_african_or_reformed_trigger = yes
+                            religion_group = african_group
+                        }
+                    }
 				}
 			}
 			NOT = { #Hide if: you don't have a religion that corresponds to this lodge, but there is another society available to you already
 				religion_openly_west_african_or_reformed_trigger = no
+				NOT = { religion_group = african_group }
 				has_religion_matching_available_warrior_lodge_trigger = yes
 			}
 			#Always show if: You are already a member. Duh.
@@ -9028,8 +9256,10 @@ warrior_lodge_west_african = {
 	potential = { #if you change religion or become zealous while NOT pagan, you are kicked out
 		OR = {
 			religion_openly_west_african_or_reformed_trigger = yes
+			religion_group = african_group
 			AND = {
 				religion_openly_west_african_or_reformed_trigger = no
+				NOT = { religion_group = african_group }
 				NOT = { trait = zealous }
 			}
 		}
@@ -9279,6 +9509,34 @@ warrior_lodge_west_african = {
 		}
 		has_trait = {
 			trait = kailash_guardian
+			value = 1
+		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
 			value = 1
 		}
 		#NEGATIVE modifiers
@@ -9854,6 +10112,34 @@ warrior_lodge_zun = {
 		}
 		has_trait = {
 			trait = kailash_guardian
+			value = 1
+		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
 			value = 1
 		}
 		#NEGATIVE modifiers
@@ -10432,6 +10718,34 @@ warrior_lodge_bon = {
 			trait = kailash_guardian
 			value = 1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
+			value = 1
+		}
 		#NEGATIVE modifiers
 		has_trait = {
 			trait = craven
@@ -10699,7 +11013,7 @@ warrior_lodge_hellenic = {
 				}
 			}
 		}
-is_adult = yes
+		is_adult = yes
 		custom_tooltip = {
 			text = has_not_angered_society_tt
 			hidden_trigger = { NOT = { has_character_modifier = warrior_lodge_failed_joining_cd } }
@@ -11004,6 +11318,34 @@ is_adult = yes
 			trait = kailash_guardian
 			value = 1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
+		has_trait = {
+			trait = lughs_own
+			value = 1
+		}
+		has_trait = {
+			trait = morrigan
+			value = 1
+		}
+		has_trait = {
+			trait = montu
+			value = 1
+		}
+		has_trait = {
+			trait = atens_chosen
+			value = 1
+		}
 		#NEGATIVE modifiers
 		has_trait = {
 			trait = craven
@@ -11190,6 +11532,18 @@ is_adult = yes
 			trait = ares_own
 			factor = 1.1
 		}
+		has_trait = {
+            trait = child_of_garki_baba
+            value = 1
+        }
+        has_trait = {
+            trait = shield_of_roog
+            value = 1
+        }
+        has_trait = {
+            trait = heir_of_dihya
+            value = 1
+        }
 		#NEGATIVE modifiers
 		modifier = {
 			trait = craven
