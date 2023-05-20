@@ -1,0 +1,89 @@
+religion_nature = {
+	buttons = { nature }
+
+	religion_feature_a_tag_roog = {
+        picture = GFX_religion_feature_west_african
+        potential = {
+            has_game_started = yes
+            religion = a_tag_roog_reformed
+            NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+        }
+        trigger = {
+            religion = a_tag_roog_reformed
+            NOR = {
+                has_selected_religion_feature = religion_haruspicy
+                has_selected_religion_feature = religion_relentless
+                has_selected_religion_feature = religion_peaceful
+                has_selected_religion_feature = religion_defensive
+                has_selected_religion_feature = religion_harems
+            }
+        }
+        effect = {
+            custom_tooltip = { text = tooltip_religion_feature_eldership }
+            custom_tooltip = { text = tooltip_religion_feature_haruspicy }
+            custom_tooltip = { text = tooltip_religion_feature_offensive }
+			hidden_tooltip = { 
+				set_ignores_defensive_attrition = yes
+				set_unit_modifier = { 
+					light_infantry_offensive = 0.1
+					heavy_infantry_offensive = 0.1
+					light_cavalry_offensive = 0.1 
+					knights_offensive = 0.1 
+					pikemen_offensive = 0.1 
+					archers_offensive = 0.1
+					horse_archers_offensive = 0.1
+					camel_cavalry_offensive = 0.1
+					war_elephants_offensive = 0.1
+					key = "RELENTLESS_RELIGION"
+				}
+			}
+            custom_tooltip = { text = tooltip_religion_feature_harems }
+			hidden_tooltip = { 
+				set_max_consorts = 0
+				set_max_wives = 4
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+    
+    religion_feature_amazigh = {
+        picture = GFX_religion_feature_amazigh
+        potential = {
+            has_game_started = yes
+            religion = amazigh_reformed
+            NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+        }
+        trigger = {
+            religion = amazigh_reformed
+            NOR = {
+                has_selected_religion_feature = religion_adventuring
+                has_selected_religion_feature = religion_seafaring
+                has_selected_religion_feature = religion_ritual_sacrifice
+                has_selected_religion_feature = religion_peaceful
+            }
+        }
+        effect = {
+            custom_tooltip = { text = tooltip_religion_feature_adventuring }
+			custom_tooltip = { text = tooltip_religion_feature_pirating }
+			hidden_tooltip = { enable_prepared_invasion = ROOT }
+            custom_tooltip = { text = tooltip_religion_feature_rivermovement }
+			custom_tooltip = { text = tooltip_religion_feature_ship_maintenance }
+			custom_tooltip = { text = tooltip_religion_feature_seafaring }
+			hidden_tooltip = {
+				set_seafaring = yes
+				set_allow_rivermovement = yes
+			}
+            custom_tooltip = { text = tooltip_religion_feature_aztec_sacrifices }
+			custom_tooltip = { text = tooltip_religion_feature_bloodthirsty_mechanics }
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+}

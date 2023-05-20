@@ -637,6 +637,7 @@ has_infertile_trait_trigger = {
 		trait = dysentery
 		trait = food_poisoning
 		trait = cancer
+		trait = learning_druidic_arts
 		trait = infertile
 		emf_is_sterile_trigger = yes
 	}
@@ -801,6 +802,9 @@ has_lifestyle_learning_trigger = {
 		trait = theologian
 		trait = mystic
 		trait = faqih
+		trait = druid
+		trait = dryad
+		is_neoplatonist_trigger = yes
 	}
 }
 
@@ -824,6 +828,9 @@ is_learned_trigger = {
 		trait = hurufi_mystic_c
 		trait = alexandrine
 		trait = antiochene
+		trait = druid
+		trait = dryad
+		is_neoplatonist_trigger = yes
 	}
 }
 
@@ -900,10 +907,7 @@ has_crusade_trait_trigger = {
 			trait = sun_warrior
 		}
 		AND = {
-			OR = {
-				religion = hellenic_pagan
-				religion = hellenic_pagan_reformed
-			}
+			religion_openly_hellenic_or_reformed_trigger = yes
 			trait = ares_own
 		}
 		AND = {
@@ -928,6 +932,40 @@ has_crusade_trait_trigger = {
 		AND = {
 			religion_group = jewish_group
 			trait = shaddai
+		}
+		AND = {
+            religion = bori
+            trait = child_of_garki_baba
+        }
+        AND = {
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+            trait = shield_of_roog
+        }
+        AND = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+            trait = heir_of_dihya
+        }
+		AND = {
+			religion_openly_egyptian_or_reformed_trigger = yes
+			trait = montu
+		}
+		AND = {
+			religion = aten_pagan
+			trait = atens_chosen
+		}
+		AND = {
+			religion_openly_celtic_or_reformed_trigger = yes
+			trait = lughs_own
+		}
+		AND = {
+			religion = britannic_pagan
+			trait = morrigan
 		}
 	}
 }
@@ -2248,6 +2286,17 @@ has_minor_deity_trigger = {
 		has_character_modifier = follower_of_velnias
 		has_character_modifier = follower_of_perkunas
 		has_character_modifier = follower_of_zemyna
+		has_character_modifier = follower_of_yan_riga
+		has_character_modifier = follower_of_babbaku
+		has_character_modifier = follower_of_tan_garki
+		has_character_modifier = follower_of_samari
+		has_character_modifier = follower_of_yayan_zanzanna
+		has_character_modifier = follower_of_tan_dowa
+		has_character_modifier = follower_of_tanit
+		has_character_modifier = follower_of_anti
+		has_character_modifier = follower_of_gurzil
+		has_character_modifier = follower_of_magec
+		has_character_modifier = follower_of_set
 	}
 }
 
@@ -3082,6 +3131,11 @@ is_devil_worshiper_trigger = {
 			society_member_of = the_vodouns
 			society_member_of = the_bacchants
 			society_member_of = followers_of_ahuiateteo
+			
+			### ACR ###
+			society_member_of = unseelie_petitioners
+			society_member_of = the_coven
+			society_member_of = the_sand_snakes
 		}
 	}
 }
@@ -3148,7 +3202,8 @@ is_monastic_member_trigger = {
 	OR = {
 		is_dharmic_monastic_member_trigger = yes
 		is_christian_monastic_member_trigger = yes
-		society_member_of = monastic_order_stoics
+		is_hellenic_monastic_order_member_trigger = yes
+		society_member_of = monastic_order_isis
 	}
 }
 
@@ -3387,6 +3442,10 @@ has_sympathy_for_true_religion_of_root_trigger = {
 		AND = {
 			trait = sympathy_indian
 			ROOT = { true_religion_group_indian_group_trigger = yes }
+		}
+		AND = {
+			trait = sympathy_african
+			PREV = { true_religion_group = african_group }
 		}
 	}
 }
@@ -4406,6 +4465,44 @@ looting_artifact_event_religious_artifacts_trigger = {
 				limit = { ROOT = { religion_group = indian_group } }
 				NOT = { has_artifact_flag = indian_group }
 			}
+			trigger_else_if = {
+				limit = {
+					ROOT = {
+						OR = {
+							religion = celtic_pagan
+							religion = celtic_pagan_reformed
+						}
+					}
+				}
+				NOT = { has_artifact_flag = celtic_pagan }
+			}
+			trigger_else_if = {
+				limit = { ROOT = { religion = britannic_pagan } }
+				NOT = { has_artifact_flag = britannic_pagan }
+			}
+			trigger_else_if = {
+				limit = { ROOT = { religion = promethean_pagan } }
+				NOT = { has_artifact_flag = promethean_pagan }
+			}
+			trigger_else_if = {
+				limit = { ROOT = { religion = titan_pagan } }
+				NOT = { has_artifact_flag = titan_pagan }
+			}
+			trigger_else_if = {
+				limit = {
+					ROOT = {
+						OR = {
+							religion = egyptian_pagan
+							religion = egyptian_pagan_reformed
+						}
+					}
+				}
+				NOT = { has_artifact_flag = egyptian_pagan }
+			}
+			trigger_else_if = {
+				limit = { ROOT = { religion = aten_pagan } }
+				NOT = { has_artifact_flag = aten_pagan }
+			}
 		}
 	}
 }
@@ -4463,6 +4560,13 @@ have_duplicate_goldsmith_artifacts_flag_okay_trigger = {
 			}
 		}
 		has_artifact = iron_crown
+		has_artifact = engraved_sword
+	}
+	trigger_else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		has_artifact = silver_torque
 		has_artifact = engraved_sword
 	}
 	trigger_else = {
@@ -4526,6 +4630,13 @@ have_duplicate_goldsmith_artifacts_flag_good_trigger = {
 		has_artifact = crown_of_the_sea
 		has_artifact = golden_sword
 	}
+	trigger_else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		has_artifact = golden_torque
+		has_artifact = golden_sword
+	}
 	trigger_else = {
 		has_artifact = amber_crown
         has_artifact = obsidian_axe
@@ -4587,6 +4698,13 @@ have_duplicate_goldsmith_artifacts_flag_expensive_trigger = {
 		has_artifact = crown_of_crows
 		has_artifact = sword_of_heroes
 	}
+	trigger_else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		has_artifact = jeweled_torque
+		has_artifact = sword_of_heroes
+	}
 	trigger_else = {
 		has_artifact = heros_crown
 		has_artifact = axe_of_the_ancestors
@@ -4646,6 +4764,13 @@ have_duplicate_goldsmith_artifacts_flag_amazing_trigger = {
 			}
 		}
 		has_artifact = crown_of_crows_2
+		has_artifact = sword_of_heroes_2
+	}
+	trigger_else_if = {
+		limit = {
+			religion_openly_celtic_or_reformed_trigger = yes
+		}
+		has_artifact = jeweled_torque_2
 		has_artifact = sword_of_heroes_2
 	}
 	trigger_else = {
@@ -6728,6 +6853,7 @@ death_no_trace_trigger = {
 	OR = {
 		death_reason = death_missing
 		death_reason = death_vanished
+		death_reason = death_lost_desert
 	}
 }
 
@@ -7196,7 +7322,8 @@ pagan_baptism_trigger = {
 	custom_tooltip = {
 		text = TT_UNREFORMED_PAGAN
 		hidden_tooltip = {
-			emf_unreformed_pagan = yes
+			is_organized_religion_trigger = no
+			
 		}
 	}
 	trigger_if = {
@@ -8264,6 +8391,7 @@ this_has_average_nickname_trigger = {
 		has_nickname = nick_the_festive
 		has_nickname = nick_the_burden
 		has_nickname = nick_the_snake
+		has_nickname = nick_the_beloved
 	}
 }
 this_has_cool_nickname_trigger = {
@@ -8353,6 +8481,8 @@ this_has_cool_nickname_trigger = {
 		has_nickname = nick_the_ladder_legs
 		has_nickname = nick_the_peacock
 		has_nickname = nick_the_bellower
+		has_nickname = nick_the_thunderbolt
+        has_nickname = nick_africanus
 	}
 }
 this_has_super_cool_nickname_trigger = {
@@ -8806,6 +8936,8 @@ has_bad_priest_trait_trigger = {
 		trait = bad_priest_tengri
 		trait = bad_priest_zoroastrian
 		trait = bad_priest_aztec
+		trait = bad_druid
+		trait = bad_dryad
 	}
 }
 

@@ -1,0 +1,84 @@
+religion_nature = {
+	buttons = { nature }
+
+### ACR ###
+
+    religion_feature_celtic = {
+        picture = GFX_religion_feature_celtic
+        potential = {
+            has_game_started = yes
+            religion = celtic_pagan_reformed
+            NOT = {
+                has_alternate_start_parameter = { key = religion_names value = random }
+            }
+        }
+        trigger = {
+            NOR = {
+                has_selected_religion_feature = religion_haruspicy
+                has_selected_religion_feature = religion_animistic
+                has_selected_religion_feature = religion_equal
+                has_selected_religion_feature = religion_matriarchal
+                has_selected_religion_feature = religion_patriarchal
+            }
+        }
+        effect = {
+			custom_tooltip = { text = tooltip_religion_feature_feminist }
+			custom_tooltip = { text = tooltip_religion_feature_adulthood_rite }
+            custom_tooltip = { text = tooltip_religion_feature_haruspicy }
+
+			hidden_tooltip = {
+                set_allows_matrilineal_marriage = yes
+                set_feminist = yes
+                set_women_can_take_consorts = yes
+                set_men_can_take_consorts = yes
+                set_female_temple_holders = yes
+                set_male_temple_holders = yes
+                set_allow_looting = yes
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+    religion_feature_egyptian = {
+        picture = GFX_religion_feature_egyptian
+        potential = {
+            has_game_started = yes
+            religion = egyptian_pagan_reformed
+            NOT = {
+                has_alternate_start_parameter = { key = religion_names value = random }
+            }
+        }
+        trigger = {
+            NOR = {
+                has_selected_religion_feature = religion_matriarchal
+                has_selected_religion_feature = religion_patriarchal
+                has_selected_religion_feature = religion_equal
+                has_selected_religion_feature = religion_beatification
+                has_selected_religion_feature = religion_stable
+                trigger_if = {
+                    limit = { has_game_started = yes }
+                    FROM = {
+                        character = yes
+                        government = merchant_republic_government
+                    }
+                }
+            }
+        }
+        effect = {
+			custom_tooltip = { text = tooltip_religion_feature_cognatic }
+			custom_tooltip = { text = tooltip_religion_feature_feminist }
+            custom_tooltip = { text = tooltip_religion_feature_beatification }
+			custom_tooltip = { text = tooltip_religion_feature_stable }
+			hidden_tooltip = {
+				set_short_reign_opinion_year_mult = 0
+				set_allows_matrilineal_marriage = yes
+				set_feminist = yes
+				set_women_can_take_consorts = yes
+			}
+        }
+        ai_will_do = {
+            factor = 50
+        }
+    }
+}

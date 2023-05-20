@@ -4226,6 +4226,72 @@ add_crusade_trait_effect = {
 			religion_group = jewish_group
 		}
 		add_trait = shaddai
+		break = yes
+	}
+    if = {
+        limit = {
+            religion = bori
+        }
+        add_trait = child_of_garki_baba
+        break = yes
+    }
+    if = {
+        limit = {
+            OR = {
+                religion = a_tag_roog
+                religion = a_tag_roog_reformed
+            }
+        }
+        add_trait = shield_of_roog
+        break = yes
+    }
+    if = {
+        limit = {
+            OR = {
+                religion = amazigh
+                religion = amazigh_reformed
+            }
+        }
+        add_trait = heir_of_dihya
+    }
+	
+	### ACR ###
+	if = {
+		limit = {
+			OR = {
+				religion = celtic_pagan
+				AND = {
+					religion = celtic_pagan_reformed
+					NOT = { has_religion_feature = religion_matriarchal }
+				}
+			}
+		}
+		add_trait = lughs_own
+	}
+	if = {
+		limit = {
+			OR = {
+				religion = britannic_pagan
+				AND = {
+					religion = celtic_pagan_reformed
+					has_religion_feature = religion_matriarchal
+				}
+			}
+		}
+
+		add_trait = morrigan
+	}
+	if = {
+		limit = {
+			religion_openly_egyptian_or_reformed_trigger = yes
+		}
+		add_trait = montu
+	}
+	if = {
+		limit = {
+			religion = aten_pagan
+		}
+		add_trait = atens_chosen
 	}
 }
 
@@ -5274,6 +5340,32 @@ join_from_devil_worshiper_society_effect = {
 				join_society = followers_of_ahuiateteo
 			}
 		}
+		
+		### ACR ###
+		if = {
+			limit = {
+				society_member_of = unseelie_petitioners
+			}
+			ROOT = {
+				join_society = unseelie_petitioners
+			}
+		}
+		if = {
+			limit = {
+				society_member_of = the_coven
+			}
+			ROOT = {
+				join_society = the_coven
+			}
+		}
+		if = {
+			limit = {
+				society_member_of = the_sand_snakes
+			}
+			ROOT = {
+				join_society = the_sand_snakes
+			}
+		}
 	}
 }
 
@@ -5382,6 +5474,20 @@ join_prev_devil_worshiper_society_effect = {
 		limit = { PREV = { society_member_of = followers_of_ahuiateteo } }
 		join_society = followers_of_ahuiateteo
 	}
+	
+	## ACR ###
+	if = {
+		limit = { PREV = { society_member_of = unseelie_petitioners } }
+		join_society = unseelie_petitioners
+	}
+	if = {
+		limit = { PREV = { society_member_of = the_coven } }
+		join_society = the_coven
+	}
+	if = {
+		limit = { PREV = { society_member_of = the_sand_snakes } }
+		join_society = the_sand_snakes
+	}
 }
 
 join_prev_warrior_lodge_society_effect = {
@@ -5422,8 +5528,28 @@ join_prev_warrior_lodge_society_effect = {
 		join_society = warrior_lodge_hellenic
 	}
 	if = {
+		limit = { PREV = { society_member_of = warrior_lodge_cws_christian } }
+		join_society = warrior_lodge_cws_christian
+	}
+	if = {
+		limit = { PREV = { society_member_of = warrior_lodge_ws_mazdan } }
+		join_society = warrior_lodge_ws_mazdan
+	}
+	if = {
+		limit = { PREV = { society_member_of = warrior_lodge_ws_eastern } }
+		join_society = warrior_lodge_ws_eastern
+	}
+	if = {
 		limit = { PREV = { society_member_of = warrior_lodge_aztec } }
 		join_society = warrior_lodge_aztec
+	}
+	if = {
+		limit = { PREV = { society_member_of = warrior_lodge_ws_muslim } }
+		join_society = warrior_lodge_ws_muslim
+	}
+	if = {
+		limit = { PREV = { society_member_of = warrior_lodge_ws_jewish } }
+		join_society = warrior_lodge_ws_jewish
 	}
 }
 
@@ -5506,11 +5632,41 @@ give_this_warrior_lodge_religion_effect = { #Mostly for spawned characters.
 		religion = west_african_pagan
 	}
 	if = {
-		limit = { 
-			society_member_of = warrior_lodge_west_african 
-			has_global_flag = west_african_reformation
+		limit = {
+			society_member_of = warrior_lodge_west_african
 		}
-		religion = west_african_pagan_reformed
+		random_list = {
+			10 = {
+                if = {
+                    limit = { has_global_flag = a_tag_roog_reformation }
+                    religion = west_african_pagan_reformed
+                }
+                else = {
+                    religion = west_african_pagan
+                }
+            }
+            10 = {
+                religion = bori
+            }
+            10 = {
+                if = {
+                    limit = { has_global_flag = a_tag_roog_reformation }
+                    religion = a_tag_roog_reformed
+                }
+                else = {
+                    religion = a_tag_roog
+                }
+            }
+            10 = {
+                if = {
+                    limit = { has_global_flag = amazigh_reformation }
+                    religion = amazigh_reformed
+                }
+                else = {
+                    religion = amazigh
+                }
+			}
+		}
 	}
 	if = {
 		limit = { 
@@ -5717,6 +5873,18 @@ join_prev_monastic_order_society = {
 	if = {
 		limit = { PREV = { society_member_of = monastic_order_stoics } }
 		join_society = monastic_order_stoics
+	}
+	if = {
+		limit = { PREV = { society_member_of = monastic_order_skeptics } }
+		join_society = monastic_order_skeptics
+	}
+	if = {
+		limit = { PREV = { society_member_of = monastic_order_epicureans } }
+		join_society = monastic_order_epicureans
+	}
+	if = {
+		limit = { PREV = { society_member_of = monastic_order_isis } }
+		join_society = monastic_order_isis
 	}
 }
 
@@ -25075,6 +25243,13 @@ add_sympathy_for_prevs_true_religion_effect = {
 		}
 		add_trait = sympathy_indian
 	}
+	if = {
+        limit = {
+            PREV = { true_religion_group = african_group }
+            NOT = { religion_group = african_group }
+        }
+        add_trait = sympathy_african
+    }
 }
 
 add_sympathy_for_prevs_open_religion_effect = {
@@ -25119,6 +25294,13 @@ add_sympathy_for_prevs_open_religion_effect = {
 			NOT = { religion_group = indian_group }
 		}
 		add_trait = sympathy_indian
+	}
+	if = {
+		limit = { 
+			PREV = { religion_group = african_group } 
+			NOT = { religion_group = african_group }
+		}
+		add_trait = sympathy_african
 	}
 }
 
@@ -26787,6 +26969,11 @@ clean_up_after_leaving_society_effect = {
 		clr_character_flag = being_recruited_by_the_vodouns
 		clr_character_flag = being_recruited_by_the_bacchants
 		clr_character_flag = being_recruited_by_followers_of_ahuiateteo
+		
+		### ACR ###
+		clr_character_flag = being_recruited_by_the_unseelie
+		clr_character_flag = being_recruited_by_the_coven
+		clr_character_flag = being_recruited_by_the_sand_snakes
 
 		#Powers, Missions and Interactions: Secret Religious
 		clr_character_flag = sr_too_honest
@@ -34827,8 +35014,62 @@ add_warrior_lodge_leader_trait_effect = {
 		warrior_lodge_hellenic = {
 			add_trait = hellenic_leader
 		}
+		# warrior_lodge_cws_christian = {
+			# add_trait = cws_christian_leader
+		# }
+		warrior_lodge_cws_christian = {
+			add_trait = hellenic_leader
+		}
+		# warrior_lodge_ws_mazdan = {
+			# add_trait = ws_mazdan_leader
+		# }
+		warrior_lodge_ws_mazdan = {
+			add_trait = tengri_leader
+		}
+		# warrior_lodge_ws_eastern = {
+			# add_trait = ws_eastern_leader
+		# }
+		warrior_lodge_ws_eastern = {
+			add_trait = bon_leader
+		}
 		warrior_lodge_aztec = {
 			add_trait = aztec_leader
+		}
+		# warrior_lodge_ws_aztec = {
+			# add_trait = ws_aztec_leader
+		# }
+		# warrior_lodge_ws_aztec = {
+			# add_trait = west_african_leader
+		# }
+		# warrior_lodge_ws_muslim = {
+			# add_trait = ws_muslim_leader
+		# }
+		warrior_lodge_ws_muslim = {
+			add_trait = zun_leader
+		}
+		# warrior_lodge_ws_jewish = {
+			# add_trait = ws_jewish_leader
+		# }
+		warrior_lodge_ws_jewish = {
+			add_trait = zun_leader
+		}
+		
+		### ACR ###
+		
+		warrior_lodge_celtic = {
+			add_trait = celtic_leader
+		}
+		warrior_lodge_britannic = {
+			add_trait = britannic_leader
+		}
+		warrior_lodge_titan = {
+			add_trait = titan_leader
+		}
+		warrior_lodge_taoist = {
+			add_trait = taoist_leader
+		}
+		warrior_lodge_egyptian = {
+			add_trait = egyptian_leader
 		}
 	}
 }
@@ -35567,6 +35808,7 @@ add_random_tattoo_effect = { #Tied to religion, used only for special events.
 			OR = { 
 				religion = norse_pagan
 				religion = norse_pagan_reformed
+				religion_openly_in_celtic_subgroup_trigger = yes
 			}
 			NOR = { 
 				trait = african_tattoo_1
@@ -37936,6 +38178,14 @@ add_sympathy_for_religion_effect = {
 			add_trait = sympathy_zoroastrianism
 		}
 	}
+	else_if = {
+        limit = {
+            religion_group = african_group
+        }
+        ROOT = {
+            add_trait = sympathy_african
+        }
+    }
 }
 
 add_random_commander_trait_effect = {
@@ -38474,6 +38724,18 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2 # There is nearby dry weather...
 					any_neighbor_province_has_dry_weather_trigger = yes
 				}
+				
+				modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				if = {
 					limit = { has_province_modifier = africa_rain_dance_successful }
@@ -38542,6 +38804,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_dry_weather_trigger = yes
 				}
+                modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				if = {
 					limit = { has_province_modifier = africa_rain_dance_successful }
@@ -38590,6 +38863,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_heavy_rain_trigger = no
 				}
+                modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				if = {
 					limit = { has_province_modifier = africa_rain_dance_successful }
@@ -38614,6 +38898,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_light_rain_trigger = no
 				}
+                modifier = {
+                    factor = 3
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 0.1
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				add_province_modifier = {
 					name = africa_light_rain
@@ -38626,7 +38921,7 @@ change_rain_effect = { # Needs a province scope...
 			}
 		}
 	}
-	else_if = {
+	else = {
 		limit = { has_province_modifier = africa_drought }
 		random_list = {
 			10 = { # Make it better (heavy rain)...
@@ -38656,6 +38951,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_light_rain_trigger = no
 				}
+                modifier = {
+                    factor = 3
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 0.1
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				remove_rain_modifiers_effect = yes
 				add_province_modifier = {
 					name = africa_heavy_rain
@@ -38714,6 +39020,17 @@ change_rain_effect = { # Needs a province scope...
 					factor = 2
 					any_neighbor_province_has_dry_weather_trigger = yes
 				}
+                modifier = {
+                    factor = 0.1
+                    has_province_modifier = good_bida_sacrifice
+                }
+                modifier = {
+                    factor = 3
+                    OR = {
+                        has_province_modifier = bad_bida_sacrifice
+                        has_province_modifier = canceled_bida_sacrifice
+                    }
+                }
 				set_rain_flag_drought_effect = yes
 			}
 		}
@@ -39847,276 +40164,384 @@ reformation_god_names_changes_effect = { #Reforming religion with certain Doctri
 			}
 		}
 		
-		if = {
+		### ACR ###
+		if = { #A ruler reforms Celtic Paganism
 			limit = {
-				persistent_event_target:reformer = { has_character_flag = religious_reformer }
+				has_dlc = "Holy Fury"
+				religion = celtic_pagan_reformed
+				OR = {
+					has_religion_feature = religion_matriarchal
+					has_religion_feature = religion_patriarchal
+					has_religion_feature = religion_dogmatic
+				}
 			}
-			if = {
-				# Appropriate gender to become the (high) god
+			remove_god_names = yes
+			remove_evil_god_names = yes
+			if = { # Just Dogmatic?
 				limit = {
-					trigger_if = {
-						limit = { persistent_event_target:reformer = { is_female = yes } }
-						NOT = { has_religion_feature = religion_patriarchal }
-					}
-					trigger_else = {
-						NOT = { has_religion_feature = religion_matriarchal }
+					has_religion_feature = religion_dogmatic
+					NOR = {
+						has_religion_feature = religion_matriarchal
+						has_religion_feature = religion_patriarchal
 					}
 				}
+				set_high_god_name = GOD_LUGH
+				add_god_name = GOD_LUGH
+				add_evil_god_name = THE_FOMORIANS
+				add_evil_god_name = EVIL_BALOR
+				add_evil_god_name = EVIL_BRES
+				add_evil_god_name = GOD_CAILLEACH
+			}
+			if = { # matriarchal
+				limit = {
+					has_religion_feature = religion_matriarchal
+				}
+				set_high_god_name = GOD_DANA
 				if = {
-					limit = {
-						has_religion_feature = religion_dogmatic
-						has_religion_feature = religion_temporal_head
-					}
-					remove_god_names = yes
-					set_high_god_name = string_reformer_god
-					add_god_name = string_reformer_god_2
-				}
-				else_if = {
 					limit = {
 						NOT = { has_religion_feature = religion_dogmatic }
 					}
-					add_god_name = string_reformer_god
+					add_god_name = GOD_MACHA
+					add_god_name = GOD_RHIANNON
+					add_god_name = GOD_SEQUANA
+				}
+				add_evil_god_name = THE_FOMORIANS
+				add_evil_god_name = EVIL_BALOR
+				add_evil_god_name = EVIL_BRES
+				add_evil_god_name = GOD_CAILLEACH
+			}
+			if = {
+				limit = {
+					has_religion_feature = religion_patriarchal
+				}
+				set_high_god_name = GOD_LUGH
+				if = {
+					limit = {
+						NOT = { has_religion_feature = religion_dogmatic }
+					}
+					add_god_name = GOD_MANANNAN
+					add_god_name = GOD_DAGHDA
+					add_god_name = GOD_LUGH
+					add_god_name = GOD_NUADA
+					add_god_name = GOD_CERNNUNOS
+				}
+				add_evil_god_name = GOD_RHIANNON
+				add_evil_god_name = GOD_MACHA
+				add_evil_god_name = GOD_DANA
+				add_evil_god_name = GOD_SEQUANA
+			}
+		}
+		if = { #A ruler reforms Egyptian Paganism
+			limit = {
+				has_dlc = "Holy Fury"
+				religion = egyptian_pagan_reformed
+				OR = {
+					has_religion_feature = religion_matriarchal
+					has_religion_feature = religion_patriarchal
+					has_religion_feature = religion_dogmatic
+				}
+			}
+			remove_god_names = yes
+			remove_evil_god_names = yes
+			if = { # Just Dogmatic?
+				limit = {
+					has_religion_feature = religion_dogmatic
+					NOR = {
+						has_religion_feature = religion_matriarchal
+						has_religion_feature = religion_patriarchal
+					}
+				}
+				set_high_god_name = GOD_AMON
+				add_god_name = GOD_AMON
+				add_evil_god_name = GOD_APEP
+				add_evil_god_name = GOD_SET
+			}
+			if = { # matriarchal
+				limit = {
+					has_religion_feature = religion_matriarchal
+				}
+				set_high_god_name = GOD_AMAUNET
+				add_god_name = GOD_AMAUNET
+				if = {
+					limit = {
+						NOT = { has_religion_feature = religion_dogmatic }
+					}
+					add_god_name = GOD_HAUHET
+					add_god_name = GOD_KAUKET
+					add_god_name = GOD_NAUNET
+					add_god_name = GOD_ISIS
+				}
+				add_evil_god_name = GOD_AMON
+				add_evil_god_name = GOD_APEP
+				add_evil_god_name = GOD_SET
+			}
+			if = {
+				limit = {
+					has_religion_feature = religion_patriarchal
+				}
+				set_high_god_name = GOD_AMON
+				add_god_name = GOD_AMON
+				if = {
+					limit = {
+						NOT = { has_religion_feature = religion_dogmatic }
+					}
+					add_god_name = GOD_HEH
+					add_god_name = GOD_KEK
+					add_god_name = GOD_NUN
+					add_god_name = GOD_RA
+					add_god_name = GOD_OSIRIS
+					add_god_name = GOD_ANUBIS
+				}
+				add_evil_god_name = GOD_AMAUNET
+				add_evil_god_name = GOD_APEP
+				add_evil_god_name = GOD_SET
+			}
+		}
+	}
+		
+	if = {
+		limit = {
+			persistent_event_target:reformer = { has_character_flag = religious_reformer }
+		}
+		if = {
+			# Appropriate gender to become the (high) god
+			limit = {
+				trigger_if = {
+					limit = { persistent_event_target:reformer = { is_female = yes } }
+					NOT = { has_religion_feature = religion_patriarchal }
+				}
+				trigger_else = {
+					NOT = { has_religion_feature = religion_matriarchal }
 				}
 			}
 			if = {
 				limit = {
+					has_religion_feature = religion_dogmatic
+					has_religion_feature = religion_temporal_head
+				}
+				remove_god_names = yes
+				set_high_god_name = string_reformer_god
+				add_god_name = string_reformer_god_2
+			}
+			else_if = {
+				limit = {
 					NOT = { has_religion_feature = religion_dogmatic }
 				}
+				add_god_name = string_reformer_god
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_religion_feature = religion_dogmatic }
+			}
+			if = {
+				limit = {
+					has_flag = holy_family_gods_saved
+				}
 				if = {
-					limit = {
-						has_flag = holy_family_gods_saved
+					limit = { #Spouse.
+						persistent_event_target:reformer_spouse_god = { always = yes }
 					}
-					if = {
-						limit = { #Spouse.
-							persistent_event_target:reformer_spouse_god = { always = yes }
-						}
-						persistent_event_target:reformer_spouse_god = {
-							save_event_target_as = target_character
-						}
-						add_god_name = string_target_character_firstname
+					persistent_event_target:reformer_spouse_god = {
+						save_event_target_as = target_character
 					}
+					add_god_name = string_target_character_firstname
+				}
+				if = {
+					limit = { #Child.
+						persistent_event_target:reformer_child_god = { always = yes }
+					}						persistent_event_target:reformer_child_god = {
+						save_event_target_as = target_character
+					}
+					add_god_name = string_target_character_firstname
+					
+					# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
 					if = {
-						limit = { #Child.
-							persistent_event_target:reformer_child_god = { always = yes }
+						limit = {
+							persistent_event_target:reformer_child_parent_god = { always = yes }
 						}
-						persistent_event_target:reformer_child_god = {
-							save_event_target_as = target_character
-						}
-						add_god_name = string_target_character_firstname
-						
-						# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
-						if = {
-							limit = {
-								persistent_event_target:reformer_child_parent_god = { always = yes }
-							}
-							persistent_event_target:reformer_child_parent_god = {
+						persistent_event_target:reformer_child_parent_god = {
 								save_event_target_as = target_character
-							}
-							add_god_name = string_target_character_firstname
-						}
-					}
-					if = {
-						limit = { #Sibling.
-							persistent_event_target:reformer_sibling_god = { always = yes }
-						}
-						persistent_event_target:reformer_sibling_god = {
-							save_event_target_as = target_character
 						}
 						add_god_name = string_target_character_firstname
 					}
 				}
-				else = {
-					set_flag = holy_family_gods_saved
-					if = {
-						limit = { #Spouse.
-							persistent_event_target:reformer = {
-								is_married = yes
+				if = {
+					limit = { #Sibling.
+						persistent_event_target:reformer_sibling_god = { always = yes }
+					}
+					persistent_event_target:reformer_sibling_god = {
+						save_event_target_as = target_character
+					}
+					add_god_name = string_target_character_firstname
+				}
+			}
+			else = {
+				set_flag = holy_family_gods_saved
+				if = {
+					limit = { #Spouse.
+						persistent_event_target:reformer = {
+							is_married = yes
+							trigger_if = {
+								limit = { is_female = yes }
+								NOT = { PREV = { has_religion_feature = religion_patriarchal } }
+							}
+							trigger_else = {
+								NOT = { PREV = { has_religion_feature = religion_matriarchal } }
+							}
+							any_spouse = {
+								OR = {
+									religion = PREVPREV
+									PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
+								}
+							}
+						}
+					}
+					persistent_event_target:reformer = {
+						random_spouse = {
+							limit = {
+								OR = {
+									religion = PREVPREV
+									PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
+								}
+							}
+							preferred_limit = { is_main_spouse = yes } 
+							save_event_target_as = target_character
+						}
+					}
+					save_persistent_event_target = {
+						name = reformer_spouse_god
+						scope = event_target:target_character
+					}
+					add_god_name = string_target_character_firstname
+				}
+				if = {
+					limit = { #Child.
+						persistent_event_target:reformer = {
+							any_child = {
+								NOT = { character = persistent_event_target:reformer_spouse_god }
 								trigger_if = {
 									limit = { is_female = yes }
-									NOT = { PREV = { has_religion_feature = religion_patriarchal } }
+									NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
 								}
 								trigger_else = {
-									NOT = { PREV = { has_religion_feature = religion_matriarchal } }
-								}
-								any_spouse = {
-									OR = {
-										religion = PREVPREV
-										PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
-									}
+									NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
 								}
 							}
 						}
-						persistent_event_target:reformer = {
-							random_spouse = {
-								limit = {
-									OR = {
-										religion = PREVPREV
-										PREVPREV = { persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREV } }
-									}
-								}
-								preferred_limit = { is_main_spouse = yes } 
-								save_event_target_as = target_character
-							}
-						}
-						save_persistent_event_target = {
-							name = reformer_spouse_god
-							scope = event_target:target_character
-						}
-						add_god_name = string_target_character_firstname
 					}
-					if = {
-						limit = { #Child.
-							persistent_event_target:reformer = {
-								any_child = {
-									NOT = { character = persistent_event_target:reformer_spouse_god }
-									trigger_if = {
-										limit = { is_female = yes }
-										NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-									}
-									trigger_else = {
-										NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-									}
-								}
-							}
-						}
-						persistent_event_target:reformer = {
-							random_child = {
-								limit = {
-									NOT = { character = persistent_event_target:reformer_spouse_god }
-									trigger_if = {
-										limit = { is_female = yes }
-										NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-									}
-									trigger_else = {
-										NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-									}
-								}
-								preferred_limit = {
-									is_primary_heir = PREV
-								}
-								preferred_limit = {
-									NOR = {
-										trait = legit_bastard
-										trait = bastard
-									}
-								}
-								preferred_limit = {
-									NOT = { trait = bastard }
-								}
-								save_event_target_as = target_character
-							}
-						}
-						save_persistent_event_target = {
-							name = reformer_child_god
-							scope = event_target:target_character
-						}
-						add_god_name = string_target_character_firstname
-						
-						# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
-						if = {
+					persistent_event_target:reformer = {
+						random_child = {
 							limit = {
-								NOT = { has_religion_feature = religion_matriarchal }
-								event_target:scoped_god_child = {
-									father_even_if_dead = {
-										NOR = {
-											character = persistent_event_target:reformer
-											character = persistent_event_target:reformer_spouse_god
-										}
-									}
+								NOT = { character = persistent_event_target:reformer_spouse_god }
+								trigger_if = {
+									limit = { is_female = yes }
+									NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
+								}
+								trigger_else = {
+									NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
 								}
 							}
+							preferred_limit = {
+								is_primary_heir = PREV
+							}
+							preferred_limit = {
+								NOR = {
+									trait = legit_bastard
+									trait = bastard
+								}
+							}
+							preferred_limit = {
+								NOT = { trait = bastard }
+							}
+							save_event_target_as = target_character
+						}
+					}
+					save_persistent_event_target = {
+						name = reformer_child_god
+						scope = event_target:target_character
+					}
+					add_god_name = string_target_character_firstname
+					
+					# If the child's original parent has not been added as a god (either because they weren't randomly selected or because they are now dead), add them
+					if = {
+						limit = {
+							NOT = { has_religion_feature = religion_matriarchal }
 							event_target:scoped_god_child = {
 								father_even_if_dead = {
-									save_event_target_as = target_character
-								}
-							}
-							save_persistent_event_target = {
-								name = reformer_child_parent_god
-								scope = event_target:target_character
-							}
-							add_god_name = string_target_character_firstname
-						}
-						else_if = {
-							limit = {
-								NOT = { has_religion_feature = religion_patriarchal }
-								event_target:scoped_god_child = {
-									mother_even_if_dead = {
-										NOR = {
-											character = persistent_event_target:reformer
-											character = persistent_event_target:reformer_spouse_god
-										}
+									NOR = {
+										character = persistent_event_target:reformer
+										character = persistent_event_target:reformer_spouse_god
 									}
 								}
 							}
+						}
+						event_target:scoped_god_child = {
+							father_even_if_dead = {
+								save_event_target_as = target_character
+							}
+						}
+						save_persistent_event_target = {
+							name = reformer_child_parent_god
+							scope = event_target:target_character
+						}
+						add_god_name = string_target_character_firstname
+					}
+					else_if = {
+						limit = {
+							NOT = { has_religion_feature = religion_patriarchal }
 							event_target:scoped_god_child = {
 								mother_even_if_dead = {
-									save_event_target_as = target_character
+									NOR = {
+										character = persistent_event_target:reformer
+										character = persistent_event_target:reformer_spouse_god
+									}
 								}
 							}
-							save_persistent_event_target = {
-								name = reformer_child_parent_god
-								scope = event_target:target_character
+						}
+						event_target:scoped_god_child = {
+							mother_even_if_dead = {
+								save_event_target_as = target_character
 							}
-							add_god_name = string_target_character_firstname
+						}
+						save_persistent_event_target = {
+							name = reformer_child_parent_god
+							scope = event_target:target_character
+						}
+						add_god_name = string_target_character_firstname
+					}
+				}
+				if = {
+					limit = { #Sibling.
+						persistent_event_target:reformer = {
+							any_sibling = {
+								NOR = {
+									character = persistent_event_target:reformer_spouse_god
+									character = persistent_event_target:reformer_child_god
+									character = persistent_event_target:reformer_child_parent_god
+								}
+								trigger_if = {
+									limit = { is_female = yes }
+									NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
+								}
+								trigger_else = {
+									NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
+								}
+							}
 						}
 					}
-					if = {
-						limit = { #Sibling.
-							persistent_event_target:reformer = {
-								any_sibling = {
-									NOR = {
-										character = persistent_event_target:reformer_spouse_god
-										character = persistent_event_target:reformer_child_god
-										character = persistent_event_target:reformer_child_parent_god
-									}
-									trigger_if = {
-										limit = { is_female = yes }
-										NOT = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-									}
-									trigger_else = {
-										NOT = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-									}
+					persistent_event_target:reformer = {
+						random_sibling = { 
+							limit = {
+								NOR = {
+									character = persistent_event_target:reformer_spouse_god
+									character = persistent_event_target:reformer_child_god
+									character = persistent_event_target:reformer_child_parent_god
 								}
-							}
-						}
-						persistent_event_target:reformer = {
-							random_sibling = { 
-								limit = {
-									NOR = {
-										character = persistent_event_target:reformer_spouse_god
-										character = persistent_event_target:reformer_child_god
-										character = persistent_event_target:reformer_child_parent_god
-									}
-									trigger_if = {
-										limit = { PREVPREV = { has_religion_feature = religion_patriarchal } }
-										is_female = no
-										# Only consanguine or full siblings count if patriarchal
-										OR = {
-											NOR = {
-												father_even_if_dead = { always = yes }
-												PREV = { father_even_if_dead = { always = yes } }
-											}
-											father_even_if_dead = { is_parent_of = persistent_event_target:reformer }
-										}
-									}
-									trigger_else_if = {
-										limit = { PREVPREV = { has_religion_feature = religion_matriarchal } }
-										is_female = yes
-										# Only uteral or full siblings count if matriarchal
-										OR = {
-											NOR = {
-												mother_even_if_dead = { always = yes }
-												PREV = { mother_even_if_dead = { always = yes } }
-											}
-											mother_even_if_dead = { is_parent_of = persistent_event_target:reformer }
-										}
-									}
-								}
-								preferred_limit = {
-									is_primary_heir = PREV
-								}
-								preferred_limit = {
-									# Full siblings preferred
+								trigger_if = {
+									limit = { PREVPREV = { has_religion_feature = religion_patriarchal } }
+									is_female = no
+									# Only consanguine or full siblings count if patriarchal
 									OR = {
 										NOR = {
 											father_even_if_dead = { always = yes }
@@ -40124,6 +40549,11 @@ reformation_god_names_changes_effect = { #Reforming religion with certain Doctri
 										}
 										father_even_if_dead = { is_parent_of = persistent_event_target:reformer }
 									}
+								}
+								trigger_else_if = {
+									limit = { PREVPREV = { has_religion_feature = religion_matriarchal } }
+									is_female = yes
+									# Only uteral or full siblings count if matriarchal
 									OR = {
 										NOR = {
 											mother_even_if_dead = { always = yes }
@@ -40132,15 +40562,35 @@ reformation_god_names_changes_effect = { #Reforming religion with certain Doctri
 										mother_even_if_dead = { is_parent_of = persistent_event_target:reformer }
 									}
 								}
-								save_event_target_as = target_character
 							}
+							preferred_limit = {
+								is_primary_heir = PREV
+							}
+							preferred_limit = {
+								# Full siblings preferred
+								OR = {
+									NOR = {
+										father_even_if_dead = { always = yes }
+										PREV = { father_even_if_dead = { always = yes } }
+									}
+									father_even_if_dead = { is_parent_of = persistent_event_target:reformer }
+								}
+								OR = {
+									NOR = {
+										mother_even_if_dead = { always = yes }
+										PREV = { mother_even_if_dead = { always = yes } }
+									}
+									mother_even_if_dead = { is_parent_of = persistent_event_target:reformer }
+								}
+							}
+							save_event_target_as = target_character
 						}
-						save_persistent_event_target = {
-							name = reformer_sibling_god
-							scope = event_target:target_character
-						}
-						add_god_name = string_target_character_firstname
 					}
+					save_persistent_event_target = {
+						name = reformer_sibling_god
+						scope = event_target:target_character
+					}
+					add_god_name = string_target_character_firstname
 				}
 			}
 		}
@@ -40442,6 +40892,17 @@ give_goldsmith_artifacts_flag_okay_effect = {
 	else = {
         add_artifact = ceremonial_axe
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = silver_torque
+		add_artifact = engraved_sword
+	}
+	else = {
+	    add_artifact = engraved_crown
+        add_artifact = ceremonial_axe
+	}
 }
 
 give_goldsmith_artifacts_flag_good_effect = {
@@ -40541,6 +41002,17 @@ give_goldsmith_artifacts_flag_good_effect = {
 	else = {
         add_artifact = obsidian_axe
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = golden_torque
+		add_artifact = golden_sword
+	}
+	else = {
+	    add_artifact = amber_crown
+        add_artifact = obsidian_axe
+	}
 }
 
 give_goldsmith_artifacts_flag_expensive_effect = {
@@ -40638,6 +41110,17 @@ give_goldsmith_artifacts_flag_expensive_effect = {
 	    add_artifact = axe_of_the_ancestors
 	}
 	else = {
+	    add_artifact = axe_of_the_ancestors
+	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = jeweled_torque
+		add_artifact = sword_of_heroes
+	}
+	else = {
+	    add_artifact = heros_crown
 	    add_artifact = axe_of_the_ancestors
 	}
 }
@@ -40741,6 +41224,17 @@ give_goldsmith_artifacts_flag_amazing_effect = {
 	else = {
 	    add_artifact = axe_of_the_ancestors_2
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = jeweled_torque_2
+		add_artifact = sword_of_heroes_2
+	}
+	else = {
+	    add_artifact = heros_crown_2
+	    add_artifact = axe_of_the_ancestors_2
+	}
 }
 
 
@@ -40839,6 +41333,17 @@ give_weaponsmith_artifacts_flag_okay_effect = {
         add_artifact = ceremonial_axe
 	}
 	else = {
+        add_artifact = ceremonial_axe
+	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = silver_torque
+		add_artifact = engraved_sword
+	}
+	else = {
+	    add_artifact = engraved_crown
         add_artifact = ceremonial_axe
 	}
 }
@@ -40943,6 +41448,17 @@ give_weaponsmith_artifacts_flag_good_effect = {
 	else = {
         add_artifact = obsidian_axe
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = golden_torque
+		add_artifact = golden_sword
+	}
+	else = {
+	    add_artifact = amber_crown
+        add_artifact = obsidian_axe
+	}
 }
 
 give_weaponsmith_artifacts_flag_expensive_effect = {
@@ -41042,6 +41558,17 @@ give_weaponsmith_artifacts_flag_expensive_effect = {
 	else = {
 	    add_artifact = axe_of_the_ancestors
 	}
+	else_if = {
+		limit = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		add_artifact = jeweled_torque
+		add_artifact = sword_of_heroes
+	}
+	else = {
+	    add_artifact = heros_crown
+	    add_artifact = axe_of_the_ancestors
+	}
 }
 
 give_smith_artifacts_flag_okay_effect = {
@@ -41103,6 +41630,7 @@ give_smith_artifacts_flag_okay_effect = {
         limit = { FROM = { has_character_flag = armor_set } }
         add_artifact = armor_tier_1
     }
+	
 }
 
 give_smith_artifacts_flag_good_effect = {
@@ -42872,6 +43400,236 @@ abdicate_holy_order_if_religion_changes_effect = {
 				}
 				log = "[d_saint_blaise.owner.GetTitledFirstName] was found to be unfit to lead the [d_saint_blaise.GetName] and therefore removed by the abdicate holy order effect!"
 			}
+		}
+	}
+	
+	### ACR ###
+	d_fianna = {
+		if = {
+			limit = {
+				is_title_active = d_fianna
+				religion = celtic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan_reformed } 
+				}
+			}
+			log = "[d_fianna.owner.GetTitledFirstName] was found to be unfit to lead the [d_fianna.GetName] due to religious conflict! Title is celtic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_fianna
+				religion = celtic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan } 
+				}
+			}
+			log = "[d_fianna.owner.GetTitledFirstName] was found to be unfit to lead the [d_fianna.GetName] due to religious conflict! Title is celtic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_red_dragons = {
+		if = {
+			limit = {
+				is_title_active = d_red_dragons
+				religion = celtic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan_reformed } 
+				}
+			}
+			log = "[d_red_dragons.owner.GetTitledFirstName] was found to be unfit to lead the [d_red_dragons.GetName] due to religious conflict! Title is celtic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_red_dragons
+				religion = celtic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = celtic_pagan } 
+				}
+			}
+			log = "[d_red_dragons.owner.GetTitledFirstName] was found to be unfit to lead the [d_red_dragons.GetName] due to religious conflict! Title is celtic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_saint_boudicca = {
+		if = {
+			limit = {
+				is_title_active = d_saint_boudicca
+				religion = britannic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = britannic_pagan } 
+				}
+			}
+			log = "[d_saint_boudicca.owner.GetTitledFirstName] was found to be unfit to lead the [d_saint_boudicca.GetName] due to religious conflict! Title is britannic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_legio_hellenica = {
+		if = {
+			limit = {
+				is_title_active = d_legio_hellenica
+				religion = hellenic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan_reformed } 
+				}
+			}
+			log = "[d_legio_hellenica.owner.GetTitledFirstName] was found to be unfit to lead the [d_legio_hellenica.GetName] due to religious conflict! Title is hellenic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_legio_hellenica
+				religion = hellenic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan } 
+				}
+			}
+			log = "[d_legio_hellenica.owner.GetTitledFirstName] was found to be unfit to lead the [d_legio_hellenica.GetName] due to religious conflict! Title is hellenic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_sacred_band = {
+		if = {
+			limit = {
+				is_title_active = d_sacred_band
+				religion = hellenic_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan_reformed } 
+				}
+			}
+			log = "[d_sacred_band.owner.GetTitledFirstName] was found to be unfit to lead the [d_sacred_band.GetName] due to religious conflict! Title is hellenic_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_sacred_band
+				religion = hellenic_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = hellenic_pagan } 
+				}
+			}
+			log = "[d_sacred_band.owner.GetTitledFirstName] was found to be unfit to lead the [d_sacred_band.GetName] due to religious conflict! Title is hellenic_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_sickles = {
+		if = {
+			limit = {
+				is_title_active = d_sickles
+				religion = titan_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = titan_pagan } 
+				}
+			}
+			log = "[d_sickles.owner.GetTitledFirstName] was found to be unfit to lead the [d_sickles.GetName] due to religious conflict! Title is titan_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_men_of_steel = {
+		if = {
+			limit = {
+				is_title_active = d_men_of_steel
+				religion = promethean_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = promethean_pagan } 
+				}
+			}
+			log = "[d_men_of_steel.owner.GetTitledFirstName] was found to be unfit to lead the [d_men_of_steel.GetName] due to religious conflict! Title is promethean_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_horus = {
+		if = {
+			limit = {
+				is_title_active = d_horus
+				religion = egyptian_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan_reformed } 
+				}
+			}
+			log = "[d_horus.owner.GetTitledFirstName] was found to be unfit to lead the [d_horus.GetName] due to religious conflict! Title is egyptian_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_horus
+				religion = egyptian_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan } 
+				}
+			}
+			log = "[d_horus.owner.GetTitledFirstName] was found to be unfit to lead the [d_horus.GetName] due to religious conflict! Title is egyptian_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_anubis = {
+		if = {
+			limit = {
+				is_title_active = d_anubis
+				religion = egyptian_pagan_reformed
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan_reformed } 
+				}
+			}
+			log = "[d_anubis.owner.GetTitledFirstName] was found to be unfit to lead the [d_anubis.GetName] due to religious conflict! Title is egyptian_pagan_reformed, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+		if = {
+			limit = {
+				is_title_active = d_anubis
+				religion = egyptian_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = egyptian_pagan } 
+				}
+			}
+			log = "[d_anubis.owner.GetTitledFirstName] was found to be unfit to lead the [d_anubis.GetName] due to religious conflict! Title is egyptian_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
+		}
+	}
+	d_burning_blades = {
+		if = {
+			limit = {
+				is_title_active = d_burning_blades
+				religion = aten_pagan
+				owner = { 
+					ai = yes
+					holy_order = yes 
+					NOT = { religion = aten_pagan } 
+				}
+			}
+			log = "[d_burning_blades.owner.GetTitledFirstName] was found to be unfit to lead the [d_burning_blades.GetName] due to religious conflict! Title is aten_pagan, but owner is not. \n
+			ROOT = [Root.GetTitledFirstName] FROM = [From.GetTitledFirstName] PREV = [Prev.GetTitledFirstName]"
 		}
 	}
 }
